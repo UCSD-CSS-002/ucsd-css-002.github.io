@@ -1,3 +1,0 @@
-# W4 problem
-
-This week we will start dealing with data more seriously.  Specifically, we will learn how to deal with data tables, how to filter, group, summarize, and visualize data.  To this end, we will learn to use the **pandas** library for representing data frames, as well as the **matplotlib** library for making graphs.  Along the way, we will need to learn a tiny bit about the **numpy** library, even though we will not be dealing with it directly much. 
