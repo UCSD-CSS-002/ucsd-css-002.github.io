@@ -11,13 +11,15 @@ parts:
       - file: course/datahub
       - file: course/debugging
       - file: course/resources
-  - file: lectures/P01
-  - file: lectures/P02
-  - file: lectures/P03
-  - file: lectures/P04
-  - file: lectures/P05
-  - file: lectures/P06
-  - file: lectures/P07
-  - file: lectures/P08
-  - file: lectures/P09
-  - file: lectures/P10
+  - caption: Lectures
+    chapters:
+      - file: lectures/P01
+      - file: lectures/P02
+      - file: lectures/P03
+      - file: lectures/P04
+      - file: lectures/P05
+      - file: lectures/P06
+      - file: lectures/P07
+      - file: lectures/P08
+      - file: lectures/P09
+      - file: lectures/P10
