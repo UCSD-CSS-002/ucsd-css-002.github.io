@@ -1,7 +1,7 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: UCSD CSS 1
+title: UCSD CSS 2
 author: Ed Vul
 logo: logo.png
 
@@ -15,17 +15,14 @@ parse:
   myst_substitutions:
     key: value
     url_website: "[Class Website](https://ucsd-css-002.github.io)"
-    url_lecture: "[Lecture zoom (UCSD)](https://ucsd.zoom.us/j/93765261371)"
-    url_lab: "[Lab zoom (UCSD)](https://ucsd.zoom.us/j/97219605542)"
-    url_canvas: "[Canvas (UCSD)](https://canvas.ucsd.edu/courses/28075/)"
-    url_campuswire: "[Campuswire](https://campuswire.com/c/G956AC5EB/feed)"
-    url_deepnote: "[Deepnote](https://deepnote.com/dashboard/UCSD-CSS-1-summer-session-1/)"
+    url_lecture: "[Lecture zoom (UCSD)](https://ucsd.zoom.us/j/98787666741)"
+    url_canvas: "[Canvas (UCSD)](https://canvas.ucsd.edu/courses/28060)"
+    url_campuswire: "[Campuswire](https://campuswire.com/p/G8D54A819)"
     url_datahub: "[Datahub (UCSD)](https://datahub.ucsd.edu)"
-    url_feedback: "[Feedback form (UCSD)](https://forms.gle/57Mfax3AQH5gM55A7)"
 
 # Information about where the book exists on the web
 repository:
-  url: https://github.com/UCSD-CSS-001/ucsd-css-001.github.io  # Online location of your book
+  url: https://github.com/UCSD-CSS-002/ucsd-css-002.github.io  # Online location of your book
   branch: master  # Which branch of the repository should be used when creating links (optional)
 
 # Add GitHub buttons to your book

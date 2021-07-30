@@ -32,7 +32,7 @@ This course is structured to help you get there.  The basic premise we start fro
 - Main {{ url_website }}: contains all the materials and links    
 - Lecture / Lab zoom: {{ url_lecture }}: M/W 11am - 3pm PST (conducted live, recordings posted on canvas.)   
 - {{ url_canvas }}: used to post grades and recordings of lectures/labs   
-- {{ url_campuswire }}: used for all communication: discussion, Q&A, announcements etc.  Email the instructor if you cannot access.    
+- {{ url_campuswire }}: **CODE: 2003** used for all communication: discussion, Q&A, announcements etc.  Email the instructor if you cannot access.    
 - {{ url_datahub }}: used to submit comleted labs and problem sets  
 
 ### Lectures and labs
