@@ -2,7 +2,7 @@
 
 ## Course overview and goals
 
-This course will introduce students with basic Python and Statistics experience to standard data science methods and procedures.
+This course will introduce students with basic Python and Statistics experience to standard data science methods and procedures commonly used in Computational Social Science.
 
 ### Goals
 
@@ -94,7 +94,7 @@ This class is divided into 10 parts, corresponding to the normal 10 weeks of the
 You are evaluated based on:   
 - 35% 4 weekly problem sets (weeks 1-4)   
 - 15% final (week 5)   
-- 40% 10 labs  (2 per week)
+- 40% 9 labs  (2 per week)
 - 10% pro-social behavior 
 
 **Labs:** Labs are short, simple exercises designed to be completed during the scheduled lab time, with interactive help from instructors and other students.  Labs are completed by turning them in on datahub.  Labs are due by the end of the day following lab.  This window is wide so that people who cannot attend lab, or otherwise do not complete the work during lab, can submit on their own schedule.  That said, *it is very much advised that you attend lab to complete the activities and get interactive help!*

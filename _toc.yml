@@ -14,6 +14,8 @@ parts:
   - caption: Lectures
     chapters:
       - file: lectures/P01
+        sections:
+          - file: live/css2-lecture-1.ipynb
       - file: lectures/P02
       - file: lectures/P03
       - file: lectures/P04
