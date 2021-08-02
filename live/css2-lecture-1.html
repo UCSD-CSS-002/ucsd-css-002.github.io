@@ -404,24 +404,55 @@
          files
         </a>
        </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#control-structures">
-         Control structures
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#abstractions">
-         Abstractions
-        </a>
-       </li>
       </ul>
      </li>
     </ul>
    </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lab-01">
+   Lab-01
+  </a>
+  <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#lab-01">
-     Lab-01
+    <a class="reference internal nav-link" href="#handling-new-keys-in-dictionaries">
+     Handling new keys in dictionaries
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#option-1-check-if-key-exists-and-create-if-not">
+       Option 1: check if key exists, and create if not
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#option-2-use-default-value-from-get">
+       Option 2: use default value from get
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#option-3-use-try-except">
+       Option 3: use try / except
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#finding-non-alphabetic-characters">
+     Finding non-alphabetic characters.
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#option-1-set-difference">
+       Option 1: set difference:
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#option-2-regular-expressions">
+       Option 2: regular expressions
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -1237,7 +1268,7 @@ thus us a sentence
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>this is a sentence
 [&#39;t&#39;, &#39;h&#39;, &#39;i&#39;, &#39;s&#39;, &#39; &#39;, &#39;i&#39;, &#39;s&#39;, &#39; &#39;, &#39;a&#39;, &#39; &#39;, &#39;s&#39;, &#39;e&#39;, &#39;n&#39;, &#39;t&#39;, &#39;e&#39;, &#39;n&#39;, &#39;c&#39;, &#39;e&#39;]
-{&#39;n&#39;, &#39;i&#39;, &#39;a&#39;, &#39; &#39;, &#39;e&#39;, &#39;c&#39;, &#39;s&#39;, &#39;t&#39;, &#39;h&#39;}
+{&#39;h&#39;, &#39;t&#39;, &#39;c&#39;, &#39; &#39;, &#39;s&#39;, &#39;n&#39;, &#39;a&#39;, &#39;i&#39;, &#39;e&#39;}
 </pre></div>
 </div>
 </div>
@@ -1263,8 +1294,8 @@ thus us a sentence
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;n&#39;, &#39;i&#39;, &#39;a&#39;, &#39; &#39;, &#39;e&#39;, &#39;c&#39;, &#39;s&#39;, &#39;t&#39;, &#39;h&#39;}
-{&#39;n&#39;, &#39;i&#39;, &#39;a&#39;, &#39;z&#39;, &#39; &#39;, &#39;e&#39;, &#39;c&#39;, &#39;s&#39;, &#39;t&#39;, &#39;h&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;h&#39;, &#39;t&#39;, &#39;c&#39;, &#39; &#39;, &#39;s&#39;, &#39;n&#39;, &#39;a&#39;, &#39;i&#39;, &#39;e&#39;}
+{&#39;h&#39;, &#39;t&#39;, &#39;c&#39;, &#39; &#39;, &#39;s&#39;, &#39;n&#39;, &#39;a&#39;, &#39;i&#39;, &#39;e&#39;, &#39;z&#39;}
 </pre></div>
 </div>
 </div>
@@ -1278,8 +1309,8 @@ thus us a sentence
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;n&#39;, &#39;i&#39;, &#39;a&#39;, &#39;z&#39;, &#39; &#39;, &#39;e&#39;, &#39;c&#39;, &#39;s&#39;, &#39;t&#39;, &#39;h&#39;}
-{&#39;n&#39;, &#39;i&#39;, &#39;a&#39;, &#39;z&#39;, &#39; &#39;, &#39;e&#39;, &#39;c&#39;, &#39;s&#39;, &#39;h&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;h&#39;, &#39;t&#39;, &#39;c&#39;, &#39; &#39;, &#39;s&#39;, &#39;n&#39;, &#39;a&#39;, &#39;i&#39;, &#39;e&#39;, &#39;z&#39;}
+{&#39;h&#39;, &#39;c&#39;, &#39; &#39;, &#39;s&#39;, &#39;n&#39;, &#39;a&#39;, &#39;i&#39;, &#39;e&#39;, &#39;z&#39;}
 </pre></div>
 </div>
 </div>
@@ -1504,28 +1535,102 @@ set</p>
 </div>
 </div>
 </div>
-<div class="section" id="control-structures">
-<h4>Control structures<a class="headerlink" href="#control-structures" title="Permalink to this headline">¶</a></h4>
-<ul>
-<li><p>if statements</p></li>
-<li><p>for loops</p>
-<p>strings
-lists
-dictionaries</p>
-</li>
-</ul>
-</div>
-<div class="section" id="abstractions">
-<h4>Abstractions<a class="headerlink" href="#abstractions" title="Permalink to this headline">¶</a></h4>
-<ul class="simple">
-<li><p>functions</p></li>
-<li><p>classes</p></li>
-</ul>
 </div>
 </div>
 </div>
 <div class="section" id="lab-01">
-<h2>Lab-01<a class="headerlink" href="#lab-01" title="Permalink to this headline">¶</a></h2>
+<h1>Lab-01<a class="headerlink" href="#lab-01" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="handling-new-keys-in-dictionaries">
+<h2>Handling new keys in dictionaries<a class="headerlink" href="#handling-new-keys-in-dictionaries" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="option-1-check-if-key-exists-and-create-if-not">
+<h3>Option 1: check if key exists, and create if not<a class="headerlink" href="#option-1-check-if-key-exists-and-create-if-not" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="k">if</span> <span class="s1">&#39;alice&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">x</span><span class="p">:</span>
+    <span class="n">x</span><span class="p">[</span><span class="s1">&#39;alice&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">x</span><span class="p">[</span><span class="s1">&#39;alice&#39;</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="option-2-use-default-value-from-get">
+<h3>Option 2: use default value from get<a class="headerlink" href="#option-2-use-default-value-from-get" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+ 
+<span class="n">x</span><span class="p">[</span><span class="s1">&#39;carol&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;carol&#39;</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="option-3-use-try-except">
+<h3>Option 3: use try / except<a class="headerlink" href="#option-3-use-try-except" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">x</span><span class="p">[</span><span class="s1">&#39;ed&#39;</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+    <span class="n">x</span><span class="p">[</span><span class="s1">&#39;ed&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="finding-non-alphabetic-characters">
+<h2>Finding non-alphabetic characters.<a class="headerlink" href="#finding-non-alphabetic-characters" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">string</span> <span class="o">=</span> <span class="s1">&#39;SFMNB GFH SDG(SYD (*FG HJG(&amp;^SDFKBSDBFSD*&amp;*SAGVJHAFS&amp;^A FKJ DSF*^ SDJHV DSF^ DF)))&#39;</span>
+<span class="n">string</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="option-1-set-difference">
+<h3>Option 1: set difference:<a class="headerlink" href="#option-1-set-difference" title="Permalink to this headline">¶</a></h3>
+<p>find the set of all characters, subtract the set of all characters you want to keep</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">all_characters</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+<span class="n">characters_i_like</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="s1">&#39; abcdefghijklmnopqrstuvwxyz&#39;</span><span class="p">)</span>
+<span class="n">characters_i_want_to_replace</span> <span class="o">=</span> <span class="n">all_characters</span> <span class="o">-</span> <span class="n">characters_i_like</span>  <span class="c1"># set difference</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">characters_i_want_to_replace</span><span class="p">)</span>
+<span class="c1"># now just loop through all those characters that you dont like, and str.replace() them.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;&amp;&#39;, &#39;^&#39;, &#39;*&#39;, &#39;(&#39;, &#39;)&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="option-2-regular-expressions">
+<h3>Option 2: regular expressions<a class="headerlink" href="#option-2-regular-expressions" title="Permalink to this headline">¶</a></h3>
+<p>We have not (and will not) cover regular expressions, but this is an ideal regular expression problem:  we want everything that is not a letter or whitespace, so we use the <code class="docutils literal notranslate"><span class="pre">[^</span></code> pattern.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[^a-z ]&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">string</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;sfmnb gfh sdg syd   fg hjg   sdfkbsdbfsd   sagvjhafs  a fkj dsf   sdjhv dsf  df   &#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 
