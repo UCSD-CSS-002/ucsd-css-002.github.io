@@ -20,6 +20,8 @@ parts:
         sections:
           - file: live/css2-lecture-2.ipynb
       - file: lectures/P03
+        sections:
+          - file: live/css2-lecture-3.ipynb
       - file: lectures/P04
       - file: lectures/P05
       - file: lectures/P06
