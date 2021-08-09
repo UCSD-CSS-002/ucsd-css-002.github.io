@@ -1,0 +1,2702 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Today, we will be dealing with transforming categorical and ordinal data into numerical data &#8212; UCSD CSS 2</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">UCSD CSS 2</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Welcome to CSS 2
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Course (CSS 2 summer 2)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/syllabus.html">
+   Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/expectations.html">
+   Expectations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/datahub.html">
+   Datahub assignments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/debugging.html">
+   Debugging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/resources.html">
+   Extracurricular Resources
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lectures
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lectures/P01.html">
+   P01: Review of Python and Notebooks
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../live/css2-lecture-1.html">
+     CSS 2 Lecture 1
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lectures/P02.html">
+   P02: Data representation: numpy and pandas
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../live/css2-lecture-2.html">
+     CSS 2 Lecture 2
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lectures/P03.html">
+   P03: Plotting with matplotlib
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/P04.html">
+   P04: Data cleaning and management
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/P05.html">
+   P05: Modeling Data 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/P06.html">
+   P06: Modeling Data 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/P07.html">
+   P07: Classification
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/P08.html">
+   P08: Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/P09.html">
+   P09: Clustering
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/P10.html">
+   P10: Dimensionality reduction
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Garrett_Lectures/s21_Lecture09_dummy_outliers.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/UCSD-CSS-002/ucsd-css-002.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/UCSD-CSS-002/ucsd-css-002.github.io/issues/new?title=Issue%20on%20page%20%2FGarrett_Lectures/s21_Lecture09_dummy_outliers.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/UCSD-CSS-002/ucsd-css-002.github.io/master?urlpath=tree/Garrett_Lectures/s21_Lecture09_dummy_outliers.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Today, we will be dealing with transforming categorical and ordinal data into numerical data
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#load-the-dataset-we-saved-from-last-class">
+   Load the dataset we saved from last class
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#check-the-data-quick">
+   Check the data quick
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#whoops-we-need-to-take-care-of-that-how-do-we-do-that-again">
+   Whoops. We need to take care of that. How do we do that again?
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#this-is-the-dataset-with-no-nans-right">
+   This is the dataset with no nans, right?
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#let-s-just-double-check-that-quickly">
+   Let’s just double check that quickly.
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#now-let-s-look-at-our-string-variables-and-convert-them-into-boolean-values">
+   Now, let’s look at our string variables and convert them into boolean values
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#let-s-look-at-type-first">
+   let’s look at type first
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#i-like-to-use-a-countplot-here-just-to-visualize-the-different-categories">
+   I like to use a countplot here just to visualize the different categories
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#seems-fine-we-can-easily-convert-these-two-1s-and-0s-like-so">
+   Seems fine. We can easily convert these two 1s and 0s like so
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#that-seems-to-work-out-okay">
+   That seems to work out okay!
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#before-we-concat-with-our-data-let-s-check-out-our-other-categorical-variables">
+   Before we concat with our data, let’s check out our other categorical variables
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#let-s-do-origin-next">
+   Let’s do origin next
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#this-is-a-problem-if-we-want-to-convert-this-to-1s-and-0s-how-do-we-do-that-with-3-categories">
+   This is a problem. If we want to convert this to 1s and 0s, how do we do that with 3 categories!?!?!
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#we-use-dummy-coding">
+   We use dummy coding!
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-dummy-coding-has-done-is-that-now-we-have-converted-our-origin-column-into-numerical-boolean-values-across-multiple-columns">
+   What dummy coding has done is that now we have converted our origin column into numerical (boolean) values across multiple columns
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#but-this-is-a-little-bit-inefficient-because-we-you-don-t-need-all-of-those-columns">
+   but this is a little bit inefficient because we you don’t need all of those columns
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#in-this-case-if-europe-0-and-japan-0-then-usa-must-be-1">
+   in this case, if europe = 0 and japan = 0, then USA must be 1
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#instead-of-creating-this-dataframe-and-then-dropping-that-column-we-could-drop-first-true">
+   Instead of creating this dataframe and then dropping that column, we could drop_first = True
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#now-that-we-have-done-that-for-origin-let-s-move-on-to-the-names">
+   Now that we have done that for origin, let’s move on to the names
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#we-will-need-to-dummy-code-these-data-as-well-but-let-s-look-at-it-first">
+   We will need to dummy code these data as well, but let’s look at it first
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#kind-of-hard-to-see-let-s-increase-the-figure-size">
+   Kind of hard to see. Let’s increase the figure size
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#looks-like-some-names-have-been-inputted-incorrectly">
+   Looks like some names have been inputted incorrectly!
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#let-s-fix-this-with-a-for-loop">
+   Let’s fix this with a for loop
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#let-s-try-this-again">
+   Let’s try this again
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#much-better">
+   Much better!
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#now-let-s-dummy-code-these">
+   Now, let’s dummy code these
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#can-someone-tell-me-how-to-dummy-code-this">
+   Can someone tell me how to dummy code this?
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#now-we-are-going-to-turn-one-of-our-continuous-columns-into-binned-data">
+   Now, we are going to turn one of our continuous columns into binned data
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sometimes-this-is-called-bucketing">
+   Sometimes, this is called bucketing
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#this-is-especially-useful-if-you-have-more-possible-data-points-than-actual-data-alternatively-this-basically-smooths-the-data-a-bit-which-means-you-have-less-precise-data-but-it-may-help-with-analyses">
+   This is especially useful if you have more possible data points than actual data. Alternatively, this basically smooths the data a bit, which means you have less precise data but it may help with analyses
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#let-s-do-horsepower">
+   Let’s do horsepower
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#we-want-to-bin-this-into-low-medium-and-high-horsepower">
+   We want to bin this into low, medium, and high horsepower
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#we-could-bin-the-data-in-a-couple-different-ways">
+   We could bin the data in a couple different ways:
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#but-one-big-limitation-of-this-is-that-look-there-are-very-few-data-points-in-the-largest-bin">
+   but one big limitation of this is that look = there are very few data points in the largest bin
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#let-s-try-creating-the-bins-such-that-they-contain-roughly-the-same-number-of-data">
+   Let’s try creating the bins such that they contain roughly the same number of data
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#for-that-we-will-use-qcut-instead">
+   For that, we will use qcut instead
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#if-you-want-to-define-your-own-bins-that-is-certainly-an-option">
+   If you want to define your own bins, that is certainly an option
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#maybe-i-want-horsepower-between-0-and-100-100-to-150-and-then-anything-above-150">
+   Maybe I want horsepower between 0 and 100, 100 to 150, and then anything above 150
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#i-think-i-m-more-of-a-fan-of-equally-populated-bins">
+   I think I’m more of a fan of equally populated bins
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#now-we-could-do-the-same-dummy-coding-as-before-here-we-will-pass-in-our-cut-values">
+   Now, we could do the same dummy coding as before. Here, we will pass in our cut values!
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#just-gonna-rename-these-columns-so-that-it-makes-sense-later-when-i-look-at-the-data">
+   Just gonna rename these columns so that it makes sense later when I look at the data
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#at-this-point-what-have-we-turned-horsepower-from-ratio-to-what-kind-of-data">
+   At this point, what have we turned horsepower from ratio to what kind of data?
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nominal-categorical">
+   nominal! Categorical!
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#but-these-seem-to-be-ordinal-data-right">
+   But these seem to be ordinal data, right?
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#well-you-could-treat-them-as-categorical-that-is-okay-but-you-lose-information-about-the-order-alterantively-we-could-give-each-group-a-rank-1-2-3-but-most-models-will-just-treat-those-ranks-as-interval-data-so-there-are-tradeoffs">
+   Well, you could treat them as categorical. That is okay, but you lose information about the order. Alterantively, we could give each group a rank (1,2,3), but most models will just treat those ranks as interval data. So, there are tradeoffs.
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#outliers-refer-to-data-that-are-basically-further-away-from-the-rest-of-the-data">
+   Outliers refer to data that are basically further away from the rest of the data
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#just-like-missing-data-or-duplicates-these-could-be-real-for-example-if-you-looked-at-wealth-i-m-sure-bezos-and-some-other-billionaries-would-show-up-as-outliers-they-could-be-errors-for-example-if-you-accidentally-added-another-0-to-the-zero">
+   just like missing data or duplicates, these could be real. For example, if you looked at wealth, I’m sure Bezos and some other billionaries would show up as outliers. They could be errors. For example, if you accidentally added another 0 to the zero
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#visualizations-will-help-us-see-if-we-have-outliers-especially-boxplots">
+   Visualizations will help us see if we have outliers. Especially boxplots
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#when-we-look-at-boxplots-we-are-checking-for-uni-variate-outliers-which-are-outliers-along-one-dimension">
+   When we look at boxplots, we are checking for uni-variate outliers - which are outliers along one dimension
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#these-are-outliers-because-they-are-far-away-from-the-other-values">
+   These are outliers because they are far away from the other values
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#you-will-typically-see-a-couple-different-ways-of-finding-these-outliers">
+   You will typically see a couple different ways of finding these outliers
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#both-methods-work-similar-use-dispersion-of-the-data-to-figure-out-what-is-too-far-away-from-the-other-data-points-we-thus-create-thresholds-outliers-are-data-beyond-those-thresholds">
+   Both methods work similar. Use dispersion of the data to figure out what is too far away from the other data points. We thus create thresholds. Outliers are data beyond those thresholds
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#now-that-i-have-my-thresholds-created-with-the-standard-deviation-i-can-remove-data-that-is-either-less-than-or-greater-than-those-thresholds">
+   Now that I have my thresholds created with the standard deviation, I can remove data that is either less than or greater than those thresholds
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#let-s-try-the-second-method-with-the-irq">
+   Let’s try the second method with the IRQ
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#first-thing-to-note-2-std-takes-away-more-data-than-the-iqr-method-you-could-do-2-5-std-or-3-std-the-other-thing-to-note-is-that-the-median-is-pretty-much-the-same-in-all-cases">
+   First thing to note - 2 std takes away more data than the IQR method. You could do 2.5 std or 3 std. The other thing to note is that the median is pretty much the same in all cases.
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#note-that-the-outlier-procedure-is-done-once-so-while-there-may-be-some-new-outliers-that-appear-after-removing-outliers-that-is-okay">
+   Note that the outlier procedure is done once. So while there may be some “new” outliers that appear after removing outliers, that is okay!
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#now-let-s-remove-the-outliers-from-the-other-columns">
+   Now, let’s remove the outliers from the other columns
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#any-guesses-on-how-we-can-do-that">
+   Any guesses on how we can do that?
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#i-m-suggesting-a-for-loop-like-we-made-before">
+   I’m suggesting a for loop like we made before!
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#so-now-our-outliers-have-been-replaced-with-nans-looks-good">
+   So now, our outliers have been replaced with nans. looks good!
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#just-to-reiterate-we-could-have-set-those-outliers-to-the-median-or-mean-values">
+   just to reiterate, we could have set those outliers to the median or mean values
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#we-can-check-for-bi-variate-outliers-by-plotting-scatterplots">
+   We can check for bi-variate outliers by plotting scatterplots
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#instead-of-showing-all-scatterplots-at-once-let-s-just-focus-on-one-scatterplot">
+   Instead of showing all scatterplots at once, let’s just focus on one scatterplot
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-datapoint-on-the-far-right-appears-to-be-pretty-far-from-the-others-we-can-quickly-see-this-with-the-sns-lmplot">
+   The datapoint on the far right appears to be pretty far from the others. We can quickly see this with the sns.lmplot
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#here-seaborn-is-plotting-a-best-fit-line-if-that-data-point-is-far-from-others-it-may-be-considered-an-outlier-with-high-leverage-if-that-outlier-is-actually-pulling-that-line-towards-it-then-it-may-be-considered-influential">
+   Here, seaborn is plotting a best fit line. If that data point is far from others, it may be considered an outlier with high leverage. If that outlier is actually pulling that line towards it, then it may be considered influential.
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#for-now-we-will-leave-these-datapoints-but-it-is-certainly-something-to-be-aware-of-and-something-we-may-touch-on-once-we-are-discussing-regression">
+   For now, we will leave these datapoints, but it is certainly something to be aware of and something we may touch on once we are discussing regression
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#now-let-s-just-fill-our-data-with-medians">
+   Now, let’s just fill our data with medians
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#anyone-remember-how">
+   Anyone remember how?
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#so-just-to-recap-here-was-our-procedure-for-engineering-our-features-columns">
+   So, just to recap. Here was our procedure for engineering our features (columns)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#this-is-just-one-example-of-how-to-clean-and-transform-the-data-we-could-have-done-these-steps-in-a-slightly-different-order-we-could-have-done-more-than-this-e-g-transforming-skewed-data-remove-bivariate-outliers-bucket-horsepower-then-make-it-numerical-ordinal-etc">
+   This is just one example of how to clean and transform the data. We could have done these steps in a slightly different order. We could have done more than this (e.g., transforming skewed data, remove bivariate outliers, bucket horsepower then make it numerical/ordinal, etc)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#now-that-the-data-is-saved-we-can-being-to-analyze-it-next-week-or-so">
+   Now that the data is saved, we can being to analyze it next week or so!
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <p>Announcements:</p>
+<ol class="simple">
+<li><p>Problem set 4 due Tuesday at midnight instead</p></li>
+<li><p>Problem set 5 and quiz 5 due at the end of the week</p></li>
+<li><p>Remember to attend sections!</p></li>
+<li><p>If you are doing the github extra credit, please send me an email with your github account.</p></li>
+</ol>
+<div class="section" id="today-we-will-be-dealing-with-transforming-categorical-and-ordinal-data-into-numerical-data">
+<h1>Today, we will be dealing with transforming categorical and ordinal data into numerical data<a class="headerlink" href="#today-we-will-be-dealing-with-transforming-categorical-and-ordinal-data-into-numerical-data" title="Permalink to this headline">¶</a></h1>
+<ol class="simple">
+<li><p>Dummy coding</p></li>
+<li><p>Binning continuous data into categories</p></li>
+<li><p>Outliers</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="load-the-dataset-we-saved-from-last-class">
+<h1>Load the dataset we saved from last class<a class="headerlink" href="#load-the-dataset-we-saved-from-last-class" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;Data_no_nans.csv&#39;</span>
+<span class="n">inital_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span><span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="check-the-data-quick">
+<h1>Check the data quick<a class="headerlink" href="#check-the-data-quick" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">inital_data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>mpg</th>
+      <th>cylinders</th>
+      <th>displacement</th>
+      <th>horsepower</th>
+      <th>weight</th>
+      <th>acceleration</th>
+      <th>model_year</th>
+      <th>origin</th>
+      <th>name</th>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>18.0</td>
+      <td>8.0</td>
+      <td>307.0</td>
+      <td>130.0</td>
+      <td>3504.0</td>
+      <td>12.0</td>
+      <td>70.0</td>
+      <td>usa</td>
+      <td>chevrolet</td>
+      <td>Sedan</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>14.0</td>
+      <td>8.0</td>
+      <td>454.0</td>
+      <td>220.0</td>
+      <td>4354.0</td>
+      <td>9.0</td>
+      <td>70.0</td>
+      <td>usa</td>
+      <td>chevrolet</td>
+      <td>Sedan</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>15.0</td>
+      <td>8.0</td>
+      <td>400.0</td>
+      <td>150.0</td>
+      <td>3761.0</td>
+      <td>9.5</td>
+      <td>70.0</td>
+      <td>usa</td>
+      <td>chevrolet</td>
+      <td>Sedan</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>24.0</td>
+      <td>4.0</td>
+      <td>113.0</td>
+      <td>95.0</td>
+      <td>2372.0</td>
+      <td>15.0</td>
+      <td>70.0</td>
+      <td>japan</td>
+      <td>toyota</td>
+      <td>Coupe</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>26.0</td>
+      <td>4.0</td>
+      <td>12.0</td>
+      <td>46.0</td>
+      <td>1835.0</td>
+      <td>20.5</td>
+      <td>70.0</td>
+      <td>europe</td>
+      <td>volkswagen</td>
+      <td>Coupe</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="whoops-we-need-to-take-care-of-that-how-do-we-do-that-again">
+<h1>Whoops. We need to take care of that. How do we do that again?<a class="headerlink" href="#whoops-we-need-to-take-care-of-that-how-do-we-do-that-again" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span><span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span><span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mpg</th>
+      <th>cylinders</th>
+      <th>displacement</th>
+      <th>horsepower</th>
+      <th>weight</th>
+      <th>acceleration</th>
+      <th>model_year</th>
+      <th>origin</th>
+      <th>name</th>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>18.0</td>
+      <td>8.0</td>
+      <td>307.0</td>
+      <td>130.0</td>
+      <td>3504.0</td>
+      <td>12.0</td>
+      <td>70.0</td>
+      <td>usa</td>
+      <td>chevrolet</td>
+      <td>Sedan</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>14.0</td>
+      <td>8.0</td>
+      <td>454.0</td>
+      <td>220.0</td>
+      <td>4354.0</td>
+      <td>9.0</td>
+      <td>70.0</td>
+      <td>usa</td>
+      <td>chevrolet</td>
+      <td>Sedan</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>15.0</td>
+      <td>8.0</td>
+      <td>400.0</td>
+      <td>150.0</td>
+      <td>3761.0</td>
+      <td>9.5</td>
+      <td>70.0</td>
+      <td>usa</td>
+      <td>chevrolet</td>
+      <td>Sedan</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>24.0</td>
+      <td>4.0</td>
+      <td>113.0</td>
+      <td>95.0</td>
+      <td>2372.0</td>
+      <td>15.0</td>
+      <td>70.0</td>
+      <td>japan</td>
+      <td>toyota</td>
+      <td>Coupe</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>26.0</td>
+      <td>4.0</td>
+      <td>12.0</td>
+      <td>46.0</td>
+      <td>1835.0</td>
+      <td>20.5</td>
+      <td>70.0</td>
+      <td>europe</td>
+      <td>volkswagen</td>
+      <td>Coupe</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="this-is-the-dataset-with-no-nans-right">
+<h1>This is the dataset with no nans, right?<a class="headerlink" href="#this-is-the-dataset-with-no-nans-right" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="let-s-just-double-check-that-quickly">
+<h1>Let’s just double check that quickly.<a class="headerlink" href="#let-s-just-double-check-that-quickly" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">info</span><span class="p">()</span> <span class="c1"># or describe</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+Int64Index: 371 entries, 0 to 370
+Data columns (total 10 columns):
+ #   Column        Non-Null Count  Dtype  
+---  ------        --------------  -----  
+ 0   mpg           371 non-null    float64
+ 1   cylinders     371 non-null    float64
+ 2   displacement  371 non-null    float64
+ 3   horsepower    371 non-null    float64
+ 4   weight        371 non-null    float64
+ 5   acceleration  371 non-null    float64
+ 6   model_year    371 non-null    float64
+ 7   origin        371 non-null    object 
+ 8   name          371 non-null    object 
+ 9   Type          371 non-null    object 
+dtypes: float64(7), object(3)
+memory usage: 31.9+ KB
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="now-let-s-look-at-our-string-variables-and-convert-them-into-boolean-values">
+<h1>Now, let’s look at our string variables and convert them into boolean values<a class="headerlink" href="#now-let-s-look-at-our-string-variables-and-convert-them-into-boolean-values" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mpg</th>
+      <th>cylinders</th>
+      <th>displacement</th>
+      <th>horsepower</th>
+      <th>weight</th>
+      <th>acceleration</th>
+      <th>model_year</th>
+      <th>origin</th>
+      <th>name</th>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>18.0</td>
+      <td>8.0</td>
+      <td>307.0</td>
+      <td>130.0</td>
+      <td>3504.0</td>
+      <td>12.0</td>
+      <td>70.0</td>
+      <td>usa</td>
+      <td>chevrolet</td>
+      <td>Sedan</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>14.0</td>
+      <td>8.0</td>
+      <td>454.0</td>
+      <td>220.0</td>
+      <td>4354.0</td>
+      <td>9.0</td>
+      <td>70.0</td>
+      <td>usa</td>
+      <td>chevrolet</td>
+      <td>Sedan</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>15.0</td>
+      <td>8.0</td>
+      <td>400.0</td>
+      <td>150.0</td>
+      <td>3761.0</td>
+      <td>9.5</td>
+      <td>70.0</td>
+      <td>usa</td>
+      <td>chevrolet</td>
+      <td>Sedan</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>24.0</td>
+      <td>4.0</td>
+      <td>113.0</td>
+      <td>95.0</td>
+      <td>2372.0</td>
+      <td>15.0</td>
+      <td>70.0</td>
+      <td>japan</td>
+      <td>toyota</td>
+      <td>Coupe</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>26.0</td>
+      <td>4.0</td>
+      <td>12.0</td>
+      <td>46.0</td>
+      <td>1835.0</td>
+      <td>20.5</td>
+      <td>70.0</td>
+      <td>europe</td>
+      <td>volkswagen</td>
+      <td>Coupe</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="let-s-look-at-type-first">
+<h1>let’s look at type first<a class="headerlink" href="#let-s-look-at-type-first" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="i-like-to-use-a-countplot-here-just-to-visualize-the-different-categories">
+<h1>I like to use a countplot here just to visualize the different categories<a class="headerlink" href="#i-like-to-use-a-countplot-here-just-to-visualize-the-different-categories" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Type&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/homebrew/anaconda3/lib/python3.8/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variable as a keyword arg: x. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;Type&#39;, ylabel=&#39;count&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture09_dummy_outliers_14_2.png" src="../_images/s21_Lecture09_dummy_outliers_14_2.png" />
+</div>
+</div>
+</div>
+<div class="section" id="seems-fine-we-can-easily-convert-these-two-1s-and-0s-like-so">
+<h1>Seems fine. We can easily convert these two 1s and 0s like so<a class="headerlink" href="#seems-fine-we-can-easily-convert-these-two-1s-and-0s-like-so" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sedan_1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Type&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Sedan&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># where is really helpful here! its like an if statement in excel</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sedan_1_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">sedan_1</span><span class="p">,</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Sedans_1&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="that-seems-to-work-out-okay">
+<h1>That seems to work out okay!<a class="headerlink" href="#that-seems-to-work-out-okay" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">sedan_1_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     Sedans_1
+0           1
+1           1
+2           1
+3           0
+4           0
+..        ...
+366         1
+367         0
+368         0
+369         1
+370         1
+
+[371 rows x 1 columns]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="before-we-concat-with-our-data-let-s-check-out-our-other-categorical-variables">
+<h1>Before we concat with our data, let’s check out our other categorical variables<a class="headerlink" href="#before-we-concat-with-our-data-let-s-check-out-our-other-categorical-variables" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="let-s-do-origin-next">
+<h1>Let’s do origin next<a class="headerlink" href="#let-s-do-origin-next" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;origin&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/homebrew/anaconda3/lib/python3.8/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variable as a keyword arg: x. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;origin&#39;, ylabel=&#39;count&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture09_dummy_outliers_21_2.png" src="../_images/s21_Lecture09_dummy_outliers_21_2.png" />
+</div>
+</div>
+</div>
+<div class="section" id="this-is-a-problem-if-we-want-to-convert-this-to-1s-and-0s-how-do-we-do-that-with-3-categories">
+<h1>This is a problem. If we want to convert this to 1s and 0s, how do we do that with 3 categories!?!?!<a class="headerlink" href="#this-is-a-problem-if-we-want-to-convert-this-to-1s-and-0s-how-do-we-do-that-with-3-categories" title="Permalink to this headline">¶</a></h1>
+<p>We also don’t want this to be 0, 1, and 2 because then, there is a “rank” to the data. This isn’t ordinal or interval data, it is categorial. So, how do we handle this?</p>
+</div>
+<div class="section" id="we-use-dummy-coding">
+<h1>We use dummy coding!<a class="headerlink" href="#we-use-dummy-coding" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;origin&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>europe</th>
+      <th>japan</th>
+      <th>usa</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>366</th>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>367</th>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>368</th>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>369</th>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>370</th>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+<p>371 rows × 3 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="what-dummy-coding-has-done-is-that-now-we-have-converted-our-origin-column-into-numerical-boolean-values-across-multiple-columns">
+<h1>What dummy coding has done is that now we have converted our origin column into numerical (boolean) values across multiple columns<a class="headerlink" href="#what-dummy-coding-has-done-is-that-now-we-have-converted-our-origin-column-into-numerical-boolean-values-across-multiple-columns" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="but-this-is-a-little-bit-inefficient-because-we-you-don-t-need-all-of-those-columns">
+<h1>but this is a little bit inefficient because we you don’t need all of those columns<a class="headerlink" href="#but-this-is-a-little-bit-inefficient-because-we-you-don-t-need-all-of-those-columns" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="in-this-case-if-europe-0-and-japan-0-then-usa-must-be-1">
+<h1>in this case, if europe = 0 and japan = 0, then USA must be 1<a class="headerlink" href="#in-this-case-if-europe-0-and-japan-0-then-usa-must-be-1" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="instead-of-creating-this-dataframe-and-then-dropping-that-column-we-could-drop-first-true">
+<h1>Instead of creating this dataframe and then dropping that column, we could drop_first = True<a class="headerlink" href="#instead-of-creating-this-dataframe-and-then-dropping-that-column-we-could-drop-first-true" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">origin_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;origin&#39;</span><span class="p">],</span><span class="n">drop_first</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">origin_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     japan  usa
+0        0    1
+1        0    1
+2        0    1
+3        1    0
+4        0    0
+..     ...  ...
+366      0    1
+367      0    0
+368      0    1
+369      0    1
+370      0    1
+
+[371 rows x 2 columns]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="now-that-we-have-done-that-for-origin-let-s-move-on-to-the-names">
+<h1>Now that we have done that for origin, let’s move on to the names<a class="headerlink" href="#now-that-we-have-done-that-for-origin-let-s-move-on-to-the-names" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="we-will-need-to-dummy-code-these-data-as-well-but-let-s-look-at-it-first">
+<h1>We will need to dummy code these data as well, but let’s look at it first<a class="headerlink" href="#we-will-need-to-dummy-code-these-data-as-well-but-let-s-look-at-it-first" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/homebrew/anaconda3/lib/python3.8/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variable as a keyword arg: x. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;name&#39;, ylabel=&#39;count&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture09_dummy_outliers_27_2.png" src="../_images/s21_Lecture09_dummy_outliers_27_2.png" />
+</div>
+</div>
+</div>
+<div class="section" id="kind-of-hard-to-see-let-s-increase-the-figure-size">
+<h1>Kind of hard to see. Let’s increase the figure size<a class="headerlink" href="#kind-of-hard-to-see-let-s-increase-the-figure-size" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">12</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/homebrew/anaconda3/lib/python3.8/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variable as a keyword arg: x. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;name&#39;, ylabel=&#39;count&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture09_dummy_outliers_29_2.png" src="../_images/s21_Lecture09_dummy_outliers_29_2.png" />
+</div>
+</div>
+</div>
+<div class="section" id="looks-like-some-names-have-been-inputted-incorrectly">
+<h1>Looks like some names have been inputted incorrectly!<a class="headerlink" href="#looks-like-some-names-have-been-inputted-incorrectly" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="let-s-fix-this-with-a-for-loop">
+<h1>Let’s fix this with a for loop<a class="headerlink" href="#let-s-fix-this-with-a-for-loop" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]:</span>
+  <span class="k">if</span> <span class="n">name</span><span class="o">==</span><span class="s1">&#39;chevroelt&#39;</span><span class="p">:</span>
+    <span class="n">name_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;chevrolet&#39;</span><span class="p">)</span>
+  <span class="k">elif</span> <span class="n">name</span><span class="o">==</span><span class="s1">&#39;toyouta&#39;</span><span class="p">:</span>
+    <span class="n">name_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;toyota&#39;</span><span class="p">)</span>
+  <span class="k">elif</span> <span class="n">name</span><span class="o">==</span><span class="s1">&#39;vokswagen&#39;</span><span class="p">:</span>
+    <span class="n">name_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;volkswagen&#39;</span><span class="p">)</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="n">name_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here is a different method using np.where which would be quicker than the for loops, especially when you have lots of data</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#data[&#39;name&#39;] = np.where(data[&#39;name&#39;]==&#39;chevroelt&#39;,&#39;chevrolet&#39;,data[&#39;name&#39;])</span>
+<span class="c1">#data[&#39;name&#39;] = np.where(data[&#39;name&#39;]==&#39;toyouta&#39;,&#39;toyota&#39;,data[&#39;name&#39;])</span>
+<span class="c1">#data[&#39;name&#39;] = np.where(data[&#39;name&#39;]==&#39;vokswagen&#39;,&#39;volkswagen&#39;,data[&#39;name&#39;])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="let-s-try-this-again">
+<h1>Let’s try this again<a class="headerlink" href="#let-s-try-this-again" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">12</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">name_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/homebrew/anaconda3/lib/python3.8/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variable as a keyword arg: x. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:ylabel=&#39;count&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture09_dummy_outliers_35_2.png" src="../_images/s21_Lecture09_dummy_outliers_35_2.png" />
+</div>
+</div>
+</div>
+<div class="section" id="much-better">
+<h1>Much better!<a class="headerlink" href="#much-better" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="now-let-s-dummy-code-these">
+<h1>Now, let’s dummy code these<a class="headerlink" href="#now-let-s-dummy-code-these" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="can-someone-tell-me-how-to-dummy-code-this">
+<h1>Can someone tell me how to dummy code this?<a class="headerlink" href="#can-someone-tell-me-how-to-dummy-code-this" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">name_list</span><span class="p">,</span><span class="n">drop_first</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">name_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     chevrolet  nissan  peugeot  saab  toyota  volkswagen  volvo
+0            1       0        0     0       0           0      0
+1            1       0        0     0       0           0      0
+2            1       0        0     0       0           0      0
+3            0       0        0     0       1           0      0
+4            0       0        0     0       0           1      0
+..         ...     ...      ...   ...     ...         ...    ...
+366          1       0        0     0       0           0      0
+367          0       0        0     0       0           1      0
+368          0       0        0     0       0           1      0
+369          1       0        0     0       0           0      0
+370          1       0        0     0       0           0      0
+
+[371 rows x 7 columns]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="now-we-are-going-to-turn-one-of-our-continuous-columns-into-binned-data">
+<h1>Now, we are going to turn one of our continuous columns into binned data<a class="headerlink" href="#now-we-are-going-to-turn-one-of-our-continuous-columns-into-binned-data" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="sometimes-this-is-called-bucketing">
+<h1>Sometimes, this is called bucketing<a class="headerlink" href="#sometimes-this-is-called-bucketing" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="this-is-especially-useful-if-you-have-more-possible-data-points-than-actual-data-alternatively-this-basically-smooths-the-data-a-bit-which-means-you-have-less-precise-data-but-it-may-help-with-analyses">
+<h1>This is especially useful if you have more possible data points than actual data. Alternatively, this basically smooths the data a bit, which means you have less precise data but it may help with analyses<a class="headerlink" href="#this-is-especially-useful-if-you-have-more-possible-data-points-than-actual-data-alternatively-this-basically-smooths-the-data-a-bit-which-means-you-have-less-precise-data-but-it-may-help-with-analyses" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="let-s-do-horsepower">
+<h1>Let’s do horsepower<a class="headerlink" href="#let-s-do-horsepower" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;horsepower&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/homebrew/anaconda3/lib/python3.8/site-packages/seaborn/distributions.py:2551: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;horsepower&#39;, ylabel=&#39;Density&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture09_dummy_outliers_40_2.png" src="../_images/s21_Lecture09_dummy_outliers_40_2.png" />
+</div>
+</div>
+</div>
+<div class="section" id="we-want-to-bin-this-into-low-medium-and-high-horsepower">
+<h1>We want to bin this into low, medium, and high horsepower<a class="headerlink" href="#we-want-to-bin-this-into-low-medium-and-high-horsepower" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="we-could-bin-the-data-in-a-couple-different-ways">
+<h1>We could bin the data in a couple different ways:<a class="headerlink" href="#we-could-bin-the-data-in-a-couple-different-ways" title="Permalink to this headline">¶</a></h1>
+<ol class="simple">
+<li><p>bins are equally separate</p></li>
+<li><p>bins have equal amounts of data inside of them</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">equal_bin_size</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;horsepower&#39;</span><span class="p">],</span><span class="mi">3</span><span class="p">)</span> <span class="c1"># split data into 3 bins of equal separation</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">equal_bin_size</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0       (114.0, 182.0]
+1       (182.0, 250.0]
+2       (114.0, 182.0]
+3      (45.796, 114.0]
+4      (45.796, 114.0]
+            ...       
+366    (45.796, 114.0]
+367    (45.796, 114.0]
+368    (45.796, 114.0]
+369    (45.796, 114.0]
+370    (45.796, 114.0]
+Name: horsepower, Length: 371, dtype: category
+Categories (3, interval[float64]): [(45.796, 114.0] &lt; (114.0, 182.0] &lt; (182.0, 250.0]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">equal_bin_size</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(114.0, 182.0], (182.0, 250.0], (45.796, 114.0]]
+Categories (3, interval[float64]): [(45.796, 114.0] &lt; (114.0, 182.0] &lt; (182.0, 250.0]]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="but-one-big-limitation-of-this-is-that-look-there-are-very-few-data-points-in-the-largest-bin">
+<h1>but one big limitation of this is that look = there are very few data points in the largest bin<a class="headerlink" href="#but-one-big-limitation-of-this-is-that-look-there-are-very-few-data-points-in-the-largest-bin" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">equal_bin_size</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(45.796, 114.0]    297
+(114.0, 182.0]      71
+(182.0, 250.0]       3
+Name: horsepower, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="let-s-try-creating-the-bins-such-that-they-contain-roughly-the-same-number-of-data">
+<h1>Let’s try creating the bins such that they contain roughly the same number of data<a class="headerlink" href="#let-s-try-creating-the-bins-such-that-they-contain-roughly-the-same-number-of-data" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="for-that-we-will-use-qcut-instead">
+<h1>For that, we will use qcut instead<a class="headerlink" href="#for-that-we-will-use-qcut-instead" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">equal_bin_counts</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">qcut</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;horsepower&#39;</span><span class="p">],</span><span class="mi">3</span><span class="p">)</span> <span class="c1"># split data into 3 bins of equal separation</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">equal_bin_counts</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0      (100.0, 250.0]
+1      (100.0, 250.0]
+2      (100.0, 250.0]
+3       (78.0, 100.0]
+4      (45.999, 78.0]
+            ...      
+366     (78.0, 100.0]
+367    (45.999, 78.0]
+368     (78.0, 100.0]
+369     (78.0, 100.0]
+370     (78.0, 100.0]
+Name: horsepower, Length: 371, dtype: category
+Categories (3, interval[float64]): [(45.999, 78.0] &lt; (78.0, 100.0] &lt; (100.0, 250.0]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">equal_bin_counts</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(78.0, 100.0]     128
+(45.999, 78.0]    127
+(100.0, 250.0]    116
+Name: horsepower, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="if-you-want-to-define-your-own-bins-that-is-certainly-an-option">
+<h1>If you want to define your own bins, that is certainly an option<a class="headerlink" href="#if-you-want-to-define-your-own-bins-that-is-certainly-an-option" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="maybe-i-want-horsepower-between-0-and-100-100-to-150-and-then-anything-above-150">
+<h1>Maybe I want horsepower between 0 and 100, 100 to 150, and then anything above 150<a class="headerlink" href="#maybe-i-want-horsepower-between-0-and-100-100-to-150-and-then-anything-above-150" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">garrett_bins</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;horsepower&#39;</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">150</span><span class="p">,</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;horsepower&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">garrett_bins</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0      (100.0, 150.0]
+1      (150.0, 250.0]
+2      (100.0, 150.0]
+3        (0.0, 100.0]
+4        (0.0, 100.0]
+            ...      
+366      (0.0, 100.0]
+367      (0.0, 100.0]
+368      (0.0, 100.0]
+369      (0.0, 100.0]
+370      (0.0, 100.0]
+Name: horsepower, Length: 371, dtype: category
+Categories (3, interval[float64]): [(0.0, 100.0] &lt; (100.0, 150.0] &lt; (150.0, 250.0]]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="i-think-i-m-more-of-a-fan-of-equally-populated-bins">
+<h1>I think I’m more of a fan of equally populated bins<a class="headerlink" href="#i-think-i-m-more-of-a-fan-of-equally-populated-bins" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="now-we-could-do-the-same-dummy-coding-as-before-here-we-will-pass-in-our-cut-values">
+<h1>Now, we could do the same dummy coding as before. Here, we will pass in our cut values!<a class="headerlink" href="#now-we-could-do-the-same-dummy-coding-as-before-here-we-will-pass-in-our-cut-values" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">horsepower_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">equal_bin_counts</span><span class="p">,</span><span class="n">drop_first</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">horsepower_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     (78.0, 100.0]  (100.0, 250.0]
+0                0               1
+1                0               1
+2                0               1
+3                1               0
+4                0               0
+..             ...             ...
+366              1               0
+367              0               0
+368              1               0
+369              1               0
+370              1               0
+
+[371 rows x 2 columns]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="just-gonna-rename-these-columns-so-that-it-makes-sense-later-when-i-look-at-the-data">
+<h1>Just gonna rename these columns so that it makes sense later when I look at the data<a class="headerlink" href="#just-gonna-rename-these-columns-so-that-it-makes-sense-later-when-i-look-at-the-data" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">horsepower_df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Medium_HP&#39;</span><span class="p">,</span><span class="s1">&#39;High_HP&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">horsepower_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Medium_HP</th>
+      <th>High_HP</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="at-this-point-what-have-we-turned-horsepower-from-ratio-to-what-kind-of-data">
+<h1>At this point, what have we turned horsepower from ratio to what kind of data?<a class="headerlink" href="#at-this-point-what-have-we-turned-horsepower-from-ratio-to-what-kind-of-data" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="nominal-categorical">
+<h1>nominal! Categorical!<a class="headerlink" href="#nominal-categorical" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="but-these-seem-to-be-ordinal-data-right">
+<h1>But these seem to be ordinal data, right?<a class="headerlink" href="#but-these-seem-to-be-ordinal-data-right" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="well-you-could-treat-them-as-categorical-that-is-okay-but-you-lose-information-about-the-order-alterantively-we-could-give-each-group-a-rank-1-2-3-but-most-models-will-just-treat-those-ranks-as-interval-data-so-there-are-tradeoffs">
+<h1>Well, you could treat them as categorical. That is okay, but you lose information about the order. Alterantively, we could give each group a rank (1,2,3), but most models will just treat those ranks as interval data. So, there are tradeoffs.<a class="headerlink" href="#well-you-could-treat-them-as-categorical-that-is-okay-but-you-lose-information-about-the-order-alterantively-we-could-give-each-group-a-rank-1-2-3-but-most-models-will-just-treat-those-ranks-as-interval-data-so-there-are-tradeoffs" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="outliers-refer-to-data-that-are-basically-further-away-from-the-rest-of-the-data">
+<h1>Outliers refer to data that are basically further away from the rest of the data<a class="headerlink" href="#outliers-refer-to-data-that-are-basically-further-away-from-the-rest-of-the-data" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="just-like-missing-data-or-duplicates-these-could-be-real-for-example-if-you-looked-at-wealth-i-m-sure-bezos-and-some-other-billionaries-would-show-up-as-outliers-they-could-be-errors-for-example-if-you-accidentally-added-another-0-to-the-zero">
+<h1>just like missing data or duplicates, these could be real. For example, if you looked at wealth, I’m sure Bezos and some other billionaries would show up as outliers. They could be errors. For example, if you accidentally added another 0 to the zero<a class="headerlink" href="#just-like-missing-data-or-duplicates-these-could-be-real-for-example-if-you-looked-at-wealth-i-m-sure-bezos-and-some-other-billionaries-would-show-up-as-outliers-they-could-be-errors-for-example-if-you-accidentally-added-another-0-to-the-zero" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mpg</th>
+      <th>cylinders</th>
+      <th>displacement</th>
+      <th>horsepower</th>
+      <th>weight</th>
+      <th>acceleration</th>
+      <th>model_year</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>371.000000</td>
+      <td>371.000000</td>
+      <td>371.000000</td>
+      <td>371.000000</td>
+      <td>371.000000</td>
+      <td>371.000000</td>
+      <td>371.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>25.370350</td>
+      <td>5.086253</td>
+      <td>165.460916</td>
+      <td>94.814016</td>
+      <td>2871.509434</td>
+      <td>16.127493</td>
+      <td>77.350404</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>7.410867</td>
+      <td>1.520348</td>
+      <td>95.951313</td>
+      <td>29.642745</td>
+      <td>1253.447950</td>
+      <td>2.610001</td>
+      <td>3.100326</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>11.000000</td>
+      <td>3.000000</td>
+      <td>-600.000000</td>
+      <td>46.000000</td>
+      <td>1649.000000</td>
+      <td>9.000000</td>
+      <td>70.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>19.200000</td>
+      <td>4.000000</td>
+      <td>98.000000</td>
+      <td>72.000000</td>
+      <td>2189.000000</td>
+      <td>14.500000</td>
+      <td>75.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>25.000000</td>
+      <td>4.000000</td>
+      <td>134.000000</td>
+      <td>90.000000</td>
+      <td>2694.000000</td>
+      <td>15.800000</td>
+      <td>78.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>31.000000</td>
+      <td>6.000000</td>
+      <td>231.000000</td>
+      <td>110.000000</td>
+      <td>3344.500000</td>
+      <td>17.600000</td>
+      <td>80.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>46.600000</td>
+      <td>8.000000</td>
+      <td>454.000000</td>
+      <td>250.000000</td>
+      <td>22280.000000</td>
+      <td>24.800000</td>
+      <td>82.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>So, we can see some outliers with just describe. It looks like we have some horsepower values less than 0, which doesn’t make sense!</p>
+<p>You could selectly find these values using boolean logic and remove them. That would totally be justified.</p>
+<p>Instead, let’s use some established methods for outlier removal that may catch some unexpected outliers</p>
+</div>
+<div class="section" id="visualizations-will-help-us-see-if-we-have-outliers-especially-boxplots">
+<h1>Visualizations will help us see if we have outliers. Especially boxplots<a class="headerlink" href="#visualizations-will-help-us-see-if-we-have-outliers-especially-boxplots" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span><span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">12</span><span class="p">))</span>
+
+<span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+  <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">column</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span><span class="nb">float</span><span class="p">)</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">column</span><span class="p">],</span><span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="n">count</span><span class="p">])</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="n">count</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/s21_Lecture09_dummy_outliers_61_0.png" src="../_images/s21_Lecture09_dummy_outliers_61_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="when-we-look-at-boxplots-we-are-checking-for-uni-variate-outliers-which-are-outliers-along-one-dimension">
+<h1>When we look at boxplots, we are checking for uni-variate outliers - which are outliers along one dimension<a class="headerlink" href="#when-we-look-at-boxplots-we-are-checking-for-uni-variate-outliers-which-are-outliers-along-one-dimension" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="these-are-outliers-because-they-are-far-away-from-the-other-values">
+<h1>These are outliers because they are far away from the other values<a class="headerlink" href="#these-are-outliers-because-they-are-far-away-from-the-other-values" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="you-will-typically-see-a-couple-different-ways-of-finding-these-outliers">
+<h1>You will typically see a couple different ways of finding these outliers<a class="headerlink" href="#you-will-typically-see-a-couple-different-ways-of-finding-these-outliers" title="Permalink to this headline">¶</a></h1>
+<ol class="simple">
+<li><p>multiple of the standard deviation</p></li>
+<li><p>outside of IQR which is basically what the boxplot is doing</p></li>
+</ol>
+</div>
+<div class="section" id="both-methods-work-similar-use-dispersion-of-the-data-to-figure-out-what-is-too-far-away-from-the-other-data-points-we-thus-create-thresholds-outliers-are-data-beyond-those-thresholds">
+<h1>Both methods work similar. Use dispersion of the data to figure out what is too far away from the other data points. We thus create thresholds. Outliers are data beyond those thresholds<a class="headerlink" href="#both-methods-work-similar-use-dispersion-of-the-data-to-figure-out-what-is-too-far-away-from-the-other-data-points-we-thus-create-thresholds-outliers-are-data-beyond-those-thresholds" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temp_acc</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;acceleration&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">temp_acc</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/homebrew/anaconda3/lib/python3.8/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variable as a keyword arg: x. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;acceleration&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture09_dummy_outliers_64_2.png" src="../_images/s21_Lecture09_dummy_outliers_64_2.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">threshold1_upper</span> <span class="o">=</span> <span class="n">temp_acc</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">temp_acc</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="n">threshold1_lower</span> <span class="o">=</span> <span class="n">temp_acc</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">temp_acc</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">threshold1_upper</span><span class="p">,</span><span class="n">threshold1_lower</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>21.34749592142496 10.907490601486057
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="now-that-i-have-my-thresholds-created-with-the-standard-deviation-i-can-remove-data-that-is-either-less-than-or-greater-than-those-thresholds">
+<h1>Now that I have my thresholds created with the standard deviation, I can remove data that is either less than or greater than those thresholds<a class="headerlink" href="#now-that-i-have-my-thresholds-created-with-the-standard-deviation-i-can-remove-data-that-is-either-less-than-or-greater-than-those-thresholds" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temp_acc_std</span> <span class="o">=</span> <span class="n">temp_acc</span><span class="p">[(</span><span class="n">temp_acc</span> <span class="o">&lt;</span> <span class="n">threshold1_upper</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">temp_acc</span> <span class="o">&gt;</span> <span class="n">threshold1_lower</span><span class="p">)]</span>
+<span class="n">temp_acc_std</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(353,)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span><span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">temp_acc</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">temp_acc_std</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="mi">6</span><span class="p">,</span><span class="mi">27</span><span class="p">])</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="mi">6</span><span class="p">,</span><span class="mi">27</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/homebrew/anaconda3/lib/python3.8/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variable as a keyword arg: x. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/opt/homebrew/anaconda3/lib/python3.8/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variable as a keyword arg: x. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(6.0, 27.0)
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture09_dummy_outliers_68_2.png" src="../_images/s21_Lecture09_dummy_outliers_68_2.png" />
+</div>
+</div>
+</div>
+<div class="section" id="let-s-try-the-second-method-with-the-irq">
+<h1>Let’s try the second method with the IRQ<a class="headerlink" href="#let-s-try-the-second-method-with-the-irq" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Q1</span> <span class="o">=</span> <span class="n">temp_acc</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="o">.</span><span class="mi">25</span><span class="p">)</span>
+<span class="n">Q3</span> <span class="o">=</span> <span class="n">temp_acc</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="o">.</span><span class="mi">75</span><span class="p">)</span>
+<span class="n">IQR</span> <span class="o">=</span> <span class="n">Q3</span><span class="o">-</span><span class="n">Q1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">IQR</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.1000000000000014
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temp_acc_iqr</span> <span class="o">=</span> <span class="n">temp_acc</span><span class="p">[(</span><span class="n">temp_acc</span> <span class="o">&gt;</span> <span class="p">(</span><span class="n">Q1</span> <span class="o">-</span> <span class="mf">1.5</span> <span class="o">*</span> <span class="n">IQR</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">temp_acc</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">Q3</span> <span class="o">+</span> <span class="mf">1.5</span> <span class="o">*</span> <span class="n">IQR</span><span class="p">))]</span>
+<span class="n">temp_acc_iqr</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(364,)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span><span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">temp_acc</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">temp_acc_std</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">temp_acc_iqr</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="mi">6</span><span class="p">,</span><span class="mi">27</span><span class="p">])</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="mi">6</span><span class="p">,</span><span class="mi">27</span><span class="p">])</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="mi">6</span><span class="p">,</span><span class="mi">27</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/homebrew/anaconda3/lib/python3.8/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variable as a keyword arg: x. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/opt/homebrew/anaconda3/lib/python3.8/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variable as a keyword arg: x. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/opt/homebrew/anaconda3/lib/python3.8/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variable as a keyword arg: x. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture09_dummy_outliers_72_1.png" src="../_images/s21_Lecture09_dummy_outliers_72_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="first-thing-to-note-2-std-takes-away-more-data-than-the-iqr-method-you-could-do-2-5-std-or-3-std-the-other-thing-to-note-is-that-the-median-is-pretty-much-the-same-in-all-cases">
+<h1>First thing to note - 2 std takes away more data than the IQR method. You could do 2.5 std or 3 std. The other thing to note is that the median is pretty much the same in all cases.<a class="headerlink" href="#first-thing-to-note-2-std-takes-away-more-data-than-the-iqr-method-you-could-do-2-5-std-or-3-std-the-other-thing-to-note-is-that-the-median-is-pretty-much-the-same-in-all-cases" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="note-that-the-outlier-procedure-is-done-once-so-while-there-may-be-some-new-outliers-that-appear-after-removing-outliers-that-is-okay">
+<h1>Note that the outlier procedure is done once. So while there may be some “new” outliers that appear after removing outliers, that is okay!<a class="headerlink" href="#note-that-the-outlier-procedure-is-done-once-so-while-there-may-be-some-new-outliers-that-appear-after-removing-outliers-that-is-okay" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="now-let-s-remove-the-outliers-from-the-other-columns">
+<h1>Now, let’s remove the outliers from the other columns<a class="headerlink" href="#now-let-s-remove-the-outliers-from-the-other-columns" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="any-guesses-on-how-we-can-do-that">
+<h1>Any guesses on how we can do that?<a class="headerlink" href="#any-guesses-on-how-we-can-do-that" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="i-m-suggesting-a-for-loop-like-we-made-before">
+<h1>I’m suggesting a for loop like we made before!<a class="headerlink" href="#i-m-suggesting-a-for-loop-like-we-made-before" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+  <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">column</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span><span class="nb">float</span><span class="p">)</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+    <span class="n">Q1</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="o">.</span><span class="mi">25</span><span class="p">)</span>
+    <span class="n">Q3</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="o">.</span><span class="mi">75</span><span class="p">)</span>
+    <span class="n">IQR</span> <span class="o">=</span> <span class="n">Q3</span><span class="o">-</span><span class="n">Q1</span>
+
+    <span class="n">index</span> <span class="o">=</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">&gt;</span> <span class="p">(</span><span class="n">Q1</span> <span class="o">-</span> <span class="mf">1.5</span> <span class="o">*</span> <span class="n">IQR</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">Q3</span> <span class="o">+</span> <span class="mf">1.5</span> <span class="o">*</span> <span class="n">IQR</span><span class="p">))</span>
+    <span class="n">data</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="n">column</span><span class="p">],</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;acceleration&#39;</span><span class="p">])</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="mi">6</span><span class="p">,</span><span class="mi">27</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/homebrew/anaconda3/lib/python3.8/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variable as a keyword arg: x. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(6.0, 27.0)
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture09_dummy_outliers_77_2.png" src="../_images/s21_Lecture09_dummy_outliers_77_2.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">isnull</span><span class="p">(),</span><span class="n">cmap</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Green&#39;</span><span class="p">,</span><span class="s1">&#39;Red&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture09_dummy_outliers_78_1.png" src="../_images/s21_Lecture09_dummy_outliers_78_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="so-now-our-outliers-have-been-replaced-with-nans-looks-good">
+<h1>So now, our outliers have been replaced with nans. looks good!<a class="headerlink" href="#so-now-our-outliers-have-been-replaced-with-nans-looks-good" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="just-to-reiterate-we-could-have-set-those-outliers-to-the-median-or-mean-values">
+<h1>just to reiterate, we could have set those outliers to the median or mean values<a class="headerlink" href="#just-to-reiterate-we-could-have-set-those-outliers-to-the-median-or-mean-values" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="we-can-check-for-bi-variate-outliers-by-plotting-scatterplots">
+<h1>We can check for bi-variate outliers by plotting scatterplots<a class="headerlink" href="#we-can-check-for-bi-variate-outliers-by-plotting-scatterplots" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="instead-of-showing-all-scatterplots-at-once-let-s-just-focus-on-one-scatterplot">
+<h1>Instead of showing all scatterplots at once, let’s just focus on one scatterplot<a class="headerlink" href="#instead-of-showing-all-scatterplots-at-once-let-s-just-focus-on-one-scatterplot" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span> <span class="s1">&#39;weight&#39;</span><span class="p">,</span><span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;displacement&#39;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;weight&#39;, ylabel=&#39;displacement&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture09_dummy_outliers_81_1.png" src="../_images/s21_Lecture09_dummy_outliers_81_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="the-datapoint-on-the-far-right-appears-to-be-pretty-far-from-the-others-we-can-quickly-see-this-with-the-sns-lmplot">
+<h1>The datapoint on the far right appears to be pretty far from the others. We can quickly see this with the sns.lmplot<a class="headerlink" href="#the-datapoint-on-the-far-right-appears-to-be-pretty-far-from-the-others-we-can-quickly-see-this-with-the-sns-lmplot" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">lmplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span> <span class="s1">&#39;weight&#39;</span><span class="p">,</span><span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;displacement&#39;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="mi">1500</span><span class="p">,</span><span class="mi">5500</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1500.0, 5500.0)
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture09_dummy_outliers_83_1.png" src="../_images/s21_Lecture09_dummy_outliers_83_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="here-seaborn-is-plotting-a-best-fit-line-if-that-data-point-is-far-from-others-it-may-be-considered-an-outlier-with-high-leverage-if-that-outlier-is-actually-pulling-that-line-towards-it-then-it-may-be-considered-influential">
+<h1>Here, seaborn is plotting a best fit line. If that data point is far from others, it may be considered an outlier with high leverage. If that outlier is actually pulling that line towards it, then it may be considered influential.<a class="headerlink" href="#here-seaborn-is-plotting-a-best-fit-line-if-that-data-point-is-far-from-others-it-may-be-considered-an-outlier-with-high-leverage-if-that-outlier-is-actually-pulling-that-line-towards-it-then-it-may-be-considered-influential" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="for-now-we-will-leave-these-datapoints-but-it-is-certainly-something-to-be-aware-of-and-something-we-may-touch-on-once-we-are-discussing-regression">
+<h1>For now, we will leave these datapoints, but it is certainly something to be aware of and something we may touch on once we are discussing regression<a class="headerlink" href="#for-now-we-will-leave-these-datapoints-but-it-is-certainly-something-to-be-aware-of-and-something-we-may-touch-on-once-we-are-discussing-regression" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="now-let-s-just-fill-our-data-with-medians">
+<h1>Now, let’s just fill our data with medians<a class="headerlink" href="#now-let-s-just-fill-our-data-with-medians" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="anyone-remember-how">
+<h1>Anyone remember how?<a class="headerlink" href="#anyone-remember-how" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data2</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">median</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, let’s concatenate this with our dummy coded columns</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">final_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">data2</span><span class="p">,</span><span class="n">sedan_1_df</span><span class="p">,</span><span class="n">origin_df</span><span class="p">,</span><span class="n">name_df</span><span class="p">,</span><span class="n">horsepower_df</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s check to make sure that works</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">final_data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mpg</th>
+      <th>cylinders</th>
+      <th>displacement</th>
+      <th>horsepower</th>
+      <th>weight</th>
+      <th>acceleration</th>
+      <th>model_year</th>
+      <th>origin</th>
+      <th>name</th>
+      <th>Type</th>
+      <th>...</th>
+      <th>usa</th>
+      <th>chevrolet</th>
+      <th>nissan</th>
+      <th>peugeot</th>
+      <th>saab</th>
+      <th>toyota</th>
+      <th>volkswagen</th>
+      <th>volvo</th>
+      <th>Medium_HP</th>
+      <th>High_HP</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>18.0</td>
+      <td>8.0</td>
+      <td>307.0</td>
+      <td>130.0</td>
+      <td>3504.0</td>
+      <td>12.0</td>
+      <td>70.0</td>
+      <td>usa</td>
+      <td>chevrolet</td>
+      <td>Sedan</td>
+      <td>...</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>14.0</td>
+      <td>8.0</td>
+      <td>134.0</td>
+      <td>90.0</td>
+      <td>4354.0</td>
+      <td>15.8</td>
+      <td>70.0</td>
+      <td>usa</td>
+      <td>chevrolet</td>
+      <td>Sedan</td>
+      <td>...</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>15.0</td>
+      <td>8.0</td>
+      <td>400.0</td>
+      <td>150.0</td>
+      <td>3761.0</td>
+      <td>15.8</td>
+      <td>70.0</td>
+      <td>usa</td>
+      <td>chevrolet</td>
+      <td>Sedan</td>
+      <td>...</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>24.0</td>
+      <td>4.0</td>
+      <td>113.0</td>
+      <td>95.0</td>
+      <td>2372.0</td>
+      <td>15.0</td>
+      <td>70.0</td>
+      <td>japan</td>
+      <td>toyota</td>
+      <td>Coupe</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>26.0</td>
+      <td>4.0</td>
+      <td>12.0</td>
+      <td>46.0</td>
+      <td>1835.0</td>
+      <td>20.5</td>
+      <td>70.0</td>
+      <td>europe</td>
+      <td>volkswagen</td>
+      <td>Coupe</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 22 columns</p>
+</div></div></div>
+</div>
+<p>And let’s describe() and info() as well to double check some things</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">final_data</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mpg</th>
+      <th>cylinders</th>
+      <th>displacement</th>
+      <th>horsepower</th>
+      <th>weight</th>
+      <th>acceleration</th>
+      <th>model_year</th>
+      <th>Sedans_1</th>
+      <th>japan</th>
+      <th>usa</th>
+      <th>chevrolet</th>
+      <th>nissan</th>
+      <th>peugeot</th>
+      <th>saab</th>
+      <th>toyota</th>
+      <th>volkswagen</th>
+      <th>volvo</th>
+      <th>Medium_HP</th>
+      <th>High_HP</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>371.000000</td>
+      <td>371.000000</td>
+      <td>371.000000</td>
+      <td>371.000000</td>
+      <td>371.000000</td>
+      <td>371.000000</td>
+      <td>371.000000</td>
+      <td>371.000000</td>
+      <td>371.000000</td>
+      <td>371.000000</td>
+      <td>371.000000</td>
+      <td>371.000000</td>
+      <td>371.000000</td>
+      <td>371.000000</td>
+      <td>371.000000</td>
+      <td>371.000000</td>
+      <td>371.000000</td>
+      <td>371.000000</td>
+      <td>371.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>25.370350</td>
+      <td>5.086253</td>
+      <td>166.576819</td>
+      <td>92.630728</td>
+      <td>2818.695418</td>
+      <td>16.048518</td>
+      <td>77.350404</td>
+      <td>0.606469</td>
+      <td>0.229111</td>
+      <td>0.533693</td>
+      <td>0.412399</td>
+      <td>0.002695</td>
+      <td>0.097035</td>
+      <td>0.040431</td>
+      <td>0.188679</td>
+      <td>0.148248</td>
+      <td>0.053908</td>
+      <td>0.345013</td>
+      <td>0.312668</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>7.410867</td>
+      <td>1.520348</td>
+      <td>86.035734</td>
+      <td>25.640256</td>
+      <td>741.854547</td>
+      <td>2.376852</td>
+      <td>3.100326</td>
+      <td>0.489193</td>
+      <td>0.420828</td>
+      <td>0.499537</td>
+      <td>0.492931</td>
+      <td>0.051917</td>
+      <td>0.296405</td>
+      <td>0.197234</td>
+      <td>0.391782</td>
+      <td>0.355826</td>
+      <td>0.226142</td>
+      <td>0.476015</td>
+      <td>0.464207</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>11.000000</td>
+      <td>3.000000</td>
+      <td>-30.000000</td>
+      <td>46.000000</td>
+      <td>1649.000000</td>
+      <td>11.100000</td>
+      <td>70.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>19.200000</td>
+      <td>4.000000</td>
+      <td>98.000000</td>
+      <td>72.000000</td>
+      <td>2189.000000</td>
+      <td>14.500000</td>
+      <td>75.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>25.000000</td>
+      <td>4.000000</td>
+      <td>134.000000</td>
+      <td>90.000000</td>
+      <td>2686.000000</td>
+      <td>15.800000</td>
+      <td>78.000000</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>31.000000</td>
+      <td>6.000000</td>
+      <td>231.000000</td>
+      <td>105.000000</td>
+      <td>3336.000000</td>
+      <td>17.400000</td>
+      <td>80.000000</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>46.600000</td>
+      <td>8.000000</td>
+      <td>400.000000</td>
+      <td>165.000000</td>
+      <td>4997.000000</td>
+      <td>22.200000</td>
+      <td>82.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">final_data</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+Int64Index: 371 entries, 0 to 370
+Data columns (total 22 columns):
+ #   Column        Non-Null Count  Dtype  
+---  ------        --------------  -----  
+ 0   mpg           371 non-null    float64
+ 1   cylinders     371 non-null    float64
+ 2   displacement  371 non-null    float64
+ 3   horsepower    371 non-null    float64
+ 4   weight        371 non-null    float64
+ 5   acceleration  371 non-null    float64
+ 6   model_year    371 non-null    float64
+ 7   origin        371 non-null    object 
+ 8   name          371 non-null    object 
+ 9   Type          371 non-null    object 
+ 10  Sedans_1      371 non-null    int64  
+ 11  japan         371 non-null    uint8  
+ 12  usa           371 non-null    uint8  
+ 13  chevrolet     371 non-null    uint8  
+ 14  nissan        371 non-null    uint8  
+ 15  peugeot       371 non-null    uint8  
+ 16  saab          371 non-null    uint8  
+ 17  toyota        371 non-null    uint8  
+ 18  volkswagen    371 non-null    uint8  
+ 19  volvo         371 non-null    uint8  
+ 20  Medium_HP     371 non-null    uint8  
+ 21  High_HP       371 non-null    uint8  
+dtypes: float64(7), int64(1), object(3), uint8(11)
+memory usage: 48.8+ KB
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="so-just-to-recap-here-was-our-procedure-for-engineering-our-features-columns">
+<h1>So, just to recap. Here was our procedure for engineering our features (columns)<a class="headerlink" href="#so-just-to-recap-here-was-our-procedure-for-engineering-our-features-columns" title="Permalink to this headline">¶</a></h1>
+<ol class="simple">
+<li><p>Remove mostly empty column = given that with so much missing data, the column appeared useless</p></li>
+<li><p>Remove mostly empty rows = given that with so much missing data, the rows appeared useless</p></li>
+<li><p>Replaced missing data with median = since median is less affected by outliers</p></li>
+<li><p>Removed duplicates = since we shouldn’t have any in this dataset</p></li>
+<li><p>Dummy coded categorical columns = so we can analyze them later</p></li>
+<li><p>Binned Horsepower = to examine how binning affects analyses</p></li>
+<li><p>Removed clearly erroneous data = since we know our data is ratio and data below 0 cannot occur</p></li>
+<li><p>Removed outliers with IQR = since we had some outliers in the data</p></li>
+</ol>
+</div>
+<div class="section" id="this-is-just-one-example-of-how-to-clean-and-transform-the-data-we-could-have-done-these-steps-in-a-slightly-different-order-we-could-have-done-more-than-this-e-g-transforming-skewed-data-remove-bivariate-outliers-bucket-horsepower-then-make-it-numerical-ordinal-etc">
+<h1>This is just one example of how to clean and transform the data. We could have done these steps in a slightly different order. We could have done more than this (e.g., transforming skewed data, remove bivariate outliers, bucket horsepower then make it numerical/ordinal, etc)<a class="headerlink" href="#this-is-just-one-example-of-how-to-clean-and-transform-the-data-we-could-have-done-these-steps-in-a-slightly-different-order-we-could-have-done-more-than-this-e-g-transforming-skewed-data-remove-bivariate-outliers-bucket-horsepower-then-make-it-numerical-ordinal-etc" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">final_data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;fixed_mpg.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="now-that-the-data-is-saved-we-can-being-to-analyze-it-next-week-or-so">
+<h1>Now that the data is saved, we can being to analyze it next week or so!<a class="headerlink" href="#now-that-the-data-is-saved-we-can-being-to-analyze-it-next-week-or-so" title="Permalink to this headline">¶</a></h1>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Garrett_Lectures"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Ed Vul<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

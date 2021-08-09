@@ -1,0 +1,1018 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>&lt;no title&gt; &#8212; UCSD CSS 2</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">UCSD CSS 2</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Welcome to CSS 2
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Course (CSS 2 summer 2)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/syllabus.html">
+   Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/expectations.html">
+   Expectations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/datahub.html">
+   Datahub assignments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/debugging.html">
+   Debugging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/resources.html">
+   Extracurricular Resources
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lectures
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lectures/P01.html">
+   P01: Review of Python and Notebooks
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../live/css2-lecture-1.html">
+     CSS 2 Lecture 1
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lectures/P02.html">
+   P02: Data representation: numpy and pandas
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../live/css2-lecture-2.html">
+     CSS 2 Lecture 2
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lectures/P03.html">
+   P03: Plotting with matplotlib
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/P04.html">
+   P04: Data cleaning and management
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/P05.html">
+   P05: Modeling Data 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/P06.html">
+   P06: Modeling Data 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/P07.html">
+   P07: Classification
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/P08.html">
+   P08: Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/P09.html">
+   P09: Clustering
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/P10.html">
+   P10: Dimensionality reduction
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Garrett_Lectures/s21_Lecture15_binary_classification_1.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/UCSD-CSS-002/ucsd-css-002.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/UCSD-CSS-002/ucsd-css-002.github.io/issues/new?title=Issue%20on%20page%20%2FGarrett_Lectures/s21_Lecture15_binary_classification_1.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/UCSD-CSS-002/ucsd-css-002.github.io/master?urlpath=tree/Garrett_Lectures/s21_Lecture15_binary_classification_1.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <p>Announcements</p>
+<ol class="simple">
+<li><p>Problem set 8 and Quiz 8 due at the end of the week</p></li>
+<li><p>Discussion Board Post 3 grades will be updated within the next couple of days</p></li>
+<li><p>Be mindful of Problem Set 7 comments</p></li>
+</ol>
+<ul class="simple">
+<li><p>We may send out specific feedback to people</p></li>
+</ul>
+<p>Binary classification</p>
+<ol class="simple">
+<li><p>Classifying with a moving criterion</p></li>
+<li><p>Calculating confusion matrix/accuracy /f1 score</p></li>
+<li><p>Generating ROC and precision recall curves - and getting (AUC) area under the curve</p></li>
+<li><p>Quiz 6 and 7 review</p></li>
+</ol>
+<p>Let’s load our libraries</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Today’s, let’s classify penguins!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s1">&#39;penguins&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s check out the data</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>species</th>
+      <th>island</th>
+      <th>bill_length_mm</th>
+      <th>bill_depth_mm</th>
+      <th>flipper_length_mm</th>
+      <th>body_mass_g</th>
+      <th>sex</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Adelie</td>
+      <td>Torgersen</td>
+      <td>39.1</td>
+      <td>18.7</td>
+      <td>181.0</td>
+      <td>3750.0</td>
+      <td>Male</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Adelie</td>
+      <td>Torgersen</td>
+      <td>39.5</td>
+      <td>17.4</td>
+      <td>186.0</td>
+      <td>3800.0</td>
+      <td>Female</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Adelie</td>
+      <td>Torgersen</td>
+      <td>40.3</td>
+      <td>18.0</td>
+      <td>195.0</td>
+      <td>3250.0</td>
+      <td>Female</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Adelie</td>
+      <td>Torgersen</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Adelie</td>
+      <td>Torgersen</td>
+      <td>36.7</td>
+      <td>19.3</td>
+      <td>193.0</td>
+      <td>3450.0</td>
+      <td>Female</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>hmm. looks like we have some NaNs</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">isnull</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture15_binary_classification_1_7_1.png" src="../_images/s21_Lecture15_binary_classification_1_7_1.png" />
+</div>
+</div>
+<p>There aren’t too many, so let’s just drop them</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>And let’s dummy code the sex column, since we will just focus on binary classification for now</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">),</span><span class="s1">&#39;sex01&#39;</span><span class="p">,</span><span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;sex&#39;</span><span class="p">],</span><span class="n">drop_first</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7ff3f05b7be0&gt;
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture15_binary_classification_1_12_1.png" src="../_images/s21_Lecture15_binary_classification_1_12_1.png" />
+</div>
+</div>
+<p>We will store our predictor as X, which basically turns it into an array/series</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;body_mass_g&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, let’s get our target array</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;sex01&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here is what these data look like plotted against each other</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span><span class="n">X_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/homebrew/anaconda3/lib/python3.8/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;sex01&#39;, ylabel=&#39;body_mass_g&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture15_binary_classification_1_19_2.png" src="../_images/s21_Lecture15_binary_classification_1_19_2.png" />
+</div>
+</div>
+<p>So, here we go. Looks good</p>
+<p>So, let’s just try arbitarily setting a criterion to see how well this works for our data.</p>
+<p>We are coming up with this prediction based on our training data and we want to see its accuracy in our testing data</p>
+<p>So, any guesses?</p>
+<p>Now, let’s say, if X is greater than 4500, prediction should return a true (1). If not, then a false (0).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prediction</span> <span class="o">=</span> <span class="n">X_test</span> <span class="o">&gt;=</span> <span class="mi">4500</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>setting the criterion to be 4500</p>
+<p>predicting = anything above this = group 1</p>
+<p>anything below this = group 0</p>
+<p>So, we can basically calculate our confusion matrix by comparing the prediction to the actual values y</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">TP</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">((</span><span class="n">y_test</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">prediction</span><span class="o">==</span><span class="mi">1</span><span class="p">))</span> <span class="c1"># actual is true, prediction is true</span>
+<span class="n">FP</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">((</span><span class="n">y_test</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">prediction</span><span class="o">==</span><span class="mi">1</span><span class="p">))</span> <span class="c1"># actual is false, prediction is true</span>
+<span class="n">TN</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">((</span><span class="n">y_test</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">prediction</span><span class="o">==</span><span class="mi">0</span><span class="p">))</span> <span class="c1"># actual is false, prediction is false</span>
+<span class="n">FN</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">((</span><span class="n">y_test</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">prediction</span><span class="o">==</span><span class="mi">0</span><span class="p">))</span> <span class="c1"># actual is true, prediction is false</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">TP</span><span class="p">,</span><span class="n">TN</span><span class="p">,</span><span class="n">FP</span><span class="p">,</span><span class="n">FN</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22 30 10 22
+</pre></div>
+</div>
+</div>
+</div>
+<p>And now, we can calculate accuracy. awesome!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">accuracy</span> <span class="o">=</span> <span class="p">(</span><span class="n">TP</span><span class="o">+</span><span class="n">TN</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">TP</span><span class="o">+</span><span class="n">TN</span><span class="o">+</span><span class="n">FP</span><span class="o">+</span><span class="n">FN</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">accuracy</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6190476190476191
+</pre></div>
+</div>
+</div>
+</div>
+<p>Cool. But maybe 4500 isn’t the best predictor. Let’s try to find a better estimate</p>
+<p>So, let’s make a for loop that goes through all possible criterions. We could do linspace(0,9999999) but that seems like overkill.</p>
+<p>How about we just make every possible unique value of X a criterion? That way, we aren’t wasting time with criterions between values since that won’t actually change our confusion matrix</p>
+<p>And, lets sort these criterions so we can see the effect of increasing the criterion on our accuracy</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">criterions</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">X_train</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">criterions</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([2700., 2850., 2900., 2925., 3000., 3050., 3100., 3150., 3175.,
+       3200., 3250., 3300., 3325., 3350., 3400., 3425., 3450., 3475.,
+       3500., 3525., 3550., 3600., 3625., 3650., 3675., 3700., 3725.,
+       3750., 3775., 3800., 3850., 3875., 3900., 3950., 3975., 4000.,
+       4050., 4075., 4100., 4150., 4200., 4250., 4275., 4300., 4350.,
+       4375., 4400., 4450., 4500., 4550., 4575., 4600., 4625., 4650.,
+       4675., 4700., 4725., 4750., 4775., 4800., 4850., 4875., 4900.,
+       4925., 4950., 5000., 5050., 5100., 5150., 5200., 5250., 5300.,
+       5350., 5400., 5450., 5500., 5550., 5600., 5650., 5700., 5750.,
+       5800., 5850., 5950., 6000., 6050.])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here is our for loop. This for loop should look really similar to what we did above with the prediction and TP, FP, TN, and FN</p>
+<p>We will also save some calculations of the confusion matrix</p>
+<p>One big difference -&gt; here, we want to find the best TRAINING predictor.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ACC</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">F1</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="n">all_TP</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">all_TN</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">all_FP</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">all_FN</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">criterions</span><span class="p">)):</span>
+
+  <span class="n">prediction</span> <span class="o">=</span> <span class="n">X_train</span> <span class="o">&gt;=</span> <span class="n">criterions</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+  <span class="n">TP</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">((</span><span class="n">y_train</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">prediction</span> <span class="o">==</span> <span class="mi">1</span><span class="p">))</span> <span class="c1"># true positives</span>
+  <span class="n">TN</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">((</span><span class="n">y_train</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">prediction</span> <span class="o">==</span> <span class="mi">0</span><span class="p">))</span>
+  <span class="n">FP</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">((</span><span class="n">y_train</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">prediction</span> <span class="o">==</span> <span class="mi">1</span><span class="p">))</span> <span class="c1"># predicted group 1, but its actually group 0</span>
+  <span class="n">FN</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">((</span><span class="n">y_train</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">prediction</span> <span class="o">==</span> <span class="mi">0</span><span class="p">))</span> 
+
+  <span class="n">ACC</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">TP</span><span class="o">+</span><span class="n">TN</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">TP</span><span class="o">+</span><span class="n">TN</span><span class="o">+</span><span class="n">FP</span><span class="o">+</span><span class="n">FN</span><span class="p">))</span>
+  <span class="n">F1</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="mi">2</span><span class="o">*</span><span class="n">TP</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">TP</span><span class="o">+</span><span class="n">FN</span><span class="o">+</span><span class="n">FP</span><span class="p">))</span>
+
+  <span class="n">all_TP</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">TP</span><span class="p">)</span>
+  <span class="n">all_TN</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">TN</span><span class="p">)</span>
+  <span class="n">all_FP</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">FP</span><span class="p">)</span>
+  <span class="n">all_FN</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">FN</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Very cool. Let’s now plot and see how accuracy changes as a function of the criterion</p>
+<p>We can similarly plot F1-score as well</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">criterions</span><span class="p">,</span><span class="n">ACC</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;accuracy&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">criterions</span><span class="p">,</span><span class="n">F1</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;f1&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7ff3e05da9a0&gt;
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture15_binary_classification_1_36_1.png" src="../_images/s21_Lecture15_binary_classification_1_36_1.png" />
+</div>
+</div>
+<p>Let’s think about what is happening first:</p>
+<p>Accuracy cares more about true positives and true negatives (basically, just getting things right = good)</p>
+<p>F1 score cares more about minimizing false negatives and false positives, hence</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># just another plot showing how FP, FN, TP, and TN change as a function of the criterion</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">criterions</span><span class="p">,</span><span class="n">all_FP</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">criterions</span><span class="p">,</span><span class="n">all_FN</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">criterions</span><span class="p">,</span><span class="n">all_TP</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">criterions</span><span class="p">,</span><span class="n">all_TN</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7ff4030c5310&gt;]
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture15_binary_classification_1_38_1.png" src="../_images/s21_Lecture15_binary_classification_1_38_1.png" />
+</div>
+</div>
+<p>Overall, this matches what we would expect</p>
+<ul class="simple">
+<li><p>as you move the criterion, accuracy and F1 score increase. Then, as you move passed the optimum parameter, accuracy and F1 score decrease.</p></li>
+<li><p>The maximum accuracy and F1 score are different because they measure slightly different things</p></li>
+</ul>
+<p>In this case, there are two bumps though, which is a bit strange</p>
+<p>What could this mean?</p>
+<p>Let’s just check the data again to be sure</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">X_train</span><span class="p">,</span><span class="n">hue</span><span class="o">=</span><span class="n">y_train</span><span class="p">,</span><span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span><span class="n">kde</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;body_mass_g&#39;, ylabel=&#39;Count&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture15_binary_classification_1_40_1.png" src="../_images/s21_Lecture15_binary_classification_1_40_1.png" />
+</div>
+</div>
+<p>We can see which criterions maximized Accuracy and F1 score below</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">ACC</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">ACC</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[array([False, False, False, False, False, False, False, False, False,
+        False, False, False, False, False, False, False, False, False,
+        False, False, False, False, False, False, False, False,  True,
+        False, False, False, False,  True, False, False, False, False,
+        False, False, False, False, False, False, False, False, False,
+        False, False, False, False, False, False, False, False, False,
+        False, False, False, False, False, False, False, False, False,
+        False, False, False, False, False, False, False, False, False,
+        False, False, False, False, False, False, False, False, False,
+        False, False, False, False, False])]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">criterions</span><span class="p">[</span><span class="n">ACC</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">ACC</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([3725., 3875.])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">criterions</span><span class="p">[</span><span class="n">F1</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">F1</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([3725.])
+</pre></div>
+</div>
+</div>
+</div>
+<p>So, in both cases, 3725 is the best estimate in our training set.</p>
+<p>To evaluate this threshold, we try it out with our testing set.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prediction</span> <span class="o">=</span> <span class="n">X_test</span> <span class="o">&gt;=</span> <span class="mi">3725</span>
+
+<span class="n">TP</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">((</span><span class="n">y_test</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">prediction</span><span class="o">==</span><span class="mi">1</span><span class="p">))</span> <span class="c1"># actual is true, prediction is true</span>
+<span class="n">FP</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">((</span><span class="n">y_test</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">prediction</span><span class="o">==</span><span class="mi">1</span><span class="p">))</span> <span class="c1"># actual is false, prediction is true</span>
+<span class="n">TN</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">((</span><span class="n">y_test</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">prediction</span><span class="o">==</span><span class="mi">0</span><span class="p">))</span> <span class="c1"># actual is false, prediction is false</span>
+<span class="n">FN</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">((</span><span class="n">y_test</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">prediction</span><span class="o">==</span><span class="mi">0</span><span class="p">))</span> <span class="c1"># actual is true, prediction is false</span>
+
+<span class="n">accuracy</span> <span class="o">=</span> <span class="p">(</span><span class="n">TP</span><span class="o">+</span><span class="n">TN</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">TP</span><span class="o">+</span><span class="n">TN</span><span class="o">+</span><span class="n">FP</span><span class="o">+</span><span class="n">FN</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">accuracy</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.75
+</pre></div>
+</div>
+</div>
+</div>
+<p>Cool! A different metric that is super useful is looking at the relationship between true and false positive rates</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">TPR</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">FPR</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="n">ACC</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">F1</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">criterions</span><span class="p">)):</span>
+
+  <span class="n">prediction</span> <span class="o">=</span> <span class="n">X_train</span> <span class="o">&gt;=</span> <span class="n">criterions</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+  <span class="n">TP</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">((</span><span class="n">y_train</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">prediction</span> <span class="o">==</span> <span class="mi">1</span><span class="p">))</span> <span class="c1"># true positives</span>
+  <span class="n">TN</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">((</span><span class="n">y_train</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">prediction</span> <span class="o">==</span> <span class="mi">0</span><span class="p">))</span>
+  <span class="n">FP</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">((</span><span class="n">y_train</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">prediction</span> <span class="o">==</span> <span class="mi">1</span><span class="p">))</span> <span class="c1"># predicted group 1, but its actually group 0</span>
+  <span class="n">FN</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">((</span><span class="n">y_train</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">prediction</span> <span class="o">==</span> <span class="mi">0</span><span class="p">))</span> 
+
+  <span class="n">ACC</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">TP</span><span class="o">+</span><span class="n">TN</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">TP</span><span class="o">+</span><span class="n">TN</span><span class="o">+</span><span class="n">FP</span><span class="o">+</span><span class="n">FN</span><span class="p">))</span>
+  <span class="n">F1</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="mi">2</span><span class="o">*</span><span class="n">TP</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">TP</span><span class="o">+</span><span class="n">FN</span><span class="o">+</span><span class="n">FP</span><span class="p">))</span>
+
+  <span class="n">TPR</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">TP</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">TP</span><span class="o">+</span><span class="n">FN</span><span class="p">))</span>
+  <span class="n">FPR</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">FP</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">FP</span><span class="o">+</span><span class="n">TN</span><span class="p">))</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can see how true and false positive rates change as a function of the criterion</p>
+<p>When plotting like this, what we really want to see is high true positive rates and low false positive rates, so basically the criterion with the largest difference between these two is typically the best</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">criterions</span><span class="p">,</span><span class="n">FPR</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;false positives&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">criterions</span><span class="p">,</span><span class="n">TPR</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;true positives&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7ff3d0e48af0&gt;
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture15_binary_classification_1_50_1.png" src="../_images/s21_Lecture15_binary_classification_1_50_1.png" />
+</div>
+</div>
+<p>Another way to plot true and false positive rates is against each other</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">FPR</span><span class="p">,</span><span class="n">TPR</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7ff4030344f0&gt;]
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture15_binary_classification_1_52_1.png" src="../_images/s21_Lecture15_binary_classification_1_52_1.png" />
+</div>
+</div>
+<p>This is a receiver operating characteristic curve, or ROC curve, is a graphical plot that illustrates the diagnostic ability of a binary classifier system as its discrimination threshold is varied.</p>
+<p><a class="reference external" href="https://upload.wikimedia.org/wikipedia/commons/3/36/Roc-draft-xkcd-style.svg">explanation of ROC</a></p>
+<p>ROC curves are used in a variety of contexts. Here, when we are interested in detecting the difference between signal and noise, ROC curves visualizes the full range of outcomes as you change the criterion</p>
+<p><a class="reference external" href="https://isle.hanover.edu/Ch02Methods/Ch02SDT_ROC.html">https://isle.hanover.edu/Ch02Methods/Ch02SDT_ROC.html</a></p>
+<p>However, just like with linear regression inference, when it comes to prediction, things are a bit different</p>
+<p>Instead, we look at the ROC curve between predictions and the probability of those predictions. We can’t quite do this with our simple for loop above, but we can show it with functions from sklearn.</p>
+<p>We will go into more detail about what is happening on Wednesday</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">tree</span> <span class="c1"># importing our decision tree model</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">metrics</span> 
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Just like with linear regression, we first create the model object and then train that model with our training data</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tree_model</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">tree_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">[:,</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">],</span> <span class="n">y_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-30-bb5402b4c645&gt;:2: FutureWarning: Support for multi-dimensional indexing (e.g. `obj[:, None]`) is deprecated and will be removed in a future version.  Convert to a numpy array before indexing instead.
+  tree_model.fit(X_train[:,np.newaxis], y_train)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DecisionTreeClassifier(max_depth=1)
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can check the accuracy of this model using tree_model.score, which is just like what we did with the linear regression model!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tree_model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">[:,</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">],</span> <span class="n">y_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-31-aa9c2c1ea6e6&gt;:1: FutureWarning: Support for multi-dimensional indexing (e.g. `obj[:, None]`) is deprecated and will be removed in a future version.  Convert to a numpy array before indexing instead.
+  tree_model.score(X_test[:,np.newaxis], y_test)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.75
+</pre></div>
+</div>
+</div>
+</div>
+<p>And look, its the same as what we found. Cool!</p>
+<p>To look at the ROC curve for our prediction, we first need to probability that something belongs to a group. We can show that with the following method</p>
+<p>Now, we just want the predictions for the positive class (the class in the right column)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_predicted</span> <span class="o">=</span> <span class="n">tree_model</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X_test</span><span class="p">[:,</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">])[:,</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-32-c27ace561062&gt;:1: FutureWarning: Support for multi-dimensional indexing (e.g. `obj[:, None]`) is deprecated and will be removed in a future version.  Convert to a numpy array before indexing instead.
+  y_predicted = tree_model.predict_proba(X_test[:,np.newaxis])[:,1]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Out of curiosity, you can see how the probability relates to the actual X_test values, which is pretty cool</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span><span class="n">y_predicted</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7ff40330eca0&gt;
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture15_binary_classification_1_66_1.png" src="../_images/s21_Lecture15_binary_classification_1_66_1.png" />
+</div>
+</div>
+<p>And now, we can use the roc_curve function</p>
+<p>This function wants the actual y values and the predicted y values</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fpr</span><span class="p">,</span><span class="n">tpr</span><span class="p">,</span><span class="n">thresholds</span> <span class="o">=</span> <span class="n">metrics</span><span class="o">.</span><span class="n">roc_curve</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="n">y_predicted</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Cool! and now, we can make our ROC plot</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fpr</span><span class="p">,</span><span class="n">tpr</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;false positive rate&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;true positive rate&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;true positive rate&#39;)
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture15_binary_classification_1_70_1.png" src="../_images/s21_Lecture15_binary_classification_1_70_1.png" />
+</div>
+</div>
+<p>Well…. this isn’t super interesting.</p>
+<p>Why is there just a single point?</p>
+<p>If you think back to our probabilities from this decision tree, we only have a single split between our groups, just like in our for loop version. This means there is just a criterion and thus a single point in our ROC curve.</p>
+<p>Regardless, we can quantify the ROC curve by calculating the area under the curve (AUC)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">metrics</span><span class="o">.</span><span class="n">roc_auc_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="n">y_predicted</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7443181818181819
+</pre></div>
+</div>
+</div>
+</div>
+<p>All this stuff above is for practice and to get you familiar with concepts like a confusion matrix, precision, recall, and ROC curves</p>
+<p>Next class, we will compare different classification approaches decision trees, logistic regression, and support vector</p>
+<p>This exchange has some more insight into ROC curves</p>
+<p><a class="reference external" href="https://machinelearningmastery.com/roc-curves-and-precision-recall-curves-for-classification-in-python/#:~:text=a%20ROC%20curve.-,What%20Are%20ROC%20Curves%3F,values%20between%200.0%20and%201.0">https://machinelearningmastery.com/roc-curves-and-precision-recall-curves-for-classification-in-python/#:~:text=a ROC curve.-,What Are ROC Curves?,values between 0.0 and 1.0</a>.</p>
+<p><a class="reference external" href="https://stats.stackexchange.com/questions/105501/understanding-roc-curve">https://stats.stackexchange.com/questions/105501/understanding-roc-curve</a></p>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Garrett_Lectures"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Ed Vul<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

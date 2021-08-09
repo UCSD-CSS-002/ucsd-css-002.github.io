@@ -1,0 +1,3131 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Today, we will do some simple cleaning of some data by looking for missing data and duplicate entries &#8212; UCSD CSS 2</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">UCSD CSS 2</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Welcome to CSS 2
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Course (CSS 2 summer 2)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/syllabus.html">
+   Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/expectations.html">
+   Expectations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/datahub.html">
+   Datahub assignments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/debugging.html">
+   Debugging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/resources.html">
+   Extracurricular Resources
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lectures
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lectures/P01.html">
+   P01: Review of Python and Notebooks
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../live/css2-lecture-1.html">
+     CSS 2 Lecture 1
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lectures/P02.html">
+   P02: Data representation: numpy and pandas
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../live/css2-lecture-2.html">
+     CSS 2 Lecture 2
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lectures/P03.html">
+   P03: Plotting with matplotlib
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/P04.html">
+   P04: Data cleaning and management
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/P05.html">
+   P05: Modeling Data 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/P06.html">
+   P06: Modeling Data 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/P07.html">
+   P07: Classification
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/P08.html">
+   P08: Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/P09.html">
+   P09: Clustering
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/P10.html">
+   P10: Dimensionality reduction
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Garrett_Lectures/s21_Lecture08_duplicates_missing.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/UCSD-CSS-002/ucsd-css-002.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/UCSD-CSS-002/ucsd-css-002.github.io/issues/new?title=Issue%20on%20page%20%2FGarrett_Lectures/s21_Lecture08_duplicates_missing.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/UCSD-CSS-002/ucsd-css-002.github.io/master?urlpath=tree/Garrett_Lectures/s21_Lecture08_duplicates_missing.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Today, we will do some simple cleaning of some data by looking for missing data and duplicate entries
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#let-s-first-discuss-finding-missing-data-then-we-can-discuss-what-to-do-with-it">
+   Let’s first discuss finding missing data, then we can discuss what to do with it
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#let-s-import-our-messed-up-mpg-dataset">
+   Let’s import our messed up mpg dataset
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#let-s-take-a-quick-look-at-the-head-and-tail">
+   Let’s take a quick look at the head and tail
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#but-what-about-the-categorical-columns">
+   But what about the categorical columns?
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#info-tells-us-about-those">
+   Info tells us about those
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#both-the-counts-in-describe-and-the-non-null-count-in-info-tell-us-that-we-have-missing-data">
+   Both the counts in describe and the non-null count in info tell us that we have missing data
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#we-can-visually-see-the-null-data-using-a-heatmap">
+   We can visually see the null data using a heatmap
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#we-have-two-options-regarding-what-to-do-with-missing-data">
+   We have two options regarding what to do with missing data:
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-decision-to-drop-or-fill-may-be-based-on-a-couple-of-factors">
+   The decision to drop or fill may be based on a couple of factors.
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#if-the-missing-data-is-random-its-generally-okay-to-drop">
+   If the missing data is random, its generally okay to drop.
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#however-if-it-is-non-random-dropping-the-data-may-bias-your-sample-for-example-if-you-wanted-to-figure-out-the-average-weight-of-a-crowd-of-people-you-may-have-lots-of-missing-data-from-people-who-don-t-want-to-reveal-their-weight-averaging-only-those-willing-to-share-their-weight-may-be-significantly-different-than-what-the-actual-weight-is-in-situations-like-this-there-isn-t-much-you-can-do-but-perhaps-filling-in-their-data-would-help">
+   However, if it is non-random, dropping the data may bias your sample. For example, if you wanted to figure out the average weight of a crowd of people, you may have lots of missing data from people who don’t want to reveal their weight. Averaging only those willing to share their weight may be significantly different than what the actual weight is. In situations like this, there isn’t much you can do, but perhaps filling in their data would help
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#let-s-talk-about-dropping-it-first">
+   Let’s talk about dropping it first
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#looks-great-anyone-think-about-a-potential-problem-with-this">
+   Looks great! Anyone think about a potential problem with this?
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#let-s-try-to-be-more-specific-dropna-dropped-all-of-the-rows-with-nans">
+   Let’s try to be more specific. Dropna dropped all of the rows with nans!
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#let-s-just-drop-the-rows-that-are-all-nans">
+   Let’s just drop the rows that are all NaNs
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-default-is-how-any">
+   The default is how=’any’
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-color-column-seems-to-be-mostly-missing-data-we-could-create-a-color-or-no-color-column-but-i-don-t-think-that-would-mean-anything">
+   The Color column seems to be mostly missing data. We could create a ‘color’ or ‘no color’ column, but I don’t think that would mean anything
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#let-s-drop-that-column">
+   Let’s drop that column
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#now-let-s-back-at-our-heatmap">
+   Now let’s back at our heatmap
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#those-rows-with-mostly-missing-data-are-still-pretty-problematic">
+   Those rows with mostly missing data are still pretty problematic
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#some-just-having-a-single-missing-value-which-probably-isn-t-much-of-a-problem-but-some-rows-have-lots-of-missing-data-let-s-drop-those-rows">
+   Some just having a single missing value, which probably isn’t much of a problem. But some rows have lots of missing data. Let’s drop those rows
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#thresh-says-it-must-have-x-many-non-nans-for-it-to-be-kept">
+   Thresh says - it must have X many non-nans for it to be kept
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#note-that-the-default-axis-is-0-we-could-delete-columns-that-have-at-least-certain-numbers-of-nan-values">
+   Note that the default axis is 0. We could delete columns that have at least certain numbers of nan values
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#let-s-just-make-sure-there-aren-t-more-than-two-nans-in-a-single-row">
+   Let’s just make sure there aren’t more than two nans in a single row
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#now-we-are-left-with-just-a-few-nans-i-think-for-these-let-s-keep-them">
+   Now, we are left with just a few nans. I think for these, let’s keep them!
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#as-i-said-earlier-dropping-keeping-them-is-dependent-on-the-data">
+   As I said earlier, dropping/keeping them is dependent on the data.
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#let-s-create-an-index-of-those-remaining-nan-data-so-we-can-check-to-make-sure-they-have-been-filled-in-correctly">
+   let’s create an index of those remaining NaN data so we can check to make sure they have been filled in correctly
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#let-s-first-try-filling-in-the-data">
+   Let’s first try filling in the data
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#we-can-pass-in-a-numerical-value">
+   We can pass in a numerical value
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#check-those-with-the-index-we-created-earlier">
+   Check those with the index we created earlier
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#but-filling-the-empty-spots-with-0s-is-actually-a-pretty-bad-idea-when-0-is-meaningful">
+   But filling the empty spots with 0s is actually a pretty bad idea when 0 is meaningful
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#we-have-a-couple-of-options-we-can-fill-with-instead-see-the-documentation-of-fillna-for-some-examples">
+   We have a couple of options we can fill with instead. See the documentation of fillna for some examples!
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#one-thing-you-can-do-that-is-pretty-clever-is-to-fill-in-the-missing-data-with-the-average-data">
+   One thing you can do that is pretty clever is to fill in the missing data with the average data
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#note-that-this-way-of-doing-it-applies-the-mean-function-individually-to-each-column-so-its-not-just-one-mean-value-replacing-all-of-the-empteis">
+   Note that this way of doing it applies the mean function individually to each column. So, its not just one mean value replacing all of the empteis
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#if-your-data-is-skewed-then-the-mean-will-be-pulled-in-the-direction-of-the-skew-its-better-to-use-median-in-those-cases">
+   If your data is skewed, then the mean will be pulled in the direction of the skew. Its better to use median in those cases
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#we-are-by-no-means-finished-with-this-dataset-there-are-a-few-more-things-we-have-to-do-with-it-which-we-will-do-next-week">
+   We are by no means finished with this dataset. There are a few more things we have to do with it, which we will do next week
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <p>Lecture 8 Missing data and duplicates</p>
+<p>Announcements</p>
+<ol class="simple">
+<li><p>Problem set 4 and quiz 4 due at the end of the week</p></li>
+<li><p>Quiz 5 will be a check on (1) you picking a dataset and (2) you coming up with a question you want to explore</p></li>
+</ol>
+<p>Today’s topics</p>
+<ol class="simple">
+<li><p>Finding missing data</p></li>
+<li><p>Replacing/removing missing data</p></li>
+<li><p>Removing duplicates</p></li>
+</ol>
+<div class="section" id="today-we-will-do-some-simple-cleaning-of-some-data-by-looking-for-missing-data-and-duplicate-entries">
+<h1>Today, we will do some simple cleaning of some data by looking for missing data and duplicate entries<a class="headerlink" href="#today-we-will-do-some-simple-cleaning-of-some-data-by-looking-for-missing-data-and-duplicate-entries" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="let-s-first-discuss-finding-missing-data-then-we-can-discuss-what-to-do-with-it">
+<h1>Let’s first discuss finding missing data, then we can discuss what to do with it<a class="headerlink" href="#let-s-first-discuss-finding-missing-data-then-we-can-discuss-what-to-do-with-it" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="let-s-import-our-messed-up-mpg-dataset">
+<h1>Let’s import our messed up mpg dataset<a class="headerlink" href="#let-s-import-our-messed-up-mpg-dataset" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;messed_up_mpg.xlsx&#39;</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="let-s-take-a-quick-look-at-the-head-and-tail">
+<h1>Let’s take a quick look at the head and tail<a class="headerlink" href="#let-s-take-a-quick-look-at-the-head-and-tail" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mpg</th>
+      <th>cylinders</th>
+      <th>displacement</th>
+      <th>horsepower</th>
+      <th>weight</th>
+      <th>acceleration</th>
+      <th>model_year</th>
+      <th>origin</th>
+      <th>name</th>
+      <th>Type</th>
+      <th>Color</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>18.0</td>
+      <td>8.0</td>
+      <td>307.0</td>
+      <td>130.0</td>
+      <td>3504.0</td>
+      <td>12.0</td>
+      <td>70.0</td>
+      <td>usa</td>
+      <td>chevrolet</td>
+      <td>Sedan</td>
+      <td>red</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>14.0</td>
+      <td>8.0</td>
+      <td>454.0</td>
+      <td>220.0</td>
+      <td>4354.0</td>
+      <td>9.0</td>
+      <td>70.0</td>
+      <td>usa</td>
+      <td>chevrolet</td>
+      <td>Sedan</td>
+      <td>blue</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>15.0</td>
+      <td>8.0</td>
+      <td>400.0</td>
+      <td>150.0</td>
+      <td>3761.0</td>
+      <td>9.5</td>
+      <td>70.0</td>
+      <td>usa</td>
+      <td>chevrolet</td>
+      <td>Sedan</td>
+      <td>white</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>24.0</td>
+      <td>4.0</td>
+      <td>113.0</td>
+      <td>95.0</td>
+      <td>2372.0</td>
+      <td>15.0</td>
+      <td>70.0</td>
+      <td>japan</td>
+      <td>toyota</td>
+      <td>Coupe</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>26.0</td>
+      <td>4.0</td>
+      <td>12.0</td>
+      <td>46.0</td>
+      <td>1835.0</td>
+      <td>20.5</td>
+      <td>70.0</td>
+      <td>europe</td>
+      <td>volkswagen</td>
+      <td>Coupe</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mpg</th>
+      <th>cylinders</th>
+      <th>displacement</th>
+      <th>horsepower</th>
+      <th>weight</th>
+      <th>acceleration</th>
+      <th>model_year</th>
+      <th>origin</th>
+      <th>name</th>
+      <th>Type</th>
+      <th>Color</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>381</th>
+      <td>27.0</td>
+      <td>4.0</td>
+      <td>140.0</td>
+      <td>86.0</td>
+      <td>2790.0</td>
+      <td>15.6</td>
+      <td>82.0</td>
+      <td>usa</td>
+      <td>chevrolet</td>
+      <td>Sedan</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>382</th>
+      <td>44.0</td>
+      <td>4.0</td>
+      <td>97.0</td>
+      <td>52.0</td>
+      <td>2130.0</td>
+      <td>24.6</td>
+      <td>82.0</td>
+      <td>europe</td>
+      <td>volkswagen</td>
+      <td>Coupe</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>383</th>
+      <td>32.0</td>
+      <td>4.0</td>
+      <td>135.0</td>
+      <td>84.0</td>
+      <td>2295.0</td>
+      <td>11.6</td>
+      <td>82.0</td>
+      <td>usa</td>
+      <td>volkswagen</td>
+      <td>Coupe</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>384</th>
+      <td>28.0</td>
+      <td>4.0</td>
+      <td>120.0</td>
+      <td>79.0</td>
+      <td>2625.0</td>
+      <td>18.6</td>
+      <td>82.0</td>
+      <td>usa</td>
+      <td>chevrolet</td>
+      <td>Sedan</td>
+      <td>white</td>
+    </tr>
+    <tr>
+      <th>385</th>
+      <td>31.0</td>
+      <td>4.0</td>
+      <td>119.0</td>
+      <td>82.0</td>
+      <td>2720.0</td>
+      <td>19.4</td>
+      <td>82.0</td>
+      <td>usa</td>
+      <td>chevrolet</td>
+      <td>Sedan</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mpg</th>
+      <th>cylinders</th>
+      <th>displacement</th>
+      <th>horsepower</th>
+      <th>weight</th>
+      <th>acceleration</th>
+      <th>model_year</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>383.000000</td>
+      <td>383.000000</td>
+      <td>378.000000</td>
+      <td>378.000000</td>
+      <td>381.000000</td>
+      <td>381.000000</td>
+      <td>381.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>25.348825</td>
+      <td>5.083551</td>
+      <td>165.682540</td>
+      <td>94.949735</td>
+      <td>2873.099738</td>
+      <td>16.115223</td>
+      <td>77.367454</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>7.406156</td>
+      <td>1.522369</td>
+      <td>96.111809</td>
+      <td>29.862197</td>
+      <td>1243.707258</td>
+      <td>2.608111</td>
+      <td>3.086710</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>11.000000</td>
+      <td>3.000000</td>
+      <td>-600.000000</td>
+      <td>46.000000</td>
+      <td>1649.000000</td>
+      <td>9.000000</td>
+      <td>70.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>19.200000</td>
+      <td>4.000000</td>
+      <td>98.000000</td>
+      <td>72.000000</td>
+      <td>2188.000000</td>
+      <td>14.500000</td>
+      <td>75.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>25.000000</td>
+      <td>4.000000</td>
+      <td>134.000000</td>
+      <td>90.000000</td>
+      <td>2694.000000</td>
+      <td>15.800000</td>
+      <td>78.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>31.000000</td>
+      <td>6.000000</td>
+      <td>231.000000</td>
+      <td>110.000000</td>
+      <td>3353.000000</td>
+      <td>17.600000</td>
+      <td>80.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>46.600000</td>
+      <td>8.000000</td>
+      <td>454.000000</td>
+      <td>250.000000</td>
+      <td>22280.000000</td>
+      <td>24.800000</td>
+      <td>82.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="but-what-about-the-categorical-columns">
+<h1>But what about the categorical columns?<a class="headerlink" href="#but-what-about-the-categorical-columns" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="info-tells-us-about-those">
+<h1>Info tells us about those<a class="headerlink" href="#info-tells-us-about-those" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 386 entries, 0 to 385
+Data columns (total 11 columns):
+ #   Column        Non-Null Count  Dtype  
+---  ------        --------------  -----  
+ 0   mpg           383 non-null    float64
+ 1   cylinders     383 non-null    float64
+ 2   displacement  378 non-null    float64
+ 3   horsepower    378 non-null    float64
+ 4   weight        381 non-null    float64
+ 5   acceleration  381 non-null    float64
+ 6   model_year    381 non-null    float64
+ 7   origin        383 non-null    object 
+ 8   name          377 non-null    object 
+ 9   Type          372 non-null    object 
+ 10  Color         118 non-null    object 
+dtypes: float64(7), object(4)
+memory usage: 33.3+ KB
+</pre></div>
+</div>
+</div>
+</div>
+<p>First thing we will do : take care of duplicate data</p>
+<p>Sometimes, we may expect duplicate data. If this was a database on cars from a random sample, we may expect people to have the same car.</p>
+<p>However, let’s assume this is a list of unique cars from different companies. Its less likely that one car has the same extra properties as another.</p>
+<p>So, duplicates could arise from bugs in the code or could be mistakes when manually coding data. In these cases we want to remove the data.</p>
+<p>In this case, a duplicate thus overrepresents that combination of data</p>
+<p>So, let’s remove it</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">duplicated</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0      False
+1      False
+2      False
+3      False
+4      False
+       ...  
+381    False
+382    False
+383    False
+384    False
+385    False
+Length: 386, dtype: bool
+</pre></div>
+</div>
+</div>
+</div>
+<p>So duplicates returns boolean values for rows that are duplicated</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">any</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">duplicated</span><span class="p">())</span> <span class="c1"># any rows where all entries are the same</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s pull out the duplicates</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="o">.</span><span class="n">duplicated</span><span class="p">()]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mpg</th>
+      <th>cylinders</th>
+      <th>displacement</th>
+      <th>horsepower</th>
+      <th>weight</th>
+      <th>acceleration</th>
+      <th>model_year</th>
+      <th>origin</th>
+      <th>name</th>
+      <th>Type</th>
+      <th>Color</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>24</th>
+      <td>21.0</td>
+      <td>4.0</td>
+      <td>120.0</td>
+      <td>87.0</td>
+      <td>2979.0</td>
+      <td>19.5</td>
+      <td>72.0</td>
+      <td>europe</td>
+      <td>peugeot</td>
+      <td>Sedan</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>21.0</td>
+      <td>4.0</td>
+      <td>120.0</td>
+      <td>87.0</td>
+      <td>2979.0</td>
+      <td>19.5</td>
+      <td>72.0</td>
+      <td>europe</td>
+      <td>peugeot</td>
+      <td>Sedan</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>64</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>101</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>145</th>
+      <td>15.0</td>
+      <td>8.0</td>
+      <td>350.0</td>
+      <td>145.0</td>
+      <td>4440.0</td>
+      <td>14.0</td>
+      <td>75.0</td>
+      <td>usa</td>
+      <td>chevrolet</td>
+      <td>Sedan</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>155</th>
+      <td>29.0</td>
+      <td>4.0</td>
+      <td>97.0</td>
+      <td>75.0</td>
+      <td>2171.0</td>
+      <td>16.0</td>
+      <td>75.0</td>
+      <td>japan</td>
+      <td>toyota</td>
+      <td>Coupe</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>184</th>
+      <td>24.5</td>
+      <td>4.0</td>
+      <td>98.0</td>
+      <td>60.0</td>
+      <td>2164.0</td>
+      <td>22.1</td>
+      <td>76.0</td>
+      <td>usa</td>
+      <td>chevrolet</td>
+      <td>Coupe</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>209</th>
+      <td>17.5</td>
+      <td>8.0</td>
+      <td>305.0</td>
+      <td>145.0</td>
+      <td>3880.0</td>
+      <td>12.5</td>
+      <td>77.0</td>
+      <td>usa</td>
+      <td>chevrolet</td>
+      <td>Sedan</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>250</th>
+      <td>19.2</td>
+      <td>8.0</td>
+      <td>305.0</td>
+      <td>145.0</td>
+      <td>3425.0</td>
+      <td>13.2</td>
+      <td>78.0</td>
+      <td>usa</td>
+      <td>chevrolet</td>
+      <td>Sedan</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>254</th>
+      <td>30.0</td>
+      <td>4.0</td>
+      <td>98.0</td>
+      <td>68.0</td>
+      <td>2155.0</td>
+      <td>16.5</td>
+      <td>78.0</td>
+      <td>usa</td>
+      <td>chevrolet</td>
+      <td>Coupe</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>266</th>
+      <td>31.5</td>
+      <td>4.0</td>
+      <td>89.0</td>
+      <td>71.0</td>
+      <td>1990.0</td>
+      <td>14.9</td>
+      <td>78.0</td>
+      <td>europe</td>
+      <td>volkswagen</td>
+      <td>Coupe</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>294</th>
+      <td>28.8</td>
+      <td>6.0</td>
+      <td>173.0</td>
+      <td>115.0</td>
+      <td>2595.0</td>
+      <td>11.3</td>
+      <td>79.0</td>
+      <td>usa</td>
+      <td>chevrolet</td>
+      <td>Sedan</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>299</th>
+      <td>32.1</td>
+      <td>4.0</td>
+      <td>98.0</td>
+      <td>70.0</td>
+      <td>2120.0</td>
+      <td>15.5</td>
+      <td>80.0</td>
+      <td>usa</td>
+      <td>chevrolet</td>
+      <td>Coupe</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>349</th>
+      <td>25.4</td>
+      <td>6.0</td>
+      <td>168.0</td>
+      <td>116.0</td>
+      <td>2900.0</td>
+      <td>12.6</td>
+      <td>81.0</td>
+      <td>japan</td>
+      <td>toyota</td>
+      <td>Sedan</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>356</th>
+      <td>27.0</td>
+      <td>4.0</td>
+      <td>112.0</td>
+      <td>88.0</td>
+      <td>2640.0</td>
+      <td>18.6</td>
+      <td>82.0</td>
+      <td>usa</td>
+      <td>chevrolet</td>
+      <td>Sedan</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>lets just look at some of the duplicates</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">]</span><span class="o">==</span><span class="mi">2979</span><span class="p">]</span> <span class="c1"># duplicates doesn&#39;t show you all of them</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mpg</th>
+      <th>cylinders</th>
+      <th>displacement</th>
+      <th>horsepower</th>
+      <th>weight</th>
+      <th>acceleration</th>
+      <th>model_year</th>
+      <th>origin</th>
+      <th>name</th>
+      <th>Type</th>
+      <th>Color</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>23</th>
+      <td>21.0</td>
+      <td>4.0</td>
+      <td>120.0</td>
+      <td>87.0</td>
+      <td>2979.0</td>
+      <td>19.5</td>
+      <td>72.0</td>
+      <td>europe</td>
+      <td>peugeot</td>
+      <td>Sedan</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>21.0</td>
+      <td>4.0</td>
+      <td>120.0</td>
+      <td>87.0</td>
+      <td>2979.0</td>
+      <td>19.5</td>
+      <td>72.0</td>
+      <td>europe</td>
+      <td>peugeot</td>
+      <td>Sedan</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>21.0</td>
+      <td>4.0</td>
+      <td>120.0</td>
+      <td>87.0</td>
+      <td>2979.0</td>
+      <td>19.5</td>
+      <td>72.0</td>
+      <td>europe</td>
+      <td>peugeot</td>
+      <td>Sedan</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Alternatively, you can set the input argument in duplicated to be keep=False, which means that all instances of duplicates are marked</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="o">.</span><span class="n">duplicated</span><span class="p">(</span><span class="n">keep</span><span class="o">=</span><span class="kc">False</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mpg</th>
+      <th>cylinders</th>
+      <th>displacement</th>
+      <th>horsepower</th>
+      <th>weight</th>
+      <th>acceleration</th>
+      <th>model_year</th>
+      <th>origin</th>
+      <th>name</th>
+      <th>Type</th>
+      <th>Color</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>23</th>
+      <td>21.0</td>
+      <td>4.0</td>
+      <td>120.0</td>
+      <td>87.0</td>
+      <td>2979.0</td>
+      <td>19.5</td>
+      <td>72.0</td>
+      <td>europe</td>
+      <td>peugeot</td>
+      <td>Sedan</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>21.0</td>
+      <td>4.0</td>
+      <td>120.0</td>
+      <td>87.0</td>
+      <td>2979.0</td>
+      <td>19.5</td>
+      <td>72.0</td>
+      <td>europe</td>
+      <td>peugeot</td>
+      <td>Sedan</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>21.0</td>
+      <td>4.0</td>
+      <td>120.0</td>
+      <td>87.0</td>
+      <td>2979.0</td>
+      <td>19.5</td>
+      <td>72.0</td>
+      <td>europe</td>
+      <td>peugeot</td>
+      <td>Sedan</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>15.0</td>
+      <td>8.0</td>
+      <td>350.0</td>
+      <td>145.0</td>
+      <td>4440.0</td>
+      <td>14.0</td>
+      <td>75.0</td>
+      <td>usa</td>
+      <td>chevrolet</td>
+      <td>Sedan</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>51</th>
+      <td>29.0</td>
+      <td>4.0</td>
+      <td>97.0</td>
+      <td>75.0</td>
+      <td>2171.0</td>
+      <td>16.0</td>
+      <td>75.0</td>
+      <td>japan</td>
+      <td>toyota</td>
+      <td>Coupe</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>62</th>
+      <td>24.5</td>
+      <td>4.0</td>
+      <td>98.0</td>
+      <td>60.0</td>
+      <td>2164.0</td>
+      <td>22.1</td>
+      <td>76.0</td>
+      <td>usa</td>
+      <td>chevrolet</td>
+      <td>Coupe</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>64</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>68</th>
+      <td>17.5</td>
+      <td>8.0</td>
+      <td>305.0</td>
+      <td>145.0</td>
+      <td>3880.0</td>
+      <td>12.5</td>
+      <td>77.0</td>
+      <td>usa</td>
+      <td>chevrolet</td>
+      <td>Sedan</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>77</th>
+      <td>19.2</td>
+      <td>8.0</td>
+      <td>305.0</td>
+      <td>145.0</td>
+      <td>3425.0</td>
+      <td>13.2</td>
+      <td>78.0</td>
+      <td>usa</td>
+      <td>chevrolet</td>
+      <td>Sedan</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>78</th>
+      <td>30.0</td>
+      <td>4.0</td>
+      <td>98.0</td>
+      <td>68.0</td>
+      <td>2155.0</td>
+      <td>16.5</td>
+      <td>78.0</td>
+      <td>usa</td>
+      <td>chevrolet</td>
+      <td>Coupe</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>85</th>
+      <td>31.5</td>
+      <td>4.0</td>
+      <td>89.0</td>
+      <td>71.0</td>
+      <td>1990.0</td>
+      <td>14.9</td>
+      <td>78.0</td>
+      <td>europe</td>
+      <td>volkswagen</td>
+      <td>Coupe</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>89</th>
+      <td>28.8</td>
+      <td>6.0</td>
+      <td>173.0</td>
+      <td>115.0</td>
+      <td>2595.0</td>
+      <td>11.3</td>
+      <td>79.0</td>
+      <td>usa</td>
+      <td>chevrolet</td>
+      <td>Sedan</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>91</th>
+      <td>32.1</td>
+      <td>4.0</td>
+      <td>98.0</td>
+      <td>70.0</td>
+      <td>2120.0</td>
+      <td>15.5</td>
+      <td>80.0</td>
+      <td>usa</td>
+      <td>chevrolet</td>
+      <td>Coupe</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>101</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>105</th>
+      <td>25.4</td>
+      <td>6.0</td>
+      <td>168.0</td>
+      <td>116.0</td>
+      <td>2900.0</td>
+      <td>12.6</td>
+      <td>81.0</td>
+      <td>japan</td>
+      <td>toyota</td>
+      <td>Sedan</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>107</th>
+      <td>27.0</td>
+      <td>4.0</td>
+      <td>112.0</td>
+      <td>88.0</td>
+      <td>2640.0</td>
+      <td>18.6</td>
+      <td>82.0</td>
+      <td>usa</td>
+      <td>chevrolet</td>
+      <td>Sedan</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>145</th>
+      <td>15.0</td>
+      <td>8.0</td>
+      <td>350.0</td>
+      <td>145.0</td>
+      <td>4440.0</td>
+      <td>14.0</td>
+      <td>75.0</td>
+      <td>usa</td>
+      <td>chevrolet</td>
+      <td>Sedan</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>155</th>
+      <td>29.0</td>
+      <td>4.0</td>
+      <td>97.0</td>
+      <td>75.0</td>
+      <td>2171.0</td>
+      <td>16.0</td>
+      <td>75.0</td>
+      <td>japan</td>
+      <td>toyota</td>
+      <td>Coupe</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>184</th>
+      <td>24.5</td>
+      <td>4.0</td>
+      <td>98.0</td>
+      <td>60.0</td>
+      <td>2164.0</td>
+      <td>22.1</td>
+      <td>76.0</td>
+      <td>usa</td>
+      <td>chevrolet</td>
+      <td>Coupe</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>209</th>
+      <td>17.5</td>
+      <td>8.0</td>
+      <td>305.0</td>
+      <td>145.0</td>
+      <td>3880.0</td>
+      <td>12.5</td>
+      <td>77.0</td>
+      <td>usa</td>
+      <td>chevrolet</td>
+      <td>Sedan</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>250</th>
+      <td>19.2</td>
+      <td>8.0</td>
+      <td>305.0</td>
+      <td>145.0</td>
+      <td>3425.0</td>
+      <td>13.2</td>
+      <td>78.0</td>
+      <td>usa</td>
+      <td>chevrolet</td>
+      <td>Sedan</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>254</th>
+      <td>30.0</td>
+      <td>4.0</td>
+      <td>98.0</td>
+      <td>68.0</td>
+      <td>2155.0</td>
+      <td>16.5</td>
+      <td>78.0</td>
+      <td>usa</td>
+      <td>chevrolet</td>
+      <td>Coupe</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>266</th>
+      <td>31.5</td>
+      <td>4.0</td>
+      <td>89.0</td>
+      <td>71.0</td>
+      <td>1990.0</td>
+      <td>14.9</td>
+      <td>78.0</td>
+      <td>europe</td>
+      <td>volkswagen</td>
+      <td>Coupe</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>294</th>
+      <td>28.8</td>
+      <td>6.0</td>
+      <td>173.0</td>
+      <td>115.0</td>
+      <td>2595.0</td>
+      <td>11.3</td>
+      <td>79.0</td>
+      <td>usa</td>
+      <td>chevrolet</td>
+      <td>Sedan</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>299</th>
+      <td>32.1</td>
+      <td>4.0</td>
+      <td>98.0</td>
+      <td>70.0</td>
+      <td>2120.0</td>
+      <td>15.5</td>
+      <td>80.0</td>
+      <td>usa</td>
+      <td>chevrolet</td>
+      <td>Coupe</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>349</th>
+      <td>25.4</td>
+      <td>6.0</td>
+      <td>168.0</td>
+      <td>116.0</td>
+      <td>2900.0</td>
+      <td>12.6</td>
+      <td>81.0</td>
+      <td>japan</td>
+      <td>toyota</td>
+      <td>Sedan</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>356</th>
+      <td>27.0</td>
+      <td>4.0</td>
+      <td>112.0</td>
+      <td>88.0</td>
+      <td>2640.0</td>
+      <td>18.6</td>
+      <td>82.0</td>
+      <td>usa</td>
+      <td>chevrolet</td>
+      <td>Sedan</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>We can drop them like so</p>
+<p>Its important to use ignore_index as true in this situation. This reindexes the data to 0,1,2, etc. Otherwise, the dropped duplicates will have missing index values, which could cause problems if you forget about these missing indexes</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_nodupes</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># INDEXES</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s double check that that worked</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">any</span><span class="p">(</span><span class="n">data_nodupes</span><span class="o">.</span><span class="n">duplicated</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>Just another quick check</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_nodupes</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(371, 11)
+</pre></div>
+</div>
+</div>
+</div>
+<p>We will focus on just the missing data now</p>
+</div>
+<div class="section" id="both-the-counts-in-describe-and-the-non-null-count-in-info-tell-us-that-we-have-missing-data">
+<h1>Both the counts in describe and the non-null count in info tell us that we have missing data<a class="headerlink" href="#both-the-counts-in-describe-and-the-non-null-count-in-info-tell-us-that-we-have-missing-data" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="we-can-visually-see-the-null-data-using-a-heatmap">
+<h1>We can visually see the null data using a heatmap<a class="headerlink" href="#we-can-visually-see-the-null-data-using-a-heatmap" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">data_nodupes</span><span class="o">.</span><span class="n">isnull</span><span class="p">(),</span><span class="n">cmap</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Green&#39;</span><span class="p">,</span> <span class="s1">&#39;Red&#39;</span><span class="p">])</span> <span class="c1"># added a cmap to make it clearer</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture08_duplicates_missing_27_1.png" src="../_images/s21_Lecture08_duplicates_missing_27_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="we-have-two-options-regarding-what-to-do-with-missing-data">
+<h1>We have two options regarding what to do with missing data:<a class="headerlink" href="#we-have-two-options-regarding-what-to-do-with-missing-data" title="Permalink to this headline">¶</a></h1>
+<ol class="simple">
+<li><p>drop it (remove the rows/columns)</p></li>
+<li><p>fill it with another value</p></li>
+</ol>
+</div>
+<div class="section" id="the-decision-to-drop-or-fill-may-be-based-on-a-couple-of-factors">
+<h1>The decision to drop or fill may be based on a couple of factors.<a class="headerlink" href="#the-decision-to-drop-or-fill-may-be-based-on-a-couple-of-factors" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="if-the-missing-data-is-random-its-generally-okay-to-drop">
+<h1>If the missing data is random, its generally okay to drop.<a class="headerlink" href="#if-the-missing-data-is-random-its-generally-okay-to-drop" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="however-if-it-is-non-random-dropping-the-data-may-bias-your-sample-for-example-if-you-wanted-to-figure-out-the-average-weight-of-a-crowd-of-people-you-may-have-lots-of-missing-data-from-people-who-don-t-want-to-reveal-their-weight-averaging-only-those-willing-to-share-their-weight-may-be-significantly-different-than-what-the-actual-weight-is-in-situations-like-this-there-isn-t-much-you-can-do-but-perhaps-filling-in-their-data-would-help">
+<h1>However, if it is non-random, dropping the data may bias your sample. For example, if you wanted to figure out the average weight of a crowd of people, you may have lots of missing data from people who don’t want to reveal their weight. Averaging only those willing to share their weight may be significantly different than what the actual weight is. In situations like this, there isn’t much you can do, but perhaps filling in their data would help<a class="headerlink" href="#however-if-it-is-non-random-dropping-the-data-may-bias-your-sample-for-example-if-you-wanted-to-figure-out-the-average-weight-of-a-crowd-of-people-you-may-have-lots-of-missing-data-from-people-who-don-t-want-to-reveal-their-weight-averaging-only-those-willing-to-share-their-weight-may-be-significantly-different-than-what-the-actual-weight-is-in-situations-like-this-there-isn-t-much-you-can-do-but-perhaps-filling-in-their-data-would-help" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="let-s-talk-about-dropping-it-first">
+<h1>Let’s talk about dropping it first<a class="headerlink" href="#let-s-talk-about-dropping-it-first" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_nonans</span> <span class="o">=</span> <span class="n">data_nodupes</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span> <span class="c1"># dropna will take care of those pesky nans!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">data_nonans</span><span class="o">.</span><span class="n">isnull</span><span class="p">(),</span><span class="n">cmap</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Green&#39;</span><span class="p">,</span><span class="s1">&#39;Green&#39;</span><span class="p">,</span><span class="s1">&#39;Red&#39;</span><span class="p">])</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture08_duplicates_missing_31_1.png" src="../_images/s21_Lecture08_duplicates_missing_31_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="looks-great-anyone-think-about-a-potential-problem-with-this">
+<h1>Looks great! Anyone think about a potential problem with this?<a class="headerlink" href="#looks-great-anyone-think-about-a-potential-problem-with-this" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_nonans</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(112, 11)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="let-s-try-to-be-more-specific-dropna-dropped-all-of-the-rows-with-nans">
+<h1>Let’s try to be more specific. Dropna dropped all of the rows with nans!<a class="headerlink" href="#let-s-try-to-be-more-specific-dropna-dropped-all-of-the-rows-with-nans" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="let-s-just-drop-the-rows-that-are-all-nans">
+<h1>Let’s just drop the rows that are all NaNs<a class="headerlink" href="#let-s-just-drop-the-rows-that-are-all-nans" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="the-default-is-how-any">
+<h1>The default is how=’any’<a class="headerlink" href="#the-default-is-how-any" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_nonan_rows</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">how</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">)</span> <span class="c1"># how? only drop those with all nans</span>
+<span class="n">data_nonan_rows</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+Int64Index: 383 entries, 0 to 385
+Data columns (total 11 columns):
+ #   Column        Non-Null Count  Dtype  
+---  ------        --------------  -----  
+ 0   mpg           383 non-null    float64
+ 1   cylinders     383 non-null    float64
+ 2   displacement  378 non-null    float64
+ 3   horsepower    378 non-null    float64
+ 4   weight        381 non-null    float64
+ 5   acceleration  381 non-null    float64
+ 6   model_year    381 non-null    float64
+ 7   origin        383 non-null    object 
+ 8   name          377 non-null    object 
+ 9   Type          372 non-null    object 
+ 10  Color         118 non-null    object 
+dtypes: float64(7), object(4)
+memory usage: 35.9+ KB
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">data_nonan_rows</span><span class="o">.</span><span class="n">isnull</span><span class="p">(),</span><span class="n">cmap</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Green&#39;</span><span class="p">,</span><span class="s1">&#39;Red&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture08_duplicates_missing_36_1.png" src="../_images/s21_Lecture08_duplicates_missing_36_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="the-color-column-seems-to-be-mostly-missing-data-we-could-create-a-color-or-no-color-column-but-i-don-t-think-that-would-mean-anything">
+<h1>The Color column seems to be mostly missing data. We could create a ‘color’ or ‘no color’ column, but I don’t think that would mean anything<a class="headerlink" href="#the-color-column-seems-to-be-mostly-missing-data-we-could-create-a-color-or-no-color-column-but-i-don-t-think-that-would-mean-anything" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="let-s-drop-that-column">
+<h1>Let’s drop that column<a class="headerlink" href="#let-s-drop-that-column" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data2</span> <span class="o">=</span> <span class="n">data_nonan_rows</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;Color&#39;</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data2</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(383, 10)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data2</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mpg</th>
+      <th>cylinders</th>
+      <th>displacement</th>
+      <th>horsepower</th>
+      <th>weight</th>
+      <th>acceleration</th>
+      <th>model_year</th>
+      <th>origin</th>
+      <th>name</th>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>18.0</td>
+      <td>8.0</td>
+      <td>307.0</td>
+      <td>130.0</td>
+      <td>3504.0</td>
+      <td>12.0</td>
+      <td>70.0</td>
+      <td>usa</td>
+      <td>chevrolet</td>
+      <td>Sedan</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>14.0</td>
+      <td>8.0</td>
+      <td>454.0</td>
+      <td>220.0</td>
+      <td>4354.0</td>
+      <td>9.0</td>
+      <td>70.0</td>
+      <td>usa</td>
+      <td>chevrolet</td>
+      <td>Sedan</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>15.0</td>
+      <td>8.0</td>
+      <td>400.0</td>
+      <td>150.0</td>
+      <td>3761.0</td>
+      <td>9.5</td>
+      <td>70.0</td>
+      <td>usa</td>
+      <td>chevrolet</td>
+      <td>Sedan</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>24.0</td>
+      <td>4.0</td>
+      <td>113.0</td>
+      <td>95.0</td>
+      <td>2372.0</td>
+      <td>15.0</td>
+      <td>70.0</td>
+      <td>japan</td>
+      <td>toyota</td>
+      <td>Coupe</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>26.0</td>
+      <td>4.0</td>
+      <td>12.0</td>
+      <td>46.0</td>
+      <td>1835.0</td>
+      <td>20.5</td>
+      <td>70.0</td>
+      <td>europe</td>
+      <td>volkswagen</td>
+      <td>Coupe</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="now-let-s-back-at-our-heatmap">
+<h1>Now let’s back at our heatmap<a class="headerlink" href="#now-let-s-back-at-our-heatmap" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">data2</span><span class="o">.</span><span class="n">isnull</span><span class="p">(),</span><span class="n">cmap</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Green&#39;</span><span class="p">,</span><span class="s1">&#39;Red&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture08_duplicates_missing_42_1.png" src="../_images/s21_Lecture08_duplicates_missing_42_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="those-rows-with-mostly-missing-data-are-still-pretty-problematic">
+<h1>Those rows with mostly missing data are still pretty problematic<a class="headerlink" href="#those-rows-with-mostly-missing-data-are-still-pretty-problematic" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="some-just-having-a-single-missing-value-which-probably-isn-t-much-of-a-problem-but-some-rows-have-lots-of-missing-data-let-s-drop-those-rows">
+<h1>Some just having a single missing value, which probably isn’t much of a problem. But some rows have lots of missing data. Let’s drop those rows<a class="headerlink" href="#some-just-having-a-single-missing-value-which-probably-isn-t-much-of-a-problem-but-some-rows-have-lots-of-missing-data-let-s-drop-those-rows" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="thresh-says-it-must-have-x-many-non-nans-for-it-to-be-kept">
+<h1>Thresh says - it must have X many non-nans for it to be kept<a class="headerlink" href="#thresh-says-it-must-have-x-many-non-nans-for-it-to-be-kept" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data2_test1</span> <span class="o">=</span> <span class="n">data2</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">thresh</span> <span class="o">=</span> <span class="mi">9</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">data2_test1</span><span class="o">.</span><span class="n">isnull</span><span class="p">(),</span><span class="n">cmap</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Green&#39;</span><span class="p">,</span><span class="s1">&#39;Red&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture08_duplicates_missing_44_1.png" src="../_images/s21_Lecture08_duplicates_missing_44_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data2_test1</span> <span class="o">=</span> <span class="n">data2</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">thresh</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data2</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># this way, I dont have to count the number of columns</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">data2_test1</span><span class="o">.</span><span class="n">isnull</span><span class="p">(),</span><span class="n">cmap</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Green&#39;</span><span class="p">,</span><span class="s1">&#39;Red&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture08_duplicates_missing_45_1.png" src="../_images/s21_Lecture08_duplicates_missing_45_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="note-that-the-default-axis-is-0-we-could-delete-columns-that-have-at-least-certain-numbers-of-nan-values">
+<h1>Note that the default axis is 0. We could delete columns that have at least certain numbers of nan values<a class="headerlink" href="#note-that-the-default-axis-is-0-we-could-delete-columns-that-have-at-least-certain-numbers-of-nan-values" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data2_test2</span> <span class="o">=</span> <span class="n">data2</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">thresh</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data2</span><span class="o">.</span><span class="n">index</span><span class="p">)</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">data2_test2</span><span class="o">.</span><span class="n">isnull</span><span class="p">(),</span><span class="n">cmap</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Green&#39;</span><span class="p">,</span><span class="s1">&#39;Red&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture08_duplicates_missing_47_1.png" src="../_images/s21_Lecture08_duplicates_missing_47_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="let-s-just-make-sure-there-aren-t-more-than-two-nans-in-a-single-row">
+<h1>Let’s just make sure there aren’t more than two nans in a single row<a class="headerlink" href="#let-s-just-make-sure-there-aren-t-more-than-two-nans-in-a-single-row" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data3</span> <span class="o">=</span> <span class="n">data2</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">thresh</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data2</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">data3</span><span class="o">.</span><span class="n">isnull</span><span class="p">(),</span><span class="n">cmap</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Green&#39;</span><span class="p">,</span><span class="s1">&#39;Red&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture08_duplicates_missing_49_1.png" src="../_images/s21_Lecture08_duplicates_missing_49_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="now-we-are-left-with-just-a-few-nans-i-think-for-these-let-s-keep-them">
+<h1>Now, we are left with just a few nans. I think for these, let’s keep them!<a class="headerlink" href="#now-we-are-left-with-just-a-few-nans-i-think-for-these-let-s-keep-them" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="as-i-said-earlier-dropping-keeping-them-is-dependent-on-the-data">
+<h1>As I said earlier, dropping/keeping them is dependent on the data.<a class="headerlink" href="#as-i-said-earlier-dropping-keeping-them-is-dependent-on-the-data" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="let-s-create-an-index-of-those-remaining-nan-data-so-we-can-check-to-make-sure-they-have-been-filled-in-correctly">
+<h1>let’s create an index of those remaining NaN data so we can check to make sure they have been filled in correctly<a class="headerlink" href="#let-s-create-an-index-of-those-remaining-nan-data-so-we-can-check-to-make-sure-they-have-been-filled-in-correctly" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">is_NaN</span> <span class="o">=</span> <span class="n">data3</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span> 
+<span class="n">row_has_NaN</span> <span class="o">=</span> <span class="n">is_NaN</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rows_with_NaN</span> <span class="o">=</span> <span class="n">data3</span><span class="p">[</span><span class="n">row_has_NaN</span><span class="p">]</span>
+<span class="n">rows_with_NaN</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mpg</th>
+      <th>cylinders</th>
+      <th>displacement</th>
+      <th>horsepower</th>
+      <th>weight</th>
+      <th>acceleration</th>
+      <th>model_year</th>
+      <th>origin</th>
+      <th>name</th>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>5</th>
+      <td>25.0</td>
+      <td>4.0</td>
+      <td>110.0</td>
+      <td>87.0</td>
+      <td>2672.0</td>
+      <td>NaN</td>
+      <td>70.0</td>
+      <td>europe</td>
+      <td>peugeot</td>
+      <td>Sedan</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>22.0</td>
+      <td>4.0</td>
+      <td>NaN</td>
+      <td>72.0</td>
+      <td>2408.0</td>
+      <td>19.0</td>
+      <td>71.0</td>
+      <td>usa</td>
+      <td>chevrolet</td>
+      <td>Coupe</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>30.0</td>
+      <td>4.0</td>
+      <td>NaN</td>
+      <td>70.0</td>
+      <td>2074.0</td>
+      <td>19.5</td>
+      <td>71.0</td>
+      <td>europe</td>
+      <td>peugeot</td>
+      <td>Coupe</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>27.0</td>
+      <td>4.0</td>
+      <td>NaN</td>
+      <td>60.0</td>
+      <td>1834.0</td>
+      <td>19.0</td>
+      <td>71.0</td>
+      <td>europe</td>
+      <td>volkswagen</td>
+      <td>Coupe</td>
+    </tr>
+    <tr>
+      <th>114</th>
+      <td>21.0</td>
+      <td>6.0</td>
+      <td>200.0</td>
+      <td>NaN</td>
+      <td>2875.0</td>
+      <td>17.0</td>
+      <td>74.0</td>
+      <td>usa</td>
+      <td>chevrolet</td>
+      <td>Sedan</td>
+    </tr>
+    <tr>
+      <th>128</th>
+      <td>14.0</td>
+      <td>8.0</td>
+      <td>304.0</td>
+      <td>150.0</td>
+      <td>4257.0</td>
+      <td>15.5</td>
+      <td>74.0</td>
+      <td>usa</td>
+      <td>toyota</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>205</th>
+      <td>30.0</td>
+      <td>4.0</td>
+      <td>111.0</td>
+      <td>80.0</td>
+      <td>2155.0</td>
+      <td>14.8</td>
+      <td>77.0</td>
+      <td>usa</td>
+      <td>toyota</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>235</th>
+      <td>39.4</td>
+      <td>4.0</td>
+      <td>85.0</td>
+      <td>70.0</td>
+      <td>2070.0</td>
+      <td>18.6</td>
+      <td>78.0</td>
+      <td>japan</td>
+      <td>toyota</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>318</th>
+      <td>40.9</td>
+      <td>4.0</td>
+      <td>85.0</td>
+      <td>NaN</td>
+      <td>1835.0</td>
+      <td>17.3</td>
+      <td>80.0</td>
+      <td>europe</td>
+      <td>chevrolet</td>
+      <td>Coupe</td>
+    </tr>
+    <tr>
+      <th>322</th>
+      <td>23.7</td>
+      <td>3.0</td>
+      <td>70.0</td>
+      <td>100.0</td>
+      <td>2420.0</td>
+      <td>12.5</td>
+      <td>80.0</td>
+      <td>japan</td>
+      <td>toyota</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>324</th>
+      <td>23.6</td>
+      <td>4.0</td>
+      <td>140.0</td>
+      <td>NaN</td>
+      <td>2905.0</td>
+      <td>14.3</td>
+      <td>80.0</td>
+      <td>usa</td>
+      <td>toyota</td>
+      <td>Sedan</td>
+    </tr>
+    <tr>
+      <th>342</th>
+      <td>34.5</td>
+      <td>4.0</td>
+      <td>100.0</td>
+      <td>NaN</td>
+      <td>2320.0</td>
+      <td>15.8</td>
+      <td>81.0</td>
+      <td>europe</td>
+      <td>chevrolet</td>
+      <td>Coupe</td>
+    </tr>
+    <tr>
+      <th>362</th>
+      <td>23.0</td>
+      <td>4.0</td>
+      <td>151.0</td>
+      <td>NaN</td>
+      <td>3035.0</td>
+      <td>20.5</td>
+      <td>82.0</td>
+      <td>usa</td>
+      <td>volkswagen</td>
+      <td>Sedan</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="let-s-first-try-filling-in-the-data">
+<h1>Let’s first try filling in the data<a class="headerlink" href="#let-s-first-try-filling-in-the-data" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="we-can-pass-in-a-numerical-value">
+<h1>We can pass in a numerical value<a class="headerlink" href="#we-can-pass-in-a-numerical-value" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="check-those-with-the-index-we-created-earlier">
+<h1>Check those with the index we created earlier<a class="headerlink" href="#check-those-with-the-index-we-created-earlier" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data3</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)[</span><span class="n">row_has_NaN</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mpg</th>
+      <th>cylinders</th>
+      <th>displacement</th>
+      <th>horsepower</th>
+      <th>weight</th>
+      <th>acceleration</th>
+      <th>model_year</th>
+      <th>origin</th>
+      <th>name</th>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>5</th>
+      <td>25.0</td>
+      <td>4.0</td>
+      <td>110.0</td>
+      <td>87.0</td>
+      <td>2672.0</td>
+      <td>0.0</td>
+      <td>70.0</td>
+      <td>europe</td>
+      <td>peugeot</td>
+      <td>Sedan</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>22.0</td>
+      <td>4.0</td>
+      <td>0.0</td>
+      <td>72.0</td>
+      <td>2408.0</td>
+      <td>19.0</td>
+      <td>71.0</td>
+      <td>usa</td>
+      <td>chevrolet</td>
+      <td>Coupe</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>30.0</td>
+      <td>4.0</td>
+      <td>0.0</td>
+      <td>70.0</td>
+      <td>2074.0</td>
+      <td>19.5</td>
+      <td>71.0</td>
+      <td>europe</td>
+      <td>peugeot</td>
+      <td>Coupe</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>27.0</td>
+      <td>4.0</td>
+      <td>0.0</td>
+      <td>60.0</td>
+      <td>1834.0</td>
+      <td>19.0</td>
+      <td>71.0</td>
+      <td>europe</td>
+      <td>volkswagen</td>
+      <td>Coupe</td>
+    </tr>
+    <tr>
+      <th>114</th>
+      <td>21.0</td>
+      <td>6.0</td>
+      <td>200.0</td>
+      <td>0.0</td>
+      <td>2875.0</td>
+      <td>17.0</td>
+      <td>74.0</td>
+      <td>usa</td>
+      <td>chevrolet</td>
+      <td>Sedan</td>
+    </tr>
+    <tr>
+      <th>128</th>
+      <td>14.0</td>
+      <td>8.0</td>
+      <td>304.0</td>
+      <td>150.0</td>
+      <td>4257.0</td>
+      <td>15.5</td>
+      <td>74.0</td>
+      <td>usa</td>
+      <td>toyota</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>205</th>
+      <td>30.0</td>
+      <td>4.0</td>
+      <td>111.0</td>
+      <td>80.0</td>
+      <td>2155.0</td>
+      <td>14.8</td>
+      <td>77.0</td>
+      <td>usa</td>
+      <td>toyota</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>235</th>
+      <td>39.4</td>
+      <td>4.0</td>
+      <td>85.0</td>
+      <td>70.0</td>
+      <td>2070.0</td>
+      <td>18.6</td>
+      <td>78.0</td>
+      <td>japan</td>
+      <td>toyota</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>318</th>
+      <td>40.9</td>
+      <td>4.0</td>
+      <td>85.0</td>
+      <td>0.0</td>
+      <td>1835.0</td>
+      <td>17.3</td>
+      <td>80.0</td>
+      <td>europe</td>
+      <td>chevrolet</td>
+      <td>Coupe</td>
+    </tr>
+    <tr>
+      <th>322</th>
+      <td>23.7</td>
+      <td>3.0</td>
+      <td>70.0</td>
+      <td>100.0</td>
+      <td>2420.0</td>
+      <td>12.5</td>
+      <td>80.0</td>
+      <td>japan</td>
+      <td>toyota</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>324</th>
+      <td>23.6</td>
+      <td>4.0</td>
+      <td>140.0</td>
+      <td>0.0</td>
+      <td>2905.0</td>
+      <td>14.3</td>
+      <td>80.0</td>
+      <td>usa</td>
+      <td>toyota</td>
+      <td>Sedan</td>
+    </tr>
+    <tr>
+      <th>342</th>
+      <td>34.5</td>
+      <td>4.0</td>
+      <td>100.0</td>
+      <td>0.0</td>
+      <td>2320.0</td>
+      <td>15.8</td>
+      <td>81.0</td>
+      <td>europe</td>
+      <td>chevrolet</td>
+      <td>Coupe</td>
+    </tr>
+    <tr>
+      <th>362</th>
+      <td>23.0</td>
+      <td>4.0</td>
+      <td>151.0</td>
+      <td>0.0</td>
+      <td>3035.0</td>
+      <td>20.5</td>
+      <td>82.0</td>
+      <td>usa</td>
+      <td>volkswagen</td>
+      <td>Sedan</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="but-filling-the-empty-spots-with-0s-is-actually-a-pretty-bad-idea-when-0-is-meaningful">
+<h1>But filling the empty spots with 0s is actually a pretty bad idea when 0 is meaningful<a class="headerlink" href="#but-filling-the-empty-spots-with-0s-is-actually-a-pretty-bad-idea-when-0-is-meaningful" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="we-have-a-couple-of-options-we-can-fill-with-instead-see-the-documentation-of-fillna-for-some-examples">
+<h1>We have a couple of options we can fill with instead. See the documentation of fillna for some examples!<a class="headerlink" href="#we-have-a-couple-of-options-we-can-fill-with-instead-see-the-documentation-of-fillna-for-some-examples" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="one-thing-you-can-do-that-is-pretty-clever-is-to-fill-in-the-missing-data-with-the-average-data">
+<h1>One thing you can do that is pretty clever is to fill in the missing data with the average data<a class="headerlink" href="#one-thing-you-can-do-that-is-pretty-clever-is-to-fill-in-the-missing-data-with-the-average-data" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="note-that-this-way-of-doing-it-applies-the-mean-function-individually-to-each-column-so-its-not-just-one-mean-value-replacing-all-of-the-empteis">
+<h1>Note that this way of doing it applies the mean function individually to each column. So, its not just one mean value replacing all of the empteis<a class="headerlink" href="#note-that-this-way-of-doing-it-applies-the-mean-function-individually-to-each-column-so-its-not-just-one-mean-value-replacing-all-of-the-empteis" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data3</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">mean</span><span class="p">())[</span><span class="n">row_has_NaN</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mpg</th>
+      <th>cylinders</th>
+      <th>displacement</th>
+      <th>horsepower</th>
+      <th>weight</th>
+      <th>acceleration</th>
+      <th>model_year</th>
+      <th>origin</th>
+      <th>name</th>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>5</th>
+      <td>25.0</td>
+      <td>4.0</td>
+      <td>110.00000</td>
+      <td>87.000000</td>
+      <td>2672.0</td>
+      <td>16.115223</td>
+      <td>70.0</td>
+      <td>europe</td>
+      <td>peugeot</td>
+      <td>Sedan</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>22.0</td>
+      <td>4.0</td>
+      <td>165.68254</td>
+      <td>72.000000</td>
+      <td>2408.0</td>
+      <td>19.000000</td>
+      <td>71.0</td>
+      <td>usa</td>
+      <td>chevrolet</td>
+      <td>Coupe</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>30.0</td>
+      <td>4.0</td>
+      <td>165.68254</td>
+      <td>70.000000</td>
+      <td>2074.0</td>
+      <td>19.500000</td>
+      <td>71.0</td>
+      <td>europe</td>
+      <td>peugeot</td>
+      <td>Coupe</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>27.0</td>
+      <td>4.0</td>
+      <td>165.68254</td>
+      <td>60.000000</td>
+      <td>1834.0</td>
+      <td>19.000000</td>
+      <td>71.0</td>
+      <td>europe</td>
+      <td>volkswagen</td>
+      <td>Coupe</td>
+    </tr>
+    <tr>
+      <th>114</th>
+      <td>21.0</td>
+      <td>6.0</td>
+      <td>200.00000</td>
+      <td>94.949735</td>
+      <td>2875.0</td>
+      <td>17.000000</td>
+      <td>74.0</td>
+      <td>usa</td>
+      <td>chevrolet</td>
+      <td>Sedan</td>
+    </tr>
+    <tr>
+      <th>128</th>
+      <td>14.0</td>
+      <td>8.0</td>
+      <td>304.00000</td>
+      <td>150.000000</td>
+      <td>4257.0</td>
+      <td>15.500000</td>
+      <td>74.0</td>
+      <td>usa</td>
+      <td>toyota</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>205</th>
+      <td>30.0</td>
+      <td>4.0</td>
+      <td>111.00000</td>
+      <td>80.000000</td>
+      <td>2155.0</td>
+      <td>14.800000</td>
+      <td>77.0</td>
+      <td>usa</td>
+      <td>toyota</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>235</th>
+      <td>39.4</td>
+      <td>4.0</td>
+      <td>85.00000</td>
+      <td>70.000000</td>
+      <td>2070.0</td>
+      <td>18.600000</td>
+      <td>78.0</td>
+      <td>japan</td>
+      <td>toyota</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>318</th>
+      <td>40.9</td>
+      <td>4.0</td>
+      <td>85.00000</td>
+      <td>94.949735</td>
+      <td>1835.0</td>
+      <td>17.300000</td>
+      <td>80.0</td>
+      <td>europe</td>
+      <td>chevrolet</td>
+      <td>Coupe</td>
+    </tr>
+    <tr>
+      <th>322</th>
+      <td>23.7</td>
+      <td>3.0</td>
+      <td>70.00000</td>
+      <td>100.000000</td>
+      <td>2420.0</td>
+      <td>12.500000</td>
+      <td>80.0</td>
+      <td>japan</td>
+      <td>toyota</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>324</th>
+      <td>23.6</td>
+      <td>4.0</td>
+      <td>140.00000</td>
+      <td>94.949735</td>
+      <td>2905.0</td>
+      <td>14.300000</td>
+      <td>80.0</td>
+      <td>usa</td>
+      <td>toyota</td>
+      <td>Sedan</td>
+    </tr>
+    <tr>
+      <th>342</th>
+      <td>34.5</td>
+      <td>4.0</td>
+      <td>100.00000</td>
+      <td>94.949735</td>
+      <td>2320.0</td>
+      <td>15.800000</td>
+      <td>81.0</td>
+      <td>europe</td>
+      <td>chevrolet</td>
+      <td>Coupe</td>
+    </tr>
+    <tr>
+      <th>362</th>
+      <td>23.0</td>
+      <td>4.0</td>
+      <td>151.00000</td>
+      <td>94.949735</td>
+      <td>3035.0</td>
+      <td>20.500000</td>
+      <td>82.0</td>
+      <td>usa</td>
+      <td>volkswagen</td>
+      <td>Sedan</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p><em>See any problem with this?</em></p>
+<p>There are still NaNs in our categorical column! That makes some sense since what is the mean of coupe sedan. We will address this shortly</p>
+</div>
+<div class="section" id="if-your-data-is-skewed-then-the-mean-will-be-pulled-in-the-direction-of-the-skew-its-better-to-use-median-in-those-cases">
+<h1>If your data is skewed, then the mean will be pulled in the direction of the skew. Its better to use median in those cases<a class="headerlink" href="#if-your-data-is-skewed-then-the-mean-will-be-pulled-in-the-direction-of-the-skew-its-better-to-use-median-in-those-cases" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data3</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">median</span><span class="p">())[</span><span class="n">row_has_NaN</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mpg</th>
+      <th>cylinders</th>
+      <th>displacement</th>
+      <th>horsepower</th>
+      <th>weight</th>
+      <th>acceleration</th>
+      <th>model_year</th>
+      <th>origin</th>
+      <th>name</th>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>5</th>
+      <td>25.0</td>
+      <td>4.0</td>
+      <td>110.0</td>
+      <td>87.0</td>
+      <td>2672.0</td>
+      <td>15.8</td>
+      <td>70.0</td>
+      <td>europe</td>
+      <td>peugeot</td>
+      <td>Sedan</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>22.0</td>
+      <td>4.0</td>
+      <td>134.0</td>
+      <td>72.0</td>
+      <td>2408.0</td>
+      <td>19.0</td>
+      <td>71.0</td>
+      <td>usa</td>
+      <td>chevrolet</td>
+      <td>Coupe</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>30.0</td>
+      <td>4.0</td>
+      <td>134.0</td>
+      <td>70.0</td>
+      <td>2074.0</td>
+      <td>19.5</td>
+      <td>71.0</td>
+      <td>europe</td>
+      <td>peugeot</td>
+      <td>Coupe</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>27.0</td>
+      <td>4.0</td>
+      <td>134.0</td>
+      <td>60.0</td>
+      <td>1834.0</td>
+      <td>19.0</td>
+      <td>71.0</td>
+      <td>europe</td>
+      <td>volkswagen</td>
+      <td>Coupe</td>
+    </tr>
+    <tr>
+      <th>114</th>
+      <td>21.0</td>
+      <td>6.0</td>
+      <td>200.0</td>
+      <td>90.0</td>
+      <td>2875.0</td>
+      <td>17.0</td>
+      <td>74.0</td>
+      <td>usa</td>
+      <td>chevrolet</td>
+      <td>Sedan</td>
+    </tr>
+    <tr>
+      <th>128</th>
+      <td>14.0</td>
+      <td>8.0</td>
+      <td>304.0</td>
+      <td>150.0</td>
+      <td>4257.0</td>
+      <td>15.5</td>
+      <td>74.0</td>
+      <td>usa</td>
+      <td>toyota</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>205</th>
+      <td>30.0</td>
+      <td>4.0</td>
+      <td>111.0</td>
+      <td>80.0</td>
+      <td>2155.0</td>
+      <td>14.8</td>
+      <td>77.0</td>
+      <td>usa</td>
+      <td>toyota</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>235</th>
+      <td>39.4</td>
+      <td>4.0</td>
+      <td>85.0</td>
+      <td>70.0</td>
+      <td>2070.0</td>
+      <td>18.6</td>
+      <td>78.0</td>
+      <td>japan</td>
+      <td>toyota</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>318</th>
+      <td>40.9</td>
+      <td>4.0</td>
+      <td>85.0</td>
+      <td>90.0</td>
+      <td>1835.0</td>
+      <td>17.3</td>
+      <td>80.0</td>
+      <td>europe</td>
+      <td>chevrolet</td>
+      <td>Coupe</td>
+    </tr>
+    <tr>
+      <th>322</th>
+      <td>23.7</td>
+      <td>3.0</td>
+      <td>70.0</td>
+      <td>100.0</td>
+      <td>2420.0</td>
+      <td>12.5</td>
+      <td>80.0</td>
+      <td>japan</td>
+      <td>toyota</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>324</th>
+      <td>23.6</td>
+      <td>4.0</td>
+      <td>140.0</td>
+      <td>90.0</td>
+      <td>2905.0</td>
+      <td>14.3</td>
+      <td>80.0</td>
+      <td>usa</td>
+      <td>toyota</td>
+      <td>Sedan</td>
+    </tr>
+    <tr>
+      <th>342</th>
+      <td>34.5</td>
+      <td>4.0</td>
+      <td>100.0</td>
+      <td>90.0</td>
+      <td>2320.0</td>
+      <td>15.8</td>
+      <td>81.0</td>
+      <td>europe</td>
+      <td>chevrolet</td>
+      <td>Coupe</td>
+    </tr>
+    <tr>
+      <th>362</th>
+      <td>23.0</td>
+      <td>4.0</td>
+      <td>151.0</td>
+      <td>90.0</td>
+      <td>3035.0</td>
+      <td>20.5</td>
+      <td>82.0</td>
+      <td>usa</td>
+      <td>volkswagen</td>
+      <td>Sedan</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>just gonna create a df with this fill method</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data3_nans_median</span> <span class="o">=</span> <span class="n">data3</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">median</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">data3_nans_median</span><span class="o">.</span><span class="n">isnull</span><span class="p">(),</span><span class="n">cmap</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Green&#39;</span><span class="p">,</span><span class="s1">&#39;Red&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture08_duplicates_missing_64_1.png" src="../_images/s21_Lecture08_duplicates_missing_64_1.png" />
+</div>
+</div>
+<p>Now that we are left with just those categorical columns, I’d probably just drop those rows. You could do something different (e.g., replace with the most common category, replace by looking at what that category is most likely to be based on weight or mpg or etc).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_nonans</span> <span class="o">=</span> <span class="n">data3_nans_median</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">data_nonans</span><span class="o">.</span><span class="n">isnull</span><span class="p">(),</span><span class="n">cmap</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Green&#39;</span><span class="p">,</span><span class="s1">&#39;Green&#39;</span><span class="p">,</span><span class="s1">&#39;Red&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture08_duplicates_missing_67_1.png" src="../_images/s21_Lecture08_duplicates_missing_67_1.png" />
+</div>
+</div>
+<p>One last thing - we need to reindex the data. As I mentioned before, when dropping rows, our index column is missing values. Its helpful when there aren’t missing gaps in the index, so we will use the following to fix that</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_nonans</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">data_nonans</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_nonans</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;Data_no_nans.csv&#39;</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="we-are-by-no-means-finished-with-this-dataset-there-are-a-few-more-things-we-have-to-do-with-it-which-we-will-do-next-week">
+<h1>We are by no means finished with this dataset. There are a few more things we have to do with it, which we will do next week<a class="headerlink" href="#we-are-by-no-means-finished-with-this-dataset-there-are-a-few-more-things-we-have-to-do-with-it-which-we-will-do-next-week" title="Permalink to this headline">¶</a></h1>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Garrett_Lectures"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Ed Vul<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

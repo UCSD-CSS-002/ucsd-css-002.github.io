@@ -1,0 +1,1563 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Obtaining data - csv/excel &#8212; UCSD CSS 2</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">UCSD CSS 2</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Welcome to CSS 2
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Course (CSS 2 summer 2)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/syllabus.html">
+   Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/expectations.html">
+   Expectations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/datahub.html">
+   Datahub assignments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/debugging.html">
+   Debugging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/resources.html">
+   Extracurricular Resources
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lectures
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lectures/P01.html">
+   P01: Review of Python and Notebooks
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../live/css2-lecture-1.html">
+     CSS 2 Lecture 1
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lectures/P02.html">
+   P02: Data representation: numpy and pandas
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../live/css2-lecture-2.html">
+     CSS 2 Lecture 2
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lectures/P03.html">
+   P03: Plotting with matplotlib
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/P04.html">
+   P04: Data cleaning and management
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/P05.html">
+   P05: Modeling Data 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/P06.html">
+   P06: Modeling Data 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/P07.html">
+   P07: Classification
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/P08.html">
+   P08: Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/P09.html">
+   P09: Clustering
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/P10.html">
+   P10: Dimensionality reduction
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Garrett_Lectures/s21_Lecture05_excel_csv.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/UCSD-CSS-002/ucsd-css-002.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/UCSD-CSS-002/ucsd-css-002.github.io/issues/new?title=Issue%20on%20page%20%2FGarrett_Lectures/s21_Lecture05_excel_csv.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/UCSD-CSS-002/ucsd-css-002.github.io/master?urlpath=tree/Garrett_Lectures/s21_Lecture05_excel_csv.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="obtaining-data-csv-excel">
+<h1>Obtaining data - csv/excel<a class="headerlink" href="#obtaining-data-csv-excel" title="Permalink to this headline">¶</a></h1>
+<p>Announcements:</p>
+<ol class="simple">
+<li><p>Problem set 1 grades posted soon!</p></li>
+<li><p>Problem set 3 released after class</p></li>
+<li><p>Stuff due at end of the week: Problem set 3, Quiz 3, and Discussion board post 1</p></li>
+<li><p>Adnan speaking on Wednesday at 6:00pm</p></li>
+<li><p>Brendon’s video on IDEs posted</p></li>
+</ol>
+<p>Today’s topics</p>
+<ol class="simple">
+<li><p>Loading csv, excel data</p></li>
+<li><p>Saving csv, excel data</p></li>
+<li><p>Websites with data</p></li>
+<li><p>Brief intro web scraping</p></li>
+</ol>
+<p>So far, we’ve talked about how to manipulate data, using numpy and pandas, and how to visualize that data, using matplotlib and seaborn</p>
+<p>But I’m using pretty convenient datasets. If you work in a psychology lab, your data may be stored as excel, csv, or text files.</p>
+<p>Let’s talk about a little bit about loading and saving these kinds of datasets.</p>
+<p>First, let’s import some of our normal libraries</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, let’s import some data I collected during my postdoc fellowship.</p>
+<p>This is eye tracking data of someone driving in a driving simulator.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eye_track</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;eyetracking_data.txt&#39;</span><span class="p">)</span>
+<span class="n">eye_track</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Var1 Var2 Var3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1.44207587271361 0.0232338115794249 151.138258...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1.39027874910719 0.0218304931830517 151.154917...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1.48176710656607 0.0237724495233521 151.171574...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1.25546497074573 0.0206526507526711 151.188233...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1.5483807587008 0.0231691147836626 151.2048945...</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Huh. That looks strange</p>
+<p>We probably need to specify how the numbers are separated. This is called the delimiter</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eye_track</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;eyetracking_data.txt&#39;</span><span class="p">,</span><span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+<span class="n">eye_track</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Var1</th>
+      <th>Var2</th>
+      <th>Var3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1.442076</td>
+      <td>0.023234</td>
+      <td>151.138258</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1.390279</td>
+      <td>0.021830</td>
+      <td>151.154917</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1.481767</td>
+      <td>0.023772</td>
+      <td>151.171575</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1.255465</td>
+      <td>0.020653</td>
+      <td>151.188234</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1.548381</td>
+      <td>0.023169</td>
+      <td>151.204895</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>In this particular dataset, spaces were used. However, commas are commonly used. So are tabs</p>
+<p>So… let’s get back to the data</p>
+<p>Jeez. The columns aren’t even labelled. Ugh</p>
+<p>We can rename them with rename</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eye_track</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Var1&#39;</span><span class="p">:</span><span class="s1">&#39;x&#39;</span><span class="p">,</span><span class="s1">&#39;Var2&#39;</span><span class="p">:</span><span class="s1">&#39;y&#39;</span><span class="p">,</span><span class="s1">&#39;Var3&#39;</span><span class="p">:</span><span class="s1">&#39;t&#39;</span><span class="p">})</span> 
+<span class="n">eye_track</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Var1</th>
+      <th>Var2</th>
+      <th>Var3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1.442076</td>
+      <td>0.023234</td>
+      <td>151.138258</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1.390279</td>
+      <td>0.021830</td>
+      <td>151.154917</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1.481767</td>
+      <td>0.023772</td>
+      <td>151.171575</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1.255465</td>
+      <td>0.020653</td>
+      <td>151.188234</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1.548381</td>
+      <td>0.023169</td>
+      <td>151.204895</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Or by setting the columns of the dataframe equal to a list. Note that a list with more entries than possible will crash</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eye_track</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">,</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span><span class="s1">&#39;Time&#39;</span><span class="p">]</span>
+<span class="n">eye_track</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>X</th>
+      <th>Y</th>
+      <th>Time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1.442076</td>
+      <td>0.023234</td>
+      <td>151.138258</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1.390279</td>
+      <td>0.021830</td>
+      <td>151.154917</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1.481767</td>
+      <td>0.023772</td>
+      <td>151.171575</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1.255465</td>
+      <td>0.020653</td>
+      <td>151.188234</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1.548381</td>
+      <td>0.023169</td>
+      <td>151.204895</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Let’s take a quick peek at the data. Looks pretty messy.</p>
+<p>This is one limitation of these quick plotting methods. Sometimes, they don’t look good at all!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">eye_track</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7fbd3a8a7370&gt;
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture05_excel_csv_12_1.png" src="../_images/s21_Lecture05_excel_csv_12_1.png" />
+</div>
+</div>
+<p>Since I’m familiar with the data, I can tell you the best way to look at this data is to plot time on the x-axis and X and Y eccentricity on the y-axes</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Time&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;X&#39;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">eye_track</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;x ecc&#39;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Time&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">eye_track</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;y ecc&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Eccentricity ($^\circ$)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fbd288dbf70&gt;
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture05_excel_csv_14_1.png" src="../_images/s21_Lecture05_excel_csv_14_1.png" />
+</div>
+</div>
+<p>Huh. Looks like the X data is in degrees and Y data is in radians</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eye_track</span><span class="p">[</span><span class="s1">&#39;Y&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">degrees</span><span class="p">(</span><span class="n">eye_track</span><span class="p">[</span><span class="s1">&#39;Y&#39;</span><span class="p">])</span>
+<span class="n">eye_track</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>X</th>
+      <th>Y</th>
+      <th>Time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1.442076</td>
+      <td>1.331199</td>
+      <td>151.138258</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1.390279</td>
+      <td>1.250795</td>
+      <td>151.154917</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1.481767</td>
+      <td>1.362061</td>
+      <td>151.171575</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1.255465</td>
+      <td>1.183310</td>
+      <td>151.188234</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1.548381</td>
+      <td>1.327492</td>
+      <td>151.204895</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Time&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;X&#39;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">eye_track</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;x ecc&#39;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Time&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">eye_track</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;y ecc&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Eccentricity ($^\circ$)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fbd1933bc70&gt;
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture05_excel_csv_17_1.png" src="../_images/s21_Lecture05_excel_csv_17_1.png" />
+</div>
+</div>
+<p>Good. Much better. I think we have improved this dataset! Let’s save it now</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eye_track</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;new_eyetracking_data.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can change the delimiter with sep</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eye_track</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;new_eyetracking_data2.csv&#39;</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Saving and loading excel file data is very similar to how CSV data is handled</p>
+<p>Lets save the data as an excel file to see how it work</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eye_track</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="s1">&#39;new_eyetracking_data.xlsx&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, let’s load that excel file</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">excel_eye_track</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;new_eyetracking_data.xlsx&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">excel_eye_track</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>X</th>
+      <th>Y</th>
+      <th>Time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>1.442076</td>
+      <td>1.331199</td>
+      <td>151.138258</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>1.390279</td>
+      <td>1.250795</td>
+      <td>151.154917</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>1.481767</td>
+      <td>1.362061</td>
+      <td>151.171575</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>1.255465</td>
+      <td>1.183310</td>
+      <td>151.188234</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>1.548381</td>
+      <td>1.327492</td>
+      <td>151.204895</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Weird. Now there is an extra column at the beginning.</p>
+<p>Any idea what this column may be from?</p>
+<p>The indices of the dataframe have been saved in the excel file, which then get loaded when we load that excel file</p>
+<p>We can include an argument if we know there is an index column. We could do this with the csv file as well</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">excel_eye_track2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;new_eyetracking_data.xlsx&#39;</span><span class="p">,</span><span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">excel_eye_track2</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>X</th>
+      <th>Y</th>
+      <th>Time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1.442076</td>
+      <td>1.331199</td>
+      <td>151.138258</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1.390279</td>
+      <td>1.250795</td>
+      <td>151.154917</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1.481767</td>
+      <td>1.362061</td>
+      <td>151.171575</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1.255465</td>
+      <td>1.183310</td>
+      <td>151.188234</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1.548381</td>
+      <td>1.327492</td>
+      <td>151.204895</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Alternatively, you could load the whole data set, and then just drop that column</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">excel_eye_track3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;new_eyetracking_data.xlsx&#39;</span><span class="p">)</span>
+<span class="n">excel_eye_track3</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;Unnamed: 0&#39;, &#39;X&#39;, &#39;Y&#39;, &#39;Time&#39;], dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">excel_eye_track3</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="s1">&#39;Unnamed: 0&#39;</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">excel_eye_track3</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>X</th>
+      <th>Y</th>
+      <th>Time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1.442076</td>
+      <td>1.331199</td>
+      <td>151.138258</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1.390279</td>
+      <td>1.250795</td>
+      <td>151.154917</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1.481767</td>
+      <td>1.362061</td>
+      <td>151.171575</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1.255465</td>
+      <td>1.183310</td>
+      <td>151.188234</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1.548381</td>
+      <td>1.327492</td>
+      <td>151.204895</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Let’s just load one last dataset.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">drive_sim</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;drivesim_data.csv&#39;</span><span class="p">)</span>
+<span class="n">drive_sim</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0957bn</th>
+      <th>1.086111167</th>
+      <th>1.618181818</th>
+      <th>1.308333342</th>
+      <th>1.058333308</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2176as</td>
+      <td>1.708333</td>
+      <td>1.645454</td>
+      <td>2.912121</td>
+      <td>0.930556</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2221ee</td>
+      <td>1.788889</td>
+      <td>2.566667</td>
+      <td>1.439394</td>
+      <td>2.041667</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2437mg</td>
+      <td>2.494445</td>
+      <td>1.839394</td>
+      <td>2.830303</td>
+      <td>1.566667</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3242ay</td>
+      <td>1.061111</td>
+      <td>1.581818</td>
+      <td>1.258333</td>
+      <td>1.780555</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>3243we</td>
+      <td>0.830556</td>
+      <td>1.030303</td>
+      <td>0.961111</td>
+      <td>0.805556</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Data looks to be loaded okay, but the column labels appear to be messed up.</p>
+<p>In this case, it looks like there were no headers in the csv file. So, let’s make sure that when we load them into colab, we have name the columns</p>
+<p>If you tried to just rename the columns, you will lose that first row of data! So, lets’ add columns as input arguments into the pd.read_csv function</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">drive_sim</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;drivesim_data.csv&#39;</span><span class="p">,</span><span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Subject&#39;</span><span class="p">,</span><span class="s1">&#39;D1&#39;</span><span class="p">,</span><span class="s1">&#39;D2&#39;</span><span class="p">,</span><span class="s1">&#39;D3&#39;</span><span class="p">,</span><span class="s1">&#39;D4&#39;</span><span class="p">])</span>
+<span class="n">drive_sim</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Subject</th>
+      <th>D1</th>
+      <th>D2</th>
+      <th>D3</th>
+      <th>D4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0957bn</td>
+      <td>1.086111</td>
+      <td>1.618182</td>
+      <td>1.308333</td>
+      <td>1.058333</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2176as</td>
+      <td>1.708333</td>
+      <td>1.645454</td>
+      <td>2.912121</td>
+      <td>0.930556</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2221ee</td>
+      <td>1.788889</td>
+      <td>2.566667</td>
+      <td>1.439394</td>
+      <td>2.041667</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2437mg</td>
+      <td>2.494445</td>
+      <td>1.839394</td>
+      <td>2.830303</td>
+      <td>1.566667</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>3242ay</td>
+      <td>1.061111</td>
+      <td>1.581818</td>
+      <td>1.258333</td>
+      <td>1.780555</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Maybe we want the rows to be the subject, since that is actually what the rows represent</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">drive_sim</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">drive_sim</span><span class="p">[</span><span class="s1">&#39;Subject&#39;</span><span class="p">]</span>
+<span class="n">drive_sim</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Subject</th>
+      <th>D1</th>
+      <th>D2</th>
+      <th>D3</th>
+      <th>D4</th>
+    </tr>
+    <tr>
+      <th>Subject</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0957bn</th>
+      <td>0957bn</td>
+      <td>1.086111</td>
+      <td>1.618182</td>
+      <td>1.308333</td>
+      <td>1.058333</td>
+    </tr>
+    <tr>
+      <th>2176as</th>
+      <td>2176as</td>
+      <td>1.708333</td>
+      <td>1.645454</td>
+      <td>2.912121</td>
+      <td>0.930556</td>
+    </tr>
+    <tr>
+      <th>2221ee</th>
+      <td>2221ee</td>
+      <td>1.788889</td>
+      <td>2.566667</td>
+      <td>1.439394</td>
+      <td>2.041667</td>
+    </tr>
+    <tr>
+      <th>2437mg</th>
+      <td>2437mg</td>
+      <td>2.494445</td>
+      <td>1.839394</td>
+      <td>2.830303</td>
+      <td>1.566667</td>
+    </tr>
+    <tr>
+      <th>3242ay</th>
+      <td>3242ay</td>
+      <td>1.061111</td>
+      <td>1.581818</td>
+      <td>1.258333</td>
+      <td>1.780555</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Now, let’s just drop that first column</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">drive_sim</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="s1">&#39;Subject&#39;</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">drive_sim</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>D1</th>
+      <th>D2</th>
+      <th>D3</th>
+      <th>D4</th>
+    </tr>
+    <tr>
+      <th>Subject</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0957bn</th>
+      <td>1.086111</td>
+      <td>1.618182</td>
+      <td>1.308333</td>
+      <td>1.058333</td>
+    </tr>
+    <tr>
+      <th>2176as</th>
+      <td>1.708333</td>
+      <td>1.645454</td>
+      <td>2.912121</td>
+      <td>0.930556</td>
+    </tr>
+    <tr>
+      <th>2221ee</th>
+      <td>1.788889</td>
+      <td>2.566667</td>
+      <td>1.439394</td>
+      <td>2.041667</td>
+    </tr>
+    <tr>
+      <th>2437mg</th>
+      <td>2.494445</td>
+      <td>1.839394</td>
+      <td>2.830303</td>
+      <td>1.566667</td>
+    </tr>
+    <tr>
+      <th>3242ay</th>
+      <td>1.061111</td>
+      <td>1.581818</td>
+      <td>1.258333</td>
+      <td>1.780555</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Now with these few lines of code, you should be able to interact with data from your lab.</p>
+<p>Note that there is a csv library. <a class="reference external" href="https://docs.python.org/3/library/csv.html">https://docs.python.org/3/library/csv.html</a> Perhaps there are limitations to pandas that don’t exist in the csv library. I’m not sure of any at the moment, but its something to be aware of.</p>
+<p>Regarding csv/excel file data, you can also download excel/csv data from websites that store data. For example, <a class="reference external" href="https://www.kaggle.com/">https://www.kaggle.com/</a> is a great place to find data.</p>
+<p>So, we’ve created fake data, downloaded datasets using seaborn, and we have learned how to import and export CSVs and Excel files.</p>
+<p>The last method of obtaining data that we will talk about is web scraping. Web scraping means extracting data from a website and saving it onto your ocmputer</p>
+<p>The simplest form of webscraping is to utilize pandas read_html method</p>
+<p>read_html takes in an html and then searches for tables in that html</p>
+<p>Let’s first see an example, then we will spend the next couple of lectures exploring exactly how this works</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">webdata</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_html</span><span class="p">(</span><span class="s1">&#39;https://en.wikipedia.org/wiki/List_of_cities_by_elevation&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">webdata</span><span class="p">),</span><span class="nb">len</span><span class="p">(</span><span class="n">webdata</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;list&#39;&gt; 3
+</pre></div>
+</div>
+</div>
+</div>
+<p>Data is a list that has a length of 2</p>
+<p>The first two items in the list are not the table we wanted</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">webdata</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>NaN</td>
+      <td>This article needs additional citations for ve...</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>However, the third item in the list is the table</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">webdata</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>NaN</td>
+      <td>This list is incomplete; you can help by addin...</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Why is this happening? Well, we need to look at the html code to understand that.</p>
+<p>read_html is looking for specific formating in the html code. Specifically, &lt;_table&gt; content and only for &lt;_tr&gt; and &lt;_th&gt; rows and &lt;_td&gt; elements within each &lt;_tr&gt; or &lt;_th&gt; element in the table</p>
+<p>When we look at the html, we see that there are three tables in the html, which is why it spit out three</p>
+<p>Now, let’s look back at our webdata</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">webdata</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;list&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>So, in order to access that information, we need the type to be a tag, not a ….</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">webdata</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>So, while this is probably the easist method to web scrap, it has its limitations.</p>
+<p>What do you think would happen if we checked out this website? I want to pull off some recipes from Babish</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url2</span> <span class="o">=</span> <span class="s1">&#39;https://www.bingingwithbabish.com/recipes&#39;</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_html</span><span class="p">(</span><span class="n">url2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">28</span><span class="o">-</span><span class="n">e18741a544e5</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">url2</span> <span class="o">=</span> <span class="s1">&#39;https://www.bingingwithbabish.com/recipes&#39;</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_html</span><span class="p">(</span><span class="n">url2</span><span class="p">)</span>
+
+<span class="nn">/opt/homebrew/anaconda3/lib/python3.8/site-packages/pandas/util/_decorators.py</span> in <span class="ni">wrapper</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">294</span>                 <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">295</span>                 <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="ne">FutureWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="n">stacklevel</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">296</span>             <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">297</span> 
+<span class="g g-Whitespace">    </span><span class="mi">298</span>         <span class="k">return</span> <span class="n">wrapper</span>
+
+<span class="nn">/opt/homebrew/anaconda3/lib/python3.8/site-packages/pandas/io/html.py</span> in <span class="ni">read_html</span><span class="nt">(io, match, flavor, header, index_col, skiprows, attrs, parse_dates, thousands, encoding, decimal, converters, na_values, keep_default_na, displayed_only)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1084</span>         <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1085</span>     <span class="n">validate_header_arg</span><span class="p">(</span><span class="n">header</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1086</span>     <span class="k">return</span> <span class="n">_parse</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1087</span>         <span class="n">flavor</span><span class="o">=</span><span class="n">flavor</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1088</span>         <span class="n">io</span><span class="o">=</span><span class="n">io</span><span class="p">,</span>
+
+<span class="nn">/opt/homebrew/anaconda3/lib/python3.8/site-packages/pandas/io/html.py</span> in <span class="ni">_parse</span><span class="nt">(flavor, io, match, attrs, encoding, displayed_only, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">915</span>             <span class="k">break</span>
+<span class="g g-Whitespace">    </span><span class="mi">916</span>     <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">917</span>         <span class="k">raise</span> <span class="n">retained</span>
+<span class="g g-Whitespace">    </span><span class="mi">918</span> 
+<span class="g g-Whitespace">    </span><span class="mi">919</span>     <span class="n">ret</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="nn">/opt/homebrew/anaconda3/lib/python3.8/site-packages/pandas/io/html.py</span> in <span class="ni">_parse</span><span class="nt">(flavor, io, match, attrs, encoding, displayed_only, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">896</span> 
+<span class="g g-Whitespace">    </span><span class="mi">897</span>         <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">898</span>             <span class="n">tables</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">parse_tables</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">899</span>         <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">caught</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">900</span>             <span class="c1"># if `io` is an io-like object, check if it&#39;s seekable</span>
+
+<span class="nn">/opt/homebrew/anaconda3/lib/python3.8/site-packages/pandas/io/html.py</span> in <span class="ni">parse_tables</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">215</span>         <span class="nb">list</span> <span class="n">of</span> <span class="n">parsed</span> <span class="p">(</span><span class="n">header</span><span class="p">,</span> <span class="n">body</span><span class="p">,</span> <span class="n">footer</span><span class="p">)</span> <span class="n">tuples</span> <span class="kn">from</span> <span class="nn">tables.</span>
+<span class="g g-Whitespace">    </span><span class="mi">216</span>         <span class="s2">&quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">217</span><span class="s2">         tables = self._parse_tables(self._build_doc(), self.match, self.attrs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">218</span><span class="s2">         return (self._parse_thead_tbody_tfoot(table) for table in tables)</span>
+<span class="g g-Whitespace">    </span><span class="mi">219</span><span class="s2"> </span>
+
+<span class="nn">/opt/homebrew/anaconda3/lib/python3.8/site-packages/pandas/io/html.py</span> in <span class="ni">_parse_tables</span><span class="nt">(self, doc, match, attrs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">545</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">546</span><span class="s2">         if not tables:</span>
+<span class="ne">--&gt; </span><span class="mi">547</span><span class="s2">             raise ValueError(&quot;No tables found&quot;)</span>
+<span class="g g-Whitespace">    </span><span class="mi">548</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">549</span><span class="s2">         result = []</span>
+
+<span class="ne">ValueError</span>: No tables found
+</pre></div>
+</div>
+</div>
+</div>
+<p>Oh weird. It doesn’t work.</p>
+<p>Let’s check error message. Very interesting. Let’s check the the website. Oh. There are not tables in this html code.</p>
+<p>So, how do we scrap then? We can use beautiful soup.</p>
+<p><a class="reference external" href="https://scrapinghub.com/guides/web-scraping-best-practices/">https://scrapinghub.com/guides/web-scraping-best-practices/</a></p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Garrett_Lectures"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Ed Vul<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

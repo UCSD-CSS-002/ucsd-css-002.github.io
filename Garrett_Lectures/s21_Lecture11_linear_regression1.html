@@ -1,0 +1,1362 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>&lt;no title&gt; &#8212; UCSD CSS 2</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">UCSD CSS 2</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Welcome to CSS 2
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Course (CSS 2 summer 2)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/syllabus.html">
+   Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/expectations.html">
+   Expectations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/datahub.html">
+   Datahub assignments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/debugging.html">
+   Debugging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/resources.html">
+   Extracurricular Resources
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lectures
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lectures/P01.html">
+   P01: Review of Python and Notebooks
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../live/css2-lecture-1.html">
+     CSS 2 Lecture 1
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lectures/P02.html">
+   P02: Data representation: numpy and pandas
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../live/css2-lecture-2.html">
+     CSS 2 Lecture 2
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lectures/P03.html">
+   P03: Plotting with matplotlib
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/P04.html">
+   P04: Data cleaning and management
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/P05.html">
+   P05: Modeling Data 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/P06.html">
+   P06: Modeling Data 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/P07.html">
+   P07: Classification
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/P08.html">
+   P08: Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/P09.html">
+   P09: Clustering
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/P10.html">
+   P10: Dimensionality reduction
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Garrett_Lectures/s21_Lecture11_linear_regression1.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/UCSD-CSS-002/ucsd-css-002.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/UCSD-CSS-002/ucsd-css-002.github.io/issues/new?title=Issue%20on%20page%20%2FGarrett_Lectures/s21_Lecture11_linear_regression1.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/UCSD-CSS-002/ucsd-css-002.github.io/master?urlpath=tree/Garrett_Lectures/s21_Lecture11_linear_regression1.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <p>Announcements</p>
+<ol class="simple">
+<li><p>Problem set 6 and quiz 6 due</p></li>
+<li><p>Discussion board 2 and quiz 5 will be graded this weekend</p></li>
+<li><p>How is the final project coming along?</p></li>
+</ol>
+<p>Today’s topic</p>
+<ol class="simple">
+<li><p>What is linear regression?</p></li>
+<li><p>Doing linear regression with linear algebra</p></li>
+<li><p>Doing linear regression with sklearn</p></li>
+</ol>
+<p>First, let’s get our libraries. We are also getting a library called inv, which we will need for our calculation</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">from</span> <span class="nn">numpy.linalg</span> <span class="kn">import</span> <span class="n">inv</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here, let’s load our dataset that we feature engineered.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;final_mpg_dataset.csv&#39;</span><span class="p">)</span>
+<span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mpg</th>
+      <th>cylinders</th>
+      <th>displacement</th>
+      <th>horsepower</th>
+      <th>weight</th>
+      <th>acceleration</th>
+      <th>model_year</th>
+      <th>origin</th>
+      <th>name</th>
+      <th>Type</th>
+      <th>...</th>
+      <th>peugeot</th>
+      <th>toyota</th>
+      <th>volkswagen</th>
+      <th>volvo</th>
+      <th>Sedan0</th>
+      <th>japan</th>
+      <th>usa</th>
+      <th>MediumHP</th>
+      <th>HighHP</th>
+      <th>HP_ordinal</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>18.0</td>
+      <td>8.0</td>
+      <td>307.000000</td>
+      <td>130.000000</td>
+      <td>3504.0</td>
+      <td>12.000000</td>
+      <td>70.0</td>
+      <td>usa</td>
+      <td>chevrolet</td>
+      <td>Sedan</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>14.0</td>
+      <td>8.0</td>
+      <td>167.405634</td>
+      <td>92.497143</td>
+      <td>4354.0</td>
+      <td>16.007471</td>
+      <td>70.0</td>
+      <td>usa</td>
+      <td>chevrolet</td>
+      <td>Sedan</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>15.0</td>
+      <td>8.0</td>
+      <td>400.000000</td>
+      <td>150.000000</td>
+      <td>3761.0</td>
+      <td>16.007471</td>
+      <td>70.0</td>
+      <td>usa</td>
+      <td>chevrolet</td>
+      <td>Sedan</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>24.0</td>
+      <td>4.0</td>
+      <td>113.000000</td>
+      <td>95.000000</td>
+      <td>2372.0</td>
+      <td>15.000000</td>
+      <td>70.0</td>
+      <td>japan</td>
+      <td>toyota</td>
+      <td>Coupe</td>
+      <td>...</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>26.0</td>
+      <td>4.0</td>
+      <td>12.000000</td>
+      <td>46.000000</td>
+      <td>1835.0</td>
+      <td>20.500000</td>
+      <td>70.0</td>
+      <td>europe</td>
+      <td>volkswagen</td>
+      <td>Coupe</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 23 columns</p>
+</div></div></div>
+</div>
+<p>I think a good relationship to investigate first is horsepower against weight</p>
+<p>Based on how the data looks, it looks like there is a strong positive relationship. As horsepower increases, so does weight</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;horsepower&#39;</span><span class="p">],</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/homebrew/anaconda3/lib/python3.8/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;horsepower&#39;, ylabel=&#39;weight&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture11_linear_regression1_6_2.png" src="../_images/s21_Lecture11_linear_regression1_6_2.png" />
+</div>
+</div>
+<p>Now, let’s rearrange the data a little bit. To do our calculation using linear algebra, we will turn out horsepower series into an array that is n by 1, with n being the number of observations</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;horsepower&#39;</span><span class="p">])</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">X</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(358, 1)
+</pre></div>
+</div>
+</div>
+</div>
+<p>And for the thing we want to predict or explain, we will create an array. Note that y should be 1-dimensional. It should just be size n. Not n by 1</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">])</span>
+<span class="n">y</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(358,)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, here is the equation we will use.</p>
+<p>Its a bit complicated. Its simply a rearranging of the variables in the equation “yi = bxi” (which is the samea s y = mx), whereby we are solving for b (our betas)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">inv</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="p">))</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">T</span><span class="p">)</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The beta that comes out tells us the slope of the line.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[30.00934642]
+</pre></div>
+</div>
+</div>
+</div>
+<p>So, our equation is</p>
+<p>y = 30.009 * x</p>
+<p>or</p>
+<p>weight = 30.009 * horsepower</p>
+<p>We can then find the predicted y values by multiplying our X values by the return beta</p>
+<p>Note that it is using this dot multiplication, since X is a matrix</p>
+<p>If we printed the output, these are the corresponding y values from that equation</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">yhat</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">yhat</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3901.21503459 2775.77880285 4501.40196298 2850.88790989 1380.42993531
+ 2610.81313853 2700.84117779 2850.88790989 2700.84117779 2850.88790989
+ 3000.93464199 4951.54215928 2160.67294223 2100.65424939 1800.56078519
+ 2850.88790989 2775.77880285 2700.84117779 4951.54215928 3901.21503459
+ 3361.04679903 2610.81313853 2910.90660273 2640.82248495 4351.35523088
+ 4501.40196298 3000.93464199 1380.42993531 4501.40196298 2640.82248495
+ 2160.67294223 4351.35523088 2730.85052421 3361.04679903 3301.02810619
+ 3661.14026323 3000.93464199 1950.60751729 3000.93464199 2490.77575285
+ 2010.62621013 1560.48601383 3150.98137409 4351.35523088 3150.98137409
+ 3301.02810619 2250.70098149 2880.89725631 2130.66359581 2100.65424939
+ 2850.88790989 2640.82248495 2940.91594915 3451.07483829 4201.30849878
+ 3150.98137409 1560.48601383 1800.56078519 2130.66359581 3060.95333483
+ 2640.82248495 3241.00941335 4351.35523088 3301.02810619 2775.77880285
+ 2340.72902075 2250.70098149 1890.58882445 2340.72902075 1440.44862815
+ 2850.88790989 4351.35523088 2040.63555655 2850.88790989 2850.88790989
+ 3090.96268125 3751.16830249 3451.07483829 3991.24307384 2130.66359581
+ 3901.21503459 3751.16830249 2130.66359581 3451.07483829 1800.56078519
+ 2100.65424939 2700.84117779 2340.72902075 2700.84117779 2250.70098149
+ 2010.62621013 1860.57947803 3301.02810619 1740.54209235 1860.57947803
+ 2250.70098149 2400.74771359 2280.71032791 3481.08418471 2640.82248495
+ 2640.82248495 2640.82248495 2220.69163507 2640.82248495 2100.65424939
+ 2880.89725631 2700.84117779 2700.84117779 3000.93464199 3000.93464199
+ 2010.62621013 2400.74771359 1950.60751729 2250.70098149 3000.93464199
+ 3301.02810619 3150.98137409 4201.30849878 4501.40196298 4501.40196298
+ 4201.30849878 2490.77575285 2010.62621013 2340.72902075 1560.48601383
+ 1830.57013161 2250.70098149 2250.70098149 2250.70098149 2910.90660273
+ 2790.86921705 2010.62621013 2850.88790989 3150.98137409 2160.67294223
+ 2160.67294223 2775.77880285 4501.40196298 4441.38327014 3301.02810619
+ 3150.98137409 3301.02810619 2850.88790989 3301.02810619 3301.02810619
+ 3871.20568817 3000.93464199 2340.72902075 2880.89725631 2130.66359581
+ 2910.90660273 2910.90660273 2100.65424939 2700.84117779 2850.88790989
+ 2640.82248495 2940.91594915 3451.07483829 1590.49536025 2580.80379211
+ 2430.75706001 2760.85987063 2370.73836717 2490.77575285 4201.30849878
+ 4501.40196298 3601.12157039 3000.93464199 3150.98137409 2430.75706001
+ 2700.84117779 1560.48601383 2100.65424939 1590.49536025 3000.93464199
+ 2340.72902075 3301.02810619 2850.88790989 2130.66359581 2100.65424939
+ 2250.70098149 2160.67294223 3060.95333483 4501.40196298 2640.82248495
+ 3241.00941335 3601.12157039 2775.77880285 4351.35523088 3901.21503459
+ 4501.40196298 2040.63555655 1740.54209235 2880.89725631 2100.65424939
+ 3301.02810619 4351.35523088 3901.21503459 3301.02810619 3150.98137409
+ 3000.93464199 2940.91594915 2775.77880285 2775.77880285 2775.77880285
+ 4471.39261656 2340.72902075 2640.82248495 2250.70098149 2670.83183137
+ 1890.58882445 2490.77575285 2010.62621013 2340.72902075 2910.90660273
+ 3301.02810619 3301.02810619 1440.44862815 1980.61686371 1560.48601383
+ 1800.56078519 3301.02810619 4201.30849878 4171.29915236 3150.98137409
+ 2850.88790989 2550.79444569 2640.82248495 3000.93464199 2700.84117779
+ 3150.98137409 2550.79444569 3301.02810619 3601.12157039 4951.54215928
+ 4171.29915236 4201.30849878 2850.88790989 2910.90660273 2250.70098149
+ 2850.88790989 3150.98137409 2550.79444569 2910.90660273 3090.96268125
+ 3451.07483829 3991.24307384 2040.63555655 3451.07483829 2550.79444569
+ 2640.82248495 2700.84117779 3301.02810619 3901.21503459 3871.20568817
+ 4141.28980594 4051.26176668 4651.44869508 4261.32719162 3751.16830249
+ 4501.40196298 2130.66359581 1950.60751729 2400.74771359 2400.74771359
+ 3751.16830249 2130.66359581 2700.84117779 2100.65424939 2100.65424939
+ 1950.60751729 2070.64490297 2700.84117779 3451.07483829 2700.84117779
+ 2280.71032791 1800.56078519 1950.60751729 2700.84117779 2640.82248495
+ 2700.84117779 2700.84117779 2340.72902075 2700.84117779 2250.70098149
+ 2760.85987063 2250.70098149 1950.60751729 3150.98137409 1950.60751729
+ 1440.44862815 1440.44862815 2010.62621013 2010.62621013 2010.62621013
+ 2700.84117779 2010.62621013 1860.57947803 3961.23372743 2640.82248495
+ 2700.84117779 2160.67294223 2520.78509927 2520.78509927 2760.85987063
+ 3301.02810619 2520.78509927 1740.54209235 1920.59817087 1800.56078519
+ 2010.62621013 1950.60751729 1860.57947803 2040.63555655 1890.58882445
+ 1950.60751729 1950.60751729 2220.69163507 2700.84117779 2250.70098149
+ 2250.70098149 3000.93464199 2220.69163507 2400.74771359 2280.71032791
+ 3301.02810619 3150.98137409 2640.82248495 2550.79444569 2640.82248495
+ 2640.82248495 2550.79444569 2520.78509927 2700.84117779 2760.85987063
+ 2700.84117779 2220.69163507 2040.63555655 2040.63555655 1890.58882445
+ 2100.65424939 2640.82248495 2250.70098149 2100.65424939 2010.62621013
+ 2010.62621013 3301.02810619 2550.79444569 2760.85987063 3361.04679903
+ 2880.89725631 2520.78509927 2700.84117779 2580.80379211 1560.48601383
+ 2520.78509927 2370.73836717 2460.76640643]
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can plot these y values and see that it forms a line</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">yhat</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f96c8cb2b80&gt;]
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture11_linear_regression1_19_1.png" src="../_images/s21_Lecture11_linear_regression1_19_1.png" />
+</div>
+</div>
+<p>Super cool!</p>
+<p>But, something is missing from our regression.</p>
+<p>What do you think it is?</p>
+<p>It may be obvious in hindsight, but we didn’t account for the intercept.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">yhat</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">5000</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">170</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.0, 170.0)
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture11_linear_regression1_21_1.png" src="../_images/s21_Lecture11_linear_regression1_21_1.png" />
+</div>
+</div>
+<p>If you zoom out, you will see that the line will pass right through 0,0.</p>
+<p>Maybe the y-intercept will be pretty helpful, so let’s add it</p>
+<p>To do so, we basically add a column of 1s to our X matrix. This is like adding a constant to our X values</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, we can concatenate with our original data to form this new n by 2 matrix</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">b0</span><span class="p">,</span><span class="n">X</span><span class="p">),</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">X2</span><span class="p">,</span><span class="n">X2</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[  1.         130.        ]
+ [  1.          92.49714286]
+ [  1.         150.        ]
+ [  1.          95.        ]
+ [  1.          46.        ]
+ [  1.          87.        ]
+ [  1.          90.        ]
+ [  1.          95.        ]
+ [  1.          90.        ]
+ [  1.          95.        ]
+ [  1.         100.        ]
+ [  1.         165.        ]
+ [  1.          72.        ]
+ [  1.          70.        ]
+ [  1.          60.        ]
+ [  1.          95.        ]
+ [  1.          92.49714286]
+ [  1.          90.        ]
+ [  1.         165.        ]
+ [  1.         130.        ]
+ [  1.         112.        ]
+ [  1.          87.        ]
+ [  1.          97.        ]
+ [  1.          88.        ]
+ [  1.         145.        ]
+ [  1.         150.        ]
+ [  1.         100.        ]
+ [  1.          46.        ]
+ [  1.         150.        ]
+ [  1.          88.        ]
+ [  1.          72.        ]
+ [  1.         145.        ]
+ [  1.          91.        ]
+ [  1.         112.        ]
+ [  1.         110.        ]
+ [  1.         122.        ]
+ [  1.         100.        ]
+ [  1.          65.        ]
+ [  1.         100.        ]
+ [  1.          83.        ]
+ [  1.          67.        ]
+ [  1.          52.        ]
+ [  1.         105.        ]
+ [  1.         145.        ]
+ [  1.         105.        ]
+ [  1.         110.        ]
+ [  1.          75.        ]
+ [  1.          96.        ]
+ [  1.          71.        ]
+ [  1.          70.        ]
+ [  1.          95.        ]
+ [  1.          88.        ]
+ [  1.          98.        ]
+ [  1.         115.        ]
+ [  1.         140.        ]
+ [  1.         105.        ]
+ [  1.          52.        ]
+ [  1.          60.        ]
+ [  1.          71.        ]
+ [  1.         102.        ]
+ [  1.          88.        ]
+ [  1.         108.        ]
+ [  1.         145.        ]
+ [  1.         110.        ]
+ [  1.          92.49714286]
+ [  1.          78.        ]
+ [  1.          75.        ]
+ [  1.          63.        ]
+ [  1.          78.        ]
+ [  1.          48.        ]
+ [  1.          95.        ]
+ [  1.         145.        ]
+ [  1.          68.        ]
+ [  1.          95.        ]
+ [  1.          95.        ]
+ [  1.         103.        ]
+ [  1.         125.        ]
+ [  1.         115.        ]
+ [  1.         133.        ]
+ [  1.          71.        ]
+ [  1.         130.        ]
+ [  1.         125.        ]
+ [  1.          71.        ]
+ [  1.         115.        ]
+ [  1.          60.        ]
+ [  1.          70.        ]
+ [  1.          90.        ]
+ [  1.          78.        ]
+ [  1.          90.        ]
+ [  1.          75.        ]
+ [  1.          67.        ]
+ [  1.          62.        ]
+ [  1.         110.        ]
+ [  1.          58.        ]
+ [  1.          62.        ]
+ [  1.          75.        ]
+ [  1.          80.        ]
+ [  1.          76.        ]
+ [  1.         116.        ]
+ [  1.          88.        ]
+ [  1.          88.        ]
+ [  1.          88.        ]
+ [  1.          74.        ]
+ [  1.          88.        ]
+ [  1.          70.        ]
+ [  1.          96.        ]
+ [  1.          90.        ]
+ [  1.          90.        ]
+ [  1.         100.        ]
+ [  1.         100.        ]
+ [  1.          67.        ]
+ [  1.          80.        ]
+ [  1.          65.        ]
+ [  1.          75.        ]
+ [  1.         100.        ]
+ [  1.         110.        ]
+ [  1.         105.        ]
+ [  1.         140.        ]
+ [  1.         150.        ]
+ [  1.         150.        ]
+ [  1.         140.        ]
+ [  1.          83.        ]
+ [  1.          67.        ]
+ [  1.          78.        ]
+ [  1.          52.        ]
+ [  1.          61.        ]
+ [  1.          75.        ]
+ [  1.          75.        ]
+ [  1.          75.        ]
+ [  1.          97.        ]
+ [  1.          93.        ]
+ [  1.          67.        ]
+ [  1.          95.        ]
+ [  1.         105.        ]
+ [  1.          72.        ]
+ [  1.          72.        ]
+ [  1.          92.49714286]
+ [  1.         150.        ]
+ [  1.         148.        ]
+ [  1.         110.        ]
+ [  1.         105.        ]
+ [  1.         110.        ]
+ [  1.          95.        ]
+ [  1.         110.        ]
+ [  1.         110.        ]
+ [  1.         129.        ]
+ [  1.         100.        ]
+ [  1.          78.        ]
+ [  1.          96.        ]
+ [  1.          71.        ]
+ [  1.          97.        ]
+ [  1.          97.        ]
+ [  1.          70.        ]
+ [  1.          90.        ]
+ [  1.          95.        ]
+ [  1.          88.        ]
+ [  1.          98.        ]
+ [  1.         115.        ]
+ [  1.          53.        ]
+ [  1.          86.        ]
+ [  1.          81.        ]
+ [  1.          92.        ]
+ [  1.          79.        ]
+ [  1.          83.        ]
+ [  1.         140.        ]
+ [  1.         150.        ]
+ [  1.         120.        ]
+ [  1.         100.        ]
+ [  1.         105.        ]
+ [  1.          81.        ]
+ [  1.          90.        ]
+ [  1.          52.        ]
+ [  1.          70.        ]
+ [  1.          53.        ]
+ [  1.         100.        ]
+ [  1.          78.        ]
+ [  1.         110.        ]
+ [  1.          95.        ]
+ [  1.          71.        ]
+ [  1.          70.        ]
+ [  1.          75.        ]
+ [  1.          72.        ]
+ [  1.         102.        ]
+ [  1.         150.        ]
+ [  1.          88.        ]
+ [  1.         108.        ]
+ [  1.         120.        ]
+ [  1.          92.49714286]
+ [  1.         145.        ]
+ [  1.         130.        ]
+ [  1.         150.        ]
+ [  1.          68.        ]
+ [  1.          58.        ]
+ [  1.          96.        ]
+ [  1.          70.        ]
+ [  1.         110.        ]
+ [  1.         145.        ]
+ [  1.         130.        ]
+ [  1.         110.        ]
+ [  1.         105.        ]
+ [  1.         100.        ]
+ [  1.          98.        ]
+ [  1.          92.49714286]
+ [  1.          92.49714286]
+ [  1.          92.49714286]
+ [  1.         149.        ]
+ [  1.          78.        ]
+ [  1.          88.        ]
+ [  1.          75.        ]
+ [  1.          89.        ]
+ [  1.          63.        ]
+ [  1.          83.        ]
+ [  1.          67.        ]
+ [  1.          78.        ]
+ [  1.          97.        ]
+ [  1.         110.        ]
+ [  1.         110.        ]
+ [  1.          48.        ]
+ [  1.          66.        ]
+ [  1.          52.        ]
+ [  1.          60.        ]
+ [  1.         110.        ]
+ [  1.         140.        ]
+ [  1.         139.        ]
+ [  1.         105.        ]
+ [  1.          95.        ]
+ [  1.          85.        ]
+ [  1.          88.        ]
+ [  1.         100.        ]
+ [  1.          90.        ]
+ [  1.         105.        ]
+ [  1.          85.        ]
+ [  1.         110.        ]
+ [  1.         120.        ]
+ [  1.         165.        ]
+ [  1.         139.        ]
+ [  1.         140.        ]
+ [  1.          95.        ]
+ [  1.          97.        ]
+ [  1.          75.        ]
+ [  1.          95.        ]
+ [  1.         105.        ]
+ [  1.          85.        ]
+ [  1.          97.        ]
+ [  1.         103.        ]
+ [  1.         115.        ]
+ [  1.         133.        ]
+ [  1.          68.        ]
+ [  1.         115.        ]
+ [  1.          85.        ]
+ [  1.          88.        ]
+ [  1.          90.        ]
+ [  1.         110.        ]
+ [  1.         130.        ]
+ [  1.         129.        ]
+ [  1.         138.        ]
+ [  1.         135.        ]
+ [  1.         155.        ]
+ [  1.         142.        ]
+ [  1.         125.        ]
+ [  1.         150.        ]
+ [  1.          71.        ]
+ [  1.          65.        ]
+ [  1.          80.        ]
+ [  1.          80.        ]
+ [  1.         125.        ]
+ [  1.          71.        ]
+ [  1.          90.        ]
+ [  1.          70.        ]
+ [  1.          70.        ]
+ [  1.          65.        ]
+ [  1.          69.        ]
+ [  1.          90.        ]
+ [  1.         115.        ]
+ [  1.          90.        ]
+ [  1.          76.        ]
+ [  1.          60.        ]
+ [  1.          65.        ]
+ [  1.          90.        ]
+ [  1.          88.        ]
+ [  1.          90.        ]
+ [  1.          90.        ]
+ [  1.          78.        ]
+ [  1.          90.        ]
+ [  1.          75.        ]
+ [  1.          92.        ]
+ [  1.          75.        ]
+ [  1.          65.        ]
+ [  1.         105.        ]
+ [  1.          65.        ]
+ [  1.          48.        ]
+ [  1.          48.        ]
+ [  1.          67.        ]
+ [  1.          67.        ]
+ [  1.          67.        ]
+ [  1.          90.        ]
+ [  1.          67.        ]
+ [  1.          62.        ]
+ [  1.         132.        ]
+ [  1.          88.        ]
+ [  1.          90.        ]
+ [  1.          72.        ]
+ [  1.          84.        ]
+ [  1.          84.        ]
+ [  1.          92.        ]
+ [  1.         110.        ]
+ [  1.          84.        ]
+ [  1.          58.        ]
+ [  1.          64.        ]
+ [  1.          60.        ]
+ [  1.          67.        ]
+ [  1.          65.        ]
+ [  1.          62.        ]
+ [  1.          68.        ]
+ [  1.          63.        ]
+ [  1.          65.        ]
+ [  1.          65.        ]
+ [  1.          74.        ]
+ [  1.          90.        ]
+ [  1.          75.        ]
+ [  1.          75.        ]
+ [  1.         100.        ]
+ [  1.          74.        ]
+ [  1.          80.        ]
+ [  1.          76.        ]
+ [  1.         110.        ]
+ [  1.         105.        ]
+ [  1.          88.        ]
+ [  1.          85.        ]
+ [  1.          88.        ]
+ [  1.          88.        ]
+ [  1.          85.        ]
+ [  1.          84.        ]
+ [  1.          90.        ]
+ [  1.          92.        ]
+ [  1.          90.        ]
+ [  1.          74.        ]
+ [  1.          68.        ]
+ [  1.          68.        ]
+ [  1.          63.        ]
+ [  1.          70.        ]
+ [  1.          88.        ]
+ [  1.          75.        ]
+ [  1.          70.        ]
+ [  1.          67.        ]
+ [  1.          67.        ]
+ [  1.         110.        ]
+ [  1.          85.        ]
+ [  1.          92.        ]
+ [  1.         112.        ]
+ [  1.          96.        ]
+ [  1.          84.        ]
+ [  1.          90.        ]
+ [  1.          86.        ]
+ [  1.          52.        ]
+ [  1.          84.        ]
+ [  1.          79.        ]
+ [  1.          82.        ]] (358, 2)
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can now actually pass this new X2 directly into the formula we used before</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b_2</span> <span class="o">=</span> <span class="n">inv</span><span class="p">(</span><span class="n">X2</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X2</span><span class="p">))</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X2</span><span class="o">.</span><span class="n">T</span><span class="p">)</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b_2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[625.80410928  23.71789311]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, we have two betas! These refer to b0 and b1, which b0 being y-intercept and b1 being the parameter for our horsepower</p>
+<p>Our equation is now:</p>
+<p>weight = 625.804 + 23.717*horsepower</p>
+<p>Let’s find our new predicted y values based on the new betas</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">yhat2</span> <span class="o">=</span> <span class="n">X2</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">b_2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>and now, let’s look at the plot</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">yhat</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">yhat2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">5000</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">170</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.0, 170.0)
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture11_linear_regression1_33_1.png" src="../_images/s21_Lecture11_linear_regression1_33_1.png" />
+</div>
+</div>
+<p>Now, this is awesome we can do this with math. And its basically just one line of code. But this isn’t exactly the best approach.</p>
+<p>Instead, we can utilize existing libraries. One such library comes from sklearn</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Like we discussed, sklearn works by first defining the model</p>
+<p>Here, we also establish the hyperparameters. Different models will have different hyperparameters. For our linear regression, we will only ensure that the intercept is True (note: this is default, but its nice to have it visible, so we don’t have to worry about it)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">(</span><span class="n">fit_intercept</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The next step is doing the actual fitting, the learning, if you will. We will pass in our X and y from before. Note that we do not need to have that extra column of 1s here because we have told it to include an intercept</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">)</span> <span class="c1"># convention is X and y</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LinearRegression()
+</pre></div>
+</div>
+</div>
+</div>
+<p>and…. that it is</p>
+<p>Cool</p>
+<p>We can check out the coeffecient</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">coef_</span> <span class="c1"># SLOPE of the model</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([23.71789311])
+</pre></div>
+</div>
+</div>
+</div>
+<p>And the intercept</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">intercept_</span> <span class="c1"># INTERCEPT of the model</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>625.8041092779522
+</pre></div>
+</div>
+</div>
+</div>
+<p>So, according to sklearn, our equation is:</p>
+<p>weight = 625.804 + 23.717*horsepower</p>
+<p>This is basically the same from what we found with our linear algebra! Awesome!</p>
+<p>We can get our predicted y values from our x values by using the predict method</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">yfit</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now let’s make a plot</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">yfit</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">yhat</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">yhat2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">160</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">5000</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.0, 5000.0)
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture11_linear_regression1_47_1.png" src="../_images/s21_Lecture11_linear_regression1_47_1.png" />
+</div>
+</div>
+<p>We can look at the residuals to get a feel for how good the predictions are</p>
+<p>The residuals are the difference between the predicted y values and the actual y values.</p>
+<p>As you would expect, if the residuals = 0, then we did a perfect job of fitting the data. The further away the residuals are from 0, then the worse our prediction was</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="n">yfit</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([  3.,  28.,  95., 103.,  73.,  27.,  19.,   3.,   5.,   2.]),
+ array([-1094.2564725 ,  -799.99497091,  -505.73346931,  -211.47196772,
+           82.78953387,   377.05103546,   671.31253705,   965.57403864,
+         1259.83554023,  1554.09704183,  1848.35854342]),
+ &lt;BarContainer object of 10 artists&gt;)
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture11_linear_regression1_49_1.png" src="../_images/s21_Lecture11_linear_regression1_49_1.png" />
+</div>
+</div>
+<p>In my experience, residuals are best compared between models</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="n">yfit</span><span class="p">,</span><span class="mi">50</span><span class="p">)</span> <span class="c1"># model fit with sklearn and with an intercept</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="o">-</span><span class="mi">2000</span><span class="p">,</span><span class="mi">2000</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="n">yhat</span><span class="p">,</span><span class="mi">50</span><span class="p">)</span>  <span class="c1"># model fit with math and without an intercept</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="o">-</span><span class="mi">2000</span><span class="p">,</span><span class="mi">2000</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-2000.0, 2000.0)
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture11_linear_regression1_51_1.png" src="../_images/s21_Lecture11_linear_regression1_51_1.png" />
+</div>
+</div>
+<p>There isn’t a whole lot of difference in the residuals between the model with the intercept and without the intercept in this case. It actually makes sense when we look at the plots above and see that the two lines are quite similar</p>
+<p>a residual plot is the histgram plotted against the predicted values. Here, we can get a slightly better idea of the model. If we see a pattern here, for example, a wavy “line”, then it suggests that our data is not really linear. Seeing a cloud (like below) is a good thing</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">yfit</span><span class="p">,</span><span class="n">yfit</span><span class="o">-</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/homebrew/anaconda3/lib/python3.8/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture11_linear_regression1_54_2.png" src="../_images/s21_Lecture11_linear_regression1_54_2.png" />
+</div>
+</div>
+<p>numerically, we can check out the R2 value, which quantifies the fit</p>
+<p>R2 is basically how much better our line is compared to a line that is completely horizontal.</p>
+<p>It is the proportion of the variance in the dependent variable that is predictable from the independent variable(s).</p>
+<p>The closer to 1 R2 is, the better our fit of the data</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">)</span> <span class="c1"># Return the coefficient of determination R^2 of the prediction</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6596223228824938
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next class, we will talk about how to do this process in machine learning, since nothing here is actually machine learning (everything above is about fitting). And, we will talk about fitting multiple predictors, since that is what we will eventually want to do</p>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Garrett_Lectures"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Ed Vul<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
