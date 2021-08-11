@@ -1,0 +1,2532 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lecture 4: Many more complicated data things &#8212; UCSD CSS 2</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="P05: Modeling Data 1" href="../lectures/P05.html" />
+    <link rel="prev" title="P04: Data cleaning and management" href="../lectures/P04.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">UCSD CSS 2</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Welcome to CSS 2
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Course (CSS 2 summer 2)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/syllabus.html">
+   Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/expectations.html">
+   Expectations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/datahub.html">
+   Datahub assignments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/debugging.html">
+   Debugging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/resources.html">
+   Extracurricular Resources
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lectures
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lectures/P01.html">
+   P01: Review of Python and Notebooks
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="css2-lecture-1.html">
+     CSS 2 Lecture 1
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lectures/P02.html">
+   P02: Data representation: numpy and pandas
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="css2-lecture-2.html">
+     CSS 2 Lecture 2
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lectures/P03.html">
+   P03: Plotting with matplotlib
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="css2-lecture-3.html">
+     CSS 2: lecture 3 - Matplotlib
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../lectures/P04.html">
+   P04: Data cleaning and management
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Lecture 4: Many more complicated data things
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/P05.html">
+   P05: Modeling Data 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/P06.html">
+   P06: Modeling Data 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/P07.html">
+   P07: Classification
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/P08.html">
+   P08: Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/P09.html">
+   P09: Clustering
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/P10.html">
+   P10: Dimensionality reduction
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/live/css2-lecture-4.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/UCSD-CSS-002/ucsd-css-002.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/UCSD-CSS-002/ucsd-css-002.github.io/issues/new?title=Issue%20on%20page%20%2Flive/css2-lecture-4.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/UCSD-CSS-002/ucsd-css-002.github.io/master?urlpath=tree/live/css2-lecture-4.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Lecture 4: Many more complicated data things
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#summary-statistics">
+     Summary statistics
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-wonders-of-logarithms">
+       the wonders of logarithms.
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#mean-median-mode-stdev-var-etc">
+       mean, median, mode, stdev, var, etc.
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#weighted-statistcs">
+         weighted statistcs
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#bivariate-statistics">
+       bivariate statistics
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#correlation">
+         correlation
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#regression-line">
+         regression line
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#advanced-summarization-via-groupby-apply">
+     Advanced summarization via groupby.apply
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#joining-data-frames">
+     Joining data frames.
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reshaping-pivoting-tidy-long-wide-transforms">
+     Reshaping / pivoting / tidy / long-wide transforms
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#wide-data">
+       Wide data
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#long-data">
+       Long data
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#long-to-wide">
+       long to wide
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#wide-to-long">
+       wide to long
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#stacking-with-indexes">
+         stacking (with indexes)
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#melting-column-names">
+         melting (column names)
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#let-s-do-something-complicated-together">
+   Let’s do something complicated together.
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#complicated-plot">
+     Complicated plot
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#complicated-analysis">
+       Complicated analysis
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="lecture-4-many-more-complicated-data-things">
+<h1>Lecture 4: Many more complicated data things<a class="headerlink" href="#lecture-4-many-more-complicated-data-things" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>logarithms review</p></li>
+<li><p>bivariate summary statistics, and groupby.apply</p></li>
+<li><p>joining data frames</p></li>
+<li><p>melting/pivoting long-to-wide and wide-to-long</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gapminder</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;gapminder.csv&#39;</span><span class="p">)</span>
+<span class="c1"># download here:</span>
+<span class="c1"># https://raw.githubusercontent.com/UCSD-CSS-001/ucsd-css-001.github.io/main/datasets/gapminder.csv</span>
+
+<span class="n">gapminder</span> <span class="o">=</span> <span class="n">gapminder</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Unnamed: 0&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="mf">1e3</span><span class="n">ea83ec86a</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">gapminder</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;gapminder.csv&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1"># download here:</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># https://raw.githubusercontent.com/UCSD-CSS-001/ucsd-css-001.github.io/main/datasets/gapminder.csv</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> 
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">gapminder</span> <span class="o">=</span> <span class="n">gapminder</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Unnamed: 0&#39;</span><span class="p">])</span>
+
+<span class="nn">/opt/homebrew/anaconda3/lib/python3.8/site-packages/pandas/io/parsers.py</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, squeeze, prefix, mangle_dupe_cols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, dialect, error_bad_lines, warn_bad_lines, delim_whitespace, low_memory, memory_map, float_precision)</span>
+<span class="g g-Whitespace">    </span><span class="mi">684</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">685</span> 
+<span class="ne">--&gt; </span><span class="mi">686</span>     <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">687</span> 
+<span class="g g-Whitespace">    </span><span class="mi">688</span> 
+
+<span class="nn">/opt/homebrew/anaconda3/lib/python3.8/site-packages/pandas/io/parsers.py</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">450</span> 
+<span class="g g-Whitespace">    </span><span class="mi">451</span>     <span class="c1"># Create the parser.</span>
+<span class="ne">--&gt; </span><span class="mi">452</span>     <span class="n">parser</span> <span class="o">=</span> <span class="n">TextFileReader</span><span class="p">(</span><span class="n">fp_or_buf</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">453</span> 
+<span class="g g-Whitespace">    </span><span class="mi">454</span>     <span class="k">if</span> <span class="n">chunksize</span> <span class="ow">or</span> <span class="n">iterator</span><span class="p">:</span>
+
+<span class="nn">/opt/homebrew/anaconda3/lib/python3.8/site-packages/pandas/io/parsers.py</span> in <span class="ni">__init__</span><span class="nt">(self, f, engine, **kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">944</span>             <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">945</span> 
+<span class="ne">--&gt; </span><span class="mi">946</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_make_engine</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">947</span> 
+<span class="g g-Whitespace">    </span><span class="mi">948</span>     <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<span class="nn">/opt/homebrew/anaconda3/lib/python3.8/site-packages/pandas/io/parsers.py</span> in <span class="ni">_make_engine</span><span class="nt">(self, engine)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1176</span>     <span class="k">def</span> <span class="nf">_make_engine</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;c&quot;</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1177</span>         <span class="k">if</span> <span class="n">engine</span> <span class="o">==</span> <span class="s2">&quot;c&quot;</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1178</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="n">CParserWrapper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">f</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1179</span>         <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1180</span>             <span class="k">if</span> <span class="n">engine</span> <span class="o">==</span> <span class="s2">&quot;python&quot;</span><span class="p">:</span>
+
+<span class="nn">/opt/homebrew/anaconda3/lib/python3.8/site-packages/pandas/io/parsers.py</span> in <span class="ni">__init__</span><span class="nt">(self, src, **kwds)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2006</span>         <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;usecols&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">usecols</span>
+<span class="g g-Whitespace">   </span><span class="mi">2007</span> 
+<span class="ne">-&gt; </span><span class="mi">2008</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_reader</span> <span class="o">=</span> <span class="n">parsers</span><span class="o">.</span><span class="n">TextReader</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2009</span>         <span class="bp">self</span><span class="o">.</span><span class="n">unnamed_cols</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reader</span><span class="o">.</span><span class="n">unnamed_cols</span>
+<span class="g g-Whitespace">   </span><span class="mi">2010</span> 
+
+<span class="nn">pandas/_libs/parsers.pyx</span> in <span class="ni">pandas._libs.parsers.TextReader.__cinit__</span><span class="nt">()</span>
+
+<span class="nn">pandas/_libs/parsers.pyx</span> in <span class="ni">pandas._libs.parsers.TextReader._setup_parser_source</span><span class="nt">()</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;gapminder.csv&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gapminder</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="mi">3</span><span class="n">fdde7cc8c7d</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">gapminder</span>
+
+<span class="ne">NameError</span>: name &#39;gapminder&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="summary-statistics">
+<h2>Summary statistics<a class="headerlink" href="#summary-statistics" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="the-wonders-of-logarithms">
+<h3>the wonders of logarithms.<a class="headerlink" href="#the-wonders-of-logarithms" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">gapminder</span><span class="p">[</span><span class="n">gapminder</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span><span class="o">==</span><span class="mi">2007</span><span class="p">][</span><span class="s1">&#39;pop&#39;</span><span class="p">])</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;population&#39;</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;count of countries&#39;</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Histogram of country populations&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">4</span><span class="o">-</span><span class="mi">7246648</span><span class="n">dafc7</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">f</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">gapminder</span><span class="p">[</span><span class="n">gapminder</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span><span class="o">==</span><span class="mi">2007</span><span class="p">][</span><span class="s1">&#39;pop&#39;</span><span class="p">])</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">f</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;population&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">f</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;count of countries&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">f</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Histogram of country populations&#39;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;gapminder&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gapminder</span><span class="p">[</span><span class="n">gapminder</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span><span class="o">==</span><span class="mi">2007</span><span class="p">][</span><span class="s1">&#39;pop&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">5</span><span class="o">-</span><span class="mi">1</span><span class="n">bdc28682458</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">gapminder</span><span class="p">[</span><span class="n">gapminder</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span><span class="o">==</span><span class="mi">2007</span><span class="p">][</span><span class="s1">&#39;pop&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+
+<span class="ne">NameError</span>: name &#39;gapminder&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>Yikes!  Most standard statistics do not work well with data like this.  Standard statistics are designed for roughly normal (i.e., gaussian, bell-shaped) distributions.</p>
+<p>Fortunately, lots of variables, like population, wealth, income, gdp, etc. are roughly log-normally distributed.  Meaning their <em>logarithm</em> is normal.</p>
+<p>So we can do standard statistics with them after log-transforming</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">freq</span><span class="p">,</span> <span class="n">bins</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">gapminder</span><span class="p">[</span><span class="n">gapminder</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span><span class="o">==</span><span class="mi">2007</span><span class="p">][</span><span class="s1">&#39;pop&#39;</span><span class="p">],</span>
+                        <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mf">9.2</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;population&#39;</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;count of countries&#39;</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Histogram of country populations&#39;</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">6</span><span class="o">-</span><span class="mi">491865</span><span class="n">cdbb76</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">freq</span><span class="p">,</span> <span class="n">bins</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">gapminder</span><span class="p">[</span><span class="n">gapminder</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span><span class="o">==</span><span class="mi">2007</span><span class="p">][</span><span class="s1">&#39;pop&#39;</span><span class="p">],</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>                         <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mf">9.2</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">f</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;population&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">f</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;count of countries&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">f</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Histogram of country populations&#39;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;gapminder&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1.00000000e+05, 2.78255940e+05, 7.74263683e+05, 2.15443469e+06,
+       5.99484250e+06, 1.66810054e+07, 4.64158883e+07, 1.29154967e+08,
+       3.59381366e+08, 1.00000000e+09])
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="mean-median-mode-stdev-var-etc">
+<h3>mean, median, mode, stdev, var, etc.<a class="headerlink" href="#mean-median-mode-stdev-var-etc" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">populations_in_2007</span> <span class="o">=</span> <span class="n">gapminder</span><span class="p">[</span><span class="n">gapminder</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span><span class="o">==</span><span class="mi">2007</span><span class="p">][</span><span class="s1">&#39;pop&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">8</span><span class="o">-</span><span class="n">a9433e72b470</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">populations_in_2007</span> <span class="o">=</span> <span class="n">gapminder</span><span class="p">[</span><span class="n">gapminder</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span><span class="o">==</span><span class="mi">2007</span><span class="p">][</span><span class="s1">&#39;pop&#39;</span><span class="p">]</span>
+
+<span class="ne">NameError</span>: name &#39;gapminder&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">populations_in_2007</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span> <span class="c1"># sum / count</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">populations_in_2007</span><span class="o">.</span><span class="n">median</span><span class="p">())</span> <span class="c1"># number such that 50% are higher and 50% are lower</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">9</span><span class="o">-</span><span class="mi">9</span><span class="n">d1f493bb340</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="n">populations_in_2007</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span> <span class="c1"># sum / count</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="n">populations_in_2007</span><span class="o">.</span><span class="n">median</span><span class="p">())</span> <span class="c1"># number such that 50% are higher and 50% are lower</span>
+
+<span class="ne">NameError</span>: name &#39;populations_in_2007&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">populations_in_2007</span><span class="o">.</span><span class="n">mode</span><span class="p">())</span> <span class="c1"># does not make sense for numbers.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">6</span><span class="n">d1aaeba5792</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="n">populations_in_2007</span><span class="o">.</span><span class="n">mode</span><span class="p">())</span> <span class="c1"># does not make sense for numbers.</span>
+
+<span class="ne">NameError</span>: name &#39;populations_in_2007&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gapminder</span><span class="p">[</span><span class="s1">&#39;continent&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span><span class="p">()</span> <span class="c1"># makes sense for categorical</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">18</span><span class="n">cabcd964e6</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">gapminder</span><span class="p">[</span><span class="s1">&#39;continent&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span><span class="p">()</span> <span class="c1"># makes sense for categorical</span>
+
+<span class="ne">NameError</span>: name &#39;gapminder&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">populations_in_2007</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">7931</span><span class="n">d0c0651e</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">populations_in_2007</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+
+<span class="ne">NameError</span>: name &#39;populations_in_2007&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">populations_in_2007</span><span class="o">.</span><span class="n">var</span><span class="p">()</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">13</span><span class="o">-</span><span class="mi">81</span><span class="n">cc9adffe2d</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">populations_in_2007</span><span class="o">.</span><span class="n">var</span><span class="p">()</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;populations_in_2007&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="weighted-statistcs">
+<h4>weighted statistcs<a class="headerlink" href="#weighted-statistcs" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">populations_in_2007</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">14</span><span class="o">-</span><span class="n">d96704878f42</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">populations_in_2007</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+<span class="ne">NameError</span>: name &#39;populations_in_2007&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">custom_mean</span><span class="p">(</span><span class="n">nparray</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">nparray</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">nparray</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">custom_mean</span><span class="p">(</span><span class="n">populations_in_2007</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">16</span><span class="o">-</span><span class="mi">2</span><span class="n">c5a7fece5d0</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">custom_mean</span><span class="p">(</span><span class="n">populations_in_2007</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;populations_in_2007&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gm_2007</span> <span class="o">=</span> <span class="n">gapminder</span><span class="p">[</span><span class="n">gapminder</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span><span class="o">==</span><span class="mi">2007</span><span class="p">]</span>
+<span class="n">gm_2007</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">17</span><span class="o">-</span><span class="mi">1</span><span class="n">f24e4a45bcd</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">gm_2007</span> <span class="o">=</span> <span class="n">gapminder</span><span class="p">[</span><span class="n">gapminder</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span><span class="o">==</span><span class="mi">2007</span><span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">gm_2007</span>
+
+<span class="ne">NameError</span>: name &#39;gapminder&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gm_2007</span><span class="p">[</span><span class="s1">&#39;gdpPercap&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">18</span><span class="o">-</span><span class="mi">8</span><span class="n">afb516c84af</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">gm_2007</span><span class="p">[</span><span class="s1">&#39;gdpPercap&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+<span class="ne">NameError</span>: name &#39;gm_2007&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+4
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">weighted_mean</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">weights</span><span class="p">):</span>
+    <span class="c1"># works for numpy arrays.</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">values</span> <span class="o">*</span> <span class="n">weights</span><span class="p">)</span> <span class="o">/</span> <span class="nb">sum</span><span class="p">(</span><span class="n">weights</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">w</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="c1"># sum: 46 / denominator: 13</span>
+<span class="c1"># [1, 2, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]</span>
+<span class="n">weighted_mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">w</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.5384615384615383
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># not the same</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">40</span><span class="p">]</span>
+<span class="n">w</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="c1"># sum = 46 denominator: 4</span>
+<span class="n">weighted_mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">w</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11.5
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># population-weighted average of gdp per capita</span>
+<span class="n">weighted_mean</span><span class="p">(</span><span class="n">gm_2007</span><span class="p">[</span><span class="s1">&#39;gdpPercap&#39;</span><span class="p">],</span> <span class="n">gm_2007</span><span class="p">[</span><span class="s1">&#39;pop&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">23</span><span class="o">-</span><span class="mf">7e4</span><span class="n">d014539f6</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># population-weighted average of gdp per capita</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">weighted_mean</span><span class="p">(</span><span class="n">gm_2007</span><span class="p">[</span><span class="s1">&#39;gdpPercap&#39;</span><span class="p">],</span> <span class="n">gm_2007</span><span class="p">[</span><span class="s1">&#39;pop&#39;</span><span class="p">])</span>
+
+<span class="ne">NameError</span>: name &#39;gm_2007&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="bivariate-statistics">
+<h3>bivariate statistics<a class="headerlink" href="#bivariate-statistics" title="Permalink to this headline">¶</a></h3>
+<p>consider life expectancy ~ gdp per capita</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gm_2007</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">24</span><span class="o">-</span><span class="mi">3</span><span class="n">ec9dab97b03</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">gm_2007</span>
+
+<span class="ne">NameError</span>: name &#39;gm_2007&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">gm_2007</span><span class="p">[</span><span class="s1">&#39;gdpPercap&#39;</span><span class="p">],</span> <span class="n">gm_2007</span><span class="p">[</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;gdp per capita&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;life expectancy in 2007&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">25</span><span class="o">-</span><span class="mi">2</span><span class="n">c39e2593d0d</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">gm_2007</span><span class="p">[</span><span class="s1">&#39;gdpPercap&#39;</span><span class="p">],</span> <span class="n">gm_2007</span><span class="p">[</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">])</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">plt</span><span class="o">.</span><span class="n">xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;gdp per capita&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;life expectancy in 2007&#39;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;gm_2007&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># why we are log transforming gdp</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">gm_2007</span><span class="p">[</span><span class="s1">&#39;gdpPercap&#39;</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">26</span><span class="o">-</span><span class="mi">194</span><span class="n">ffc5ce8e5</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># why we are log transforming gdp</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">f</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">gm_2007</span><span class="p">[</span><span class="s1">&#39;gdpPercap&#39;</span><span class="p">]))</span>
+
+<span class="ne">NameError</span>: name &#39;gm_2007&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="correlation">
+<h4>correlation<a class="headerlink" href="#correlation" title="Permalink to this headline">¶</a></h4>
+<p>we want to calculate the correlation between log10(gdpPercap) and life Exp</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># this is wrong.  but why?</span>
+<span class="k">def</span> <span class="nf">cor</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="n">mx</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+    <span class="n">my</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+    <span class="n">sx</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+    <span class="n">sy</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+    <span class="n">zx</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">mx</span><span class="p">)</span><span class="o">/</span><span class="n">sx</span>
+    <span class="n">zy</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">my</span><span class="p">)</span><span class="o">/</span><span class="n">sy</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">zx</span><span class="o">*</span><span class="n">zy</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cor</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">gm_2007</span><span class="p">[</span><span class="s1">&#39;gdpPercap&#39;</span><span class="p">]),</span> <span class="n">gm_2007</span><span class="p">[</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">28</span><span class="o">-</span><span class="mi">1583</span><span class="n">ba70954b</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">cor</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">gm_2007</span><span class="p">[</span><span class="s1">&#39;gdpPercap&#39;</span><span class="p">]),</span> <span class="n">gm_2007</span><span class="p">[</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">])</span>
+
+<span class="ne">NameError</span>: name &#39;gm_2007&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">gm_2007</span><span class="p">[</span><span class="s1">&#39;gdpPercap&#39;</span><span class="p">])</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">gm_2007</span><span class="p">[</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">]</span>
+<span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">29</span><span class="o">-</span><span class="mi">5556</span><span class="n">bfb9e3f3</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">gm_2007</span><span class="p">[</span><span class="s1">&#39;gdpPercap&#39;</span><span class="p">])</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">y</span> <span class="o">=</span> <span class="n">gm_2007</span><span class="p">[</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="ne">NameError</span>: name &#39;gm_2007&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gm_2007</span><span class="p">[</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">gm_2007</span><span class="p">[</span><span class="s1">&#39;gdpPercap&#39;</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">30</span><span class="o">-</span><span class="n">b9f2ffb23a08</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">gm_2007</span><span class="p">[</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">gm_2007</span><span class="p">[</span><span class="s1">&#39;gdpPercap&#39;</span><span class="p">]))</span>
+
+<span class="ne">NameError</span>: name &#39;gm_2007&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># r^2, coefficient of determination, </span>
+<span class="n">gm_2007</span><span class="p">[</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">gm_2007</span><span class="p">[</span><span class="s1">&#39;gdpPercap&#39;</span><span class="p">]))</span><span class="o">**</span><span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">31</span><span class="o">-</span><span class="mf">9721341e34</span><span class="n">b5</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># r^2, coefficient of determination,</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">gm_2007</span><span class="p">[</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">gm_2007</span><span class="p">[</span><span class="s1">&#39;gdpPercap&#39;</span><span class="p">]))</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="ne">NameError</span>: name &#39;gm_2007&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="regression-line">
+<h4>regression line<a class="headerlink" href="#regression-line" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">gm_2007</span><span class="p">[</span><span class="s1">&#39;gdpPercap&#39;</span><span class="p">])</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">gm_2007</span><span class="p">[</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">]</span>
+<span class="n">fit</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">slope</span> <span class="o">=</span> <span class="n">fit</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">intercept</span> <span class="o">=</span> <span class="n">fit</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">slope</span><span class="si">=}</span><span class="s1">, </span><span class="si">{</span><span class="n">intercept</span><span class="si">=}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">32</span><span class="o">-</span><span class="mi">547</span><span class="n">a2d2a7c3b</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">gm_2007</span><span class="p">[</span><span class="s1">&#39;gdpPercap&#39;</span><span class="p">])</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">y</span> <span class="o">=</span> <span class="n">gm_2007</span><span class="p">[</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">fit</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">slope</span> <span class="o">=</span> <span class="n">fit</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">intercept</span> <span class="o">=</span> <span class="n">fit</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="ne">NameError</span>: name &#39;gm_2007&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">33</span><span class="o">-</span><span class="mi">523385</span><span class="n">aa01a2</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="ne">NameError</span>: name &#39;y&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># predictions from our fitted line</span>
+<span class="n">new_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mf">5.2</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">predicted_y</span> <span class="o">=</span> <span class="n">new_x</span><span class="o">*</span><span class="n">slope</span> <span class="o">+</span> <span class="n">intercept</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">34</span><span class="o">-</span><span class="n">d90676199fdc</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># predictions from our fitted line</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">new_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mf">5.2</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">predicted_y</span> <span class="o">=</span> <span class="n">new_x</span><span class="o">*</span><span class="n">slope</span> <span class="o">+</span> <span class="n">intercept</span>
+
+<span class="ne">NameError</span>: name &#39;slope&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;log10(gdp per capita)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;life expectancy in 2007&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">new_x</span><span class="p">,</span> <span class="n">predicted_y</span><span class="p">,</span><span class="s1">&#39;r-&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">35</span><span class="o">-</span><span class="n">e5eea9b64661</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;log10(gdp per capita)&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;life expectancy in 2007&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">new_x</span><span class="p">,</span> <span class="n">predicted_y</span><span class="p">,</span><span class="s1">&#39;r-&#39;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;y&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">gm_2007</span><span class="p">[</span><span class="s1">&#39;gdpPercap&#39;</span><span class="p">],</span> <span class="n">gm_2007</span><span class="p">[</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;gdp per capita&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;life expectancy in 2007&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="n">new_x</span><span class="p">,</span> <span class="n">predicted_y</span><span class="p">,</span> <span class="s1">&#39;r-&#39;</span><span class="p">)</span>
+
+<span class="c1"># log10 gdp per cap</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">36</span><span class="o">-</span><span class="n">db9355507680</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">gm_2007</span><span class="p">[</span><span class="s1">&#39;gdpPercap&#39;</span><span class="p">],</span> <span class="n">gm_2007</span><span class="p">[</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">])</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">plt</span><span class="o">.</span><span class="n">xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;gdp per capita&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;life expectancy in 2007&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="n">new_x</span><span class="p">,</span> <span class="n">predicted_y</span><span class="p">,</span> <span class="s1">&#39;r-&#39;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;gm_2007&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="advanced-summarization-via-groupby-apply">
+<h2>Advanced summarization via groupby.apply<a class="headerlink" href="#advanced-summarization-via-groupby-apply" title="Permalink to this headline">¶</a></h2>
+<p>consider life expectancy ~ gdp per capita by continent (by year)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gapminder</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">37</span><span class="o">-</span><span class="mi">3</span><span class="n">fdde7cc8c7d</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">gapminder</span>
+
+<span class="ne">NameError</span>: name &#39;gapminder&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># calculate correlation of log10(gdpPercap) and lifeExp for each year</span>
+
+<span class="n">gapminder</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">mean_life</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">,</span> <span class="s1">&#39;mean&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">38</span><span class="o">-</span><span class="n">d0acb2b3adea</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># calculate correlation of log10(gdpPercap) and lifeExp for each year</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> 
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">gapminder</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">mean_life</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">,</span> <span class="s1">&#39;mean&#39;</span><span class="p">))</span>
+
+<span class="ne">NameError</span>: name &#39;gapminder&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">summary_function</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;gdpPercap&#39;</span><span class="p">]),</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">])[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">grp_name</span><span class="p">,</span> <span class="n">grp_df</span> <span class="ow">in</span> <span class="n">gapminder</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">grp_name</span><span class="p">,</span> <span class="n">summary_function</span><span class="p">(</span><span class="n">grp_df</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">39</span><span class="o">-</span><span class="n">ba48078d8fef</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;gdpPercap&#39;</span><span class="p">]),</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">])[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> 
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="k">for</span> <span class="n">grp_name</span><span class="p">,</span> <span class="n">grp_df</span> <span class="ow">in</span> <span class="n">gapminder</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="nb">print</span><span class="p">(</span><span class="n">grp_name</span><span class="p">,</span> <span class="n">summary_function</span><span class="p">(</span><span class="n">grp_df</span><span class="p">))</span>
+
+<span class="ne">NameError</span>: name &#39;gapminder&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gapminder</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">summary_function</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">40</span><span class="o">-</span><span class="mi">4</span><span class="n">eeeb110fcce</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">gapminder</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">summary_function</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;gapminder&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">summary_function</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;gdpPercap&#39;</span><span class="p">]),</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">])[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">fit</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;gdpPercap&#39;</span><span class="p">]),</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">],</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">slope</span> <span class="o">=</span> <span class="n">fit</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">intercept</span> <span class="o">=</span> <span class="n">fit</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">({</span><span class="s1">&#39;correlation&#39;</span><span class="p">:</span><span class="n">r</span><span class="p">,</span>
+                      <span class="s1">&#39;slope&#39;</span><span class="p">:</span> <span class="n">slope</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">summary_function</span><span class="p">(</span><span class="n">gapminder</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">42</span><span class="o">-</span><span class="n">b995b56c56ed</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">summary_function</span><span class="p">(</span><span class="n">gapminder</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;gapminder&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gapminder</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">summary_function</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">43</span><span class="o">-</span><span class="mi">4</span><span class="n">eeeb110fcce</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">gapminder</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">summary_function</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;gapminder&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="joining-data-frames">
+<h2>Joining data frames.<a class="headerlink" href="#joining-data-frames" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/merging.html#database-style-dataframe-or-named-series-joining-merging">https://pandas.pydata.org/pandas-docs/stable/user_guide/merging.html#database-style-dataframe-or-named-series-joining-merging</a></p>
+<ul class="simple">
+<li><p>inner, outer, left, right</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">instructors</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;name&#39;</span><span class="p">:[</span><span class="s1">&#39;Ed Vul&#39;</span><span class="p">,</span> <span class="s1">&#39;Drew Walker&#39;</span><span class="p">,</span> <span class="s1">&#39;Shannon Ellis&#39;</span><span class="p">,</span> <span class="s1">&#39;Erik Brockbank&#39;</span><span class="p">,</span> <span class="s1">&#39;Judy Fan&#39;</span><span class="p">],</span>
+                            <span class="s1">&#39;email&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;evul@ucsd.edu&#39;</span><span class="p">,</span><span class="s1">&#39;drew@fake.com&#39;</span><span class="p">,</span> <span class="s1">&#39;shannon@fake.com&#39;</span><span class="p">,</span> <span class="s1">&#39;erik@fake.com&#39;</span><span class="p">,</span> <span class="s1">&#39;judy@fake.com&#39;</span><span class="p">],</span>
+                            <span class="s1">&#39;location&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;McGill 5137&#39;</span><span class="p">,</span> <span class="s1">&#39;COGS 563&#39;</span><span class="p">,</span> <span class="s1">&#39;COGS 123&#39;</span><span class="p">,</span> <span class="s1">&#39;Mandler 3509&#39;</span><span class="p">,</span> <span class="s1">&#39;McGill 5139?&#39;</span><span class="p">]})</span>
+
+<span class="n">classes</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;name&#39;</span><span class="p">:[</span><span class="s1">&#39;CSS 1&#39;</span><span class="p">,</span> <span class="s1">&#39;CSS 2&#39;</span><span class="p">,</span> <span class="s1">&#39;COGS 18&#39;</span><span class="p">,</span> <span class="s1">&#39;PSYC 201&#39;</span><span class="p">,</span> <span class="s1">&#39;PSYC 60&#39;</span><span class="p">,</span> <span class="s1">&#39;COGS 9&#39;</span><span class="p">,</span> <span class="s1">&#39;PSYC 100&#39;</span><span class="p">],</span>
+                        <span class="s1">&#39;location&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;mandler&#39;</span><span class="p">,</span> <span class="s1">&#39;mcgill&#39;</span><span class="p">,</span> <span class="s1">&#39;cog sci&#39;</span><span class="p">,</span> <span class="s1">&#39;mcgill&#39;</span><span class="p">,</span> <span class="s1">&#39;peterson&#39;</span><span class="p">,</span> <span class="s1">&#39;cog sci&#39;</span><span class="p">,</span> <span class="s1">&#39;auditorium&#39;</span><span class="p">],</span>
+                       <span class="s1">&#39;instructor_name&#39;</span><span class="p">:[</span><span class="s1">&#39;Ed Vul&#39;</span><span class="p">,</span> <span class="s1">&#39;Ed Vul&#39;</span><span class="p">,</span> <span class="s1">&#39;Shannon Ellis&#39;</span><span class="p">,</span> <span class="s1">&#39;Ed Vul&#39;</span><span class="p">,</span> <span class="s1">&#39;Judy Fan&#39;</span><span class="p">,</span> <span class="s1">&#39;Drew Walker&#39;</span><span class="p">,</span> <span class="s1">&#39;John Serences&#39;</span><span class="p">]})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">instructors</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>email</th>
+      <th>location</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Ed Vul</td>
+      <td>evul@ucsd.edu</td>
+      <td>McGill 5137</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Drew Walker</td>
+      <td>drew@fake.com</td>
+      <td>COGS 563</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Shannon Ellis</td>
+      <td>shannon@fake.com</td>
+      <td>COGS 123</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Erik Brockbank</td>
+      <td>erik@fake.com</td>
+      <td>Mandler 3509</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Judy Fan</td>
+      <td>judy@fake.com</td>
+      <td>McGill 5139?</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">classes</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>location</th>
+      <th>instructor_name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>CSS 1</td>
+      <td>mandler</td>
+      <td>Ed Vul</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>CSS 2</td>
+      <td>mcgill</td>
+      <td>Ed Vul</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>COGS 18</td>
+      <td>cog sci</td>
+      <td>Shannon Ellis</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>PSYC 201</td>
+      <td>mcgill</td>
+      <td>Ed Vul</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>PSYC 60</td>
+      <td>peterson</td>
+      <td>Judy Fan</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>COGS 9</td>
+      <td>cog sci</td>
+      <td>Drew Walker</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>PSYC 100</td>
+      <td>auditorium</td>
+      <td>John Serences</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">instructors</span><span class="p">,</span> 
+         <span class="n">classes</span><span class="p">,</span> 
+         <span class="c1"># either one &#39;on&#39;</span>
+         <span class="n">left_on</span> <span class="o">=</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> 
+         <span class="n">right_on</span><span class="o">=</span><span class="s1">&#39;instructor_name&#39;</span><span class="p">,</span> 
+         <span class="n">how</span><span class="o">=</span><span class="s1">&#39;inner&#39;</span><span class="p">,</span> 
+         <span class="n">suffixes</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;_prof&#39;</span><span class="p">,</span> <span class="s1">&#39;_class&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name_prof</th>
+      <th>email</th>
+      <th>location_prof</th>
+      <th>name_class</th>
+      <th>location_class</th>
+      <th>instructor_name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Ed Vul</td>
+      <td>evul@ucsd.edu</td>
+      <td>McGill 5137</td>
+      <td>CSS 1</td>
+      <td>mandler</td>
+      <td>Ed Vul</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Ed Vul</td>
+      <td>evul@ucsd.edu</td>
+      <td>McGill 5137</td>
+      <td>CSS 2</td>
+      <td>mcgill</td>
+      <td>Ed Vul</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Ed Vul</td>
+      <td>evul@ucsd.edu</td>
+      <td>McGill 5137</td>
+      <td>PSYC 201</td>
+      <td>mcgill</td>
+      <td>Ed Vul</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Drew Walker</td>
+      <td>drew@fake.com</td>
+      <td>COGS 563</td>
+      <td>COGS 9</td>
+      <td>cog sci</td>
+      <td>Drew Walker</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Shannon Ellis</td>
+      <td>shannon@fake.com</td>
+      <td>COGS 123</td>
+      <td>COGS 18</td>
+      <td>cog sci</td>
+      <td>Shannon Ellis</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Judy Fan</td>
+      <td>judy@fake.com</td>
+      <td>McGill 5139?</td>
+      <td>PSYC 60</td>
+      <td>peterson</td>
+      <td>Judy Fan</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">instructors</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;instructor_name&#39;</span><span class="p">:[</span><span class="s1">&#39;Ed Vul&#39;</span><span class="p">,</span> <span class="s1">&#39;Drew Walker&#39;</span><span class="p">,</span> <span class="s1">&#39;Shannon Ellis&#39;</span><span class="p">,</span> <span class="s1">&#39;Erik Brockbank&#39;</span><span class="p">,</span> <span class="s1">&#39;Judy Fan&#39;</span><span class="p">],</span>
+                            <span class="s1">&#39;email&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;evul@ucsd.edu&#39;</span><span class="p">,</span><span class="s1">&#39;drew@fake.com&#39;</span><span class="p">,</span> <span class="s1">&#39;shannon@fake.com&#39;</span><span class="p">,</span> <span class="s1">&#39;erik@fake.com&#39;</span><span class="p">,</span> <span class="s1">&#39;judy@fake.com&#39;</span><span class="p">],</span>
+                            <span class="s1">&#39;office&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;McGill 5137&#39;</span><span class="p">,</span> <span class="s1">&#39;COGS 563&#39;</span><span class="p">,</span> <span class="s1">&#39;COGS 123&#39;</span><span class="p">,</span> <span class="s1">&#39;Mandler 3509&#39;</span><span class="p">,</span> <span class="s1">&#39;McGill 5139?&#39;</span><span class="p">]})</span>
+
+<span class="n">classes</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;class_name&#39;</span><span class="p">:[</span><span class="s1">&#39;CSS 1&#39;</span><span class="p">,</span> <span class="s1">&#39;CSS 2&#39;</span><span class="p">,</span> <span class="s1">&#39;COGS 18&#39;</span><span class="p">,</span> <span class="s1">&#39;PSYC 201&#39;</span><span class="p">,</span> <span class="s1">&#39;PSYC 60&#39;</span><span class="p">,</span> <span class="s1">&#39;COGS 9&#39;</span><span class="p">,</span> <span class="s1">&#39;PSYC 100&#39;</span><span class="p">],</span>
+                        <span class="s1">&#39;location&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;mandler&#39;</span><span class="p">,</span> <span class="s1">&#39;mcgill&#39;</span><span class="p">,</span> <span class="s1">&#39;cog sci&#39;</span><span class="p">,</span> <span class="s1">&#39;mcgill&#39;</span><span class="p">,</span> <span class="s1">&#39;peterson&#39;</span><span class="p">,</span> <span class="s1">&#39;cog sci&#39;</span><span class="p">,</span> <span class="s1">&#39;auditorium&#39;</span><span class="p">],</span>
+                       <span class="s1">&#39;instructor_name&#39;</span><span class="p">:[</span><span class="s1">&#39;Ed Vul&#39;</span><span class="p">,</span> <span class="s1">&#39;Ed Vul&#39;</span><span class="p">,</span> <span class="s1">&#39;Shannon Ellis&#39;</span><span class="p">,</span> <span class="s1">&#39;Ed Vul&#39;</span><span class="p">,</span> <span class="s1">&#39;Judy Fan&#39;</span><span class="p">,</span> <span class="s1">&#39;Drew Walker&#39;</span><span class="p">,</span> <span class="s1">&#39;John Serences&#39;</span><span class="p">]})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">instructors</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>instructor_name</th>
+      <th>email</th>
+      <th>office</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Ed Vul</td>
+      <td>evul@ucsd.edu</td>
+      <td>McGill 5137</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Drew Walker</td>
+      <td>drew@fake.com</td>
+      <td>COGS 563</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Shannon Ellis</td>
+      <td>shannon@fake.com</td>
+      <td>COGS 123</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Erik Brockbank</td>
+      <td>erik@fake.com</td>
+      <td>Mandler 3509</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Judy Fan</td>
+      <td>judy@fake.com</td>
+      <td>McGill 5139?</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">classes</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>class_name</th>
+      <th>location</th>
+      <th>instructor_name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>CSS 1</td>
+      <td>mandler</td>
+      <td>Ed Vul</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>CSS 2</td>
+      <td>mcgill</td>
+      <td>Ed Vul</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>COGS 18</td>
+      <td>cog sci</td>
+      <td>Shannon Ellis</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>PSYC 201</td>
+      <td>mcgill</td>
+      <td>Ed Vul</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>PSYC 60</td>
+      <td>peterson</td>
+      <td>Judy Fan</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>COGS 9</td>
+      <td>cog sci</td>
+      <td>Drew Walker</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>PSYC 100</td>
+      <td>auditorium</td>
+      <td>John Serences</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">classes</span><span class="p">,</span> 
+         <span class="n">instructors</span><span class="p">,</span> 
+         <span class="n">on</span><span class="o">=</span><span class="s1">&#39;instructor_name&#39;</span><span class="p">,</span>
+         <span class="n">how</span><span class="o">=</span><span class="s1">&#39;inner&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>class_name</th>
+      <th>location</th>
+      <th>instructor_name</th>
+      <th>email</th>
+      <th>office</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>CSS 1</td>
+      <td>mandler</td>
+      <td>Ed Vul</td>
+      <td>evul@ucsd.edu</td>
+      <td>McGill 5137</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>CSS 2</td>
+      <td>mcgill</td>
+      <td>Ed Vul</td>
+      <td>evul@ucsd.edu</td>
+      <td>McGill 5137</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>PSYC 201</td>
+      <td>mcgill</td>
+      <td>Ed Vul</td>
+      <td>evul@ucsd.edu</td>
+      <td>McGill 5137</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>COGS 18</td>
+      <td>cog sci</td>
+      <td>Shannon Ellis</td>
+      <td>shannon@fake.com</td>
+      <td>COGS 123</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>PSYC 60</td>
+      <td>peterson</td>
+      <td>Judy Fan</td>
+      <td>judy@fake.com</td>
+      <td>McGill 5139?</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>COGS 9</td>
+      <td>cog sci</td>
+      <td>Drew Walker</td>
+      <td>drew@fake.com</td>
+      <td>COGS 563</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">classes</span><span class="p">,</span> 
+         <span class="n">instructors</span><span class="p">,</span> 
+         <span class="n">on</span><span class="o">=</span><span class="s1">&#39;instructor_name&#39;</span><span class="p">,</span>
+         <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>class_name</th>
+      <th>location</th>
+      <th>instructor_name</th>
+      <th>email</th>
+      <th>office</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>CSS 1</td>
+      <td>mandler</td>
+      <td>Ed Vul</td>
+      <td>evul@ucsd.edu</td>
+      <td>McGill 5137</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>CSS 2</td>
+      <td>mcgill</td>
+      <td>Ed Vul</td>
+      <td>evul@ucsd.edu</td>
+      <td>McGill 5137</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>COGS 18</td>
+      <td>cog sci</td>
+      <td>Shannon Ellis</td>
+      <td>shannon@fake.com</td>
+      <td>COGS 123</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>PSYC 201</td>
+      <td>mcgill</td>
+      <td>Ed Vul</td>
+      <td>evul@ucsd.edu</td>
+      <td>McGill 5137</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>PSYC 60</td>
+      <td>peterson</td>
+      <td>Judy Fan</td>
+      <td>judy@fake.com</td>
+      <td>McGill 5139?</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>COGS 9</td>
+      <td>cog sci</td>
+      <td>Drew Walker</td>
+      <td>drew@fake.com</td>
+      <td>COGS 563</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>PSYC 100</td>
+      <td>auditorium</td>
+      <td>John Serences</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">classes</span><span class="p">,</span> 
+         <span class="n">instructors</span><span class="p">,</span> 
+         <span class="n">on</span><span class="o">=</span><span class="s1">&#39;instructor_name&#39;</span><span class="p">,</span>
+         <span class="n">how</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>class_name</th>
+      <th>location</th>
+      <th>instructor_name</th>
+      <th>email</th>
+      <th>office</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>CSS 1</td>
+      <td>mandler</td>
+      <td>Ed Vul</td>
+      <td>evul@ucsd.edu</td>
+      <td>McGill 5137</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>CSS 2</td>
+      <td>mcgill</td>
+      <td>Ed Vul</td>
+      <td>evul@ucsd.edu</td>
+      <td>McGill 5137</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>PSYC 201</td>
+      <td>mcgill</td>
+      <td>Ed Vul</td>
+      <td>evul@ucsd.edu</td>
+      <td>McGill 5137</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>COGS 9</td>
+      <td>cog sci</td>
+      <td>Drew Walker</td>
+      <td>drew@fake.com</td>
+      <td>COGS 563</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>COGS 18</td>
+      <td>cog sci</td>
+      <td>Shannon Ellis</td>
+      <td>shannon@fake.com</td>
+      <td>COGS 123</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Erik Brockbank</td>
+      <td>erik@fake.com</td>
+      <td>Mandler 3509</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>PSYC 60</td>
+      <td>peterson</td>
+      <td>Judy Fan</td>
+      <td>judy@fake.com</td>
+      <td>McGill 5139?</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">classes</span><span class="p">,</span> 
+         <span class="n">instructors</span><span class="p">,</span> 
+         <span class="n">on</span><span class="o">=</span><span class="s1">&#39;instructor_name&#39;</span><span class="p">,</span>
+         <span class="n">how</span><span class="o">=</span><span class="s1">&#39;outer&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>class_name</th>
+      <th>location</th>
+      <th>instructor_name</th>
+      <th>email</th>
+      <th>office</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>CSS 1</td>
+      <td>mandler</td>
+      <td>Ed Vul</td>
+      <td>evul@ucsd.edu</td>
+      <td>McGill 5137</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>CSS 2</td>
+      <td>mcgill</td>
+      <td>Ed Vul</td>
+      <td>evul@ucsd.edu</td>
+      <td>McGill 5137</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>PSYC 201</td>
+      <td>mcgill</td>
+      <td>Ed Vul</td>
+      <td>evul@ucsd.edu</td>
+      <td>McGill 5137</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>COGS 18</td>
+      <td>cog sci</td>
+      <td>Shannon Ellis</td>
+      <td>shannon@fake.com</td>
+      <td>COGS 123</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>PSYC 60</td>
+      <td>peterson</td>
+      <td>Judy Fan</td>
+      <td>judy@fake.com</td>
+      <td>McGill 5139?</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>COGS 9</td>
+      <td>cog sci</td>
+      <td>Drew Walker</td>
+      <td>drew@fake.com</td>
+      <td>COGS 563</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>PSYC 100</td>
+      <td>auditorium</td>
+      <td>John Serences</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Erik Brockbank</td>
+      <td>erik@fake.com</td>
+      <td>Mandler 3509</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="reshaping-pivoting-tidy-long-wide-transforms">
+<h2>Reshaping / pivoting / tidy / long-wide transforms<a class="headerlink" href="#reshaping-pivoting-tidy-long-wide-transforms" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/reshaping.html#reshaping-by-melt">https://pandas.pydata.org/pandas-docs/stable/user_guide/reshaping.html#reshaping-by-melt</a></p>
+<div class="section" id="wide-data">
+<h3>Wide data<a class="headerlink" href="#wide-data" title="Permalink to this headline">¶</a></h3>
+<p><img alt="wide" src="../_images/lotr-wide.png" /></p>
+</div>
+<div class="section" id="long-data">
+<h3>Long data<a class="headerlink" href="#long-data" title="Permalink to this headline">¶</a></h3>
+<p><img alt="long" src="../_images/lotr-long.png" /></p>
+<p>back to gapminder</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gapminder</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">55</span><span class="o">-</span><span class="mi">3</span><span class="n">fdde7cc8c7d</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">gapminder</span>
+
+<span class="ne">NameError</span>: name &#39;gapminder&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="long-to-wide">
+<h3>long to wide<a class="headerlink" href="#long-to-wide" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>unstack (via index)</p></li>
+</ul>
+<p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/reshaping.html#reshaping-by-stacking-and-unstacking">https://pandas.pydata.org/pandas-docs/stable/user_guide/reshaping.html#reshaping-by-stacking-and-unstacking</a></p>
+<ul class="simple">
+<li><p>pivot (via column names)</p></li>
+</ul>
+<p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/reshaping.html#reshaping-by-pivoting-dataframe-objects">https://pandas.pydata.org/pandas-docs/stable/user_guide/reshaping.html#reshaping-by-pivoting-dataframe-objects</a></p>
+<ul class="simple">
+<li><p>need to deal with multi-index</p></li>
+</ul>
+<p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/advanced.html">https://pandas.pydata.org/pandas-docs/stable/user_guide/advanced.html</a></p>
+<p><strong>Goal</strong>: See how mean life expectancy in Europe and Asia has changed over the years.</p>
+<p><strong>Output:</strong> A scatterplot over time, with x: mean life expectancy in europe, and y: mean life expectnacy in Asia, and each data point is a year.</p>
+<p><strong>Process:</strong></p>
+<ul class="simple">
+<li><p>group by continent and year, and calculate mean life expectancy</p></li>
+<li><p>convert long to wide format, with one column per continent</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">summary_data</span> <span class="o">=</span> <span class="p">(</span><span class="n">gapminder</span>
+   <span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;continent&#39;</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">])</span>
+   <span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">m_lifeExp</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">,</span> <span class="s1">&#39;mean&#39;</span><span class="p">),</span>
+        <span class="n">s_lifeExp</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">,</span> <span class="s1">&#39;std&#39;</span><span class="p">)))</span>
+<span class="n">summary_data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">56</span><span class="o">-</span><span class="mi">0816</span><span class="n">df2e8815</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">summary_data</span> <span class="o">=</span> <span class="p">(</span><span class="n">gapminder</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>    <span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;continent&#39;</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">])</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>    <span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">m_lifeExp</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">,</span> <span class="s1">&#39;mean&#39;</span><span class="p">),</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>         <span class="n">s_lifeExp</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">,</span> <span class="s1">&#39;std&#39;</span><span class="p">)))</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">summary_data</span>
+
+<span class="ne">NameError</span>: name &#39;gapminder&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># via unstacking by index</span>
+<span class="n">summary_data</span><span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="s1">&#39;continent&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">57</span><span class="o">-</span><span class="n">fcce46770414</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># via unstacking by index</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">summary_data</span><span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="s1">&#39;continent&#39;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;summary_data&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">summary_data</span><span class="p">[</span><span class="s1">&#39;m_lifeExp&#39;</span><span class="p">][</span><span class="s1">&#39;Asia&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">58</span><span class="o">-</span><span class="mi">5999776</span><span class="n">edfd6</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">summary_data</span><span class="p">[</span><span class="s1">&#39;m_lifeExp&#39;</span><span class="p">][</span><span class="s1">&#39;Asia&#39;</span><span class="p">]</span>
+
+<span class="ne">NameError</span>: name &#39;summary_data&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">summary_data</span> <span class="o">=</span> <span class="p">(</span><span class="n">gapminder</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;continent&#39;</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">])</span>
+    <span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">m_lifeExp</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">,</span> <span class="s1">&#39;mean&#39;</span><span class="p">))</span>
+    <span class="o">.</span><span class="n">reset_index</span><span class="p">())</span>
+<span class="n">summary_data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">59</span><span class="o">-</span><span class="mi">4</span><span class="n">d2a3640dd11</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">summary_data</span> <span class="o">=</span> <span class="p">(</span><span class="n">gapminder</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;continent&#39;</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">])</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">m_lifeExp</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">,</span> <span class="s1">&#39;mean&#39;</span><span class="p">))</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="o">.</span><span class="n">reset_index</span><span class="p">())</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">summary_data</span>
+
+<span class="ne">NameError</span>: name &#39;gapminder&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># via column name and .pivot</span>
+
+<span class="n">summary_data</span><span class="o">.</span><span class="n">pivot</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="s1">&#39;year&#39;</span><span class="p">,</span>
+           <span class="n">columns</span><span class="o">=</span><span class="s1">&#39;continent&#39;</span><span class="p">,</span>
+           <span class="n">values</span><span class="o">=</span><span class="s1">&#39;m_lifeExp&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">60</span><span class="o">-</span><span class="mi">435</span><span class="n">dd4213b64</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># via column name and .pivot</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> 
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">summary_data</span><span class="o">.</span><span class="n">pivot</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="s1">&#39;year&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>            <span class="n">columns</span><span class="o">=</span><span class="s1">&#39;continent&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>            <span class="n">values</span><span class="o">=</span><span class="s1">&#39;m_lifeExp&#39;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;summary_data&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">life_exp</span> <span class="o">=</span> <span class="p">(</span><span class="n">gapminder</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;continent&#39;</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">])</span>
+                    <span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">m_lifeExp</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">,</span> <span class="s1">&#39;mean&#39;</span><span class="p">))</span>
+                    <span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="s1">&#39;continent&#39;</span><span class="p">))</span>
+<span class="n">life_exp</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">61</span><span class="o">-</span><span class="mi">66454</span><span class="n">a55f0fb</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">life_exp</span> <span class="o">=</span> <span class="p">(</span><span class="n">gapminder</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;continent&#39;</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">])</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>                     <span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">m_lifeExp</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">,</span> <span class="s1">&#39;mean&#39;</span><span class="p">))</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>                     <span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="s1">&#39;continent&#39;</span><span class="p">))</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">life_exp</span>
+
+<span class="ne">NameError</span>: name &#39;gapminder&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">life_exp</span><span class="p">[</span><span class="s1">&#39;m_lifeExp&#39;</span><span class="p">][</span><span class="s1">&#39;Europe&#39;</span><span class="p">],</span>
+            <span class="n">life_exp</span><span class="p">[</span><span class="s1">&#39;m_lifeExp&#39;</span><span class="p">][</span><span class="s1">&#39;Asia&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">45</span><span class="p">,</span> <span class="mi">80</span><span class="p">],</span> <span class="p">[</span><span class="mi">45</span><span class="p">,</span> <span class="mi">80</span><span class="p">],</span> <span class="s1">&#39;r-&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Europe life expectancy&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Asia life expectancy&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">62</span><span class="o">-</span><span class="n">ed8880269fe6</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">life_exp</span><span class="p">[</span><span class="s1">&#39;m_lifeExp&#39;</span><span class="p">][</span><span class="s1">&#39;Europe&#39;</span><span class="p">],</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>             <span class="n">life_exp</span><span class="p">[</span><span class="s1">&#39;m_lifeExp&#39;</span><span class="p">][</span><span class="s1">&#39;Asia&#39;</span><span class="p">])</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">45</span><span class="p">,</span> <span class="mi">80</span><span class="p">],</span> <span class="p">[</span><span class="mi">45</span><span class="p">,</span> <span class="mi">80</span><span class="p">],</span> <span class="s1">&#39;r-&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Europe life expectancy&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Asia life expectancy&#39;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;life_exp&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="wide-to-long">
+<h3>wide to long<a class="headerlink" href="#wide-to-long" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>stacking (with indexes)</p></li>
+</ul>
+<p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/reshaping.html#reshaping-by-stacking-and-unstacking">https://pandas.pydata.org/pandas-docs/stable/user_guide/reshaping.html#reshaping-by-stacking-and-unstacking</a></p>
+<ul class="simple">
+<li><p>melt (with column names)</p></li>
+</ul>
+<p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/reshaping.html#reshaping-by-melt">https://pandas.pydata.org/pandas-docs/stable/user_guide/reshaping.html#reshaping-by-melt</a></p>
+<div class="section" id="stacking-with-indexes">
+<h4>stacking (with indexes)<a class="headerlink" href="#stacking-with-indexes" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">life_exp</span> <span class="o">=</span> <span class="p">(</span><span class="n">gapminder</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;continent&#39;</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">])</span>
+                    <span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">m_lifeExp</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">,</span> <span class="s1">&#39;mean&#39;</span><span class="p">))</span>
+                    <span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="s1">&#39;continent&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">63</span><span class="o">-</span><span class="mi">69</span><span class="n">f54e0cc2f7</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">life_exp</span> <span class="o">=</span> <span class="p">(</span><span class="n">gapminder</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;continent&#39;</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">])</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>                     <span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">m_lifeExp</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">,</span> <span class="s1">&#39;mean&#39;</span><span class="p">))</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>                     <span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="s1">&#39;continent&#39;</span><span class="p">))</span>
+
+<span class="ne">NameError</span>: name &#39;gapminder&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">life_exp</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">64</span><span class="o">-</span><span class="mi">2357640490</span><span class="n">a5</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">life_exp</span>
+
+<span class="ne">NameError</span>: name &#39;life_exp&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># creates indexes</span>
+<span class="n">life_exp</span><span class="o">.</span><span class="n">stack</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">65</span><span class="o">-</span><span class="n">ca0f5dc33a99</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># creates indexes</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">life_exp</span><span class="o">.</span><span class="n">stack</span><span class="p">()</span>
+
+<span class="ne">NameError</span>: name &#39;life_exp&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="melting-column-names">
+<h4>melting (column names)<a class="headerlink" href="#melting-column-names" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">life_exp</span> <span class="o">=</span> <span class="p">(</span><span class="n">gapminder</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;continent&#39;</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">])</span>
+                    <span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">m_lifeExp</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">,</span> <span class="s1">&#39;mean&#39;</span><span class="p">))</span>
+                    <span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="s1">&#39;continent&#39;</span><span class="p">)[</span><span class="s1">&#39;m_lifeExp&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">66</span><span class="o">-</span><span class="n">acfbfb56c783</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">life_exp</span> <span class="o">=</span> <span class="p">(</span><span class="n">gapminder</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;continent&#39;</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">])</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>                     <span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">m_lifeExp</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">,</span> <span class="s1">&#39;mean&#39;</span><span class="p">))</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>                     <span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="s1">&#39;continent&#39;</span><span class="p">)[</span><span class="s1">&#39;m_lifeExp&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">())</span>
+
+<span class="ne">NameError</span>: name &#39;gapminder&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">life_exp</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">67</span><span class="o">-</span><span class="mi">2357640490</span><span class="n">a5</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">life_exp</span>
+
+<span class="ne">NameError</span>: name &#39;life_exp&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">life_exp</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">id_vars</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">),</span>
+              <span class="n">value_vars</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Africa&#39;</span><span class="p">,</span> <span class="s1">&#39;Americas&#39;</span><span class="p">,</span> <span class="s1">&#39;Asia&#39;</span><span class="p">,</span> <span class="s1">&#39;Europe&#39;</span><span class="p">,</span> <span class="s1">&#39;Oceania&#39;</span><span class="p">],</span>
+             <span class="n">var_name</span> <span class="o">=</span> <span class="s1">&#39;continent&#39;</span><span class="p">,</span>
+             <span class="n">value_name</span> <span class="o">=</span> <span class="s1">&#39;mean_life_expectancy&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">68</span><span class="o">-</span><span class="mi">9506</span><span class="n">d81d64db</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">life_exp</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">id_vars</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">),</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>               <span class="n">value_vars</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Africa&#39;</span><span class="p">,</span> <span class="s1">&#39;Americas&#39;</span><span class="p">,</span> <span class="s1">&#39;Asia&#39;</span><span class="p">,</span> <span class="s1">&#39;Europe&#39;</span><span class="p">,</span> <span class="s1">&#39;Oceania&#39;</span><span class="p">],</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>              <span class="n">var_name</span> <span class="o">=</span> <span class="s1">&#39;continent&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>              <span class="n">value_name</span> <span class="o">=</span> <span class="s1">&#39;mean_life_expectancy&#39;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;life_exp&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>reshaping:</p>
+<p>with indexes: unstack and stack</p>
+<p>with column names: pivot and melt</p>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="let-s-do-something-complicated-together">
+<h1>Let’s do something complicated together.<a class="headerlink" href="#let-s-do-something-complicated-together" title="Permalink to this headline">¶</a></h1>
+<p><strong>Goal</strong>: we want to know how life expectancy has changed with gdpPercapita over time, for the different continents.</p>
+<div class="section" id="complicated-plot">
+<h2>Complicated plot<a class="headerlink" href="#complicated-plot" title="Permalink to this headline">¶</a></h2>
+<p>First: let’s make a plot of life expectancy as a function of gdpPerCapita, for each continent, for each year.</p>
+<p>So we want a years x continents subplot</p>
+<p>and we want some nice labels.</p>
+<p>Perhaps we have size vary with country population?</p>
+<p>label x, y, row, column</p>
+<div class="section" id="complicated-analysis">
+<h3>Complicated analysis<a class="headerlink" href="#complicated-analysis" title="Permalink to this headline">¶</a></h3>
+<p>Let’s figure out how life expectancy has changed over time with gdp per capita.</p>
+<p>We want to know how the mean life expectancy, and the relationship with gdp per capita, has changed over time, for each continent.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./live"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="../lectures/P04.html" title="previous page">P04: Data cleaning and management</a>
+    <a class='right-next' id="next-link" href="../lectures/P05.html" title="next page">P05: Modeling Data 1</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Ed Vul<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
