@@ -1,0 +1,1684 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lecture 5: Modeling Data &#8212; UCSD CSS 2</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="P06: Modeling Data 2" href="../lectures/P06.html" />
+    <link rel="prev" title="P05: Modeling Data 1" href="../lectures/P05.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">UCSD CSS 2</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Welcome to CSS 2
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Course (CSS 2 summer 2)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/syllabus.html">
+   Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/expectations.html">
+   Expectations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/datahub.html">
+   Datahub assignments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/debugging.html">
+   Debugging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/resources.html">
+   Extracurricular Resources
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lectures
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lectures/P01.html">
+   P01: Review of Python and Notebooks
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="css2-lecture-1.html">
+     CSS 2 Lecture 1
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lectures/P02.html">
+   P02: Data representation: numpy and pandas
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="css2-lecture-2.html">
+     CSS 2 Lecture 2
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lectures/P03.html">
+   P03: Plotting with matplotlib
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="css2-lecture-3.html">
+     CSS 2: lecture 3 - Matplotlib
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lectures/P04.html">
+   P04: Data cleaning and management
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="css2-lecture-4.html">
+     Lecture 4: Many more complicated data things
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../lectures/P05.html">
+   P05: Modeling Data 1
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Lecture 5: Modeling Data
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/P06.html">
+   P06: Modeling Data 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/P07.html">
+   P07: Classification
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/P08.html">
+   P08: Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/P09.html">
+   P09: Clustering
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/P10.html">
+   P10: Dimensionality reduction
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/live/css2-lecture-5.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/UCSD-CSS-002/ucsd-css-002.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/UCSD-CSS-002/ucsd-css-002.github.io/issues/new?title=Issue%20on%20page%20%2Flive/css2-lecture-5.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/UCSD-CSS-002/ucsd-css-002.github.io/master?urlpath=tree/live/css2-lecture-5.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#this-week">
+   This week:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#things-we-do-with-data">
+   Things we do with data.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-a-model">
+   What is a model?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#model-parts">
+   Model parts.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#model-structures-and-parameters">
+   Model structures and parameters
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#loss-functions">
+   Loss functions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#loss-for-regression">
+     Loss for Regression
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#sum-squared-error">
+       Sum squared error
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#loss-for-classification">
+     Loss for Classification
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#optimization-algorithm">
+   Optimization algorithm
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#grid-search">
+     Grid search
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#random-search">
+     Random search
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gradient-descent">
+     Gradient descent
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#writing-our-own-model-class">
+   Writing our own model class
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-kinds-of-operations-should-a-model-support">
+     What kinds of operations should a model support?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#baby-steps">
+     Baby steps
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#predict">
+       predict
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#evaluate">
+       evaluate
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#fit">
+       fit
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="lecture-5-modeling-data">
+<h1>Lecture 5: Modeling Data<a class="headerlink" href="#lecture-5-modeling-data" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="this-week">
+<h2>This week:<a class="headerlink" href="#this-week" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>no problem set, one integrated lab, due at the usual problem set time (monday)</p></li>
+<li><p>covering mostly conceptual material, which will serve as the basis of understanding the stuff we do later.</p></li>
+</ul>
+</div>
+<div class="section" id="things-we-do-with-data">
+<h2>Things we do with data.<a class="headerlink" href="#things-we-do-with-data" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>describe, summarize, visualize</p></li>
+<li><p>infer latent structure, rules, properties, parameters</p></li>
+<li><p>generalize to predict, interpolate, extrapolate</p></li>
+</ol>
+<p>Classical statistics is mostly about #2.  Machine learning is mostly about #3.  Computational Social Science uses tools and models from both.</p>
+<p>Both of these rely on fitting models to the data, but the design of the models, and model evaluation differ.</p>
+</div>
+<div class="section" id="what-is-a-model">
+<h2>What is a model?<a class="headerlink" href="#what-is-a-model" title="Permalink to this headline">¶</a></h2>
+<p>A model <em>assumes</em> some <strong>structure</strong> of the data, and has some <strong>parameters</strong> that are <em>fit</em> to the data.  The end result is an object that may be used in various ways for data summarization, inference, and prediction.</p>
+<p><strong>Examples</strong>: Linear regression, logistic regression, decision tree, neural networks of various architectures, support vector machine, etc.</p>
+<p>The structural assumptions constrain what kind of relationships can be captured by the model, but are also necessary to generalize beyond the data.</p>
+<p><strong>Even when we simply describe or summarize data, we implicitly have a model in mind.</strong></p>
+<p>I have the following data describing the flips of a coin <em><strong>how should I summarize them?</strong></em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="s1">&#39;T&#39;</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;H&#39;, &#39;H&#39;, &#39;T&#39;, &#39;T&#39;, &#39;T&#39;, &#39;T&#39;, &#39;T&#39;, &#39;T&#39;, &#39;H&#39;, &#39;H&#39;, &#39;T&#39;, &#39;T&#39;, &#39;T&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;H&#39;</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="c1"># probability of heads </span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+<span class="c1"># if we think the coin might be bent.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.3076923076923077
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># coin generated by a process that may be </span>
+<span class="c1"># likely to repeat previous outcome</span>
+
+<span class="n">transitions</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="n">prev</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="k">for</span> <span class="n">outcome</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">prev</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">prev</span> <span class="o">==</span> <span class="n">outcome</span><span class="p">:</span>
+            <span class="n">transitions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;same&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">transitions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;different&#39;</span><span class="p">)</span>
+    <span class="n">prev</span> <span class="o">=</span> <span class="n">outcome</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">transitions</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;same&#39;, &#39;different&#39;, &#39;same&#39;, &#39;same&#39;, &#39;same&#39;, &#39;same&#39;, &#39;same&#39;, &#39;different&#39;, &#39;same&#39;, &#39;different&#39;, &#39;same&#39;, &#39;same&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p_same</span> <span class="o">=</span> <span class="n">transitions</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;same&#39;</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">transitions</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p_same</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.75
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># spin a spinner.  if spinner lands in red then we stop flipping coin.</span>
+<span class="c1"># if spinner lands on green, then we flip one more time.</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>13
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="model-parts">
+<h2>Model parts.<a class="headerlink" href="#model-parts" title="Permalink to this headline">¶</a></h2>
+<p><strong>Structure:</strong> These are the core assumptions of the model.  Whatever you do in the fitting process, these are not going to change, they are set in stone.</p>
+<p>e.g., in linear regression:  <span class="math notranslate nohighlight">\(\hat y = a x + b\)</span></p>
+<p>e.g., not <span class="math notranslate nohighlight">\(\hat y = a x^2 + b\)</span></p>
+<p><strong>Parameters:</strong> These are the moving parts of the model that are fit to the data.</p>
+<p>e.g., in linear regression: <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span></p>
+<p><strong>Loss / objective / goodness of fit function:</strong> This is a function that can consider the model and its parameters, and the observed data, and returns a number indicating how well/badly the model fits.  How do I decide whether one value of the parameters is better or worse than another?</p>
+<p>e.g., in linear regression: this could be mean squared error, or the likelihood under a normal probability distribution, or the posterior probability of a particular set of parameters, or the mean absolute error, or the quantile error, or… etc.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fa77a4fc0d0&gt;
+</pre></div>
+</div>
+<img alt="../_images/css2-lecture-5_12_1.png" src="../_images/css2-lecture-5_12_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.00844948, 0.39283793])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">predicted_y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="p">(</span><span class="n">predicted_y</span> <span class="o">-</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.36651769,  0.56961169,  0.3544258 , -0.00207341,  0.2478075 ,
+       -0.12256282, -0.00546573,  0.57626354,  0.01323999,  0.36705688])
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Optimization algorithm:</strong> how do I find the <em>best fitting</em> (loss minimizing, objective maximizing, goodness of fit maximizing) values of the parameters?</p>
+<p>e.g., in linear regression, there are various linear algebra tricks available to do so robustly (out of scope here).</p>
+</div>
+<div class="section" id="model-structures-and-parameters">
+<h2>Model structures and parameters<a class="headerlink" href="#model-structures-and-parameters" title="Permalink to this headline">¶</a></h2>
+<p>There are <em>many</em>.  We will spend the bulk of class talking about the varieties of model structures that are out there, what they assume, and what they are good at.</p>
+</div>
+<div class="section" id="loss-functions">
+<h2>Loss functions<a class="headerlink" href="#loss-functions" title="Permalink to this headline">¶</a></h2>
+<p>There are relatively few, for common problem types.  We will learn the basics of these because they are essential to understanding what models are doing.</p>
+<div class="section" id="loss-for-regression">
+<h3>Loss for Regression<a class="headerlink" href="#loss-for-regression" title="Permalink to this headline">¶</a></h3>
+<p>Regression: predict some number from other data.</p>
+<p>Let’s say we want to predict weight.  How do we evaluate how well we have done this?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">weight</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">180</span><span class="p">,</span> <span class="mi">160</span><span class="p">,</span> <span class="mi">175</span><span class="p">,</span> <span class="mi">240</span><span class="p">,</span> <span class="mi">130</span><span class="p">])</span>
+
+<span class="n">predicted_weight</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">180</span><span class="p">,</span> <span class="mi">165</span><span class="p">,</span> <span class="mi">175</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">128</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># our loss function is a single number that </span>
+<span class="c1"># tells us how bad our predictions are.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Errors</strong></p>
+<ol class="simple">
+<li><p>Ratio error.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">weight</span><span class="o">/</span><span class="n">predicted_weight</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.        , -0.03077166,  0.        ,  0.87546874,  0.01550419])
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="simple">
+<li><p>Linear error</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">predicted_weight</span> <span class="o">-</span> <span class="n">weight</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([   0,    5,    0, -140,   -2])
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Summarizing errors</strong></p>
+<p>Mean of the squared errors.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">errors</span> <span class="o">=</span> <span class="n">predicted_weight</span> <span class="o">-</span> <span class="n">weight</span>
+<span class="n">errors</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([   0,    5,    0, -140,   -2])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># squared errors</span>
+<span class="n">errors</span><span class="o">**</span><span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([    0,    25,     0, 19600,     4])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">errors</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>19629
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="sum-squared-error">
+<h4>Sum squared error<a class="headerlink" href="#sum-squared-error" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sse</span><span class="p">(</span><span class="n">predicted_y</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">((</span><span class="n">predicted_y</span> <span class="o">-</span> <span class="n">y</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sse</span><span class="p">(</span><span class="n">predicted_weight</span><span class="p">,</span> <span class="n">weight</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>19629
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">weight</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">180</span><span class="p">,</span> <span class="mi">160</span><span class="p">,</span> <span class="mi">175</span><span class="p">,</span> <span class="mi">240</span><span class="p">,</span> <span class="mi">130</span><span class="p">])</span>
+
+<span class="n">predicted_weight</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">180</span><span class="p">,</span> <span class="mi">165</span><span class="p">,</span> <span class="mi">175</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">128</span><span class="p">])</span>
+
+<span class="n">sse</span><span class="p">(</span><span class="n">predicted_weight</span><span class="p">,</span> <span class="n">weight</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>19629
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">weight</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">180</span><span class="p">,</span> <span class="mi">160</span><span class="p">,</span> <span class="mi">175</span><span class="p">,</span> <span class="mi">240</span><span class="p">,</span> <span class="mi">130</span><span class="p">,</span> <span class="mi">180</span><span class="p">])</span>
+
+<span class="n">predicted_weight</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">180</span><span class="p">,</span> <span class="mi">165</span><span class="p">,</span> <span class="mi">175</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">175</span><span class="p">])</span>
+
+<span class="c1"># they increase with number of data points.  </span>
+<span class="c1"># because we sum all data point errors squared.</span>
+<span class="n">sse</span><span class="p">(</span><span class="n">predicted_weight</span><span class="p">,</span> <span class="n">weight</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>19654
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">weight</span> <span class="o">=</span>           <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">180</span><span class="p">,</span> <span class="mi">160</span><span class="p">,</span> <span class="mi">175</span><span class="p">,</span> <span class="mi">240</span><span class="p">,</span> <span class="mi">130</span><span class="p">])</span>
+
+<span class="n">predicted_weight</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">180</span><span class="p">,</span> <span class="mi">160</span><span class="p">,</span> <span class="mi">175</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">130</span><span class="p">])</span>
+
+<span class="n">sse</span><span class="p">(</span><span class="n">predicted_weight</span><span class="p">,</span> <span class="n">weight</span><span class="p">)</span>
+
+<span class="c1"># sum of squared errors dominated by large errors.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>19600
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Mean squared errors</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">mse</span><span class="p">(</span><span class="n">predicted_y</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">((</span><span class="n">predicted_y</span> <span class="o">-</span> <span class="n">y</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">weight</span> <span class="o">=</span>           <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">180</span><span class="p">,</span> <span class="mi">160</span><span class="p">,</span> <span class="mi">175</span><span class="p">,</span> <span class="mi">240</span><span class="p">,</span> <span class="mi">130</span><span class="p">])</span>
+
+<span class="n">predicted_weight</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">180</span><span class="p">,</span> <span class="mi">160</span><span class="p">,</span> <span class="mi">175</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">130</span><span class="p">])</span>
+
+<span class="n">mse</span><span class="p">(</span><span class="n">predicted_weight</span><span class="p">,</span> <span class="n">weight</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3920.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Aside: standard error of the mean.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">weight</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([180, 160, 175, 240, 130])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">weight</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>177.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">weight</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="o">/</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">weight</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16.099689437998485
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">177</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="mi">16</span><span class="p">,</span> <span class="mi">177</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="mi">16</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[145, 209]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Simple model:</p>
+<p><span class="math notranslate nohighlight">\(\hat y = m\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># parameter / prediction</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">weight</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+<span class="c1"># error</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">weight</span> <span class="o">-</span> <span class="n">m</span><span class="p">)</span>
+<span class="c1"># squared error</span>
+<span class="nb">print</span><span class="p">((</span><span class="n">weight</span> <span class="o">-</span> <span class="n">m</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="c1"># sum of squared error</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">((</span><span class="n">weight</span> <span class="o">-</span> <span class="n">m</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+<span class="c1"># mean of squared error</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">((</span><span class="n">weight</span> <span class="o">-</span> <span class="n">m</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">weight</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[  3. -17.  -2.  63. -47.]
+[   9.  289.    4. 3969. 2209.]
+6480.0
+1296.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">weight</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">weight</span><span class="p">)</span>
+<span class="nb">sum</span><span class="p">((</span><span class="n">weight</span> <span class="o">-</span> <span class="n">m</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">n</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1296.0
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Loss function:</strong> is some function of the prediction, and the actual data, that returns one number, which is bigger when our predictions are worse.</p>
+<p><strong>Mean squared error</strong></p>
+<p><strong>Mean absolute error</strong></p>
+<p><strong>not exactly right proportion</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">weight</span> <span class="o">=</span>           <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">180</span><span class="p">,</span> <span class="mi">160</span><span class="p">,</span> <span class="mi">175</span><span class="p">,</span> <span class="mi">240</span><span class="p">,</span> <span class="mi">130</span><span class="p">])</span>
+
+<span class="n">predicted_weight</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">180</span><span class="p">,</span> <span class="mi">160</span><span class="p">,</span> <span class="mi">175</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">130</span><span class="p">])</span>
+
+<span class="n">mse</span><span class="p">(</span><span class="n">predicted_weight</span><span class="p">,</span> <span class="n">weight</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3920.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">mae</span><span class="p">(</span><span class="n">predicted_y</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">predicted_y</span> <span class="o">-</span> <span class="n">y</span><span class="p">))</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">weight</span> <span class="o">=</span>           <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">180</span><span class="p">,</span> <span class="mi">160</span><span class="p">,</span> <span class="mi">175</span><span class="p">,</span> <span class="mi">240</span><span class="p">,</span> <span class="mi">130</span><span class="p">])</span>
+
+<span class="n">predicted_weight</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">180</span><span class="p">,</span> <span class="mi">160</span><span class="p">,</span> <span class="mi">175</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">130</span><span class="p">])</span>
+
+<span class="n">mae</span><span class="p">(</span><span class="n">predicted_weight</span><span class="p">,</span> <span class="n">weight</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>28.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">mean_error</span><span class="p">(</span><span class="n">predicted_y</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">predicted_y</span> <span class="o">-</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">weight</span> <span class="o">=</span>           <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">180</span><span class="p">,</span> <span class="mi">160</span><span class="p">,</span> <span class="mi">175</span><span class="p">,</span> <span class="mi">240</span><span class="p">,</span> <span class="mi">130</span><span class="p">])</span>
+
+<span class="n">predicted_weight</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">280</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">275</span><span class="p">,</span> <span class="mi">140</span><span class="p">,</span> <span class="mi">130</span><span class="p">])</span>
+
+<span class="n">mean_error</span><span class="p">(</span><span class="n">predicted_weight</span><span class="p">,</span> <span class="n">weight</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">not_exactly_right_proportion</span><span class="p">(</span><span class="n">predicted_y</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">predicted_y</span> <span class="o">!=</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">weight</span> <span class="o">=</span>           <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">180</span><span class="p">,</span> <span class="mi">160</span><span class="p">,</span> <span class="mi">175</span><span class="p">,</span> <span class="mi">240</span><span class="p">,</span> <span class="mi">130</span><span class="p">])</span>
+
+<span class="n">predicted_weight</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">180</span><span class="p">,</span> <span class="mi">160</span><span class="p">,</span> <span class="mi">185</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">130</span><span class="p">])</span>
+
+<span class="n">not_exactly_right_proportion</span><span class="p">(</span><span class="n">predicted_weight</span><span class="p">,</span> <span class="n">weight</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.4
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="loss-for-classification">
+<h3>Loss for Classification<a class="headerlink" href="#loss-for-classification" title="Permalink to this headline">¶</a></h3>
+<p>Classification: predict a label, (in contrast to a number)</p>
+<p>Let’s say we want to predict sex (male/female).  How do we evaluate how well we have done this?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># binary predictions loss functions:</span>
+
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="s1">&#39;m&#39;</span><span class="p">]</span>
+
+<span class="n">predicted_y</span> <span class="o">=</span>  <span class="p">[</span><span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="s1">&#39;m&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">inaccuracy</span><span class="p">(</span><span class="n">predicted_y</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">predicted_y</span> <span class="o">!=</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="s1">&#39;m&#39;</span><span class="p">]</span>
+
+<span class="n">predicted_y</span> <span class="o">=</span>  <span class="p">[</span><span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Developing new loss functions is where a lot of the action is for state of the art machine learning, because this is where we specify what it means for a machine to achieve certain intelligent goals.  This is particularly important for RL, and other domains where we don’t actually know what we mean by “intelligent behavior”.</p>
+</div>
+</div>
+<div class="section" id="optimization-algorithm">
+<h2>Optimization algorithm<a class="headerlink" href="#optimization-algorithm" title="Permalink to this headline">¶</a></h2>
+<p>There are many. Very active area of research, we will generally not cover them in great detail.  Let’s cover some basics though.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># goal: predict weight from height</span>
+
+<span class="c1"># model is: predicted_y = slope * x + intercept</span>
+
+<span class="c1"># parameters are: slope, intercept</span>
+
+<span class="c1"># loss function:  mean absolute error</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">hw</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;height-weight.csv&#39;</span><span class="p">)</span>
+
+<span class="n">hw</span> <span class="o">=</span> <span class="n">hw</span><span class="p">[</span><span class="n">hw</span><span class="p">[</span><span class="s1">&#39;height&#39;</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">36</span><span class="p">]</span>
+
+<span class="n">hw</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>height</th>
+      <th>weight</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>67.75</td>
+      <td>154.25</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>72.25</td>
+      <td>173.25</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>66.25</td>
+      <td>154.00</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>72.25</td>
+      <td>184.75</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>71.25</td>
+      <td>184.25</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>247</th>
+      <td>67.00</td>
+      <td>134.25</td>
+    </tr>
+    <tr>
+      <th>248</th>
+      <td>69.75</td>
+      <td>201.00</td>
+    </tr>
+    <tr>
+      <th>249</th>
+      <td>66.00</td>
+      <td>186.75</td>
+    </tr>
+    <tr>
+      <th>250</th>
+      <td>70.50</td>
+      <td>190.75</td>
+    </tr>
+    <tr>
+      <th>251</th>
+      <td>70.00</td>
+      <td>207.50</td>
+    </tr>
+  </tbody>
+</table>
+<p>251 rows × 2 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="n">slope</span><span class="p">,</span> <span class="n">intercept</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">slope</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">intercept</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">slope</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="n">intercept</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">hw</span><span class="p">[</span><span class="s1">&#39;height&#39;</span><span class="p">],</span> <span class="n">hw</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;height&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;weight&#39;</span><span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="mi">80</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">predict</span><span class="p">(</span><span class="n">slope</span><span class="p">,</span> <span class="n">intercept</span><span class="p">,</span> <span class="n">x</span><span class="p">),</span> <span class="s1">&#39;r-&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fa77ad00c70&gt;]
+</pre></div>
+</div>
+<img alt="../_images/css2-lecture-5_62_1.png" src="../_images/css2-lecture-5_62_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">mae</span><span class="p">(</span><span class="n">predicted_y</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">predicted_y</span> <span class="o">-</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mae</span><span class="p">(</span><span class="n">predict</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">30</span><span class="p">,</span> <span class="n">hw</span><span class="p">[</span><span class="s1">&#39;height&#39;</span><span class="p">]),</span> <span class="n">hw</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20.21573705179283
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">slope</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="n">intercept</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">hw</span><span class="p">[</span><span class="s1">&#39;height&#39;</span><span class="p">],</span> <span class="n">hw</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;height&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;weight&#39;</span><span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="mi">80</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">predict</span><span class="p">(</span><span class="mf">1.01</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="n">x</span><span class="p">),</span> <span class="s1">&#39;g-&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">predict</span><span class="p">(</span><span class="mf">0.9</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="n">x</span><span class="p">),</span> <span class="s1">&#39;r-&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">predict</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">30</span><span class="p">,</span> <span class="n">x</span><span class="p">),</span> <span class="s1">&#39;b-&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">predict</span><span class="p">(</span><span class="mf">5.75</span><span class="p">,</span> <span class="o">-</span><span class="mi">227</span><span class="p">,</span> <span class="n">x</span><span class="p">),</span> <span class="s1">&#39;m-&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">predict</span><span class="p">(</span><span class="mf">3.5</span><span class="p">,</span> <span class="o">-</span><span class="mi">70</span><span class="p">,</span> <span class="n">x</span><span class="p">),</span> <span class="s1">&#39;y-&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fa7586b50a0&gt;]
+</pre></div>
+</div>
+<img alt="../_images/css2-lecture-5_65_1.png" src="../_images/css2-lecture-5_65_1.png" />
+</div>
+</div>
+<div class="section" id="grid-search">
+<h3>Grid search<a class="headerlink" href="#grid-search" title="Permalink to this headline">¶</a></h3>
+<p>Consider a bunch of possible parameter settings.  Evaluate loss for each.  Pick the best one.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">current_lowest</span> <span class="o">=</span> <span class="mi">1000000000</span>
+
+<span class="n">best_slope</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">best_intercept</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="k">for</span> <span class="n">slope</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">100</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">intercept</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">100</span><span class="p">):</span>
+        <span class="n">current_mae</span> <span class="o">=</span> <span class="n">mae</span><span class="p">(</span><span class="n">predict</span><span class="p">(</span><span class="n">slope</span><span class="p">,</span> 
+                                  <span class="n">intercept</span><span class="p">,</span> 
+                                  <span class="n">hw</span><span class="p">[</span><span class="s1">&#39;height&#39;</span><span class="p">]),</span> 
+                          <span class="n">hw</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">current_mae</span> <span class="o">&lt;</span> <span class="n">current_lowest</span><span class="p">:</span>
+            <span class="n">current_lowest</span> <span class="o">=</span> <span class="n">current_mae</span>
+            <span class="n">best_slope</span> <span class="o">=</span> <span class="n">slope</span>
+            <span class="n">best_intercept</span> <span class="o">=</span> <span class="n">intercept</span>
+        <span class="c1">#print(f&#39;{slope=}, {intercept=}, {current_mae=}&#39;)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">current_lowest</span><span class="p">,</span> <span class="n">best_slope</span><span class="p">,</span> <span class="n">best_intercept</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>18.837854642037907 5.757575757575758 -227.2727272727273
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.        , 0.05050505, 0.1010101 , 0.15151515, 0.2020202 ,
+       0.25252525, 0.3030303 , 0.35353535, 0.4040404 , 0.45454545,
+       0.50505051, 0.55555556, 0.60606061, 0.65656566, 0.70707071,
+       0.75757576, 0.80808081, 0.85858586, 0.90909091, 0.95959596,
+       1.01010101, 1.06060606, 1.11111111, 1.16161616, 1.21212121,
+       1.26262626, 1.31313131, 1.36363636, 1.41414141, 1.46464646,
+       1.51515152, 1.56565657, 1.61616162, 1.66666667, 1.71717172,
+       1.76767677, 1.81818182, 1.86868687, 1.91919192, 1.96969697,
+       2.02020202, 2.07070707, 2.12121212, 2.17171717, 2.22222222,
+       2.27272727, 2.32323232, 2.37373737, 2.42424242, 2.47474747,
+       2.52525253, 2.57575758, 2.62626263, 2.67676768, 2.72727273,
+       2.77777778, 2.82828283, 2.87878788, 2.92929293, 2.97979798,
+       3.03030303, 3.08080808, 3.13131313, 3.18181818, 3.23232323,
+       3.28282828, 3.33333333, 3.38383838, 3.43434343, 3.48484848,
+       3.53535354, 3.58585859, 3.63636364, 3.68686869, 3.73737374,
+       3.78787879, 3.83838384, 3.88888889, 3.93939394, 3.98989899,
+       4.04040404, 4.09090909, 4.14141414, 4.19191919, 4.24242424,
+       4.29292929, 4.34343434, 4.39393939, 4.44444444, 4.49494949,
+       4.54545455, 4.5959596 , 4.64646465, 4.6969697 , 4.74747475,
+       4.7979798 , 4.84848485, 4.8989899 , 4.94949495, 5.        ])
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="random-search">
+<h3>Random search<a class="headerlink" href="#random-search" title="Permalink to this headline">¶</a></h3>
+<p>Start with some parameter values.  Propose a local perturbation.  If it is better, adopt that one, and continue.  Until some criterion is reached.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">slope</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">intercept</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">current</span> <span class="o">=</span> <span class="n">mae</span><span class="p">(</span><span class="n">predict</span><span class="p">(</span><span class="n">slope</span><span class="p">,</span> <span class="n">intercept</span><span class="p">,</span> <span class="n">hw</span><span class="p">[</span><span class="s1">&#39;height&#39;</span><span class="p">]),</span> <span class="n">hw</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">])</span>
+
+<span class="n">attempts</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">while</span> <span class="n">attempts</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">:</span>
+    <span class="n">new_slope</span> <span class="o">=</span> <span class="n">slope</span> <span class="o">+</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">()</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">new_intercept</span> <span class="o">=</span> <span class="n">intercept</span> <span class="o">+</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">()</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span><span class="o">*</span><span class="mi">20</span>
+    
+    <span class="n">new_mae</span> <span class="o">=</span> <span class="n">mae</span><span class="p">(</span><span class="n">predict</span><span class="p">(</span><span class="n">new_slope</span><span class="p">,</span> 
+                          <span class="n">new_intercept</span><span class="p">,</span> 
+                          <span class="n">hw</span><span class="p">[</span><span class="s1">&#39;height&#39;</span><span class="p">]),</span> 
+                  <span class="n">hw</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">current</span><span class="si">=}</span><span class="s1"> </span><span class="si">{</span><span class="n">new_mae</span><span class="si">=}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">attempts</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">new_mae</span> <span class="o">&lt;</span> <span class="n">current</span><span class="p">:</span>
+        <span class="n">slope</span> <span class="o">=</span> <span class="n">new_slope</span>
+        <span class="n">intercept</span> <span class="o">=</span> <span class="n">new_intercept</span>
+        <span class="n">current</span> <span class="o">=</span> <span class="n">new_mae</span>
+        <span class="n">attempts</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">slope</span><span class="si">=}</span><span class="s1"> </span><span class="si">{</span><span class="n">intercept</span><span class="si">=}</span><span class="s1"> </span><span class="si">{</span><span class="n">current</span><span class="si">=}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>current=178.82051792828688 new_mae=177.88222251743548
+slope=0.02485418440593956 intercept=-0.8092211086546675 current=177.88222251743548
+current=177.88222251743548 new_mae=156.10662344575513
+slope=0.42631234240053917 intercept=-7.260449018204169 current=156.10662344575513
+current=156.10662344575513 new_mae=184.60637891823995
+current=156.10662344575513 new_mae=163.95359618533374
+current=156.10662344575513 new_mae=180.90608932235696
+current=156.10662344575513 new_mae=193.1047110649775
+current=156.10662344575513 new_mae=125.24027667469774
+slope=0.8040742308812762 intercept=-2.9548265814419077 current=125.24027667469774
+current=125.24027667469774 new_mae=139.92666653316022
+current=125.24027667469774 new_mae=92.43533048069351
+slope=1.1760003975859052 intercept=3.699709293824225 current=92.43533048069351
+current=92.43533048069351 new_mae=62.817371470369636
+slope=1.4816655369085536 intercept=11.826120978386715 current=62.817371470369636
+current=62.817371470369636 new_mae=33.74955787580795
+slope=1.861903005587201 intercept=15.552671739173304 current=33.74955787580795
+current=33.74955787580795 new_mae=25.14656103299917
+slope=1.9638591576697413 intercept=20.338960558620116 current=25.14656103299917
+current=25.14656103299917 new_mae=20.89125499420589
+slope=2.199968488560748 intercept=27.087748951339876 current=20.89125499420589
+current=20.89125499420589 new_mae=26.62961013936926
+current=20.89125499420589 new_mae=31.499506295438202
+current=20.89125499420589 new_mae=20.26351039127517
+slope=2.1972758853481076 intercept=18.054437172762235 current=20.26351039127517
+current=20.26351039127517 new_mae=24.78964062305075
+current=20.26351039127517 new_mae=32.326020472787306
+current=20.26351039127517 new_mae=27.711791938211388
+current=20.26351039127517 new_mae=28.39464735626713
+current=20.26351039127517 new_mae=20.165233751348058
+slope=2.2992455117743793 intercept=14.99182780236018 current=20.165233751348058
+current=20.165233751348058 new_mae=23.404194738749933
+current=20.165233751348058 new_mae=24.622767312088193
+current=20.165233751348058 new_mae=20.693024075053543
+current=20.165233751348058 new_mae=22.089616615768577
+current=20.165233751348058 new_mae=20.23296189481602
+current=20.165233751348058 new_mae=31.15483445511383
+current=20.165233751348058 new_mae=38.27319684655191
+current=20.165233751348058 new_mae=20.19650573660183
+current=20.165233751348058 new_mae=31.35021180720072
+current=20.165233751348058 new_mae=20.744726446508384
+current=20.165233751348058 new_mae=20.75905225105617
+current=20.165233751348058 new_mae=20.80562123620601
+current=20.165233751348058 new_mae=34.539788545191875
+current=20.165233751348058 new_mae=20.24793041268233
+current=20.165233751348058 new_mae=33.86565325323434
+current=20.165233751348058 new_mae=20.8888137246976
+current=20.165233751348058 new_mae=34.49757382790361
+current=20.165233751348058 new_mae=28.68692336860476
+current=20.165233751348058 new_mae=21.216017251408694
+current=20.165233751348058 new_mae=21.231396096264874
+current=20.165233751348058 new_mae=20.273138246319103
+current=20.165233751348058 new_mae=24.580719958110127
+current=20.165233751348058 new_mae=31.90278165885099
+current=20.165233751348058 new_mae=34.50831654516566
+current=20.165233751348058 new_mae=21.38346876102259
+current=20.165233751348058 new_mae=32.303195474752336
+current=20.165233751348058 new_mae=23.124736448599247
+current=20.165233751348058 new_mae=27.620250313560323
+current=20.165233751348058 new_mae=30.492657683819665
+current=20.165233751348058 new_mae=21.177835371824525
+current=20.165233751348058 new_mae=21.569158603652266
+current=20.165233751348058 new_mae=28.750372039930085
+current=20.165233751348058 new_mae=23.332370238088064
+current=20.165233751348058 new_mae=20.775368031173407
+current=20.165233751348058 new_mae=25.717667412661033
+current=20.165233751348058 new_mae=35.672284199159726
+current=20.165233751348058 new_mae=29.069207740034788
+current=20.165233751348058 new_mae=20.15080464209264
+slope=2.439131203973505 intercept=6.2771578663120735 current=20.15080464209264
+current=20.15080464209264 new_mae=20.701675953105937
+current=20.15080464209264 new_mae=28.61179037129413
+current=20.15080464209264 new_mae=37.119805862086096
+current=20.15080464209264 new_mae=29.493329755823435
+current=20.15080464209264 new_mae=21.668689862766616
+current=20.15080464209264 new_mae=23.590736461255897
+current=20.15080464209264 new_mae=30.839816421338643
+current=20.15080464209264 new_mae=33.973342608990684
+current=20.15080464209264 new_mae=20.060155786241367
+slope=2.490619762742835 intercept=-2.6672828745253803 current=20.060155786241367
+current=20.060155786241367 new_mae=21.740724384441435
+current=20.060155786241367 new_mae=27.71031318762459
+current=20.060155786241367 new_mae=23.580858986169254
+current=20.060155786241367 new_mae=26.544984821703327
+current=20.060155786241367 new_mae=27.401026082361263
+current=20.060155786241367 new_mae=27.1241683780426
+current=20.060155786241367 new_mae=20.96920266606686
+current=20.060155786241367 new_mae=37.15097909888862
+current=20.060155786241367 new_mae=20.14173101432324
+current=20.060155786241367 new_mae=25.912446601494413
+current=20.060155786241367 new_mae=23.932092795716656
+current=20.060155786241367 new_mae=32.91004758119217
+current=20.060155786241367 new_mae=31.361549156706864
+current=20.060155786241367 new_mae=27.726812883660568
+current=20.060155786241367 new_mae=31.797130750355734
+current=20.060155786241367 new_mae=21.119043947631255
+current=20.060155786241367 new_mae=32.11599148225184
+current=20.060155786241367 new_mae=20.040874500087256
+slope=2.595297607927267 intercept=-10.525947620058886 current=20.040874500087256
+current=20.040874500087256 new_mae=34.825802045574065
+current=20.040874500087256 new_mae=22.453328409117358
+current=20.040874500087256 new_mae=20.51675819061727
+current=20.040874500087256 new_mae=29.027288353105146
+current=20.040874500087256 new_mae=22.091435939744997
+current=20.040874500087256 new_mae=21.6997719349706
+current=20.040874500087256 new_mae=20.49509418036236
+current=20.040874500087256 new_mae=20.104859180872072
+current=20.040874500087256 new_mae=19.817565958528082
+slope=2.7427592753140546 intercept=-16.629365754898334 current=19.817565958528082
+current=19.817565958528082 new_mae=20.54147128263042
+current=19.817565958528082 new_mae=35.43979375925574
+current=19.817565958528082 new_mae=23.820824815324592
+current=19.817565958528082 new_mae=33.1838380393186
+current=19.817565958528082 new_mae=31.989796996924387
+current=19.817565958528082 new_mae=20.39548860608714
+current=19.817565958528082 new_mae=27.634380462754503
+current=19.817565958528082 new_mae=31.752007558143074
+current=19.817565958528082 new_mae=21.56711466513158
+current=19.817565958528082 new_mae=29.309855916713058
+current=19.817565958528082 new_mae=20.533766015516132
+current=19.817565958528082 new_mae=27.70002975476633
+current=19.817565958528082 new_mae=25.22546605367764
+current=19.817565958528082 new_mae=19.874729119205984
+current=19.817565958528082 new_mae=22.107142177970932
+current=19.817565958528082 new_mae=25.85534467453187
+current=19.817565958528082 new_mae=30.67167652522618
+current=19.817565958528082 new_mae=42.36473026396506
+current=19.817565958528082 new_mae=22.039771844992803
+current=19.817565958528082 new_mae=21.078328581488883
+current=19.817565958528082 new_mae=20.484208967031307
+current=19.817565958528082 new_mae=26.388848106759113
+current=19.817565958528082 new_mae=27.9081308898168
+current=19.817565958528082 new_mae=23.707123240271052
+current=19.817565958528082 new_mae=29.173860147113903
+current=19.817565958528082 new_mae=20.13095697037597
+current=19.817565958528082 new_mae=26.237796133518323
+current=19.817565958528082 new_mae=20.388117026514845
+current=19.817565958528082 new_mae=28.336523332303038
+current=19.817565958528082 new_mae=19.805170470864834
+slope=2.6834601347822336 intercept=-14.11130026524569 current=19.805170470864834
+current=19.805170470864834 new_mae=25.831161168421485
+current=19.805170470864834 new_mae=30.19084217921799
+current=19.805170470864834 new_mae=30.929388878517678
+current=19.805170470864834 new_mae=21.16676327047441
+current=19.805170470864834 new_mae=25.839759734980284
+current=19.805170470864834 new_mae=19.89194006554802
+current=19.805170470864834 new_mae=26.189633681916593
+current=19.805170470864834 new_mae=31.191260158309174
+current=19.805170470864834 new_mae=21.893229702609602
+current=19.805170470864834 new_mae=20.996396982138975
+current=19.805170470864834 new_mae=21.147859555944287
+current=19.805170470864834 new_mae=30.56129198543041
+current=19.805170470864834 new_mae=20.185084716738942
+current=19.805170470864834 new_mae=23.711139708118218
+current=19.805170470864834 new_mae=20.72235461312533
+current=19.805170470864834 new_mae=22.657180468695717
+current=19.805170470864834 new_mae=37.58517777226149
+current=19.805170470864834 new_mae=24.93353780005291
+current=19.805170470864834 new_mae=20.585632367053158
+current=19.805170470864834 new_mae=22.1195478205451
+current=19.805170470864834 new_mae=21.628689429330432
+current=19.805170470864834 new_mae=22.82702676995146
+current=19.805170470864834 new_mae=21.504780669869263
+current=19.805170470864834 new_mae=30.11745709339235
+current=19.805170470864834 new_mae=21.610896740016113
+current=19.805170470864834 new_mae=34.008784668890065
+current=19.805170470864834 new_mae=25.15970839987191
+current=19.805170470864834 new_mae=25.103791108387675
+current=19.805170470864834 new_mae=35.779798951195524
+current=19.805170470864834 new_mae=20.787794049320727
+current=19.805170470864834 new_mae=39.3980073867641
+current=19.805170470864834 new_mae=21.220438943976703
+current=19.805170470864834 new_mae=19.83680417992307
+current=19.805170470864834 new_mae=20.27220122207317
+current=19.805170470864834 new_mae=21.29518740010051
+current=19.805170470864834 new_mae=27.05481113633304
+current=19.805170470864834 new_mae=26.1788847053832
+current=19.805170470864834 new_mae=31.694412271605238
+current=19.805170470864834 new_mae=26.72584434356104
+current=19.805170470864834 new_mae=25.138954095840802
+current=19.805170470864834 new_mae=24.697907631167972
+current=19.805170470864834 new_mae=25.14941870498544
+current=19.805170470864834 new_mae=35.11266052754458
+current=19.805170470864834 new_mae=22.55314204141327
+current=19.805170470864834 new_mae=39.46031035008439
+current=19.805170470864834 new_mae=21.43007504396932
+current=19.805170470864834 new_mae=19.856203116535216
+current=19.805170470864834 new_mae=27.28400688423822
+current=19.805170470864834 new_mae=32.45151413713086
+current=19.805170470864834 new_mae=29.614888502062726
+current=19.805170470864834 new_mae=20.69324114630125
+current=19.805170470864834 new_mae=24.969813195905264
+current=19.805170470864834 new_mae=45.88961007313844
+current=19.805170470864834 new_mae=31.167899205068764
+current=19.805170470864834 new_mae=22.15351967094427
+current=19.805170470864834 new_mae=31.598457073998485
+current=19.805170470864834 new_mae=27.409342816329325
+current=19.805170470864834 new_mae=19.96259285973239
+current=19.805170470864834 new_mae=21.155265324448912
+current=19.805170470864834 new_mae=26.911908466719606
+current=19.805170470864834 new_mae=20.08463110215011
+current=19.805170470864834 new_mae=20.685566543842665
+current=19.805170470864834 new_mae=20.03077895658084
+current=19.805170470864834 new_mae=20.311206218468918
+current=19.805170470864834 new_mae=26.56182177926594
+current=19.805170470864834 new_mae=27.29688972309767
+current=19.805170470864834 new_mae=21.45572714784935
+current=19.805170470864834 new_mae=21.877103795590234
+current=19.805170470864834 new_mae=22.68928602483243
+current=19.805170470864834 new_mae=27.90793932301855
+current=19.805170470864834 new_mae=19.869131334704086
+current=19.805170470864834 new_mae=20.63083147785184
+current=19.805170470864834 new_mae=39.21322848349296
+current=19.805170470864834 new_mae=19.85212648117441
+current=19.805170470864834 new_mae=22.34449257496431
+current=19.805170470864834 new_mae=19.84238728893655
+current=19.805170470864834 new_mae=21.471283223607916
+current=19.805170470864834 new_mae=28.505672449342637
+current=19.805170470864834 new_mae=20.036116154543905
+current=19.805170470864834 new_mae=35.88270625704074
+current=19.805170470864834 new_mae=19.817278654178203
+current=19.805170470864834 new_mae=19.81654511793406
+current=19.805170470864834 new_mae=21.483068617232853
+current=19.805170470864834 new_mae=25.52665925923786
+current=19.805170470864834 new_mae=22.187413084676734
+current=19.805170470864834 new_mae=19.81244717754756
+current=19.805170470864834 new_mae=30.65917354822878
+current=19.805170470864834 new_mae=23.265053453127063
+current=19.805170470864834 new_mae=24.689441986955927
+current=19.805170470864834 new_mae=19.917710765593295
+current=19.805170470864834 new_mae=20.28288883092503
+current=19.805170470864834 new_mae=26.546193417204574
+current=19.805170470864834 new_mae=25.53978313903683
+current=19.805170470864834 new_mae=21.88470638671449
+current=19.805170470864834 new_mae=29.211147426083734
+current=19.805170470864834 new_mae=22.3884616046795
+current=19.805170470864834 new_mae=19.96901764901565
+current=19.805170470864834 new_mae=20.319057911705688
+current=19.805170470864834 new_mae=20.32442158616634
+current=19.805170470864834 new_mae=26.437450828294622
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">()</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.15907715595580452
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>model is some function that usually takes parameters and predicts data.</p>
+<p>parameters are free to vary, structure of the model is set in stone</p>
+<p>we can evaluate model predictions via a loss function, and smaller loss is better.</p>
+<p>We find parameters that minimize the loss function.  this amounts to “fitting” the model.</p>
+<p>this is done via some kind of optimization algorithm.</p>
+<div class="section" id="gradient-descent">
+<h3>Gradient descent<a class="headerlink" href="#gradient-descent" title="Permalink to this headline">¶</a></h3>
+<p>Start with some parameter values.  Figure out which direction of change in parameter values reduces the loss.  Change parameter values in that direction.  Repeat until some criterion is reached.</p>
+<p><span class="math notranslate nohighlight">\(L(a,b) = \frac{1}{n} \sum_{i=0}^n (\hat y_i - y_i)^2\)</span></p>
+<p><span class="math notranslate nohighlight">\(L(a,b) = \frac{1}{n} \sum_{i=0}^n (a x_i + b - y_i)^2\)</span></p>
+<p><span class="math notranslate nohighlight">\(\frac{\partial L(a,b)}{\partial a} = \frac{1}{n} \sum_{i=0}^n 2 (a x_i + b - y_i) x_i\)</span></p>
+<p><span class="math notranslate nohighlight">\(\frac{\partial L(a,b)}{\partial b} = \frac{1}{n} \sum_{i=0}^n 2 (a x_i + b - y_i)\)</span></p>
+</div>
+</div>
+<div class="section" id="writing-our-own-model-class">
+<h2>Writing our own model class<a class="headerlink" href="#writing-our-own-model-class" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="what-kinds-of-operations-should-a-model-support">
+<h3>What kinds of operations should a model support?<a class="headerlink" href="#what-kinds-of-operations-should-a-model-support" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>predict data, usually given some input</p></li>
+<li><p>evaluate the quality of its predictions given some ground truth observations</p></li>
+<li><p>fit its parameters to observed data</p></li>
+<li><p>for <em>inferential statistics</em>: compare its fitted parameters to null values, provide confidence intervals on parameters, etc.</p></li>
+</ul>
+</div>
+<div class="section" id="baby-steps">
+<h3>Baby steps<a class="headerlink" href="#baby-steps" title="Permalink to this headline">¶</a></h3>
+<p><strong>for linear regression</strong></p>
+<div class="section" id="predict">
+<h4>predict<a class="headerlink" href="#predict" title="Permalink to this headline">¶</a></h4>
+<p>Write a function that takes in <code class="docutils literal notranslate"><span class="pre">x</span></code>x a 1d numpy array of length <code class="docutils literal notranslate"><span class="pre">n</span></code>, and returns a 1d array of <code class="docutils literal notranslate"><span class="pre">n</span></code> predicted y values, given <code class="docutils literal notranslate"><span class="pre">slope=0.5</span></code>, and <code class="docutils literal notranslate"><span class="pre">intercept=50</span></code></p>
+</div>
+<div class="section" id="evaluate">
+<h4>evaluate<a class="headerlink" href="#evaluate" title="Permalink to this headline">¶</a></h4>
+<p>Write a function that takes in <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> (both arrays of length <code class="docutils literal notranslate"><span class="pre">n</span></code>) and returns the mean squared error of the prediction.</p>
+</div>
+<div class="section" id="fit">
+<h4>fit<a class="headerlink" href="#fit" title="Permalink to this headline">¶</a></h4>
+<p>Write a function that takes in <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> and finds some good values of slope and intercept by minimizing the mean squared error loss function, somehow.</p>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./live"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="../lectures/P05.html" title="previous page">P05: Modeling Data 1</a>
+    <a class='right-next' id="next-link" href="../lectures/P06.html" title="next page">P06: Modeling Data 2</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Ed Vul<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
