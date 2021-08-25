@@ -35,5 +35,7 @@ parts:
         sections:
           - file: live/css2-lecture-7.ipynb
       - file: lectures/P08
+        sections:
+          - file: live/css2-lecture-8.ipynb
       - file: lectures/P09
       - file: lectures/P10
