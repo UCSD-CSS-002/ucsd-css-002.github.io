@@ -38,4 +38,6 @@ parts:
         sections:
           - file: live/css2-lecture-8.ipynb
       - file: lectures/P09
+        sections:
+          - file: live/css2-lecture-9.ipynb
       - file: lectures/P10
