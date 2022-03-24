@@ -44,7 +44,7 @@ This course is structured to help you get there.  The basic premise we start fro
 
 - Main {{ url_website }}: contains all the materials and links
 - {{ url_canvas }}: used to post grades
-- {{ url_campuswire }}: **CODE: 2003** used for all communication: discussion, Q&A, announcements etc.  Email the instructor if you cannot access.
+- {{ url_campuswire }}: **CODE: 2109** used for all communication: discussion, Q&A, announcements etc.  Email the instructor if you cannot access.
 - {{ url_datahub }}: used to submit comleted labs and problem sets
 
 
@@ -62,9 +62,49 @@ Each week, you'll be responsible for: (a) coming to lectures and participating i
 
 Below is the (rough) schedule for each of these, but this may change as the quarter goes on!
 
-| Date | Topics | Assignment due |
-| ---- | ------ | -------------- |
-|  | | |
+| Week | Date | Topics | Assignment due |
+| ---- | ------ | -------------- | ------------ |
+| Week 1 | Mon. 3/28 | Welcome! |  |
+| Week 1 | Weds. 3/30 | Python review |  |
+| Week 1 | Fri. 4/1 | Python review |  |
+| Week 2 | Mon. 4/4 | **Python for data science**: numpy |  |
+| Week 2 | Weds. 4/6 | **Python for data science**: pandas basics |  |
+| Week 2 | Fri. 4/8 | **Python for data science**: pandas advanced |  |
+| **Week 2 DEADLINES** |  |  | 4/4: **LAB 1** (*Mon.* section) <br> 4/6: **LAB 1** (*Wed.* section) |
+| Week 3 | Mon. 4/11 | Graphing with python (**Guest**) |  |
+| Week 3 | Weds. 4/13 | Graphing with python (**Remote**) |  |
+| Week 3 | Fri. 4/15 | Graphing with python (**Guest**) |  |
+| **Week 3 DEADLINES** |  |  | 4/11: **LAB 2** (*Mon.* section) <br> 4/13: **LAB 2** (*Wed.* section) |
+| Week 4 | Mon. 4/18 | **Getting started**: data structuring |  |
+| Week 4 | Weds. 4/20 | **Getting started**: data cleaning |  |
+| Week 4 | Fri. 4/22 | **Getting started**: data processing |  |
+| **Week 4 DEADLINES** |  |  | 4/18: **LAB 3** (*Mon.* section) <br> 4/20: **LAB 3** (*Wed.* section) |
+| Week 5 | Mon. 4/25 | **Prediction**: intro (linear regression) |  |
+| Week 5 | Weds. 4/27 | **Prediction**: evaluating solutions |  |
+| Week 5 | Fri. 4/29 | **Prediction**: advanced methods |  |
+| **Week 5 DEADLINES** |  |  | 4/25: **LAB 4** (*Mon.* section) <br> 4/27: **LAB 4** (*Wed.* section) |
+| Week 6 | Mon. 5/2 | **Prediction**: best practices |  |
+| Week 6 | Weds. 5/4 | **Classification**: intro (k neighbors) |  |
+| Week 6 | Fri. 5/6 | **Classification**: logistic regression |  |
+| **Week 6 DEADLINES** |  |  | 5/2: **LAB 5** (*Mon.* section) <br> 5/4: **LAB 5** (*Wed.* section) |
+| Week 7 | Mon. 5/9 | **Classification**: advanced methods |  |
+| Week 7 | Weds. 5/11 | **Classification**: evaluating solutions |  |
+| Week 7 | Fri. 5/13 | Ethics in data science |  |
+| **Week 7 DEADLINES** |  |  | 5/9: **LAB 6** (*Mon.* section) <br> 5/11: **LAB 6** (*Wed.* section) |
+| Week 8 | Mon. 5/16 | **Clustering**: intro (k means) |  |
+| Week 8 | Weds. 5/18 | **Clustering**: advanced methods |  |
+| Week 8 | Fri. 5/20 | **Clustering**: evaluating solutions |  |
+| **Week 8 DEADLINES** |  |  | 5/16: **LAB 7** (*Mon.* section) <br> 5/18: **LAB 7** (*Wed.* section) |
+| Week 9 | Mon. 5/23 | **Dimensionality reduction**: intro |  |
+| Week 9 | Weds. 5/25 | **Dimensionality reduction**: PCA |  |
+| Week 9 | Fri. 5/27 | **Dimensionality reduction**: advanced solutions |  |
+| **Week 9 DEADLINES** |  |  | 5/23: **LAB 8** (*Mon.* section) <br> 5/25: **LAB 8** (*Wed.* section) |
+| Week 10 | Mon. 5/30 | **HOLIDAY** (no class) |  |
+| Week 10 | Weds. 6/1 | Review |  |
+| Week 10 | Fri. 6/3 | Review |  |
+| **Week 10 DEADLINES** |  |  | 5/30: **LAB 9** (*Mon.* section) <br> 6/1: **LAB 9** (*Wed.* section) <br> 6/1: **LAB 10** (*All* sections) |
+
+
 
 
 ## Grading
@@ -74,7 +114,7 @@ Below is the (rough) schedule for each of these, but this may change as the quar
 Course grades will be calculated with the following breakdown:
 - 40% 8 weekly problem sets (weeks 2-9)
 - 35% 10 weekly labs
-- 15% final project (see [Final project](final.md))
+- 15% final project (see [Final Project](final.md))
 - 10% participation
 
 **Labs:**
@@ -163,21 +203,21 @@ Outside of office hours, all communication should happen over {{ url-campuswire 
 
 ### Specific types of questions / comments
 
-- **questions about course logistics:** First, check the syllabus and the detailed how-to pages on the {{ url_website }}. If you can't find the answer there, first ask a classmate. If still unsure, post on Campuswire in the General tag.
+- **Questions about course logistics:** First, check the syllabus and the detailed how-to pages on the {{ url_website }}. If you can't find the answer there, first ask a classmate. If still unsure, post on Campuswire in the General tag.
 
-- **questions about course content:** these are awesome! We want everyone to see them, be able to answer them, and have their questions answered too, so post these to Campuswire with an appropriate tag!
+- **Questions about course content:** these are awesome! We want everyone to see them, be able to answer them, and have their questions answered too, so post these to Campuswire with an appropriate tag!
 
-- **my code produces an error that I cannot fix:** follow the [debugging instructions](debugging.md) to find a minimal reproducible example and fill out the debugging question checklist, then post on Campuswire in the "Python" category or the relevant "Problem Set" category.
+- **My code produces an error that I cannot fix:** follow the [debugging instructions](debugging.md) to find a minimal reproducible example and fill out the debugging question checklist, then post on Campuswire in the "Python" category or the relevant "Problem Set" category.
 
-- **assignment clarification question:** Ask in the appropriate "Problem Set" or "Labs" category.
+- **Assignment clarification questions:** Ask in the appropriate "Problem Set" or "Labs" category.
 
-- **a technical assignment question:** Come to office hours (or post to Campuswire). Answering technical questions is often best accomplished 'in person' where we can discuss the question and talk through ideas. However, if that is not possible, post your question to Campuswire. Be as specific as you can in the question you ask. And, for those answering, help your classmates as much as you can without just giving the answer. Help guide them, point them in a direction, provide pseudo code, but do not provide code that answers assignment questions.
+- **Technical assignment questions:** Come to office hours (or post to Campuswire). Answering technical questions is often best accomplished 'in person' where we can discuss the question and talk through ideas. However, if that is not possible, post your question to Campuswire. Be as specific as you can in the question you ask. And, for those answering, help your classmates as much as you can without just giving the answer. Help guide them, point them in a direction, provide pseudo code, but do not provide code that answers assignment questions.
 
-- **been stuck on something for a while (>30min) and aren't even really sure where to start** - Programming can be frustrating and it may not always be obvious what is going wrong or why something isn't working. That's OK - we've all been there! IF you are stuck, you can and should reach out for help, even if you aren't exactly sure what your specific question is. To determine when to reach out, consider the 2-hour rule. This rule states that if you are stuck, work on that problem for an hour. Then, take a 30 minute break and do something else. When you come back after your break, try for another 30 minutes or so to solve your problem while working through our [debugging](debugging.md) checklist. If you are still completely stuck, stop and contact us (office hours, post on Campuswire). If you don't have a specific question, include the information you have (what you're stuck on, the [debugging checklist](debugging.md)).
+- **Stuck on something for a while (>30min) and aren't even really sure where to start** - Programming can be frustrating and it may not always be obvious what is going wrong or why something isn't working. That's OK - we've all been there! IF you are stuck, you can and should reach out for help, even if you aren't exactly sure what your specific question is. To determine when to reach out, consider the 2-hour rule. This rule states that if you are stuck, work on that problem for an hour. Then, take a 30 minute break and do something else. When you come back after your break, try for another 30 minutes or so to solve your problem while working through our [debugging](debugging.md) checklist. If you are still completely stuck, stop and contact us (office hours, post on Campuswire). If you don't have a specific question, include the information you have (what you're stuck on, the [debugging checklist](debugging.md)).
 
-- **questions about a grade** - Post on Campuswire with the "Regrades" tag in a private post to "Instructors & TAs".
+- **Questions about a grade** - Post on Campuswire with the "Regrades" tag in a private post to "Instructors & TAs".
 
-- **something super cool to share related to class or want to talk about a topic in further depth** - come to office hours, post in General, or send in a DM to the instructors!
+- **Something super cool to share related to class or want to talk about a topic in further depth** - come to office hours, post in General, or send in a DM to the instructors!
 
 ### Campuswire Rules
 
