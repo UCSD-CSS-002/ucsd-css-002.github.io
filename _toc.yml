@@ -11,33 +11,33 @@ parts:
       - file: course/datahub
       - file: course/debugging
       - file: course/resources
-  - caption: Lectures
-    chapters:
-      - file: lectures/P01
-        sections:
-          - file: live/css2-lecture-1.ipynb
-      - file: lectures/P02
-        sections:
-          - file: live/css2-lecture-2.ipynb
-      - file: lectures/P03
-        sections:
-          - file: live/css2-lecture-3.ipynb
-      - file: lectures/P04
-        sections:
-          - file: live/css2-lecture-4.ipynb
-      - file: lectures/P05
-        sections:
-          - file: live/css2-lecture-5.ipynb
-      - file: lectures/P06
-        sections:
-          - file: live/css2-lecture-6.ipynb
-      - file: lectures/P07
-        sections:
-          - file: live/css2-lecture-7.ipynb
-      - file: lectures/P08
-        sections:
-          - file: live/css2-lecture-8.ipynb
-      - file: lectures/P09
-        sections:
-          - file: live/css2-lecture-9.ipynb
-      - file: lectures/P10
+  # - caption: Lectures
+    # chapters:
+    #   - file: lectures/P01
+    #     sections:
+    #       - file: live/css2-lecture-1.ipynb
+    #   - file: lectures/P02
+    #     sections:
+    #       - file: live/css2-lecture-2.ipynb
+    #   - file: lectures/P03
+    #     sections:
+    #       - file: live/css2-lecture-3.ipynb
+    #   - file: lectures/P04
+    #     sections:
+    #       - file: live/css2-lecture-4.ipynb
+    #   - file: lectures/P05
+    #     sections:
+    #       - file: live/css2-lecture-5.ipynb
+    #   - file: lectures/P06
+    #     sections:
+    #       - file: live/css2-lecture-6.ipynb
+    #   - file: lectures/P07
+    #     sections:
+    #       - file: live/css2-lecture-7.ipynb
+    #   - file: lectures/P08
+    #     sections:
+    #       - file: live/css2-lecture-8.ipynb
+    #   - file: lectures/P09
+    #     sections:
+    #       - file: live/css2-lecture-9.ipynb
+    #   - file: lectures/P10
