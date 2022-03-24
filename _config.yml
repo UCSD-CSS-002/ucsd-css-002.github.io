@@ -15,8 +15,7 @@ parse:
   myst_substitutions:
     key: value
     url_website: "[Class Website](https://ucsd-css-002.github.io)"
-    url_lecture: "[Lecture zoom (UCSD)](https://ucsd.zoom.us/j/98787666741)"
-    url_canvas: "[Canvas (UCSD)](https://canvas.ucsd.edu/courses/28060)"
+    url_canvas: "[Canvas (UCSD)](https://canvas.ucsd.edu/courses/36054)"
     url_campuswire: "[Campuswire](https://campuswire.com/p/G8D54A819)"
     url_datahub: "[Datahub (UCSD)](https://datahub.ucsd.edu)"
 

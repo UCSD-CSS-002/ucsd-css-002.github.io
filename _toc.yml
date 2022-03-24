@@ -11,6 +11,7 @@ parts:
       - file: course/datahub
       - file: course/debugging
       - file: course/resources
+      - file: course/final
   # - caption: Lectures
     # chapters:
     #   - file: lectures/P01
