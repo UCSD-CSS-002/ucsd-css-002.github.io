@@ -25,8 +25,8 @@ This course is structured to help you get there.  The basic premise we start fro
 ## Course Information
 
 **Spring, 2022**
-- Lecture: M/W/F 8-8:50am PST (CENTR 222)
-- Labs: M 11-11:50am PST (ERCA 117) or 9-9:50am PST (ERCA 117)
+- Lecture: M/W/F 8-8:50am PDT (CENTR 222)
+- Labs: M 11-11:50am PDT (ERCA 117) or 9-9:50am PDT (ERCA 117)
 
 **Attendance**
 - Attendance at lecture and your assigned lab are required.
