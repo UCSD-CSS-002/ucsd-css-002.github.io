@@ -20,7 +20,7 @@ At the end of the course you should have a working understanding of how to work 
 
 ### Strategy
 
-This course is structured to help you get there.  The basic premise we start from is that programming is a skill, and to acquire a skill you need lots and lots of practice (see [Expectations](expectations.md)).  In lecture, we will introduce new basic elements, and will try them together as a class.  In labs, we will work in groups to combine these elements into small programs with instructor help.  In problem sets, you will apply these skills on your own to solve specific problems.  As much as possible, we will use interesting Computational Social Science problems as motivating problems, but we are constrained first and foremost by finding problems appropriate for your developing Python skills.
+This course is structured to help you get there. The basic premise we start from is that programming is a skill, and to acquire a skill you need lots and lots of practice (see [Expectations](expectations.md)). In lecture, we will introduce new basic elements, and will try them together as a class. In labs, we will work in groups to combine these elements into small programs with instructor help. In problem sets, you will apply these skills on your own to solve specific problems. As much as possible, we will use interesting Computational Social Science problems as motivating problems, but we are constrained first and foremost by finding problems appropriate for your developing Python skills.
 
 ## Course Information
 
@@ -44,7 +44,7 @@ This course is structured to help you get there.  The basic premise we start fro
 
 - Main {{ url_website }}: contains all the materials and links
 - {{ url_canvas }}: used to post grades
-- {{ url_campuswire }}: **CODE: 2109** used for all communication: discussion, Q&A, announcements etc.  Email the instructor if you cannot access.
+- {{ url_campuswire }}: **CODE: 2109** used for all communication: discussion, Q&A, announcements etc. Email the instructor if you cannot access.
 - {{ url_datahub }}: used to submit comleted labs and problem sets
 
 
@@ -54,7 +54,7 @@ This course is structured to help you get there.  The basic premise we start fro
 
 - No textbook is required atop the lectures notes here, but we provide recommendations for some paid and free [extracurricular resources](resources.md)
 
-- No local software is required (as we will use remotely hosted jupyter notebooks).  If you want to install a local copy, we recommend the bundled [anaconda distribution](https://www.anaconda.com/products/individual) of Python 3
+- No local software is required (as we will use remotely hosted jupyter notebooks). If you want to install a local copy, we recommend the bundled [anaconda distribution](https://www.anaconda.com/products/individual) of Python 3
 
 # Schedule
 
@@ -182,7 +182,7 @@ Assignment scores will be made available via assignment feedback on datahub (whe
 
 ### Manual Regrades
 
-Problem sets and labs are scored using [nbgrader](https://nbgrader.readthedocs.io/en/stable/) on [UCSD datahub](https://datahub.ucsd.edu/hub/login).  Some parts are graded automatically by computer, and some parts are graded manually by a human.
+Problem sets and labs are scored using [nbgrader](https://nbgrader.readthedocs.io/en/stable/) on [UCSD datahub](https://datahub.ucsd.edu/hub/login). Some parts are graded automatically by computer, and some parts are graded manually by a human.
 
 We will work hard to grade everyone fairly and return assignments quickly. And, we know you also work hard and want you to receive the grade you’ve earned. Occasionally, grading mistakes do happen, and it’s important to us to correct them. If you think there is a mistake in your grade on an assignment, post privately on Campuswire to “Instructors & TAs” using the “regrades” tag within 72 hours. This post should include evidence of why you think your answer was correct and should point to the specific part of the assignment in question.
 
@@ -200,7 +200,7 @@ The instructors can be reached in the following ways:
 
 - Direct message to specific instructor on {{ url_campuswire }}
 
-Outside of office hours, all communication should happen over {{ url-campuswire }}.  Email is reserved for the unanticipated circumstances when campuswire is down, or you cannot access it.  In that case, [email the instructor](mailto:ebrockbank@ucsd.edu) about in inability to access Campuswire.
+Outside of office hours, all communication should happen over {{ url-campuswire }}. Email is reserved for the unanticipated circumstances when campuswire is down, or you cannot access it. In that case, [email the instructor](mailto:ebrockbank@ucsd.edu) about in inability to access Campuswire.
 
 ### Specific types of questions / comments
 
@@ -228,7 +228,7 @@ Campuswire is an incredible resource for technical classes. It gives you a place
 2. If posting about an assignment, note title should have assignment number, question number, and 1-2 words about the question. (i.e. PS01 Q1 Variable Naming)
 3. Never post an answer to or code for an assignment on a public post. Pseudocode is encouraged for public posts. If you must include code for an assignment, make this post private (to "Instructors & TAs" only) on Campuswire.
 
-4. Your post must include not only your question/where you're stuck, but also what you've already done to try to solve it so far and what resources (class notes, online URLs, etc.) you used to try to answer the question up to this point.  See how to ask [debugging questions](debugging.md).
+4. Your post must include not only your question/where you're stuck, but also what you've already done to try to solve it so far and what resources (class notes, online URLs, etc.) you used to try to answer the question up to this point. See how to ask [debugging questions](debugging.md).
 
 
 
@@ -244,7 +244,7 @@ Campuswire is an incredible resource for technical classes. It gives you a place
 
 You are encouraged to work together and help one another for *labs*. However, you are personally responsible for the work you submit. It is your responsibility to ensure you understand everything you've submitted.
 
-**You must work independently on the problem sets and the final.**  You may ask and answer [debugging questions](debugging.md) on campuswire, but doing work for another student or providing assistance outside of public questions on campuswire on the problem sets or final project will be treated as a violation of academic integrity and you will be referred for disciplinary action. Similarly, emailing with or otherwise communicating with other students or anyone else during a quiz or exam will be treated as a violation and also referred for disciplinary action.   Cheating and plagiarism have been and will be strongly penalized. Please review academic integrity policies [here](http://academicintegrity.ucsd.edu).
+**You must work independently on the problem sets and the final.** You may ask and answer [debugging questions](debugging.md) on campuswire, but doing work for another student or providing assistance outside of public questions on campuswire on the problem sets or final project will be treated as a violation of academic integrity and you will be referred for disciplinary action. Similarly, emailing with or otherwise communicating with other students or anyone else during a quiz or exam will be treated as a violation and also referred for disciplinary action. Cheating and plagiarism have been and will be strongly penalized. Please review academic integrity policies [here](http://academicintegrity.ucsd.edu).
 
 You are responsible for ensuring that the correct file has been submitted and that the submission is uncorrupted. If, for whatever reason, Canvas or DataHub is down or something else prohibits you from being able to turn in an assignment on time, immediately contact the instructor by emailing the assignment, otherwise the assignment will be graded as late.
 
@@ -273,8 +273,8 @@ http://disabilities.ucsd.edu
 
 * [UCSD’s principles of community](https://ucsd.edu/about/principles.html)
 
-* [Counseling and Psychology Services (CAPS)](https://wellness.ucsd.edu/CAPS/Pages/default.aspx).  “CAPS provides FREE, confidential, psychological counseling and crisis services for registered UCSD students.  CAPS also provides a variety of groups, workshops, and drop-in forums.”
+* [Counseling and Psychology Services (CAPS)](https://wellness.ucsd.edu/CAPS/Pages/default.aspx). “CAPS provides FREE, confidential, psychological counseling and crisis services for registered UCSD students. CAPS also provides a variety of groups, workshops, and drop-in forums.”
 
 * [CARE at the Sexual Assault Resource Center](https://care.ucsd.edu/) is the UC San Diego confidential advocacy and education office for sexual harassment, sexual violence and gender-based violence (dating violence, domestic violence, stalking).
 
-* [Office for the Prevention of Harassment & Discrimination (OPHD)](https://ophd.ucsd.edu/).  OPHD "works to resolve complaints of discrimination and harassment through formal investigation or alternative resolution."
+* [Office for the Prevention of Harassment & Discrimination (OPHD)](https://ophd.ucsd.edu/). OPHD "works to resolve complaints of discrimination and harassment through formal investigation or alternative resolution."
