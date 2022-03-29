@@ -35,10 +35,10 @@ This course is structured to help you get there.  The basic premise we start fro
 
 ### Instructors
 
-| Role     | Name                | email    | Office hours  | Location |
-| ----------------: | :---------| -----------| ------------ | --------- |
-| **Instructor** | Erik Brockbank  | [ebrockbank@ucsd.edu](mailto:ebrockbank@ucsd.edu) | Fridays 9:00-10:00AM | 2588 Mandler Hall |
-| **TA** | Purva Kothari | [pukothar@ucsd.edu](mailto:pukothar@ucsd.edu) | TBD | TBD |
+| Role     | Name                | email    | Office hours  | Location | Zoom |
+| ----------------: | :---------| -----------| ------------ | --------- | -------- |
+| **Instructor** | Erik Brockbank  | [ebrockbank@ucsd.edu](mailto:ebrockbank@ucsd.edu) | Fridays 9:00-10:00AM | 2588 Mandler Hall | [Remote link](https://ucsd.zoom.us/j/7131149147) |
+| **TA** | Purva Kothari | [pukothar@ucsd.edu](mailto:pukothar@ucsd.edu) | Wednesdays 10:00-11:00AM | 1507 Mandler Hall | [Remote link](https://ucsd.zoom.us/j/93025194368) |
 
 ### All the links
 
