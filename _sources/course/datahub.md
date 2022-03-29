@@ -4,17 +4,17 @@ This is a guide to submitting assignments on datahub.
 
 ## Overview
 
-**Technical overview:**  Assignments are [jupyter notebooks](https://jupyter-notebook.readthedocs.io/en/stable/) served from UCSD's [datahub](https://datahub.ucsd.edu), and automatically graded by [nbgrader](https://nbgrader.readthedocs.io/en/stable/).
+**Technical overview:** Assignments are [jupyter notebooks](https://jupyter-notebook.readthedocs.io/en/stable/) served from UCSD's [datahub](https://datahub.ucsd.edu), and automatically graded by [nbgrader](https://nbgrader.readthedocs.io/en/stable/).
 
-**Practical overview:**  To complete an assigment you will need to:
-1. **Log in to [datahub](https://datahub.ucsd.edu):**  If you are enrolled in the class, you should be able to log in using your UCSD credentials (username@ucsd.edu, and your password)
+**Practical overview:** To complete an assigment you will need to:
+1. **Log in to [datahub](https://datahub.ucsd.edu):** If you are enrolled in the class, you should be able to log in using your UCSD credentials (username@ucsd.edu, and your password)
 1. **Launch this class environment:** select "CSS 2 - Data/Model Programming..." and click "Launch Environment".
 1. **Fetch assignment:** click on "Assignments" and click "Fetch" to download to your account space.
-1. **Open assignment:**  Click on assignment name in downloaded list, to expand assignment files, then click on the main file in the assignment to open the assignment notebook.
+1. **Open assignment:** Click on assignment name in downloaded list, to expand assignment files, then click on the main file in the assignment to open the assignment notebook.
 
 1. **Complete assignment** follow instructions in the notebook, remove `raise NotImplementedError()`, save regularly.
 1. **Check your work:** re-read questions and instructions; restart kernel and rerun all cells; look over results; save.
-1. **Submit:**  Back in the assignment list, click "validate"  to check that you are passing all visible tests.  Once validated, click "Submit"!  You can submit multiple times (see cautionary note below).
+1. **Submit:** Back in the assignment list, click "validate" to check that you are passing all visible tests. Once validated, click "Submit"! You can submit multiple times (see cautionary note below).
 
 ## Cautionary points:
 
@@ -36,6 +36,6 @@ The following are a couple tips & tricks that may help you if you get stuck on a
 
 - Consult our [debugging guide](debugging.md)
 
-- **Print variables:** you can (and should) print and check variables as you go.  This allows you to check what values they hold, what types they are, and fix things if anything unexpected happens.
+- **Print variables:** you can (and should) print and check variables as you go. This allows you to check what values they hold, what types they are, and fix things if anything unexpected happens.
 
 - **Restart the Kernel:** If you run cells out of order, you can end up overwriting things in your namespace. If things seem to go weird, a good first step is to restart the kernel, which you can do from the kernel menu above. (also 'Restart & Run All' before submitting, to make everything runs properly in order).

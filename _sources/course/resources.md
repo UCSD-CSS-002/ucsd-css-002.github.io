@@ -39,7 +39,7 @@ further resources, including:
 ## 2. Deeper understanding of Python and computing:
 
 ### More intensive books
-- [Introduction to Computation and Programming](https://www.amazon.com/Introduction-Computation-Programming-Using-Python-dp-0262542366/dp/0262542366/ref=dp_ob_title_bk): A great introduction to computation in general.  This would be most useful after you already have some familiarity, as it breezes through basic material.
+- [Introduction to Computation and Programming](https://www.amazon.com/Introduction-Computation-Programming-Using-Python-dp-0262542366/dp/0262542366/ref=dp_ob_title_bk): A great introduction to computation in general. This would be most useful after you already have some familiarity, as it breezes through basic material.
 - [Fluent Python](https://www.amazon.com/Fluent-Python-Concise-Effective-Programming/dp/1491946008): An excellent book to really understand how Python works, and how to use it effectively, once you have mastered the basics.
 - [Think Stats](https://greenteapress.com/wp/think-stats-2e/): An introduction to statistics and exploratory data analysis assuming you already know Python.
 
@@ -64,6 +64,6 @@ further resources, including:
 
 ## 4. Guided application of python in other domains:
 
-- [Invent with Python](http://inventwithpython.com/): A collection of books guiding you through starter projects that accomplish something immediately useful, via python.  Of particular note:
+- [Invent with Python](http://inventwithpython.com/): A collection of books guiding you through starter projects that accomplish something immediately useful, via python. Of particular note:
     - [Automate the Boring Stuff with Python](https://automatetheboringstuff.com/2e/): an introduction to python focused on interacting with objects and APIs many people have to routinely use to automate tedious tasks.
     - [Invent your own computer games with python](http://inventwithpython.com/invent4thed/): making computer games.
