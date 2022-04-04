@@ -16,6 +16,7 @@ parts:
     chapters:
       - file: lectures/sp22/Lecture_2
       - file: lectures/sp22/Lecture_3
+      - file: lectures/sp22/Lecture_4
     #     sections:
     #       - file: live/css2-lecture-1.ipynb
     #   - file: lectures/P02
