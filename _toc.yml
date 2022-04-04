@@ -14,9 +14,13 @@ parts:
       - file: course/final
   - caption: Lectures
     chapters:
-      - file: lectures/sp22/Lecture_2
-      - file: lectures/sp22/Lecture_3
-      - file: lectures/sp22/Lecture_4
+      - file: lectures/sp22/Week1_Overview
+        sections:
+        - file: lectures/sp22/Lecture_2.ipynb
+        - file: lectures/sp22/Lecture_3.ipynb
+      - file: lectures/sp22/Week2_Overview
+        sections:
+        - file: lectures/sp22/Lecture_4
     #     sections:
     #       - file: live/css2-lecture-1.ipynb
     #   - file: lectures/P02
