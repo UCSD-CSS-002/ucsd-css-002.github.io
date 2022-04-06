@@ -1,0 +1,3591 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS 2 Lecture 2 &#8212; UCSD CSS 2</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">UCSD CSS 2</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Welcome to CSS 2
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Course (CSS 2 Spring 2022)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/syllabus.html">
+   Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/expectations.html">
+   Expectations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/datahub.html">
+   Datahub assignments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/debugging.html">
+   Debugging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/resources.html">
+   Extracurricular Resources
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/final.html">
+   Final Project
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lectures
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/sp22/Lecture_2.html">
+   Lecture 2 (3/30/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/sp22/Lecture_3.html">
+   Lecture 3 (4/1/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/sp22/Lecture_4.html">
+   Lecture 4 (4/4/22)
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/live/css2-lecture-2.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/UCSD-CSS-002/ucsd-css-002.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/UCSD-CSS-002/ucsd-css-002.github.io/issues/new?title=Issue%20on%20page%20%2Flive/css2-lecture-2.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/UCSD-CSS-002/ucsd-css-002.github.io/master?urlpath=tree/live/css2-lecture-2.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   CSS 2 Lecture 2
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#assignment-feedback">
+     assignment feedback.
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#remainder-of-monday">
+     Remainder of Monday
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#control-structures">
+       Control structures
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#abstractions">
+       Abstractions
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#pythonic-peculiarieties">
+       Pythonic peculiarieties
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pandas-and-data-frames">
+   Pandas and data frames
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#foundations">
+     Foundations
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#modules">
+       Modules
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#numpy">
+       numpy
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pandas">
+     Pandas
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#overview-of-data-structures">
+       Overview of data structures:
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#making-a-data-frame">
+       Making a data frame
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#browsing-a-data-frame">
+       browsing a data frame
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#subsets">
+       Subsets:
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#extracting-columns-series">
+         Extracting columns (series)
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#extracting-rows">
+         Extracting rows
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#extracting-cells">
+         Extracting cells
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#indexing-madness">
+       Indexing madness:
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#filtering-rows-with-booleans">
+         Filtering rows with booleans
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#loc-index-label-based-indexing">
+         loc: index/label based indexing.
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#iloc-integer-position-indexing">
+         iloc: integer position indexing
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#grouping">
+       Grouping
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#summarizing">
+       Summarizing
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="css-2-lecture-2">
+<h1>CSS 2 Lecture 2<a class="headerlink" href="#css-2-lecture-2" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="assignment-feedback">
+<h2>assignment feedback.<a class="headerlink" href="#assignment-feedback" title="Permalink to this headline">¶</a></h2>
+<p>Sorry for delay: there is a slight technical problem that datahub admin needs to resolve for me, which is precluding me from releasing feedback on Lab 1.  However, I can confirm that I received 12 submissions (which is how many people are enrolled in the class, last I checked), and all got 5/5.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a3xie</span>  <span class="n">arnewlan</span>  <span class="n">bedu</span>  <span class="n">bzekeria</span>  <span class="n">cpretori</span>  <span class="n">jop007</span>  <span class="n">juy003</span>  <span class="n">lmesko</span>  <span class="n">mbelon</span>  <span class="n">miyin</span>  <span class="n">talam</span>  <span class="n">zyc004</span>
+</pre></div>
+</div>
+<p>If you submitted lab 1, and do not see your username on this list, please DM me so we can sort it out.</p>
+<p>After the technical problem is resolved, I will be able to release feedback to you that you can view through the assignment interface</p>
+</div>
+<div class="section" id="remainder-of-monday">
+<h2>Remainder of Monday<a class="headerlink" href="#remainder-of-monday" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="control-structures">
+<h3>Control structures<a class="headerlink" href="#control-structures" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>if statements</p></li>
+<li><p>for loops over (strings, lists, dictionaries)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="o">%</span><span class="k">whos</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="o">%</span><span class="k">whos</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="o">%</span><span class="k">whos</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">y</span><span class="o">**</span><span class="mi">2</span>
+<span class="o">%</span><span class="k">whos</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="o">%</span><span class="k">whos</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Variable   Type    Data/Info
+----------------------------
+x          int     3
+Variable   Type    Data/Info
+----------------------------
+x          int     3
+y          int     5
+3
+Variable   Type    Data/Info
+----------------------------
+x          int     3
+y          int     5
+Variable   Type    Data/Info
+----------------------------
+x          int     25
+y          int     5
+25
+Variable   Type    Data/Info
+----------------------------
+x          int     25
+y          int     5
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">height</span> <span class="o">=</span> <span class="mi">68</span>
+<span class="n">weight</span> <span class="o">=</span> <span class="mi">170</span>
+<span class="n">weight_units</span> <span class="o">=</span> <span class="s1">&#39;lbs&#39;</span>
+
+<span class="c1"># change height to inches if it is in cm</span>
+<span class="k">if</span> <span class="n">height</span> <span class="o">&gt;</span> <span class="mi">120</span><span class="p">:</span>
+    <span class="c1"># height is in cm if height &gt; 120</span>
+    <span class="n">height</span> <span class="o">=</span> <span class="n">height</span> <span class="o">/</span> <span class="mf">2.54</span>  <span class="c1"># height /= 2.54</span>
+
+<span class="c1"># change weight to lbs if it is in kgs</span>
+<span class="k">if</span> <span class="n">weight_units</span> <span class="o">==</span> <span class="s1">&#39;kgs&#39;</span><span class="p">:</span>
+    <span class="n">weight</span> <span class="o">/=</span> <span class="mf">2.2</span>
+    
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">condition</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="n">do</span> <span class="n">something</span>
+<span class="k">elif</span> <span class="n">condition</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="n">do</span> <span class="n">B</span>
+<span class="k">elif</span> <span class="n">condition</span> <span class="mi">3</span><span class="p">:</span>
+    <span class="n">do</span> <span class="n">C</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">do</span> <span class="n">D</span>
+   
+
+<span class="k">if</span> <span class="n">A</span><span class="p">:</span>
+    <span class="n">do</span> <span class="n">something</span>
+    
+<span class="k">if</span> <span class="n">B</span><span class="p">:</span>
+    <span class="n">do</span> <span class="n">something</span> <span class="k">else</span>
+    
+<span class="k">if</span> <span class="n">C</span><span class="p">:</span>
+    <span class="n">do</span> <span class="n">something</span> <span class="k">else</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-3-a6cdcca9859c&gt;&quot;</span><span class="gt">, line </span><span class="mi">1</span>
+    <span class="k">if</span> <span class="n">condition</span> <span class="mi">1</span><span class="p">:</span>
+                 <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ed&#39;</span><span class="p">,</span> <span class="s1">&#39;alice&#39;</span><span class="p">,</span> <span class="s1">&#39;bob&#39;</span><span class="p">,</span> <span class="s1">&#39;carol&#39;</span><span class="p">]</span>
+
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 ed
+1 alice
+2 bob
+3 carol
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">character</span> <span class="ow">in</span> <span class="s1">&#39;sentence and stuff&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">character</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>s
+e
+n
+t
+e
+n
+c
+e
+ 
+a
+n
+d
+ 
+s
+t
+u
+f
+f
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">heights</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;alice&#39;</span><span class="p">:</span><span class="mi">68</span><span class="p">,</span> <span class="s1">&#39;bob&#39;</span><span class="p">:</span><span class="mi">70</span><span class="p">,</span> <span class="s1">&#39;carol&#39;</span><span class="p">:</span><span class="mi">72</span><span class="p">,</span> <span class="s1">&#39;dave&#39;</span><span class="p">:</span><span class="mi">74</span><span class="p">}</span>
+
+<span class="c1">#for x in heights.values():</span>
+<span class="c1">#    print(x)</span>
+
+
+<span class="k">for</span> <span class="n">key</span><span class="p">,</span><span class="n">value</span> <span class="ow">in</span> <span class="n">heights</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>alice 68
+bob 70
+carol 72
+dave 74
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sentence</span> <span class="o">=</span> <span class="s1">&#39;sentence and stuff&#39;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">sentence</span><span class="p">)</span><span class="si">=}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sentence</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">sentence</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>len(sentence)=18
+0 s
+1 e
+2 n
+3 t
+4 e
+5 n
+6 c
+7 e
+8  
+9 a
+10 n
+11 d
+12  
+13 s
+14 t
+15 u
+16 f
+17 f
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">instructor</span> <span class="o">=</span> <span class="s1">&#39;Ed&#39;</span>
+<span class="n">course</span> <span class="o">=</span> <span class="s1">&#39;css2&#39;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The instructor of &#39;</span> <span class="o">+</span> <span class="n">course</span> <span class="o">+</span> <span class="s1">&#39; is &#39;</span> <span class="o">+</span> <span class="n">instructor</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The instructor of css2 is Ed
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The instructor of </span><span class="si">{</span><span class="n">course</span><span class="si">}</span><span class="s1"> is </span><span class="si">{</span><span class="n">instructor</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The instructor of css2 is Ed
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">course</span><span class="si">=}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>course=&#39;css2&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;course&#39;</span><span class="p">,</span> <span class="n">course</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>course css2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">course</span><span class="p">)</span><span class="si">=}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>len(course)=4
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="abstractions">
+<h3>Abstractions<a class="headerlink" href="#abstractions" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>functions</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">addTwoThings</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">arg1</span> <span class="o">+</span> <span class="n">arg2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">arg1</span><span class="o">+</span><span class="n">arg2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">addTwoThings</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="k">def</span> <span class="nf">addX</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">num</span> <span class="o">+</span> <span class="n">x</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">addX</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>13
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">addX</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">num</span> <span class="o">+</span> <span class="n">x</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">addX</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>14
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="n">z</span> <span class="o">=</span> <span class="n">addX</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">addX</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">y</span><span class="p">,</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">divide</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span><span class="o">/</span><span class="n">b</span>
+
+<span class="n">divide</span><span class="p">(</span><span class="n">b</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">divide</span><span class="p">(</span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span><span class="o">/</span><span class="n">b</span>
+
+<span class="n">divide</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>classes</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Dog</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">sound</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sound</span> <span class="o">=</span> <span class="n">sound</span>
+    
+    <span class="k">def</span> <span class="nf">speak</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">times</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sound</span> <span class="o">*</span> <span class="n">times</span><span class="p">)</span>
+
+<span class="n">rover</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s1">&#39;rover&#39;</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="s1">&#39;arf&#39;</span><span class="p">)</span>
+<span class="n">gus</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s1">&#39;gustofer&#39;</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;woof&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rover</span><span class="o">.</span><span class="n">speak</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">gus</span><span class="o">.</span><span class="n">speak</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>arfarfarf
+woofwoofwoofwoof
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">dir</span><span class="p">(</span><span class="n">rover</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;__class__&#39;,
+ &#39;__delattr__&#39;,
+ &#39;__dict__&#39;,
+ &#39;__dir__&#39;,
+ &#39;__doc__&#39;,
+ &#39;__eq__&#39;,
+ &#39;__format__&#39;,
+ &#39;__ge__&#39;,
+ &#39;__getattribute__&#39;,
+ &#39;__gt__&#39;,
+ &#39;__hash__&#39;,
+ &#39;__init__&#39;,
+ &#39;__init_subclass__&#39;,
+ &#39;__le__&#39;,
+ &#39;__lt__&#39;,
+ &#39;__module__&#39;,
+ &#39;__ne__&#39;,
+ &#39;__new__&#39;,
+ &#39;__reduce__&#39;,
+ &#39;__reduce_ex__&#39;,
+ &#39;__repr__&#39;,
+ &#39;__setattr__&#39;,
+ &#39;__sizeof__&#39;,
+ &#39;__str__&#39;,
+ &#39;__subclasshook__&#39;,
+ &#39;__weakref__&#39;,
+ &#39;name&#39;,
+ &#39;sound&#39;,
+ &#39;speak&#39;,
+ &#39;weight&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39; huzzah &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;a huzzah b huzzah c&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;sentence&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;en&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="pythonic-peculiarieties">
+<h3>Pythonic peculiarieties<a class="headerlink" href="#pythonic-peculiarieties" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>list/tuple/set/dictionary comprehension</p></li>
+<li><p>assignment unpacking</p></li>
+<li><p>lambda functions</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="pandas-and-data-frames">
+<h1>Pandas and data frames<a class="headerlink" href="#pandas-and-data-frames" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="foundations">
+<h2>Foundations<a class="headerlink" href="#foundations" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="modules">
+<h3>Modules<a class="headerlink" href="#modules" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">dir</span><span class="p">(</span><span class="n">math</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;__doc__&#39;,
+ &#39;__file__&#39;,
+ &#39;__loader__&#39;,
+ &#39;__name__&#39;,
+ &#39;__package__&#39;,
+ &#39;__spec__&#39;,
+ &#39;acos&#39;,
+ &#39;acosh&#39;,
+ &#39;asin&#39;,
+ &#39;asinh&#39;,
+ &#39;atan&#39;,
+ &#39;atan2&#39;,
+ &#39;atanh&#39;,
+ &#39;ceil&#39;,
+ &#39;comb&#39;,
+ &#39;copysign&#39;,
+ &#39;cos&#39;,
+ &#39;cosh&#39;,
+ &#39;degrees&#39;,
+ &#39;dist&#39;,
+ &#39;e&#39;,
+ &#39;erf&#39;,
+ &#39;erfc&#39;,
+ &#39;exp&#39;,
+ &#39;expm1&#39;,
+ &#39;fabs&#39;,
+ &#39;factorial&#39;,
+ &#39;floor&#39;,
+ &#39;fmod&#39;,
+ &#39;frexp&#39;,
+ &#39;fsum&#39;,
+ &#39;gamma&#39;,
+ &#39;gcd&#39;,
+ &#39;hypot&#39;,
+ &#39;inf&#39;,
+ &#39;isclose&#39;,
+ &#39;isfinite&#39;,
+ &#39;isinf&#39;,
+ &#39;isnan&#39;,
+ &#39;isqrt&#39;,
+ &#39;ldexp&#39;,
+ &#39;lgamma&#39;,
+ &#39;log&#39;,
+ &#39;log10&#39;,
+ &#39;log1p&#39;,
+ &#39;log2&#39;,
+ &#39;modf&#39;,
+ &#39;nan&#39;,
+ &#39;perm&#39;,
+ &#39;pi&#39;,
+ &#39;pow&#39;,
+ &#39;prod&#39;,
+ &#39;radians&#39;,
+ &#39;remainder&#39;,
+ &#39;sin&#39;,
+ &#39;sinh&#39;,
+ &#39;sqrt&#39;,
+ &#39;tan&#39;,
+ &#39;tanh&#39;,
+ &#39;tau&#39;,
+ &#39;trunc&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mf">3.1415</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.9999999957076562
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span> <span class="k">as</span> <span class="nn">rn</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rn</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6559197162885986
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">log</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">log</span><span class="p">(</span><span class="mf">2.7</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9932517730102834
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="numpy">
+<h3>numpy<a class="headerlink" href="#numpy" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>array / vector operations are fast</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="n">rn</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># we want to calculate 1/x for all values of x</span>
+
+<span class="n">y</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">x</span><span class="p">:</span>
+    <span class="n">y</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">value</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">[:</span><span class="mi">10</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[5.276275873036901, 16.149146075372343, 2.071347768361231, 1.5639598816282125, 1.3550629458288443, 5.686275389152288, 1.061968938702696, 2.8086643279973083, 1.1305523929590682, 1.6709148939436802]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">array_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">array_x</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.18952762, 0.06192278, 0.48277745, ..., 0.05930611, 0.8024338 ,
+       0.37656131])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">array_y</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">array_x</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">array_y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 5.27627587 16.14914608  2.07134777 ... 16.86166812  1.24620872
+  2.65561008]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">array_y</span> <span class="o">+</span> <span class="n">array_x</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 5.46580349, 16.21106885,  2.55412522, ..., 16.92097423,
+        2.04864252,  3.03217139])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="n">rn</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">)]</span>
+
+<span class="o">%</span><span class="k">timeit</span> y = [val**2 for val in x]
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.01 ms ± 40.2 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="o">%</span><span class="k">timeit</span> y = x**2
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.64 µs ± 44.9 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>also, super useful for linear algebra, matrices, but we are not going to cover that.</p></li>
+<li><p>supported array operations</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">dir</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;T&#39;,
+ &#39;__abs__&#39;,
+ &#39;__add__&#39;,
+ &#39;__and__&#39;,
+ &#39;__array__&#39;,
+ &#39;__array_finalize__&#39;,
+ &#39;__array_function__&#39;,
+ &#39;__array_interface__&#39;,
+ &#39;__array_prepare__&#39;,
+ &#39;__array_priority__&#39;,
+ &#39;__array_struct__&#39;,
+ &#39;__array_ufunc__&#39;,
+ &#39;__array_wrap__&#39;,
+ &#39;__bool__&#39;,
+ &#39;__class__&#39;,
+ &#39;__complex__&#39;,
+ &#39;__contains__&#39;,
+ &#39;__copy__&#39;,
+ &#39;__deepcopy__&#39;,
+ &#39;__delattr__&#39;,
+ &#39;__delitem__&#39;,
+ &#39;__dir__&#39;,
+ &#39;__divmod__&#39;,
+ &#39;__doc__&#39;,
+ &#39;__eq__&#39;,
+ &#39;__float__&#39;,
+ &#39;__floordiv__&#39;,
+ &#39;__format__&#39;,
+ &#39;__ge__&#39;,
+ &#39;__getattribute__&#39;,
+ &#39;__getitem__&#39;,
+ &#39;__gt__&#39;,
+ &#39;__hash__&#39;,
+ &#39;__iadd__&#39;,
+ &#39;__iand__&#39;,
+ &#39;__ifloordiv__&#39;,
+ &#39;__ilshift__&#39;,
+ &#39;__imatmul__&#39;,
+ &#39;__imod__&#39;,
+ &#39;__imul__&#39;,
+ &#39;__index__&#39;,
+ &#39;__init__&#39;,
+ &#39;__init_subclass__&#39;,
+ &#39;__int__&#39;,
+ &#39;__invert__&#39;,
+ &#39;__ior__&#39;,
+ &#39;__ipow__&#39;,
+ &#39;__irshift__&#39;,
+ &#39;__isub__&#39;,
+ &#39;__iter__&#39;,
+ &#39;__itruediv__&#39;,
+ &#39;__ixor__&#39;,
+ &#39;__le__&#39;,
+ &#39;__len__&#39;,
+ &#39;__lshift__&#39;,
+ &#39;__lt__&#39;,
+ &#39;__matmul__&#39;,
+ &#39;__mod__&#39;,
+ &#39;__mul__&#39;,
+ &#39;__ne__&#39;,
+ &#39;__neg__&#39;,
+ &#39;__new__&#39;,
+ &#39;__or__&#39;,
+ &#39;__pos__&#39;,
+ &#39;__pow__&#39;,
+ &#39;__radd__&#39;,
+ &#39;__rand__&#39;,
+ &#39;__rdivmod__&#39;,
+ &#39;__reduce__&#39;,
+ &#39;__reduce_ex__&#39;,
+ &#39;__repr__&#39;,
+ &#39;__rfloordiv__&#39;,
+ &#39;__rlshift__&#39;,
+ &#39;__rmatmul__&#39;,
+ &#39;__rmod__&#39;,
+ &#39;__rmul__&#39;,
+ &#39;__ror__&#39;,
+ &#39;__rpow__&#39;,
+ &#39;__rrshift__&#39;,
+ &#39;__rshift__&#39;,
+ &#39;__rsub__&#39;,
+ &#39;__rtruediv__&#39;,
+ &#39;__rxor__&#39;,
+ &#39;__setattr__&#39;,
+ &#39;__setitem__&#39;,
+ &#39;__setstate__&#39;,
+ &#39;__sizeof__&#39;,
+ &#39;__str__&#39;,
+ &#39;__sub__&#39;,
+ &#39;__subclasshook__&#39;,
+ &#39;__truediv__&#39;,
+ &#39;__xor__&#39;,
+ &#39;all&#39;,
+ &#39;any&#39;,
+ &#39;argmax&#39;,
+ &#39;argmin&#39;,
+ &#39;argpartition&#39;,
+ &#39;argsort&#39;,
+ &#39;astype&#39;,
+ &#39;base&#39;,
+ &#39;byteswap&#39;,
+ &#39;choose&#39;,
+ &#39;clip&#39;,
+ &#39;compress&#39;,
+ &#39;conj&#39;,
+ &#39;conjugate&#39;,
+ &#39;copy&#39;,
+ &#39;ctypes&#39;,
+ &#39;cumprod&#39;,
+ &#39;cumsum&#39;,
+ &#39;data&#39;,
+ &#39;diagonal&#39;,
+ &#39;dot&#39;,
+ &#39;dtype&#39;,
+ &#39;dump&#39;,
+ &#39;dumps&#39;,
+ &#39;fill&#39;,
+ &#39;flags&#39;,
+ &#39;flat&#39;,
+ &#39;flatten&#39;,
+ &#39;getfield&#39;,
+ &#39;imag&#39;,
+ &#39;item&#39;,
+ &#39;itemset&#39;,
+ &#39;itemsize&#39;,
+ &#39;max&#39;,
+ &#39;mean&#39;,
+ &#39;min&#39;,
+ &#39;nbytes&#39;,
+ &#39;ndim&#39;,
+ &#39;newbyteorder&#39;,
+ &#39;nonzero&#39;,
+ &#39;partition&#39;,
+ &#39;prod&#39;,
+ &#39;ptp&#39;,
+ &#39;put&#39;,
+ &#39;ravel&#39;,
+ &#39;real&#39;,
+ &#39;repeat&#39;,
+ &#39;reshape&#39;,
+ &#39;resize&#39;,
+ &#39;round&#39;,
+ &#39;searchsorted&#39;,
+ &#39;setfield&#39;,
+ &#39;setflags&#39;,
+ &#39;shape&#39;,
+ &#39;size&#39;,
+ &#39;sort&#39;,
+ &#39;squeeze&#39;,
+ &#39;std&#39;,
+ &#39;strides&#39;,
+ &#39;sum&#39;,
+ &#39;swapaxes&#39;,
+ &#39;take&#39;,
+ &#39;tobytes&#39;,
+ &#39;tofile&#39;,
+ &#39;tolist&#39;,
+ &#39;tostring&#39;,
+ &#39;trace&#39;,
+ &#39;transpose&#39;,
+ &#39;var&#39;,
+ &#39;view&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="pandas">
+<h2>Pandas<a class="headerlink" href="#pandas" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://pandas.pydata.org/docs/getting_started/intro_tutorials/index.html">tutorial</a></p>
+<p><a class="reference external" href="https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf">cheat sheet</a></p>
+<p><strong>Note: Committing all functions and their argument structure to memory is a lost cause.  That’s not the goal.  The point is to know roughly how the system operates, and how to quickly look up the relevant functions</strong></p>
+<p>data file we are using: Pokemon.csv.  Download here:</p>
+<p><a class="reference external" href="https://raw.githubusercontent.com/UCSD-CSS-002/ucsd-css-002.github.io/master/datasets/Pokemon.csv">https://raw.githubusercontent.com/UCSD-CSS-002/ucsd-css-002.github.io/master/datasets/Pokemon.csv</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">dir</span><span class="p">(</span><span class="n">pd</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;BooleanDtype&#39;,
+ &#39;Categorical&#39;,
+ &#39;CategoricalDtype&#39;,
+ &#39;CategoricalIndex&#39;,
+ &#39;DataFrame&#39;,
+ &#39;DateOffset&#39;,
+ &#39;DatetimeIndex&#39;,
+ &#39;DatetimeTZDtype&#39;,
+ &#39;ExcelFile&#39;,
+ &#39;ExcelWriter&#39;,
+ &#39;Float64Index&#39;,
+ &#39;Grouper&#39;,
+ &#39;HDFStore&#39;,
+ &#39;Index&#39;,
+ &#39;IndexSlice&#39;,
+ &#39;Int16Dtype&#39;,
+ &#39;Int32Dtype&#39;,
+ &#39;Int64Dtype&#39;,
+ &#39;Int64Index&#39;,
+ &#39;Int8Dtype&#39;,
+ &#39;Interval&#39;,
+ &#39;IntervalDtype&#39;,
+ &#39;IntervalIndex&#39;,
+ &#39;MultiIndex&#39;,
+ &#39;NA&#39;,
+ &#39;NaT&#39;,
+ &#39;NamedAgg&#39;,
+ &#39;Period&#39;,
+ &#39;PeriodDtype&#39;,
+ &#39;PeriodIndex&#39;,
+ &#39;RangeIndex&#39;,
+ &#39;Series&#39;,
+ &#39;SparseDtype&#39;,
+ &#39;StringDtype&#39;,
+ &#39;Timedelta&#39;,
+ &#39;TimedeltaIndex&#39;,
+ &#39;Timestamp&#39;,
+ &#39;UInt16Dtype&#39;,
+ &#39;UInt32Dtype&#39;,
+ &#39;UInt64Dtype&#39;,
+ &#39;UInt64Index&#39;,
+ &#39;UInt8Dtype&#39;,
+ &#39;__builtins__&#39;,
+ &#39;__cached__&#39;,
+ &#39;__doc__&#39;,
+ &#39;__docformat__&#39;,
+ &#39;__file__&#39;,
+ &#39;__getattr__&#39;,
+ &#39;__git_version__&#39;,
+ &#39;__loader__&#39;,
+ &#39;__name__&#39;,
+ &#39;__package__&#39;,
+ &#39;__path__&#39;,
+ &#39;__spec__&#39;,
+ &#39;__version__&#39;,
+ &#39;_config&#39;,
+ &#39;_hashtable&#39;,
+ &#39;_is_numpy_dev&#39;,
+ &#39;_lib&#39;,
+ &#39;_libs&#39;,
+ &#39;_np_version_under1p16&#39;,
+ &#39;_np_version_under1p17&#39;,
+ &#39;_np_version_under1p18&#39;,
+ &#39;_testing&#39;,
+ &#39;_tslib&#39;,
+ &#39;_typing&#39;,
+ &#39;_version&#39;,
+ &#39;api&#39;,
+ &#39;array&#39;,
+ &#39;arrays&#39;,
+ &#39;bdate_range&#39;,
+ &#39;compat&#39;,
+ &#39;concat&#39;,
+ &#39;core&#39;,
+ &#39;crosstab&#39;,
+ &#39;cut&#39;,
+ &#39;date_range&#39;,
+ &#39;describe_option&#39;,
+ &#39;errors&#39;,
+ &#39;eval&#39;,
+ &#39;factorize&#39;,
+ &#39;get_dummies&#39;,
+ &#39;get_option&#39;,
+ &#39;infer_freq&#39;,
+ &#39;interval_range&#39;,
+ &#39;io&#39;,
+ &#39;isna&#39;,
+ &#39;isnull&#39;,
+ &#39;json_normalize&#39;,
+ &#39;lreshape&#39;,
+ &#39;melt&#39;,
+ &#39;merge&#39;,
+ &#39;merge_asof&#39;,
+ &#39;merge_ordered&#39;,
+ &#39;notna&#39;,
+ &#39;notnull&#39;,
+ &#39;offsets&#39;,
+ &#39;option_context&#39;,
+ &#39;options&#39;,
+ &#39;pandas&#39;,
+ &#39;period_range&#39;,
+ &#39;pivot&#39;,
+ &#39;pivot_table&#39;,
+ &#39;plotting&#39;,
+ &#39;qcut&#39;,
+ &#39;read_clipboard&#39;,
+ &#39;read_csv&#39;,
+ &#39;read_excel&#39;,
+ &#39;read_feather&#39;,
+ &#39;read_fwf&#39;,
+ &#39;read_gbq&#39;,
+ &#39;read_hdf&#39;,
+ &#39;read_html&#39;,
+ &#39;read_json&#39;,
+ &#39;read_orc&#39;,
+ &#39;read_parquet&#39;,
+ &#39;read_pickle&#39;,
+ &#39;read_sas&#39;,
+ &#39;read_spss&#39;,
+ &#39;read_sql&#39;,
+ &#39;read_sql_query&#39;,
+ &#39;read_sql_table&#39;,
+ &#39;read_stata&#39;,
+ &#39;read_table&#39;,
+ &#39;reset_option&#39;,
+ &#39;set_eng_float_format&#39;,
+ &#39;set_option&#39;,
+ &#39;show_versions&#39;,
+ &#39;test&#39;,
+ &#39;testing&#39;,
+ &#39;timedelta_range&#39;,
+ &#39;to_datetime&#39;,
+ &#39;to_numeric&#39;,
+ &#39;to_pickle&#39;,
+ &#39;to_timedelta&#39;,
+ &#39;tseries&#39;,
+ &#39;unique&#39;,
+ &#39;util&#39;,
+ &#39;value_counts&#39;,
+ &#39;wide_to_long&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="n">rn</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)]</span>
+
+<span class="n">series_x</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">series_x</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     0.548507
+1     0.978043
+2     0.410138
+3     0.081648
+4     0.890646
+        ...   
+95    0.856231
+96    0.393077
+97    0.818975
+98    0.536130
+99    0.871587
+Length: 100, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">series_x</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="nb">chr</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">)])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">series_x</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>d    0.548507
+e    0.978043
+f    0.410138
+g    0.081648
+h    0.890646
+       ...   
+Ã    0.856231
+Ä    0.393077
+Å    0.818975
+Æ    0.536130
+Ç    0.871587
+Length: 100, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">series_x</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>d    0.548507
+e    0.978043
+f    0.410138
+g    0.081648
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="overview-of-data-structures">
+<h3>Overview of data structures:<a class="headerlink" href="#overview-of-data-structures" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>series structure  (differences from… ndarray? list? dictionary?)  .values and .index</p></li>
+<li><p>dataframe structure  (index and columns, each column a series, kinda like dict, kinda like array)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">poke</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;Pokemon.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">poke</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>#</th>
+      <th>Name</th>
+      <th>Type 1</th>
+      <th>Type 2</th>
+      <th>Total</th>
+      <th>HP</th>
+      <th>Attack</th>
+      <th>Defense</th>
+      <th>Sp. Atk</th>
+      <th>Sp. Def</th>
+      <th>Speed</th>
+      <th>Generation</th>
+      <th>Legendary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>Bulbasaur</td>
+      <td>Grass</td>
+      <td>Poison</td>
+      <td>318</td>
+      <td>45</td>
+      <td>49</td>
+      <td>49</td>
+      <td>65</td>
+      <td>65</td>
+      <td>45</td>
+      <td>1</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>Ivysaur</td>
+      <td>Grass</td>
+      <td>Poison</td>
+      <td>405</td>
+      <td>60</td>
+      <td>62</td>
+      <td>63</td>
+      <td>80</td>
+      <td>80</td>
+      <td>60</td>
+      <td>1</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>Venusaur</td>
+      <td>Grass</td>
+      <td>Poison</td>
+      <td>525</td>
+      <td>80</td>
+      <td>82</td>
+      <td>83</td>
+      <td>100</td>
+      <td>100</td>
+      <td>80</td>
+      <td>1</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>VenusaurMega Venusaur</td>
+      <td>Grass</td>
+      <td>Poison</td>
+      <td>625</td>
+      <td>80</td>
+      <td>100</td>
+      <td>123</td>
+      <td>122</td>
+      <td>120</td>
+      <td>80</td>
+      <td>1</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>Charmander</td>
+      <td>Fire</td>
+      <td>NaN</td>
+      <td>309</td>
+      <td>39</td>
+      <td>52</td>
+      <td>43</td>
+      <td>60</td>
+      <td>50</td>
+      <td>65</td>
+      <td>1</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>795</th>
+      <td>719</td>
+      <td>Diancie</td>
+      <td>Rock</td>
+      <td>Fairy</td>
+      <td>600</td>
+      <td>50</td>
+      <td>100</td>
+      <td>150</td>
+      <td>100</td>
+      <td>150</td>
+      <td>50</td>
+      <td>6</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>796</th>
+      <td>719</td>
+      <td>DiancieMega Diancie</td>
+      <td>Rock</td>
+      <td>Fairy</td>
+      <td>700</td>
+      <td>50</td>
+      <td>160</td>
+      <td>110</td>
+      <td>160</td>
+      <td>110</td>
+      <td>110</td>
+      <td>6</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>797</th>
+      <td>720</td>
+      <td>HoopaHoopa Confined</td>
+      <td>Psychic</td>
+      <td>Ghost</td>
+      <td>600</td>
+      <td>80</td>
+      <td>110</td>
+      <td>60</td>
+      <td>150</td>
+      <td>130</td>
+      <td>70</td>
+      <td>6</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>798</th>
+      <td>720</td>
+      <td>HoopaHoopa Unbound</td>
+      <td>Psychic</td>
+      <td>Dark</td>
+      <td>680</td>
+      <td>80</td>
+      <td>160</td>
+      <td>60</td>
+      <td>170</td>
+      <td>130</td>
+      <td>80</td>
+      <td>6</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>799</th>
+      <td>721</td>
+      <td>Volcanion</td>
+      <td>Fire</td>
+      <td>Water</td>
+      <td>600</td>
+      <td>80</td>
+      <td>110</td>
+      <td>120</td>
+      <td>130</td>
+      <td>90</td>
+      <td>70</td>
+      <td>6</td>
+      <td>True</td>
+    </tr>
+  </tbody>
+</table>
+<p>800 rows × 13 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">poke</span><span class="p">[</span><span class="s1">&#39;Total&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0      318
+1      405
+2      525
+3      625
+4      309
+      ... 
+795    600
+796    700
+797    600
+798    680
+799    600
+Name: Total, Length: 800, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>index… why?</p></li>
+</ul>
+</div>
+<div class="section" id="making-a-data-frame">
+<h3>Making a data frame<a class="headerlink" href="#making-a-data-frame" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>from data already loaded in memory</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">heights</span> <span class="o">=</span> <span class="p">[</span><span class="mi">48</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="mi">36</span><span class="o">*</span><span class="n">rn</span><span class="o">.</span><span class="n">random</span><span class="p">())</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)]</span>
+
+<span class="k">def</span> <span class="nf">randomName</span><span class="p">():</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">chr</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">rn</span><span class="o">.</span><span class="n">random</span><span class="p">()</span><span class="o">*</span><span class="mi">26</span><span class="p">)</span><span class="o">+</span><span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">))</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)])</span>
+    <span class="k">return</span> <span class="n">n</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
+
+<span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="n">randomName</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)]</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;name&#39;</span><span class="p">:</span><span class="n">names</span><span class="p">,</span> <span class="s1">&#39;height&#39;</span><span class="p">:</span><span class="n">heights</span><span class="p">})</span>
+
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>height</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Agfti</td>
+      <td>80</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Mtktb</td>
+      <td>69</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Zoyyp</td>
+      <td>80</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Woftj</td>
+      <td>71</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Lejtu</td>
+      <td>77</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>95</th>
+      <td>Fbztb</td>
+      <td>60</td>
+    </tr>
+    <tr>
+      <th>96</th>
+      <td>Kddtt</td>
+      <td>59</td>
+    </tr>
+    <tr>
+      <th>97</th>
+      <td>Ilplx</td>
+      <td>58</td>
+    </tr>
+    <tr>
+      <th>98</th>
+      <td>Utdet</td>
+      <td>51</td>
+    </tr>
+    <tr>
+      <th>99</th>
+      <td>Atbeq</td>
+      <td>62</td>
+    </tr>
+  </tbody>
+</table>
+<p>100 rows × 2 columns</p>
+</div></div></div>
+</div>
+<ul class="simple">
+<li><p>from a csv file</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">pd.read_csv('Pokemon.csv')</span></code></p>
+<ul class="simple">
+<li><p>read_* functions</p></li>
+</ul>
+</div>
+<div class="section" id="browsing-a-data-frame">
+<h3>browsing a data frame<a class="headerlink" href="#browsing-a-data-frame" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>head, tail</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">poke</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>#</th>
+      <th>Name</th>
+      <th>Type 1</th>
+      <th>Type 2</th>
+      <th>Total</th>
+      <th>HP</th>
+      <th>Attack</th>
+      <th>Defense</th>
+      <th>Sp. Atk</th>
+      <th>Sp. Def</th>
+      <th>Speed</th>
+      <th>Generation</th>
+      <th>Legendary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>798</th>
+      <td>720</td>
+      <td>HoopaHoopa Unbound</td>
+      <td>Psychic</td>
+      <td>Dark</td>
+      <td>680</td>
+      <td>80</td>
+      <td>160</td>
+      <td>60</td>
+      <td>170</td>
+      <td>130</td>
+      <td>80</td>
+      <td>6</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>799</th>
+      <td>721</td>
+      <td>Volcanion</td>
+      <td>Fire</td>
+      <td>Water</td>
+      <td>600</td>
+      <td>80</td>
+      <td>110</td>
+      <td>120</td>
+      <td>130</td>
+      <td>90</td>
+      <td>70</td>
+      <td>6</td>
+      <td>True</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">poke</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>#</th>
+      <th>Name</th>
+      <th>Type 1</th>
+      <th>Type 2</th>
+      <th>Total</th>
+      <th>HP</th>
+      <th>Attack</th>
+      <th>Defense</th>
+      <th>Sp. Atk</th>
+      <th>Sp. Def</th>
+      <th>Speed</th>
+      <th>Generation</th>
+      <th>Legendary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>Bulbasaur</td>
+      <td>Grass</td>
+      <td>Poison</td>
+      <td>318</td>
+      <td>45</td>
+      <td>49</td>
+      <td>49</td>
+      <td>65</td>
+      <td>65</td>
+      <td>45</td>
+      <td>1</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>Ivysaur</td>
+      <td>Grass</td>
+      <td>Poison</td>
+      <td>405</td>
+      <td>60</td>
+      <td>62</td>
+      <td>63</td>
+      <td>80</td>
+      <td>80</td>
+      <td>60</td>
+      <td>1</td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<ul class="simple">
+<li><p>shape, columns</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">poke</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(800, 13)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">poke</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;#&#39;,
+ &#39;Name&#39;,
+ &#39;Type 1&#39;,
+ &#39;Type 2&#39;,
+ &#39;Total&#39;,
+ &#39;HP&#39;,
+ &#39;Attack&#39;,
+ &#39;Defense&#39;,
+ &#39;Sp. Atk&#39;,
+ &#39;Sp. Def&#39;,
+ &#39;Speed&#39;,
+ &#39;Generation&#39;,
+ &#39;Legendary&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="subsets">
+<h3>Subsets:<a class="headerlink" href="#subsets" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://pandas.pydata.org/docs/getting_started/intro_tutorials/03_subset_data.html">https://pandas.pydata.org/docs/getting_started/intro_tutorials/03_subset_data.html</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">poke</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>#</th>
+      <th>Name</th>
+      <th>Type 1</th>
+      <th>Type 2</th>
+      <th>Total</th>
+      <th>HP</th>
+      <th>Attack</th>
+      <th>Defense</th>
+      <th>Sp. Atk</th>
+      <th>Sp. Def</th>
+      <th>Speed</th>
+      <th>Generation</th>
+      <th>Legendary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>Bulbasaur</td>
+      <td>Grass</td>
+      <td>Poison</td>
+      <td>318</td>
+      <td>45</td>
+      <td>49</td>
+      <td>49</td>
+      <td>65</td>
+      <td>65</td>
+      <td>45</td>
+      <td>1</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>Ivysaur</td>
+      <td>Grass</td>
+      <td>Poison</td>
+      <td>405</td>
+      <td>60</td>
+      <td>62</td>
+      <td>63</td>
+      <td>80</td>
+      <td>80</td>
+      <td>60</td>
+      <td>1</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>Venusaur</td>
+      <td>Grass</td>
+      <td>Poison</td>
+      <td>525</td>
+      <td>80</td>
+      <td>82</td>
+      <td>83</td>
+      <td>100</td>
+      <td>100</td>
+      <td>80</td>
+      <td>1</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>VenusaurMega Venusaur</td>
+      <td>Grass</td>
+      <td>Poison</td>
+      <td>625</td>
+      <td>80</td>
+      <td>100</td>
+      <td>123</td>
+      <td>122</td>
+      <td>120</td>
+      <td>80</td>
+      <td>1</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>Charmander</td>
+      <td>Fire</td>
+      <td>NaN</td>
+      <td>309</td>
+      <td>39</td>
+      <td>52</td>
+      <td>43</td>
+      <td>60</td>
+      <td>50</td>
+      <td>65</td>
+      <td>1</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>795</th>
+      <td>719</td>
+      <td>Diancie</td>
+      <td>Rock</td>
+      <td>Fairy</td>
+      <td>600</td>
+      <td>50</td>
+      <td>100</td>
+      <td>150</td>
+      <td>100</td>
+      <td>150</td>
+      <td>50</td>
+      <td>6</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>796</th>
+      <td>719</td>
+      <td>DiancieMega Diancie</td>
+      <td>Rock</td>
+      <td>Fairy</td>
+      <td>700</td>
+      <td>50</td>
+      <td>160</td>
+      <td>110</td>
+      <td>160</td>
+      <td>110</td>
+      <td>110</td>
+      <td>6</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>797</th>
+      <td>720</td>
+      <td>HoopaHoopa Confined</td>
+      <td>Psychic</td>
+      <td>Ghost</td>
+      <td>600</td>
+      <td>80</td>
+      <td>110</td>
+      <td>60</td>
+      <td>150</td>
+      <td>130</td>
+      <td>70</td>
+      <td>6</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>798</th>
+      <td>720</td>
+      <td>HoopaHoopa Unbound</td>
+      <td>Psychic</td>
+      <td>Dark</td>
+      <td>680</td>
+      <td>80</td>
+      <td>160</td>
+      <td>60</td>
+      <td>170</td>
+      <td>130</td>
+      <td>80</td>
+      <td>6</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>799</th>
+      <td>721</td>
+      <td>Volcanion</td>
+      <td>Fire</td>
+      <td>Water</td>
+      <td>600</td>
+      <td>80</td>
+      <td>110</td>
+      <td>120</td>
+      <td>130</td>
+      <td>90</td>
+      <td>70</td>
+      <td>6</td>
+      <td>True</td>
+    </tr>
+  </tbody>
+</table>
+<p>800 rows × 13 columns</p>
+</div></div></div>
+</div>
+<div class="section" id="extracting-columns-series">
+<h4>Extracting columns (series)<a class="headerlink" href="#extracting-columns-series" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>operations on columns</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">poke</span><span class="p">[</span><span class="s1">&#39;Attack&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0       49
+1       62
+2       82
+3      100
+4       52
+      ... 
+795    100
+796    160
+797    110
+798    160
+799    110
+Name: Attack, Length: 800, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="extracting-rows">
+<h4>Extracting rows<a class="headerlink" href="#extracting-rows" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">poke</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">5</span><span class="p">:</span><span class="mi">8</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>#</th>
+      <th>Name</th>
+      <th>Type 1</th>
+      <th>Type 2</th>
+      <th>Total</th>
+      <th>HP</th>
+      <th>Attack</th>
+      <th>Defense</th>
+      <th>Sp. Atk</th>
+      <th>Sp. Def</th>
+      <th>Speed</th>
+      <th>Generation</th>
+      <th>Legendary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>5</th>
+      <td>5</td>
+      <td>Charmeleon</td>
+      <td>Fire</td>
+      <td>NaN</td>
+      <td>405</td>
+      <td>58</td>
+      <td>64</td>
+      <td>58</td>
+      <td>80</td>
+      <td>65</td>
+      <td>80</td>
+      <td>1</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>6</td>
+      <td>Charizard</td>
+      <td>Fire</td>
+      <td>Flying</td>
+      <td>534</td>
+      <td>78</td>
+      <td>84</td>
+      <td>78</td>
+      <td>109</td>
+      <td>85</td>
+      <td>100</td>
+      <td>1</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>6</td>
+      <td>CharizardMega Charizard X</td>
+      <td>Fire</td>
+      <td>Dragon</td>
+      <td>634</td>
+      <td>78</td>
+      <td>130</td>
+      <td>111</td>
+      <td>130</td>
+      <td>85</td>
+      <td>100</td>
+      <td>1</td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="extracting-cells">
+<h4>Extracting cells<a class="headerlink" href="#extracting-cells" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">poke</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>#</th>
+      <th>Name</th>
+      <th>Type 1</th>
+      <th>Type 2</th>
+      <th>Total</th>
+      <th>HP</th>
+      <th>Attack</th>
+      <th>Defense</th>
+      <th>Sp. Atk</th>
+      <th>Sp. Def</th>
+      <th>Speed</th>
+      <th>Generation</th>
+      <th>Legendary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>Bulbasaur</td>
+      <td>Grass</td>
+      <td>Poison</td>
+      <td>318</td>
+      <td>45</td>
+      <td>49</td>
+      <td>49</td>
+      <td>65</td>
+      <td>65</td>
+      <td>45</td>
+      <td>1</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>Ivysaur</td>
+      <td>Grass</td>
+      <td>Poison</td>
+      <td>405</td>
+      <td>60</td>
+      <td>62</td>
+      <td>63</td>
+      <td>80</td>
+      <td>80</td>
+      <td>60</td>
+      <td>1</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>Venusaur</td>
+      <td>Grass</td>
+      <td>Poison</td>
+      <td>525</td>
+      <td>80</td>
+      <td>82</td>
+      <td>83</td>
+      <td>100</td>
+      <td>100</td>
+      <td>80</td>
+      <td>1</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>VenusaurMega Venusaur</td>
+      <td>Grass</td>
+      <td>Poison</td>
+      <td>625</td>
+      <td>80</td>
+      <td>100</td>
+      <td>123</td>
+      <td>122</td>
+      <td>120</td>
+      <td>80</td>
+      <td>1</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>Charmander</td>
+      <td>Fire</td>
+      <td>NaN</td>
+      <td>309</td>
+      <td>39</td>
+      <td>52</td>
+      <td>43</td>
+      <td>60</td>
+      <td>50</td>
+      <td>65</td>
+      <td>1</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>795</th>
+      <td>719</td>
+      <td>Diancie</td>
+      <td>Rock</td>
+      <td>Fairy</td>
+      <td>600</td>
+      <td>50</td>
+      <td>100</td>
+      <td>150</td>
+      <td>100</td>
+      <td>150</td>
+      <td>50</td>
+      <td>6</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>796</th>
+      <td>719</td>
+      <td>DiancieMega Diancie</td>
+      <td>Rock</td>
+      <td>Fairy</td>
+      <td>700</td>
+      <td>50</td>
+      <td>160</td>
+      <td>110</td>
+      <td>160</td>
+      <td>110</td>
+      <td>110</td>
+      <td>6</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>797</th>
+      <td>720</td>
+      <td>HoopaHoopa Confined</td>
+      <td>Psychic</td>
+      <td>Ghost</td>
+      <td>600</td>
+      <td>80</td>
+      <td>110</td>
+      <td>60</td>
+      <td>150</td>
+      <td>130</td>
+      <td>70</td>
+      <td>6</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>798</th>
+      <td>720</td>
+      <td>HoopaHoopa Unbound</td>
+      <td>Psychic</td>
+      <td>Dark</td>
+      <td>680</td>
+      <td>80</td>
+      <td>160</td>
+      <td>60</td>
+      <td>170</td>
+      <td>130</td>
+      <td>80</td>
+      <td>6</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>799</th>
+      <td>721</td>
+      <td>Volcanion</td>
+      <td>Fire</td>
+      <td>Water</td>
+      <td>600</td>
+      <td>80</td>
+      <td>110</td>
+      <td>120</td>
+      <td>130</td>
+      <td>90</td>
+      <td>70</td>
+      <td>6</td>
+      <td>True</td>
+    </tr>
+  </tbody>
+</table>
+<p>800 rows × 13 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">poke</span><span class="p">[</span><span class="s1">&#39;Defense&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>123
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">poke</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="s1">&#39;Defense&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>123
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">poke</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">7</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>123
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">poke</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;Defense&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>123
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="indexing-madness">
+<h3>Indexing madness:<a class="headerlink" href="#indexing-madness" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://pandas.pydata.org/docs/user_guide/indexing.html#indexing-choice">https://pandas.pydata.org/docs/user_guide/indexing.html#indexing-choice</a></p>
+<div class="section" id="filtering-rows-with-booleans">
+<h4>Filtering rows with booleans<a class="headerlink" href="#filtering-rows-with-booleans" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">poke</span><span class="p">[</span><span class="n">poke</span><span class="p">[</span><span class="s1">&#39;Type 1&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Grass&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>#</th>
+      <th>Name</th>
+      <th>Type 1</th>
+      <th>Type 2</th>
+      <th>Total</th>
+      <th>HP</th>
+      <th>Attack</th>
+      <th>Defense</th>
+      <th>Sp. Atk</th>
+      <th>Sp. Def</th>
+      <th>Speed</th>
+      <th>Generation</th>
+      <th>Legendary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>Bulbasaur</td>
+      <td>Grass</td>
+      <td>Poison</td>
+      <td>318</td>
+      <td>45</td>
+      <td>49</td>
+      <td>49</td>
+      <td>65</td>
+      <td>65</td>
+      <td>45</td>
+      <td>1</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>Ivysaur</td>
+      <td>Grass</td>
+      <td>Poison</td>
+      <td>405</td>
+      <td>60</td>
+      <td>62</td>
+      <td>63</td>
+      <td>80</td>
+      <td>80</td>
+      <td>60</td>
+      <td>1</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>Venusaur</td>
+      <td>Grass</td>
+      <td>Poison</td>
+      <td>525</td>
+      <td>80</td>
+      <td>82</td>
+      <td>83</td>
+      <td>100</td>
+      <td>100</td>
+      <td>80</td>
+      <td>1</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>VenusaurMega Venusaur</td>
+      <td>Grass</td>
+      <td>Poison</td>
+      <td>625</td>
+      <td>80</td>
+      <td>100</td>
+      <td>123</td>
+      <td>122</td>
+      <td>120</td>
+      <td>80</td>
+      <td>1</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>43</td>
+      <td>Oddish</td>
+      <td>Grass</td>
+      <td>Poison</td>
+      <td>320</td>
+      <td>45</td>
+      <td>50</td>
+      <td>55</td>
+      <td>75</td>
+      <td>65</td>
+      <td>30</td>
+      <td>1</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>718</th>
+      <td>650</td>
+      <td>Chespin</td>
+      <td>Grass</td>
+      <td>NaN</td>
+      <td>313</td>
+      <td>56</td>
+      <td>61</td>
+      <td>65</td>
+      <td>48</td>
+      <td>45</td>
+      <td>38</td>
+      <td>6</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>719</th>
+      <td>651</td>
+      <td>Quilladin</td>
+      <td>Grass</td>
+      <td>NaN</td>
+      <td>405</td>
+      <td>61</td>
+      <td>78</td>
+      <td>95</td>
+      <td>56</td>
+      <td>58</td>
+      <td>57</td>
+      <td>6</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>720</th>
+      <td>652</td>
+      <td>Chesnaught</td>
+      <td>Grass</td>
+      <td>Fighting</td>
+      <td>530</td>
+      <td>88</td>
+      <td>107</td>
+      <td>122</td>
+      <td>74</td>
+      <td>75</td>
+      <td>64</td>
+      <td>6</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>740</th>
+      <td>672</td>
+      <td>Skiddo</td>
+      <td>Grass</td>
+      <td>NaN</td>
+      <td>350</td>
+      <td>66</td>
+      <td>65</td>
+      <td>48</td>
+      <td>62</td>
+      <td>57</td>
+      <td>52</td>
+      <td>6</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>741</th>
+      <td>673</td>
+      <td>Gogoat</td>
+      <td>Grass</td>
+      <td>NaN</td>
+      <td>531</td>
+      <td>123</td>
+      <td>100</td>
+      <td>62</td>
+      <td>97</td>
+      <td>81</td>
+      <td>68</td>
+      <td>6</td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table>
+<p>70 rows × 13 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">poke</span><span class="p">[(</span><span class="n">poke</span><span class="p">[</span><span class="s1">&#39;Type 1&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Grass&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">poke</span><span class="p">[</span><span class="s1">&#39;HP&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">80</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>#</th>
+      <th>Name</th>
+      <th>Type 1</th>
+      <th>Type 2</th>
+      <th>Total</th>
+      <th>HP</th>
+      <th>Attack</th>
+      <th>Defense</th>
+      <th>Sp. Atk</th>
+      <th>Sp. Def</th>
+      <th>Speed</th>
+      <th>Generation</th>
+      <th>Legendary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>111</th>
+      <td>103</td>
+      <td>Exeggutor</td>
+      <td>Grass</td>
+      <td>Psychic</td>
+      <td>520</td>
+      <td>95</td>
+      <td>95</td>
+      <td>85</td>
+      <td>125</td>
+      <td>65</td>
+      <td>55</td>
+      <td>1</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>298</th>
+      <td>275</td>
+      <td>Shiftry</td>
+      <td>Grass</td>
+      <td>Dark</td>
+      <td>480</td>
+      <td>90</td>
+      <td>100</td>
+      <td>60</td>
+      <td>90</td>
+      <td>60</td>
+      <td>80</td>
+      <td>3</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>390</th>
+      <td>357</td>
+      <td>Tropius</td>
+      <td>Grass</td>
+      <td>Flying</td>
+      <td>460</td>
+      <td>99</td>
+      <td>68</td>
+      <td>83</td>
+      <td>72</td>
+      <td>87</td>
+      <td>51</td>
+      <td>3</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>434</th>
+      <td>389</td>
+      <td>Torterra</td>
+      <td>Grass</td>
+      <td>Ground</td>
+      <td>525</td>
+      <td>95</td>
+      <td>109</td>
+      <td>105</td>
+      <td>75</td>
+      <td>85</td>
+      <td>56</td>
+      <td>4</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>510</th>
+      <td>460</td>
+      <td>Abomasnow</td>
+      <td>Grass</td>
+      <td>Ice</td>
+      <td>494</td>
+      <td>90</td>
+      <td>92</td>
+      <td>75</td>
+      <td>92</td>
+      <td>85</td>
+      <td>60</td>
+      <td>4</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>511</th>
+      <td>460</td>
+      <td>AbomasnowMega Abomasnow</td>
+      <td>Grass</td>
+      <td>Ice</td>
+      <td>594</td>
+      <td>90</td>
+      <td>132</td>
+      <td>105</td>
+      <td>132</td>
+      <td>105</td>
+      <td>30</td>
+      <td>4</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>516</th>
+      <td>465</td>
+      <td>Tangrowth</td>
+      <td>Grass</td>
+      <td>NaN</td>
+      <td>535</td>
+      <td>100</td>
+      <td>100</td>
+      <td>125</td>
+      <td>110</td>
+      <td>50</td>
+      <td>50</td>
+      <td>4</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>550</th>
+      <td>492</td>
+      <td>ShayminLand Forme</td>
+      <td>Grass</td>
+      <td>NaN</td>
+      <td>600</td>
+      <td>100</td>
+      <td>100</td>
+      <td>100</td>
+      <td>100</td>
+      <td>100</td>
+      <td>100</td>
+      <td>4</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>551</th>
+      <td>492</td>
+      <td>ShayminSky Forme</td>
+      <td>Grass</td>
+      <td>Flying</td>
+      <td>600</td>
+      <td>100</td>
+      <td>103</td>
+      <td>75</td>
+      <td>120</td>
+      <td>75</td>
+      <td>127</td>
+      <td>4</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>652</th>
+      <td>591</td>
+      <td>Amoonguss</td>
+      <td>Grass</td>
+      <td>Poison</td>
+      <td>464</td>
+      <td>114</td>
+      <td>85</td>
+      <td>70</td>
+      <td>85</td>
+      <td>80</td>
+      <td>30</td>
+      <td>5</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>701</th>
+      <td>640</td>
+      <td>Virizion</td>
+      <td>Grass</td>
+      <td>Fighting</td>
+      <td>580</td>
+      <td>91</td>
+      <td>90</td>
+      <td>72</td>
+      <td>90</td>
+      <td>129</td>
+      <td>108</td>
+      <td>5</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>720</th>
+      <td>652</td>
+      <td>Chesnaught</td>
+      <td>Grass</td>
+      <td>Fighting</td>
+      <td>530</td>
+      <td>88</td>
+      <td>107</td>
+      <td>122</td>
+      <td>74</td>
+      <td>75</td>
+      <td>64</td>
+      <td>6</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>741</th>
+      <td>673</td>
+      <td>Gogoat</td>
+      <td>Grass</td>
+      <td>NaN</td>
+      <td>531</td>
+      <td>123</td>
+      <td>100</td>
+      <td>62</td>
+      <td>97</td>
+      <td>81</td>
+      <td>68</td>
+      <td>6</td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">poke</span><span class="p">[(</span><span class="n">poke</span><span class="p">[</span><span class="s1">&#39;Type 1&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Grass&#39;</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">poke</span><span class="p">[</span><span class="s1">&#39;HP&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">80</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>#</th>
+      <th>Name</th>
+      <th>Type 1</th>
+      <th>Type 2</th>
+      <th>Total</th>
+      <th>HP</th>
+      <th>Attack</th>
+      <th>Defense</th>
+      <th>Sp. Atk</th>
+      <th>Sp. Def</th>
+      <th>Speed</th>
+      <th>Generation</th>
+      <th>Legendary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>Bulbasaur</td>
+      <td>Grass</td>
+      <td>Poison</td>
+      <td>318</td>
+      <td>45</td>
+      <td>49</td>
+      <td>49</td>
+      <td>65</td>
+      <td>65</td>
+      <td>45</td>
+      <td>1</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>Ivysaur</td>
+      <td>Grass</td>
+      <td>Poison</td>
+      <td>405</td>
+      <td>60</td>
+      <td>62</td>
+      <td>63</td>
+      <td>80</td>
+      <td>80</td>
+      <td>60</td>
+      <td>1</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>Venusaur</td>
+      <td>Grass</td>
+      <td>Poison</td>
+      <td>525</td>
+      <td>80</td>
+      <td>82</td>
+      <td>83</td>
+      <td>100</td>
+      <td>100</td>
+      <td>80</td>
+      <td>1</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>VenusaurMega Venusaur</td>
+      <td>Grass</td>
+      <td>Poison</td>
+      <td>625</td>
+      <td>80</td>
+      <td>100</td>
+      <td>123</td>
+      <td>122</td>
+      <td>120</td>
+      <td>80</td>
+      <td>1</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>18</td>
+      <td>Pidgeot</td>
+      <td>Normal</td>
+      <td>Flying</td>
+      <td>479</td>
+      <td>83</td>
+      <td>80</td>
+      <td>75</td>
+      <td>70</td>
+      <td>70</td>
+      <td>101</td>
+      <td>1</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>789</th>
+      <td>713</td>
+      <td>Avalugg</td>
+      <td>Ice</td>
+      <td>NaN</td>
+      <td>514</td>
+      <td>95</td>
+      <td>117</td>
+      <td>184</td>
+      <td>44</td>
+      <td>46</td>
+      <td>28</td>
+      <td>6</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>791</th>
+      <td>715</td>
+      <td>Noivern</td>
+      <td>Flying</td>
+      <td>Dragon</td>
+      <td>535</td>
+      <td>85</td>
+      <td>70</td>
+      <td>80</td>
+      <td>97</td>
+      <td>80</td>
+      <td>123</td>
+      <td>6</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>792</th>
+      <td>716</td>
+      <td>Xerneas</td>
+      <td>Fairy</td>
+      <td>NaN</td>
+      <td>680</td>
+      <td>126</td>
+      <td>131</td>
+      <td>95</td>
+      <td>131</td>
+      <td>98</td>
+      <td>99</td>
+      <td>6</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>793</th>
+      <td>717</td>
+      <td>Yveltal</td>
+      <td>Dark</td>
+      <td>Flying</td>
+      <td>680</td>
+      <td>126</td>
+      <td>131</td>
+      <td>95</td>
+      <td>131</td>
+      <td>98</td>
+      <td>99</td>
+      <td>6</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>794</th>
+      <td>718</td>
+      <td>Zygarde50% Forme</td>
+      <td>Dragon</td>
+      <td>Ground</td>
+      <td>600</td>
+      <td>108</td>
+      <td>100</td>
+      <td>121</td>
+      <td>81</td>
+      <td>95</td>
+      <td>95</td>
+      <td>6</td>
+      <td>True</td>
+    </tr>
+  </tbody>
+</table>
+<p>250 rows × 13 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="loc-index-label-based-indexing">
+<h4>loc: index/label based indexing.<a class="headerlink" href="#loc-index-label-based-indexing" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="iloc-integer-position-indexing">
+<h4>iloc: integer position indexing<a class="headerlink" href="#iloc-integer-position-indexing" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>we will avoid using indexes, and will use integer and boolean selection</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="grouping">
+<h3>Grouping<a class="headerlink" href="#grouping" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://pandas.pydata.org/docs/user_guide/groupby.html#groupby">https://pandas.pydata.org/docs/user_guide/groupby.html#groupby</a></p>
+<ul class="simple">
+<li><p>what does grouping do?</p></li>
+</ul>
+</div>
+<div class="section" id="summarizing">
+<h3>Summarizing<a class="headerlink" href="#summarizing" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://pandas.pydata.org/docs/getting_started/intro_tutorials/06_calculate_statistics.html">https://pandas.pydata.org/docs/getting_started/intro_tutorials/06_calculate_statistics.html</a></p>
+<p>we will stick to using <code class="docutils literal notranslate"><span class="pre">.aggregate('newcol'=('oldcol','function'))</span></code>, although many other methods are available.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./live"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Ed Vul<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

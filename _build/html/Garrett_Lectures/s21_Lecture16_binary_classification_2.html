@@ -1,0 +1,2018 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>&lt;no title&gt; &#8212; UCSD CSS 2</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">UCSD CSS 2</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Welcome to CSS 2
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Course (CSS 2 Spring 2022)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/syllabus.html">
+   Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/expectations.html">
+   Expectations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/datahub.html">
+   Datahub assignments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/debugging.html">
+   Debugging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/resources.html">
+   Extracurricular Resources
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/final.html">
+   Final Project
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lectures
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/sp22/Lecture_2.html">
+   Lecture 2 (3/30/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/sp22/Lecture_3.html">
+   Lecture 3 (4/1/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/sp22/Lecture_4.html">
+   Lecture 4 (4/4/22)
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Garrett_Lectures/s21_Lecture16_binary_classification_2.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/UCSD-CSS-002/ucsd-css-002.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/UCSD-CSS-002/ucsd-css-002.github.io/issues/new?title=Issue%20on%20page%20%2FGarrett_Lectures/s21_Lecture16_binary_classification_2.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/UCSD-CSS-002/ucsd-css-002.github.io/master?urlpath=tree/Garrett_Lectures/s21_Lecture16_binary_classification_2.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <p>Lecture 16 - Binary Classification 2</p>
+<p>Announcements</p>
+<ol class="simple">
+<li><p>Problem set 8 and quiz 8 due this weekend!</p></li>
+</ol>
+<p>Binary classification</p>
+<ol class="simple">
+<li><p>Decision Trees</p></li>
+<li><p>Logistic Regression</p></li>
+<li><p>Other classification algorithms</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">tree</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">metrics</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We will load a different dataset. Here is the description:</p>
+<p>A retrospective sample of males in a heart-disease high-risk region of the Western Cape, South Africa.
+There are roughly two controls per case of coronary heart disease. Many of the coronary heart disease
+positive men have undergone blood pressure reduction treatment and other programs to reduce their risk
+factors after their coronary heart disease event. In some cases the measurements were made after these
+treatments. These data are taken from a larger dataset, described in Rousseauw et al, 1983, South African
+Medical Journal.</p>
+<p><a class="reference external" href="http://www2.stat.duke.edu/~cr173/Sta102_Sp14/Project/heart.pdf">http://www2.stat.duke.edu/~cr173/Sta102_Sp14/Project/heart.pdf</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://web.stanford.edu/~hastie/ElemStatLearn/datasets/SAheart.data&#39;</span><span class="p">,</span><span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sbp</th>
+      <th>tobacco</th>
+      <th>ldl</th>
+      <th>adiposity</th>
+      <th>famhist</th>
+      <th>typea</th>
+      <th>obesity</th>
+      <th>alcohol</th>
+      <th>age</th>
+      <th>chd</th>
+    </tr>
+    <tr>
+      <th>row.names</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>160</td>
+      <td>12.00</td>
+      <td>5.73</td>
+      <td>23.11</td>
+      <td>Present</td>
+      <td>49</td>
+      <td>25.30</td>
+      <td>97.20</td>
+      <td>52</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>144</td>
+      <td>0.01</td>
+      <td>4.41</td>
+      <td>28.61</td>
+      <td>Absent</td>
+      <td>55</td>
+      <td>28.87</td>
+      <td>2.06</td>
+      <td>63</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>118</td>
+      <td>0.08</td>
+      <td>3.48</td>
+      <td>32.28</td>
+      <td>Present</td>
+      <td>52</td>
+      <td>29.14</td>
+      <td>3.81</td>
+      <td>46</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>170</td>
+      <td>7.50</td>
+      <td>6.41</td>
+      <td>38.03</td>
+      <td>Present</td>
+      <td>51</td>
+      <td>31.99</td>
+      <td>24.26</td>
+      <td>58</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>134</td>
+      <td>13.60</td>
+      <td>3.50</td>
+      <td>27.78</td>
+      <td>Present</td>
+      <td>60</td>
+      <td>25.99</td>
+      <td>57.34</td>
+      <td>49</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Just like in the last class, let’s focus on binary classification with just a single feature</p>
+<p>More complicated combinations of the features and/or changes to the algorithms will provide better fits to the data, but it is easier to understand the models by first using just a single feature</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">8</span><span class="p">]])</span> <span class="c1"># age</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]])</span> <span class="c1"># heart disease</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">X</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/anaconda3/lib/python3.8/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture16_binary_classification_2_6_2.png" src="../_images/s21_Lecture16_binary_classification_2_6_2.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Xtrain</span><span class="p">,</span><span class="n">Xtest</span><span class="p">,</span><span class="n">ytrain</span><span class="p">,</span><span class="n">ytest</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">),</span><span class="mi">1</span><span class="p">),</span><span class="n">y</span><span class="p">,</span><span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Then, let’s do our decision tree classification!</p>
+<p>For the moment, let’s set the max depth of the tree to be 1</p>
+<p>This parameter determines how many layers we go. At a max depth of 1, we will just be splitting the data once. If the max depth was 2, we could at most, split the data twice, etc etc</p>
+<p>Note that how we fit the model is very similar to what we did for linear regression!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tree_model</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> 
+<span class="n">tree_model</span> <span class="o">=</span> <span class="n">tree_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">Xtrain</span><span class="p">,</span> <span class="n">ytrain</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Done!</p>
+<p>Now, let’s check the model score, which is the mean accuracy</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tree_model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">Xtrain</span><span class="p">,</span> <span class="n">ytrain</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7023121387283237
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tree_model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">Xtest</span><span class="p">,</span> <span class="n">ytest</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6810344827586207
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can get our confusion matrix by comparing the ytest to the predicted values from the model</p>
+<p>This is very similar to how we did linear regression!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tree_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">Xtest</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0,
+       0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1,
+       0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1,
+       0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 1, 1,
+       0, 1, 0, 0, 0, 1])
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can check out the confusion matrix with metrics</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">metrics</span><span class="o">.</span><span class="n">confusion_matrix</span><span class="p">(</span><span class="n">ytest</span><span class="p">,</span><span class="n">tree_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">Xtest</span><span class="p">))</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[56, 20],
+       [17, 23]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is also a handy way to save the confusion matrix values</p>
+<p>Which you could then use to compute the F1 score or Matthews Correlation Coefficient</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tn</span><span class="p">,</span> <span class="n">fp</span><span class="p">,</span> <span class="n">fn</span><span class="p">,</span> <span class="n">tp</span> <span class="o">=</span> <span class="n">metrics</span><span class="o">.</span><span class="n">confusion_matrix</span><span class="p">(</span><span class="n">ytest</span><span class="p">,</span><span class="n">tree_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">Xtest</span><span class="p">))</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tn</span><span class="p">,</span> <span class="n">fp</span><span class="p">,</span> <span class="n">fn</span><span class="p">,</span> <span class="n">tp</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>56 20 17 23
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can visualize the decision tree model and see the brances, nodes, and leaves</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tree</span><span class="o">.</span><span class="n">plot_tree</span><span class="p">(</span><span class="n">tree_model</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Text(167.4, 163.07999999999998, &#39;X[0] &lt;= 50.5\ngini = 0.453\nsamples = 346\nvalue = [226, 120]&#39;),
+ Text(83.7, 54.360000000000014, &#39;gini = 0.339\nsamples = 217\nvalue = [170, 47]&#39;),
+ Text(251.10000000000002, 54.360000000000014, &#39;gini = 0.491\nsamples = 129\nvalue = [56, 73]&#39;)]
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture16_binary_classification_2_20_1.png" src="../_images/s21_Lecture16_binary_classification_2_20_1.png" />
+</div>
+</div>
+<p>X[0] &lt;= 50.5 refers to the criterion that the decision tree is using to decide whether the data belong in the category on the left (0) or the right (1)</p>
+<p>gini is the method if finding the above criterion, which is referred to a gini impurity. There are some other metrics, which you can see here: <a class="reference external" href="https://medium.com/&#64;rishabhjain_22692/decision-trees-it-begins-here-93ff54ef134">https://medium.com/&#64;rishabhjain_22692/decision-trees-it-begins-here-93ff54ef134</a></p>
+<p>samples = number of samples in that group
+value = left value is 0 and right value is 1</p>
+<p>So, based on the bottom values, what does 56 mean? - should be the false positives!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tn</span><span class="p">,</span> <span class="n">fp</span><span class="p">,</span> <span class="n">fn</span><span class="p">,</span> <span class="n">tp</span> <span class="o">=</span> <span class="n">metrics</span><span class="o">.</span><span class="n">confusion_matrix</span><span class="p">(</span><span class="n">ytrain</span><span class="p">,</span><span class="n">tree_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">Xtrain</span><span class="p">))</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tn</span><span class="p">,</span> <span class="n">fp</span><span class="p">,</span> <span class="n">fn</span><span class="p">,</span> <span class="n">tp</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>170 56 47 73
+</pre></div>
+</div>
+</div>
+</div>
+<p>But of course, the tree that we are seeing is from the training set, so just keep that in mind when trying to interpret this visualization</p>
+<p>Let’s try building a model without specifing the number of branches</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">full_tree_model</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">DecisionTreeClassifier</span><span class="p">()</span>
+<span class="n">full_tree_model</span> <span class="o">=</span> <span class="n">full_tree_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">Xtrain</span><span class="p">,</span> <span class="n">ytrain</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">full_tree_model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">Xtrain</span><span class="p">,</span> <span class="n">ytrain</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">full_tree_model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">Xtest</span><span class="p">,</span> <span class="n">ytest</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7456647398843931
+0.646551724137931
+</pre></div>
+</div>
+</div>
+</div>
+<p>Hmm, the accuracy of the testing set didn’t actually improve, though the accuracy of the training set did. We are probably overfitting</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">20</span><span class="p">,</span><span class="mi">20</span><span class="p">])</span>
+<span class="n">tree</span><span class="o">.</span><span class="n">plot_tree</span><span class="p">(</span><span class="n">full_tree_model</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Text(574.679347826087, 1045.3846153846155, &#39;X[0] &lt;= 50.5\ngini = 0.453\nsamples = 346\nvalue = [226, 120]&#39;),
+ Text(175.8913043478261, 961.7538461538462, &#39;X[0] &lt;= 24.5\ngini = 0.339\nsamples = 217\nvalue = [170, 47]&#39;),
+ Text(48.52173913043478, 878.123076923077, &#39;X[0] &lt;= 19.5\ngini = 0.038\nsamples = 51\nvalue = [50, 1]&#39;),
+ Text(24.26086956521739, 794.4923076923078, &#39;gini = 0.0\nsamples = 38\nvalue = [38, 0]&#39;),
+ Text(72.78260869565217, 794.4923076923078, &#39;X[0] &lt;= 20.5\ngini = 0.142\nsamples = 13\nvalue = [12, 1]&#39;),
+ Text(48.52173913043478, 710.8615384615384, &#39;gini = 0.278\nsamples = 6\nvalue = [5, 1]&#39;),
+ Text(97.04347826086956, 710.8615384615384, &#39;gini = 0.0\nsamples = 7\nvalue = [7, 0]&#39;),
+ Text(303.2608695652174, 878.123076923077, &#39;X[0] &lt;= 31.5\ngini = 0.401\nsamples = 166\nvalue = [120, 46]&#39;),
+ Text(194.08695652173913, 794.4923076923078, &#39;X[0] &lt;= 28.5\ngini = 0.305\nsamples = 32\nvalue = [26, 6]&#39;),
+ Text(145.56521739130434, 710.8615384615384, &#39;X[0] &lt;= 25.5\ngini = 0.415\nsamples = 17\nvalue = [12, 5]&#39;),
+ Text(121.30434782608695, 627.2307692307693, &#39;gini = 0.5\nsamples = 2\nvalue = [1, 1]&#39;),
+ Text(169.82608695652175, 627.2307692307693, &#39;X[0] &lt;= 27.5\ngini = 0.391\nsamples = 15\nvalue = [11, 4]&#39;),
+ Text(145.56521739130434, 543.6, &#39;X[0] &lt;= 26.5\ngini = 0.375\nsamples = 8\nvalue = [6, 2]&#39;),
+ Text(121.30434782608695, 459.96923076923076, &#39;gini = 0.375\nsamples = 4\nvalue = [3, 1]&#39;),
+ Text(169.82608695652175, 459.96923076923076, &#39;gini = 0.375\nsamples = 4\nvalue = [3, 1]&#39;),
+ Text(194.08695652173913, 543.6, &#39;gini = 0.408\nsamples = 7\nvalue = [5, 2]&#39;),
+ Text(242.6086956521739, 710.8615384615384, &#39;X[0] &lt;= 30.5\ngini = 0.124\nsamples = 15\nvalue = [14, 1]&#39;),
+ Text(218.3478260869565, 627.2307692307693, &#39;gini = 0.0\nsamples = 8\nvalue = [8, 0]&#39;),
+ Text(266.8695652173913, 627.2307692307693, &#39;gini = 0.245\nsamples = 7\nvalue = [6, 1]&#39;),
+ Text(412.4347826086956, 794.4923076923078, &#39;X[0] &lt;= 32.5\ngini = 0.419\nsamples = 134\nvalue = [94, 40]&#39;),
+ Text(388.17391304347825, 710.8615384615384, &#39;gini = 0.494\nsamples = 9\nvalue = [5, 4]&#39;),
+ Text(436.695652173913, 710.8615384615384, &#39;X[0] &lt;= 38.5\ngini = 0.41\nsamples = 125\nvalue = [89, 36]&#39;),
+ Text(315.39130434782606, 627.2307692307693, &#39;X[0] &lt;= 35.5\ngini = 0.342\nsamples = 32\nvalue = [25, 7]&#39;),
+ Text(266.8695652173913, 543.6, &#39;X[0] &lt;= 34.5\ngini = 0.298\nsamples = 11\nvalue = [9, 2]&#39;),
+ Text(242.6086956521739, 459.96923076923076, &#39;X[0] &lt;= 33.5\ngini = 0.32\nsamples = 10\nvalue = [8, 2]&#39;),
+ Text(218.3478260869565, 376.3384615384616, &#39;gini = 0.278\nsamples = 6\nvalue = [5, 1]&#39;),
+ Text(266.8695652173913, 376.3384615384616, &#39;gini = 0.375\nsamples = 4\nvalue = [3, 1]&#39;),
+ Text(291.1304347826087, 459.96923076923076, &#39;gini = 0.0\nsamples = 1\nvalue = [1, 0]&#39;),
+ Text(363.9130434782609, 543.6, &#39;X[0] &lt;= 36.5\ngini = 0.363\nsamples = 21\nvalue = [16, 5]&#39;),
+ Text(339.6521739130435, 459.96923076923076, &#39;gini = 0.444\nsamples = 3\nvalue = [2, 1]&#39;),
+ Text(388.17391304347825, 459.96923076923076, &#39;X[0] &lt;= 37.5\ngini = 0.346\nsamples = 18\nvalue = [14, 4]&#39;),
+ Text(363.9130434782609, 376.3384615384616, &#39;gini = 0.278\nsamples = 6\nvalue = [5, 1]&#39;),
+ Text(412.4347826086956, 376.3384615384616, &#39;gini = 0.375\nsamples = 12\nvalue = [9, 3]&#39;),
+ Text(558.0, 627.2307692307693, &#39;X[0] &lt;= 43.5\ngini = 0.429\nsamples = 93\nvalue = [64, 29]&#39;),
+ Text(509.4782608695652, 543.6, &#39;X[0] &lt;= 42.5\ngini = 0.473\nsamples = 39\nvalue = [24, 15]&#39;),
+ Text(485.2173913043478, 459.96923076923076, &#39;X[0] &lt;= 39.5\ngini = 0.451\nsamples = 32\nvalue = [21, 11]&#39;),
+ Text(460.95652173913044, 376.3384615384616, &#39;gini = 0.49\nsamples = 7\nvalue = [4, 3]&#39;),
+ Text(509.4782608695652, 376.3384615384616, &#39;X[0] &lt;= 40.5\ngini = 0.435\nsamples = 25\nvalue = [17, 8]&#39;),
+ Text(485.2173913043478, 292.70769230769235, &#39;gini = 0.42\nsamples = 10\nvalue = [7, 3]&#39;),
+ Text(533.7391304347826, 292.70769230769235, &#39;X[0] &lt;= 41.5\ngini = 0.444\nsamples = 15\nvalue = [10, 5]&#39;),
+ Text(509.4782608695652, 209.0769230769231, &#39;gini = 0.444\nsamples = 6\nvalue = [4, 2]&#39;),
+ Text(558.0, 209.0769230769231, &#39;gini = 0.444\nsamples = 9\nvalue = [6, 3]&#39;),
+ Text(533.7391304347826, 459.96923076923076, &#39;gini = 0.49\nsamples = 7\nvalue = [3, 4]&#39;),
+ Text(606.5217391304348, 543.6, &#39;X[0] &lt;= 44.5\ngini = 0.384\nsamples = 54\nvalue = [40, 14]&#39;),
+ Text(582.2608695652174, 459.96923076923076, &#39;gini = 0.0\nsamples = 7\nvalue = [7, 0]&#39;),
+ Text(630.7826086956521, 459.96923076923076, &#39;X[0] &lt;= 45.5\ngini = 0.418\nsamples = 47\nvalue = [33, 14]&#39;),
+ Text(606.5217391304348, 376.3384615384616, &#39;gini = 0.5\nsamples = 8\nvalue = [4, 4]&#39;),
+ Text(655.0434782608695, 376.3384615384616, &#39;X[0] &lt;= 49.5\ngini = 0.381\nsamples = 39\nvalue = [29, 10]&#39;),
+ Text(630.7826086956521, 292.70769230769235, &#39;X[0] &lt;= 46.5\ngini = 0.35\nsamples = 31\nvalue = [24, 7]&#39;),
+ Text(606.5217391304348, 209.0769230769231, &#39;gini = 0.444\nsamples = 6\nvalue = [4, 2]&#39;),
+ Text(655.0434782608695, 209.0769230769231, &#39;X[0] &lt;= 47.5\ngini = 0.32\nsamples = 25\nvalue = [20, 5]&#39;),
+ Text(630.7826086956521, 125.44615384615383, &#39;gini = 0.0\nsamples = 1\nvalue = [1, 0]&#39;),
+ Text(679.304347826087, 125.44615384615383, &#39;X[0] &lt;= 48.5\ngini = 0.33\nsamples = 24\nvalue = [19, 5]&#39;),
+ Text(655.0434782608695, 41.81538461538457, &#39;gini = 0.355\nsamples = 13\nvalue = [10, 3]&#39;),
+ Text(703.5652173913044, 41.81538461538457, &#39;gini = 0.298\nsamples = 11\nvalue = [9, 2]&#39;),
+ Text(679.304347826087, 292.70769230769235, &#39;gini = 0.469\nsamples = 8\nvalue = [5, 3]&#39;),
+ Text(973.4673913043478, 961.7538461538462, &#39;X[0] &lt;= 59.5\ngini = 0.491\nsamples = 129\nvalue = [56, 73]&#39;),
+ Text(903.7173913043478, 878.123076923077, &#39;X[0] &lt;= 57.5\ngini = 0.472\nsamples = 81\nvalue = [31, 50]&#39;),
+ Text(837.0, 794.4923076923078, &#39;X[0] &lt;= 55.5\ngini = 0.494\nsamples = 56\nvalue = [25, 31]&#39;),
+ Text(776.3478260869565, 710.8615384615384, &#39;X[0] &lt;= 53.5\ngini = 0.476\nsamples = 46\nvalue = [18, 28]&#39;),
+ Text(727.8260869565217, 627.2307692307693, &#39;X[0] &lt;= 52.5\ngini = 0.497\nsamples = 26\nvalue = [12, 14]&#39;),
+ Text(703.5652173913044, 543.6, &#39;X[0] &lt;= 51.5\ngini = 0.48\nsamples = 15\nvalue = [6, 9]&#39;),
+ Text(679.304347826087, 459.96923076923076, &#39;gini = 0.49\nsamples = 7\nvalue = [3, 4]&#39;),
+ Text(727.8260869565217, 459.96923076923076, &#39;gini = 0.469\nsamples = 8\nvalue = [3, 5]&#39;),
+ Text(752.0869565217391, 543.6, &#39;gini = 0.496\nsamples = 11\nvalue = [6, 5]&#39;),
+ Text(824.8695652173913, 627.2307692307693, &#39;X[0] &lt;= 54.5\ngini = 0.42\nsamples = 20\nvalue = [6, 14]&#39;),
+ Text(800.6086956521739, 543.6, &#39;gini = 0.278\nsamples = 6\nvalue = [1, 5]&#39;),
+ Text(849.1304347826086, 543.6, &#39;gini = 0.459\nsamples = 14\nvalue = [5, 9]&#39;),
+ Text(897.6521739130435, 710.8615384615384, &#39;X[0] &lt;= 56.5\ngini = 0.42\nsamples = 10\nvalue = [7, 3]&#39;),
+ Text(873.391304347826, 627.2307692307693, &#39;gini = 0.48\nsamples = 5\nvalue = [3, 2]&#39;),
+ Text(921.9130434782609, 627.2307692307693, &#39;gini = 0.32\nsamples = 5\nvalue = [4, 1]&#39;),
+ Text(970.4347826086956, 794.4923076923078, &#39;X[0] &lt;= 58.5\ngini = 0.365\nsamples = 25\nvalue = [6, 19]&#39;),
+ Text(946.1739130434783, 710.8615384615384, &#39;gini = 0.375\nsamples = 12\nvalue = [3, 9]&#39;),
+ Text(994.695652173913, 710.8615384615384, &#39;gini = 0.355\nsamples = 13\nvalue = [3, 10]&#39;),
+ Text(1043.2173913043478, 878.123076923077, &#39;X[0] &lt;= 60.5\ngini = 0.499\nsamples = 48\nvalue = [25, 23]&#39;),
+ Text(1018.9565217391304, 794.4923076923078, &#39;gini = 0.375\nsamples = 12\nvalue = [9, 3]&#39;),
+ Text(1067.4782608695652, 794.4923076923078, &#39;X[0] &lt;= 63.5\ngini = 0.494\nsamples = 36\nvalue = [16, 20]&#39;),
+ Text(1043.2173913043478, 710.8615384615384, &#39;X[0] &lt;= 62.5\ngini = 0.473\nsamples = 26\nvalue = [10, 16]&#39;),
+ Text(1018.9565217391304, 627.2307692307693, &#39;X[0] &lt;= 61.5\ngini = 0.49\nsamples = 21\nvalue = [9, 12]&#39;),
+ Text(994.695652173913, 543.6, &#39;gini = 0.444\nsamples = 12\nvalue = [4, 8]&#39;),
+ Text(1043.2173913043478, 543.6, &#39;gini = 0.494\nsamples = 9\nvalue = [5, 4]&#39;),
+ Text(1067.4782608695652, 627.2307692307693, &#39;gini = 0.32\nsamples = 5\nvalue = [1, 4]&#39;),
+ Text(1091.7391304347825, 710.8615384615384, &#39;gini = 0.48\nsamples = 10\nvalue = [6, 4]&#39;)]
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture16_binary_classification_2_27_1.png" src="../_images/s21_Lecture16_binary_classification_2_27_1.png" />
+</div>
+</div>
+<p>Oh yeah. look at that tree. Its huge! We are probably overfitting quite a bit and we obviously lose the ability to intepret the model.</p>
+<p>One thing you can do to improve your decision tree without necessarily running into this problem of overfitting is to run multiple decision trees and basically combining the different trees. This is called a random forest <a class="reference external" href="https://en.wikipedia.org/wiki/Random_forest">https://en.wikipedia.org/wiki/Random_forest</a> which will be discussed more in CSS100</p>
+<p>Now, let’s look at a logistic regression</p>
+<p><a class="reference external" href="https://medium.com/&#64;ODSC/logistic-regression-with-python-ede39f8573c7">https://medium.com/&#64;ODSC/logistic-regression-with-python-ede39f8573c7</a></p>
+<p>Instead of a straight line, you get an S-shape sigmoid that corresponds to the probability of the X data being in group 1</p>
+<p>If the linear model is y = mx+b</p>
+<p>Then the logistic regression model is y = 1/(1+e^-(mx+b))</p>
+<p>And just like with linear regression and with the decision tree, we first create an instance of the model, then we fit the data</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">logit_model</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">fit_intercept</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">random_state</span> <span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">logit_model</span> <span class="o">=</span> <span class="n">logit_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">Xtrain</span><span class="p">,</span> <span class="n">ytrain</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can check the possible classes and also the coefficient and intercept values</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">logit_model</span><span class="o">.</span><span class="n">classes_</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0, 1])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">logit_model</span><span class="o">.</span><span class="n">coef_</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.06469053]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">logit_model</span><span class="o">.</span><span class="n">intercept_</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-3.55527328])
+</pre></div>
+</div>
+</div>
+</div>
+<p>And just like before, we can check the accuracy</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">logit_model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">Xtrain</span><span class="p">,</span> <span class="n">ytrain</span><span class="p">))</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">logit_model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">Xtest</span><span class="p">,</span> <span class="n">ytest</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.684971098265896
+0.6637931034482759
+</pre></div>
+</div>
+</div>
+</div>
+<p>And just like with the decision tree, the predictions are 1’s or 0’s</p>
+<p>These values are based on the probability of y. Anything above .5 is considered to be in group 1, otherwise, group 0</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">logit_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">Xtest</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0,
+       0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0,
+       0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1,
+       0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0,
+       0, 1, 0, 0, 0, 1])
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also check the probability of those predictions below</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">logit_model</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">Xtest</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.92096522, 0.07903478],
+       [0.85919609, 0.14080391],
+       [0.59518384, 0.40481616],
+       [0.83404316, 0.16595684],
+       [0.38804449, 0.61195551],
+       [0.88108033, 0.11891967],
+       [0.69810095, 0.30189905],
+       [0.48315728, 0.51684272],
+       [0.85919609, 0.14080391],
+       [0.41917561, 0.58082439],
+       [0.45096376, 0.54903624],
+       [0.87413336, 0.12586664],
+       [0.88108033, 0.11891967],
+       [0.37279843, 0.62720157],
+       [0.80541456, 0.19458544],
+       [0.59518384, 0.40481616],
+       [0.73736981, 0.26263019],
+       [0.49932353, 0.50067647],
+       [0.80541456, 0.19458544],
+       [0.68429492, 0.31570508],
+       [0.8248945 , 0.1751055 ],
+       [0.8248945 , 0.1751055 ],
+       [0.62593533, 0.37406467],
+       [0.85919609, 0.14080391],
+       [0.92096522, 0.07903478],
+       [0.35780114, 0.64219886],
+       [0.85919609, 0.14080391],
+       [0.6409544 , 0.3590456 ],
+       [0.35780114, 0.64219886],
+       [0.38804449, 0.61195551],
+       [0.4670262 , 0.5329738 ],
+       [0.65570213, 0.34429787],
+       [0.85919609, 0.14080391],
+       [0.79507547, 0.20492453],
+       [0.65570213, 0.34429787],
+       [0.53162652, 0.46837348],
+       [0.92554755, 0.07445245],
+       [0.43500288, 0.56499712],
+       [0.81535316, 0.18464684],
+       [0.53162652, 0.46837348],
+       [0.92554755, 0.07445245],
+       [0.80541456, 0.19458544],
+       [0.67015584, 0.32984416],
+       [0.51549121, 0.48450879],
+       [0.89995927, 0.10004073],
+       [0.83404316, 0.16595684],
+       [0.45096376, 0.54903624],
+       [0.92554755, 0.07445245],
+       [0.43500288, 0.56499712],
+       [0.92096522, 0.07903478],
+       [0.6409544 , 0.3590456 ],
+       [0.35780114, 0.64219886],
+       [0.48315728, 0.51684272],
+       [0.37279843, 0.62720157],
+       [0.56366659, 0.43633341],
+       [0.72465126, 0.27534874],
+       [0.73736981, 0.26263019],
+       [0.59518384, 0.40481616],
+       [0.43500288, 0.56499712],
+       [0.4670262 , 0.5329738 ],
+       [0.69810095, 0.30189905],
+       [0.73736981, 0.26263019],
+       [0.54769596, 0.45230404],
+       [0.87413336, 0.12586664],
+       [0.51549121, 0.48450879],
+       [0.41917561, 0.58082439],
+       [0.6409544 , 0.3590456 ],
+       [0.6409544 , 0.3590456 ],
+       [0.72465126, 0.27534874],
+       [0.65570213, 0.34429787],
+       [0.92554755, 0.07445245],
+       [0.92554755, 0.07445245],
+       [0.69810095, 0.30189905],
+       [0.84280492, 0.15719508],
+       [0.91612642, 0.08387358],
+       [0.91102   , 0.08898   ],
+       [0.74970379, 0.25029621],
+       [0.41917561, 0.58082439],
+       [0.88108033, 0.11891967],
+       [0.83404316, 0.16595684],
+       [0.48315728, 0.51684272],
+       [0.51549121, 0.48450879],
+       [0.81535316, 0.18464684],
+       [0.45096376, 0.54903624],
+       [0.49932353, 0.50067647],
+       [0.91612642, 0.08387358],
+       [0.40351293, 0.59648707],
+       [0.48315728, 0.51684272],
+       [0.62593533, 0.37406467],
+       [0.4670262 , 0.5329738 ],
+       [0.79507547, 0.20492453],
+       [0.8668419 , 0.1331581 ],
+       [0.40351293, 0.59648707],
+       [0.69810095, 0.30189905],
+       [0.38804449, 0.61195551],
+       [0.71155772, 0.28844228],
+       [0.85919609, 0.14080391],
+       [0.71155772, 0.28844228],
+       [0.85919609, 0.14080391],
+       [0.92096522, 0.07903478],
+       [0.71155772, 0.28844228],
+       [0.54769596, 0.45230404],
+       [0.45096376, 0.54903624],
+       [0.65570213, 0.34429787],
+       [0.45096376, 0.54903624],
+       [0.37279843, 0.62720157],
+       [0.65570213, 0.34429787],
+       [0.65570213, 0.34429787],
+       [0.51549121, 0.48450879],
+       [0.53162652, 0.46837348],
+       [0.83404316, 0.16595684],
+       [0.40351293, 0.59648707],
+       [0.83404316, 0.16595684],
+       [0.71155772, 0.28844228],
+       [0.6409544 , 0.3590456 ],
+       [0.40351293, 0.59648707]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Each row should sum to 1, which corresponds to the probability of that data being in group 0 (column 0) or group 1 (column 1)</p>
+<p>Let’s visualize this logistic regression</p>
+<p>We can plot</p>
+<ol class="simple">
+<li><p>scatter plot of data</p></li>
+<li><p>the predicted probability of which class the data will belong too - in blue</p></li>
+<li><p>the predicted classes - in red</p></li>
+<li><p>and .50 in orange, which is basically the criterion</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">Xtest</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">ytest</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">Xtest</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">logit_model</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">Xtest</span><span class="p">)[:,</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">Xtest</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">logit_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">Xtest</span><span class="p">)</span><span class="o">==</span><span class="mi">1</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> 
+<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">([</span><span class="mi">15</span><span class="p">,</span><span class="mi">65</span><span class="p">],[</span><span class="o">.</span><span class="mi">5</span><span class="p">,</span><span class="o">.</span><span class="mi">5</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/anaconda3/lib/python3.8/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/opt/anaconda3/lib/python3.8/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/anaconda3/lib/python3.8/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/anaconda3/lib/python3.8/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture16_binary_classification_2_45_4.png" src="../_images/s21_Lecture16_binary_classification_2_45_4.png" />
+</div>
+</div>
+<p>Logistic regressions are handy because they are probabilistic, but they have similar assumptions to linear regressions (e.g., independence of features, no multicollinearity, assumes linearity of independent variables and log odds)</p>
+<p>There are a lot of different classifiers</p>
+<p>One type is a naive Bayes. This utilizes Bayes theorem, which describes the probability of an event, based on prior knowledge of conditions that might be related to the event. <a class="reference external" href="https://en.wikipedia.org/wiki/Bayes%27_theorem">https://en.wikipedia.org/wiki/Bayes’_theorem</a></p>
+<p>All naive Bayes classifiers assume that the value of a particular feature is independent of the value of any other feature, given the class variable. For example, a fruit may be considered to be an apple if it is red, round, and about 10 cm in diameter. A naive Bayes classifier considers each of these features to contribute independently to the probability that this fruit is an apple, regardless of any possible correlations between the color, roundness, and diameter features</p>
+<p>Bayes theory:</p>
+<p>Posterior = Likelihood * Prior / Evidence
+We can make this clear with a smoke and fire case.</p>
+<p>What is the probability that there is fire given that there is smoke?</p>
+<p>Where P(Fire) is the Prior, P(Smoke|Fire) is the Likelihood, and P(Smoke) is the evidence:</p>
+<p>P(Fire|Smoke) = P(Smoke|Fire) * P(Fire) / P(Smoke)</p>
+<p>To run bayes theory, we do the same thing we did before. define the model and fit it to our training data</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.naive_bayes</span> <span class="kn">import</span> <span class="n">GaussianNB</span>
+<span class="n">gnb</span> <span class="o">=</span> <span class="n">GaussianNB</span><span class="p">()</span>
+<span class="n">gnb</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">Xtrain</span><span class="p">,</span> <span class="n">ytrain</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>GaussianNB()
+</pre></div>
+</div>
+</div>
+</div>
+<p>And let’s check the score of this fit</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">gnb</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">Xtrain</span><span class="p">,</span> <span class="n">ytrain</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">gnb</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">Xtest</span><span class="p">,</span><span class="n">ytest</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7023121387283237
+0.6810344827586207
+</pre></div>
+</div>
+</div>
+</div>
+<p>Pretty good! Just note that naive bayes can tend to overfit and it assumes independence of the features (which may not necessarily be the case)</p>
+<p>Another classification technique is a k-nearest neighbors, which predicts which class a new test data point belongs to by identifying its k nearest neighbors’ class. We select these k nearest neighbors based on Euclidean distance</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsClassifier</span>
+<span class="n">knn</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">algorithm</span> <span class="o">=</span> <span class="s1">&#39;brute&#39;</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">knn</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">Xtrain</span><span class="p">,</span> <span class="n">ytrain</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>KNeighborsClassifier(algorithm=&#39;brute&#39;, n_jobs=-1)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">knn</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">Xtrain</span><span class="p">,</span> <span class="n">ytrain</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">knn</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">Xtest</span><span class="p">,</span><span class="n">ytest</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7369942196531792
+0.6379310344827587
+</pre></div>
+</div>
+</div>
+</div>
+<p>Wow! That worked pretty well!</p>
+<p>One of the limitations of k-nn is that you need to be mindful of specifing the number of neighbors to consider. Here, the default was 5, which may be a lot for small datasets, but not enough for larger datasets</p>
+<p>We can compare the fits by looking at the scores for the training and testing set. Note that it helps to check the training and testing to see which models may be overfitting. But in the end, we are mostly concerned with the testing score</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;tree train and test&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tree_model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">Xtrain</span><span class="p">,</span><span class="n">ytrain</span><span class="p">),</span><span class="n">tree_model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">Xtest</span><span class="p">,</span><span class="n">ytest</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;------------------&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;full tree train and test&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">full_tree_model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">Xtrain</span><span class="p">,</span><span class="n">ytrain</span><span class="p">),</span><span class="n">full_tree_model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">Xtest</span><span class="p">,</span><span class="n">ytest</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;------------------&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;logistic regression&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">logit_model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">Xtrain</span><span class="p">,</span><span class="n">ytrain</span><span class="p">),</span> <span class="n">logit_model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">Xtest</span><span class="p">,</span><span class="n">ytest</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;------------------&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;naive bayes&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">gnb</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">Xtrain</span><span class="p">,</span><span class="n">ytrain</span><span class="p">),</span> <span class="n">gnb</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">Xtest</span><span class="p">,</span><span class="n">ytest</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;------------------&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;k nearest neighbor&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">knn</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">Xtrain</span><span class="p">,</span><span class="n">ytrain</span><span class="p">),</span><span class="n">knn</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">Xtest</span><span class="p">,</span><span class="n">ytest</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tree train and test
+0.7023121387283237 0.6810344827586207
+------------------
+full tree train and test
+0.7456647398843931 0.646551724137931
+------------------
+logistic regression
+0.684971098265896 0.6637931034482759
+------------------
+naive bayes
+0.7023121387283237 0.6810344827586207
+------------------
+k nearest neighbor
+0.7369942196531792 0.6379310344827587
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fpr_tree</span><span class="p">,</span><span class="n">tpr_tree</span><span class="p">,</span><span class="n">thresholds_tree</span> <span class="o">=</span> <span class="n">metrics</span><span class="o">.</span><span class="n">roc_curve</span><span class="p">(</span><span class="n">ytest</span><span class="p">,</span><span class="n">tree_model</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">Xtest</span><span class="p">)[:,</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">fpr_fulltree</span><span class="p">,</span><span class="n">tpr_fulltree</span><span class="p">,</span><span class="n">thresholds_fulltree</span> <span class="o">=</span> <span class="n">metrics</span><span class="o">.</span><span class="n">roc_curve</span><span class="p">(</span><span class="n">ytest</span><span class="p">,</span><span class="n">full_tree_model</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">Xtest</span><span class="p">)[:,</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">fpr_logit</span><span class="p">,</span><span class="n">tpr_logit</span><span class="p">,</span><span class="n">thresholds_logit</span> <span class="o">=</span> <span class="n">metrics</span><span class="o">.</span><span class="n">roc_curve</span><span class="p">(</span><span class="n">ytest</span><span class="p">,</span><span class="n">logit_model</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">Xtest</span><span class="p">)[:,</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">fpr_gnb</span><span class="p">,</span><span class="n">tpr_gnb</span><span class="p">,</span><span class="n">thresholds_gnb</span> <span class="o">=</span> <span class="n">metrics</span><span class="o">.</span><span class="n">roc_curve</span><span class="p">(</span><span class="n">ytest</span><span class="p">,</span><span class="n">gnb</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">Xtest</span><span class="p">)[:,</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">fpr_knn</span><span class="p">,</span><span class="n">tpr_knn</span><span class="p">,</span><span class="n">thresholds_knn</span> <span class="o">=</span> <span class="n">metrics</span><span class="o">.</span><span class="n">roc_curve</span><span class="p">(</span><span class="n">ytest</span><span class="p">,</span><span class="n">knn</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">Xtest</span><span class="p">)[:,</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fpr_tree</span><span class="p">,</span><span class="n">tpr_tree</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;tree&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fpr_fulltree</span><span class="p">,</span><span class="n">tpr_fulltree</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;fulltree&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fpr_logit</span><span class="p">,</span><span class="n">tpr_logit</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;logit&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fpr_gnb</span><span class="p">,</span><span class="n">tpr_gnb</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;bayes&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fpr_knn</span><span class="p">,</span><span class="n">tpr_knn</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;knn&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;false positive rate&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;true positive rate&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7faedb9c2040&gt;
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture16_binary_classification_2_60_1.png" src="../_images/s21_Lecture16_binary_classification_2_60_1.png" />
+</div>
+</div>
+<p>Different types of data, numbers of features, amounts of data, etc etc will all influence the performance of different models.</p>
+<p>Here are some helpful resources describing more about these, and other algorithms</p>
+<p><a class="reference external" href="https://blog.echen.me/2011/04/27/choosing-a-machine-learning-classifier/">https://blog.echen.me/2011/04/27/choosing-a-machine-learning-classifier/</a></p>
+<p><a class="reference external" href="https://www.geeksforgeeks.org/advantages-and-disadvantages-of-different-classification-models/">https://www.geeksforgeeks.org/advantages-and-disadvantages-of-different-classification-models/</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">SVC</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here, we will create an instance of the model with a linear kernal, meaning it will separate the data using just a line</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">svc_model</span> <span class="o">=</span> <span class="n">SVC</span><span class="p">(</span><span class="n">kernel</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">)</span>
+<span class="n">svc_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">Xtrain</span><span class="p">,</span> <span class="n">ytrain</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>SVC(kernel=&#39;linear&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s check the accuracy of this SVC model.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">svc_model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">Xtrain</span><span class="p">,</span><span class="n">ytrain</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">svc_model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">Xtest</span><span class="p">,</span><span class="n">ytest</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.653179190751445
+0.6551724137931034
+</pre></div>
+</div>
+</div>
+</div>
+<p>Pretty good!</p>
+<p>We can check the predictions. Again, it returns a 1 or 0 on whether it thinks the data will belong to group 1 or 0</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">svc_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">Xtest</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0])
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can view our support vectors, which are the datapoints on the margin</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">svc_model</span><span class="o">.</span><span class="n">support_vectors_</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[52.],
+       [42.],
+       [61.],
+       [49.],
+       [62.],
+       [58.],
+       [44.],
+       [43.],
+       [56.],
+       [61.],
+       [48.],
+       [55.],
+       [53.],
+       [50.],
+       [61.],
+       [60.],
+       [60.],
+       [53.],
+       [58.],
+       [49.],
+       [43.],
+       [41.],
+       [45.],
+       [62.],
+       [53.],
+       [48.],
+       [49.],
+       [48.],
+       [49.],
+       [60.],
+       [59.],
+       [64.],
+       [55.],
+       [41.],
+       [21.],
+       [55.],
+       [37.],
+       [60.],
+       [45.],
+       [49.],
+       [42.],
+       [53.],
+       [50.],
+       [50.],
+       [48.],
+       [63.],
+       [40.],
+       [59.],
+       [42.],
+       [48.],
+       [49.],
+       [60.],
+       [56.],
+       [59.],
+       [48.],
+       [52.],
+       [55.],
+       [48.],
+       [57.],
+       [60.],
+       [44.],
+       [64.],
+       [50.],
+       [40.],
+       [40.],
+       [44.],
+       [60.],
+       [48.],
+       [45.],
+       [62.],
+       [49.],
+       [51.],
+       [41.],
+       [53.],
+       [37.],
+       [62.],
+       [56.],
+       [64.],
+       [60.],
+       [49.],
+       [40.],
+       [57.],
+       [46.],
+       [61.],
+       [42.],
+       [44.],
+       [52.],
+       [45.],
+       [53.],
+       [58.],
+       [40.],
+       [44.],
+       [21.],
+       [30.],
+       [46.],
+       [41.],
+       [48.],
+       [55.],
+       [30.],
+       [51.],
+       [48.],
+       [60.],
+       [44.],
+       [44.],
+       [50.],
+       [51.],
+       [57.],
+       [47.],
+       [42.],
+       [49.],
+       [46.],
+       [24.],
+       [42.],
+       [57.],
+       [64.],
+       [40.],
+       [43.],
+       [54.],
+       [64.],
+       [64.],
+       [62.],
+       [46.],
+       [53.],
+       [40.],
+       [61.],
+       [49.],
+       [59.],
+       [58.],
+       [36.],
+       [51.],
+       [52.],
+       [55.],
+       [55.],
+       [43.],
+       [61.],
+       [58.],
+       [32.],
+       [64.],
+       [26.],
+       [59.],
+       [58.],
+       [61.],
+       [46.],
+       [59.],
+       [60.],
+       [55.],
+       [58.],
+       [38.],
+       [63.],
+       [56.],
+       [54.],
+       [53.],
+       [52.],
+       [37.],
+       [53.],
+       [46.],
+       [55.],
+       [43.],
+       [59.],
+       [59.],
+       [64.],
+       [38.],
+       [39.],
+       [50.],
+       [58.],
+       [54.],
+       [43.],
+       [62.],
+       [64.],
+       [61.],
+       [31.],
+       [52.],
+       [52.],
+       [41.],
+       [59.],
+       [61.],
+       [56.],
+       [40.],
+       [59.],
+       [41.],
+       [28.],
+       [48.],
+       [32.],
+       [59.],
+       [59.],
+       [61.],
+       [48.],
+       [54.],
+       [60.],
+       [53.],
+       [54.],
+       [33.],
+       [60.],
+       [45.],
+       [45.],
+       [38.],
+       [32.],
+       [20.],
+       [62.],
+       [51.],
+       [55.],
+       [27.],
+       [61.],
+       [42.],
+       [59.],
+       [39.],
+       [40.],
+       [43.],
+       [55.],
+       [34.],
+       [55.],
+       [57.],
+       [55.],
+       [42.],
+       [50.],
+       [50.],
+       [32.],
+       [42.],
+       [58.],
+       [51.],
+       [28.],
+       [58.],
+       [61.],
+       [53.],
+       [48.],
+       [45.],
+       [45.],
+       [52.],
+       [63.],
+       [58.],
+       [25.],
+       [49.],
+       [58.],
+       [62.],
+       [55.],
+       [63.],
+       [63.],
+       [62.],
+       [64.],
+       [39.],
+       [54.],
+       [51.]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>And plot them onto our data. This gives us a quick look into how ou data was separate</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Xtrain</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[39],
+       [52],
+       [53],
+       [42],
+       [40],
+       [61],
+       [61],
+       [49],
+       [17],
+       [49],
+       [59],
+       [16],
+       [34],
+       [32],
+       [62],
+       [33],
+       [58],
+       [15],
+       [44],
+       [43],
+       [58],
+       [36],
+       [56],
+       [36],
+       [51],
+       [18],
+       [61],
+       [31],
+       [48],
+       [52],
+       [38],
+       [55],
+       [55],
+       [43],
+       [61],
+       [55],
+       [58],
+       [20],
+       [32],
+       [16],
+       [64],
+       [53],
+       [50],
+       [26],
+       [59],
+       [58],
+       [61],
+       [60],
+       [17],
+       [61],
+       [60],
+       [46],
+       [33],
+       [53],
+       [59],
+       [60],
+       [58],
+       [32],
+       [49],
+       [55],
+       [43],
+       [16],
+       [41],
+       [58],
+       [45],
+       [62],
+       [38],
+       [53],
+       [48],
+       [63],
+       [56],
+       [20],
+       [54],
+       [49],
+       [37],
+       [53],
+       [48],
+       [49],
+       [60],
+       [52],
+       [59],
+       [64],
+       [37],
+       [28],
+       [25],
+       [27],
+       [53],
+       [15],
+       [46],
+       [20],
+       [29],
+       [55],
+       [55],
+       [41],
+       [21],
+       [43],
+       [59],
+       [18],
+       [16],
+       [55],
+       [16],
+       [40],
+       [37],
+       [60],
+       [59],
+       [45],
+       [15],
+       [31],
+       [64],
+       [49],
+       [42],
+       [38],
+       [39],
+       [17],
+       [53],
+       [19],
+       [50],
+       [50],
+       [58],
+       [54],
+       [43],
+       [62],
+       [64],
+       [50],
+       [48],
+       [63],
+       [16],
+       [61],
+       [31],
+       [52],
+       [52],
+       [16],
+       [40],
+       [41],
+       [59],
+       [38],
+       [38],
+       [17],
+       [38],
+       [59],
+       [17],
+       [61],
+       [56],
+       [40],
+       [42],
+       [48],
+       [39],
+       [16],
+       [17],
+       [29],
+       [59],
+       [39],
+       [49],
+       [31],
+       [60],
+       [56],
+       [59],
+       [48],
+       [31],
+       [52],
+       [16],
+       [38],
+       [55],
+       [41],
+       [28],
+       [38],
+       [17],
+       [29],
+       [18],
+       [48],
+       [17],
+       [57],
+       [60],
+       [44],
+       [64],
+       [27],
+       [28],
+       [50],
+       [48],
+       [40],
+       [40],
+       [32],
+       [44],
+       [60],
+       [48],
+       [45],
+       [62],
+       [26],
+       [28],
+       [34],
+       [49],
+       [59],
+       [51],
+       [39],
+       [59],
+       [16],
+       [61],
+       [37],
+       [41],
+       [48],
+       [53],
+       [37],
+       [18],
+       [54],
+       [60],
+       [29],
+       [31],
+       [16],
+       [62],
+       [53],
+       [33],
+       [56],
+       [23],
+       [54],
+       [33],
+       [33],
+       [24],
+       [64],
+       [60],
+       [45],
+       [29],
+       [60],
+       [45],
+       [38],
+       [32],
+       [49],
+       [32],
+       [16],
+       [20],
+       [62],
+       [51],
+       [40],
+       [23],
+       [55],
+       [35],
+       [27],
+       [61],
+       [57],
+       [46],
+       [42],
+       [61],
+       [42],
+       [44],
+       [59],
+       [38],
+       [39],
+       [52],
+       [45],
+       [53],
+       [40],
+       [34],
+       [43],
+       [55],
+       [34],
+       [38],
+       [16],
+       [58],
+       [31],
+       [17],
+       [16],
+       [32],
+       [55],
+       [57],
+       [40],
+       [55],
+       [24],
+       [44],
+       [16],
+       [28],
+       [21],
+       [18],
+       [42],
+       [29],
+       [20],
+       [50],
+       [50],
+       [32],
+       [30],
+       [42],
+       [17],
+       [17],
+       [46],
+       [17],
+       [41],
+       [18],
+       [58],
+       [37],
+       [48],
+       [55],
+       [51],
+       [28],
+       [58],
+       [61],
+       [30],
+       [51],
+       [53],
+       [48],
+       [45],
+       [28],
+       [48],
+       [32],
+       [45],
+       [52],
+       [60],
+       [38],
+       [44],
+       [63],
+       [44],
+       [50],
+       [26],
+       [51],
+       [58],
+       [57],
+       [25],
+       [49],
+       [58],
+       [47],
+       [62],
+       [33],
+       [42],
+       [55],
+       [63],
+       [17],
+       [63],
+       [27],
+       [62],
+       [49],
+       [46],
+       [64],
+       [24],
+       [42],
+       [39],
+       [57],
+       [26],
+       [64],
+       [40],
+       [20],
+       [43],
+       [54],
+       [64],
+       [64],
+       [54],
+       [36],
+       [62],
+       [51],
+       [46]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">Xtrain</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">Xtrain</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">hue</span><span class="o">=</span><span class="n">ytrain</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">svc_model</span><span class="o">.</span><span class="n">support_vectors_</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">svc_model</span><span class="o">.</span><span class="n">support_vectors_</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/anaconda3/lib/python3.8/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">36</span><span class="o">-</span><span class="mi">99</span><span class="n">f14a9f3bb8</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">Xtrain</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">Xtrain</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">hue</span><span class="o">=</span><span class="n">ytrain</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">svc_model</span><span class="o">.</span><span class="n">support_vectors_</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">svc_model</span><span class="o">.</span><span class="n">support_vectors_</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+
+<span class="ne">IndexError</span>: index 1 is out of bounds for axis 1 with size 1
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture16_binary_classification_2_74_2.png" src="../_images/s21_Lecture16_binary_classification_2_74_2.png" />
+</div>
+</div>
+<p>Alterantively, we can plot our margin using the coef_ and intercept_ of the model.</p>
+<p>Note: this is specific to linear SVC</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">svc_model</span><span class="o">.</span><span class="n">coef_</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">svc_model</span><span class="o">.</span><span class="n">intercept_</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-1.])
+</pre></div>
+</div>
+</div>
+</div>
+<p>To use the coef_ and intercept, we need to do a few things. First, let’s pull out the coefficents, which are basically weights</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">w</span> <span class="o">=</span> <span class="n">svc_model</span><span class="o">.</span><span class="n">coef_</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Dividing them basically gets us a slope</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">slope</span> <span class="o">=</span> <span class="o">-</span><span class="n">w</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="n">w</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">slope</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">40</span><span class="o">-</span><span class="mf">01325e4</span><span class="n">d6f2a</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">slope</span> <span class="o">=</span> <span class="o">-</span><span class="n">w</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="n">w</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="n">slope</span><span class="p">)</span>
+
+<span class="ne">IndexError</span>: index 1 is out of bounds for axis 0 with size 1
+</pre></div>
+</div>
+</div>
+</div>
+<p>Our intercept needs to be adjusted by the weight of the y-axis</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">intercept</span> <span class="o">=</span> <span class="o">-</span><span class="n">svc_model</span><span class="o">.</span><span class="n">intercept_</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">w</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">intercept</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">41</span><span class="o">-</span><span class="mi">0016</span><span class="n">cb6baaee</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">intercept</span> <span class="o">=</span> <span class="o">-</span><span class="n">svc_model</span><span class="o">.</span><span class="n">intercept_</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">w</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="n">intercept</span><span class="p">)</span>
+
+<span class="ne">IndexError</span>: index 1 is out of bounds for axis 0 with size 1
+</pre></div>
+</div>
+</div>
+</div>
+<p>Then, using Xtrain as the X in our y = m*x + b equation, we can derive our line</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">yy</span> <span class="o">=</span> <span class="n">slope</span> <span class="o">*</span> <span class="n">Xtrain</span><span class="p">[</span><span class="s1">&#39;displacement&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">intercept</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">42</span><span class="o">-</span><span class="n">cb9307fb7652</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">yy</span> <span class="o">=</span> <span class="n">slope</span> <span class="o">*</span> <span class="n">Xtrain</span><span class="p">[</span><span class="s1">&#39;displacement&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">intercept</span>
+
+<span class="ne">NameError</span>: name &#39;slope&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s put this all on the plot</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">Xtrain</span><span class="p">[</span><span class="s1">&#39;displacement&#39;</span><span class="p">],</span> <span class="n">Xtrain</span><span class="p">[</span><span class="s1">&#39;mpg&#39;</span><span class="p">],</span> <span class="n">hue</span><span class="o">=</span><span class="n">ytrain</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Xtrain</span><span class="p">[</span><span class="s1">&#39;displacement&#39;</span><span class="p">],</span> <span class="n">yy</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">svc_model</span><span class="o">.</span><span class="n">support_vectors_</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">svc_model</span><span class="o">.</span><span class="n">support_vectors_</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">50</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">43</span><span class="o">-</span><span class="mi">27</span><span class="n">a1c25d1215</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">Xtrain</span><span class="p">[</span><span class="s1">&#39;displacement&#39;</span><span class="p">],</span> <span class="n">Xtrain</span><span class="p">[</span><span class="s1">&#39;mpg&#39;</span><span class="p">],</span> <span class="n">hue</span><span class="o">=</span><span class="n">ytrain</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Xtrain</span><span class="p">[</span><span class="s1">&#39;displacement&#39;</span><span class="p">],</span> <span class="n">yy</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">svc_model</span><span class="o">.</span><span class="n">support_vectors_</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">svc_model</span><span class="o">.</span><span class="n">support_vectors_</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">50</span><span class="p">])</span>
+
+<span class="ne">IndexError</span>: only integers, slices (`:`), ellipsis (`...`), numpy.newaxis (`None`) and integer or boolean arrays are valid indices
+</pre></div>
+</div>
+</div>
+</div>
+<p>Looks good!</p>
+<p>We can do this with the testing data too to get a feel for how well it separated it</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">yy</span> <span class="o">=</span> <span class="n">slope</span> <span class="o">*</span> <span class="n">Xtest</span><span class="p">[</span><span class="s1">&#39;displacement&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">intercept</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">Xtest</span><span class="p">[</span><span class="s1">&#39;displacement&#39;</span><span class="p">],</span> <span class="n">Xtest</span><span class="p">[</span><span class="s1">&#39;mpg&#39;</span><span class="p">],</span> <span class="n">hue</span><span class="o">=</span><span class="n">ytest</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Xtest</span><span class="p">[</span><span class="s1">&#39;displacement&#39;</span><span class="p">],</span> <span class="n">yy</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">50</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">44</span><span class="o">-</span><span class="mi">02100</span><span class="n">bc927bb</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">yy</span> <span class="o">=</span> <span class="n">slope</span> <span class="o">*</span> <span class="n">Xtest</span><span class="p">[</span><span class="s1">&#39;displacement&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">intercept</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> 
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">Xtest</span><span class="p">[</span><span class="s1">&#39;displacement&#39;</span><span class="p">],</span> <span class="n">Xtest</span><span class="p">[</span><span class="s1">&#39;mpg&#39;</span><span class="p">],</span> <span class="n">hue</span><span class="o">=</span><span class="n">ytest</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Xtest</span><span class="p">[</span><span class="s1">&#39;displacement&#39;</span><span class="p">],</span> <span class="n">yy</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">50</span><span class="p">])</span>
+
+<span class="ne">NameError</span>: name &#39;slope&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here is another method to generate the margin. Its a bit more complex</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">Xtrain</span><span class="p">[</span><span class="s1">&#39;displacement&#39;</span><span class="p">],</span> <span class="n">Xtrain</span><span class="p">[</span><span class="s1">&#39;mpg&#39;</span><span class="p">],</span><span class="n">hue</span><span class="o">=</span><span class="n">ytrain</span><span class="p">)</span>
+
+<span class="c1"># create grid to evaluate model</span>
+<span class="n">xx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>  <span class="c1"># works best if you know the xlim[0] and xlim[1]</span>
+<span class="n">yy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>  <span class="c1"># works best if you know the ylim[0] and ylim[1]</span>
+<span class="n">YY</span><span class="p">,</span> <span class="n">XX</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">yy</span><span class="p">,</span> <span class="n">xx</span><span class="p">)</span>
+<span class="n">xy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span><span class="n">XX</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">YY</span><span class="o">.</span><span class="n">ravel</span><span class="p">()])</span><span class="o">.</span><span class="n">T</span>
+<span class="n">Z</span> <span class="o">=</span> <span class="n">svc_model</span><span class="o">.</span><span class="n">decision_function</span><span class="p">(</span><span class="n">xy</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">XX</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+<span class="c1"># plot decision boundary and margins</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">XX</span><span class="p">,</span> <span class="n">YY</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+           <span class="n">linestyles</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="s1">&#39;--&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">45</span><span class="o">-</span><span class="mi">09</span><span class="n">f0ef3a5896</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">Xtrain</span><span class="p">[</span><span class="s1">&#39;displacement&#39;</span><span class="p">],</span> <span class="n">Xtrain</span><span class="p">[</span><span class="s1">&#39;mpg&#39;</span><span class="p">],</span><span class="n">hue</span><span class="o">=</span><span class="n">ytrain</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> 
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># create grid to evaluate model</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">xx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>  <span class="c1"># works best if you know the xlim[0] and xlim[1]</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">yy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>  <span class="c1"># works best if you know the ylim[0] and ylim[1]</span>
+
+<span class="ne">IndexError</span>: only integers, slices (`:`), ellipsis (`...`), numpy.newaxis (`None`) and integer or boolean arrays are valid indices
+</pre></div>
+</div>
+</div>
+</div>
+<p>That’s pretty much most of what I wanted to cover of binary classification</p>
+<p>There are other types of classification techniques (Random forest, perceptron, k-nearest neighbors) and we could certainly spend a lot more time talking about the naunces of Decision Trees and Support Vector machines.</p>
+<p>For now, I think this should give you a basic idea of how to conduct classification, what is happening, and how to evaluate the classification</p>
+<p>Next, we will cover what cross-validation is because it concerns how we conduct our machine learning</p>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Garrett_Lectures"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Ed Vul<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

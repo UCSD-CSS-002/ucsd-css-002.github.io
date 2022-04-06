@@ -1,0 +1,2445 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>We can find the rank of the values within the different columns. &#8212; UCSD CSS 2</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">UCSD CSS 2</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Welcome to CSS 2
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Course (CSS 2 Spring 2022)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/syllabus.html">
+   Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/expectations.html">
+   Expectations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/datahub.html">
+   Datahub assignments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/debugging.html">
+   Debugging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/resources.html">
+   Extracurricular Resources
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/final.html">
+   Final Project
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lectures
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/sp22/Lecture_2.html">
+   Lecture 2 (3/30/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/sp22/Lecture_3.html">
+   Lecture 3 (4/1/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/sp22/Lecture_4.html">
+   Lecture 4 (4/4/22)
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Garrett_Lectures/s21_Lecture02_NumpyPandas.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/UCSD-CSS-002/ucsd-css-002.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/UCSD-CSS-002/ucsd-css-002.github.io/issues/new?title=Issue%20on%20page%20%2FGarrett_Lectures/s21_Lecture02_NumpyPandas.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/UCSD-CSS-002/ucsd-css-002.github.io/master?urlpath=tree/Garrett_Lectures/s21_Lecture02_NumpyPandas.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   We can find the rank of the values within the different columns.
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#we-can-sort-the-indices">
+   We can sort the indices
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#describe-is-also-extremely-useful-and-will-generally-be-one-of-the-first-things-you-do-when-you-get-a-new-dataset">
+   Describe is also extremely useful and will generally be one of the first things you do when you get a new dataset
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#it-may-also-be-useful-to-see-how-many-unique-values-there-are">
+   It may also be useful to see how many unique values there are
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#just-like-in-the-arrays-we-can-turn-these-dataframes-into-boolean-values-using-logical-operations">
+   Just like in the arrays, we can turn these dataframes into boolean values using logical operations
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#this-may-be-useful-if-for-example-you-just-want-to-see-the-population-of-the-cities-with-large-areas">
+   This may be useful if, for example, you just want to see the population of the cities with large areas
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#use-can-of-course-change-the-values-of-things-in-the-dataframe-dataframes-are-mutable">
+   Use can of course change the values of things in the dataframe. DataFrames are mutable
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#here-i-m-setting-that-value-equal-to-the-column-i-m-changing-that-way-it-changes-in-the-original-dataframe">
+   Here, I’m setting that value equal to the column I’m changing, that way, it changes in the original dataframe
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#let-s-change-the-aggfunc-to-count-to-see-that-now-there-are-4-values-contributing-to-that-cell-in-the-dataframe">
+   Let’s change the aggfunc to count to see that now, there are 4 values contributing to that cell in the dataframe
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tomorrow-we-will-discuss-way-better-ways-to-visualize-your-data">
+   Tomorrow, we will discuss way better ways to visualize your data
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <p>#Using NumPY and Pandas</p>
+<p>Today will mostly be a refresher in using some basic Python and NumPy, which is useful for scientific computing and creating arrays</p>
+<p>Due this week:</p>
+<ol class="simple">
+<li><p>Quiz 1 due on Sunday (released after class on Canvas)</p></li>
+<li><p>Problem set 1 due on Sunday</p></li>
+</ol>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>a. question -&gt; should the best problem set from the students be uploaded?
+</pre></div>
+</div>
+<p>We will discuss:</p>
+<ol class="simple">
+<li><p>Creating arrays</p></li>
+<li><p>Indexing arrays</p></li>
+<li><p>Applying functions and methods to those arrays</p></li>
+<li><p>Series in Pandas</p></li>
+<li><p>Dataframes in Pandas</p></li>
+</ol>
+<p>We start with importing numpy as np, which is the conventional way to import the numpy library.</p>
+<p>Numpy adds support for large, multi-dimensional arrays and matrices, along with a large collection of high-level mathematical functions to operate on these arrays</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>First thing we will do is create an array. An array is just a structure that has the same value types. Typically, we will deal with integers or floating point numbers</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">arr1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">list1</span><span class="p">)</span>
+<span class="n">arr1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span> <span class="c1"># same thing</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can see what that array looks like using print</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">arr1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1 2 3 4 5]
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can access different parts of this array by indexing into it</p>
+<p>Just remember that Python is 0-indexed, which means the first item in the array is the 0th item</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+<p>*What would arr1[3] show us? *</p>
+<p>Here, we are slicing, which just accesses multiple portions of that array. Kind of like slicing a pie</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr1</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1, 2])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr1</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1, 2, 3])
+</pre></div>
+</div>
+</div>
+</div>
+<p><em>Will the next line of code break?</em></p>
+<p>Negative indexing is helpful if you don’t know how large your array is</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr1</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr1</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">:]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1, 2, 3, 4, 5])
+</pre></div>
+</div>
+</div>
+</div>
+<p>It may also be helpful to pass in an index as a list</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr1</span><span class="p">[[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([5, 4, 3])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr1</span><span class="p">[[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([3, 5, 4])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr1</span><span class="p">[[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([4, 4])
+</pre></div>
+</div>
+</div>
+</div>
+<p>In case indexing seems kind of strange, check out this link</p>
+<p><a class="reference external" href="https://www.quora.com/What-is-negative-index-in-Python">https://www.quora.com/What-is-negative-index-in-Python</a></p>
+<p>It is worth your time to become familiar with slicing and indexing because often many of bugs simply result from incorrect slicing/indexing</p>
+<p>With an array, there are various methods/functions we can use to interact with our data</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">arr1</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="c1"># doesn&#39;t need parentheses because it is a tuple, which is like a list that cannot be changed (immutable)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">arr1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(5,)
+(5,)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">arr1</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">arr1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.0
+3.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr1</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">arr1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+</pre></div>
+</div>
+</div>
+</div>
+<p>As I mentioned before, numpy has mathematical functions we can use on our data</p>
+<p>It may be helpful to log tranform or sqrt the values within your array</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">arr1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.        , 0.69314718, 1.09861229, 1.38629436, 1.60943791])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">arr1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1.        , 1.41421356, 1.73205081, 2.        , 2.23606798])
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also reshape the array, which will may be useful when combining arrays that have different dimensions</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr1</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">arr1</span><span class="p">,[</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1],
+       [2],
+       [3],
+       [4],
+       [5]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr1</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span> <span class="c1"># transpose is another option, though this doesn&#39;t work on 1-dimensional arrays</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1, 2, 3, 4, 5])
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can add the shape method after we reshape to see the new size of our dimensions</p>
+<p>5 rows, 1 column</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr1</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(5, 1)
+</pre></div>
+</div>
+</div>
+</div>
+<p>The shape of your data is something to be mindful of as it tells you how much data you have and the orientation of that data</p>
+<p>Of course, you can also do operations to that array, presuming the array contains integers or floating point numbers</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr1</span> <span class="o">*</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 2,  4,  6,  8, 10])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr1</span> <span class="o">**</span> <span class="mi">2</span> <span class="c1">## squaring it</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 1,  4,  9, 16, 25])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr1</span><span class="o">+</span><span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([2, 3, 4, 5, 6])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s take that last code cell and see what happens if I index into it.</p>
+<p><em>If I do arr1[0], will it return a 1 or 2?</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
+<p>Of course, adding to that array does not replace that array with the current values</p>
+<p>If I do my operation, I can create a new array with the new values</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_arr1</span> <span class="o">=</span> <span class="n">arr1</span><span class="o">+</span><span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">new_arr1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2 3 4 5 6]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s create a slightly more complicated array</p>
+<p>We are basically passing it multiple lists that are treated as separate rows</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">arr2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1 2 3]
+ [4 5 6]]
+</pre></div>
+</div>
+</div>
+</div>
+<p><em>What shape will arr2 be?</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">arr2</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2, 3)
+</pre></div>
+</div>
+</div>
+</div>
+<p>And you can index into the tuple to retrieve the number of items in the row or column</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr2</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can then apply those previous functions, but along different axes</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr2</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>21
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr2</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># axis 0 = rows</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([5, 7, 9])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr2</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># axis 1 = columns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 6, 15])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Numpy is also useful for creating empty or random arrays</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0., 0.]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1., 1.],
+       [1., 1.]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can also make arrays of random integers</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,[</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span> <span class="c1"># input arguments = low, high, size of the array</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[5, 6],
+       [6, 0]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>And arrays of random numbers</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> <span class="c1"># input arguments = size of the array</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0.27674689, -0.90359073, -0.66530607],
+       [ 0.52763445, -0.26009311, -0.89381781]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can perform operations on these arrays</p>
+<p>I’ll just create a deep copy of arr2</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr3</span> <span class="o">=</span> <span class="n">arr2</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">arr3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1 2 3]
+ [4 5 6]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">arr2</span><span class="p">,</span><span class="n">arr3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">arr2</span><span class="o">+</span><span class="n">arr3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 2  4  6]
+ [ 8 10 12]]
+[[ 2  4  6]
+ [ 8 10 12]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">arr2</span><span class="p">,</span><span class="n">arr3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 1  4  9]
+ [16 25 36]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>What you do think will happen here?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr2</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[2., 3., 4.],
+       [5., 6., 7.]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>When performing operating using two arrays, they need to have at least one dimension in commmon</p>
+<p>This takes advantage of something called “broadcasting” where python is basically doing an extra step of basically repeating the smaller array until it matches the dimension shape of the larger array</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">arr2</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">arr2</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[2. 3. 4.]
+ [5. 6. 7.]]
+[[2 3 4]
+ [5 6 7]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>One thing that will come in handy often is the ability to turn our data into boolean values (i.e., either 0 or 1)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">&gt;</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">&lt;</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">==</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">!=</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can make a boolean array from an array</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr5</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">arr5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1 2 3 4 5 6 7 8]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">boolean</span> <span class="o">=</span> <span class="n">arr5</span> <span class="o">&gt;</span> <span class="mi">4</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">boolean</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[False False False False  True  True  True  True]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">boolean</span> <span class="o">=</span> <span class="n">arr5</span> <span class="o">&gt;=</span> <span class="mi">4</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">boolean</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[False False False  True  True  True  True  True]
+</pre></div>
+</div>
+</div>
+</div>
+<p>When we slice the original array with the boolean array, it will return just the portions of the boolean labelled True</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr5</span><span class="p">[</span><span class="n">boolean</span><span class="p">]</span> <span class="c1"># &gt;= 4</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([4, 5, 6, 7, 8])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Slicing via a boolean array is a very useful way of accessing data and will be especially important in this class</p>
+<p>Now, that was a basic crash course in numpy. Let’s quickly discuss pandas now. Pandas is a library for data manipulation and analysis. In particular, it offers data structures and operations for manipulating numerical tables and time series</p>
+<p>Let’s import pandas as pd</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr5</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">8.3</span><span class="p">,</span><span class="mf">3.9</span><span class="p">,</span><span class="mf">2.7</span><span class="p">,</span><span class="mf">2.3</span><span class="p">,</span><span class="mf">1.6</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">arr5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[8.3 3.9 2.7 2.3 1.6]
+</pre></div>
+</div>
+</div>
+</div>
+<p>This new aray is nice, but each of these values has some meaning</p>
+<p>Let’s also create a list with these items</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">city_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;NYC&#39;</span><span class="p">,</span><span class="s1">&#39;LA&#39;</span><span class="p">,</span><span class="s1">&#39;Chicago&#39;</span><span class="p">,</span><span class="s1">&#39;Houston&#39;</span><span class="p">,</span><span class="s1">&#39;Phoenix&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>And let’s create a series with that array and use the city list as the index</p>
+<p>These numbers correspond to the city’s population (millions)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ser</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">arr5</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="n">city_list</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ser</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NYC        8.3
+LA         3.9
+Chicago    2.7
+Houston    2.3
+Phoenix    1.6
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>This looks pretty similar to arrays, except that on the left, you have those city names. This certainly helps us understand our data a bit better</p>
+<p>Can index into the series just like the array</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">ser</span><span class="p">[</span><span class="s1">&#39;NYC&#39;</span><span class="p">])</span> <span class="c1"># can index by the index name or by its number</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ser</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8.3
+8.3
+</pre></div>
+</div>
+</div>
+</div>
+<p>But let’s add a couple new cities - including the best city - San diego</p>
+<p>I’m going to create a new series with the number cities and number</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ser2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="mf">1.4</span><span class="p">],</span><span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;SD&#39;</span><span class="p">])</span> <span class="c1"># important that there are brackets around what you set index to</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">ser2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>SD    1.4
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can now append or concatenate this series with ser</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ser</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ser2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NYC        8.3
+LA         3.9
+Chicago    2.7
+Houston    2.3
+Phoenix    1.6
+SD         1.4
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Of course, just like before, this method does not replace the original one</p>
+<p>So, let’s create a new series</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ser3</span> <span class="o">=</span> <span class="n">ser</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ser2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ser3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NYC        8.3
+LA         3.9
+Chicago    2.7
+Houston    2.3
+Phoenix    1.6
+SD         1.4
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Instead of append, we could have used concat. Many times in this class, we will see multiple ways of performing the same action. I prefer pd.concat to append because you can concat lots of objects instead of just one</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">ser</span><span class="p">,</span><span class="n">ser2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NYC        8.3
+LA         3.9
+Chicago    2.7
+Houston    2.3
+Phoenix    1.6
+SD         1.4
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>To label this as population, let’s put it in a dataframe and make the columns “population”</p>
+<p>A dataframe is just a way to concatenate multiple Series next to each other to create a table</p>
+<p>See the second image (the one with apples and oranges as column headers) here:<a class="reference external" href="https://www.learndatasci.com/tutorials/python-pandas-tutorial-complete-introduction-for-beginners/">https://www.learndatasci.com/tutorials/python-pandas-tutorial-complete-introduction-for-beginners/</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dframe1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">ser3</span><span class="p">,</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Population&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">dframe1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         Population
+NYC             8.3
+LA              3.9
+Chicago         2.7
+Houston         2.3
+Phoenix         1.6
+SD              1.4
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can access specific values from this dataframe by first putting in the column name, then the index</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">dframe1</span><span class="p">[</span><span class="s1">&#39;Population&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dframe1</span><span class="p">[</span><span class="s1">&#39;Population&#39;</span><span class="p">][</span><span class="s1">&#39;NYC&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dframe1</span><span class="p">[</span><span class="s1">&#39;Population&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dframe1</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># will this last one work? &lt;- this is one difference between a 2d array and a dataframe</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NYC        8.3
+LA         3.9
+Chicago    2.7
+Houston    2.3
+Phoenix    1.6
+SD         1.4
+Name: Population, dtype: float64
+8.3
+8.3
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
+<span class="nn">/opt/anaconda3/lib/python3.8/site-packages/pandas/core/indexes/base.py</span> in <span class="ni">get_loc</span><span class="nt">(self, key, method, tolerance)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2894</span>             <span class="k">try</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">2895</span>                 <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span><span class="o">.</span><span class="n">get_loc</span><span class="p">(</span><span class="n">casted_key</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2896</span>             <span class="k">except</span> <span class="ne">KeyError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+
+<span class="nn">pandas/_libs/index.pyx</span> in <span class="ni">pandas._libs.index.IndexEngine.get_loc</span><span class="nt">()</span>
+
+<span class="nn">pandas/_libs/index.pyx</span> in <span class="ni">pandas._libs.index.IndexEngine.get_loc</span><span class="nt">()</span>
+
+<span class="nn">pandas/_libs/hashtable_class_helper.pxi</span> in <span class="ni">pandas._libs.hashtable.PyObjectHashTable.get_item</span><span class="nt">()</span>
+
+<span class="nn">pandas/_libs/hashtable_class_helper.pxi</span> in <span class="ni">pandas._libs.hashtable.PyObjectHashTable.get_item</span><span class="nt">()</span>
+
+<span class="ne">KeyError</span>: 0
+
+<span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
+
+<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">61</span><span class="o">-</span><span class="mi">0</span><span class="n">df214334933</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="n">dframe1</span><span class="p">[</span><span class="s1">&#39;Population&#39;</span><span class="p">][</span><span class="s1">&#39;NYC&#39;</span><span class="p">])</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="n">dframe1</span><span class="p">[</span><span class="s1">&#39;Population&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span><span class="n">dframe1</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># will this last one work? &lt;- this is one difference between a 2d array and a dataframe</span>
+
+<span class="nn">/opt/anaconda3/lib/python3.8/site-packages/pandas/core/frame.py</span> in <span class="ni">__getitem__</span><span class="nt">(self, key)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2900</span>             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">nlevels</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">2901</span>                 <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_getitem_multilevel</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">2902</span>             <span class="n">indexer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">get_loc</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2903</span>             <span class="k">if</span> <span class="n">is_integer</span><span class="p">(</span><span class="n">indexer</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">2904</span>                 <span class="n">indexer</span> <span class="o">=</span> <span class="p">[</span><span class="n">indexer</span><span class="p">]</span>
+
+<span class="nn">/opt/anaconda3/lib/python3.8/site-packages/pandas/core/indexes/base.py</span> in <span class="ni">get_loc</span><span class="nt">(self, key, method, tolerance)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2895</span>                 <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span><span class="o">.</span><span class="n">get_loc</span><span class="p">(</span><span class="n">casted_key</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2896</span>             <span class="k">except</span> <span class="ne">KeyError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">2897</span>                 <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">err</span>
+<span class="g g-Whitespace">   </span><span class="mi">2898</span> 
+<span class="g g-Whitespace">   </span><span class="mi">2899</span>         <span class="k">if</span> <span class="n">tolerance</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+
+<span class="ne">KeyError</span>: 0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s add another column to our dataframe. We can do this in multiple different ways. Let’s try concatenating multiple dataframes first. We will first create an array</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr6</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">301</span><span class="p">,</span><span class="mi">468</span><span class="p">,</span><span class="mi">227</span><span class="p">,</span><span class="mi">637</span><span class="p">,</span><span class="mi">517</span><span class="p">,</span><span class="mi">301</span><span class="p">])</span> <span class="c1"># SD should be 325, but I&#39;m putting it as 301 for demonstration</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">arr6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[301 468 227 637 517 301]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Before, we typed out our list of cities, but we can quickly get them from the other dataframe</p>
+<p>Let’s create a new list, but this time, we will make sure its the same as the first dataframe. You can do that by calling the index of the dataframe</p>
+<p>Index, like shape, is an attribute of the dataframe, so it doesn’t need parentheses</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">city_index</span> <span class="o">=</span> <span class="n">dframe1</span><span class="o">.</span><span class="n">index</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">city_index</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;NYC&#39;, &#39;LA&#39;, &#39;Chicago&#39;, &#39;Houston&#39;, &#39;Phoenix&#39;, &#39;SD&#39;], dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, let’s create our second data frame</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dframe2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">arr6</span><span class="p">,</span><span class="n">index</span> <span class="o">=</span> <span class="n">city_index</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Area&#39;</span><span class="p">])</span> <span class="c1"># data, then index, then columns</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">dframe2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         Area
+NYC       301
+LA        468
+Chicago   227
+Houston   637
+Phoenix   517
+SD        301
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s put these dataframes together using concat.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cities</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">dframe1</span><span class="p">,</span><span class="n">dframe2</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># axis is defaulted to 0. Important to specify it as 1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cities</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         Population  Area
+NYC             8.3   301
+LA              3.9   468
+Chicago         2.7   227
+Houston         2.3   637
+Phoenix         1.6   517
+SD              1.4   301
+</pre></div>
+</div>
+</div>
+</div>
+<p>You could do this with the insert method</p>
+<p>Note that when using insert, it DOES take the place of the original array, so I would recommend using concat</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dframe1</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;Area&#39;</span><span class="p">,</span><span class="n">arr6</span><span class="p">)</span> <span class="c1"># (place, name, then the array)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><em>Why did ‘Area’ show up before population?</em></p>
+<p>Let’s do a few things with this data frame</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cities</span><span class="o">.</span><span class="n">head</span><span class="p">()</span> <span class="c1">## Really useful for getting a snap shot of the data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Population</th>
+      <th>Area</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>NYC</th>
+      <td>8.3</td>
+      <td>301</td>
+    </tr>
+    <tr>
+      <th>LA</th>
+      <td>3.9</td>
+      <td>468</td>
+    </tr>
+    <tr>
+      <th>Chicago</th>
+      <td>2.7</td>
+      <td>227</td>
+    </tr>
+    <tr>
+      <th>Houston</th>
+      <td>2.3</td>
+      <td>637</td>
+    </tr>
+    <tr>
+      <th>Phoenix</th>
+      <td>1.6</td>
+      <td>517</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cities</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span> <span class="c1">## bottom 5 indexes</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Population</th>
+      <th>Area</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>LA</th>
+      <td>3.9</td>
+      <td>468</td>
+    </tr>
+    <tr>
+      <th>Chicago</th>
+      <td>2.7</td>
+      <td>227</td>
+    </tr>
+    <tr>
+      <th>Houston</th>
+      <td>2.3</td>
+      <td>637</td>
+    </tr>
+    <tr>
+      <th>Phoenix</th>
+      <td>1.6</td>
+      <td>517</td>
+    </tr>
+    <tr>
+      <th>SD</th>
+      <td>1.4</td>
+      <td>301</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cities</span><span class="p">[</span><span class="s1">&#39;Area&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NYC        301
+LA         468
+Chicago    227
+Houston    637
+Phoenix    517
+SD         301
+Name: Area, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cities</span><span class="p">[</span><span class="s1">&#39;Area&#39;</span><span class="p">][</span><span class="s1">&#39;NYC&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>301
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can do similar functions to what we did with arrays</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">cities</span><span class="p">)</span>
+<span class="n">cities</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Population      20.2
+Area          2451.0
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">cities</span><span class="p">)</span>
+<span class="n">cities</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Population      3.366667
+Area          408.500000
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">cities</span><span class="p">)</span>
+<span class="n">cities</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Population      8.3
+Area          637.0
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>You could also specify axis here if you want to sum over the columns, but that would just be weird</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">cities</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NYC        309.3
+LA         471.9
+Chicago    229.7
+Houston    639.3
+Phoenix    518.6
+SD         302.4
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="we-can-find-the-rank-of-the-values-within-the-different-columns">
+<h1>We can find the rank of the values within the different columns.<a class="headerlink" href="#we-can-find-the-rank-of-the-values-within-the-different-columns" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cities</span><span class="o">.</span><span class="n">rank</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Population</th>
+      <th>Area</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>NYC</th>
+      <td>6.0</td>
+      <td>2.5</td>
+    </tr>
+    <tr>
+      <th>LA</th>
+      <td>5.0</td>
+      <td>4.0</td>
+    </tr>
+    <tr>
+      <th>Chicago</th>
+      <td>4.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>Houston</th>
+      <td>3.0</td>
+      <td>6.0</td>
+    </tr>
+    <tr>
+      <th>Phoenix</th>
+      <td>2.0</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <th>SD</th>
+      <td>1.0</td>
+      <td>2.5</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="we-can-sort-the-indices">
+<h1>We can sort the indices<a class="headerlink" href="#we-can-sort-the-indices" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cities</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Population</th>
+      <th>Area</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Chicago</th>
+      <td>2.7</td>
+      <td>227</td>
+    </tr>
+    <tr>
+      <th>Houston</th>
+      <td>2.3</td>
+      <td>637</td>
+    </tr>
+    <tr>
+      <th>LA</th>
+      <td>3.9</td>
+      <td>468</td>
+    </tr>
+    <tr>
+      <th>NYC</th>
+      <td>8.3</td>
+      <td>301</td>
+    </tr>
+    <tr>
+      <th>Phoenix</th>
+      <td>1.6</td>
+      <td>517</td>
+    </tr>
+    <tr>
+      <th>SD</th>
+      <td>1.4</td>
+      <td>301</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="describe-is-also-extremely-useful-and-will-generally-be-one-of-the-first-things-you-do-when-you-get-a-new-dataset">
+<h1>Describe is also extremely useful and will generally be one of the first things you do when you get a new dataset<a class="headerlink" href="#describe-is-also-extremely-useful-and-will-generally-be-one-of-the-first-things-you-do-when-you-get-a-new-dataset" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cities</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Population</th>
+      <th>Area</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>6.000000</td>
+      <td>6.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>3.366667</td>
+      <td>408.500000</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>2.576561</td>
+      <td>157.212913</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>1.400000</td>
+      <td>227.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>1.775000</td>
+      <td>301.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>2.500000</td>
+      <td>384.500000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>3.600000</td>
+      <td>504.750000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>8.300000</td>
+      <td>637.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cities</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+Index: 6 entries, NYC to SD
+Data columns (total 2 columns):
+ #   Column      Non-Null Count  Dtype  
+---  ------      --------------  -----  
+ 0   Population  6 non-null      float64
+ 1   Area        6 non-null      int64  
+dtypes: float64(1), int64(1)
+memory usage: 304.0+ bytes
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="it-may-also-be-useful-to-see-how-many-unique-values-there-are">
+<h1>It may also be useful to see how many unique values there are<a class="headerlink" href="#it-may-also-be-useful-to-see-how-many-unique-values-there-are" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cities</span><span class="p">[</span><span class="s1">&#39;Area&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([301, 468, 227, 637, 517])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cities</span><span class="p">[</span><span class="s1">&#39;Area&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cities</span><span class="p">[</span><span class="s1">&#39;Area&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>301    2
+517    1
+468    1
+227    1
+637    1
+Name: Area, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="just-like-in-the-arrays-we-can-turn-these-dataframes-into-boolean-values-using-logical-operations">
+<h1>Just like in the arrays, we can turn these dataframes into boolean values using logical operations<a class="headerlink" href="#just-like-in-the-arrays-we-can-turn-these-dataframes-into-boolean-values-using-logical-operations" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cities</span><span class="p">[</span><span class="s1">&#39;Area&#39;</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">400</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NYC        False
+LA          True
+Chicago    False
+Houston     True
+Phoenix     True
+SD         False
+Name: Area, dtype: bool
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cities</span><span class="p">[</span><span class="s1">&#39;Population&#39;</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NYC         True
+LA          True
+Chicago     True
+Houston     True
+Phoenix    False
+SD         False
+Name: Population, dtype: bool
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="this-may-be-useful-if-for-example-you-just-want-to-see-the-population-of-the-cities-with-large-areas">
+<h1>This may be useful if, for example, you just want to see the population of the cities with large areas<a class="headerlink" href="#this-may-be-useful-if-for-example-you-just-want-to-see-the-population-of-the-cities-with-large-areas" title="Permalink to this headline">¶</a></h1>
+<p><em>What will come out here?</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cities</span><span class="p">[</span><span class="n">cities</span><span class="p">[</span><span class="s1">&#39;Area&#39;</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">400</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Population</th>
+      <th>Area</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>LA</th>
+      <td>3.9</td>
+      <td>468</td>
+    </tr>
+    <tr>
+      <th>Houston</th>
+      <td>2.3</td>
+      <td>637</td>
+    </tr>
+    <tr>
+      <th>Phoenix</th>
+      <td>1.6</td>
+      <td>517</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="use-can-of-course-change-the-values-of-things-in-the-dataframe-dataframes-are-mutable">
+<h1>Use can of course change the values of things in the dataframe. DataFrames are mutable<a class="headerlink" href="#use-can-of-course-change-the-values-of-things-in-the-dataframe-dataframes-are-mutable" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="here-i-m-setting-that-value-equal-to-the-column-i-m-changing-that-way-it-changes-in-the-original-dataframe">
+<h1>Here, I’m setting that value equal to the column I’m changing, that way, it changes in the original dataframe<a class="headerlink" href="#here-i-m-setting-that-value-equal-to-the-column-i-m-changing-that-way-it-changes-in-the-original-dataframe" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cities</span><span class="p">[</span><span class="s1">&#39;Population&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">cities</span><span class="p">[</span><span class="s1">&#39;Population&#39;</span><span class="p">]</span><span class="o">*</span><span class="mi">1000000</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cities</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         Population  Area
+NYC       8300000.0   301
+LA        3900000.0   468
+Chicago   2700000.0   227
+Houston   2300000.0   637
+Phoenix   1600000.0   517
+SD        1400000.0   301
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can pull out just two of the columns in the following way. This will be useful later when we load in a large dataset with many columns, but we only care about a few of those columns</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cities</span><span class="p">[[</span><span class="s1">&#39;Area&#39;</span><span class="p">,</span> <span class="s1">&#39;Population&#39;</span><span class="p">]]</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Area</th>
+      <th>Population</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>NYC</th>
+      <td>301</td>
+      <td>8300000.0</td>
+    </tr>
+    <tr>
+      <th>LA</th>
+      <td>468</td>
+      <td>3900000.0</td>
+    </tr>
+    <tr>
+      <th>Chicago</th>
+      <td>227</td>
+      <td>2700000.0</td>
+    </tr>
+    <tr>
+      <th>Houston</th>
+      <td>637</td>
+      <td>2300000.0</td>
+    </tr>
+    <tr>
+      <th>Phoenix</th>
+      <td>517</td>
+      <td>1600000.0</td>
+    </tr>
+    <tr>
+      <th>SD</th>
+      <td>301</td>
+      <td>1400000.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Finally, let’s remove LA from our dataframe. You could do that in a couple ways</p>
+<p>Drop is probably the easiest</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cities</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="s1">&#39;LA&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Population</th>
+      <th>Area</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>NYC</th>
+      <td>8300000.0</td>
+      <td>301</td>
+    </tr>
+    <tr>
+      <th>Chicago</th>
+      <td>2700000.0</td>
+      <td>227</td>
+    </tr>
+    <tr>
+      <th>Houston</th>
+      <td>2300000.0</td>
+      <td>637</td>
+    </tr>
+    <tr>
+      <th>Phoenix</th>
+      <td>1600000.0</td>
+      <td>517</td>
+    </tr>
+    <tr>
+      <th>SD</th>
+      <td>1400000.0</td>
+      <td>301</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>You could do something like this, where you create boolean values and find the indices you want to keep</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">boolean_index</span> <span class="o">=</span> <span class="n">cities</span><span class="p">[</span><span class="s1">&#39;Area&#39;</span><span class="p">]</span><span class="o">!=</span><span class="mi">468</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">boolean_index</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NYC         True
+LA         False
+Chicago     True
+Houston     True
+Phoenix     True
+SD          True
+Name: Area, dtype: bool
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cities2</span> <span class="o">=</span> <span class="n">cities</span><span class="p">[</span><span class="n">boolean_index</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cities2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         Population  Area
+NYC       8300000.0   301
+Chicago   2700000.0   227
+Houston   2300000.0   637
+Phoenix   1600000.0   517
+SD        1400000.0   301
+</pre></div>
+</div>
+</div>
+</div>
+<p>One last thing that may be useful is to create a pivot table. Pivot tables are extremely helpful for quickly looking at data in excel and we can create them here as well</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cities3</span> <span class="o">=</span> <span class="n">cities2</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cities3</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;West Coast?&#39;</span><span class="p">,[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cities3</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>West Coast?</th>
+      <th>Population</th>
+      <th>Area</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>NYC</th>
+      <td>0</td>
+      <td>8300000.0</td>
+      <td>301</td>
+    </tr>
+    <tr>
+      <th>Chicago</th>
+      <td>0</td>
+      <td>2700000.0</td>
+      <td>227</td>
+    </tr>
+    <tr>
+      <th>Houston</th>
+      <td>0</td>
+      <td>2300000.0</td>
+      <td>637</td>
+    </tr>
+    <tr>
+      <th>Phoenix</th>
+      <td>1</td>
+      <td>1600000.0</td>
+      <td>517</td>
+    </tr>
+    <tr>
+      <th>SD</th>
+      <td>1</td>
+      <td>1400000.0</td>
+      <td>301</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_city_index</span> <span class="o">=</span> <span class="n">cities3</span><span class="o">.</span><span class="n">index</span>
+<span class="n">pivot</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">cities3</span><span class="p">,</span><span class="n">values</span><span class="o">=</span><span class="s1">&#39;Population&#39;</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="n">new_city_index</span><span class="p">,</span><span class="n">columns</span><span class="o">=</span><span class="s1">&#39;West Coast?&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pivot</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>West Coast?          0          1
+Chicago      2700000.0        NaN
+Houston      2300000.0        NaN
+NYC          8300000.0        NaN
+Phoenix            NaN  1600000.0
+SD                 NaN  1400000.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>A couple things are pretty obvious - we’ve keep the indices, are columns are now west coast 0 or 1, and the values in the dataframe are the population.</p>
+<p>What’s not so obvious is that it has taken the mean of these values</p>
+<p>Let me show you by changing the aggfunc to ‘count’</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pivot2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">cities3</span><span class="p">,</span><span class="n">values</span><span class="o">=</span><span class="s1">&#39;Population&#39;</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="n">new_city_index</span><span class="p">,</span><span class="n">columns</span><span class="o">=</span><span class="s1">&#39;West Coast?&#39;</span><span class="p">,</span><span class="n">aggfunc</span><span class="o">=</span><span class="s1">&#39;count&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pivot2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>West Coast?    0    1
+Chicago      1.0  NaN
+Houston      1.0  NaN
+NYC          1.0  NaN
+Phoenix      NaN  1.0
+SD           NaN  1.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Below is an example of how we pivot tables would work with a more complex dataset. Below, I’ve made multiple copies of the cities</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cities_multi</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">cities3</span><span class="p">,</span><span class="n">cities3</span><span class="o">*.</span><span class="mi">5</span><span class="p">,</span><span class="n">cities3</span><span class="o">*.</span><span class="mi">2</span><span class="p">,</span><span class="n">cities3</span><span class="o">*.</span><span class="mi">01</span><span class="p">])</span>
+<span class="n">cities_multi</span><span class="p">[</span><span class="s1">&#39;West Coast?&#39;</span><span class="p">][</span><span class="n">cities_multi</span><span class="p">[</span><span class="s1">&#39;West Coast?&#39;</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># necessary because those multiplications apply to each number in the dataframe</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cities_multi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         West Coast?  Population    Area
+NYC              0.0   8300000.0  301.00
+Chicago          0.0   2700000.0  227.00
+Houston          0.0   2300000.0  637.00
+Phoenix          1.0   1600000.0  517.00
+SD               1.0   1400000.0  301.00
+NYC              0.0   4150000.0  150.50
+Chicago          0.0   1350000.0  113.50
+Houston          0.0   1150000.0  318.50
+Phoenix          1.0    800000.0  258.50
+SD               1.0    700000.0  150.50
+NYC              0.0   1660000.0   60.20
+Chicago          0.0    540000.0   45.40
+Houston          0.0    460000.0  127.40
+Phoenix          1.0    320000.0  103.40
+SD               1.0    280000.0   60.20
+NYC              0.0     83000.0    3.01
+Chicago          0.0     27000.0    2.27
+Houston          0.0     23000.0    6.37
+Phoenix          1.0     16000.0    5.17
+SD               1.0     14000.0    3.01
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="let-s-change-the-aggfunc-to-count-to-see-that-now-there-are-4-values-contributing-to-that-cell-in-the-dataframe">
+<h1>Let’s change the aggfunc to count to see that now, there are 4 values contributing to that cell in the dataframe<a class="headerlink" href="#let-s-change-the-aggfunc-to-count-to-see-that-now-there-are-4-values-contributing-to-that-cell-in-the-dataframe" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_city_index2</span> <span class="o">=</span> <span class="n">cities_multi</span><span class="o">.</span><span class="n">index</span>
+<span class="n">pivot2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">cities_multi</span><span class="p">,</span><span class="n">values</span><span class="o">=</span><span class="s1">&#39;Population&#39;</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="n">new_city_index2</span><span class="p">,</span><span class="n">columns</span><span class="o">=</span><span class="s1">&#39;West Coast?&#39;</span><span class="p">,</span><span class="n">aggfunc</span><span class="o">=</span><span class="s1">&#39;count&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pivot2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>West Coast?  0.0  1.0
+Chicago      4.0  NaN
+Houston      4.0  NaN
+NYC          4.0  NaN
+Phoenix      NaN  4.0
+SD           NaN  4.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we can change it to mean, median, etc to quickly look at how groupings affect our data</p>
+<p>For example, imagine you ran a study where 10 participants complicated 50 trials of two different conditions. Using a pivot table, you could quickly examine the mean/median for each subject between the different groups</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pivot2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">cities_multi</span><span class="p">,</span><span class="n">values</span><span class="o">=</span><span class="s1">&#39;Population&#39;</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="n">new_city_index2</span><span class="p">,</span><span class="n">columns</span><span class="o">=</span><span class="s1">&#39;West Coast?&#39;</span><span class="p">,</span><span class="n">aggfunc</span><span class="o">=</span><span class="s1">&#39;median&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pivot2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pivot2</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>West Coast?        0.0       1.0
+Chicago       945000.0       NaN
+Houston       805000.0       NaN
+NYC          2905000.0       NaN
+Phoenix            NaN  560000.0
+SD                 NaN  490000.0
+West Coast?
+0.0    1.551667e+06
+1.0    5.250000e+05
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Side note - because these are dataframes, you can do all the stuff above with the pivot table - eg, describe()</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pivot</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>West Coast?</th>
+      <th>0</th>
+      <th>1</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>3.000000e+00</td>
+      <td>2.000000e+00</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>4.433333e+06</td>
+      <td>1.500000e+06</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>3.354599e+06</td>
+      <td>1.414214e+05</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>2.300000e+06</td>
+      <td>1.400000e+06</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>2.500000e+06</td>
+      <td>1.450000e+06</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>2.700000e+06</td>
+      <td>1.500000e+06</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>5.500000e+06</td>
+      <td>1.550000e+06</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>8.300000e+06</td>
+      <td>1.600000e+06</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>The last thing I want to discuss is that dataframes can do some simple plots</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cities3</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span> <span class="c1"># ylim=[0,5]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture02_NumpyPandas_168_1.png" src="../_images/s21_Lecture02_NumpyPandas_168_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cities3</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;box&#39;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture02_NumpyPandas_169_1.png" src="../_images/s21_Lecture02_NumpyPandas_169_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cities3</span><span class="p">[</span><span class="s1">&#39;Area&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">)</span> <span class="c1"># histogram</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:ylabel=&#39;Frequency&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture02_NumpyPandas_170_1.png" src="../_images/s21_Lecture02_NumpyPandas_170_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="tomorrow-we-will-discuss-way-better-ways-to-visualize-your-data">
+<h1>Tomorrow, we will discuss way better ways to visualize your data<a class="headerlink" href="#tomorrow-we-will-discuss-way-better-ways-to-visualize-your-data" title="Permalink to this headline">¶</a></h1>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Garrett_Lectures"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Ed Vul<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

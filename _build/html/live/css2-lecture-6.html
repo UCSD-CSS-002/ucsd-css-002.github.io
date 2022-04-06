@@ -1,0 +1,3247 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modeling data part 2 &#8212; UCSD CSS 2</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">UCSD CSS 2</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Welcome to CSS 2
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Course (CSS 2 Spring 2022)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/syllabus.html">
+   Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/expectations.html">
+   Expectations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/datahub.html">
+   Datahub assignments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/debugging.html">
+   Debugging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/resources.html">
+   Extracurricular Resources
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/final.html">
+   Final Project
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lectures
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/sp22/Lecture_2.html">
+   Lecture 2 (3/30/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/sp22/Lecture_3.html">
+   Lecture 3 (4/1/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/sp22/Lecture_4.html">
+   Lecture 4 (4/4/22)
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/live/css2-lecture-6.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/UCSD-CSS-002/ucsd-css-002.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/UCSD-CSS-002/ucsd-css-002.github.io/issues/new?title=Issue%20on%20page%20%2Flive/css2-lecture-6.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/UCSD-CSS-002/ucsd-css-002.github.io/master?urlpath=tree/live/css2-lecture-6.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#from-last-time">
+   From last time:
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#model">
+     model:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#model-parameters">
+     model parameters:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#loss-function">
+     loss function:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fitting-a-model">
+     fitting a model:
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#review-live-code-example">
+   Review live code example
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gradient-descent-optimization">
+   Gradient descent optimization
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-s-a-gradient">
+     What’s a gradient?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gradient">
+     Gradient
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gradient-descent">
+     Gradient descent
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gradient-descent-and-learning-rate">
+     Gradient descent and learning rate
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gradient-descent-for-us">
+     Gradient descent for us:
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#overfitting">
+   Overfitting
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#model-complexity">
+     Model “complexity”
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#training-loss-as-a-function-of-order">
+     Training loss as a function of order
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#loss-on-new-data">
+     Loss on
+     <em>
+      new
+     </em>
+     data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Overfitting
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cross-validation">
+     Cross validation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#train-test-split">
+     train test split
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Gradient descent
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Model complexity
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     Overfitting
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     Cross-validation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cross-validation-subtleties">
+   Cross validation subtleties:
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#variations">
+     Variations:
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="modeling-data-part-2">
+<h1>Modeling data part 2<a class="headerlink" href="#modeling-data-part-2" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="from-last-time">
+<h2>From last time:<a class="headerlink" href="#from-last-time" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="model">
+<h3>model:<a class="headerlink" href="#model" title="Permalink to this headline">¶</a></h3>
+<p><strong>what is the structure of our model?</strong></p>
+<p>e.g., linear regression</p>
+</div>
+<div class="section" id="model-parameters">
+<h3>model parameters:<a class="headerlink" href="#model-parameters" title="Permalink to this headline">¶</a></h3>
+<p><strong>what knobs does the model have?</strong></p>
+<p>e.g., slope, intercept</p>
+</div>
+<div class="section" id="loss-function">
+<h3>loss function:<a class="headerlink" href="#loss-function" title="Permalink to this headline">¶</a></h3>
+<p><strong>how badly does the model perform?</strong></p>
+<p>e.g., mean squared error, mean absolute error, proportion imperfect match, etc.</p>
+</div>
+<div class="section" id="fitting-a-model">
+<h3>fitting a model:<a class="headerlink" href="#fitting-a-model" title="Permalink to this headline">¶</a></h3>
+<p><strong>what parameter values minimize loss?</strong></p>
+<p>done via optimization algorithms,</p>
+<p>e.g., brute force grid search, random search, gradient descent.</p>
+</div>
+</div>
+<div class="section" id="review-live-code-example">
+<h2>Review live code example<a class="headerlink" href="#review-live-code-example" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">48</span><span class="p">,</span> <span class="mi">96</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">n</span><span class="p">)</span>
+
+<span class="n">cnt</span><span class="p">,</span> <span class="n">bins</span><span class="p">,</span> <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/css2-lecture-6_2_0.png" src="../_images/css2-lecture-6_2_0.png" />
+</div>
+</div>
+<p>Consider the following model/parameters/loss.  Let’s write functions to do each.</p>
+<p><strong>model</strong></p>
+<p><span class="math notranslate nohighlight">\(\hat y = m\)</span></p>
+<p><strong>parameters:</strong></p>
+<p><span class="math notranslate nohighlight">\(m\)</span></p>
+<p><strong>loss:</strong></p>
+<p><span class="math notranslate nohighlight">\(\mathrm{loss}(\hat y, y) = \frac{1}{n} \sum_{i=0}^{n} (\hat y_i - y_i)^2\)</span></p>
+<p><span class="math notranslate nohighlight">\(\mathrm{loss}(m) = \frac{1}{n} \sum_{i=0}^{n} (m - y_i)^2\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># what arguments should each function take?</span>
+<span class="c1"># what should it do / return?</span>
+
+<span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;returns predicted y given parameters&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">m</span>
+    
+<span class="k">def</span> <span class="nf">loss</span><span class="p">(</span><span class="n">y_hat</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;returns mse loss of predicted y relative to observed y&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">((</span><span class="n">y_hat</span> <span class="o">-</span> <span class="n">y</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+    
+<span class="k">def</span> <span class="nf">evaluate_parameters</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;returns mse loss for parameter m, relative to observed y&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">loss</span><span class="p">(</span><span class="n">predict</span><span class="p">(</span><span class="n">m</span><span class="p">),</span> <span class="n">y</span><span class="p">)</span>
+    
+<span class="k">def</span> <span class="nf">fit</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;returns best fitting parameters given some observed y values&quot;&quot;&quot;</span>
+    
+    <span class="n">best_loss</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">best_m</span> <span class="o">=</span> <span class="kc">None</span>
+    
+    <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">y</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">y</span><span class="p">),</span> <span class="mi">1000</span><span class="p">):</span>
+        <span class="n">current_loss</span> <span class="o">=</span> <span class="n">evaluate_parameters</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="n">best_loss</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">current_loss</span> <span class="o">&lt;</span> <span class="n">best_loss</span><span class="p">:</span>
+            <span class="n">best_loss</span> <span class="o">=</span> <span class="n">current_loss</span>
+            <span class="n">best_m</span> <span class="o">=</span> <span class="n">m</span>
+    
+    <span class="k">return</span> <span class="n">best_m</span>
+    
+    
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fit</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>71.42942942942943
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="gradient-descent-optimization">
+<h2>Gradient descent optimization<a class="headerlink" href="#gradient-descent-optimization" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="what-s-a-gradient">
+<h3>What’s a gradient?<a class="headerlink" href="#what-s-a-gradient" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">all_ms</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">48</span><span class="p">,</span><span class="mi">96</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">all_ms</span><span class="p">,</span> 
+         <span class="n">np</span><span class="o">.</span><span class="n">vectorize</span><span class="p">(</span><span class="k">lambda</span> <span class="n">m</span><span class="p">:</span> <span class="p">((</span><span class="n">y</span><span class="o">-</span><span class="n">m</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span><span class="o">.</span><span class="n">mean</span><span class="p">())(</span><span class="n">all_ms</span><span class="p">))</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;m&#39;</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;loss&#39;</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;MSE loss function for $\hat y = m$&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/css2-lecture-6_8_0.png" src="../_images/css2-lecture-6_8_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="gradient">
+<h3>Gradient<a class="headerlink" href="#gradient" title="Permalink to this headline">¶</a></h3>
+<p>The partial derivative of the loss function with respect to the parameters.</p>
+<p><span class="math notranslate nohighlight">\(\mathrm{loss}(m) = \frac{1}{n} \sum_{i=0}^{n} (m - y_i)^2\)</span></p>
+<p>This is usually calculated via liberal use of the <a class="reference external" href="https://en.wikipedia.org/wiki/Chain_rule">chain rule</a></p>
+<p><span class="math notranslate nohighlight">\(\frac{\partial \mathrm{loss}(m)}{\partial m} = \frac{1}{n} \sum_{i=0}^{n}  2 (m - y_i)\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gradient</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;partial derivative of mse loss wrt constant prediction&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">m</span><span class="o">-</span><span class="n">y</span><span class="p">))</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">all_ms</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">vectorize</span><span class="p">(</span><span class="k">lambda</span> <span class="n">m</span><span class="p">:</span> <span class="n">gradient</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">y</span><span class="p">))(</span><span class="n">all_ms</span><span class="p">))</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;m&#39;</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;gradient of loss wrt m&#39;</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;gradient of MSE loss function for $\hat y = m$&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/css2-lecture-6_11_0.png" src="../_images/css2-lecture-6_11_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="gradient-descent">
+<h3>Gradient descent<a class="headerlink" href="#gradient-descent" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p>pick a starting value of parameters</p></li>
+<li><p>find gradient for current parameter values</p></li>
+<li><p>shift parameters in direction of gradient, by some step size (learning rate).</p></li>
+<li><p>repeat steps 1 and 2… until….</p></li>
+</ol>
+<p>Optional variations:</p>
+<p>…until: some number of steps have been taken</p>
+<p>…until: improvement is small</p>
+<p>learning rate reduces over time.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gradient_descent</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">learning_rate</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">):</span>
+    <span class="n">current_m</span> <span class="o">=</span> <span class="mi">0</span>
+    
+    <span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+        <span class="n">current_gradient</span> <span class="o">=</span> <span class="n">gradient</span><span class="p">(</span><span class="n">current_m</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+        
+        <span class="n">current_m</span> <span class="o">=</span> <span class="n">current_m</span> <span class="o">-</span> <span class="n">learning_rate</span><span class="o">*</span><span class="n">current_gradient</span>
+    
+    <span class="k">return</span> <span class="n">current_m</span>
+
+<span class="n">gradient_descent</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>71.40999998545351
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">loss</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">((</span><span class="n">y</span><span class="o">-</span><span class="n">m</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ms</span> <span class="o">=</span> <span class="p">[</span><span class="mi">50</span><span class="p">]</span>
+<span class="n">losses</span> <span class="o">=</span> <span class="p">[</span><span class="n">loss</span><span class="p">(</span><span class="n">ms</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="n">y</span><span class="p">)]</span>
+
+<span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+    <span class="n">ms</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ms</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="mf">0.1</span><span class="o">*</span><span class="n">gradient</span><span class="p">(</span><span class="n">ms</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">y</span><span class="p">))</span>
+    <span class="n">losses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">loss</span><span class="p">(</span><span class="n">ms</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="n">y</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">all_ms</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">vectorize</span><span class="p">(</span><span class="k">lambda</span> <span class="n">m</span><span class="p">:</span> <span class="p">((</span><span class="n">y</span><span class="o">-</span><span class="n">m</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span><span class="o">.</span><span class="n">mean</span><span class="p">())(</span><span class="n">all_ms</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ms</span><span class="p">,</span> <span class="n">losses</span><span class="p">,</span> <span class="s1">&#39;ko-&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;m&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;loss&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;trace of gradient descent&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;trace of gradient descent&#39;)
+</pre></div>
+</div>
+<img alt="../_images/css2-lecture-6_16_1.png" src="../_images/css2-lecture-6_16_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="gradient-descent-and-learning-rate">
+<h3>Gradient descent and learning rate<a class="headerlink" href="#gradient-descent-and-learning-rate" title="Permalink to this headline">¶</a></h3>
+<p>Different regimes:</p>
+<ul class="simple">
+<li><p>appropriate (rapidly dampening)</p></li>
+<li><p>too small (slow learning)</p></li>
+<li><p>too big (diverges!)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ms</span> <span class="o">=</span> <span class="p">[</span><span class="mi">50</span><span class="p">]</span>
+<span class="n">losses</span> <span class="o">=</span> <span class="p">[</span><span class="n">loss</span><span class="p">(</span><span class="n">ms</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="n">y</span><span class="p">)]</span>
+
+<span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+    <span class="n">ms</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ms</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="mf">0.1</span><span class="o">*</span><span class="n">gradient</span><span class="p">(</span><span class="n">ms</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">y</span><span class="p">))</span>
+    <span class="n">losses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">loss</span><span class="p">(</span><span class="n">ms</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="n">y</span><span class="p">))</span>
+    
+    
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">all_ms</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">vectorize</span><span class="p">(</span><span class="k">lambda</span> <span class="n">m</span><span class="p">:</span> <span class="p">((</span><span class="n">y</span><span class="o">-</span><span class="n">m</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span><span class="o">.</span><span class="n">mean</span><span class="p">())(</span><span class="n">all_ms</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ms</span><span class="p">,</span> <span class="n">losses</span><span class="p">,</span> <span class="s1">&#39;ko-&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;m&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;loss&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;trace of gradient descent&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;trace of gradient descent&#39;)
+</pre></div>
+</div>
+<img alt="../_images/css2-lecture-6_18_1.png" src="../_images/css2-lecture-6_18_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="gradient-descent-for-us">
+<h3>Gradient descent for us:<a class="headerlink" href="#gradient-descent-for-us" title="Permalink to this headline">¶</a></h3>
+<p>Understand roughly what the gradient is.</p>
+<p>Understand what the learning rate is, to be able to tweak it.</p>
+<p>I will not ask you to do calculus.</p>
+</div>
+</div>
+<div class="section" id="overfitting">
+<h2>Overfitting<a class="headerlink" href="#overfitting" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">generate_y</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="mi">50</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">generate_y</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;y&#39;)
+</pre></div>
+</div>
+<img alt="../_images/css2-lecture-6_21_1.png" src="../_images/css2-lecture-6_21_1.png" />
+</div>
+</div>
+<div class="section" id="model-complexity">
+<h3>Model “complexity”<a class="headerlink" href="#model-complexity" title="Permalink to this headline">¶</a></h3>
+<p>With polynomials</p>
+<p>e.g.,</p>
+<p>0th order: <span class="math notranslate nohighlight">\(\hat y = b_0 x^0 = \hat y = b_0\)</span></p>
+<p>1st order: <span class="math notranslate nohighlight">\(\hat y = b_0 x^0 +  b_1 x^1\)</span></p>
+<p>2nd order: <span class="math notranslate nohighlight">\(\hat y = b_0 x^0 +  b_1 x^1 +  b_2 x^2\)</span></p>
+<p>3rd order: <span class="math notranslate nohighlight">\(\hat y = b_0 x^0 +  b_1 x^1 +  b_2 x^2 +  b_3 x^3\)</span></p>
+<p>kth order: <span class="math notranslate nohighlight">\(\hat y = \sum_{i=0}^k b_k x^k\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">all_xs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">poly_predict</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">coefs</span><span class="p">):</span>
+    <span class="n">prediction</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">order</span><span class="p">,</span><span class="n">coef</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">reversed</span><span class="p">(</span><span class="n">coefs</span><span class="p">)):</span>
+        <span class="n">prediction</span> <span class="o">+=</span> <span class="n">x</span><span class="o">**</span><span class="n">order</span> <span class="o">*</span> <span class="n">coef</span>
+    <span class="k">return</span> <span class="n">prediction</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">coefs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="mi">9</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">coefs</span><span class="p">)</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">all_xs</span><span class="p">,</span> <span class="n">poly_predict</span><span class="p">(</span><span class="n">all_xs</span><span class="p">,</span> <span class="n">coefs</span><span class="p">),</span> <span class="s1">&#39;r-&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 1.61146346e-13  3.32061391e-11  7.98739951e-10 -1.96272781e-07
+ -8.80060314e-06  2.93099001e-04  9.32035598e-03 -2.42244626e-01
+  4.75382342e+00  1.16945779e+01]
+</pre></div>
+</div>
+<img alt="../_images/css2-lecture-6_24_1.png" src="../_images/css2-lecture-6_24_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="training-loss-as-a-function-of-order">
+<h3>Training loss as a function of order<a class="headerlink" href="#training-loss-as-a-function-of-order" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">loss</span><span class="p">(</span><span class="n">predicted_y</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;mean squared error&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">((</span><span class="n">predicted_y</span><span class="o">-</span><span class="n">y</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+<span class="n">ks</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+<span class="n">training_loss</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">ks</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">ks</span><span class="p">:</span>
+    <span class="n">coefs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">k</span><span class="p">)</span>
+    <span class="n">training_loss</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">loss</span><span class="p">(</span><span class="n">poly_predict</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">coefs</span><span class="p">),</span><span class="n">y</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ks</span><span class="p">,</span> <span class="n">training_loss</span><span class="p">,</span> <span class="s1">&#39;ko-&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;polynomial order&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;training loss&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/css2-lecture-6_26_0.png" src="../_images/css2-lecture-6_26_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="loss-on-new-data">
+<h3>Loss on <em>new</em> data<a class="headerlink" href="#loss-on-new-data" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_xs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">new_ys</span> <span class="o">=</span> <span class="n">generate_y</span><span class="p">(</span><span class="n">new_xs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">coefs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="mi">9</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">marker</span> <span class="o">=</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">new_xs</span><span class="p">,</span> <span class="n">new_ys</span><span class="p">,</span> <span class="n">marker</span> <span class="o">=</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">all_xs</span><span class="p">,</span> <span class="n">poly_predict</span><span class="p">(</span><span class="n">all_xs</span><span class="p">,</span> <span class="n">coefs</span><span class="p">),</span> <span class="s1">&#39;r-&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f8a1f6c7490&gt;]
+</pre></div>
+</div>
+<img alt="../_images/css2-lecture-6_29_1.png" src="../_images/css2-lecture-6_29_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ks</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+<span class="n">training_loss</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">ks</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">new_data_loss</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">ks</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">ks</span><span class="p">:</span>
+    <span class="n">coefs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">k</span><span class="p">)</span>
+    <span class="n">training_loss</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">loss</span><span class="p">(</span><span class="n">poly_predict</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">coefs</span><span class="p">),</span><span class="n">y</span><span class="p">)</span>
+    <span class="n">new_data_loss</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">loss</span><span class="p">(</span><span class="n">poly_predict</span><span class="p">(</span><span class="n">new_xs</span><span class="p">,</span><span class="n">coefs</span><span class="p">),</span><span class="n">new_ys</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ks</span><span class="p">,</span> <span class="n">training_loss</span><span class="p">,</span> <span class="s1">&#39;ko-&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;polynomial order&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;loss&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;training loss&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ks</span><span class="p">,</span> <span class="n">new_data_loss</span><span class="p">,</span> <span class="s1">&#39;mo-&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;polynomial order&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;loss&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;new data loss&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/css2-lecture-6_31_0.png" src="../_images/css2-lecture-6_31_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">training_loss</span><span class="p">,</span> <span class="n">new_data_loss</span><span class="p">,</span> <span class="n">marker</span> <span class="o">=</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">training_loss</span><span class="p">[</span><span class="n">k</span><span class="p">],</span> <span class="n">new_data_loss</span><span class="p">[</span><span class="n">k</span><span class="p">],</span> <span class="nb">str</span><span class="p">(</span><span class="n">k</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="nb">min</span><span class="p">(</span><span class="n">training_loss</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">new_data_loss</span><span class="p">)],</span> <span class="p">[</span><span class="nb">min</span><span class="p">(</span><span class="n">training_loss</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">new_data_loss</span><span class="p">)],</span> <span class="s1">&#39;r-&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;training loss&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;new data loss&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;training and new data loss as a function of polynomial order&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;training and new data loss as a function of polynomial order&#39;)
+</pre></div>
+</div>
+<img alt="../_images/css2-lecture-6_32_1.png" src="../_images/css2-lecture-6_32_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="id1">
+<h3>Overfitting<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>The thing happening above is called <em>overfitting</em>.  A complicated model has many degrees of freedom to wiggle through all the data points in the training data set.  But it will be fitting <em>noise</em> not <em>signal</em>.  And, as such, will generalize to new data badly.</p>
+</div>
+<div class="section" id="cross-validation">
+<h3>Cross validation<a class="headerlink" href="#cross-validation" title="Permalink to this headline">¶</a></h3>
+<p>To <strong>evaluate</strong> a model, we want to know how well it will do on <em>new</em> data.  But we don’t have new data.  What are we to do?</p>
+<p>The answer is called “cross validation”.  We will use <em>part</em> of our data to train the model, and the rest of our data to evaluate the model.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">bf</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;bodyfat.csv&#39;</span><span class="p">)</span>
+
+<span class="n">bf</span> <span class="o">=</span> <span class="n">bf</span><span class="p">[</span><span class="n">bf</span><span class="p">[</span><span class="s1">&#39;height&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">30</span><span class="p">]</span>
+
+<span class="n">bf</span> <span class="o">=</span> <span class="n">bf</span><span class="p">[</span><span class="n">bf</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">30</span><span class="p">]</span>
+
+<span class="n">bf</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>bf.percent</th>
+      <th>age</th>
+      <th>weight</th>
+      <th>height</th>
+      <th>neck</th>
+      <th>chest</th>
+      <th>abdomen</th>
+      <th>hip</th>
+      <th>thigh</th>
+      <th>knee</th>
+      <th>ankle</th>
+      <th>bicep</th>
+      <th>forearm</th>
+      <th>wrist</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>12.3</td>
+      <td>23</td>
+      <td>154.25</td>
+      <td>67.75</td>
+      <td>36.2</td>
+      <td>93.1</td>
+      <td>85.2</td>
+      <td>94.5</td>
+      <td>59.0</td>
+      <td>37.3</td>
+      <td>21.9</td>
+      <td>32.0</td>
+      <td>27.4</td>
+      <td>17.1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>6.1</td>
+      <td>22</td>
+      <td>173.25</td>
+      <td>72.25</td>
+      <td>38.5</td>
+      <td>93.6</td>
+      <td>83.0</td>
+      <td>98.7</td>
+      <td>58.7</td>
+      <td>37.3</td>
+      <td>23.4</td>
+      <td>30.5</td>
+      <td>28.9</td>
+      <td>18.2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>25.3</td>
+      <td>22</td>
+      <td>154.00</td>
+      <td>66.25</td>
+      <td>34.0</td>
+      <td>95.8</td>
+      <td>87.9</td>
+      <td>99.2</td>
+      <td>59.6</td>
+      <td>38.9</td>
+      <td>24.0</td>
+      <td>28.8</td>
+      <td>25.2</td>
+      <td>16.6</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>10.4</td>
+      <td>26</td>
+      <td>184.75</td>
+      <td>72.25</td>
+      <td>37.4</td>
+      <td>101.8</td>
+      <td>86.4</td>
+      <td>101.2</td>
+      <td>60.1</td>
+      <td>37.3</td>
+      <td>22.8</td>
+      <td>32.4</td>
+      <td>29.4</td>
+      <td>18.2</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>28.7</td>
+      <td>24</td>
+      <td>184.25</td>
+      <td>71.25</td>
+      <td>34.4</td>
+      <td>97.3</td>
+      <td>100.0</td>
+      <td>101.9</td>
+      <td>63.2</td>
+      <td>42.2</td>
+      <td>24.0</td>
+      <td>32.2</td>
+      <td>27.7</td>
+      <td>17.7</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>20.9</td>
+      <td>24</td>
+      <td>210.25</td>
+      <td>74.75</td>
+      <td>39.0</td>
+      <td>104.5</td>
+      <td>94.4</td>
+      <td>107.8</td>
+      <td>66.0</td>
+      <td>42.0</td>
+      <td>25.6</td>
+      <td>35.7</td>
+      <td>30.6</td>
+      <td>18.8</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>19.2</td>
+      <td>26</td>
+      <td>181.00</td>
+      <td>69.75</td>
+      <td>36.4</td>
+      <td>105.1</td>
+      <td>90.7</td>
+      <td>100.3</td>
+      <td>58.4</td>
+      <td>38.3</td>
+      <td>22.9</td>
+      <td>31.9</td>
+      <td>27.8</td>
+      <td>17.7</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>12.4</td>
+      <td>25</td>
+      <td>176.00</td>
+      <td>72.50</td>
+      <td>37.8</td>
+      <td>99.6</td>
+      <td>88.5</td>
+      <td>97.1</td>
+      <td>60.0</td>
+      <td>39.4</td>
+      <td>23.2</td>
+      <td>30.5</td>
+      <td>29.0</td>
+      <td>18.8</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>4.1</td>
+      <td>25</td>
+      <td>191.00</td>
+      <td>74.00</td>
+      <td>38.1</td>
+      <td>100.9</td>
+      <td>82.5</td>
+      <td>99.9</td>
+      <td>62.9</td>
+      <td>38.3</td>
+      <td>23.8</td>
+      <td>35.9</td>
+      <td>31.1</td>
+      <td>18.2</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>11.7</td>
+      <td>23</td>
+      <td>198.25</td>
+      <td>73.50</td>
+      <td>42.1</td>
+      <td>99.6</td>
+      <td>88.6</td>
+      <td>104.1</td>
+      <td>63.1</td>
+      <td>41.7</td>
+      <td>25.0</td>
+      <td>35.6</td>
+      <td>30.0</td>
+      <td>19.2</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>7.1</td>
+      <td>26</td>
+      <td>186.25</td>
+      <td>74.50</td>
+      <td>38.5</td>
+      <td>101.5</td>
+      <td>83.6</td>
+      <td>98.2</td>
+      <td>59.7</td>
+      <td>39.7</td>
+      <td>25.2</td>
+      <td>32.8</td>
+      <td>29.4</td>
+      <td>18.5</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>7.8</td>
+      <td>27</td>
+      <td>216.00</td>
+      <td>76.00</td>
+      <td>39.4</td>
+      <td>103.6</td>
+      <td>90.9</td>
+      <td>107.7</td>
+      <td>66.2</td>
+      <td>39.2</td>
+      <td>25.9</td>
+      <td>37.2</td>
+      <td>30.2</td>
+      <td>19.0</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>16.0</td>
+      <td>28</td>
+      <td>183.75</td>
+      <td>67.75</td>
+      <td>38.0</td>
+      <td>106.8</td>
+      <td>89.6</td>
+      <td>102.4</td>
+      <td>64.2</td>
+      <td>38.7</td>
+      <td>22.9</td>
+      <td>37.2</td>
+      <td>30.5</td>
+      <td>18.5</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>19.1</td>
+      <td>28</td>
+      <td>179.00</td>
+      <td>68.00</td>
+      <td>39.1</td>
+      <td>103.3</td>
+      <td>95.9</td>
+      <td>104.9</td>
+      <td>63.5</td>
+      <td>38.0</td>
+      <td>22.1</td>
+      <td>32.5</td>
+      <td>30.3</td>
+      <td>18.4</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>15.2</td>
+      <td>28</td>
+      <td>200.50</td>
+      <td>69.75</td>
+      <td>41.3</td>
+      <td>111.4</td>
+      <td>98.8</td>
+      <td>104.8</td>
+      <td>63.4</td>
+      <td>40.6</td>
+      <td>24.6</td>
+      <td>33.0</td>
+      <td>32.8</td>
+      <td>19.9</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>14.0</td>
+      <td>28</td>
+      <td>151.25</td>
+      <td>67.75</td>
+      <td>34.5</td>
+      <td>90.2</td>
+      <td>76.3</td>
+      <td>95.8</td>
+      <td>58.4</td>
+      <td>35.5</td>
+      <td>22.9</td>
+      <td>31.1</td>
+      <td>28.0</td>
+      <td>17.6</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>3.7</td>
+      <td>27</td>
+      <td>159.25</td>
+      <td>71.50</td>
+      <td>35.7</td>
+      <td>89.6</td>
+      <td>79.7</td>
+      <td>96.5</td>
+      <td>55.0</td>
+      <td>36.7</td>
+      <td>22.5</td>
+      <td>29.9</td>
+      <td>28.2</td>
+      <td>17.7</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>3.7</td>
+      <td>27</td>
+      <td>133.25</td>
+      <td>64.75</td>
+      <td>36.4</td>
+      <td>93.5</td>
+      <td>73.9</td>
+      <td>88.5</td>
+      <td>50.1</td>
+      <td>34.5</td>
+      <td>21.3</td>
+      <td>30.5</td>
+      <td>27.9</td>
+      <td>17.2</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>8.8</td>
+      <td>29</td>
+      <td>160.75</td>
+      <td>69.00</td>
+      <td>36.7</td>
+      <td>97.4</td>
+      <td>83.5</td>
+      <td>98.7</td>
+      <td>58.9</td>
+      <td>35.3</td>
+      <td>22.6</td>
+      <td>30.1</td>
+      <td>26.7</td>
+      <td>17.6</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>5.7</td>
+      <td>29</td>
+      <td>160.25</td>
+      <td>71.25</td>
+      <td>37.3</td>
+      <td>93.5</td>
+      <td>84.5</td>
+      <td>100.6</td>
+      <td>58.5</td>
+      <td>38.8</td>
+      <td>21.5</td>
+      <td>30.1</td>
+      <td>26.4</td>
+      <td>17.9</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>11.8</td>
+      <td>27</td>
+      <td>168.00</td>
+      <td>71.25</td>
+      <td>38.1</td>
+      <td>93.0</td>
+      <td>79.1</td>
+      <td>94.5</td>
+      <td>57.3</td>
+      <td>36.2</td>
+      <td>24.5</td>
+      <td>29.0</td>
+      <td>30.0</td>
+      <td>18.8</td>
+    </tr>
+    <tr>
+      <th>143</th>
+      <td>9.4</td>
+      <td>23</td>
+      <td>159.75</td>
+      <td>72.25</td>
+      <td>35.5</td>
+      <td>92.1</td>
+      <td>77.1</td>
+      <td>93.9</td>
+      <td>56.1</td>
+      <td>36.1</td>
+      <td>22.7</td>
+      <td>30.5</td>
+      <td>27.2</td>
+      <td>18.2</td>
+    </tr>
+    <tr>
+      <th>144</th>
+      <td>10.3</td>
+      <td>23</td>
+      <td>188.15</td>
+      <td>77.50</td>
+      <td>38.0</td>
+      <td>96.6</td>
+      <td>85.3</td>
+      <td>102.5</td>
+      <td>59.1</td>
+      <td>37.6</td>
+      <td>23.2</td>
+      <td>31.8</td>
+      <td>29.7</td>
+      <td>18.3</td>
+    </tr>
+    <tr>
+      <th>145</th>
+      <td>14.2</td>
+      <td>24</td>
+      <td>156.00</td>
+      <td>70.75</td>
+      <td>35.7</td>
+      <td>92.7</td>
+      <td>81.9</td>
+      <td>95.3</td>
+      <td>56.4</td>
+      <td>36.5</td>
+      <td>22.0</td>
+      <td>33.5</td>
+      <td>28.3</td>
+      <td>17.3</td>
+    </tr>
+    <tr>
+      <th>146</th>
+      <td>19.2</td>
+      <td>24</td>
+      <td>208.50</td>
+      <td>72.75</td>
+      <td>39.2</td>
+      <td>102.0</td>
+      <td>99.1</td>
+      <td>110.1</td>
+      <td>71.2</td>
+      <td>43.5</td>
+      <td>25.2</td>
+      <td>36.1</td>
+      <td>30.3</td>
+      <td>18.7</td>
+    </tr>
+    <tr>
+      <th>147</th>
+      <td>29.6</td>
+      <td>25</td>
+      <td>206.50</td>
+      <td>69.75</td>
+      <td>40.9</td>
+      <td>110.9</td>
+      <td>100.5</td>
+      <td>106.2</td>
+      <td>68.4</td>
+      <td>40.8</td>
+      <td>24.6</td>
+      <td>33.3</td>
+      <td>29.7</td>
+      <td>18.4</td>
+    </tr>
+    <tr>
+      <th>148</th>
+      <td>5.3</td>
+      <td>25</td>
+      <td>143.75</td>
+      <td>72.50</td>
+      <td>35.2</td>
+      <td>92.3</td>
+      <td>76.5</td>
+      <td>92.1</td>
+      <td>51.9</td>
+      <td>35.7</td>
+      <td>22.0</td>
+      <td>25.8</td>
+      <td>25.2</td>
+      <td>16.9</td>
+    </tr>
+    <tr>
+      <th>149</th>
+      <td>25.2</td>
+      <td>26</td>
+      <td>223.00</td>
+      <td>70.25</td>
+      <td>40.6</td>
+      <td>114.1</td>
+      <td>106.8</td>
+      <td>113.9</td>
+      <td>67.6</td>
+      <td>42.7</td>
+      <td>24.7</td>
+      <td>36.0</td>
+      <td>30.4</td>
+      <td>18.4</td>
+    </tr>
+    <tr>
+      <th>150</th>
+      <td>9.4</td>
+      <td>26</td>
+      <td>152.25</td>
+      <td>69.00</td>
+      <td>35.4</td>
+      <td>92.9</td>
+      <td>77.6</td>
+      <td>93.5</td>
+      <td>56.9</td>
+      <td>35.9</td>
+      <td>20.4</td>
+      <td>31.6</td>
+      <td>29.0</td>
+      <td>17.8</td>
+    </tr>
+    <tr>
+      <th>151</th>
+      <td>19.6</td>
+      <td>26</td>
+      <td>241.75</td>
+      <td>74.50</td>
+      <td>41.8</td>
+      <td>108.3</td>
+      <td>102.9</td>
+      <td>114.4</td>
+      <td>72.9</td>
+      <td>43.5</td>
+      <td>25.1</td>
+      <td>38.5</td>
+      <td>33.8</td>
+      <td>19.6</td>
+    </tr>
+    <tr>
+      <th>152</th>
+      <td>10.1</td>
+      <td>27</td>
+      <td>146.00</td>
+      <td>72.25</td>
+      <td>34.1</td>
+      <td>88.5</td>
+      <td>72.8</td>
+      <td>91.1</td>
+      <td>53.6</td>
+      <td>36.8</td>
+      <td>23.8</td>
+      <td>27.8</td>
+      <td>26.3</td>
+      <td>17.4</td>
+    </tr>
+    <tr>
+      <th>153</th>
+      <td>16.5</td>
+      <td>27</td>
+      <td>156.75</td>
+      <td>67.25</td>
+      <td>37.9</td>
+      <td>94.0</td>
+      <td>88.2</td>
+      <td>95.2</td>
+      <td>56.8</td>
+      <td>37.4</td>
+      <td>22.8</td>
+      <td>30.6</td>
+      <td>28.3</td>
+      <td>17.9</td>
+    </tr>
+    <tr>
+      <th>154</th>
+      <td>21.0</td>
+      <td>27</td>
+      <td>200.25</td>
+      <td>73.50</td>
+      <td>38.2</td>
+      <td>101.1</td>
+      <td>100.1</td>
+      <td>105.0</td>
+      <td>62.1</td>
+      <td>40.0</td>
+      <td>24.9</td>
+      <td>33.7</td>
+      <td>29.2</td>
+      <td>19.4</td>
+    </tr>
+    <tr>
+      <th>155</th>
+      <td>17.3</td>
+      <td>28</td>
+      <td>171.50</td>
+      <td>75.25</td>
+      <td>35.6</td>
+      <td>92.1</td>
+      <td>83.5</td>
+      <td>98.3</td>
+      <td>57.3</td>
+      <td>37.8</td>
+      <td>21.7</td>
+      <td>32.2</td>
+      <td>27.7</td>
+      <td>17.7</td>
+    </tr>
+    <tr>
+      <th>156</th>
+      <td>31.2</td>
+      <td>28</td>
+      <td>205.75</td>
+      <td>69.00</td>
+      <td>38.5</td>
+      <td>105.6</td>
+      <td>105.0</td>
+      <td>106.4</td>
+      <td>68.6</td>
+      <td>40.0</td>
+      <td>25.2</td>
+      <td>35.2</td>
+      <td>30.7</td>
+      <td>19.1</td>
+    </tr>
+    <tr>
+      <th>157</th>
+      <td>10.0</td>
+      <td>28</td>
+      <td>182.50</td>
+      <td>72.25</td>
+      <td>37.0</td>
+      <td>98.5</td>
+      <td>90.8</td>
+      <td>102.5</td>
+      <td>60.8</td>
+      <td>38.5</td>
+      <td>25.0</td>
+      <td>31.6</td>
+      <td>28.0</td>
+      <td>18.6</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">bf</span><span class="p">[</span><span class="s1">&#39;abdomen&#39;</span><span class="p">],</span> <span class="n">bf</span><span class="p">[</span><span class="s1">&#39;bf.percent&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;abdomen circumference (cm)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;bodyfat percentage&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;bodyfat percentage&#39;)
+</pre></div>
+</div>
+<img alt="../_images/css2-lecture-6_36_1.png" src="../_images/css2-lecture-6_36_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="train-test-split">
+<h3>train test split<a class="headerlink" href="#train-test-split" title="Permalink to this headline">¶</a></h3>
+<p>split the data into a <em>training</em> set and a <em>test</em> set.</p>
+<p>let’s say we will take 50% of the data for the training set, and 50% for the test set.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bf</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>bf.percent</th>
+      <th>age</th>
+      <th>weight</th>
+      <th>height</th>
+      <th>neck</th>
+      <th>chest</th>
+      <th>abdomen</th>
+      <th>hip</th>
+      <th>thigh</th>
+      <th>knee</th>
+      <th>ankle</th>
+      <th>bicep</th>
+      <th>forearm</th>
+      <th>wrist</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>12.3</td>
+      <td>23</td>
+      <td>154.25</td>
+      <td>67.75</td>
+      <td>36.2</td>
+      <td>93.1</td>
+      <td>85.2</td>
+      <td>94.5</td>
+      <td>59.0</td>
+      <td>37.3</td>
+      <td>21.9</td>
+      <td>32.0</td>
+      <td>27.4</td>
+      <td>17.1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>6.1</td>
+      <td>22</td>
+      <td>173.25</td>
+      <td>72.25</td>
+      <td>38.5</td>
+      <td>93.6</td>
+      <td>83.0</td>
+      <td>98.7</td>
+      <td>58.7</td>
+      <td>37.3</td>
+      <td>23.4</td>
+      <td>30.5</td>
+      <td>28.9</td>
+      <td>18.2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>25.3</td>
+      <td>22</td>
+      <td>154.00</td>
+      <td>66.25</td>
+      <td>34.0</td>
+      <td>95.8</td>
+      <td>87.9</td>
+      <td>99.2</td>
+      <td>59.6</td>
+      <td>38.9</td>
+      <td>24.0</td>
+      <td>28.8</td>
+      <td>25.2</td>
+      <td>16.6</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>10.4</td>
+      <td>26</td>
+      <td>184.75</td>
+      <td>72.25</td>
+      <td>37.4</td>
+      <td>101.8</td>
+      <td>86.4</td>
+      <td>101.2</td>
+      <td>60.1</td>
+      <td>37.3</td>
+      <td>22.8</td>
+      <td>32.4</td>
+      <td>29.4</td>
+      <td>18.2</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>28.7</td>
+      <td>24</td>
+      <td>184.25</td>
+      <td>71.25</td>
+      <td>34.4</td>
+      <td>97.3</td>
+      <td>100.0</td>
+      <td>101.9</td>
+      <td>63.2</td>
+      <td>42.2</td>
+      <td>24.0</td>
+      <td>32.2</td>
+      <td>27.7</td>
+      <td>17.7</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>20.9</td>
+      <td>24</td>
+      <td>210.25</td>
+      <td>74.75</td>
+      <td>39.0</td>
+      <td>104.5</td>
+      <td>94.4</td>
+      <td>107.8</td>
+      <td>66.0</td>
+      <td>42.0</td>
+      <td>25.6</td>
+      <td>35.7</td>
+      <td>30.6</td>
+      <td>18.8</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>19.2</td>
+      <td>26</td>
+      <td>181.00</td>
+      <td>69.75</td>
+      <td>36.4</td>
+      <td>105.1</td>
+      <td>90.7</td>
+      <td>100.3</td>
+      <td>58.4</td>
+      <td>38.3</td>
+      <td>22.9</td>
+      <td>31.9</td>
+      <td>27.8</td>
+      <td>17.7</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>12.4</td>
+      <td>25</td>
+      <td>176.00</td>
+      <td>72.50</td>
+      <td>37.8</td>
+      <td>99.6</td>
+      <td>88.5</td>
+      <td>97.1</td>
+      <td>60.0</td>
+      <td>39.4</td>
+      <td>23.2</td>
+      <td>30.5</td>
+      <td>29.0</td>
+      <td>18.8</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>4.1</td>
+      <td>25</td>
+      <td>191.00</td>
+      <td>74.00</td>
+      <td>38.1</td>
+      <td>100.9</td>
+      <td>82.5</td>
+      <td>99.9</td>
+      <td>62.9</td>
+      <td>38.3</td>
+      <td>23.8</td>
+      <td>35.9</td>
+      <td>31.1</td>
+      <td>18.2</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>11.7</td>
+      <td>23</td>
+      <td>198.25</td>
+      <td>73.50</td>
+      <td>42.1</td>
+      <td>99.6</td>
+      <td>88.6</td>
+      <td>104.1</td>
+      <td>63.1</td>
+      <td>41.7</td>
+      <td>25.0</td>
+      <td>35.6</td>
+      <td>30.0</td>
+      <td>19.2</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>7.1</td>
+      <td>26</td>
+      <td>186.25</td>
+      <td>74.50</td>
+      <td>38.5</td>
+      <td>101.5</td>
+      <td>83.6</td>
+      <td>98.2</td>
+      <td>59.7</td>
+      <td>39.7</td>
+      <td>25.2</td>
+      <td>32.8</td>
+      <td>29.4</td>
+      <td>18.5</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>7.8</td>
+      <td>27</td>
+      <td>216.00</td>
+      <td>76.00</td>
+      <td>39.4</td>
+      <td>103.6</td>
+      <td>90.9</td>
+      <td>107.7</td>
+      <td>66.2</td>
+      <td>39.2</td>
+      <td>25.9</td>
+      <td>37.2</td>
+      <td>30.2</td>
+      <td>19.0</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>16.0</td>
+      <td>28</td>
+      <td>183.75</td>
+      <td>67.75</td>
+      <td>38.0</td>
+      <td>106.8</td>
+      <td>89.6</td>
+      <td>102.4</td>
+      <td>64.2</td>
+      <td>38.7</td>
+      <td>22.9</td>
+      <td>37.2</td>
+      <td>30.5</td>
+      <td>18.5</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>19.1</td>
+      <td>28</td>
+      <td>179.00</td>
+      <td>68.00</td>
+      <td>39.1</td>
+      <td>103.3</td>
+      <td>95.9</td>
+      <td>104.9</td>
+      <td>63.5</td>
+      <td>38.0</td>
+      <td>22.1</td>
+      <td>32.5</td>
+      <td>30.3</td>
+      <td>18.4</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>15.2</td>
+      <td>28</td>
+      <td>200.50</td>
+      <td>69.75</td>
+      <td>41.3</td>
+      <td>111.4</td>
+      <td>98.8</td>
+      <td>104.8</td>
+      <td>63.4</td>
+      <td>40.6</td>
+      <td>24.6</td>
+      <td>33.0</td>
+      <td>32.8</td>
+      <td>19.9</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>14.0</td>
+      <td>28</td>
+      <td>151.25</td>
+      <td>67.75</td>
+      <td>34.5</td>
+      <td>90.2</td>
+      <td>76.3</td>
+      <td>95.8</td>
+      <td>58.4</td>
+      <td>35.5</td>
+      <td>22.9</td>
+      <td>31.1</td>
+      <td>28.0</td>
+      <td>17.6</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>3.7</td>
+      <td>27</td>
+      <td>159.25</td>
+      <td>71.50</td>
+      <td>35.7</td>
+      <td>89.6</td>
+      <td>79.7</td>
+      <td>96.5</td>
+      <td>55.0</td>
+      <td>36.7</td>
+      <td>22.5</td>
+      <td>29.9</td>
+      <td>28.2</td>
+      <td>17.7</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>3.7</td>
+      <td>27</td>
+      <td>133.25</td>
+      <td>64.75</td>
+      <td>36.4</td>
+      <td>93.5</td>
+      <td>73.9</td>
+      <td>88.5</td>
+      <td>50.1</td>
+      <td>34.5</td>
+      <td>21.3</td>
+      <td>30.5</td>
+      <td>27.9</td>
+      <td>17.2</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>8.8</td>
+      <td>29</td>
+      <td>160.75</td>
+      <td>69.00</td>
+      <td>36.7</td>
+      <td>97.4</td>
+      <td>83.5</td>
+      <td>98.7</td>
+      <td>58.9</td>
+      <td>35.3</td>
+      <td>22.6</td>
+      <td>30.1</td>
+      <td>26.7</td>
+      <td>17.6</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>5.7</td>
+      <td>29</td>
+      <td>160.25</td>
+      <td>71.25</td>
+      <td>37.3</td>
+      <td>93.5</td>
+      <td>84.5</td>
+      <td>100.6</td>
+      <td>58.5</td>
+      <td>38.8</td>
+      <td>21.5</td>
+      <td>30.1</td>
+      <td>26.4</td>
+      <td>17.9</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>11.8</td>
+      <td>27</td>
+      <td>168.00</td>
+      <td>71.25</td>
+      <td>38.1</td>
+      <td>93.0</td>
+      <td>79.1</td>
+      <td>94.5</td>
+      <td>57.3</td>
+      <td>36.2</td>
+      <td>24.5</td>
+      <td>29.0</td>
+      <td>30.0</td>
+      <td>18.8</td>
+    </tr>
+    <tr>
+      <th>143</th>
+      <td>9.4</td>
+      <td>23</td>
+      <td>159.75</td>
+      <td>72.25</td>
+      <td>35.5</td>
+      <td>92.1</td>
+      <td>77.1</td>
+      <td>93.9</td>
+      <td>56.1</td>
+      <td>36.1</td>
+      <td>22.7</td>
+      <td>30.5</td>
+      <td>27.2</td>
+      <td>18.2</td>
+    </tr>
+    <tr>
+      <th>144</th>
+      <td>10.3</td>
+      <td>23</td>
+      <td>188.15</td>
+      <td>77.50</td>
+      <td>38.0</td>
+      <td>96.6</td>
+      <td>85.3</td>
+      <td>102.5</td>
+      <td>59.1</td>
+      <td>37.6</td>
+      <td>23.2</td>
+      <td>31.8</td>
+      <td>29.7</td>
+      <td>18.3</td>
+    </tr>
+    <tr>
+      <th>145</th>
+      <td>14.2</td>
+      <td>24</td>
+      <td>156.00</td>
+      <td>70.75</td>
+      <td>35.7</td>
+      <td>92.7</td>
+      <td>81.9</td>
+      <td>95.3</td>
+      <td>56.4</td>
+      <td>36.5</td>
+      <td>22.0</td>
+      <td>33.5</td>
+      <td>28.3</td>
+      <td>17.3</td>
+    </tr>
+    <tr>
+      <th>146</th>
+      <td>19.2</td>
+      <td>24</td>
+      <td>208.50</td>
+      <td>72.75</td>
+      <td>39.2</td>
+      <td>102.0</td>
+      <td>99.1</td>
+      <td>110.1</td>
+      <td>71.2</td>
+      <td>43.5</td>
+      <td>25.2</td>
+      <td>36.1</td>
+      <td>30.3</td>
+      <td>18.7</td>
+    </tr>
+    <tr>
+      <th>147</th>
+      <td>29.6</td>
+      <td>25</td>
+      <td>206.50</td>
+      <td>69.75</td>
+      <td>40.9</td>
+      <td>110.9</td>
+      <td>100.5</td>
+      <td>106.2</td>
+      <td>68.4</td>
+      <td>40.8</td>
+      <td>24.6</td>
+      <td>33.3</td>
+      <td>29.7</td>
+      <td>18.4</td>
+    </tr>
+    <tr>
+      <th>148</th>
+      <td>5.3</td>
+      <td>25</td>
+      <td>143.75</td>
+      <td>72.50</td>
+      <td>35.2</td>
+      <td>92.3</td>
+      <td>76.5</td>
+      <td>92.1</td>
+      <td>51.9</td>
+      <td>35.7</td>
+      <td>22.0</td>
+      <td>25.8</td>
+      <td>25.2</td>
+      <td>16.9</td>
+    </tr>
+    <tr>
+      <th>149</th>
+      <td>25.2</td>
+      <td>26</td>
+      <td>223.00</td>
+      <td>70.25</td>
+      <td>40.6</td>
+      <td>114.1</td>
+      <td>106.8</td>
+      <td>113.9</td>
+      <td>67.6</td>
+      <td>42.7</td>
+      <td>24.7</td>
+      <td>36.0</td>
+      <td>30.4</td>
+      <td>18.4</td>
+    </tr>
+    <tr>
+      <th>150</th>
+      <td>9.4</td>
+      <td>26</td>
+      <td>152.25</td>
+      <td>69.00</td>
+      <td>35.4</td>
+      <td>92.9</td>
+      <td>77.6</td>
+      <td>93.5</td>
+      <td>56.9</td>
+      <td>35.9</td>
+      <td>20.4</td>
+      <td>31.6</td>
+      <td>29.0</td>
+      <td>17.8</td>
+    </tr>
+    <tr>
+      <th>151</th>
+      <td>19.6</td>
+      <td>26</td>
+      <td>241.75</td>
+      <td>74.50</td>
+      <td>41.8</td>
+      <td>108.3</td>
+      <td>102.9</td>
+      <td>114.4</td>
+      <td>72.9</td>
+      <td>43.5</td>
+      <td>25.1</td>
+      <td>38.5</td>
+      <td>33.8</td>
+      <td>19.6</td>
+    </tr>
+    <tr>
+      <th>152</th>
+      <td>10.1</td>
+      <td>27</td>
+      <td>146.00</td>
+      <td>72.25</td>
+      <td>34.1</td>
+      <td>88.5</td>
+      <td>72.8</td>
+      <td>91.1</td>
+      <td>53.6</td>
+      <td>36.8</td>
+      <td>23.8</td>
+      <td>27.8</td>
+      <td>26.3</td>
+      <td>17.4</td>
+    </tr>
+    <tr>
+      <th>153</th>
+      <td>16.5</td>
+      <td>27</td>
+      <td>156.75</td>
+      <td>67.25</td>
+      <td>37.9</td>
+      <td>94.0</td>
+      <td>88.2</td>
+      <td>95.2</td>
+      <td>56.8</td>
+      <td>37.4</td>
+      <td>22.8</td>
+      <td>30.6</td>
+      <td>28.3</td>
+      <td>17.9</td>
+    </tr>
+    <tr>
+      <th>154</th>
+      <td>21.0</td>
+      <td>27</td>
+      <td>200.25</td>
+      <td>73.50</td>
+      <td>38.2</td>
+      <td>101.1</td>
+      <td>100.1</td>
+      <td>105.0</td>
+      <td>62.1</td>
+      <td>40.0</td>
+      <td>24.9</td>
+      <td>33.7</td>
+      <td>29.2</td>
+      <td>19.4</td>
+    </tr>
+    <tr>
+      <th>155</th>
+      <td>17.3</td>
+      <td>28</td>
+      <td>171.50</td>
+      <td>75.25</td>
+      <td>35.6</td>
+      <td>92.1</td>
+      <td>83.5</td>
+      <td>98.3</td>
+      <td>57.3</td>
+      <td>37.8</td>
+      <td>21.7</td>
+      <td>32.2</td>
+      <td>27.7</td>
+      <td>17.7</td>
+    </tr>
+    <tr>
+      <th>156</th>
+      <td>31.2</td>
+      <td>28</td>
+      <td>205.75</td>
+      <td>69.00</td>
+      <td>38.5</td>
+      <td>105.6</td>
+      <td>105.0</td>
+      <td>106.4</td>
+      <td>68.6</td>
+      <td>40.0</td>
+      <td>25.2</td>
+      <td>35.2</td>
+      <td>30.7</td>
+      <td>19.1</td>
+    </tr>
+    <tr>
+      <th>157</th>
+      <td>10.0</td>
+      <td>28</td>
+      <td>182.50</td>
+      <td>72.25</td>
+      <td>37.0</td>
+      <td>98.5</td>
+      <td>90.8</td>
+      <td>102.5</td>
+      <td>60.8</td>
+      <td>38.5</td>
+      <td>25.0</td>
+      <td>31.6</td>
+      <td>28.0</td>
+      <td>18.6</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<ul class="simple">
+<li><p>random sampling (with replacement) of indexes: might get overlap between training and test, and we might not include all the data.</p></li>
+<li><p>random sampling without replacement twice.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">sample</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">bf</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># n = 35</span>
+<span class="mi">35</span><span class="o">//</span><span class="mi">2</span> <span class="c1"># equivalent to int(35/2)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>17
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_train</span> <span class="o">=</span> <span class="n">n</span><span class="o">//</span><span class="mi">2</span>
+<span class="n">n_test</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="n">n_train</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">n_train</span><span class="p">,</span> <span class="n">n_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>36 18 18
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">train_idx</span> <span class="o">=</span> <span class="n">sample</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)),</span> <span class="n">n_train</span><span class="p">)</span>
+<span class="n">test_idx</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">))</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">train_idx</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">train_idx</span><span class="p">)</span> <span class="o">&amp;</span> <span class="nb">set</span><span class="p">(</span><span class="n">test_idx</span><span class="p">))</span> <span class="c1"># no overlap</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">))</span> <span class="o">-</span> <span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">train_idx</span><span class="p">)</span> <span class="o">|</span> <span class="nb">set</span><span class="p">(</span><span class="n">test_idx</span><span class="p">))</span> <span class="p">)</span> <span class="c1"># full coverage</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>set()
+set()
+</pre></div>
+</div>
+</div>
+</div>
+<p>We should not just take the first half for training, and second half for test, because the data appear to be sorted by age.  We want test and training data to be <em>random</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">bf</span><span class="p">)</span>
+<span class="n">n</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>36
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_train</span> <span class="o">=</span> <span class="n">n</span><span class="o">//</span><span class="mi">2</span>
+<span class="n">n_test</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="n">n_train</span>
+<span class="k">assert</span> <span class="p">(</span><span class="n">n_test</span> <span class="o">+</span> <span class="n">n_train</span><span class="p">)</span> <span class="o">==</span> <span class="n">n</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">all_idx</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">all_idx</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">shuffle</span>
+
+<span class="n">shuffle</span><span class="p">(</span><span class="n">all_idx</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">all_idx</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[29, 22, 28, 31, 10, 3, 15, 16, 4, 18, 11, 17, 34, 26, 6, 32, 27, 20, 19, 9, 5, 33, 7, 23, 0, 1, 24, 25, 30, 21, 2, 8, 14, 13, 12, 35]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">train_idx</span> <span class="o">=</span> <span class="n">all_idx</span><span class="p">[:</span><span class="n">n_train</span><span class="p">]</span>
+<span class="n">test_idx</span> <span class="o">=</span> <span class="n">all_idx</span><span class="p">[</span><span class="n">n_train</span><span class="p">:]</span>
+
+<span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">train_idx</span><span class="p">)</span> <span class="o">==</span> <span class="n">n_train</span>  <span class="c1"># right length</span>
+<span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">test_idx</span><span class="p">)</span> <span class="o">==</span> <span class="n">n_test</span>    <span class="c1"># right length</span>
+<span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">train_idx</span><span class="p">)</span> <span class="o">&amp;</span> <span class="nb">set</span><span class="p">(</span><span class="n">test_idx</span><span class="p">))</span> <span class="o">==</span> <span class="mi">0</span> <span class="c1"># zero overlap</span>
+<span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">train_idx</span><span class="p">)</span> <span class="o">|</span> <span class="nb">set</span><span class="p">(</span><span class="n">test_idx</span><span class="p">))</span> <span class="o">==</span> <span class="n">n</span> <span class="c1"># full coverage of all data</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">train_data</span> <span class="o">=</span> <span class="n">bf</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">train_idx</span><span class="p">]</span>
+<span class="n">test_data</span> <span class="o">=</span> <span class="n">bf</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">test_idx</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">test_data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>bf.percent</th>
+      <th>age</th>
+      <th>weight</th>
+      <th>height</th>
+      <th>neck</th>
+      <th>chest</th>
+      <th>abdomen</th>
+      <th>hip</th>
+      <th>thigh</th>
+      <th>knee</th>
+      <th>ankle</th>
+      <th>bicep</th>
+      <th>forearm</th>
+      <th>wrist</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>31</th>
+      <td>5.7</td>
+      <td>29</td>
+      <td>160.25</td>
+      <td>71.25</td>
+      <td>37.3</td>
+      <td>93.5</td>
+      <td>84.5</td>
+      <td>100.6</td>
+      <td>58.5</td>
+      <td>38.8</td>
+      <td>21.5</td>
+      <td>30.1</td>
+      <td>26.4</td>
+      <td>17.9</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>11.7</td>
+      <td>23</td>
+      <td>198.25</td>
+      <td>73.50</td>
+      <td>42.1</td>
+      <td>99.6</td>
+      <td>88.6</td>
+      <td>104.1</td>
+      <td>63.1</td>
+      <td>41.7</td>
+      <td>25.0</td>
+      <td>35.6</td>
+      <td>30.0</td>
+      <td>19.2</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>20.9</td>
+      <td>24</td>
+      <td>210.25</td>
+      <td>74.75</td>
+      <td>39.0</td>
+      <td>104.5</td>
+      <td>94.4</td>
+      <td>107.8</td>
+      <td>66.0</td>
+      <td>42.0</td>
+      <td>25.6</td>
+      <td>35.7</td>
+      <td>30.6</td>
+      <td>18.8</td>
+    </tr>
+    <tr>
+      <th>155</th>
+      <td>17.3</td>
+      <td>28</td>
+      <td>171.50</td>
+      <td>75.25</td>
+      <td>35.6</td>
+      <td>92.1</td>
+      <td>83.5</td>
+      <td>98.3</td>
+      <td>57.3</td>
+      <td>37.8</td>
+      <td>21.7</td>
+      <td>32.2</td>
+      <td>27.7</td>
+      <td>17.7</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>12.4</td>
+      <td>25</td>
+      <td>176.00</td>
+      <td>72.50</td>
+      <td>37.8</td>
+      <td>99.6</td>
+      <td>88.5</td>
+      <td>97.1</td>
+      <td>60.0</td>
+      <td>39.4</td>
+      <td>23.2</td>
+      <td>30.5</td>
+      <td>29.0</td>
+      <td>18.8</td>
+    </tr>
+    <tr>
+      <th>145</th>
+      <td>14.2</td>
+      <td>24</td>
+      <td>156.00</td>
+      <td>70.75</td>
+      <td>35.7</td>
+      <td>92.7</td>
+      <td>81.9</td>
+      <td>95.3</td>
+      <td>56.4</td>
+      <td>36.5</td>
+      <td>22.0</td>
+      <td>33.5</td>
+      <td>28.3</td>
+      <td>17.3</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>12.3</td>
+      <td>23</td>
+      <td>154.25</td>
+      <td>67.75</td>
+      <td>36.2</td>
+      <td>93.1</td>
+      <td>85.2</td>
+      <td>94.5</td>
+      <td>59.0</td>
+      <td>37.3</td>
+      <td>21.9</td>
+      <td>32.0</td>
+      <td>27.4</td>
+      <td>17.1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>6.1</td>
+      <td>22</td>
+      <td>173.25</td>
+      <td>72.25</td>
+      <td>38.5</td>
+      <td>93.6</td>
+      <td>83.0</td>
+      <td>98.7</td>
+      <td>58.7</td>
+      <td>37.3</td>
+      <td>23.4</td>
+      <td>30.5</td>
+      <td>28.9</td>
+      <td>18.2</td>
+    </tr>
+    <tr>
+      <th>146</th>
+      <td>19.2</td>
+      <td>24</td>
+      <td>208.50</td>
+      <td>72.75</td>
+      <td>39.2</td>
+      <td>102.0</td>
+      <td>99.1</td>
+      <td>110.1</td>
+      <td>71.2</td>
+      <td>43.5</td>
+      <td>25.2</td>
+      <td>36.1</td>
+      <td>30.3</td>
+      <td>18.7</td>
+    </tr>
+    <tr>
+      <th>147</th>
+      <td>29.6</td>
+      <td>25</td>
+      <td>206.50</td>
+      <td>69.75</td>
+      <td>40.9</td>
+      <td>110.9</td>
+      <td>100.5</td>
+      <td>106.2</td>
+      <td>68.4</td>
+      <td>40.8</td>
+      <td>24.6</td>
+      <td>33.3</td>
+      <td>29.7</td>
+      <td>18.4</td>
+    </tr>
+    <tr>
+      <th>152</th>
+      <td>10.1</td>
+      <td>27</td>
+      <td>146.00</td>
+      <td>72.25</td>
+      <td>34.1</td>
+      <td>88.5</td>
+      <td>72.8</td>
+      <td>91.1</td>
+      <td>53.6</td>
+      <td>36.8</td>
+      <td>23.8</td>
+      <td>27.8</td>
+      <td>26.3</td>
+      <td>17.4</td>
+    </tr>
+    <tr>
+      <th>143</th>
+      <td>9.4</td>
+      <td>23</td>
+      <td>159.75</td>
+      <td>72.25</td>
+      <td>35.5</td>
+      <td>92.1</td>
+      <td>77.1</td>
+      <td>93.9</td>
+      <td>56.1</td>
+      <td>36.1</td>
+      <td>22.7</td>
+      <td>30.5</td>
+      <td>27.2</td>
+      <td>18.2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>25.3</td>
+      <td>22</td>
+      <td>154.00</td>
+      <td>66.25</td>
+      <td>34.0</td>
+      <td>95.8</td>
+      <td>87.9</td>
+      <td>99.2</td>
+      <td>59.6</td>
+      <td>38.9</td>
+      <td>24.0</td>
+      <td>28.8</td>
+      <td>25.2</td>
+      <td>16.6</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>4.1</td>
+      <td>25</td>
+      <td>191.00</td>
+      <td>74.00</td>
+      <td>38.1</td>
+      <td>100.9</td>
+      <td>82.5</td>
+      <td>99.9</td>
+      <td>62.9</td>
+      <td>38.3</td>
+      <td>23.8</td>
+      <td>35.9</td>
+      <td>31.1</td>
+      <td>18.2</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>15.2</td>
+      <td>28</td>
+      <td>200.50</td>
+      <td>69.75</td>
+      <td>41.3</td>
+      <td>111.4</td>
+      <td>98.8</td>
+      <td>104.8</td>
+      <td>63.4</td>
+      <td>40.6</td>
+      <td>24.6</td>
+      <td>33.0</td>
+      <td>32.8</td>
+      <td>19.9</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>19.1</td>
+      <td>28</td>
+      <td>179.00</td>
+      <td>68.00</td>
+      <td>39.1</td>
+      <td>103.3</td>
+      <td>95.9</td>
+      <td>104.9</td>
+      <td>63.5</td>
+      <td>38.0</td>
+      <td>22.1</td>
+      <td>32.5</td>
+      <td>30.3</td>
+      <td>18.4</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>16.0</td>
+      <td>28</td>
+      <td>183.75</td>
+      <td>67.75</td>
+      <td>38.0</td>
+      <td>106.8</td>
+      <td>89.6</td>
+      <td>102.4</td>
+      <td>64.2</td>
+      <td>38.7</td>
+      <td>22.9</td>
+      <td>37.2</td>
+      <td>30.5</td>
+      <td>18.5</td>
+    </tr>
+    <tr>
+      <th>157</th>
+      <td>10.0</td>
+      <td>28</td>
+      <td>182.50</td>
+      <td>72.25</td>
+      <td>37.0</td>
+      <td>98.5</td>
+      <td>90.8</td>
+      <td>102.5</td>
+      <td>60.8</td>
+      <td>38.5</td>
+      <td>25.0</td>
+      <td>31.6</td>
+      <td>28.0</td>
+      <td>18.6</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">train_data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>bf.percent</th>
+      <th>age</th>
+      <th>weight</th>
+      <th>height</th>
+      <th>neck</th>
+      <th>chest</th>
+      <th>abdomen</th>
+      <th>hip</th>
+      <th>thigh</th>
+      <th>knee</th>
+      <th>ankle</th>
+      <th>bicep</th>
+      <th>forearm</th>
+      <th>wrist</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>151</th>
+      <td>19.6</td>
+      <td>26</td>
+      <td>241.75</td>
+      <td>74.50</td>
+      <td>41.8</td>
+      <td>108.3</td>
+      <td>102.9</td>
+      <td>114.4</td>
+      <td>72.9</td>
+      <td>43.5</td>
+      <td>25.1</td>
+      <td>38.5</td>
+      <td>33.8</td>
+      <td>19.6</td>
+    </tr>
+    <tr>
+      <th>144</th>
+      <td>10.3</td>
+      <td>23</td>
+      <td>188.15</td>
+      <td>77.50</td>
+      <td>38.0</td>
+      <td>96.6</td>
+      <td>85.3</td>
+      <td>102.5</td>
+      <td>59.1</td>
+      <td>37.6</td>
+      <td>23.2</td>
+      <td>31.8</td>
+      <td>29.7</td>
+      <td>18.3</td>
+    </tr>
+    <tr>
+      <th>150</th>
+      <td>9.4</td>
+      <td>26</td>
+      <td>152.25</td>
+      <td>69.00</td>
+      <td>35.4</td>
+      <td>92.9</td>
+      <td>77.6</td>
+      <td>93.5</td>
+      <td>56.9</td>
+      <td>35.9</td>
+      <td>20.4</td>
+      <td>31.6</td>
+      <td>29.0</td>
+      <td>17.8</td>
+    </tr>
+    <tr>
+      <th>153</th>
+      <td>16.5</td>
+      <td>27</td>
+      <td>156.75</td>
+      <td>67.25</td>
+      <td>37.9</td>
+      <td>94.0</td>
+      <td>88.2</td>
+      <td>95.2</td>
+      <td>56.8</td>
+      <td>37.4</td>
+      <td>22.8</td>
+      <td>30.6</td>
+      <td>28.3</td>
+      <td>17.9</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>7.1</td>
+      <td>26</td>
+      <td>186.25</td>
+      <td>74.50</td>
+      <td>38.5</td>
+      <td>101.5</td>
+      <td>83.6</td>
+      <td>98.2</td>
+      <td>59.7</td>
+      <td>39.7</td>
+      <td>25.2</td>
+      <td>32.8</td>
+      <td>29.4</td>
+      <td>18.5</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>10.4</td>
+      <td>26</td>
+      <td>184.75</td>
+      <td>72.25</td>
+      <td>37.4</td>
+      <td>101.8</td>
+      <td>86.4</td>
+      <td>101.2</td>
+      <td>60.1</td>
+      <td>37.3</td>
+      <td>22.8</td>
+      <td>32.4</td>
+      <td>29.4</td>
+      <td>18.2</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>14.0</td>
+      <td>28</td>
+      <td>151.25</td>
+      <td>67.75</td>
+      <td>34.5</td>
+      <td>90.2</td>
+      <td>76.3</td>
+      <td>95.8</td>
+      <td>58.4</td>
+      <td>35.5</td>
+      <td>22.9</td>
+      <td>31.1</td>
+      <td>28.0</td>
+      <td>17.6</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>3.7</td>
+      <td>27</td>
+      <td>159.25</td>
+      <td>71.50</td>
+      <td>35.7</td>
+      <td>89.6</td>
+      <td>79.7</td>
+      <td>96.5</td>
+      <td>55.0</td>
+      <td>36.7</td>
+      <td>22.5</td>
+      <td>29.9</td>
+      <td>28.2</td>
+      <td>17.7</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>28.7</td>
+      <td>24</td>
+      <td>184.25</td>
+      <td>71.25</td>
+      <td>34.4</td>
+      <td>97.3</td>
+      <td>100.0</td>
+      <td>101.9</td>
+      <td>63.2</td>
+      <td>42.2</td>
+      <td>24.0</td>
+      <td>32.2</td>
+      <td>27.7</td>
+      <td>17.7</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>8.8</td>
+      <td>29</td>
+      <td>160.75</td>
+      <td>69.00</td>
+      <td>36.7</td>
+      <td>97.4</td>
+      <td>83.5</td>
+      <td>98.7</td>
+      <td>58.9</td>
+      <td>35.3</td>
+      <td>22.6</td>
+      <td>30.1</td>
+      <td>26.7</td>
+      <td>17.6</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>7.8</td>
+      <td>27</td>
+      <td>216.00</td>
+      <td>76.00</td>
+      <td>39.4</td>
+      <td>103.6</td>
+      <td>90.9</td>
+      <td>107.7</td>
+      <td>66.2</td>
+      <td>39.2</td>
+      <td>25.9</td>
+      <td>37.2</td>
+      <td>30.2</td>
+      <td>19.0</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>3.7</td>
+      <td>27</td>
+      <td>133.25</td>
+      <td>64.75</td>
+      <td>36.4</td>
+      <td>93.5</td>
+      <td>73.9</td>
+      <td>88.5</td>
+      <td>50.1</td>
+      <td>34.5</td>
+      <td>21.3</td>
+      <td>30.5</td>
+      <td>27.9</td>
+      <td>17.2</td>
+    </tr>
+    <tr>
+      <th>156</th>
+      <td>31.2</td>
+      <td>28</td>
+      <td>205.75</td>
+      <td>69.00</td>
+      <td>38.5</td>
+      <td>105.6</td>
+      <td>105.0</td>
+      <td>106.4</td>
+      <td>68.6</td>
+      <td>40.0</td>
+      <td>25.2</td>
+      <td>35.2</td>
+      <td>30.7</td>
+      <td>19.1</td>
+    </tr>
+    <tr>
+      <th>148</th>
+      <td>5.3</td>
+      <td>25</td>
+      <td>143.75</td>
+      <td>72.50</td>
+      <td>35.2</td>
+      <td>92.3</td>
+      <td>76.5</td>
+      <td>92.1</td>
+      <td>51.9</td>
+      <td>35.7</td>
+      <td>22.0</td>
+      <td>25.8</td>
+      <td>25.2</td>
+      <td>16.9</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>19.2</td>
+      <td>26</td>
+      <td>181.00</td>
+      <td>69.75</td>
+      <td>36.4</td>
+      <td>105.1</td>
+      <td>90.7</td>
+      <td>100.3</td>
+      <td>58.4</td>
+      <td>38.3</td>
+      <td>22.9</td>
+      <td>31.9</td>
+      <td>27.8</td>
+      <td>17.7</td>
+    </tr>
+    <tr>
+      <th>154</th>
+      <td>21.0</td>
+      <td>27</td>
+      <td>200.25</td>
+      <td>73.50</td>
+      <td>38.2</td>
+      <td>101.1</td>
+      <td>100.1</td>
+      <td>105.0</td>
+      <td>62.1</td>
+      <td>40.0</td>
+      <td>24.9</td>
+      <td>33.7</td>
+      <td>29.2</td>
+      <td>19.4</td>
+    </tr>
+    <tr>
+      <th>149</th>
+      <td>25.2</td>
+      <td>26</td>
+      <td>223.00</td>
+      <td>70.25</td>
+      <td>40.6</td>
+      <td>114.1</td>
+      <td>106.8</td>
+      <td>113.9</td>
+      <td>67.6</td>
+      <td>42.7</td>
+      <td>24.7</td>
+      <td>36.0</td>
+      <td>30.4</td>
+      <td>18.4</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>11.8</td>
+      <td>27</td>
+      <td>168.00</td>
+      <td>71.25</td>
+      <td>38.1</td>
+      <td>93.0</td>
+      <td>79.1</td>
+      <td>94.5</td>
+      <td>57.3</td>
+      <td>36.2</td>
+      <td>24.5</td>
+      <td>29.0</td>
+      <td>30.0</td>
+      <td>18.8</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">train_data</span><span class="p">[</span><span class="s1">&#39;abdomen&#39;</span><span class="p">],</span> <span class="n">train_data</span><span class="p">[</span><span class="s1">&#39;bf.percent&#39;</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">test_data</span><span class="p">[</span><span class="s1">&#39;abdomen&#39;</span><span class="p">],</span> <span class="n">test_data</span><span class="p">[</span><span class="s1">&#39;bf.percent&#39;</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f8a2097b190&gt;
+</pre></div>
+</div>
+<img alt="../_images/css2-lecture-6_54_1.png" src="../_images/css2-lecture-6_54_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">polynomial_order</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="n">coefs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">train_data</span><span class="p">[</span><span class="s1">&#39;abdomen&#39;</span><span class="p">],</span> 
+                   <span class="n">train_data</span><span class="p">[</span><span class="s1">&#39;bf.percent&#39;</span><span class="p">],</span> 
+                   <span class="n">polynomial_order</span><span class="p">)</span>
+
+<span class="n">all_xs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">bf</span><span class="p">[</span><span class="s1">&#39;abdomen&#39;</span><span class="p">]),</span> <span class="nb">max</span><span class="p">(</span><span class="n">bf</span><span class="p">[</span><span class="s1">&#39;abdomen&#39;</span><span class="p">]),</span> <span class="mi">200</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">train_data</span><span class="p">[</span><span class="s1">&#39;abdomen&#39;</span><span class="p">],</span> <span class="n">train_data</span><span class="p">[</span><span class="s1">&#39;bf.percent&#39;</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">test_data</span><span class="p">[</span><span class="s1">&#39;abdomen&#39;</span><span class="p">],</span> <span class="n">test_data</span><span class="p">[</span><span class="s1">&#39;bf.percent&#39;</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">all_xs</span><span class="p">,</span> <span class="n">poly_predict</span><span class="p">(</span><span class="n">all_xs</span><span class="p">,</span> <span class="n">coefs</span><span class="p">),</span> <span class="s1">&#39;r-&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;abdomen circumference (cm)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;bodyfat percentage&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;bodyfat percentage&#39;)
+</pre></div>
+</div>
+<img alt="../_images/css2-lecture-6_55_1.png" src="../_images/css2-lecture-6_55_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;training loss:&#39;</span><span class="p">,</span> 
+      <span class="p">(</span>
+          <span class="p">(</span><span class="n">poly_predict</span><span class="p">(</span><span class="n">train_data</span><span class="p">[</span><span class="s1">&#39;abdomen&#39;</span><span class="p">],</span> <span class="n">coefs</span><span class="p">)</span> 
+           <span class="o">-</span> <span class="n">train_data</span><span class="p">[</span><span class="s1">&#39;bf.percent&#39;</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;test loss:&#39;</span><span class="p">,</span> <span class="p">((</span><span class="n">poly_predict</span><span class="p">(</span><span class="n">test_data</span><span class="p">[</span><span class="s1">&#39;abdomen&#39;</span><span class="p">],</span> <span class="n">coefs</span><span class="p">)</span> <span class="o">-</span> <span class="n">test_data</span><span class="p">[</span><span class="s1">&#39;bf.percent&#39;</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>training loss: 16.519309419831487
+test loss: 25.350219127861124
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">poly_order</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">train_loss</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">test_loss</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">train_data</span><span class="p">)):</span>
+    <span class="n">coefs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">train_data</span><span class="p">[</span><span class="s1">&#39;abdomen&#39;</span><span class="p">],</span> <span class="n">train_data</span><span class="p">[</span><span class="s1">&#39;bf.percent&#39;</span><span class="p">],</span> <span class="n">k</span><span class="p">)</span>
+    <span class="n">poly_order</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+    <span class="n">train_loss</span><span class="o">.</span><span class="n">append</span><span class="p">(((</span><span class="n">poly_predict</span><span class="p">(</span><span class="n">train_data</span><span class="p">[</span><span class="s1">&#39;abdomen&#39;</span><span class="p">],</span> <span class="n">coefs</span><span class="p">)</span> <span class="o">-</span> <span class="n">train_data</span><span class="p">[</span><span class="s1">&#39;bf.percent&#39;</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+    <span class="n">test_loss</span><span class="o">.</span><span class="n">append</span><span class="p">(((</span><span class="n">poly_predict</span><span class="p">(</span><span class="n">test_data</span><span class="p">[</span><span class="s1">&#39;abdomen&#39;</span><span class="p">],</span> <span class="n">coefs</span><span class="p">)</span> <span class="o">-</span> <span class="n">test_data</span><span class="p">[</span><span class="s1">&#39;bf.percent&#39;</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/anaconda3/lib/python3.8/site-packages/IPython/core/interactiveshell.py:3417: RankWarning: Polyfit may be poorly conditioned
+  exec(code_obj, self.user_global_ns, self.user_ns)
+/opt/anaconda3/lib/python3.8/site-packages/IPython/core/interactiveshell.py:3417: RankWarning: Polyfit may be poorly conditioned
+  exec(code_obj, self.user_global_ns, self.user_ns)
+/opt/anaconda3/lib/python3.8/site-packages/IPython/core/interactiveshell.py:3417: RankWarning: Polyfit may be poorly conditioned
+  exec(code_obj, self.user_global_ns, self.user_ns)
+/opt/anaconda3/lib/python3.8/site-packages/IPython/core/interactiveshell.py:3417: RankWarning: Polyfit may be poorly conditioned
+  exec(code_obj, self.user_global_ns, self.user_ns)
+/opt/anaconda3/lib/python3.8/site-packages/IPython/core/interactiveshell.py:3417: RankWarning: Polyfit may be poorly conditioned
+  exec(code_obj, self.user_global_ns, self.user_ns)
+/opt/anaconda3/lib/python3.8/site-packages/IPython/core/interactiveshell.py:3417: RankWarning: Polyfit may be poorly conditioned
+  exec(code_obj, self.user_global_ns, self.user_ns)
+/opt/anaconda3/lib/python3.8/site-packages/IPython/core/interactiveshell.py:3417: RankWarning: Polyfit may be poorly conditioned
+  exec(code_obj, self.user_global_ns, self.user_ns)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">poly_order</span><span class="p">,</span> <span class="n">test_loss</span><span class="p">,</span> <span class="s1">&#39;mo-&#39;</span><span class="p">)</span>
+<span class="n">l2</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">poly_order</span><span class="p">,</span> <span class="n">train_loss</span><span class="p">,</span> <span class="s1">&#39;ko-&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;test data&#39;</span><span class="p">,</span> <span class="s1">&#39;training data&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;polynomial order&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;loss&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/css2-lecture-6_58_0.png" src="../_images/css2-lecture-6_58_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h3>Gradient descent<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>Optimization is much more efficient if we can calculate the gradient, and follow it to find better parameters.</p>
+<p>We must specify a learning rate, to dictate how large a step to take in the direction of the gradient.</p>
+<p>Small learning rates create slow optimization.  Large learning rates may create <em>divergence</em>.  So these may need to be <em>tuned</em>.</p>
+</div>
+<div class="section" id="id3">
+<h3>Model complexity<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>Some models have more parameters, and more opportunities to wiggle than others.</p>
+<p>A more complex model can <em>always</em> fit the data better, by using its extra wiggling power.</p>
+</div>
+<div class="section" id="id4">
+<h3>Overfitting<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>A very complex model fitted to a small set of data will <em>overfit</em> the data, and will wiggle through the noise, not just the signal.</p>
+<p>This means that the model will fit the <em>training</em> data well, but will <em>generalize</em> poorly to new data, meaning it will have a large error on new data it has not seen.</p>
+</div>
+<div class="section" id="id5">
+<h3>Cross-validation<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>To <strong>evaluate</strong> a model, we want to know how well it will do on <em>new</em> data, not how well it fit the existing data.</p>
+<p>By definition, we don’t have new data.</p>
+<p>So we pretend that we have only seen part of our data, and reserve the rest to be considered new data.</p>
+<p>We split the data into a <em>training</em> subset, and a <em>test</em> subset.  We fit the model to the <em>training</em> data, and evaluate it on the <em>test</em> data, thus estimating how well the model would do on data it was not fitted to.  i.e., on new data.</p>
+</div>
+</div>
+<div class="section" id="cross-validation-subtleties">
+<h2>Cross validation subtleties:<a class="headerlink" href="#cross-validation-subtleties" title="Permalink to this headline">¶</a></h2>
+<p>How much data to use for training, and for testing?</p>
+<div class="section" id="variations">
+<h3>Variations:<a class="headerlink" href="#variations" title="Permalink to this headline">¶</a></h3>
+<p><strong>holdout</strong></p>
+<p><strong>k-fold</strong></p>
+<ul class="simple">
+<li><p>split the data into k parts.</p></li>
+<li><p>then for each part, use it as the test data once, and the remainder as the training data.</p></li>
+</ul>
+<p><strong>repeat random subsampling</strong></p>
+<p><strong>nested</strong></p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./live"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Ed Vul<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

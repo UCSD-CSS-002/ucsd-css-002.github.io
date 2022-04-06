@@ -1,0 +1,1244 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Omitted Variable Bias &#8212; UCSD CSS 2</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">UCSD CSS 2</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Welcome to CSS 2
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Course (CSS 2 Spring 2022)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/syllabus.html">
+   Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/expectations.html">
+   Expectations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/datahub.html">
+   Datahub assignments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/debugging.html">
+   Debugging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/resources.html">
+   Extracurricular Resources
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/final.html">
+   Final Project
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lectures
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/sp22/Lecture_2.html">
+   Lecture 2 (3/30/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/sp22/Lecture_3.html">
+   Lecture 3 (4/1/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/sp22/Lecture_4.html">
+   Lecture 4 (4/4/22)
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Garrett_Lectures/OLSLectureNotebook.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/UCSD-CSS-002/ucsd-css-002.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/UCSD-CSS-002/ucsd-css-002.github.io/issues/new?title=Issue%20on%20page%20%2FGarrett_Lectures/OLSLectureNotebook.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/UCSD-CSS-002/ucsd-css-002.github.io/master?urlpath=tree/Garrett_Lectures/OLSLectureNotebook.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Omitted Variable Bias
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#perfect-multicollinearity">
+   Perfect Multicollinearity
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#heteroskedasticity">
+   Heteroskedasticity
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nonlinearity">
+   Nonlinearity
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="omitted-variable-bias">
+<h1>Omitted Variable Bias<a class="headerlink" href="#omitted-variable-bias" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">shark</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;http://uclspp.github.io/PUBLG100/data/shark_attacks.csv&#39;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">shark</span><span class="p">[</span><span class="s1">&#39;IceCreamSales&#39;</span><span class="p">],</span> <span class="n">shark</span><span class="p">[</span><span class="s1">&#39;SharkAttacks&#39;</span><span class="p">])</span>
+<span class="n">x1</span> <span class="o">=</span> <span class="n">shark</span><span class="p">[</span><span class="s1">&#39;IceCreamSales&#39;</span><span class="p">]</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="n">shark</span><span class="p">[</span><span class="s1">&#39;SharkAttacks&#39;</span><span class="p">]</span>
+<span class="n">m1</span><span class="p">,</span> <span class="n">b1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">m1</span><span class="o">*</span><span class="n">x1</span><span class="o">+</span><span class="n">b1</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/anaconda3/lib/python3.8/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f8d09cca6a0&gt;]
+</pre></div>
+</div>
+<img alt="../_images/OLSLectureNotebook_2_2.png" src="../_images/OLSLectureNotebook_2_2.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">shark</span><span class="p">[[</span><span class="s1">&#39;IceCreamSales&#39;</span><span class="p">]])</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">shark</span><span class="p">[</span><span class="s1">&#39;SharkAttacks&#39;</span><span class="p">]</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="simpletable">
+<caption>OLS Regression Results</caption>
+<tr>
+  <th>Dep. Variable:</th>      <td>SharkAttacks</td>   <th>  R-squared:         </th> <td>   0.286</td>
+</tr>
+<tr>
+  <th>Model:</th>                   <td>OLS</td>       <th>  Adj. R-squared:    </th> <td>   0.277</td>
+</tr>
+<tr>
+  <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   32.77</td>
+</tr>
+<tr>
+  <th>Date:</th>             <td>Mon, 04 Apr 2022</td> <th>  Prob (F-statistic):</th> <td>1.65e-07</td>
+</tr>
+<tr>
+  <th>Time:</th>                 <td>00:06:00</td>     <th>  Log-Likelihood:    </th> <td> -283.69</td>
+</tr>
+<tr>
+  <th>No. Observations:</th>      <td>    84</td>      <th>  AIC:               </th> <td>   571.4</td>
+</tr>
+<tr>
+  <th>Df Residuals:</th>          <td>    82</td>      <th>  BIC:               </th> <td>   576.2</td>
+</tr>
+<tr>
+  <th>Df Model:</th>              <td>     1</td>      <th>                     </th>     <td> </td>   
+</tr>
+<tr>
+  <th>Covariance Type:</th>      <td>nonrobust</td>    <th>                     </th>     <td> </td>   
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+        <td></td>           <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
+</tr>
+<tr>
+  <th>const</th>         <td>    4.3523</td> <td>    5.238</td> <td>    0.831</td> <td> 0.408</td> <td>   -6.067</td> <td>   14.772</td>
+</tr>
+<tr>
+  <th>IceCreamSales</th> <td>    0.3363</td> <td>    0.059</td> <td>    5.725</td> <td> 0.000</td> <td>    0.219</td> <td>    0.453</td>
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+  <th>Omnibus:</th>       <td> 0.421</td> <th>  Durbin-Watson:     </th> <td>   1.844</td>
+</tr>
+<tr>
+  <th>Prob(Omnibus):</th> <td> 0.810</td> <th>  Jarque-Bera (JB):  </th> <td>   0.423</td>
+</tr>
+<tr>
+  <th>Skew:</th>          <td> 0.161</td> <th>  Prob(JB):          </th> <td>   0.809</td>
+</tr>
+<tr>
+  <th>Kurtosis:</th>      <td> 2.871</td> <th>  Cond. No.          </th> <td>    597.</td>
+</tr>
+</table><br/><br/>Notes:<br/>[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">shark</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Year</th>
+      <th>Month</th>
+      <th>SharkAttacks</th>
+      <th>Temperature</th>
+      <th>IceCreamSales</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Year</th>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>-0.033364</td>
+      <td>0.010930</td>
+      <td>0.013402</td>
+    </tr>
+    <tr>
+      <th>Month</th>
+      <td>0.000000</td>
+      <td>1.000000</td>
+      <td>0.275968</td>
+      <td>0.270830</td>
+      <td>-0.261145</td>
+    </tr>
+    <tr>
+      <th>SharkAttacks</th>
+      <td>-0.033364</td>
+      <td>0.275968</td>
+      <td>1.000000</td>
+      <td>0.716966</td>
+      <td>0.534358</td>
+    </tr>
+    <tr>
+      <th>Temperature</th>
+      <td>0.010930</td>
+      <td>0.270830</td>
+      <td>0.716966</td>
+      <td>1.000000</td>
+      <td>0.595769</td>
+    </tr>
+    <tr>
+      <th>IceCreamSales</th>
+      <td>0.013402</td>
+      <td>-0.261145</td>
+      <td>0.534358</td>
+      <td>0.595769</td>
+      <td>1.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">shark</span><span class="p">[[</span><span class="s1">&#39;IceCreamSales&#39;</span><span class="p">,</span> <span class="s1">&#39;Temperature&#39;</span><span class="p">]])</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">shark</span><span class="p">[</span><span class="s1">&#39;SharkAttacks&#39;</span><span class="p">]</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="simpletable">
+<caption>OLS Regression Results</caption>
+<tr>
+  <th>Dep. Variable:</th>      <td>SharkAttacks</td>   <th>  R-squared:         </th> <td>   0.532</td>
+</tr>
+<tr>
+  <th>Model:</th>                   <td>OLS</td>       <th>  Adj. R-squared:    </th> <td>   0.520</td>
+</tr>
+<tr>
+  <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   46.01</td>
+</tr>
+<tr>
+  <th>Date:</th>             <td>Mon, 04 Apr 2022</td> <th>  Prob (F-statistic):</th> <td>4.47e-14</td>
+</tr>
+<tr>
+  <th>Time:</th>                 <td>00:06:00</td>     <th>  Log-Likelihood:    </th> <td> -265.94</td>
+</tr>
+<tr>
+  <th>No. Observations:</th>      <td>    84</td>      <th>  AIC:               </th> <td>   537.9</td>
+</tr>
+<tr>
+  <th>Df Residuals:</th>          <td>    81</td>      <th>  BIC:               </th> <td>   545.2</td>
+</tr>
+<tr>
+  <th>Df Model:</th>              <td>     2</td>      <th>                     </th>     <td> </td>   
+</tr>
+<tr>
+  <th>Covariance Type:</th>      <td>nonrobust</td>    <th>                     </th>     <td> </td>   
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+        <td></td>           <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
+</tr>
+<tr>
+  <th>const</th>         <td>    0.5651</td> <td>    4.305</td> <td>    0.131</td> <td> 0.896</td> <td>   -8.001</td> <td>    9.131</td>
+</tr>
+<tr>
+  <th>IceCreamSales</th> <td>    0.1046</td> <td>    0.060</td> <td>    1.756</td> <td> 0.083</td> <td>   -0.014</td> <td>    0.223</td>
+</tr>
+<tr>
+  <th>Temperature</th>   <td>    1.2928</td> <td>    0.198</td> <td>    6.528</td> <td> 0.000</td> <td>    0.899</td> <td>    1.687</td>
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+  <th>Omnibus:</th>       <td> 3.022</td> <th>  Durbin-Watson:     </th> <td>   2.505</td>
+</tr>
+<tr>
+  <th>Prob(Omnibus):</th> <td> 0.221</td> <th>  Jarque-Bera (JB):  </th> <td>   2.672</td>
+</tr>
+<tr>
+  <th>Skew:</th>          <td> 0.166</td> <th>  Prob(JB):          </th> <td>   0.263</td>
+</tr>
+<tr>
+  <th>Kurtosis:</th>      <td> 3.809</td> <th>  Cond. No.          </th> <td>    616.</td>
+</tr>
+</table><br/><br/>Notes:<br/>[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.</div></div>
+</div>
+<p>The coefficient of ice cream sales decreased and the pvalue increased to above .05 indicating that the IceCreamSales predictor is not statistically signficant with 95% confidence</p>
+</div>
+<div class="section" id="perfect-multicollinearity">
+<h1>Perfect Multicollinearity<a class="headerlink" href="#perfect-multicollinearity" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">shark</span><span class="p">[</span><span class="s1">&#39;SalesNTax&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">shark</span><span class="p">[</span><span class="s1">&#39;IceCreamSales&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mf">1.25</span>
+<span class="n">shark</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Year</th>
+      <th>Month</th>
+      <th>SharkAttacks</th>
+      <th>Temperature</th>
+      <th>IceCreamSales</th>
+      <th>SalesNTax</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Year</th>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>-0.033364</td>
+      <td>0.010930</td>
+      <td>0.013402</td>
+      <td>0.013402</td>
+    </tr>
+    <tr>
+      <th>Month</th>
+      <td>0.000000</td>
+      <td>1.000000</td>
+      <td>0.275968</td>
+      <td>0.270830</td>
+      <td>-0.261145</td>
+      <td>-0.261145</td>
+    </tr>
+    <tr>
+      <th>SharkAttacks</th>
+      <td>-0.033364</td>
+      <td>0.275968</td>
+      <td>1.000000</td>
+      <td>0.716966</td>
+      <td>0.534358</td>
+      <td>0.534358</td>
+    </tr>
+    <tr>
+      <th>Temperature</th>
+      <td>0.010930</td>
+      <td>0.270830</td>
+      <td>0.716966</td>
+      <td>1.000000</td>
+      <td>0.595769</td>
+      <td>0.595769</td>
+    </tr>
+    <tr>
+      <th>IceCreamSales</th>
+      <td>0.013402</td>
+      <td>-0.261145</td>
+      <td>0.534358</td>
+      <td>0.595769</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>SalesNTax</th>
+      <td>0.013402</td>
+      <td>-0.261145</td>
+      <td>0.534358</td>
+      <td>0.595769</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#just ice cream sales</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">shark</span><span class="p">[[</span><span class="s1">&#39;IceCreamSales&#39;</span><span class="p">]])</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">shark</span><span class="p">[</span><span class="s1">&#39;SharkAttacks&#39;</span><span class="p">]</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="simpletable">
+<caption>OLS Regression Results</caption>
+<tr>
+  <th>Dep. Variable:</th>      <td>SharkAttacks</td>   <th>  R-squared:         </th> <td>   0.286</td>
+</tr>
+<tr>
+  <th>Model:</th>                   <td>OLS</td>       <th>  Adj. R-squared:    </th> <td>   0.277</td>
+</tr>
+<tr>
+  <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   32.77</td>
+</tr>
+<tr>
+  <th>Date:</th>             <td>Mon, 04 Apr 2022</td> <th>  Prob (F-statistic):</th> <td>1.65e-07</td>
+</tr>
+<tr>
+  <th>Time:</th>                 <td>00:06:00</td>     <th>  Log-Likelihood:    </th> <td> -283.69</td>
+</tr>
+<tr>
+  <th>No. Observations:</th>      <td>    84</td>      <th>  AIC:               </th> <td>   571.4</td>
+</tr>
+<tr>
+  <th>Df Residuals:</th>          <td>    82</td>      <th>  BIC:               </th> <td>   576.2</td>
+</tr>
+<tr>
+  <th>Df Model:</th>              <td>     1</td>      <th>                     </th>     <td> </td>   
+</tr>
+<tr>
+  <th>Covariance Type:</th>      <td>nonrobust</td>    <th>                     </th>     <td> </td>   
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+        <td></td>           <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
+</tr>
+<tr>
+  <th>const</th>         <td>    4.3523</td> <td>    5.238</td> <td>    0.831</td> <td> 0.408</td> <td>   -6.067</td> <td>   14.772</td>
+</tr>
+<tr>
+  <th>IceCreamSales</th> <td>    0.3363</td> <td>    0.059</td> <td>    5.725</td> <td> 0.000</td> <td>    0.219</td> <td>    0.453</td>
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+  <th>Omnibus:</th>       <td> 0.421</td> <th>  Durbin-Watson:     </th> <td>   1.844</td>
+</tr>
+<tr>
+  <th>Prob(Omnibus):</th> <td> 0.810</td> <th>  Jarque-Bera (JB):  </th> <td>   0.423</td>
+</tr>
+<tr>
+  <th>Skew:</th>          <td> 0.161</td> <th>  Prob(JB):          </th> <td>   0.809</td>
+</tr>
+<tr>
+  <th>Kurtosis:</th>      <td> 2.871</td> <th>  Cond. No.          </th> <td>    597.</td>
+</tr>
+</table><br/><br/>Notes:<br/>[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#just sales and tax</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">shark</span><span class="p">[[</span><span class="s1">&#39;SalesNTax&#39;</span><span class="p">]])</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">shark</span><span class="p">[</span><span class="s1">&#39;SharkAttacks&#39;</span><span class="p">]</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="simpletable">
+<caption>OLS Regression Results</caption>
+<tr>
+  <th>Dep. Variable:</th>      <td>SharkAttacks</td>   <th>  R-squared:         </th> <td>   0.286</td>
+</tr>
+<tr>
+  <th>Model:</th>                   <td>OLS</td>       <th>  Adj. R-squared:    </th> <td>   0.277</td>
+</tr>
+<tr>
+  <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   32.77</td>
+</tr>
+<tr>
+  <th>Date:</th>             <td>Mon, 04 Apr 2022</td> <th>  Prob (F-statistic):</th> <td>1.65e-07</td>
+</tr>
+<tr>
+  <th>Time:</th>                 <td>00:06:00</td>     <th>  Log-Likelihood:    </th> <td> -283.69</td>
+</tr>
+<tr>
+  <th>No. Observations:</th>      <td>    84</td>      <th>  AIC:               </th> <td>   571.4</td>
+</tr>
+<tr>
+  <th>Df Residuals:</th>          <td>    82</td>      <th>  BIC:               </th> <td>   576.2</td>
+</tr>
+<tr>
+  <th>Df Model:</th>              <td>     1</td>      <th>                     </th>     <td> </td>   
+</tr>
+<tr>
+  <th>Covariance Type:</th>      <td>nonrobust</td>    <th>                     </th>     <td> </td>   
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+      <td></td>         <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
+</tr>
+<tr>
+  <th>const</th>     <td>    4.3523</td> <td>    5.238</td> <td>    0.831</td> <td> 0.408</td> <td>   -6.067</td> <td>   14.772</td>
+</tr>
+<tr>
+  <th>SalesNTax</th> <td>    0.2690</td> <td>    0.047</td> <td>    5.725</td> <td> 0.000</td> <td>    0.176</td> <td>    0.362</td>
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+  <th>Omnibus:</th>       <td> 0.421</td> <th>  Durbin-Watson:     </th> <td>   1.844</td>
+</tr>
+<tr>
+  <th>Prob(Omnibus):</th> <td> 0.810</td> <th>  Jarque-Bera (JB):  </th> <td>   0.423</td>
+</tr>
+<tr>
+  <th>Skew:</th>          <td> 0.161</td> <th>  Prob(JB):          </th> <td>   0.809</td>
+</tr>
+<tr>
+  <th>Kurtosis:</th>      <td> 2.871</td> <th>  Cond. No.          </th> <td>    746.</td>
+</tr>
+</table><br/><br/>Notes:<br/>[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">shark</span><span class="p">[[</span><span class="s1">&#39;IceCreamSales&#39;</span><span class="p">,</span> <span class="s1">&#39;SalesNTax&#39;</span><span class="p">]])</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">shark</span><span class="p">[</span><span class="s1">&#39;SharkAttacks&#39;</span><span class="p">]</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="simpletable">
+<caption>OLS Regression Results</caption>
+<tr>
+  <th>Dep. Variable:</th>      <td>SharkAttacks</td>   <th>  R-squared:         </th> <td>   0.286</td>
+</tr>
+<tr>
+  <th>Model:</th>                   <td>OLS</td>       <th>  Adj. R-squared:    </th> <td>   0.277</td>
+</tr>
+<tr>
+  <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   32.77</td>
+</tr>
+<tr>
+  <th>Date:</th>             <td>Mon, 04 Apr 2022</td> <th>  Prob (F-statistic):</th> <td>1.65e-07</td>
+</tr>
+<tr>
+  <th>Time:</th>                 <td>00:06:00</td>     <th>  Log-Likelihood:    </th> <td> -283.69</td>
+</tr>
+<tr>
+  <th>No. Observations:</th>      <td>    84</td>      <th>  AIC:               </th> <td>   571.4</td>
+</tr>
+<tr>
+  <th>Df Residuals:</th>          <td>    82</td>      <th>  BIC:               </th> <td>   576.2</td>
+</tr>
+<tr>
+  <th>Df Model:</th>              <td>     1</td>      <th>                     </th>     <td> </td>   
+</tr>
+<tr>
+  <th>Covariance Type:</th>      <td>nonrobust</td>    <th>                     </th>     <td> </td>   
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+        <td></td>           <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
+</tr>
+<tr>
+  <th>const</th>         <td>    4.3523</td> <td>    5.238</td> <td>    0.831</td> <td> 0.408</td> <td>   -6.067</td> <td>   14.772</td>
+</tr>
+<tr>
+  <th>IceCreamSales</th> <td>    0.1312</td> <td>    0.023</td> <td>    5.725</td> <td> 0.000</td> <td>    0.086</td> <td>    0.177</td>
+</tr>
+<tr>
+  <th>SalesNTax</th>     <td>    0.1640</td> <td>    0.029</td> <td>    5.725</td> <td> 0.000</td> <td>    0.107</td> <td>    0.221</td>
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+  <th>Omnibus:</th>       <td> 0.421</td> <th>  Durbin-Watson:     </th> <td>   1.844</td>
+</tr>
+<tr>
+  <th>Prob(Omnibus):</th> <td> 0.810</td> <th>  Jarque-Bera (JB):  </th> <td>   0.423</td>
+</tr>
+<tr>
+  <th>Skew:</th>          <td> 0.161</td> <th>  Prob(JB):          </th> <td>   0.809</td>
+</tr>
+<tr>
+  <th>Kurtosis:</th>      <td> 2.871</td> <th>  Cond. No.          </th> <td>2.23e+16</td>
+</tr>
+</table><br/><br/>Notes:<br/>[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.<br/>[2] The smallest eigenvalue is 3.44e-27. This might indicate that there are<br/>strong multicollinearity problems or that the design matrix is singular.</div></div>
+</div>
+</div>
+<div class="section" id="heteroskedasticity">
+<h1>Heteroskedasticity<a class="headerlink" href="#heteroskedasticity" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">25</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">sigma</span> <span class="o">=</span> <span class="mf">2.5</span>
+<span class="n">noise</span> <span class="o">=</span> <span class="n">sigma</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+
+<span class="n">y</span> <span class="o">=</span> <span class="mi">280</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">noise</span><span class="o">*</span><span class="n">x</span>
+<span class="c1">#y = 280 + 3*x + noise</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/anaconda3/lib/python3.8/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../_images/OLSLectureNotebook_14_2.png" src="../_images/OLSLectureNotebook_14_2.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+
+<span class="n">model</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="simpletable">
+<caption>OLS Regression Results</caption>
+<tr>
+  <th>Dep. Variable:</th>            <td>y</td>        <th>  R-squared:         </th> <td>   0.401</td>
+</tr>
+<tr>
+  <th>Model:</th>                   <td>OLS</td>       <th>  Adj. R-squared:    </th> <td>   0.389</td>
+</tr>
+<tr>
+  <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   33.50</td>
+</tr>
+<tr>
+  <th>Date:</th>             <td>Mon, 04 Apr 2022</td> <th>  Prob (F-statistic):</th> <td>4.67e-07</td>
+</tr>
+<tr>
+  <th>Time:</th>                 <td>00:06:00</td>     <th>  Log-Likelihood:    </th> <td> -276.83</td>
+</tr>
+<tr>
+  <th>No. Observations:</th>      <td>    52</td>      <th>  AIC:               </th> <td>   557.7</td>
+</tr>
+<tr>
+  <th>Df Residuals:</th>          <td>    50</td>      <th>  BIC:               </th> <td>   561.6</td>
+</tr>
+<tr>
+  <th>Df Model:</th>              <td>     1</td>      <th>                     </th>     <td> </td>   
+</tr>
+<tr>
+  <th>Covariance Type:</th>      <td>nonrobust</td>    <th>                     </th>     <td> </td>   
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+    <td></td>       <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
+</tr>
+<tr>
+  <th>const</th> <td>  278.3739</td> <td>   12.896</td> <td>   21.587</td> <td> 0.000</td> <td>  252.472</td> <td>  304.275</td>
+</tr>
+<tr>
+  <th>x1</th>    <td>    3.4079</td> <td>    0.589</td> <td>    5.788</td> <td> 0.000</td> <td>    2.225</td> <td>    4.591</td>
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+  <th>Omnibus:</th>       <td> 7.662</td> <th>  Durbin-Watson:     </th> <td>   1.856</td>
+</tr>
+<tr>
+  <th>Prob(Omnibus):</th> <td> 0.022</td> <th>  Jarque-Bera (JB):  </th> <td>  10.695</td>
+</tr>
+<tr>
+  <th>Skew:</th>          <td>-0.393</td> <th>  Prob(JB):          </th> <td> 0.00476</td>
+</tr>
+<tr>
+  <th>Kurtosis:</th>      <td> 5.078</td> <th>  Cond. No.          </th> <td>    40.3</td>
+</tr>
+</table><br/><br/>Notes:<br/>[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_pred</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">y</span><span class="o">-</span><span class="n">y_pred</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/anaconda3/lib/python3.8/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../_images/OLSLectureNotebook_16_2.png" src="../_images/OLSLectureNotebook_16_2.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">RLM</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+
+<span class="n">model</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="simpletable">
+<caption>Robust linear Model Regression Results</caption>
+<tr>
+  <th>Dep. Variable:</th>          <td>y</td>        <th>  No. Observations:  </th> <td>    52</td>
+</tr>
+<tr>
+  <th>Model:</th>                 <td>RLM</td>       <th>  Df Residuals:      </th> <td>    50</td>
+</tr>
+<tr>
+  <th>Method:</th>               <td>IRLS</td>       <th>  Df Model:          </th> <td>     1</td>
+</tr>
+<tr>
+  <th>Norm:</th>                <td>HuberT</td>      <th>                     </th>    <td> </td>  
+</tr>
+<tr>
+  <th>Scale Est.:</th>            <td>mad</td>       <th>                     </th>    <td> </td>  
+</tr>
+<tr>
+  <th>Cov Type:</th>              <td>H1</td>        <th>                     </th>    <td> </td>  
+</tr>
+<tr>
+  <th>Date:</th>           <td>Mon, 04 Apr 2022</td> <th>                     </th>    <td> </td>  
+</tr>
+<tr>
+  <th>Time:</th>               <td>00:06:00</td>     <th>                     </th>    <td> </td>  
+</tr>
+<tr>
+  <th>No. Iterations:</th>        <td>12</td>        <th>                     </th>    <td> </td>  
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+    <td></td>       <th>coef</th>     <th>std err</th>      <th>z</th>      <th>P>|z|</th>  <th>[0.025</th>    <th>0.975]</th>  
+</tr>
+<tr>
+  <th>const</th> <td>  278.5282</td> <td>   10.329</td> <td>   26.965</td> <td> 0.000</td> <td>  258.283</td> <td>  298.773</td>
+</tr>
+<tr>
+  <th>x1</th>    <td>    3.5157</td> <td>    0.472</td> <td>    7.454</td> <td> 0.000</td> <td>    2.591</td> <td>    4.440</td>
+</tr>
+</table><br/><br/>If the model instance has been used for another fit with different fit parameters, then the fit options might not be the correct ones anymore .</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_pred</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">y</span><span class="o">-</span><span class="n">y_pred</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/anaconda3/lib/python3.8/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../_images/OLSLectureNotebook_18_2.png" src="../_images/OLSLectureNotebook_18_2.png" />
+</div>
+</div>
+</div>
+<div class="section" id="nonlinearity">
+<h1>Nonlinearity<a class="headerlink" href="#nonlinearity" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#True form of exponential data</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="n">ytrue</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">+</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">ytrue</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/anaconda3/lib/python3.8/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../_images/OLSLectureNotebook_20_2.png" src="../_images/OLSLectureNotebook_20_2.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#noisy form of exponential data</span>
+<span class="n">noise</span> <span class="o">=</span> <span class="mf">1.5</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="n">ynoise</span> <span class="o">=</span> <span class="n">ytrue</span><span class="o">+</span><span class="n">noise</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">ynoise</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/anaconda3/lib/python3.8/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../_images/OLSLectureNotebook_21_2.png" src="../_images/OLSLectureNotebook_21_2.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#True form linear regression</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">ytrue</span><span class="p">)</span>
+<span class="n">m</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">ytrue</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">m</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="n">b</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/anaconda3/lib/python3.8/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f8d0a724880&gt;]
+</pre></div>
+</div>
+<img alt="../_images/OLSLectureNotebook_22_2.png" src="../_images/OLSLectureNotebook_22_2.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#noisy form linear regression</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">ynoise</span><span class="p">)</span>
+<span class="n">m</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">ynoise</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">m</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="n">b</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/anaconda3/lib/python3.8/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f8d0a8a1f70&gt;]
+</pre></div>
+</div>
+<img alt="../_images/OLSLectureNotebook_23_2.png" src="../_images/OLSLectureNotebook_23_2.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">ynoise</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+
+<span class="n">model</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="simpletable">
+<caption>OLS Regression Results</caption>
+<tr>
+  <th>Dep. Variable:</th>            <td>y</td>        <th>  R-squared:         </th> <td>   0.000</td>
+</tr>
+<tr>
+  <th>Model:</th>                   <td>OLS</td>       <th>  Adj. R-squared:    </th> <td>  -0.010</td>
+</tr>
+<tr>
+  <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>0.003742</td>
+</tr>
+<tr>
+  <th>Date:</th>             <td>Mon, 04 Apr 2022</td> <th>  Prob (F-statistic):</th>  <td> 0.951</td> 
+</tr>
+<tr>
+  <th>Time:</th>                 <td>00:06:01</td>     <th>  Log-Likelihood:    </th> <td> -189.58</td>
+</tr>
+<tr>
+  <th>No. Observations:</th>      <td>   100</td>      <th>  AIC:               </th> <td>   383.2</td>
+</tr>
+<tr>
+  <th>Df Residuals:</th>          <td>    98</td>      <th>  BIC:               </th> <td>   388.4</td>
+</tr>
+<tr>
+  <th>Df Model:</th>              <td>     1</td>      <th>                     </th>     <td> </td>   
+</tr>
+<tr>
+  <th>Covariance Type:</th>      <td>nonrobust</td>    <th>                     </th>     <td> </td>   
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+    <td></td>       <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
+</tr>
+<tr>
+  <th>const</th> <td>    5.4266</td> <td>    0.163</td> <td>   33.319</td> <td> 0.000</td> <td>    5.103</td> <td>    5.750</td>
+</tr>
+<tr>
+  <th>x1</th>    <td>    0.0103</td> <td>    0.169</td> <td>    0.061</td> <td> 0.951</td> <td>   -0.324</td> <td>    0.345</td>
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+  <th>Omnibus:</th>       <td> 3.473</td> <th>  Durbin-Watson:     </th> <td>   1.862</td>
+</tr>
+<tr>
+  <th>Prob(Omnibus):</th> <td> 0.176</td> <th>  Jarque-Bera (JB):  </th> <td>   2.841</td>
+</tr>
+<tr>
+  <th>Skew:</th>          <td>-0.384</td> <th>  Prob(JB):          </th> <td>   0.242</td>
+</tr>
+<tr>
+  <th>Kurtosis:</th>      <td> 3.302</td> <th>  Cond. No.          </th> <td>    1.05</td>
+</tr>
+</table><br/><br/>Notes:<br/>[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#check for nonlinearity using residual plot</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">ynoise</span><span class="p">,</span><span class="n">ynoise</span><span class="o">-</span><span class="n">y_pred</span><span class="p">)</span>
+<span class="c1">#if there is a pattern then there&#39;s a problem!</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/anaconda3/lib/python3.8/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../_images/OLSLectureNotebook_25_2.png" src="../_images/OLSLectureNotebook_25_2.png" />
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Garrett_Lectures"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Ed Vul<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

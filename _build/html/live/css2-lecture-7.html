@@ -1,0 +1,1255 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data analysis goals / approaches &#8212; UCSD CSS 2</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">UCSD CSS 2</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Welcome to CSS 2
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Course (CSS 2 Spring 2022)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/syllabus.html">
+   Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/expectations.html">
+   Expectations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/datahub.html">
+   Datahub assignments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/debugging.html">
+   Debugging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/resources.html">
+   Extracurricular Resources
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/final.html">
+   Final Project
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lectures
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/sp22/Lecture_2.html">
+   Lecture 2 (3/30/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/sp22/Lecture_3.html">
+   Lecture 3 (4/1/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/sp22/Lecture_4.html">
+   Lecture 4 (4/4/22)
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/live/css2-lecture-7.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/UCSD-CSS-002/ucsd-css-002.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/UCSD-CSS-002/ucsd-css-002.github.io/issues/new?title=Issue%20on%20page%20%2Flive/css2-lecture-7.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/UCSD-CSS-002/ucsd-css-002.github.io/master?urlpath=tree/live/css2-lecture-7.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Data analysis goals / approaches
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#statistics">
+     Statistics
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#supervised-machine-learning">
+     Supervised machine learning
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Supervised Machine Learning
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#processes-steps">
+     Processes / steps
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#specifying-the-problem-goals">
+       Specifying the problem / goals
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#getting-data">
+       Getting data
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#feature-extraction-engineering">
+       Feature extraction / engineering
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#model-selection-fitting">
+       Model selection / fitting
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#scikit-learn">
+   scikit learn
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#classification">
+   Classification
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-statement">
+     Problem statement
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#useful-distinctions">
+       Useful distinctions:
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#quick-example">
+     Quick Example
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#k-nearest-neighbors">
+     K nearest neighbors
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#evaluating-classification-performance">
+     Evaluating classification performance
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#hard-classification">
+       Hard classification
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#confusion-matrix">
+         Confusion matrix
+        </a>
+        <ul class="nav section-nav flex-column">
+         <li class="toc-h5 nav-item toc-entry">
+          <a class="reference internal nav-link" href="#reading-a-confusion-matrix">
+           Reading a confusion matrix
+          </a>
+         </li>
+         <li class="toc-h5 nav-item toc-entry">
+          <a class="reference internal nav-link" href="#measures-that-condition-on-true-values">
+           Measures that condition on true values
+          </a>
+         </li>
+         <li class="toc-h5 nav-item toc-entry">
+          <a class="reference internal nav-link" href="#measures-that-condition-on-predicted-labels">
+           Measures that condition on predicted labels
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#overall-metrics">
+         Overall Metrics
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#soft-predictions-and-thresholds">
+       Soft predictions and thresholds
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#thresholds">
+         Thresholds
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#roc-curves">
+         ROC curves
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#metrics-for-soft-predictions">
+         Metrics for soft predictions.
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#classifiers-in-scikit-learn">
+     Classifiers in scikit learn
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#classifier-types">
+     Classifier types
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#k-nearest-neighbor-knn">
+       <strong>
+        K-nearest-neighbor
+       </strong>
+       /
+       <strong>
+        kNN
+       </strong>
+       :
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#decision-tree">
+       <strong>
+        Decision tree
+       </strong>
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="data-analysis-goals-approaches">
+<h1>Data analysis goals / approaches<a class="headerlink" href="#data-analysis-goals-approaches" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="statistics">
+<h2>Statistics<a class="headerlink" href="#statistics" title="Permalink to this headline">¶</a></h2>
+<p><strong>Goal:</strong> characterize the data-generating process, either by estimating meaningful parameters in a theoretically motivated model structure, or by picking among such models.</p>
+<p><strong>Important:</strong> Model structure, parameter estimates.</p>
+<p><strong>Not emphasized:</strong> Predictive performance.</p>
+<p>So, statistics is deeply concerned with estimating model parameters (i.e., the mean of a group), estimating the error of those estimates (i.e., standard error of the mean), putting confidence intervals on those estimates, asking whether a particular model might be inconsistent with the data (i.e., null hypothesis significance testing), and choosing among competing theoretical models (i.e., model selection/comparison).</p>
+</div>
+<div class="section" id="supervised-machine-learning">
+<h2>Supervised machine learning<a class="headerlink" href="#supervised-machine-learning" title="Permalink to this headline">¶</a></h2>
+<p><strong>Goal:</strong> get a computer to do something useful by learning what useful behavior looks like from examples.</p>
+<p><strong>Important:</strong> Loss function and evaluation of predictive performance.</p>
+<p><strong>Not emphasized:</strong> Model structure and parameter estimates.</p>
+<p>So supervised machine learning focuses on algorithms that can efficiently learn and  generalize complicated behavioral functions.  The most effective algorithms often have internal representations that are inscrutable and uninterpretable.  Model structure is relevant insofar as it determines what kinds of behavioral functions can be learned at all, or more easily.</p>
+</div>
+</div>
+<div class="section" id="id1">
+<h1>Supervised Machine Learning<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="processes-steps">
+<h2>Processes / steps<a class="headerlink" href="#processes-steps" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="specifying-the-problem-goals">
+<h3>Specifying the problem / goals<a class="headerlink" href="#specifying-the-problem-goals" title="Permalink to this headline">¶</a></h3>
+<p><strong>What’s the goal?</strong>  (e.g., we want to predict how much two people would like dating each other.)</p>
+<p><strong>What’s the loss function?</strong>  How do we quantify success? (e.g., MSE on log duration of relationship)</p>
+</div>
+<div class="section" id="getting-data">
+<h3>Getting data<a class="headerlink" href="#getting-data" title="Permalink to this headline">¶</a></h3>
+<p><strong>Where can we find data to learn from?</strong>  We need training examples for which we have some information we want to use to predict from, as well as the label/value we want to predict.  (e.g., we need data on how long relationship that started on our platform have lasted)</p>
+<p><strong>What kind of information can we use to make these predictions?</strong>  This information needs to be available both in the training data, and in the examples we want to make predictions for.  (e.g., the dating profiles they filled out, their photos, their geographic region and the other folks in that region)</p>
+</div>
+<div class="section" id="feature-extraction-engineering">
+<h3>Feature extraction / engineering<a class="headerlink" href="#feature-extraction-engineering" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="model-selection-fitting">
+<h3>Model selection / fitting<a class="headerlink" href="#model-selection-fitting" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="section" id="scikit-learn">
+<h1>scikit learn<a class="headerlink" href="#scikit-learn" title="Permalink to this headline">¶</a></h1>
+<p>Is a python package with a whole bunch of common machine learning algorithms, tools, and functions built in.</p>
+<p><a class="reference external" href="https://scikit-learn.org/stable/getting_started.html">getting started guide</a></p>
+<p>by convention, we do not import all of the <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> library, but instead just import the bits we need.  As you an see from the full <a class="reference external" href="https://scikit-learn.org/stable/user_guide.html">user guide</a> the library is enormous, so importing the whole thing would be quite wasteful of computer memory.</p>
+<p>bits we may need are in:</p>
+<p><code class="docutils literal notranslate"><span class="pre">sklearn.{model}</span></code> where {model} is some type of model class.  From here we import specific model classes.  Roughly comparable to the SimpleRegression class we implemented last week.</p>
+<p><code class="docutils literal notranslate"><span class="pre">sklearn.metrics</span></code> which includes various loss functions and means of evaluating model performance.</p>
+<p><code class="docutils literal notranslate"><span class="pre">sklearn.model_selection</span></code> which includes various helper functions for choosing models, or tuning ‘hyperparameters’</p>
+<p><code class="docutils literal notranslate"><span class="pre">sklearn.datasets</span></code> which includes data sets and functions for loading them.</p>
+<p>and more.</p>
+</div>
+<div class="section" id="classification">
+<h1>Classification<a class="headerlink" href="#classification" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="problem-statement">
+<h2>Problem statement<a class="headerlink" href="#problem-statement" title="Permalink to this headline">¶</a></h2>
+<p>This is a <em>supervised</em> learning problem, meaning that we start with some examples of what kind of behavior we <em>want</em>.</p>
+<p>We start with some labeled examples.</p>
+<p>Labels are categorical.</p>
+<p>An example is summarized as a set of “features” (variables, values, properties, attributes).  These features are numerical variables.  An example is a <em>row</em> of our data.  features are <em>columns</em> of our data.  The labels are another column of the data.</p>
+<p>We want an algorithm that could predict the label of a new example, given its features.</p>
+<p>Examples: predict whether someone will default on their loan (yes/no label), predict whether a picture contains a cat (yes/no cat label), predict what kind of pet is in the picture (cat/dog/hamster/frog label), predict how someone will vote, etc.</p>
+<div class="section" id="useful-distinctions">
+<h3>Useful distinctions:<a class="headerlink" href="#useful-distinctions" title="Permalink to this headline">¶</a></h3>
+<p><strong>Binary</strong> classification: predicting a label that can take on two values (yes/no, cat/not-cat, correct/incorrect, success/failure, etc.)</p>
+<p><strong>Multiclass</strong> classification: predicting a label that can take on more than two values (cat/dog/hamster/lizard, white/black/asian/hispanic/other, democrat/republican/libertarian/green/other, etc.)</p>
+<p><strong>Multilabel</strong> classification: predicting which set of labels applies to a given example.  For instance a picture could contain a cat, a dog, a person, a car, etc, these are not mutually exclusive.  Multilabel classification amounts to choosing which set of labels applies.   We can think of this as a bunch of binary classification problems (for each possible label, does it apply or not?), or one gigantic multi-class classification problem (in which each combination of labels is a distinct class).</p>
+<p><strong>Model-based</strong> vs <strong>instance-based</strong>: usually a continuum, but worth thinking about.  Maybe more useful to think about number of parameters: scales with features, or scales with with examples.</p>
+<p><strong>Generative</strong> vs <strong>Discriminative</strong></p>
+</div>
+</div>
+<div class="section" id="quick-example">
+<h2>Quick Example<a class="headerlink" href="#quick-example" title="Permalink to this headline">¶</a></h2>
+<p>Classifying legendary pokemon.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rc</span><span class="p">(</span><span class="s1">&#39;font&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">poke</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;Pokemon.csv&#39;</span><span class="p">)</span>
+<span class="n">poke</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>#</th>
+      <th>Name</th>
+      <th>Type 1</th>
+      <th>Type 2</th>
+      <th>Total</th>
+      <th>HP</th>
+      <th>Attack</th>
+      <th>Defense</th>
+      <th>Sp. Atk</th>
+      <th>Sp. Def</th>
+      <th>Speed</th>
+      <th>Generation</th>
+      <th>Legendary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>Bulbasaur</td>
+      <td>Grass</td>
+      <td>Poison</td>
+      <td>318</td>
+      <td>45</td>
+      <td>49</td>
+      <td>49</td>
+      <td>65</td>
+      <td>65</td>
+      <td>45</td>
+      <td>1</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>Ivysaur</td>
+      <td>Grass</td>
+      <td>Poison</td>
+      <td>405</td>
+      <td>60</td>
+      <td>62</td>
+      <td>63</td>
+      <td>80</td>
+      <td>80</td>
+      <td>60</td>
+      <td>1</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>Venusaur</td>
+      <td>Grass</td>
+      <td>Poison</td>
+      <td>525</td>
+      <td>80</td>
+      <td>82</td>
+      <td>83</td>
+      <td>100</td>
+      <td>100</td>
+      <td>80</td>
+      <td>1</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>VenusaurMega Venusaur</td>
+      <td>Grass</td>
+      <td>Poison</td>
+      <td>625</td>
+      <td>80</td>
+      <td>100</td>
+      <td>123</td>
+      <td>122</td>
+      <td>120</td>
+      <td>80</td>
+      <td>1</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>Charmander</td>
+      <td>Fire</td>
+      <td>NaN</td>
+      <td>309</td>
+      <td>39</td>
+      <td>52</td>
+      <td>43</td>
+      <td>60</td>
+      <td>50</td>
+      <td>65</td>
+      <td>1</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>795</th>
+      <td>719</td>
+      <td>Diancie</td>
+      <td>Rock</td>
+      <td>Fairy</td>
+      <td>600</td>
+      <td>50</td>
+      <td>100</td>
+      <td>150</td>
+      <td>100</td>
+      <td>150</td>
+      <td>50</td>
+      <td>6</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>796</th>
+      <td>719</td>
+      <td>DiancieMega Diancie</td>
+      <td>Rock</td>
+      <td>Fairy</td>
+      <td>700</td>
+      <td>50</td>
+      <td>160</td>
+      <td>110</td>
+      <td>160</td>
+      <td>110</td>
+      <td>110</td>
+      <td>6</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>797</th>
+      <td>720</td>
+      <td>HoopaHoopa Confined</td>
+      <td>Psychic</td>
+      <td>Ghost</td>
+      <td>600</td>
+      <td>80</td>
+      <td>110</td>
+      <td>60</td>
+      <td>150</td>
+      <td>130</td>
+      <td>70</td>
+      <td>6</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>798</th>
+      <td>720</td>
+      <td>HoopaHoopa Unbound</td>
+      <td>Psychic</td>
+      <td>Dark</td>
+      <td>680</td>
+      <td>80</td>
+      <td>160</td>
+      <td>60</td>
+      <td>170</td>
+      <td>130</td>
+      <td>80</td>
+      <td>6</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>799</th>
+      <td>721</td>
+      <td>Volcanion</td>
+      <td>Fire</td>
+      <td>Water</td>
+      <td>600</td>
+      <td>80</td>
+      <td>110</td>
+      <td>120</td>
+      <td>130</td>
+      <td>90</td>
+      <td>70</td>
+      <td>6</td>
+      <td>True</td>
+    </tr>
+  </tbody>
+</table>
+<p>800 rows × 13 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="k-nearest-neighbors">
+<h2>K nearest neighbors<a class="headerlink" href="#k-nearest-neighbors" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
+<span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsClassifier</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">poke</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;HP&#39;</span><span class="p">:</span><span class="s1">&#39;Generation&#39;</span><span class="p">])</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">poke</span><span class="p">[</span><span class="s1">&#39;Legendary&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> 
+                                                    <span class="n">y</span><span class="p">,</span> 
+                                                    <span class="n">train_size</span> <span class="o">=</span> <span class="mf">0.75</span><span class="p">,</span> 
+                                                    <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="c1"># note, random_state provided to yield consistent behavior over runs</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nn_3</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">nn_3</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">y_test_prediction</span> <span class="o">=</span> <span class="n">nn_3</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_test_prediction</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.93
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="evaluating-classification-performance">
+<h2>Evaluating classification performance<a class="headerlink" href="#evaluating-classification-performance" title="Permalink to this headline">¶</a></h2>
+<p><strong>metrics and loss functions</strong></p>
+<p>There are many.  Consider the sklearn <a class="reference external" href="https://scikit-learn.org/stable/modules/model_evaluation.html#classification-metrics">built-in ones</a></p>
+<p>There are a few things to consider when choosing a metric to evaluate performance:</p>
+<p><strong>Baserates, and imbalanced classification problems:</strong>  for some problems, the classes are <em>imbalanced</em>, meaning that some classes occur much more often than others.  For instance, the vast majority of credit card transactions are <em>not</em> fraudulent.  Such imbalanced classification problems present all sorts of challenges, but one of them is how to measure performance.  In such cases, if I always predict that credit card transactions are not fraudulent (and never label a transaction as fraud) I might achieve 99% accuracy, without even trying.  Not all metrics are suitable for such cases.</p>
+<p><strong>Actual costs and benefits:</strong> for many real-world problems, our true costs and benefits do not scale with accuracy.  For instance, if classifying xray images as cancerous or benigh, the cost of misclassifying cancer as benign is much higher than the cost of misclassifying a benign tumor as cancerous.  However, these are then scaled by the <em>baserates</em> of cancer in the set of data we want to classify.  In general, we must consider the costs of different kind of errors, and their baserates, to measure the goodness of classification performance that drives real decisions.</p>
+<div class="section" id="hard-classification">
+<h3>Hard classification<a class="headerlink" href="#hard-classification" title="Permalink to this headline">¶</a></h3>
+<p>Hard classification yields predicted labels directly.  For instance, I am trying to predict whether a given loan will fail to be paid back (defaulted), and my predictions are of the form ‘default’, or ‘no default’.</p>
+<div class="section" id="confusion-matrix">
+<h4>Confusion matrix<a class="headerlink" href="#confusion-matrix" title="Permalink to this headline">¶</a></h4>
+<p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Confusion_matrix">binary confusion matrix</a> is the basis of many metrics measuring binary classification performance.</p>
+<p>a confusion matrix contingency table considers the frequency with which each combination of true, and predicted, labels occurred.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">confusion_matrix</span>
+<span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_test_prediction</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[  8,  10],
+       [  4, 178]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_test_prediction</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">]),</span>
+            <span class="n">index</span><span class="o">=</span><span class="p">[[</span><span class="s1">&#39;True&#39;</span><span class="p">,</span> <span class="s1">&#39;True&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;Legendary&#39;</span><span class="p">,</span> <span class="s1">&#39;Not&#39;</span><span class="p">]],</span>
+            <span class="n">columns</span><span class="o">=</span><span class="p">[[</span><span class="s1">&#39;Predicted&#39;</span><span class="p">,</span> <span class="s1">&#39;Predicted&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;Legendary&#39;</span><span class="p">,</span> <span class="s1">&#39;Not&#39;</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th colspan="2" halign="left">Predicted</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th>Legendary</th>
+      <th>Not</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="2" valign="top">True</th>
+      <th>Legendary</th>
+      <td>8</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>Not</th>
+      <td>4</td>
+      <td>178</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="section" id="reading-a-confusion-matrix">
+<h5>Reading a confusion matrix<a class="headerlink" href="#reading-a-confusion-matrix" title="Permalink to this headline">¶</a></h5>
+<p>From this we can quickly see that:</p>
+<ul class="simple">
+<li><p>there were 18 legendary pokemon in the test data, and 182 not-legendary pokemon.</p></li>
+<li><p>so the classification problem is very much imbalanced (there are very few legendary pokemon)</p></li>
+<li><p>our classifier predicted a legendary label 12 times, and a not-legendary label 188 times.</p></li>
+<li><p>our overall <strong>accuracy</strong> is 186 out of 200.  Quite high (93%) largely because of the imbalance.</p></li>
+</ul>
+<p>From this we can consider a bunch of different conditional probabilities.  Each of these has fancy terms, and many of these terms vary across fields, even though they refer to the same thing)</p>
+</div>
+<div class="section" id="measures-that-condition-on-true-values">
+<h5>Measures that condition on true values<a class="headerlink" href="#measures-that-condition-on-true-values" title="Permalink to this headline">¶</a></h5>
+<p>Conditioning on the <strong>true value</strong> being <strong>positive</strong>: of all the pokemon that were truly <em>legendary</em>, how did we classify them?</p>
+<ul class="simple">
+<li><p>our <strong>false negative rate</strong> is pretty high – we frequently (10/18 times) fail to label a legendary pokemon as legendary.  (this is also called <em>miss rate</em> or <em>type II error rate</em>)</p></li>
+<li><p>this means that our <strong>true positive rate</strong> is fairly low (8/18 times) – of the 18 truly legendary pokemon, we labeled 8 of them as legendary.  (this is also called <em>recall</em> or <em>sensitivity</em> or <em>hit rate</em> or <em>power</em> in different fields)</p></li>
+</ul>
+<p>Conditioning on the <strong>true value</strong> being <strong>negative</strong>: of all the pokemon that were truly <em>not legendary</em>, how did we classify them?</p>
+<ul class="simple">
+<li><p>our <strong>false positive rate</strong> is low, meaning we rarely (4/182 times) label a not-legendary pokemon as legendary. (this is also called <em>false alarm rate</em> or <em>type I error rate</em>)</p></li>
+<li><p>this means that our <strong>true negative rate</strong> is high (178/182).  This is also called <em>specificity</em>, <em>selectivity</em>, or <em>correct rejection rate</em>.</p></li>
+</ul>
+</div>
+<div class="section" id="measures-that-condition-on-predicted-labels">
+<h5>Measures that condition on predicted labels<a class="headerlink" href="#measures-that-condition-on-predicted-labels" title="Permalink to this headline">¶</a></h5>
+<p>Conditioning on the <strong>predicted label</strong> being <strong>positive</strong>: of all the pokmeon we <em>labeled</em> as legendary, what were they really?</p>
+<ul class="simple">
+<li><p>Our <strong>positive predictive value</strong> is pretty high (8/12) of the 12 times we predicted a <em>legendary</em> label, we were right 8 times.  This is also called <strong>precision</strong>.</p></li>
+<li><p>Correspondingly, our <strong>false discovery rate</strong> is not too high (4/12).</p></li>
+</ul>
+<p>Conditioning on the <strong>predicted label</strong> being <strong>negative</strong>: of all the pokemon we <em>labeled</em> as not legendary, what were they really?</p>
+<ul class="simple">
+<li><p>Our <strong>negative predictive value</strong> is high (178/188), and</p></li>
+<li><p>Our <strong>false omission rate</strong> is low (10/188)</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="overall-metrics">
+<h4>Overall Metrics<a class="headerlink" href="#overall-metrics" title="Permalink to this headline">¶</a></h4>
+<p>The confusion matrix is usually summarized into a single number to capture overall performance.</p>
+<p>For balanced problems, we can simply talk about <strong>accuracy</strong></p>
+<p>For imbalanced problems, it is more common to use something like <strong>F1 score</strong> or <strong>matthews correlation coefficient</strong>, or <strong>balanced accuracy</strong>, etc.  These are just different ways of combining the conditional probabilities from the confusion matrix into a single number, to not overweight the frequent class.</p>
+</div>
+</div>
+<div class="section" id="soft-predictions-and-thresholds">
+<h3>Soft predictions and thresholds<a class="headerlink" href="#soft-predictions-and-thresholds" title="Permalink to this headline">¶</a></h3>
+<p>Many classification algorithms yield <em>soft</em> predictions.  Such as a probability, or a propensity score.  So instead of simply predicting whether a given example ought to be classified as ‘legendary’ or ‘not legendary’, the classifier might yield a single score, where higher scores indicate ‘more likely to be legendary’, and lower scores indicate ‘less likely to be legendary’.</p>
+<p>For the 3-nearest-neighbor classifier we trained earlier, these soft predictions correspond to the proportion of the 3 neighbors that voted for ‘legendary’.   i.e., 0/3, 1/3, 2/3, or 3/3.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">nn_3</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X_test</span><span class="p">)[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;probability of &quot;legendary&quot;&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;frequency&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;frequency&#39;)
+</pre></div>
+</div>
+<img alt="../_images/css2-lecture-7_24_1.png" src="../_images/css2-lecture-7_24_1.png" />
+</div>
+</div>
+<p>For other classifiers, these might be much more graded:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
+
+<span class="n">clf</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">()</span>
+<span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">clf</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X_test</span><span class="p">)[:,</span><span class="mi">1</span><span class="p">],</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;probability of &quot;legendary&quot;&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;frequency&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;frequency&#39;)
+</pre></div>
+</div>
+<img alt="../_images/css2-lecture-7_26_1.png" src="../_images/css2-lecture-7_26_1.png" />
+</div>
+</div>
+<div class="section" id="thresholds">
+<h4>Thresholds<a class="headerlink" href="#thresholds" title="Permalink to this headline">¶</a></h4>
+<p>If we have soft predictions, we can pick different <em>thresholds</em> for how to make <em>hard</em> label predictions from the soft scores.  For instance, should we predict that a pokemon is “legendary” if the score we predict is 0.6?  What about 0.8?</p>
+<p>We typically pick a <em>threshold</em>.  So we will call “legendary” every pokemon for which we predict a probability of legendary that is higher than the threshold.</p>
+<p>If we have a <strong>lower threshold</strong> like 0.25, that means that we will</p>
+<ul class="simple">
+<li><p>label more pokemon as “legendary”.</p></li>
+<li><p>have a higher <strong>true positive rate</strong> (and lower false negative rate)</p></li>
+<li><p>have a higher <strong>false positive rate</strong> (and lower true negative rate)</p></li>
+<li><p>have</p></li>
+</ul>
+<p>If we have a <strong>higher threshold</strong> like 0.75, that means that we will…</p>
+<ul class="simple">
+<li><p>label fewer pokemon as “legendary” (more negatives).</p></li>
+<li><p>have a higher <strong>false negative rate</strong> (and lower true positive rate)</p></li>
+<li><p>have a higher <strong>true negative rate</strong>  (and lower false negative rate)</p></li>
+</ul>
+</div>
+<div class="section" id="roc-curves">
+<h4>ROC curves<a class="headerlink" href="#roc-curves" title="Permalink to this headline">¶</a></h4>
+<p>Choosing a threshold can be somewhat arbitrary, and will influence all our confusion-matrix based scores.  In general, when we choose a threshold, we will want to consider costs of different kinds of errors.</p>
+<p>However, we may want to figure out how well our classifier is doing before we pick a threshold.  How good is it at separating the different classes?</p>
+<p>To do so, it is common to consider the full “receiver operating characteristic” curve, which describes how the true positive rate, and false positive rate change for different thresholds</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+
+<span class="k">def</span> <span class="nf">generate_positive</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">randint</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">generate_negative</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">([</span><span class="n">generate_positive</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">([</span><span class="n">generate_negative</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([15., 18.,  0., 11.,  0., 16., 10.,  0., 15., 15.]),
+ array([0. , 0.6, 1.2, 1.8, 2.4, 3. , 3.6, 4.2, 4.8, 5.4, 6. ]),
+ &lt;BarContainer object of 10 artists&gt;)
+</pre></div>
+</div>
+<img alt="../_images/css2-lecture-7_29_1.png" src="../_images/css2-lecture-7_29_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">roc_curve</span>
+
+<span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">thresholds</span> <span class="o">=</span> <span class="n">roc_curve</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X_test</span><span class="p">)[:,</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;r-&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="s1">&#39;ko-&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;False positive rate&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;True positive rate&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;True positive rate&#39;)
+</pre></div>
+</div>
+<img alt="../_images/css2-lecture-7_30_1.png" src="../_images/css2-lecture-7_30_1.png" />
+</div>
+</div>
+<p>How to read this?</p>
+<ul class="simple">
+<li><p>very high thresholds are in the lower left corner (where we set the threshold so high, that we never choose to label a pokemon as “legendary”, and thus have low true and false positive rates.)</p></li>
+<li><p>very low thresholds are in the upper right corner</p></li>
+<li><p>chance performance would fall on the diagonal, if we had totally random, unpredictive, scores, then true and false positive rates would be matched.</p></li>
+<li><p>perfect performance would be a function that starts at (0,0), goes to (0,1), and then to (1,1).  Meaning that there is a threshold at which we get 0 false positives, and 100% true positives.</p></li>
+</ul>
+<p>So the further our curve is from the diagonal toward the upper left corner, the better our classifier is doing.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;r-&#39;</span><span class="p">)</span>
+
+<span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">thresholds</span> <span class="o">=</span> <span class="n">roc_curve</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y_test</span><span class="p">)))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="s1">&#39;mo-&#39;</span><span class="p">)</span>
+
+<span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">thresholds</span> <span class="o">=</span> <span class="n">roc_curve</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="s1">&#39;g-&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">thresholds</span> <span class="o">=</span> <span class="n">roc_curve</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X_test</span><span class="p">)[:,</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="s1">&#39;ko-&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;Chance&#39;</span><span class="p">,</span> <span class="s1">&#39;Simulated chance&#39;</span><span class="p">,</span> <span class="s1">&#39;Perfect&#39;</span><span class="p">,</span> <span class="s1">&#39;Actual ROC&#39;</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;False positive rate&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;True positive rate&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;True positive rate&#39;)
+</pre></div>
+</div>
+<img alt="../_images/css2-lecture-7_32_1.png" src="../_images/css2-lecture-7_32_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="metrics-for-soft-predictions">
+<h4>Metrics for soft predictions.<a class="headerlink" href="#metrics-for-soft-predictions" title="Permalink to this headline">¶</a></h4>
+<p>Area under the ROC  <code class="docutils literal notranslate"><span class="pre">sklearn.metrics.roc_auc_curve()</span></code>.</p>
+<p>log loss / logistic loss / cross entropy loss</p>
+</div>
+</div>
+</div>
+<div class="section" id="classifiers-in-scikit-learn">
+<h2>Classifiers in scikit learn<a class="headerlink" href="#classifiers-in-scikit-learn" title="Permalink to this headline">¶</a></h2>
+<p>They are all generally packaged as classes, roughly like the one we coded up for SimpleRegression.</p>
+<p>They have some initialization parameters (describing the core assumptions of the model), they have a <code class="docutils literal notranslate"><span class="pre">fit</span></code> method, to estimate parameters, and they have a <code class="docutils literal notranslate"><span class="pre">predict</span></code> method to generate predicted labels.</p>
+</div>
+<div class="section" id="classifier-types">
+<h2>Classifier types<a class="headerlink" href="#classifier-types" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="k-nearest-neighbor-knn">
+<h3><strong>K-nearest-neighbor</strong> / <strong>kNN</strong>:<a class="headerlink" href="#k-nearest-neighbor-knn" title="Permalink to this headline">¶</a></h3>
+<p>consider the k <em>closest</em> neighbors from the training set to the new data point, and have them vote on a label.</p>
+</div>
+<div class="section" id="decision-tree">
+<h3><strong>Decision tree</strong><a class="headerlink" href="#decision-tree" title="Permalink to this headline">¶</a></h3>
+<p>Build a tree of binary decisions of the form “feature X &gt;= threshold”, so as to separate the classes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span> 
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">tree</span>
+
+<span class="c1"># max_depth</span>
+
+<span class="n">dt</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">max_depth</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">dt</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DecisionTreeClassifier(max_depth=2)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="mi">50</span><span class="p">))</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">plot_tree</span><span class="p">(</span><span class="n">dt</span><span class="p">,</span> 
+                   <span class="n">feature_names</span> <span class="o">=</span> <span class="n">poke</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;HP&#39;</span><span class="p">:</span><span class="s1">&#39;Generation&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span>
+                  <span class="n">class_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Not Legendary&#39;</span><span class="p">,</span> <span class="s1">&#39;Legendary&#39;</span><span class="p">],</span>
+                  <span class="n">filled</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/css2-lecture-7_39_0.png" src="../_images/css2-lecture-7_39_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">poke</span><span class="p">[[</span><span class="s1">&#39;Sp. Atk&#39;</span><span class="p">,</span><span class="s1">&#39;Attack&#39;</span><span class="p">]]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">poke</span><span class="p">[</span><span class="s1">&#39;Legendary&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> 
+                                                    <span class="n">y</span><span class="p">,</span> 
+                                                    <span class="n">train_size</span><span class="o">=</span><span class="mf">0.75</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dt</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">max_depth</span> <span class="o">=</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">dt</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DecisionTreeClassifier(max_depth=8)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">plot_tree</span><span class="p">(</span><span class="n">dt</span><span class="p">,</span> 
+                   <span class="n">feature_names</span> <span class="o">=</span> <span class="n">X_train</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span>
+                  <span class="n">class_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Not Legendary&#39;</span><span class="p">,</span> <span class="s1">&#39;Legendary&#39;</span><span class="p">],</span>
+                  <span class="n">filled</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/css2-lecture-7_44_0.png" src="../_images/css2-lecture-7_44_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Sp. Atk&#39;</span><span class="p">:[],</span>
+        <span class="s1">&#39;Attack&#39;</span><span class="p">:[]}</span>
+<span class="k">for</span> <span class="n">spatk</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="s1">&#39;Sp. Atk&#39;</span><span class="p">]),</span> <span class="nb">max</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="s1">&#39;Sp. Atk&#39;</span><span class="p">]),</span> <span class="mi">100</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">atk</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="s1">&#39;Attack&#39;</span><span class="p">]),</span> <span class="nb">max</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="s1">&#39;Attack&#39;</span><span class="p">]),</span> <span class="mi">100</span><span class="p">):</span>
+        <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Sp. Atk&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">spatk</span><span class="p">)</span>
+        <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Attack&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">atk</span><span class="p">)</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Sp. Atk&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Attack&#39;</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">dt</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">df</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Sp. Atk&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Attack&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Attack&#39;)
+</pre></div>
+</div>
+<img alt="../_images/css2-lecture-7_46_1.png" src="../_images/css2-lecture-7_46_1.png" />
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./live"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Ed Vul<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

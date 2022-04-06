@@ -1,0 +1,1118 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slightly different topic: &#8212; UCSD CSS 2</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">UCSD CSS 2</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Welcome to CSS 2
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Course (CSS 2 Spring 2022)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/syllabus.html">
+   Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/expectations.html">
+   Expectations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/datahub.html">
+   Datahub assignments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/debugging.html">
+   Debugging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/resources.html">
+   Extracurricular Resources
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/final.html">
+   Final Project
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lectures
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/sp22/Lecture_2.html">
+   Lecture 2 (3/30/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/sp22/Lecture_3.html">
+   Lecture 3 (4/1/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/sp22/Lecture_4.html">
+   Lecture 4 (4/4/22)
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Garrett_Lectures/s21_Lecture14_linear_regression3.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/UCSD-CSS-002/ucsd-css-002.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/UCSD-CSS-002/ucsd-css-002.github.io/issues/new?title=Issue%20on%20page%20%2FGarrett_Lectures/s21_Lecture14_linear_regression3.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/UCSD-CSS-002/ucsd-css-002.github.io/master?urlpath=tree/Garrett_Lectures/s21_Lecture14_linear_regression3.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Slightly different topic:
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#below-is-a-discussion-of-linear-regression-inference-sort-of-like-what-brendon-is-covering-it-may-be-helpful-for-you-to-know-about-but-it-won-t-be-assessed-in-this-course-so-feel-free-to-check-out-the-stuff-below-of-your-own-volition">
+   Below is a discussion of linear regression inference (sort of like what Brendon is covering). It may be helpful for you to know about, but it won’t be assessed in this course. So, feel free to check out the stuff below of your own volition!
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <p>Lecture 14. Non-linear Regression</p>
+<p>Announcements</p>
+<ol class="simple">
+<li><p>Quiz 6, Quiz 7, problem set 7, and discussion board post 2 due at the end of the week!</p></li>
+</ol>
+<ul class="simple">
+<li><p>start them early and plan wisely!</p></li>
+</ul>
+<p>Today’s topics</p>
+<ol class="simple">
+<li><p>Polynomial regression</p></li>
+<li><p>Over and underfitting</p></li>
+<li><p>Binary classification</p></li>
+</ol>
+<p>Today, we will discuss polynomial regression, or non-linear regression, and then under and overfitting.</p>
+<p>First, let’s load our normal libraries</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, let’s load our data</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpg</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;final_mpg_dataset.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpg</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mpg</th>
+      <th>cylinders</th>
+      <th>displacement</th>
+      <th>horsepower</th>
+      <th>weight</th>
+      <th>acceleration</th>
+      <th>model_year</th>
+      <th>origin</th>
+      <th>name</th>
+      <th>Type</th>
+      <th>...</th>
+      <th>peugeot</th>
+      <th>toyota</th>
+      <th>volkswagen</th>
+      <th>volvo</th>
+      <th>Sedan0</th>
+      <th>japan</th>
+      <th>usa</th>
+      <th>MediumHP</th>
+      <th>HighHP</th>
+      <th>HP_ordinal</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>18.0</td>
+      <td>8.0</td>
+      <td>307.000000</td>
+      <td>130.000000</td>
+      <td>3504.0</td>
+      <td>12.000000</td>
+      <td>70.0</td>
+      <td>usa</td>
+      <td>chevrolet</td>
+      <td>Sedan</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>14.0</td>
+      <td>8.0</td>
+      <td>167.405634</td>
+      <td>92.497143</td>
+      <td>4354.0</td>
+      <td>16.007471</td>
+      <td>70.0</td>
+      <td>usa</td>
+      <td>chevrolet</td>
+      <td>Sedan</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>15.0</td>
+      <td>8.0</td>
+      <td>400.000000</td>
+      <td>150.000000</td>
+      <td>3761.0</td>
+      <td>16.007471</td>
+      <td>70.0</td>
+      <td>usa</td>
+      <td>chevrolet</td>
+      <td>Sedan</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>24.0</td>
+      <td>4.0</td>
+      <td>113.000000</td>
+      <td>95.000000</td>
+      <td>2372.0</td>
+      <td>15.000000</td>
+      <td>70.0</td>
+      <td>japan</td>
+      <td>toyota</td>
+      <td>Coupe</td>
+      <td>...</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>26.0</td>
+      <td>4.0</td>
+      <td>12.000000</td>
+      <td>46.000000</td>
+      <td>1835.0</td>
+      <td>20.500000</td>
+      <td>70.0</td>
+      <td>europe</td>
+      <td>volkswagen</td>
+      <td>Coupe</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 23 columns</p>
+</div></div></div>
+</div>
+<p>Let’s run our function. Cool cool. Looks good</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">mpg</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">],</span><span class="n">mpg</span><span class="p">[</span><span class="s1">&#39;mpg&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/anaconda3/lib/python3.8/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;weight&#39;, ylabel=&#39;mpg&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture14_linear_regression3_6_2.png" src="../_images/s21_Lecture14_linear_regression3_6_2.png" />
+</div>
+</div>
+<p>We talked about how we can use linear regression to see how weight relates to mpg linearly</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">mpg</span><span class="p">[[</span><span class="s1">&#39;weight&#39;</span><span class="p">]],</span><span class="n">mpg</span><span class="p">[</span><span class="s1">&#39;mpg&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LinearRegression()
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s just create a ymodel variable to make our lives a bit easier</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ymodel</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">mpg</span><span class="p">[[</span><span class="s1">&#39;weight&#39;</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>And we can plot our fitted line on top of our data</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">mpg</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">],</span><span class="n">mpg</span><span class="p">[</span><span class="s1">&#39;mpg&#39;</span><span class="p">])</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">mpg</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">],</span><span class="n">ymodel</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/anaconda3/lib/python3.8/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/anaconda3/lib/python3.8/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;weight&#39;, ylabel=&#39;mpg&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture14_linear_regression3_12_3.png" src="../_images/s21_Lecture14_linear_regression3_12_3.png" />
+</div>
+</div>
+<p>Looks good! Though, remember, its important to look at the residuals too</p>
+<p>Here, let’s do a residual plot, which is the predicted y values plotted against the residuals</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">ymodel</span><span class="p">,</span><span class="n">ymodel</span><span class="o">-</span><span class="n">mpg</span><span class="p">[</span><span class="s1">&#39;mpg&#39;</span><span class="p">])</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span><span class="mi">35</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/anaconda3/lib/python3.8/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/opt/anaconda3/lib/python3.8/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:ylabel=&#39;mpg&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture14_linear_regression3_14_2.png" src="../_images/s21_Lecture14_linear_regression3_14_2.png" />
+</div>
+</div>
+<p>Notice kind of a pattern? It looks an frowny face or an upside u. That is, at lower and higher predicted y values, our predictions underestimate our data. In the middle, our predictions overestimate our data.</p>
+<p>This, and the reverse, is a classic sign of the relationship being non-linear</p>
+<p>Let’s talk about doing non-linear regression instead of linear regression to see if we can do a better fit of the data</p>
+<p>To do so, we will use polynomial regression. Still fitting a line, but now that line will be non-linear at higher order polynomials (i.e., polynomials greater than 1)</p>
+<p>Basically, just creating some fake non-linear data</p>
+<p>Note that here, I am creating a testing and training set, this will be important later!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Garrett creating some random data</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">RandomState</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span> <span class="o">-</span> <span class="mf">1.</span><span class="o">/</span> <span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span><span class="o">+</span><span class="mf">0.1</span><span class="p">))</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span> 
+
+<span class="n">X_test</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">1.1</span><span class="p">,</span><span class="mi">30</span><span class="p">)</span> 
+<span class="n">X_test</span> <span class="o">=</span> <span class="n">X_test</span><span class="p">[:,</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span>
+
+<span class="n">y_test</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span> <span class="o">-</span> <span class="mf">1.</span><span class="o">/</span> <span class="p">(</span><span class="n">X_test</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span><span class="o">+</span><span class="mf">0.1</span><span class="p">))</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">y</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">X_test</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">y_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/anaconda3/lib/python3.8/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/opt/anaconda3/lib/python3.8/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture14_linear_regression3_19_2.png" src="../_images/s21_Lecture14_linear_regression3_19_2.png" />
+</div>
+</div>
+<p>Load in the library that lets us do polynomial regression</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">PolynomialFeatures</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here, we will do the following things</p>
+<ol class="simple">
+<li><p>load in the number of features</p></li>
+<li><p>transform the feature array</p></li>
+<li><p>create the linear model</p></li>
+<li><p>fit the transformed feature array</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">PolynomialFeatures</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># create the polynomial object we are interested in</span>
+<span class="n">X_p</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span> <span class="c1"># get the transformed features</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span> <span class="c1"># create our linear model</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_p</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="c1"># fit the y values to our transformed features</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LinearRegression()
+</pre></div>
+</div>
+</div>
+</div>
+<p>now, let’s see how the plot looks</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">y</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_p</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/anaconda3/lib/python3.8/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/opt/anaconda3/lib/python3.8/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture14_linear_regression3_25_2.png" src="../_images/s21_Lecture14_linear_regression3_25_2.png" />
+</div>
+</div>
+<p>You can check out the residuals below. Note that with non-linear data, the datapoints aren’t randomly distributed.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">y</span> <span class="o">-</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_p</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/anaconda3/lib/python3.8/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture14_linear_regression3_27_2.png" src="../_images/s21_Lecture14_linear_regression3_27_2.png" />
+</div>
+</div>
+<p>now lets check to see how well it fits our data. Let’s just focus on the training score for now</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_p</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7341839920338393
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, try all of this above but with a larger polynomial value</p>
+<p>Fits much better as the polynomial value increases, right!</p>
+<p>But let’s be mindful of our testing set data. Remember that our testing set is how we evaluate the model</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_test</span><span class="p">),</span><span class="n">y_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.16522105770291295
+</pre></div>
+</div>
+</div>
+</div>
+<p>What you may notice is this -&gt; the training score keeps increasing. The testing score increases, but it suddenly starts to decline. Let’s create a for loop to check this out</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">X_test</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">y</span> <span class="o">=</span> <span class="n">y_test</span><span class="p">)</span>
+
+<span class="n">training_score</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">testing_score</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">polys</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">degree</span> <span class="ow">in</span> <span class="n">polys</span><span class="p">:</span>
+  
+  <span class="n">p</span> <span class="o">=</span> <span class="n">PolynomialFeatures</span><span class="p">(</span><span class="n">degree</span><span class="p">)</span>
+  <span class="n">X_p</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span> 
+  <span class="n">model</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span> 
+  <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_p</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> 
+
+  <span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">X_test</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">y</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_test</span><span class="p">)))</span>
+
+  <span class="n">training_score</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_p</span><span class="p">,</span><span class="n">y</span><span class="p">))</span>
+  <span class="n">testing_score</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_test</span><span class="p">),</span><span class="n">y_test</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="o">-.</span><span class="mi">1</span><span class="p">,</span><span class="mf">1.3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">12</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-2.0, 12.0)
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture14_linear_regression3_34_1.png" src="../_images/s21_Lecture14_linear_regression3_34_1.png" />
+</div>
+</div>
+<p>Next, let’s plot the R^2 values for each polynomial</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">polys</span><span class="p">,</span><span class="n">training_score</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;training&#39;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">polys</span><span class="p">,</span><span class="n">testing_score</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;testing&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/anaconda3/lib/python3.8/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/opt/anaconda3/lib/python3.8/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-1.0, 1.0)
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture14_linear_regression3_36_2.png" src="../_images/s21_Lecture14_linear_regression3_36_2.png" />
+</div>
+</div>
+<p>We can then plot the results, can see our that score changes as the model becomes more complex.</p>
+<p>This comparison we are plotting is actually called the bias-variance tradeoff</p>
+<p>This is why it is really helpful to output both the training and testing set R^2 values.</p>
+<p>In the end, its the testing set R^2 that is more important because the testing set is how we are evaluating the linear model. However, let’s imagine we find low R^2 for the testing set, but high R^2 for the training set. This may be indicative of something called overfitting, which is a consequence of the bias-variance tradeoff</p>
+<p><img alt="alt text" src="https://raw.githubusercontent.com/jakevdp/PythonDataScienceHandbook/8a34a4f653bdbdc01415a94dc20d4e9b97438965/notebooks/figures/05.03-validation-curve.png" /></p>
+<p>Here validation score is basically our testing score</p>
+<p>score = R^2 value</p>
+<ol class="simple">
+<li><p>The training score is everywhere higher than the validation score. This is generally the case: the model will be a better fit to data it has seen than to data it has not seen.</p></li>
+<li><p>For very low model complexity (a high-bias model), the training data is under-fit, which means that the model is a poor predictor both for the training data and for any previously unseen data.</p></li>
+<li><p>For very high model complexity (a high-variance model), the training data is over-fit, which means that the model predicts the training data very well, but fails for any previously unseen data.</p></li>
+<li><p>For some intermediate value, the validation curve has a maximum. This level of complexity indicates a suitable trade-off between bias and variance.</p></li>
+</ol>
+<p>So basically, polynomial regression let’s us get even better fits to our data, but you have to be careful you are not overfitting your training test and causing a bad fit to your testing data</p>
+<p>So, this is why it is important to print out both values</p>
+<p>The take away message is this. If your model isn’t performing well, you should do the following:</p>
+<ol class="simple">
+<li><p>Use a more complicated/more flexible model</p></li>
+<li><p>Use a less complicated/less flexible model</p></li>
+<li><p>Gather more training samples</p></li>
+<li><p>Gather more data to add features to each sample</p></li>
+</ol>
+<p>We can try this out with our real data. This code is copied and pasted from above, but modified so it would run (see if you get it to work on your own data!)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Xtrain</span><span class="p">,</span> <span class="n">Xtest</span><span class="p">,</span> <span class="n">ytrain</span><span class="p">,</span> <span class="n">ytest</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">mpg</span><span class="p">[[</span><span class="s1">&#39;weight&#39;</span><span class="p">]],</span><span class="n">mpg</span><span class="p">[</span><span class="s1">&#39;mpg&#39;</span><span class="p">],</span><span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">Xtest</span><span class="p">[</span><span class="n">Xtest</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span><span class="n">y</span> <span class="o">=</span> <span class="n">ytest</span><span class="p">)</span>
+
+<span class="n">training_score</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">testing_score</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">polys</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">20</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">degree</span> <span class="ow">in</span> <span class="n">polys</span><span class="p">:</span>
+  
+  <span class="n">p</span> <span class="o">=</span> <span class="n">PolynomialFeatures</span><span class="p">(</span><span class="n">degree</span><span class="p">)</span>
+  <span class="n">X_p</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">Xtrain</span><span class="p">)</span> 
+  <span class="n">model</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span> 
+  <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_p</span><span class="p">,</span> <span class="n">ytrain</span><span class="p">)</span> 
+
+  <span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">Xtest</span><span class="p">[</span><span class="n">Xtest</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span><span class="n">y</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">Xtest</span><span class="p">)))</span>
+
+  <span class="n">training_score</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_p</span><span class="p">,</span><span class="n">ytrain</span><span class="p">))</span>
+  <span class="n">testing_score</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">Xtest</span><span class="p">),</span><span class="n">ytest</span><span class="p">))</span>
+
+<span class="c1">#plt.xlim(-.1,1.3)</span>
+<span class="c1">#plt.ylim(-2,12)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/s21_Lecture14_linear_regression3_46_0.png" src="../_images/s21_Lecture14_linear_regression3_46_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">polys</span><span class="p">,</span><span class="n">training_score</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;training&#39;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">polys</span><span class="p">,</span><span class="n">testing_score</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;testing&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/anaconda3/lib/python3.8/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/opt/anaconda3/lib/python3.8/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.0, 1.0)
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture14_linear_regression3_47_2.png" src="../_images/s21_Lecture14_linear_regression3_47_2.png" />
+</div>
+</div>
+<p>Note that the final line doesn’t perfectly match the figure from above, but that is to be expected when you have limited data and if that data is noisy</p>
+<div class="section" id="slightly-different-topic">
+<h1>Slightly different topic:<a class="headerlink" href="#slightly-different-topic" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="below-is-a-discussion-of-linear-regression-inference-sort-of-like-what-brendon-is-covering-it-may-be-helpful-for-you-to-know-about-but-it-won-t-be-assessed-in-this-course-so-feel-free-to-check-out-the-stuff-below-of-your-own-volition">
+<h1>Below is a discussion of linear regression inference (sort of like what Brendon is covering). It may be helpful for you to know about, but it won’t be assessed in this course. So, feel free to check out the stuff below of your own volition!<a class="headerlink" href="#below-is-a-discussion-of-linear-regression-inference-sort-of-like-what-brendon-is-covering-it-may-be-helpful-for-you-to-know-about-but-it-won-t-be-assessed-in-this-course-so-feel-free-to-check-out-the-stuff-below-of-your-own-volition" title="Permalink to this headline">¶</a></h1>
+<p>We have primarily discussed using linear regression to predict or forecast data.</p>
+<p>Another way to use linear regression is to measure the significance of the relationship between some dependent variable and predictor variables. That is, we get some p-value that tells us something about how sigificant the relationship is.</p>
+<p>If the null hypothesis is that there is no relationship, then a p-values less than 0.05 indicates the false positive rate (i.e., we falsely reject the null hypothesis)</p>
+<p>We can spend a lot of time discussing the nauce of linear regression analysis. But let’s just take a peek here to see how it is done.</p>
+<p>In order to do linear regression analysis, we will actually have to use a different library than what we have been using</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here, you will see that the format is a little different</p>
+<p>For OLS, we pass the data directly into the model. We also pass in the target (response) array first! Then, we pass in the feature matrix (predictor variables)</p>
+<p>After we do that, we run model.fit and then print the results.summary</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">mpg</span><span class="p">[</span><span class="s1">&#39;mpg&#39;</span><span class="p">],</span> <span class="n">mpg</span><span class="p">[[</span><span class="s1">&#39;acceleration&#39;</span><span class="p">,</span><span class="s1">&#39;weight&#39;</span><span class="p">]])</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                 OLS Regression Results                                
+=======================================================================================
+Dep. Variable:                    mpg   R-squared (uncentered):                   0.937
+Model:                            OLS   Adj. R-squared (uncentered):              0.936
+Method:                 Least Squares   F-statistic:                              2627.
+Date:                Mon, 04 Apr 2022   Prob (F-statistic):                   6.78e-214
+Time:                        00:07:41   Log-Likelihood:                         -1187.1
+No. Observations:                 358   AIC:                                      2378.
+Df Residuals:                     356   BIC:                                      2386.
+Df Model:                           2                                                  
+Covariance Type:            nonrobust                                                  
+================================================================================
+                   coef    std err          t      P&gt;|t|      [0.025      0.975]
+--------------------------------------------------------------------------------
+acceleration     2.2152      0.070     31.864      0.000       2.078       2.352
+weight          -0.0038      0.000     -9.780      0.000      -0.005      -0.003
+==============================================================================
+Omnibus:                        1.444   Durbin-Watson:                   1.244
+Prob(Omnibus):                  0.486   Jarque-Bera (JB):                1.241
+Skew:                          -0.039   Prob(JB):                        0.538
+Kurtosis:                       3.278   Cond. No.                         574.
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is great. A ton of useful stuff is coming out. We have the different predictors (acceleration, weight), their coeffient values, whether they are significant predictors (P&gt;|t|), the significance of the model (Prob F-statistic), etc</p>
+<p>Though. Something is missing. What is missing from this?</p>
+<p>Correct! The intercept. Without the intercept, the way statsmodel calculates R^2 is also different and not the method we typically use (so don’t pay attention to it!!!)</p>
+<p>You can actually add an intercept column to the feature matrix, but I’d actually encourage you to do linear regression analysis a different way</p>
+<p>I’d import statsmodels.formula, which is similar to how you would run these models using R or Matlab</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">statsmodels.formula.api</span> <span class="kn">import</span> <span class="n">ols</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>And here, we will specify the equation and at include the fit method at the end</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sm_model</span> <span class="o">=</span> <span class="n">ols</span><span class="p">(</span><span class="s2">&quot;mpg ~ acceleration+weight&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">mpg</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sm_model</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                    mpg   R-squared:                       0.669
+Model:                            OLS   Adj. R-squared:                  0.667
+Method:                 Least Squares   F-statistic:                     359.1
+Date:                Mon, 04 Apr 2022   Prob (F-statistic):           5.23e-86
+Time:                        00:07:41   Log-Likelihood:                -1029.5
+No. Observations:                 358   AIC:                             2065.
+Df Residuals:                     355   BIC:                             2077.
+Df Model:                           2                                         
+Covariance Type:            nonrobust                                         
+================================================================================
+                   coef    std err          t      P&gt;|t|      [0.025      0.975]
+--------------------------------------------------------------------------------
+Intercept       46.0947      2.059     22.389      0.000      42.046      50.144
+acceleration     0.1380      0.103      1.339      0.181      -0.065       0.341
+weight          -0.0081      0.000    -25.743      0.000      -0.009      -0.008
+==============================================================================
+Omnibus:                       27.381   Durbin-Watson:                   0.930
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               32.142
+Skew:                           0.654   Prob(JB):                     1.05e-07
+Kurtosis:                       3.667   Cond. No.                     2.64e+04
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 2.64e+04. This might indicate that there are
+strong multicollinearity or other numerical problems.
+</pre></div>
+</div>
+</div>
+</div>
+<p>And now, we have that intercept. Cool!</p>
+<p>Note that the coef_ and R^2 should be pretty similar to the output from our function from last class</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model_data3</span><span class="p">(</span><span class="n">mpg</span><span class="p">[[</span><span class="s1">&#39;acceleration&#39;</span><span class="p">,</span><span class="s1">&#39;weight&#39;</span><span class="p">]],</span><span class="n">mpg</span><span class="p">[</span><span class="s1">&#39;mpg&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">26</span><span class="o">-</span><span class="mi">83</span><span class="n">ea8dd9398f</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">model_data3</span><span class="p">(</span><span class="n">mpg</span><span class="p">[[</span><span class="s1">&#39;acceleration&#39;</span><span class="p">,</span><span class="s1">&#39;weight&#39;</span><span class="p">]],</span><span class="n">mpg</span><span class="p">[</span><span class="s1">&#39;mpg&#39;</span><span class="p">])</span>
+
+<span class="ne">NameError</span>: name &#39;model_data3&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, there’s a lot more we can talk about here. For example, if you want to include the interaction between horsepower and weight into the model, you can do so by including horsepower*weight</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sm_model_interaction</span> <span class="o">=</span> <span class="n">ols</span><span class="p">(</span><span class="s2">&quot;mpg ~ horsepower + weight + horsepower*weight&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">mpg</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sm_model_interaction</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                    mpg   R-squared:                       0.709
+Model:                            OLS   Adj. R-squared:                  0.707
+Method:                 Least Squares   F-statistic:                     287.9
+Date:                Mon, 04 Apr 2022   Prob (F-statistic):           1.39e-94
+Time:                        00:07:41   Log-Likelihood:                -1006.4
+No. Observations:                 358   AIC:                             2021.
+Df Residuals:                     354   BIC:                             2036.
+Df Model:                           3                                         
+Covariance Type:            nonrobust                                         
+=====================================================================================
+                        coef    std err          t      P&gt;|t|      [0.025      0.975]
+-------------------------------------------------------------------------------------
+Intercept            63.5491      3.087     20.586      0.000      57.478      69.620
+horsepower           -0.2351      0.037     -6.423      0.000      -0.307      -0.163
+weight               -0.0106      0.001     -9.723      0.000      -0.013      -0.008
+horsepower:weight  4.918e-05   1.05e-05      4.684      0.000    2.85e-05    6.98e-05
+==============================================================================
+Omnibus:                       21.423   Durbin-Watson:                   0.936
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               26.277
+Skew:                           0.511   Prob(JB):                     1.97e-06
+Kurtosis:                       3.847   Cond. No.                     4.50e+06
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 4.5e+06. This might indicate that there are
+strong multicollinearity or other numerical problems.
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you want more details about the formulas, please see this documentation:</p>
+<p><a class="reference external" href="https://patsy.readthedocs.io/en/latest/formulas.html">https://patsy.readthedocs.io/en/latest/formulas.html</a></p>
+<p>Now, just quickly, we spent a bit of time discussing how to make various plots. Statsmodel can actually do that for us</p>
+<p>Let’s import the graphics package</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">statsmodels.graphics.api</span> <span class="k">as</span> <span class="nn">smg</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can plot the model fits like so</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">smg</span><span class="o">.</span><span class="n">plot_fit</span><span class="p">(</span><span class="n">sm_model</span><span class="p">,</span><span class="s2">&quot;weight&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/s21_Lecture14_linear_regression3_68_0.png" src="../_images/s21_Lecture14_linear_regression3_68_0.png" />
+</div>
+</div>
+<p>This looks a bit messy because we have both error bars and consider we have two features here (weight and acceleration)</p>
+<p>I think the partial regression plots may be more informative. The partial regression plot shows the relationship between the response and the given explanatory variable after removing the effect of all other explanatory variables in exog.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">smg</span><span class="o">.</span><span class="n">plot_partregress_grid</span><span class="p">(</span><span class="n">sm_model</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/s21_Lecture14_linear_regression3_71_0.png" src="../_images/s21_Lecture14_linear_regression3_71_0.png" />
+</div>
+</div>
+<p>A good diagnostic test is to actually use plot_regress_exog, which gives you the following plots in a 2x2 grid:</p>
+<p>Dependent variable and fitted values with confidence intervals vs. the independent variable chosen, the residuals of the model vs. the chosen independent variable, a partial regression plot, and a CCPR plot</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">12</span><span class="p">,</span><span class="mi">8</span><span class="p">])</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">graphics</span><span class="o">.</span><span class="n">plot_regress_exog</span><span class="p">(</span><span class="n">sm_model</span><span class="p">,</span> <span class="s2">&quot;weight&quot;</span><span class="p">,</span><span class="n">fig</span><span class="o">=</span><span class="n">fig</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/s21_Lecture14_linear_regression3_73_0.png" src="../_images/s21_Lecture14_linear_regression3_73_0.png" />
+</div>
+</div>
+<p>Cool. Very cool.</p>
+<p>I think this is all we will discuss regarding linear regression. Starting next class, we will move onto binary classification, which is some pretty rad stuff!</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Garrett_Lectures"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Ed Vul<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

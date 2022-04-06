@@ -1,0 +1,5043 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lecture 4: Many more complicated data things &#8212; UCSD CSS 2</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">UCSD CSS 2</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Welcome to CSS 2
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Course (CSS 2 Spring 2022)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/syllabus.html">
+   Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/expectations.html">
+   Expectations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/datahub.html">
+   Datahub assignments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/debugging.html">
+   Debugging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/resources.html">
+   Extracurricular Resources
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/final.html">
+   Final Project
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lectures
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/sp22/Lecture_2.html">
+   Lecture 2 (3/30/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/sp22/Lecture_3.html">
+   Lecture 3 (4/1/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/sp22/Lecture_4.html">
+   Lecture 4 (4/4/22)
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/live/css2-lecture-4.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/UCSD-CSS-002/ucsd-css-002.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/UCSD-CSS-002/ucsd-css-002.github.io/issues/new?title=Issue%20on%20page%20%2Flive/css2-lecture-4.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/UCSD-CSS-002/ucsd-css-002.github.io/master?urlpath=tree/live/css2-lecture-4.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Lecture 4: Many more complicated data things
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#summary-statistics">
+     Summary statistics
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-wonders-of-logarithms">
+       the wonders of logarithms.
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#mean-median-mode-stdev-var-etc">
+       mean, median, mode, stdev, var, etc.
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#weighted-statistcs">
+         weighted statistcs
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#bivariate-statistics">
+       bivariate statistics
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#correlation">
+         correlation
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#regression-line">
+         regression line
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#advanced-summarization-via-groupby-apply">
+     Advanced summarization via groupby.apply
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#joining-data-frames">
+     Joining data frames.
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reshaping-pivoting-tidy-long-wide-transforms">
+     Reshaping / pivoting / tidy / long-wide transforms
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#wide-data">
+       Wide data
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#long-data">
+       Long data
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#long-to-wide">
+       long to wide
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#wide-to-long">
+       wide to long
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#stacking-with-indexes">
+         stacking (with indexes)
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#melting-column-names">
+         melting (column names)
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#let-s-do-something-complicated-together">
+   Let’s do something complicated together.
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#complicated-plot">
+     Complicated plot
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#complicated-analysis">
+       Complicated analysis
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="lecture-4-many-more-complicated-data-things">
+<h1>Lecture 4: Many more complicated data things<a class="headerlink" href="#lecture-4-many-more-complicated-data-things" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>logarithms review</p></li>
+<li><p>bivariate summary statistics, and groupby.apply</p></li>
+<li><p>joining data frames</p></li>
+<li><p>melting/pivoting long-to-wide and wide-to-long</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gapminder</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../datasets/gapminder.csv&#39;</span><span class="p">)</span>
+<span class="c1"># download here:</span>
+<span class="c1"># https://raw.githubusercontent.com/UCSD-CSS-001/ucsd-css-001.github.io/main/datasets/gapminder.csv</span>
+
+<span class="n">gapminder</span> <span class="o">=</span> <span class="n">gapminder</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Unnamed: 0&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gapminder</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country</th>
+      <th>continent</th>
+      <th>year</th>
+      <th>lifeExp</th>
+      <th>pop</th>
+      <th>gdpPercap</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Afghanistan</td>
+      <td>Asia</td>
+      <td>1952</td>
+      <td>28.801</td>
+      <td>8425333</td>
+      <td>779.445314</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Afghanistan</td>
+      <td>Asia</td>
+      <td>1957</td>
+      <td>30.332</td>
+      <td>9240934</td>
+      <td>820.853030</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Afghanistan</td>
+      <td>Asia</td>
+      <td>1962</td>
+      <td>31.997</td>
+      <td>10267083</td>
+      <td>853.100710</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Afghanistan</td>
+      <td>Asia</td>
+      <td>1967</td>
+      <td>34.020</td>
+      <td>11537966</td>
+      <td>836.197138</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Afghanistan</td>
+      <td>Asia</td>
+      <td>1972</td>
+      <td>36.088</td>
+      <td>13079460</td>
+      <td>739.981106</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1699</th>
+      <td>Zimbabwe</td>
+      <td>Africa</td>
+      <td>1987</td>
+      <td>62.351</td>
+      <td>9216418</td>
+      <td>706.157306</td>
+    </tr>
+    <tr>
+      <th>1700</th>
+      <td>Zimbabwe</td>
+      <td>Africa</td>
+      <td>1992</td>
+      <td>60.377</td>
+      <td>10704340</td>
+      <td>693.420786</td>
+    </tr>
+    <tr>
+      <th>1701</th>
+      <td>Zimbabwe</td>
+      <td>Africa</td>
+      <td>1997</td>
+      <td>46.809</td>
+      <td>11404948</td>
+      <td>792.449960</td>
+    </tr>
+    <tr>
+      <th>1702</th>
+      <td>Zimbabwe</td>
+      <td>Africa</td>
+      <td>2002</td>
+      <td>39.989</td>
+      <td>11926563</td>
+      <td>672.038623</td>
+    </tr>
+    <tr>
+      <th>1703</th>
+      <td>Zimbabwe</td>
+      <td>Africa</td>
+      <td>2007</td>
+      <td>43.487</td>
+      <td>12311143</td>
+      <td>469.709298</td>
+    </tr>
+  </tbody>
+</table>
+<p>1704 rows × 6 columns</p>
+</div></div></div>
+</div>
+<div class="section" id="summary-statistics">
+<h2>Summary statistics<a class="headerlink" href="#summary-statistics" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="the-wonders-of-logarithms">
+<h3>the wonders of logarithms.<a class="headerlink" href="#the-wonders-of-logarithms" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">gapminder</span><span class="p">[</span><span class="n">gapminder</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span><span class="o">==</span><span class="mi">2007</span><span class="p">][</span><span class="s1">&#39;pop&#39;</span><span class="p">])</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;population&#39;</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;count of countries&#39;</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Histogram of country populations&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/css2-lecture-4_5_0.png" src="../_images/css2-lecture-4_5_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gapminder</span><span class="p">[</span><span class="n">gapminder</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span><span class="o">==</span><span class="mi">2007</span><span class="p">][</span><span class="s1">&#39;pop&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10517531.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Yikes!  Most standard statistics do not work well with data like this.  Standard statistics are designed for roughly normal (i.e., gaussian, bell-shaped) distributions.</p>
+<p>Fortunately, lots of variables, like population, wealth, income, gdp, etc. are roughly log-normally distributed.  Meaning their <em>logarithm</em> is normal.</p>
+<p>So we can do standard statistics with them after log-transforming</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">freq</span><span class="p">,</span> <span class="n">bins</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">gapminder</span><span class="p">[</span><span class="n">gapminder</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span><span class="o">==</span><span class="mi">2007</span><span class="p">][</span><span class="s1">&#39;pop&#39;</span><span class="p">],</span>
+                        <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mf">9.2</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;population&#39;</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;count of countries&#39;</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Histogram of country populations&#39;</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/css2-lecture-4_8_0.png" src="../_images/css2-lecture-4_8_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1.00000000e+05, 2.78255940e+05, 7.74263683e+05, 2.15443469e+06,
+       5.99484250e+06, 1.66810054e+07, 4.64158883e+07, 1.29154967e+08,
+       3.59381366e+08, 1.00000000e+09])
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="mean-median-mode-stdev-var-etc">
+<h3>mean, median, mode, stdev, var, etc.<a class="headerlink" href="#mean-median-mode-stdev-var-etc" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">populations_in_2007</span> <span class="o">=</span> <span class="n">gapminder</span><span class="p">[</span><span class="n">gapminder</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span><span class="o">==</span><span class="mi">2007</span><span class="p">][</span><span class="s1">&#39;pop&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">populations_in_2007</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span> <span class="c1"># sum / count</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">populations_in_2007</span><span class="o">.</span><span class="n">median</span><span class="p">())</span> <span class="c1"># number such that 50% are higher and 50% are lower</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>44021219.57042254
+10517531.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">populations_in_2007</span><span class="o">.</span><span class="n">mode</span><span class="p">())</span> <span class="c1"># does not make sense for numbers.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0          199579
+1          301931
+2          496374
+3          551201
+4          684736
+          ...    
+137     190010647
+138     223547000
+139     301139947
+140    1110396331
+141    1318683096
+Length: 142, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gapminder</span><span class="p">[</span><span class="s1">&#39;continent&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span><span class="p">()</span> <span class="c1"># makes sense for categorical</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    Africa
+dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">populations_in_2007</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>147621397.90361592
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">populations_in_2007</span><span class="o">.</span><span class="n">var</span><span class="p">()</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>147621397.90361592
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="weighted-statistcs">
+<h4>weighted statistcs<a class="headerlink" href="#weighted-statistcs" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">populations_in_2007</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>44021219.57042254
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">custom_mean</span><span class="p">(</span><span class="n">nparray</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">nparray</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">nparray</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">custom_mean</span><span class="p">(</span><span class="n">populations_in_2007</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>44021219.57042254
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gm_2007</span> <span class="o">=</span> <span class="n">gapminder</span><span class="p">[</span><span class="n">gapminder</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span><span class="o">==</span><span class="mi">2007</span><span class="p">]</span>
+<span class="n">gm_2007</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country</th>
+      <th>continent</th>
+      <th>year</th>
+      <th>lifeExp</th>
+      <th>pop</th>
+      <th>gdpPercap</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>11</th>
+      <td>Afghanistan</td>
+      <td>Asia</td>
+      <td>2007</td>
+      <td>43.828</td>
+      <td>31889923</td>
+      <td>974.580338</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>Albania</td>
+      <td>Europe</td>
+      <td>2007</td>
+      <td>76.423</td>
+      <td>3600523</td>
+      <td>5937.029526</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>Algeria</td>
+      <td>Africa</td>
+      <td>2007</td>
+      <td>72.301</td>
+      <td>33333216</td>
+      <td>6223.367465</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>Angola</td>
+      <td>Africa</td>
+      <td>2007</td>
+      <td>42.731</td>
+      <td>12420476</td>
+      <td>4797.231267</td>
+    </tr>
+    <tr>
+      <th>59</th>
+      <td>Argentina</td>
+      <td>Americas</td>
+      <td>2007</td>
+      <td>75.320</td>
+      <td>40301927</td>
+      <td>12779.379640</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1655</th>
+      <td>Vietnam</td>
+      <td>Asia</td>
+      <td>2007</td>
+      <td>74.249</td>
+      <td>85262356</td>
+      <td>2441.576404</td>
+    </tr>
+    <tr>
+      <th>1667</th>
+      <td>West Bank and Gaza</td>
+      <td>Asia</td>
+      <td>2007</td>
+      <td>73.422</td>
+      <td>4018332</td>
+      <td>3025.349798</td>
+    </tr>
+    <tr>
+      <th>1679</th>
+      <td>Yemen, Rep.</td>
+      <td>Asia</td>
+      <td>2007</td>
+      <td>62.698</td>
+      <td>22211743</td>
+      <td>2280.769906</td>
+    </tr>
+    <tr>
+      <th>1691</th>
+      <td>Zambia</td>
+      <td>Africa</td>
+      <td>2007</td>
+      <td>42.384</td>
+      <td>11746035</td>
+      <td>1271.211593</td>
+    </tr>
+    <tr>
+      <th>1703</th>
+      <td>Zimbabwe</td>
+      <td>Africa</td>
+      <td>2007</td>
+      <td>43.487</td>
+      <td>12311143</td>
+      <td>469.709298</td>
+    </tr>
+  </tbody>
+</table>
+<p>142 rows × 6 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gm_2007</span><span class="p">[</span><span class="s1">&#39;gdpPercap&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11680.071819878172
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+4
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">weighted_mean</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">weights</span><span class="p">):</span>
+    <span class="c1"># works for numpy arrays.</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">values</span> <span class="o">*</span> <span class="n">weights</span><span class="p">)</span> <span class="o">/</span> <span class="nb">sum</span><span class="p">(</span><span class="n">weights</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">w</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="c1"># sum: 46 / denominator: 13</span>
+<span class="c1"># [1, 2, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]</span>
+<span class="n">weighted_mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">w</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.5384615384615383
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># not the same</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">40</span><span class="p">]</span>
+<span class="n">w</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="c1"># sum = 46 denominator: 4</span>
+<span class="n">weighted_mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">w</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11.5
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># population-weighted average of gdp per capita</span>
+<span class="n">weighted_mean</span><span class="p">(</span><span class="n">gm_2007</span><span class="p">[</span><span class="s1">&#39;gdpPercap&#39;</span><span class="p">],</span> <span class="n">gm_2007</span><span class="p">[</span><span class="s1">&#39;pop&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9295.986594480439
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="bivariate-statistics">
+<h3>bivariate statistics<a class="headerlink" href="#bivariate-statistics" title="Permalink to this headline">¶</a></h3>
+<p>consider life expectancy ~ gdp per capita</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gm_2007</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country</th>
+      <th>continent</th>
+      <th>year</th>
+      <th>lifeExp</th>
+      <th>pop</th>
+      <th>gdpPercap</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>11</th>
+      <td>Afghanistan</td>
+      <td>Asia</td>
+      <td>2007</td>
+      <td>43.828</td>
+      <td>31889923</td>
+      <td>974.580338</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>Albania</td>
+      <td>Europe</td>
+      <td>2007</td>
+      <td>76.423</td>
+      <td>3600523</td>
+      <td>5937.029526</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>Algeria</td>
+      <td>Africa</td>
+      <td>2007</td>
+      <td>72.301</td>
+      <td>33333216</td>
+      <td>6223.367465</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>Angola</td>
+      <td>Africa</td>
+      <td>2007</td>
+      <td>42.731</td>
+      <td>12420476</td>
+      <td>4797.231267</td>
+    </tr>
+    <tr>
+      <th>59</th>
+      <td>Argentina</td>
+      <td>Americas</td>
+      <td>2007</td>
+      <td>75.320</td>
+      <td>40301927</td>
+      <td>12779.379640</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1655</th>
+      <td>Vietnam</td>
+      <td>Asia</td>
+      <td>2007</td>
+      <td>74.249</td>
+      <td>85262356</td>
+      <td>2441.576404</td>
+    </tr>
+    <tr>
+      <th>1667</th>
+      <td>West Bank and Gaza</td>
+      <td>Asia</td>
+      <td>2007</td>
+      <td>73.422</td>
+      <td>4018332</td>
+      <td>3025.349798</td>
+    </tr>
+    <tr>
+      <th>1679</th>
+      <td>Yemen, Rep.</td>
+      <td>Asia</td>
+      <td>2007</td>
+      <td>62.698</td>
+      <td>22211743</td>
+      <td>2280.769906</td>
+    </tr>
+    <tr>
+      <th>1691</th>
+      <td>Zambia</td>
+      <td>Africa</td>
+      <td>2007</td>
+      <td>42.384</td>
+      <td>11746035</td>
+      <td>1271.211593</td>
+    </tr>
+    <tr>
+      <th>1703</th>
+      <td>Zimbabwe</td>
+      <td>Africa</td>
+      <td>2007</td>
+      <td>43.487</td>
+      <td>12311143</td>
+      <td>469.709298</td>
+    </tr>
+  </tbody>
+</table>
+<p>142 rows × 6 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">gm_2007</span><span class="p">[</span><span class="s1">&#39;gdpPercap&#39;</span><span class="p">],</span> <span class="n">gm_2007</span><span class="p">[</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;gdp per capita&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;life expectancy in 2007&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;life expectancy in 2007&#39;)
+</pre></div>
+</div>
+<img alt="../_images/css2-lecture-4_30_1.png" src="../_images/css2-lecture-4_30_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># why we are log transforming gdp</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">gm_2007</span><span class="p">[</span><span class="s1">&#39;gdpPercap&#39;</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/css2-lecture-4_31_0.png" src="../_images/css2-lecture-4_31_0.png" />
+</div>
+</div>
+<div class="section" id="correlation">
+<h4>correlation<a class="headerlink" href="#correlation" title="Permalink to this headline">¶</a></h4>
+<p>we want to calculate the correlation between log10(gdpPercap) and life Exp</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">cor</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="n">mx</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+    <span class="n">my</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+    <span class="n">sx</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+    <span class="n">sy</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+    <span class="n">zx</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">mx</span><span class="p">)</span><span class="o">/</span><span class="n">sx</span>
+    <span class="n">zy</span> <span class="o">=</span> <span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="n">my</span><span class="p">)</span><span class="o">/</span><span class="n">sy</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">zx</span><span class="o">*</span><span class="n">zy</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">zx</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cor</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">gm_2007</span><span class="p">[</span><span class="s1">&#39;gdpPercap&#39;</span><span class="p">]),</span> <span class="n">gm_2007</span><span class="p">[</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.8089802514849214
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">gm_2007</span><span class="p">[</span><span class="s1">&#39;gdpPercap&#39;</span><span class="p">])</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">gm_2007</span><span class="p">[</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">]</span>
+<span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.8089802514849209
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gm_2007</span><span class="p">[</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">gm_2007</span><span class="p">[</span><span class="s1">&#39;gdpPercap&#39;</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.808980251484921
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># r^2, coefficient of determination, </span>
+<span class="n">gm_2007</span><span class="p">[</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">gm_2007</span><span class="p">[</span><span class="s1">&#39;gdpPercap&#39;</span><span class="p">]))</span><span class="o">**</span><span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6544490472926061
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="regression-line">
+<h4>regression line<a class="headerlink" href="#regression-line" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">gm_2007</span><span class="p">[</span><span class="s1">&#39;gdpPercap&#39;</span><span class="p">])</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">gm_2007</span><span class="p">[</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">]</span>
+<span class="n">fit</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">slope</span> <span class="o">=</span> <span class="n">fit</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">intercept</span> <span class="o">=</span> <span class="n">fit</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">slope</span><span class="si">=}</span><span class="s1">, </span><span class="si">{</span><span class="n">intercept</span><span class="si">=}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>slope=16.58506352520344, intercept=4.949611651060741
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.8089802514849209
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># predictions from our fitted line</span>
+<span class="n">new_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mf">5.2</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">predicted_y</span> <span class="o">=</span> <span class="n">new_x</span><span class="o">*</span><span class="n">slope</span> <span class="o">+</span> <span class="n">intercept</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;log10(gdp per capita)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;life expectancy in 2007&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">new_x</span><span class="p">,</span> <span class="n">predicted_y</span><span class="p">,</span><span class="s1">&#39;r-&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f96b088bc40&gt;]
+</pre></div>
+</div>
+<img alt="../_images/css2-lecture-4_42_1.png" src="../_images/css2-lecture-4_42_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">gm_2007</span><span class="p">[</span><span class="s1">&#39;gdpPercap&#39;</span><span class="p">],</span> <span class="n">gm_2007</span><span class="p">[</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;gdp per capita&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;life expectancy in 2007&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="n">new_x</span><span class="p">,</span> <span class="n">predicted_y</span><span class="p">,</span> <span class="s1">&#39;r-&#39;</span><span class="p">)</span>
+
+<span class="c1"># log10 gdp per cap</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f96b0eb9130&gt;]
+</pre></div>
+</div>
+<img alt="../_images/css2-lecture-4_43_1.png" src="../_images/css2-lecture-4_43_1.png" />
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="advanced-summarization-via-groupby-apply">
+<h2>Advanced summarization via groupby.apply<a class="headerlink" href="#advanced-summarization-via-groupby-apply" title="Permalink to this headline">¶</a></h2>
+<p>consider life expectancy ~ gdp per capita by continent (by year)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gapminder</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country</th>
+      <th>continent</th>
+      <th>year</th>
+      <th>lifeExp</th>
+      <th>pop</th>
+      <th>gdpPercap</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Afghanistan</td>
+      <td>Asia</td>
+      <td>1952</td>
+      <td>28.801</td>
+      <td>8425333</td>
+      <td>779.445314</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Afghanistan</td>
+      <td>Asia</td>
+      <td>1957</td>
+      <td>30.332</td>
+      <td>9240934</td>
+      <td>820.853030</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Afghanistan</td>
+      <td>Asia</td>
+      <td>1962</td>
+      <td>31.997</td>
+      <td>10267083</td>
+      <td>853.100710</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Afghanistan</td>
+      <td>Asia</td>
+      <td>1967</td>
+      <td>34.020</td>
+      <td>11537966</td>
+      <td>836.197138</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Afghanistan</td>
+      <td>Asia</td>
+      <td>1972</td>
+      <td>36.088</td>
+      <td>13079460</td>
+      <td>739.981106</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1699</th>
+      <td>Zimbabwe</td>
+      <td>Africa</td>
+      <td>1987</td>
+      <td>62.351</td>
+      <td>9216418</td>
+      <td>706.157306</td>
+    </tr>
+    <tr>
+      <th>1700</th>
+      <td>Zimbabwe</td>
+      <td>Africa</td>
+      <td>1992</td>
+      <td>60.377</td>
+      <td>10704340</td>
+      <td>693.420786</td>
+    </tr>
+    <tr>
+      <th>1701</th>
+      <td>Zimbabwe</td>
+      <td>Africa</td>
+      <td>1997</td>
+      <td>46.809</td>
+      <td>11404948</td>
+      <td>792.449960</td>
+    </tr>
+    <tr>
+      <th>1702</th>
+      <td>Zimbabwe</td>
+      <td>Africa</td>
+      <td>2002</td>
+      <td>39.989</td>
+      <td>11926563</td>
+      <td>672.038623</td>
+    </tr>
+    <tr>
+      <th>1703</th>
+      <td>Zimbabwe</td>
+      <td>Africa</td>
+      <td>2007</td>
+      <td>43.487</td>
+      <td>12311143</td>
+      <td>469.709298</td>
+    </tr>
+  </tbody>
+</table>
+<p>1704 rows × 6 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># calculate correlation of log10(gdpPercap) and lifeExp for each year</span>
+
+<span class="n">gapminder</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">mean_life</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">,</span> <span class="s1">&#39;mean&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mean_life</th>
+    </tr>
+    <tr>
+      <th>year</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1952</th>
+      <td>49.057620</td>
+    </tr>
+    <tr>
+      <th>1957</th>
+      <td>51.507401</td>
+    </tr>
+    <tr>
+      <th>1962</th>
+      <td>53.609249</td>
+    </tr>
+    <tr>
+      <th>1967</th>
+      <td>55.678290</td>
+    </tr>
+    <tr>
+      <th>1972</th>
+      <td>57.647386</td>
+    </tr>
+    <tr>
+      <th>1977</th>
+      <td>59.570157</td>
+    </tr>
+    <tr>
+      <th>1982</th>
+      <td>61.533197</td>
+    </tr>
+    <tr>
+      <th>1987</th>
+      <td>63.212613</td>
+    </tr>
+    <tr>
+      <th>1992</th>
+      <td>64.160338</td>
+    </tr>
+    <tr>
+      <th>1997</th>
+      <td>65.014676</td>
+    </tr>
+    <tr>
+      <th>2002</th>
+      <td>65.694923</td>
+    </tr>
+    <tr>
+      <th>2007</th>
+      <td>67.007423</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">summary_function</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;gdpPercap&#39;</span><span class="p">]),</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">])[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">grp_name</span><span class="p">,</span> <span class="n">grp_df</span> <span class="ow">in</span> <span class="n">gapminder</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">grp_name</span><span class="p">,</span> <span class="n">summary_function</span><span class="p">(</span><span class="n">grp_df</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1952 0.7477807347946165
+1957 0.758795706016415
+1962 0.7705225443103859
+1967 0.7729986641186484
+1972 0.789405727501936
+1977 0.8135258808158442
+1982 0.846073426279085
+1987 0.8743940682796121
+1992 0.8558149463091763
+1997 0.8640205504436029
+2002 0.8251326766424232
+2007 0.8089802514849209
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gapminder</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">summary_function</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>year
+1952    0.747781
+1957    0.758796
+1962    0.770523
+1967    0.772999
+1972    0.789406
+1977    0.813526
+1982    0.846073
+1987    0.874394
+1992    0.855815
+1997    0.864021
+2002    0.825133
+2007    0.808980
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">summary_function</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;gdpPercap&#39;</span><span class="p">]),</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">])[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">fit</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;gdpPercap&#39;</span><span class="p">]),</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">],</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">slope</span> <span class="o">=</span> <span class="n">fit</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">intercept</span> <span class="o">=</span> <span class="n">fit</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">({</span><span class="s1">&#39;correlation&#39;</span><span class="p">:</span><span class="n">r</span><span class="p">,</span>
+                      <span class="s1">&#39;slope&#39;</span><span class="p">:</span> <span class="n">slope</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">summary_function</span><span class="p">(</span><span class="n">gapminder</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>correlation     0.807618
+slope          19.353423
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gapminder</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">summary_function</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>correlation</th>
+      <th>slope</th>
+    </tr>
+    <tr>
+      <th>year</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1952</th>
+      <td>0.747781</td>
+      <td>20.331397</td>
+    </tr>
+    <tr>
+      <th>1957</th>
+      <td>0.758796</td>
+      <td>20.102944</td>
+    </tr>
+    <tr>
+      <th>1962</th>
+      <td>0.770523</td>
+      <td>19.797228</td>
+    </tr>
+    <tr>
+      <th>1967</th>
+      <td>0.772999</td>
+      <td>18.535251</td>
+    </tr>
+    <tr>
+      <th>1972</th>
+      <td>0.789406</td>
+      <td>17.493729</td>
+    </tr>
+    <tr>
+      <th>1977</th>
+      <td>0.813526</td>
+      <td>17.382310</td>
+    </tr>
+    <tr>
+      <th>1982</th>
+      <td>0.846073</td>
+      <td>17.254635</td>
+    </tr>
+    <tr>
+      <th>1987</th>
+      <td>0.874394</td>
+      <td>16.966816</td>
+    </tr>
+    <tr>
+      <th>1992</th>
+      <td>0.855815</td>
+      <td>17.327658</td>
+    </tr>
+    <tr>
+      <th>1997</th>
+      <td>0.864021</td>
+      <td>17.529894</td>
+    </tr>
+    <tr>
+      <th>2002</th>
+      <td>0.825133</td>
+      <td>17.539257</td>
+    </tr>
+    <tr>
+      <th>2007</th>
+      <td>0.808980</td>
+      <td>16.585064</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="joining-data-frames">
+<h2>Joining data frames.<a class="headerlink" href="#joining-data-frames" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/merging.html#database-style-dataframe-or-named-series-joining-merging">https://pandas.pydata.org/pandas-docs/stable/user_guide/merging.html#database-style-dataframe-or-named-series-joining-merging</a></p>
+<ul class="simple">
+<li><p>inner, outer, left, right</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">instructors</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;name&#39;</span><span class="p">:[</span><span class="s1">&#39;Ed Vul&#39;</span><span class="p">,</span> <span class="s1">&#39;Drew Walker&#39;</span><span class="p">,</span> <span class="s1">&#39;Shannon Ellis&#39;</span><span class="p">,</span> <span class="s1">&#39;Erik Brockbank&#39;</span><span class="p">,</span> <span class="s1">&#39;Judy Fan&#39;</span><span class="p">],</span>
+                            <span class="s1">&#39;email&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;evul@ucsd.edu&#39;</span><span class="p">,</span><span class="s1">&#39;drew@fake.com&#39;</span><span class="p">,</span> <span class="s1">&#39;shannon@fake.com&#39;</span><span class="p">,</span> <span class="s1">&#39;erik@fake.com&#39;</span><span class="p">,</span> <span class="s1">&#39;judy@fake.com&#39;</span><span class="p">],</span>
+                            <span class="s1">&#39;location&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;McGill 5137&#39;</span><span class="p">,</span> <span class="s1">&#39;COGS 563&#39;</span><span class="p">,</span> <span class="s1">&#39;COGS 123&#39;</span><span class="p">,</span> <span class="s1">&#39;Mandler 3509&#39;</span><span class="p">,</span> <span class="s1">&#39;McGill 5139?&#39;</span><span class="p">]})</span>
+
+<span class="n">classes</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;name&#39;</span><span class="p">:[</span><span class="s1">&#39;CSS 1&#39;</span><span class="p">,</span> <span class="s1">&#39;CSS 2&#39;</span><span class="p">,</span> <span class="s1">&#39;COGS 18&#39;</span><span class="p">,</span> <span class="s1">&#39;PSYC 201&#39;</span><span class="p">,</span> <span class="s1">&#39;PSYC 60&#39;</span><span class="p">,</span> <span class="s1">&#39;COGS 9&#39;</span><span class="p">,</span> <span class="s1">&#39;PSYC 100&#39;</span><span class="p">],</span>
+                        <span class="s1">&#39;location&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;mandler&#39;</span><span class="p">,</span> <span class="s1">&#39;mcgill&#39;</span><span class="p">,</span> <span class="s1">&#39;cog sci&#39;</span><span class="p">,</span> <span class="s1">&#39;mcgill&#39;</span><span class="p">,</span> <span class="s1">&#39;peterson&#39;</span><span class="p">,</span> <span class="s1">&#39;cog sci&#39;</span><span class="p">,</span> <span class="s1">&#39;auditorium&#39;</span><span class="p">],</span>
+                       <span class="s1">&#39;instructor_name&#39;</span><span class="p">:[</span><span class="s1">&#39;Ed Vul&#39;</span><span class="p">,</span> <span class="s1">&#39;Ed Vul&#39;</span><span class="p">,</span> <span class="s1">&#39;Shannon Ellis&#39;</span><span class="p">,</span> <span class="s1">&#39;Ed Vul&#39;</span><span class="p">,</span> <span class="s1">&#39;Judy Fan&#39;</span><span class="p">,</span> <span class="s1">&#39;Drew Walker&#39;</span><span class="p">,</span> <span class="s1">&#39;John Serences&#39;</span><span class="p">]})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">instructors</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>email</th>
+      <th>location</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Ed Vul</td>
+      <td>evul@ucsd.edu</td>
+      <td>McGill 5137</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Drew Walker</td>
+      <td>drew@fake.com</td>
+      <td>COGS 563</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Shannon Ellis</td>
+      <td>shannon@fake.com</td>
+      <td>COGS 123</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Erik Brockbank</td>
+      <td>erik@fake.com</td>
+      <td>Mandler 3509</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Judy Fan</td>
+      <td>judy@fake.com</td>
+      <td>McGill 5139?</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">classes</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>location</th>
+      <th>instructor_name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>CSS 1</td>
+      <td>mandler</td>
+      <td>Ed Vul</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>CSS 2</td>
+      <td>mcgill</td>
+      <td>Ed Vul</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>COGS 18</td>
+      <td>cog sci</td>
+      <td>Shannon Ellis</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>PSYC 201</td>
+      <td>mcgill</td>
+      <td>Ed Vul</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>PSYC 60</td>
+      <td>peterson</td>
+      <td>Judy Fan</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>COGS 9</td>
+      <td>cog sci</td>
+      <td>Drew Walker</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>PSYC 100</td>
+      <td>auditorium</td>
+      <td>John Serences</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">instructors</span><span class="p">,</span> 
+         <span class="n">classes</span><span class="p">,</span> 
+         <span class="c1"># either one &#39;on&#39;</span>
+         <span class="n">left_on</span> <span class="o">=</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> 
+         <span class="n">right_on</span><span class="o">=</span><span class="s1">&#39;instructor_name&#39;</span><span class="p">,</span> 
+         <span class="n">how</span><span class="o">=</span><span class="s1">&#39;inner&#39;</span><span class="p">,</span> 
+         <span class="n">suffixes</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;_prof&#39;</span><span class="p">,</span> <span class="s1">&#39;_class&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name_prof</th>
+      <th>email</th>
+      <th>location_prof</th>
+      <th>name_class</th>
+      <th>location_class</th>
+      <th>instructor_name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Ed Vul</td>
+      <td>evul@ucsd.edu</td>
+      <td>McGill 5137</td>
+      <td>CSS 1</td>
+      <td>mandler</td>
+      <td>Ed Vul</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Ed Vul</td>
+      <td>evul@ucsd.edu</td>
+      <td>McGill 5137</td>
+      <td>CSS 2</td>
+      <td>mcgill</td>
+      <td>Ed Vul</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Ed Vul</td>
+      <td>evul@ucsd.edu</td>
+      <td>McGill 5137</td>
+      <td>PSYC 201</td>
+      <td>mcgill</td>
+      <td>Ed Vul</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Drew Walker</td>
+      <td>drew@fake.com</td>
+      <td>COGS 563</td>
+      <td>COGS 9</td>
+      <td>cog sci</td>
+      <td>Drew Walker</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Shannon Ellis</td>
+      <td>shannon@fake.com</td>
+      <td>COGS 123</td>
+      <td>COGS 18</td>
+      <td>cog sci</td>
+      <td>Shannon Ellis</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Judy Fan</td>
+      <td>judy@fake.com</td>
+      <td>McGill 5139?</td>
+      <td>PSYC 60</td>
+      <td>peterson</td>
+      <td>Judy Fan</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">instructors</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;instructor_name&#39;</span><span class="p">:[</span><span class="s1">&#39;Ed Vul&#39;</span><span class="p">,</span> <span class="s1">&#39;Drew Walker&#39;</span><span class="p">,</span> <span class="s1">&#39;Shannon Ellis&#39;</span><span class="p">,</span> <span class="s1">&#39;Erik Brockbank&#39;</span><span class="p">,</span> <span class="s1">&#39;Judy Fan&#39;</span><span class="p">],</span>
+                            <span class="s1">&#39;email&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;evul@ucsd.edu&#39;</span><span class="p">,</span><span class="s1">&#39;drew@fake.com&#39;</span><span class="p">,</span> <span class="s1">&#39;shannon@fake.com&#39;</span><span class="p">,</span> <span class="s1">&#39;erik@fake.com&#39;</span><span class="p">,</span> <span class="s1">&#39;judy@fake.com&#39;</span><span class="p">],</span>
+                            <span class="s1">&#39;office&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;McGill 5137&#39;</span><span class="p">,</span> <span class="s1">&#39;COGS 563&#39;</span><span class="p">,</span> <span class="s1">&#39;COGS 123&#39;</span><span class="p">,</span> <span class="s1">&#39;Mandler 3509&#39;</span><span class="p">,</span> <span class="s1">&#39;McGill 5139?&#39;</span><span class="p">]})</span>
+
+<span class="n">classes</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;class_name&#39;</span><span class="p">:[</span><span class="s1">&#39;CSS 1&#39;</span><span class="p">,</span> <span class="s1">&#39;CSS 2&#39;</span><span class="p">,</span> <span class="s1">&#39;COGS 18&#39;</span><span class="p">,</span> <span class="s1">&#39;PSYC 201&#39;</span><span class="p">,</span> <span class="s1">&#39;PSYC 60&#39;</span><span class="p">,</span> <span class="s1">&#39;COGS 9&#39;</span><span class="p">,</span> <span class="s1">&#39;PSYC 100&#39;</span><span class="p">],</span>
+                        <span class="s1">&#39;location&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;mandler&#39;</span><span class="p">,</span> <span class="s1">&#39;mcgill&#39;</span><span class="p">,</span> <span class="s1">&#39;cog sci&#39;</span><span class="p">,</span> <span class="s1">&#39;mcgill&#39;</span><span class="p">,</span> <span class="s1">&#39;peterson&#39;</span><span class="p">,</span> <span class="s1">&#39;cog sci&#39;</span><span class="p">,</span> <span class="s1">&#39;auditorium&#39;</span><span class="p">],</span>
+                       <span class="s1">&#39;instructor_name&#39;</span><span class="p">:[</span><span class="s1">&#39;Ed Vul&#39;</span><span class="p">,</span> <span class="s1">&#39;Ed Vul&#39;</span><span class="p">,</span> <span class="s1">&#39;Shannon Ellis&#39;</span><span class="p">,</span> <span class="s1">&#39;Ed Vul&#39;</span><span class="p">,</span> <span class="s1">&#39;Judy Fan&#39;</span><span class="p">,</span> <span class="s1">&#39;Drew Walker&#39;</span><span class="p">,</span> <span class="s1">&#39;John Serences&#39;</span><span class="p">]})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">instructors</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>instructor_name</th>
+      <th>email</th>
+      <th>office</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Ed Vul</td>
+      <td>evul@ucsd.edu</td>
+      <td>McGill 5137</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Drew Walker</td>
+      <td>drew@fake.com</td>
+      <td>COGS 563</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Shannon Ellis</td>
+      <td>shannon@fake.com</td>
+      <td>COGS 123</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Erik Brockbank</td>
+      <td>erik@fake.com</td>
+      <td>Mandler 3509</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Judy Fan</td>
+      <td>judy@fake.com</td>
+      <td>McGill 5139?</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">classes</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>class_name</th>
+      <th>location</th>
+      <th>instructor_name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>CSS 1</td>
+      <td>mandler</td>
+      <td>Ed Vul</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>CSS 2</td>
+      <td>mcgill</td>
+      <td>Ed Vul</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>COGS 18</td>
+      <td>cog sci</td>
+      <td>Shannon Ellis</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>PSYC 201</td>
+      <td>mcgill</td>
+      <td>Ed Vul</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>PSYC 60</td>
+      <td>peterson</td>
+      <td>Judy Fan</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>COGS 9</td>
+      <td>cog sci</td>
+      <td>Drew Walker</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>PSYC 100</td>
+      <td>auditorium</td>
+      <td>John Serences</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">classes</span><span class="p">,</span> 
+         <span class="n">instructors</span><span class="p">,</span> 
+         <span class="n">on</span><span class="o">=</span><span class="s1">&#39;instructor_name&#39;</span><span class="p">,</span>
+         <span class="n">how</span><span class="o">=</span><span class="s1">&#39;inner&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>class_name</th>
+      <th>location</th>
+      <th>instructor_name</th>
+      <th>email</th>
+      <th>office</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>CSS 1</td>
+      <td>mandler</td>
+      <td>Ed Vul</td>
+      <td>evul@ucsd.edu</td>
+      <td>McGill 5137</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>CSS 2</td>
+      <td>mcgill</td>
+      <td>Ed Vul</td>
+      <td>evul@ucsd.edu</td>
+      <td>McGill 5137</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>PSYC 201</td>
+      <td>mcgill</td>
+      <td>Ed Vul</td>
+      <td>evul@ucsd.edu</td>
+      <td>McGill 5137</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>COGS 18</td>
+      <td>cog sci</td>
+      <td>Shannon Ellis</td>
+      <td>shannon@fake.com</td>
+      <td>COGS 123</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>PSYC 60</td>
+      <td>peterson</td>
+      <td>Judy Fan</td>
+      <td>judy@fake.com</td>
+      <td>McGill 5139?</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>COGS 9</td>
+      <td>cog sci</td>
+      <td>Drew Walker</td>
+      <td>drew@fake.com</td>
+      <td>COGS 563</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">classes</span><span class="p">,</span> 
+         <span class="n">instructors</span><span class="p">,</span> 
+         <span class="n">on</span><span class="o">=</span><span class="s1">&#39;instructor_name&#39;</span><span class="p">,</span>
+         <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>class_name</th>
+      <th>location</th>
+      <th>instructor_name</th>
+      <th>email</th>
+      <th>office</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>CSS 1</td>
+      <td>mandler</td>
+      <td>Ed Vul</td>
+      <td>evul@ucsd.edu</td>
+      <td>McGill 5137</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>CSS 2</td>
+      <td>mcgill</td>
+      <td>Ed Vul</td>
+      <td>evul@ucsd.edu</td>
+      <td>McGill 5137</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>COGS 18</td>
+      <td>cog sci</td>
+      <td>Shannon Ellis</td>
+      <td>shannon@fake.com</td>
+      <td>COGS 123</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>PSYC 201</td>
+      <td>mcgill</td>
+      <td>Ed Vul</td>
+      <td>evul@ucsd.edu</td>
+      <td>McGill 5137</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>PSYC 60</td>
+      <td>peterson</td>
+      <td>Judy Fan</td>
+      <td>judy@fake.com</td>
+      <td>McGill 5139?</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>COGS 9</td>
+      <td>cog sci</td>
+      <td>Drew Walker</td>
+      <td>drew@fake.com</td>
+      <td>COGS 563</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>PSYC 100</td>
+      <td>auditorium</td>
+      <td>John Serences</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">classes</span><span class="p">,</span> 
+         <span class="n">instructors</span><span class="p">,</span> 
+         <span class="n">on</span><span class="o">=</span><span class="s1">&#39;instructor_name&#39;</span><span class="p">,</span>
+         <span class="n">how</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>class_name</th>
+      <th>location</th>
+      <th>instructor_name</th>
+      <th>email</th>
+      <th>office</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>CSS 1</td>
+      <td>mandler</td>
+      <td>Ed Vul</td>
+      <td>evul@ucsd.edu</td>
+      <td>McGill 5137</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>CSS 2</td>
+      <td>mcgill</td>
+      <td>Ed Vul</td>
+      <td>evul@ucsd.edu</td>
+      <td>McGill 5137</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>PSYC 201</td>
+      <td>mcgill</td>
+      <td>Ed Vul</td>
+      <td>evul@ucsd.edu</td>
+      <td>McGill 5137</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>COGS 9</td>
+      <td>cog sci</td>
+      <td>Drew Walker</td>
+      <td>drew@fake.com</td>
+      <td>COGS 563</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>COGS 18</td>
+      <td>cog sci</td>
+      <td>Shannon Ellis</td>
+      <td>shannon@fake.com</td>
+      <td>COGS 123</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Erik Brockbank</td>
+      <td>erik@fake.com</td>
+      <td>Mandler 3509</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>PSYC 60</td>
+      <td>peterson</td>
+      <td>Judy Fan</td>
+      <td>judy@fake.com</td>
+      <td>McGill 5139?</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">classes</span><span class="p">,</span> 
+         <span class="n">instructors</span><span class="p">,</span> 
+         <span class="n">on</span><span class="o">=</span><span class="s1">&#39;instructor_name&#39;</span><span class="p">,</span>
+         <span class="n">how</span><span class="o">=</span><span class="s1">&#39;outer&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>class_name</th>
+      <th>location</th>
+      <th>instructor_name</th>
+      <th>email</th>
+      <th>office</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>CSS 1</td>
+      <td>mandler</td>
+      <td>Ed Vul</td>
+      <td>evul@ucsd.edu</td>
+      <td>McGill 5137</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>CSS 2</td>
+      <td>mcgill</td>
+      <td>Ed Vul</td>
+      <td>evul@ucsd.edu</td>
+      <td>McGill 5137</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>PSYC 201</td>
+      <td>mcgill</td>
+      <td>Ed Vul</td>
+      <td>evul@ucsd.edu</td>
+      <td>McGill 5137</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>COGS 18</td>
+      <td>cog sci</td>
+      <td>Shannon Ellis</td>
+      <td>shannon@fake.com</td>
+      <td>COGS 123</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>PSYC 60</td>
+      <td>peterson</td>
+      <td>Judy Fan</td>
+      <td>judy@fake.com</td>
+      <td>McGill 5139?</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>COGS 9</td>
+      <td>cog sci</td>
+      <td>Drew Walker</td>
+      <td>drew@fake.com</td>
+      <td>COGS 563</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>PSYC 100</td>
+      <td>auditorium</td>
+      <td>John Serences</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Erik Brockbank</td>
+      <td>erik@fake.com</td>
+      <td>Mandler 3509</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="reshaping-pivoting-tidy-long-wide-transforms">
+<h2>Reshaping / pivoting / tidy / long-wide transforms<a class="headerlink" href="#reshaping-pivoting-tidy-long-wide-transforms" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/reshaping.html#reshaping-by-melt">https://pandas.pydata.org/pandas-docs/stable/user_guide/reshaping.html#reshaping-by-melt</a></p>
+<div class="section" id="wide-data">
+<h3>Wide data<a class="headerlink" href="#wide-data" title="Permalink to this headline">¶</a></h3>
+<p><img alt="wide" src="../_images/lotr-wide.png" /></p>
+</div>
+<div class="section" id="long-data">
+<h3>Long data<a class="headerlink" href="#long-data" title="Permalink to this headline">¶</a></h3>
+<p><img alt="long" src="../_images/lotr-long.png" /></p>
+<p>back to gapminder</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gapminder</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country</th>
+      <th>continent</th>
+      <th>year</th>
+      <th>lifeExp</th>
+      <th>pop</th>
+      <th>gdpPercap</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Afghanistan</td>
+      <td>Asia</td>
+      <td>1952</td>
+      <td>28.801</td>
+      <td>8425333</td>
+      <td>779.445314</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Afghanistan</td>
+      <td>Asia</td>
+      <td>1957</td>
+      <td>30.332</td>
+      <td>9240934</td>
+      <td>820.853030</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Afghanistan</td>
+      <td>Asia</td>
+      <td>1962</td>
+      <td>31.997</td>
+      <td>10267083</td>
+      <td>853.100710</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Afghanistan</td>
+      <td>Asia</td>
+      <td>1967</td>
+      <td>34.020</td>
+      <td>11537966</td>
+      <td>836.197138</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Afghanistan</td>
+      <td>Asia</td>
+      <td>1972</td>
+      <td>36.088</td>
+      <td>13079460</td>
+      <td>739.981106</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1699</th>
+      <td>Zimbabwe</td>
+      <td>Africa</td>
+      <td>1987</td>
+      <td>62.351</td>
+      <td>9216418</td>
+      <td>706.157306</td>
+    </tr>
+    <tr>
+      <th>1700</th>
+      <td>Zimbabwe</td>
+      <td>Africa</td>
+      <td>1992</td>
+      <td>60.377</td>
+      <td>10704340</td>
+      <td>693.420786</td>
+    </tr>
+    <tr>
+      <th>1701</th>
+      <td>Zimbabwe</td>
+      <td>Africa</td>
+      <td>1997</td>
+      <td>46.809</td>
+      <td>11404948</td>
+      <td>792.449960</td>
+    </tr>
+    <tr>
+      <th>1702</th>
+      <td>Zimbabwe</td>
+      <td>Africa</td>
+      <td>2002</td>
+      <td>39.989</td>
+      <td>11926563</td>
+      <td>672.038623</td>
+    </tr>
+    <tr>
+      <th>1703</th>
+      <td>Zimbabwe</td>
+      <td>Africa</td>
+      <td>2007</td>
+      <td>43.487</td>
+      <td>12311143</td>
+      <td>469.709298</td>
+    </tr>
+  </tbody>
+</table>
+<p>1704 rows × 6 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="long-to-wide">
+<h3>long to wide<a class="headerlink" href="#long-to-wide" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>unstack (via index)</p></li>
+</ul>
+<p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/reshaping.html#reshaping-by-stacking-and-unstacking">https://pandas.pydata.org/pandas-docs/stable/user_guide/reshaping.html#reshaping-by-stacking-and-unstacking</a></p>
+<ul class="simple">
+<li><p>pivot (via column names)</p></li>
+</ul>
+<p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/reshaping.html#reshaping-by-pivoting-dataframe-objects">https://pandas.pydata.org/pandas-docs/stable/user_guide/reshaping.html#reshaping-by-pivoting-dataframe-objects</a></p>
+<ul class="simple">
+<li><p>need to deal with multi-index</p></li>
+</ul>
+<p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/advanced.html">https://pandas.pydata.org/pandas-docs/stable/user_guide/advanced.html</a></p>
+<p><strong>Goal</strong>: See how mean life expectancy in Europe and Asia has changed over the years.</p>
+<p><strong>Output:</strong> A scatterplot over time, with x: mean life expectancy in europe, and y: mean life expectnacy in Asia, and each data point is a year.</p>
+<p><strong>Process:</strong></p>
+<ul class="simple">
+<li><p>group by continent and year, and calculate mean life expectancy</p></li>
+<li><p>convert long to wide format, with one column per continent</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">summary_data</span> <span class="o">=</span> <span class="p">(</span><span class="n">gapminder</span>
+   <span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;continent&#39;</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">])</span>
+   <span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">m_lifeExp</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">,</span> <span class="s1">&#39;mean&#39;</span><span class="p">),</span>
+        <span class="n">s_lifeExp</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">,</span> <span class="s1">&#39;std&#39;</span><span class="p">)))</span>
+<span class="n">summary_data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>m_lifeExp</th>
+      <th>s_lifeExp</th>
+    </tr>
+    <tr>
+      <th>continent</th>
+      <th>year</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="12" valign="top">Africa</th>
+      <th>1952</th>
+      <td>39.135500</td>
+      <td>5.151581</td>
+    </tr>
+    <tr>
+      <th>1957</th>
+      <td>41.266346</td>
+      <td>5.620123</td>
+    </tr>
+    <tr>
+      <th>1962</th>
+      <td>43.319442</td>
+      <td>5.875364</td>
+    </tr>
+    <tr>
+      <th>1967</th>
+      <td>45.334538</td>
+      <td>6.082673</td>
+    </tr>
+    <tr>
+      <th>1972</th>
+      <td>47.450942</td>
+      <td>6.416258</td>
+    </tr>
+    <tr>
+      <th>1977</th>
+      <td>49.580423</td>
+      <td>6.808197</td>
+    </tr>
+    <tr>
+      <th>1982</th>
+      <td>51.592865</td>
+      <td>7.375940</td>
+    </tr>
+    <tr>
+      <th>1987</th>
+      <td>53.344788</td>
+      <td>7.864089</td>
+    </tr>
+    <tr>
+      <th>1992</th>
+      <td>53.629577</td>
+      <td>9.461071</td>
+    </tr>
+    <tr>
+      <th>1997</th>
+      <td>53.598269</td>
+      <td>9.103387</td>
+    </tr>
+    <tr>
+      <th>2002</th>
+      <td>53.325231</td>
+      <td>9.586496</td>
+    </tr>
+    <tr>
+      <th>2007</th>
+      <td>54.806038</td>
+      <td>9.630781</td>
+    </tr>
+    <tr>
+      <th rowspan="12" valign="top">Americas</th>
+      <th>1952</th>
+      <td>53.279840</td>
+      <td>9.326082</td>
+    </tr>
+    <tr>
+      <th>1957</th>
+      <td>55.960280</td>
+      <td>9.033192</td>
+    </tr>
+    <tr>
+      <th>1962</th>
+      <td>58.398760</td>
+      <td>8.503544</td>
+    </tr>
+    <tr>
+      <th>1967</th>
+      <td>60.410920</td>
+      <td>7.909171</td>
+    </tr>
+    <tr>
+      <th>1972</th>
+      <td>62.394920</td>
+      <td>7.323017</td>
+    </tr>
+    <tr>
+      <th>1977</th>
+      <td>64.391560</td>
+      <td>7.069496</td>
+    </tr>
+    <tr>
+      <th>1982</th>
+      <td>66.228840</td>
+      <td>6.720834</td>
+    </tr>
+    <tr>
+      <th>1987</th>
+      <td>68.090720</td>
+      <td>5.801929</td>
+    </tr>
+    <tr>
+      <th>1992</th>
+      <td>69.568360</td>
+      <td>5.167104</td>
+    </tr>
+    <tr>
+      <th>1997</th>
+      <td>71.150480</td>
+      <td>4.887584</td>
+    </tr>
+    <tr>
+      <th>2002</th>
+      <td>72.422040</td>
+      <td>4.799705</td>
+    </tr>
+    <tr>
+      <th>2007</th>
+      <td>73.608120</td>
+      <td>4.440948</td>
+    </tr>
+    <tr>
+      <th rowspan="12" valign="top">Asia</th>
+      <th>1952</th>
+      <td>46.314394</td>
+      <td>9.291751</td>
+    </tr>
+    <tr>
+      <th>1957</th>
+      <td>49.318544</td>
+      <td>9.635429</td>
+    </tr>
+    <tr>
+      <th>1962</th>
+      <td>51.563223</td>
+      <td>9.820632</td>
+    </tr>
+    <tr>
+      <th>1967</th>
+      <td>54.663640</td>
+      <td>9.650965</td>
+    </tr>
+    <tr>
+      <th>1972</th>
+      <td>57.319269</td>
+      <td>9.722700</td>
+    </tr>
+    <tr>
+      <th>1977</th>
+      <td>59.610556</td>
+      <td>10.022197</td>
+    </tr>
+    <tr>
+      <th>1982</th>
+      <td>62.617939</td>
+      <td>8.535221</td>
+    </tr>
+    <tr>
+      <th>1987</th>
+      <td>64.851182</td>
+      <td>8.203792</td>
+    </tr>
+    <tr>
+      <th>1992</th>
+      <td>66.537212</td>
+      <td>8.075549</td>
+    </tr>
+    <tr>
+      <th>1997</th>
+      <td>68.020515</td>
+      <td>8.091171</td>
+    </tr>
+    <tr>
+      <th>2002</th>
+      <td>69.233879</td>
+      <td>8.374595</td>
+    </tr>
+    <tr>
+      <th>2007</th>
+      <td>70.728485</td>
+      <td>7.963724</td>
+    </tr>
+    <tr>
+      <th rowspan="12" valign="top">Europe</th>
+      <th>1952</th>
+      <td>64.408500</td>
+      <td>6.361088</td>
+    </tr>
+    <tr>
+      <th>1957</th>
+      <td>66.703067</td>
+      <td>5.295805</td>
+    </tr>
+    <tr>
+      <th>1962</th>
+      <td>68.539233</td>
+      <td>4.302500</td>
+    </tr>
+    <tr>
+      <th>1967</th>
+      <td>69.737600</td>
+      <td>3.799728</td>
+    </tr>
+    <tr>
+      <th>1972</th>
+      <td>70.775033</td>
+      <td>3.240576</td>
+    </tr>
+    <tr>
+      <th>1977</th>
+      <td>71.937767</td>
+      <td>3.121030</td>
+    </tr>
+    <tr>
+      <th>1982</th>
+      <td>72.806400</td>
+      <td>3.218260</td>
+    </tr>
+    <tr>
+      <th>1987</th>
+      <td>73.642167</td>
+      <td>3.169680</td>
+    </tr>
+    <tr>
+      <th>1992</th>
+      <td>74.440100</td>
+      <td>3.209781</td>
+    </tr>
+    <tr>
+      <th>1997</th>
+      <td>75.505167</td>
+      <td>3.104677</td>
+    </tr>
+    <tr>
+      <th>2002</th>
+      <td>76.700600</td>
+      <td>2.922180</td>
+    </tr>
+    <tr>
+      <th>2007</th>
+      <td>77.648600</td>
+      <td>2.979813</td>
+    </tr>
+    <tr>
+      <th rowspan="12" valign="top">Oceania</th>
+      <th>1952</th>
+      <td>69.255000</td>
+      <td>0.190919</td>
+    </tr>
+    <tr>
+      <th>1957</th>
+      <td>70.295000</td>
+      <td>0.049497</td>
+    </tr>
+    <tr>
+      <th>1962</th>
+      <td>71.085000</td>
+      <td>0.219203</td>
+    </tr>
+    <tr>
+      <th>1967</th>
+      <td>71.310000</td>
+      <td>0.296985</td>
+    </tr>
+    <tr>
+      <th>1972</th>
+      <td>71.910000</td>
+      <td>0.028284</td>
+    </tr>
+    <tr>
+      <th>1977</th>
+      <td>72.855000</td>
+      <td>0.898026</td>
+    </tr>
+    <tr>
+      <th>1982</th>
+      <td>74.290000</td>
+      <td>0.636396</td>
+    </tr>
+    <tr>
+      <th>1987</th>
+      <td>75.320000</td>
+      <td>1.414214</td>
+    </tr>
+    <tr>
+      <th>1992</th>
+      <td>76.945000</td>
+      <td>0.869741</td>
+    </tr>
+    <tr>
+      <th>1997</th>
+      <td>78.190000</td>
+      <td>0.905097</td>
+    </tr>
+    <tr>
+      <th>2002</th>
+      <td>79.740000</td>
+      <td>0.890955</td>
+    </tr>
+    <tr>
+      <th>2007</th>
+      <td>80.719500</td>
+      <td>0.729027</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># via unstacking by index</span>
+<span class="n">summary_data</span><span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="s1">&#39;continent&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan="5" halign="left">m_lifeExp</th>
+      <th colspan="5" halign="left">s_lifeExp</th>
+    </tr>
+    <tr>
+      <th>continent</th>
+      <th>Africa</th>
+      <th>Americas</th>
+      <th>Asia</th>
+      <th>Europe</th>
+      <th>Oceania</th>
+      <th>Africa</th>
+      <th>Americas</th>
+      <th>Asia</th>
+      <th>Europe</th>
+      <th>Oceania</th>
+    </tr>
+    <tr>
+      <th>year</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1952</th>
+      <td>39.135500</td>
+      <td>53.27984</td>
+      <td>46.314394</td>
+      <td>64.408500</td>
+      <td>69.2550</td>
+      <td>5.151581</td>
+      <td>9.326082</td>
+      <td>9.291751</td>
+      <td>6.361088</td>
+      <td>0.190919</td>
+    </tr>
+    <tr>
+      <th>1957</th>
+      <td>41.266346</td>
+      <td>55.96028</td>
+      <td>49.318544</td>
+      <td>66.703067</td>
+      <td>70.2950</td>
+      <td>5.620123</td>
+      <td>9.033192</td>
+      <td>9.635429</td>
+      <td>5.295805</td>
+      <td>0.049497</td>
+    </tr>
+    <tr>
+      <th>1962</th>
+      <td>43.319442</td>
+      <td>58.39876</td>
+      <td>51.563223</td>
+      <td>68.539233</td>
+      <td>71.0850</td>
+      <td>5.875364</td>
+      <td>8.503544</td>
+      <td>9.820632</td>
+      <td>4.302500</td>
+      <td>0.219203</td>
+    </tr>
+    <tr>
+      <th>1967</th>
+      <td>45.334538</td>
+      <td>60.41092</td>
+      <td>54.663640</td>
+      <td>69.737600</td>
+      <td>71.3100</td>
+      <td>6.082673</td>
+      <td>7.909171</td>
+      <td>9.650965</td>
+      <td>3.799728</td>
+      <td>0.296985</td>
+    </tr>
+    <tr>
+      <th>1972</th>
+      <td>47.450942</td>
+      <td>62.39492</td>
+      <td>57.319269</td>
+      <td>70.775033</td>
+      <td>71.9100</td>
+      <td>6.416258</td>
+      <td>7.323017</td>
+      <td>9.722700</td>
+      <td>3.240576</td>
+      <td>0.028284</td>
+    </tr>
+    <tr>
+      <th>1977</th>
+      <td>49.580423</td>
+      <td>64.39156</td>
+      <td>59.610556</td>
+      <td>71.937767</td>
+      <td>72.8550</td>
+      <td>6.808197</td>
+      <td>7.069496</td>
+      <td>10.022197</td>
+      <td>3.121030</td>
+      <td>0.898026</td>
+    </tr>
+    <tr>
+      <th>1982</th>
+      <td>51.592865</td>
+      <td>66.22884</td>
+      <td>62.617939</td>
+      <td>72.806400</td>
+      <td>74.2900</td>
+      <td>7.375940</td>
+      <td>6.720834</td>
+      <td>8.535221</td>
+      <td>3.218260</td>
+      <td>0.636396</td>
+    </tr>
+    <tr>
+      <th>1987</th>
+      <td>53.344788</td>
+      <td>68.09072</td>
+      <td>64.851182</td>
+      <td>73.642167</td>
+      <td>75.3200</td>
+      <td>7.864089</td>
+      <td>5.801929</td>
+      <td>8.203792</td>
+      <td>3.169680</td>
+      <td>1.414214</td>
+    </tr>
+    <tr>
+      <th>1992</th>
+      <td>53.629577</td>
+      <td>69.56836</td>
+      <td>66.537212</td>
+      <td>74.440100</td>
+      <td>76.9450</td>
+      <td>9.461071</td>
+      <td>5.167104</td>
+      <td>8.075549</td>
+      <td>3.209781</td>
+      <td>0.869741</td>
+    </tr>
+    <tr>
+      <th>1997</th>
+      <td>53.598269</td>
+      <td>71.15048</td>
+      <td>68.020515</td>
+      <td>75.505167</td>
+      <td>78.1900</td>
+      <td>9.103387</td>
+      <td>4.887584</td>
+      <td>8.091171</td>
+      <td>3.104677</td>
+      <td>0.905097</td>
+    </tr>
+    <tr>
+      <th>2002</th>
+      <td>53.325231</td>
+      <td>72.42204</td>
+      <td>69.233879</td>
+      <td>76.700600</td>
+      <td>79.7400</td>
+      <td>9.586496</td>
+      <td>4.799705</td>
+      <td>8.374595</td>
+      <td>2.922180</td>
+      <td>0.890955</td>
+    </tr>
+    <tr>
+      <th>2007</th>
+      <td>54.806038</td>
+      <td>73.60812</td>
+      <td>70.728485</td>
+      <td>77.648600</td>
+      <td>80.7195</td>
+      <td>9.630781</td>
+      <td>4.440948</td>
+      <td>7.963724</td>
+      <td>2.979813</td>
+      <td>0.729027</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">summary_data</span><span class="p">[</span><span class="s1">&#39;m_lifeExp&#39;</span><span class="p">][</span><span class="s1">&#39;Asia&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>year
+1952    46.314394
+1957    49.318544
+1962    51.563223
+1967    54.663640
+1972    57.319269
+1977    59.610556
+1982    62.617939
+1987    64.851182
+1992    66.537212
+1997    68.020515
+2002    69.233879
+2007    70.728485
+Name: m_lifeExp, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">summary_data</span> <span class="o">=</span> <span class="p">(</span><span class="n">gapminder</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;continent&#39;</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">])</span>
+    <span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">m_lifeExp</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">,</span> <span class="s1">&#39;mean&#39;</span><span class="p">))</span>
+    <span class="o">.</span><span class="n">reset_index</span><span class="p">())</span>
+<span class="n">summary_data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>continent</th>
+      <th>year</th>
+      <th>m_lifeExp</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Africa</td>
+      <td>1952</td>
+      <td>39.135500</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Africa</td>
+      <td>1957</td>
+      <td>41.266346</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Africa</td>
+      <td>1962</td>
+      <td>43.319442</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Africa</td>
+      <td>1967</td>
+      <td>45.334538</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Africa</td>
+      <td>1972</td>
+      <td>47.450942</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Africa</td>
+      <td>1977</td>
+      <td>49.580423</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Africa</td>
+      <td>1982</td>
+      <td>51.592865</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Africa</td>
+      <td>1987</td>
+      <td>53.344788</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Africa</td>
+      <td>1992</td>
+      <td>53.629577</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Africa</td>
+      <td>1997</td>
+      <td>53.598269</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Africa</td>
+      <td>2002</td>
+      <td>53.325231</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Africa</td>
+      <td>2007</td>
+      <td>54.806038</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Americas</td>
+      <td>1952</td>
+      <td>53.279840</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Americas</td>
+      <td>1957</td>
+      <td>55.960280</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Americas</td>
+      <td>1962</td>
+      <td>58.398760</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Americas</td>
+      <td>1967</td>
+      <td>60.410920</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Americas</td>
+      <td>1972</td>
+      <td>62.394920</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Americas</td>
+      <td>1977</td>
+      <td>64.391560</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Americas</td>
+      <td>1982</td>
+      <td>66.228840</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>Americas</td>
+      <td>1987</td>
+      <td>68.090720</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>Americas</td>
+      <td>1992</td>
+      <td>69.568360</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>Americas</td>
+      <td>1997</td>
+      <td>71.150480</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>Americas</td>
+      <td>2002</td>
+      <td>72.422040</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>Americas</td>
+      <td>2007</td>
+      <td>73.608120</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>Asia</td>
+      <td>1952</td>
+      <td>46.314394</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>Asia</td>
+      <td>1957</td>
+      <td>49.318544</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>Asia</td>
+      <td>1962</td>
+      <td>51.563223</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>Asia</td>
+      <td>1967</td>
+      <td>54.663640</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>Asia</td>
+      <td>1972</td>
+      <td>57.319269</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>Asia</td>
+      <td>1977</td>
+      <td>59.610556</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>Asia</td>
+      <td>1982</td>
+      <td>62.617939</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>Asia</td>
+      <td>1987</td>
+      <td>64.851182</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>Asia</td>
+      <td>1992</td>
+      <td>66.537212</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>Asia</td>
+      <td>1997</td>
+      <td>68.020515</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>Asia</td>
+      <td>2002</td>
+      <td>69.233879</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>Asia</td>
+      <td>2007</td>
+      <td>70.728485</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>Europe</td>
+      <td>1952</td>
+      <td>64.408500</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>Europe</td>
+      <td>1957</td>
+      <td>66.703067</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>Europe</td>
+      <td>1962</td>
+      <td>68.539233</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>Europe</td>
+      <td>1967</td>
+      <td>69.737600</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>Europe</td>
+      <td>1972</td>
+      <td>70.775033</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>Europe</td>
+      <td>1977</td>
+      <td>71.937767</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>Europe</td>
+      <td>1982</td>
+      <td>72.806400</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>Europe</td>
+      <td>1987</td>
+      <td>73.642167</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>Europe</td>
+      <td>1992</td>
+      <td>74.440100</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>Europe</td>
+      <td>1997</td>
+      <td>75.505167</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>Europe</td>
+      <td>2002</td>
+      <td>76.700600</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>Europe</td>
+      <td>2007</td>
+      <td>77.648600</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>Oceania</td>
+      <td>1952</td>
+      <td>69.255000</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>Oceania</td>
+      <td>1957</td>
+      <td>70.295000</td>
+    </tr>
+    <tr>
+      <th>50</th>
+      <td>Oceania</td>
+      <td>1962</td>
+      <td>71.085000</td>
+    </tr>
+    <tr>
+      <th>51</th>
+      <td>Oceania</td>
+      <td>1967</td>
+      <td>71.310000</td>
+    </tr>
+    <tr>
+      <th>52</th>
+      <td>Oceania</td>
+      <td>1972</td>
+      <td>71.910000</td>
+    </tr>
+    <tr>
+      <th>53</th>
+      <td>Oceania</td>
+      <td>1977</td>
+      <td>72.855000</td>
+    </tr>
+    <tr>
+      <th>54</th>
+      <td>Oceania</td>
+      <td>1982</td>
+      <td>74.290000</td>
+    </tr>
+    <tr>
+      <th>55</th>
+      <td>Oceania</td>
+      <td>1987</td>
+      <td>75.320000</td>
+    </tr>
+    <tr>
+      <th>56</th>
+      <td>Oceania</td>
+      <td>1992</td>
+      <td>76.945000</td>
+    </tr>
+    <tr>
+      <th>57</th>
+      <td>Oceania</td>
+      <td>1997</td>
+      <td>78.190000</td>
+    </tr>
+    <tr>
+      <th>58</th>
+      <td>Oceania</td>
+      <td>2002</td>
+      <td>79.740000</td>
+    </tr>
+    <tr>
+      <th>59</th>
+      <td>Oceania</td>
+      <td>2007</td>
+      <td>80.719500</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># via column name and .pivot</span>
+
+<span class="n">summary_data</span><span class="o">.</span><span class="n">pivot</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="s1">&#39;year&#39;</span><span class="p">,</span>
+           <span class="n">columns</span><span class="o">=</span><span class="s1">&#39;continent&#39;</span><span class="p">,</span>
+           <span class="n">values</span><span class="o">=</span><span class="s1">&#39;m_lifeExp&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>continent</th>
+      <th>Africa</th>
+      <th>Americas</th>
+      <th>Asia</th>
+      <th>Europe</th>
+      <th>Oceania</th>
+    </tr>
+    <tr>
+      <th>year</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1952</th>
+      <td>39.135500</td>
+      <td>53.27984</td>
+      <td>46.314394</td>
+      <td>64.408500</td>
+      <td>69.2550</td>
+    </tr>
+    <tr>
+      <th>1957</th>
+      <td>41.266346</td>
+      <td>55.96028</td>
+      <td>49.318544</td>
+      <td>66.703067</td>
+      <td>70.2950</td>
+    </tr>
+    <tr>
+      <th>1962</th>
+      <td>43.319442</td>
+      <td>58.39876</td>
+      <td>51.563223</td>
+      <td>68.539233</td>
+      <td>71.0850</td>
+    </tr>
+    <tr>
+      <th>1967</th>
+      <td>45.334538</td>
+      <td>60.41092</td>
+      <td>54.663640</td>
+      <td>69.737600</td>
+      <td>71.3100</td>
+    </tr>
+    <tr>
+      <th>1972</th>
+      <td>47.450942</td>
+      <td>62.39492</td>
+      <td>57.319269</td>
+      <td>70.775033</td>
+      <td>71.9100</td>
+    </tr>
+    <tr>
+      <th>1977</th>
+      <td>49.580423</td>
+      <td>64.39156</td>
+      <td>59.610556</td>
+      <td>71.937767</td>
+      <td>72.8550</td>
+    </tr>
+    <tr>
+      <th>1982</th>
+      <td>51.592865</td>
+      <td>66.22884</td>
+      <td>62.617939</td>
+      <td>72.806400</td>
+      <td>74.2900</td>
+    </tr>
+    <tr>
+      <th>1987</th>
+      <td>53.344788</td>
+      <td>68.09072</td>
+      <td>64.851182</td>
+      <td>73.642167</td>
+      <td>75.3200</td>
+    </tr>
+    <tr>
+      <th>1992</th>
+      <td>53.629577</td>
+      <td>69.56836</td>
+      <td>66.537212</td>
+      <td>74.440100</td>
+      <td>76.9450</td>
+    </tr>
+    <tr>
+      <th>1997</th>
+      <td>53.598269</td>
+      <td>71.15048</td>
+      <td>68.020515</td>
+      <td>75.505167</td>
+      <td>78.1900</td>
+    </tr>
+    <tr>
+      <th>2002</th>
+      <td>53.325231</td>
+      <td>72.42204</td>
+      <td>69.233879</td>
+      <td>76.700600</td>
+      <td>79.7400</td>
+    </tr>
+    <tr>
+      <th>2007</th>
+      <td>54.806038</td>
+      <td>73.60812</td>
+      <td>70.728485</td>
+      <td>77.648600</td>
+      <td>80.7195</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">life_exp</span> <span class="o">=</span> <span class="p">(</span><span class="n">gapminder</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;continent&#39;</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">])</span>
+                    <span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">m_lifeExp</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">,</span> <span class="s1">&#39;mean&#39;</span><span class="p">))</span>
+                    <span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="s1">&#39;continent&#39;</span><span class="p">))</span>
+<span class="n">life_exp</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan="5" halign="left">m_lifeExp</th>
+    </tr>
+    <tr>
+      <th>continent</th>
+      <th>Africa</th>
+      <th>Americas</th>
+      <th>Asia</th>
+      <th>Europe</th>
+      <th>Oceania</th>
+    </tr>
+    <tr>
+      <th>year</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1952</th>
+      <td>39.135500</td>
+      <td>53.27984</td>
+      <td>46.314394</td>
+      <td>64.408500</td>
+      <td>69.2550</td>
+    </tr>
+    <tr>
+      <th>1957</th>
+      <td>41.266346</td>
+      <td>55.96028</td>
+      <td>49.318544</td>
+      <td>66.703067</td>
+      <td>70.2950</td>
+    </tr>
+    <tr>
+      <th>1962</th>
+      <td>43.319442</td>
+      <td>58.39876</td>
+      <td>51.563223</td>
+      <td>68.539233</td>
+      <td>71.0850</td>
+    </tr>
+    <tr>
+      <th>1967</th>
+      <td>45.334538</td>
+      <td>60.41092</td>
+      <td>54.663640</td>
+      <td>69.737600</td>
+      <td>71.3100</td>
+    </tr>
+    <tr>
+      <th>1972</th>
+      <td>47.450942</td>
+      <td>62.39492</td>
+      <td>57.319269</td>
+      <td>70.775033</td>
+      <td>71.9100</td>
+    </tr>
+    <tr>
+      <th>1977</th>
+      <td>49.580423</td>
+      <td>64.39156</td>
+      <td>59.610556</td>
+      <td>71.937767</td>
+      <td>72.8550</td>
+    </tr>
+    <tr>
+      <th>1982</th>
+      <td>51.592865</td>
+      <td>66.22884</td>
+      <td>62.617939</td>
+      <td>72.806400</td>
+      <td>74.2900</td>
+    </tr>
+    <tr>
+      <th>1987</th>
+      <td>53.344788</td>
+      <td>68.09072</td>
+      <td>64.851182</td>
+      <td>73.642167</td>
+      <td>75.3200</td>
+    </tr>
+    <tr>
+      <th>1992</th>
+      <td>53.629577</td>
+      <td>69.56836</td>
+      <td>66.537212</td>
+      <td>74.440100</td>
+      <td>76.9450</td>
+    </tr>
+    <tr>
+      <th>1997</th>
+      <td>53.598269</td>
+      <td>71.15048</td>
+      <td>68.020515</td>
+      <td>75.505167</td>
+      <td>78.1900</td>
+    </tr>
+    <tr>
+      <th>2002</th>
+      <td>53.325231</td>
+      <td>72.42204</td>
+      <td>69.233879</td>
+      <td>76.700600</td>
+      <td>79.7400</td>
+    </tr>
+    <tr>
+      <th>2007</th>
+      <td>54.806038</td>
+      <td>73.60812</td>
+      <td>70.728485</td>
+      <td>77.648600</td>
+      <td>80.7195</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">life_exp</span><span class="p">[</span><span class="s1">&#39;m_lifeExp&#39;</span><span class="p">][</span><span class="s1">&#39;Europe&#39;</span><span class="p">],</span>
+            <span class="n">life_exp</span><span class="p">[</span><span class="s1">&#39;m_lifeExp&#39;</span><span class="p">][</span><span class="s1">&#39;Asia&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">45</span><span class="p">,</span> <span class="mi">80</span><span class="p">],</span> <span class="p">[</span><span class="mi">45</span><span class="p">,</span> <span class="mi">80</span><span class="p">],</span> <span class="s1">&#39;r-&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Europe life expectancy&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Asia life expectancy&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Asia life expectancy&#39;)
+</pre></div>
+</div>
+<img alt="../_images/css2-lecture-4_76_1.png" src="../_images/css2-lecture-4_76_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="wide-to-long">
+<h3>wide to long<a class="headerlink" href="#wide-to-long" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>stacking (with indexes)</p></li>
+</ul>
+<p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/reshaping.html#reshaping-by-stacking-and-unstacking">https://pandas.pydata.org/pandas-docs/stable/user_guide/reshaping.html#reshaping-by-stacking-and-unstacking</a></p>
+<ul class="simple">
+<li><p>melt (with column names)</p></li>
+</ul>
+<p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/reshaping.html#reshaping-by-melt">https://pandas.pydata.org/pandas-docs/stable/user_guide/reshaping.html#reshaping-by-melt</a></p>
+<div class="section" id="stacking-with-indexes">
+<h4>stacking (with indexes)<a class="headerlink" href="#stacking-with-indexes" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">life_exp</span> <span class="o">=</span> <span class="p">(</span><span class="n">gapminder</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;continent&#39;</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">])</span>
+                    <span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">m_lifeExp</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">,</span> <span class="s1">&#39;mean&#39;</span><span class="p">))</span>
+                    <span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="s1">&#39;continent&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">life_exp</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan="5" halign="left">m_lifeExp</th>
+    </tr>
+    <tr>
+      <th>continent</th>
+      <th>Africa</th>
+      <th>Americas</th>
+      <th>Asia</th>
+      <th>Europe</th>
+      <th>Oceania</th>
+    </tr>
+    <tr>
+      <th>year</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1952</th>
+      <td>39.135500</td>
+      <td>53.27984</td>
+      <td>46.314394</td>
+      <td>64.408500</td>
+      <td>69.2550</td>
+    </tr>
+    <tr>
+      <th>1957</th>
+      <td>41.266346</td>
+      <td>55.96028</td>
+      <td>49.318544</td>
+      <td>66.703067</td>
+      <td>70.2950</td>
+    </tr>
+    <tr>
+      <th>1962</th>
+      <td>43.319442</td>
+      <td>58.39876</td>
+      <td>51.563223</td>
+      <td>68.539233</td>
+      <td>71.0850</td>
+    </tr>
+    <tr>
+      <th>1967</th>
+      <td>45.334538</td>
+      <td>60.41092</td>
+      <td>54.663640</td>
+      <td>69.737600</td>
+      <td>71.3100</td>
+    </tr>
+    <tr>
+      <th>1972</th>
+      <td>47.450942</td>
+      <td>62.39492</td>
+      <td>57.319269</td>
+      <td>70.775033</td>
+      <td>71.9100</td>
+    </tr>
+    <tr>
+      <th>1977</th>
+      <td>49.580423</td>
+      <td>64.39156</td>
+      <td>59.610556</td>
+      <td>71.937767</td>
+      <td>72.8550</td>
+    </tr>
+    <tr>
+      <th>1982</th>
+      <td>51.592865</td>
+      <td>66.22884</td>
+      <td>62.617939</td>
+      <td>72.806400</td>
+      <td>74.2900</td>
+    </tr>
+    <tr>
+      <th>1987</th>
+      <td>53.344788</td>
+      <td>68.09072</td>
+      <td>64.851182</td>
+      <td>73.642167</td>
+      <td>75.3200</td>
+    </tr>
+    <tr>
+      <th>1992</th>
+      <td>53.629577</td>
+      <td>69.56836</td>
+      <td>66.537212</td>
+      <td>74.440100</td>
+      <td>76.9450</td>
+    </tr>
+    <tr>
+      <th>1997</th>
+      <td>53.598269</td>
+      <td>71.15048</td>
+      <td>68.020515</td>
+      <td>75.505167</td>
+      <td>78.1900</td>
+    </tr>
+    <tr>
+      <th>2002</th>
+      <td>53.325231</td>
+      <td>72.42204</td>
+      <td>69.233879</td>
+      <td>76.700600</td>
+      <td>79.7400</td>
+    </tr>
+    <tr>
+      <th>2007</th>
+      <td>54.806038</td>
+      <td>73.60812</td>
+      <td>70.728485</td>
+      <td>77.648600</td>
+      <td>80.7195</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># creates indexes</span>
+<span class="n">life_exp</span><span class="o">.</span><span class="n">stack</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>m_lifeExp</th>
+    </tr>
+    <tr>
+      <th>year</th>
+      <th>continent</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="5" valign="top">1952</th>
+      <th>Africa</th>
+      <td>39.135500</td>
+    </tr>
+    <tr>
+      <th>Americas</th>
+      <td>53.279840</td>
+    </tr>
+    <tr>
+      <th>Asia</th>
+      <td>46.314394</td>
+    </tr>
+    <tr>
+      <th>Europe</th>
+      <td>64.408500</td>
+    </tr>
+    <tr>
+      <th>Oceania</th>
+      <td>69.255000</td>
+    </tr>
+    <tr>
+      <th rowspan="5" valign="top">1957</th>
+      <th>Africa</th>
+      <td>41.266346</td>
+    </tr>
+    <tr>
+      <th>Americas</th>
+      <td>55.960280</td>
+    </tr>
+    <tr>
+      <th>Asia</th>
+      <td>49.318544</td>
+    </tr>
+    <tr>
+      <th>Europe</th>
+      <td>66.703067</td>
+    </tr>
+    <tr>
+      <th>Oceania</th>
+      <td>70.295000</td>
+    </tr>
+    <tr>
+      <th rowspan="5" valign="top">1962</th>
+      <th>Africa</th>
+      <td>43.319442</td>
+    </tr>
+    <tr>
+      <th>Americas</th>
+      <td>58.398760</td>
+    </tr>
+    <tr>
+      <th>Asia</th>
+      <td>51.563223</td>
+    </tr>
+    <tr>
+      <th>Europe</th>
+      <td>68.539233</td>
+    </tr>
+    <tr>
+      <th>Oceania</th>
+      <td>71.085000</td>
+    </tr>
+    <tr>
+      <th rowspan="5" valign="top">1967</th>
+      <th>Africa</th>
+      <td>45.334538</td>
+    </tr>
+    <tr>
+      <th>Americas</th>
+      <td>60.410920</td>
+    </tr>
+    <tr>
+      <th>Asia</th>
+      <td>54.663640</td>
+    </tr>
+    <tr>
+      <th>Europe</th>
+      <td>69.737600</td>
+    </tr>
+    <tr>
+      <th>Oceania</th>
+      <td>71.310000</td>
+    </tr>
+    <tr>
+      <th rowspan="5" valign="top">1972</th>
+      <th>Africa</th>
+      <td>47.450942</td>
+    </tr>
+    <tr>
+      <th>Americas</th>
+      <td>62.394920</td>
+    </tr>
+    <tr>
+      <th>Asia</th>
+      <td>57.319269</td>
+    </tr>
+    <tr>
+      <th>Europe</th>
+      <td>70.775033</td>
+    </tr>
+    <tr>
+      <th>Oceania</th>
+      <td>71.910000</td>
+    </tr>
+    <tr>
+      <th rowspan="5" valign="top">1977</th>
+      <th>Africa</th>
+      <td>49.580423</td>
+    </tr>
+    <tr>
+      <th>Americas</th>
+      <td>64.391560</td>
+    </tr>
+    <tr>
+      <th>Asia</th>
+      <td>59.610556</td>
+    </tr>
+    <tr>
+      <th>Europe</th>
+      <td>71.937767</td>
+    </tr>
+    <tr>
+      <th>Oceania</th>
+      <td>72.855000</td>
+    </tr>
+    <tr>
+      <th rowspan="5" valign="top">1982</th>
+      <th>Africa</th>
+      <td>51.592865</td>
+    </tr>
+    <tr>
+      <th>Americas</th>
+      <td>66.228840</td>
+    </tr>
+    <tr>
+      <th>Asia</th>
+      <td>62.617939</td>
+    </tr>
+    <tr>
+      <th>Europe</th>
+      <td>72.806400</td>
+    </tr>
+    <tr>
+      <th>Oceania</th>
+      <td>74.290000</td>
+    </tr>
+    <tr>
+      <th rowspan="5" valign="top">1987</th>
+      <th>Africa</th>
+      <td>53.344788</td>
+    </tr>
+    <tr>
+      <th>Americas</th>
+      <td>68.090720</td>
+    </tr>
+    <tr>
+      <th>Asia</th>
+      <td>64.851182</td>
+    </tr>
+    <tr>
+      <th>Europe</th>
+      <td>73.642167</td>
+    </tr>
+    <tr>
+      <th>Oceania</th>
+      <td>75.320000</td>
+    </tr>
+    <tr>
+      <th rowspan="5" valign="top">1992</th>
+      <th>Africa</th>
+      <td>53.629577</td>
+    </tr>
+    <tr>
+      <th>Americas</th>
+      <td>69.568360</td>
+    </tr>
+    <tr>
+      <th>Asia</th>
+      <td>66.537212</td>
+    </tr>
+    <tr>
+      <th>Europe</th>
+      <td>74.440100</td>
+    </tr>
+    <tr>
+      <th>Oceania</th>
+      <td>76.945000</td>
+    </tr>
+    <tr>
+      <th rowspan="5" valign="top">1997</th>
+      <th>Africa</th>
+      <td>53.598269</td>
+    </tr>
+    <tr>
+      <th>Americas</th>
+      <td>71.150480</td>
+    </tr>
+    <tr>
+      <th>Asia</th>
+      <td>68.020515</td>
+    </tr>
+    <tr>
+      <th>Europe</th>
+      <td>75.505167</td>
+    </tr>
+    <tr>
+      <th>Oceania</th>
+      <td>78.190000</td>
+    </tr>
+    <tr>
+      <th rowspan="5" valign="top">2002</th>
+      <th>Africa</th>
+      <td>53.325231</td>
+    </tr>
+    <tr>
+      <th>Americas</th>
+      <td>72.422040</td>
+    </tr>
+    <tr>
+      <th>Asia</th>
+      <td>69.233879</td>
+    </tr>
+    <tr>
+      <th>Europe</th>
+      <td>76.700600</td>
+    </tr>
+    <tr>
+      <th>Oceania</th>
+      <td>79.740000</td>
+    </tr>
+    <tr>
+      <th rowspan="5" valign="top">2007</th>
+      <th>Africa</th>
+      <td>54.806038</td>
+    </tr>
+    <tr>
+      <th>Americas</th>
+      <td>73.608120</td>
+    </tr>
+    <tr>
+      <th>Asia</th>
+      <td>70.728485</td>
+    </tr>
+    <tr>
+      <th>Europe</th>
+      <td>77.648600</td>
+    </tr>
+    <tr>
+      <th>Oceania</th>
+      <td>80.719500</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="melting-column-names">
+<h4>melting (column names)<a class="headerlink" href="#melting-column-names" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">life_exp</span> <span class="o">=</span> <span class="p">(</span><span class="n">gapminder</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;continent&#39;</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">])</span>
+                    <span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">m_lifeExp</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">,</span> <span class="s1">&#39;mean&#39;</span><span class="p">))</span>
+                    <span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="s1">&#39;continent&#39;</span><span class="p">)[</span><span class="s1">&#39;m_lifeExp&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">life_exp</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>continent</th>
+      <th>year</th>
+      <th>Africa</th>
+      <th>Americas</th>
+      <th>Asia</th>
+      <th>Europe</th>
+      <th>Oceania</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1952</td>
+      <td>39.135500</td>
+      <td>53.27984</td>
+      <td>46.314394</td>
+      <td>64.408500</td>
+      <td>69.2550</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1957</td>
+      <td>41.266346</td>
+      <td>55.96028</td>
+      <td>49.318544</td>
+      <td>66.703067</td>
+      <td>70.2950</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1962</td>
+      <td>43.319442</td>
+      <td>58.39876</td>
+      <td>51.563223</td>
+      <td>68.539233</td>
+      <td>71.0850</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1967</td>
+      <td>45.334538</td>
+      <td>60.41092</td>
+      <td>54.663640</td>
+      <td>69.737600</td>
+      <td>71.3100</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1972</td>
+      <td>47.450942</td>
+      <td>62.39492</td>
+      <td>57.319269</td>
+      <td>70.775033</td>
+      <td>71.9100</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>1977</td>
+      <td>49.580423</td>
+      <td>64.39156</td>
+      <td>59.610556</td>
+      <td>71.937767</td>
+      <td>72.8550</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>1982</td>
+      <td>51.592865</td>
+      <td>66.22884</td>
+      <td>62.617939</td>
+      <td>72.806400</td>
+      <td>74.2900</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>1987</td>
+      <td>53.344788</td>
+      <td>68.09072</td>
+      <td>64.851182</td>
+      <td>73.642167</td>
+      <td>75.3200</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>1992</td>
+      <td>53.629577</td>
+      <td>69.56836</td>
+      <td>66.537212</td>
+      <td>74.440100</td>
+      <td>76.9450</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>1997</td>
+      <td>53.598269</td>
+      <td>71.15048</td>
+      <td>68.020515</td>
+      <td>75.505167</td>
+      <td>78.1900</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>2002</td>
+      <td>53.325231</td>
+      <td>72.42204</td>
+      <td>69.233879</td>
+      <td>76.700600</td>
+      <td>79.7400</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>2007</td>
+      <td>54.806038</td>
+      <td>73.60812</td>
+      <td>70.728485</td>
+      <td>77.648600</td>
+      <td>80.7195</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">life_exp</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">id_vars</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">),</span>
+              <span class="n">value_vars</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Africa&#39;</span><span class="p">,</span> <span class="s1">&#39;Americas&#39;</span><span class="p">,</span> <span class="s1">&#39;Asia&#39;</span><span class="p">,</span> <span class="s1">&#39;Europe&#39;</span><span class="p">,</span> <span class="s1">&#39;Oceania&#39;</span><span class="p">],</span>
+             <span class="n">var_name</span> <span class="o">=</span> <span class="s1">&#39;continent&#39;</span><span class="p">,</span>
+             <span class="n">value_name</span> <span class="o">=</span> <span class="s1">&#39;mean_life_expectancy&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>continent</th>
+      <th>mean_life_expectancy</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1952</td>
+      <td>Africa</td>
+      <td>39.135500</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1957</td>
+      <td>Africa</td>
+      <td>41.266346</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1962</td>
+      <td>Africa</td>
+      <td>43.319442</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1967</td>
+      <td>Africa</td>
+      <td>45.334538</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1972</td>
+      <td>Africa</td>
+      <td>47.450942</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>1977</td>
+      <td>Africa</td>
+      <td>49.580423</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>1982</td>
+      <td>Africa</td>
+      <td>51.592865</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>1987</td>
+      <td>Africa</td>
+      <td>53.344788</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>1992</td>
+      <td>Africa</td>
+      <td>53.629577</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>1997</td>
+      <td>Africa</td>
+      <td>53.598269</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>2002</td>
+      <td>Africa</td>
+      <td>53.325231</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>2007</td>
+      <td>Africa</td>
+      <td>54.806038</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>1952</td>
+      <td>Americas</td>
+      <td>53.279840</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>1957</td>
+      <td>Americas</td>
+      <td>55.960280</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>1962</td>
+      <td>Americas</td>
+      <td>58.398760</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>1967</td>
+      <td>Americas</td>
+      <td>60.410920</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>1972</td>
+      <td>Americas</td>
+      <td>62.394920</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>1977</td>
+      <td>Americas</td>
+      <td>64.391560</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>1982</td>
+      <td>Americas</td>
+      <td>66.228840</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>1987</td>
+      <td>Americas</td>
+      <td>68.090720</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>1992</td>
+      <td>Americas</td>
+      <td>69.568360</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>1997</td>
+      <td>Americas</td>
+      <td>71.150480</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>2002</td>
+      <td>Americas</td>
+      <td>72.422040</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>2007</td>
+      <td>Americas</td>
+      <td>73.608120</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>1952</td>
+      <td>Asia</td>
+      <td>46.314394</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>1957</td>
+      <td>Asia</td>
+      <td>49.318544</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>1962</td>
+      <td>Asia</td>
+      <td>51.563223</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>1967</td>
+      <td>Asia</td>
+      <td>54.663640</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>1972</td>
+      <td>Asia</td>
+      <td>57.319269</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>1977</td>
+      <td>Asia</td>
+      <td>59.610556</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>1982</td>
+      <td>Asia</td>
+      <td>62.617939</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>1987</td>
+      <td>Asia</td>
+      <td>64.851182</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>1992</td>
+      <td>Asia</td>
+      <td>66.537212</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>1997</td>
+      <td>Asia</td>
+      <td>68.020515</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>2002</td>
+      <td>Asia</td>
+      <td>69.233879</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>2007</td>
+      <td>Asia</td>
+      <td>70.728485</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>1952</td>
+      <td>Europe</td>
+      <td>64.408500</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>1957</td>
+      <td>Europe</td>
+      <td>66.703067</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>1962</td>
+      <td>Europe</td>
+      <td>68.539233</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>1967</td>
+      <td>Europe</td>
+      <td>69.737600</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>1972</td>
+      <td>Europe</td>
+      <td>70.775033</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>1977</td>
+      <td>Europe</td>
+      <td>71.937767</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>1982</td>
+      <td>Europe</td>
+      <td>72.806400</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>1987</td>
+      <td>Europe</td>
+      <td>73.642167</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>1992</td>
+      <td>Europe</td>
+      <td>74.440100</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>1997</td>
+      <td>Europe</td>
+      <td>75.505167</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>2002</td>
+      <td>Europe</td>
+      <td>76.700600</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>2007</td>
+      <td>Europe</td>
+      <td>77.648600</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>1952</td>
+      <td>Oceania</td>
+      <td>69.255000</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>1957</td>
+      <td>Oceania</td>
+      <td>70.295000</td>
+    </tr>
+    <tr>
+      <th>50</th>
+      <td>1962</td>
+      <td>Oceania</td>
+      <td>71.085000</td>
+    </tr>
+    <tr>
+      <th>51</th>
+      <td>1967</td>
+      <td>Oceania</td>
+      <td>71.310000</td>
+    </tr>
+    <tr>
+      <th>52</th>
+      <td>1972</td>
+      <td>Oceania</td>
+      <td>71.910000</td>
+    </tr>
+    <tr>
+      <th>53</th>
+      <td>1977</td>
+      <td>Oceania</td>
+      <td>72.855000</td>
+    </tr>
+    <tr>
+      <th>54</th>
+      <td>1982</td>
+      <td>Oceania</td>
+      <td>74.290000</td>
+    </tr>
+    <tr>
+      <th>55</th>
+      <td>1987</td>
+      <td>Oceania</td>
+      <td>75.320000</td>
+    </tr>
+    <tr>
+      <th>56</th>
+      <td>1992</td>
+      <td>Oceania</td>
+      <td>76.945000</td>
+    </tr>
+    <tr>
+      <th>57</th>
+      <td>1997</td>
+      <td>Oceania</td>
+      <td>78.190000</td>
+    </tr>
+    <tr>
+      <th>58</th>
+      <td>2002</td>
+      <td>Oceania</td>
+      <td>79.740000</td>
+    </tr>
+    <tr>
+      <th>59</th>
+      <td>2007</td>
+      <td>Oceania</td>
+      <td>80.719500</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>reshaping:</p>
+<p>with indexes: unstack and stack</p>
+<p>with column names: pivot and melt</p>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="let-s-do-something-complicated-together">
+<h1>Let’s do something complicated together.<a class="headerlink" href="#let-s-do-something-complicated-together" title="Permalink to this headline">¶</a></h1>
+<p><strong>Goal</strong>: we want to know how life expectancy has changed with gdpPercapita over time, for the different continents.</p>
+<div class="section" id="complicated-plot">
+<h2>Complicated plot<a class="headerlink" href="#complicated-plot" title="Permalink to this headline">¶</a></h2>
+<p>First: let’s make a plot of life expectancy as a function of gdpPerCapita, for each continent, for each year.</p>
+<p>So we want a years x continents subplot</p>
+<p>and we want some nice labels.</p>
+<p>Perhaps we have size vary with country population?</p>
+<p>label x, y, row, column</p>
+<div class="section" id="complicated-analysis">
+<h3>Complicated analysis<a class="headerlink" href="#complicated-analysis" title="Permalink to this headline">¶</a></h3>
+<p>Let’s figure out how life expectancy has changed over time with gdp per capita.</p>
+<p>We want to know how the mean life expectancy, and the relationship with gdp per capita, has changed over time, for each continent.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./live"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Ed Vul<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

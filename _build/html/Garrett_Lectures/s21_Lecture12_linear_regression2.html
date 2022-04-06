@@ -1,0 +1,1406 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>&lt;no title&gt; &#8212; UCSD CSS 2</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">UCSD CSS 2</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Welcome to CSS 2
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Course (CSS 2 Spring 2022)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/syllabus.html">
+   Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/expectations.html">
+   Expectations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/datahub.html">
+   Datahub assignments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/debugging.html">
+   Debugging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/resources.html">
+   Extracurricular Resources
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/final.html">
+   Final Project
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lectures
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/sp22/Lecture_2.html">
+   Lecture 2 (3/30/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/sp22/Lecture_3.html">
+   Lecture 3 (4/1/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/sp22/Lecture_4.html">
+   Lecture 4 (4/4/22)
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Garrett_Lectures/s21_Lecture12_linear_regression2.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/UCSD-CSS-002/ucsd-css-002.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/UCSD-CSS-002/ucsd-css-002.github.io/issues/new?title=Issue%20on%20page%20%2FGarrett_Lectures/s21_Lecture12_linear_regression2.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/UCSD-CSS-002/ucsd-css-002.github.io/master?urlpath=tree/Garrett_Lectures/s21_Lecture12_linear_regression2.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <p>Lecture 12 - Linear Regression 2 - linear regression strikes back</p>
+<p>Announcements</p>
+<ol class="simple">
+<li><p>Problem set 6 and quiz 6 due at the end of the week</p></li>
+<li><p>Discussion board post 3 is active (due in 11 days)</p></li>
+<li><p>Quiz 5 responses - check my comments!</p></li>
+</ol>
+<p>Today’s topics</p>
+<ol class="simple">
+<li><p>Linear regression with train/test split &lt;- machine learning</p></li>
+<li><p>Multivariate regression</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s load our data</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpg</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;final_mpg_dataset.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Check the data. Looks good</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpg</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mpg</th>
+      <th>cylinders</th>
+      <th>displacement</th>
+      <th>horsepower</th>
+      <th>weight</th>
+      <th>acceleration</th>
+      <th>model_year</th>
+      <th>origin</th>
+      <th>name</th>
+      <th>Type</th>
+      <th>...</th>
+      <th>peugeot</th>
+      <th>toyota</th>
+      <th>volkswagen</th>
+      <th>volvo</th>
+      <th>Sedan0</th>
+      <th>japan</th>
+      <th>usa</th>
+      <th>MediumHP</th>
+      <th>HighHP</th>
+      <th>HP_ordinal</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>18.0</td>
+      <td>8.0</td>
+      <td>307.000000</td>
+      <td>130.000000</td>
+      <td>3504.0</td>
+      <td>12.000000</td>
+      <td>70.0</td>
+      <td>usa</td>
+      <td>chevrolet</td>
+      <td>Sedan</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>14.0</td>
+      <td>8.0</td>
+      <td>167.405634</td>
+      <td>92.497143</td>
+      <td>4354.0</td>
+      <td>16.007471</td>
+      <td>70.0</td>
+      <td>usa</td>
+      <td>chevrolet</td>
+      <td>Sedan</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>15.0</td>
+      <td>8.0</td>
+      <td>400.000000</td>
+      <td>150.000000</td>
+      <td>3761.0</td>
+      <td>16.007471</td>
+      <td>70.0</td>
+      <td>usa</td>
+      <td>chevrolet</td>
+      <td>Sedan</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>24.0</td>
+      <td>4.0</td>
+      <td>113.000000</td>
+      <td>95.000000</td>
+      <td>2372.0</td>
+      <td>15.000000</td>
+      <td>70.0</td>
+      <td>japan</td>
+      <td>toyota</td>
+      <td>Coupe</td>
+      <td>...</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>26.0</td>
+      <td>4.0</td>
+      <td>12.000000</td>
+      <td>46.000000</td>
+      <td>1835.0</td>
+      <td>20.500000</td>
+      <td>70.0</td>
+      <td>europe</td>
+      <td>volkswagen</td>
+      <td>Coupe</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 23 columns</p>
+</div></div></div>
+</div>
+<p>Let’s try seeing if weight predicts MPG</p>
+<p>What do you think? Will it predict it? Any guesses?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">mpg</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">],</span><span class="n">mpg</span><span class="p">[</span><span class="s1">&#39;mpg&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/anaconda3/lib/python3.8/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;weight&#39;, ylabel=&#39;mpg&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture12_linear_regression2_7_2.png" src="../_images/s21_Lecture12_linear_regression2_7_2.png" />
+</div>
+</div>
+<p>In order to test to see if acceleration is a good predictor, we will be using linear regression. We will split the data into training and testing data and see how well the model we build with the training data predicts the testing data</p>
+<p>Why split and do the training and testing…..?</p>
+<p>The model is fit to the training set, so using data that participated in the learning biases our evaluation of the model.</p>
+<p>The testing data, however, was not a part of the model fitting. Thus, it provides an unbiased evaluation of the model. Hence why it is sometimes called the holdout dataset</p>
+<p>We will talk more about training test and split later</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here is the format we will use. Note the output variables have a capital X and lower case y for the feature and target arrays, respectively</p>
+<p>I’m also setting the random state to 1, that way, when you run the model with the same random state, the same split in data will occur</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Xtrain</span><span class="p">,</span> <span class="n">Xtest</span><span class="p">,</span> <span class="n">ytrain</span><span class="p">,</span> <span class="n">ytest</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">mpg</span><span class="p">[[</span><span class="s1">&#39;weight&#39;</span><span class="p">]],</span><span class="n">mpg</span><span class="p">[</span><span class="s1">&#39;mpg&#39;</span><span class="p">],</span><span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s check out the shape of the training and testing set</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Xtrain</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(268, 1)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Xtest</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(90, 1)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">Xtrain</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pandas.core.frame.DataFrame
+</pre></div>
+</div>
+</div>
+</div>
+<p>With the default parameters, 75% of the data is in the training set and 25% is in the testing set. Typically, you want more data in the training set because that is what you use to tune the model</p>
+<p>Changing the proportion is as easy as changing the size of the training set</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Xtrain</span><span class="p">,</span> <span class="n">Xtest</span><span class="p">,</span> <span class="n">ytrain</span><span class="p">,</span> <span class="n">ytest</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">mpg</span><span class="p">[[</span><span class="s1">&#39;weight&#39;</span><span class="p">]],</span><span class="n">mpg</span><span class="p">[</span><span class="s1">&#39;mpg&#39;</span><span class="p">],</span><span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">train_size</span><span class="o">=.</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Xtrain</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(179, 1)
+</pre></div>
+</div>
+</div>
+</div>
+<p>But for now, let’s keep it at 75% to 25%</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Xtrain</span><span class="p">,</span> <span class="n">Xtest</span><span class="p">,</span> <span class="n">ytrain</span><span class="p">,</span> <span class="n">ytest</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">mpg</span><span class="p">[[</span><span class="s1">&#39;weight&#39;</span><span class="p">]],</span><span class="n">mpg</span><span class="p">[</span><span class="s1">&#39;mpg&#39;</span><span class="p">],</span><span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, let’s create an instance of our linear regression</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
+<span class="n">model</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LinearRegression()
+</pre></div>
+</div>
+</div>
+</div>
+<p>And let’s tune the model based on the training data</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">Xtrain</span><span class="p">,</span><span class="n">ytrain</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LinearRegression()
+</pre></div>
+</div>
+</div>
+</div>
+<p>Cool. Let’s see what this model looks like</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">coef_</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.00850305])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">intercept_</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>49.176244752964166
+</pre></div>
+</div>
+</div>
+</div>
+<p>So basically,</p>
+<p>MPG = Weight * -0.009 + 49.2</p>
+<p>Let’s check the R^2 value to see how much of the variance in MPG is explained by acceleration</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">Xtrain</span><span class="p">,</span><span class="n">ytrain</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6696533048444931
+</pre></div>
+</div>
+</div>
+</div>
+<p>Oh. Not bad! Remember, 1.0 means perfect capturing of the data</p>
+<p>Anyways, let’s see how well it predicts the testing data</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_model</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">Xtest</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s see how this line fits the training data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">Xtrain</span><span class="p">,</span><span class="n">ytrain</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Xtest</span><span class="p">,</span><span class="n">y_model</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7feacf819400&gt;]
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture12_linear_regression2_36_1.png" src="../_images/s21_Lecture12_linear_regression2_36_1.png" />
+</div>
+</div>
+<p>Now, let’s see how it fits the testing data. Looks good!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">Xtest</span><span class="p">,</span><span class="n">ytest</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Xtest</span><span class="p">,</span><span class="n">y_model</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7feacfa396d0&gt;]
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture12_linear_regression2_38_1.png" src="../_images/s21_Lecture12_linear_regression2_38_1.png" />
+</div>
+</div>
+<p>Let’s check the residuals</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">y_model</span><span class="o">-</span><span class="n">ytest</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/anaconda3/lib/python3.8/site-packages/seaborn/distributions.py:2551: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;mpg&#39;, ylabel=&#39;Density&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture12_linear_regression2_40_2.png" src="../_images/s21_Lecture12_linear_regression2_40_2.png" />
+</div>
+</div>
+<p>The residuals look fine</p>
+<p>Let’s looks at the residual plot next</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">y_model</span><span class="p">,</span><span class="n">y_model</span><span class="o">-</span><span class="n">ytest</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/anaconda3/lib/python3.8/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:ylabel=&#39;mpg&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture12_linear_regression2_42_2.png" src="../_images/s21_Lecture12_linear_regression2_42_2.png" />
+</div>
+</div>
+<p>The residual plot looks okay</p>
+<p>Let’s now just check the R^2 value for the testing data. And… the result is pretty good! its similar to our training data, which is totally fine. Sometimes, that happens. Its only bad when training score is much better than testing score (more about that later!)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">Xtest</span><span class="p">,</span><span class="n">ytest</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6327199333961884
+</pre></div>
+</div>
+</div>
+</div>
+<p>I think we can conclude from this that weight is a great feature for predicting mpg. We should try a different feature though</p>
+<p>Let’s build a function to simplify this. Let’s start with just returning the R^2 scores.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">model_data</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+  <span class="n">Xtrain</span><span class="p">,</span> <span class="n">Xtest</span><span class="p">,</span> <span class="n">ytrain</span><span class="p">,</span> <span class="n">ytest</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+  <span class="n">model</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">(</span><span class="n">fit_intercept</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+  <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">Xtrain</span><span class="p">,</span><span class="n">ytrain</span><span class="p">)</span>
+
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Training R^2&#39;</span><span class="p">,</span><span class="n">model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">Xtrain</span><span class="p">,</span><span class="n">ytrain</span><span class="p">))</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Testing R^2&#39;</span><span class="p">,</span><span class="n">model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">Xtest</span><span class="p">,</span><span class="n">ytest</span><span class="p">))</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;y = &#39;</span><span class="p">,</span><span class="n">model</span><span class="o">.</span><span class="n">coef_</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="s1">&#39;*x + &#39;</span><span class="p">,</span><span class="n">model</span><span class="o">.</span><span class="n">intercept_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model_data</span><span class="p">(</span><span class="n">mpg</span><span class="p">[[</span><span class="s1">&#39;weight&#39;</span><span class="p">]],</span><span class="n">mpg</span><span class="p">[</span><span class="s1">&#39;mpg&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Training R^2 0.6696533048444931
+Testing R^2 0.6327199333961884
+y =  -0.008503048990218576 *x +  49.176244752964166
+</pre></div>
+</div>
+</div>
+</div>
+<p>Good! Let’s add some plots to this</p>
+<p>Specifically, we want to add plots to see the linear model on the testing set of the data</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">model_data2</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+  <span class="n">Xtrain</span><span class="p">,</span> <span class="n">Xtest</span><span class="p">,</span> <span class="n">ytrain</span><span class="p">,</span> <span class="n">ytest</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+  <span class="n">model</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">(</span><span class="n">fit_intercept</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+  <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">Xtrain</span><span class="p">,</span><span class="n">ytrain</span><span class="p">)</span>
+  
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Training R^2&#39;</span><span class="p">,</span><span class="n">model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">Xtrain</span><span class="p">,</span><span class="n">ytrain</span><span class="p">))</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Testing R^2&#39;</span><span class="p">,</span><span class="n">model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">Xtest</span><span class="p">,</span><span class="n">ytest</span><span class="p">))</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;y = &#39;</span><span class="p">,</span><span class="n">model</span><span class="o">.</span><span class="n">coef_</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="s1">&#39;*x + &#39;</span><span class="p">,</span><span class="n">model</span><span class="o">.</span><span class="n">intercept_</span><span class="p">)</span>
+  
+  <span class="c1"># we need the predicted y values</span>
+  <span class="n">y_model</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">Xtest</span><span class="p">)</span>
+
+  <span class="c1"># here, we create a subplots</span>
+  <span class="n">fig</span><span class="p">,</span><span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">Xtrain</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="mi">1</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">8</span><span class="p">,</span><span class="mi">12</span><span class="p">])</span>
+
+  <span class="c1"># unfortunately, if we are dealing with just 1 column of data, its easiest to do something like this</span>
+  <span class="c1"># when the subplot is 1,1, axes doesn&#39;t have any size/shape or anything. It is just axes. So, you cannot say</span>
+  <span class="c1"># axes[0]. So, here is just a check. If we are dealing with just 1 column, this should plot it and stop the function</span>
+  <span class="k">if</span> <span class="n">Xtrain</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">Xtest</span><span class="p">[</span><span class="n">Xtest</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span><span class="n">y</span> <span class="o">=</span> <span class="n">ytest</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">)</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">Xtest</span><span class="p">[</span><span class="n">Xtest</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span><span class="n">y</span> <span class="o">=</span> <span class="n">y_model</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">)</span>
+    <span class="k">return</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s give it a shot with the original data and we can scroll up and see if it looks about right</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model_data2</span><span class="p">(</span><span class="n">mpg</span><span class="p">[[</span><span class="s1">&#39;weight&#39;</span><span class="p">]],</span><span class="n">mpg</span><span class="p">[</span><span class="s1">&#39;mpg&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Training R^2 0.6696533048444931
+Testing R^2 0.6327199333961884
+y =  -0.008503048990218576 *x +  49.176244752964166
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture12_linear_regression2_52_1.png" src="../_images/s21_Lecture12_linear_regression2_52_1.png" />
+</div>
+</div>
+<p>Looks about right!</p>
+<p>Now, let’s try other variables.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpg</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;mpg&#39;, &#39;cylinders&#39;, &#39;displacement&#39;, &#39;horsepower&#39;, &#39;weight&#39;,
+       &#39;acceleration&#39;, &#39;model_year&#39;, &#39;origin&#39;, &#39;name&#39;, &#39;Type&#39;, &#39;chevrolet&#39;,
+       &#39;nevs&#39;, &#39;nissan&#39;, &#39;peugeot&#39;, &#39;toyota&#39;, &#39;volkswagen&#39;, &#39;volvo&#39;, &#39;Sedan0&#39;,
+       &#39;japan&#39;, &#39;usa&#39;, &#39;MediumHP&#39;, &#39;HighHP&#39;, &#39;HP_ordinal&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s try acceleration!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model_data2</span><span class="p">(</span><span class="n">mpg</span><span class="p">[[</span><span class="s1">&#39;acceleration&#39;</span><span class="p">]],</span><span class="n">mpg</span><span class="p">[</span><span class="s1">&#39;mpg&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Training R^2 0.04606121877301994
+Testing R^2 -0.012551240156991827
+y =  0.7059412169121999 *x +  13.59765542123114
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture12_linear_regression2_56_1.png" src="../_images/s21_Lecture12_linear_regression2_56_1.png" />
+</div>
+</div>
+<p>The R^2 value looks much worse.</p>
+<p>Let’s try other data</p>
+<p>Let’s look at a categorical variable. Let’s just, out of curiosity, pass in the non-dummy coded variable</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model_data2</span><span class="p">(</span><span class="n">mpg</span><span class="p">[[</span><span class="s1">&#39;Type&#39;</span><span class="p">]],</span><span class="n">mpg</span><span class="p">[</span><span class="s1">&#39;mpg&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">30</span><span class="o">-</span><span class="mi">44672</span><span class="n">fe00482</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">model_data2</span><span class="p">(</span><span class="n">mpg</span><span class="p">[[</span><span class="s1">&#39;Type&#39;</span><span class="p">]],</span><span class="n">mpg</span><span class="p">[</span><span class="s1">&#39;mpg&#39;</span><span class="p">])</span>
+
+<span class="nn">&lt;ipython-input-26-f5a278bf5427&gt;</span> in <span class="ni">model_data2</span><span class="nt">(X, y)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> 
+<span class="g g-Whitespace">      </span><span class="mi">4</span>   <span class="n">model</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">(</span><span class="n">fit_intercept</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">5</span>   <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">Xtrain</span><span class="p">,</span><span class="n">ytrain</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> 
+<span class="g g-Whitespace">      </span><span class="mi">7</span>   <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Training R^2&#39;</span><span class="p">,</span><span class="n">model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">Xtrain</span><span class="p">,</span><span class="n">ytrain</span><span class="p">))</span>
+
+<span class="nn">/opt/anaconda3/lib/python3.8/site-packages/sklearn/linear_model/_base.py</span> in <span class="ni">fit</span><span class="nt">(self, X, y, sample_weight)</span>
+<span class="g g-Whitespace">    </span><span class="mi">503</span> 
+<span class="g g-Whitespace">    </span><span class="mi">504</span>         <span class="n">n_jobs_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_jobs</span>
+<span class="ne">--&gt; </span><span class="mi">505</span>         <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_validate_data</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">accept_sparse</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;csr&#39;</span><span class="p">,</span> <span class="s1">&#39;csc&#39;</span><span class="p">,</span> <span class="s1">&#39;coo&#39;</span><span class="p">],</span>
+<span class="g g-Whitespace">    </span><span class="mi">506</span>                                    <span class="n">y_numeric</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">multi_output</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">507</span> 
+
+<span class="nn">/opt/anaconda3/lib/python3.8/site-packages/sklearn/base.py</span> in <span class="ni">_validate_data</span><span class="nt">(self, X, y, reset, validate_separately, **check_params)</span>
+<span class="g g-Whitespace">    </span><span class="mi">430</span>                 <span class="n">y</span> <span class="o">=</span> <span class="n">check_array</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="o">**</span><span class="n">check_y_params</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">431</span>             <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">432</span>                 <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">check_X_y</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="o">**</span><span class="n">check_params</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">433</span>             <span class="n">out</span> <span class="o">=</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span>
+<span class="g g-Whitespace">    </span><span class="mi">434</span> 
+
+<span class="nn">/opt/anaconda3/lib/python3.8/site-packages/sklearn/utils/validation.py</span> in <span class="ni">inner_f</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">70</span>                           <span class="ne">FutureWarning</span><span class="p">)</span>
+<span class="nn">     71         kwargs.update({k: arg for k, arg</span> in <span class="ni">zip</span><span class="nt">(sig.parameters, args)})</span>
+<span class="ne">---&gt; </span><span class="mi">72</span>         <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">73</span>     <span class="k">return</span> <span class="n">inner_f</span>
+<span class="g g-Whitespace">     </span><span class="mi">74</span> 
+
+<span class="nn">/opt/anaconda3/lib/python3.8/site-packages/sklearn/utils/validation.py</span> in <span class="ni">check_X_y</span><span class="nt">(X, y, accept_sparse, accept_large_sparse, dtype, order, copy, force_all_finite, ensure_2d, allow_nd, multi_output, ensure_min_samples, ensure_min_features, y_numeric, estimator)</span>
+<span class="g g-Whitespace">    </span><span class="mi">793</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;y cannot be None&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">794</span> 
+<span class="ne">--&gt; </span><span class="mi">795</span>     <span class="n">X</span> <span class="o">=</span> <span class="n">check_array</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">accept_sparse</span><span class="o">=</span><span class="n">accept_sparse</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">796</span>                     <span class="n">accept_large_sparse</span><span class="o">=</span><span class="n">accept_large_sparse</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">797</span>                     <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="n">order</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="n">copy</span><span class="p">,</span>
+
+<span class="nn">/opt/anaconda3/lib/python3.8/site-packages/sklearn/utils/validation.py</span> in <span class="ni">inner_f</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">70</span>                           <span class="ne">FutureWarning</span><span class="p">)</span>
+<span class="nn">     71         kwargs.update({k: arg for k, arg</span> in <span class="ni">zip</span><span class="nt">(sig.parameters, args)})</span>
+<span class="ne">---&gt; </span><span class="mi">72</span>         <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">73</span>     <span class="k">return</span> <span class="n">inner_f</span>
+<span class="g g-Whitespace">     </span><span class="mi">74</span> 
+
+<span class="nn">/opt/anaconda3/lib/python3.8/site-packages/sklearn/utils/validation.py</span> in <span class="ni">check_array</span><span class="nt">(array, accept_sparse, accept_large_sparse, dtype, order, copy, force_all_finite, ensure_2d, allow_nd, ensure_min_samples, ensure_min_features, estimator)</span>
+<span class="g g-Whitespace">    </span><span class="mi">596</span>                     <span class="n">array</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">dtype</span><span class="p">,</span> <span class="n">casting</span><span class="o">=</span><span class="s2">&quot;unsafe&quot;</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">597</span>                 <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">598</span>                     <span class="n">array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="n">order</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">599</span>             <span class="k">except</span> <span class="n">ComplexWarning</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">600</span>                 <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Complex data not supported</span><span class="se">\n</span><span class="s2">&quot;</span>
+
+<span class="nn">/opt/anaconda3/lib/python3.8/site-packages/numpy/core/_asarray.py</span> in <span class="ni">asarray</span><span class="nt">(a, dtype, order)</span>
+<span class="g g-Whitespace">     </span><span class="mi">81</span> 
+<span class="g g-Whitespace">     </span><span class="mi">82</span>     <span class="sd">&quot;&quot;&quot;</span>
+<span class="ne">---&gt; </span><span class="mi">83</span><span class="sd">     return array(a, dtype, copy=False, order=order)</span>
+<span class="g g-Whitespace">     </span><span class="mi">84</span><span class="sd"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">85</span><span class="sd"> </span>
+
+<span class="nn">/opt/anaconda3/lib/python3.8/site-packages/pandas/core/generic.py</span> in <span class="ni">__array__</span><span class="nt">(self, dtype)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1779</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1780</span><span class="sd">     def __array__(self, dtype=None) -&gt; np.ndarray:</span>
+<span class="ne">-&gt; </span><span class="mi">1781</span><span class="sd">         return np.asarray(self._values, dtype=dtype)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1782</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1783</span><span class="sd">     def __array_wrap__(self, result, context=None):</span>
+
+<span class="nn">/opt/anaconda3/lib/python3.8/site-packages/numpy/core/_asarray.py</span> in <span class="ni">asarray</span><span class="nt">(a, dtype, order)</span>
+<span class="g g-Whitespace">     </span><span class="mi">81</span><span class="sd"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">82</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">---&gt; </span><span class="mi">83</span>     <span class="k">return</span> <span class="n">array</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">dtype</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="n">order</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">84</span> 
+<span class="g g-Whitespace">     </span><span class="mi">85</span> 
+
+<span class="ne">ValueError</span>: could not convert string to float: &#39;Sedan&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>As expected, its a string variable and it won’t work! So, let’s pass in the dummy coded version</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model_data2</span><span class="p">(</span><span class="n">mpg</span><span class="p">[[</span><span class="s1">&#39;Sedan0&#39;</span><span class="p">]],</span><span class="n">mpg</span><span class="p">[</span><span class="s1">&#39;mpg&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Training R^2 0.5132893233320257
+Testing R^2 0.33326831978390403
+y =  11.176245816854276 *x +  20.889017341040464
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture12_linear_regression2_61_1.png" src="../_images/s21_Lecture12_linear_regression2_61_1.png" />
+</div>
+</div>
+<p>In other words, if Sedan = 0 is the y-intercept. If we looked at the mean of mpg when sedan =0, we can test this</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">mpg</span><span class="p">[</span><span class="n">mpg</span><span class="p">[</span><span class="s1">&#39;Sedan0&#39;</span><span class="p">]</span><span class="o">==</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">mpg</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>21.223502304147466
+</pre></div>
+</div>
+</div>
+</div>
+<p>Its not going to perfectly match because remember, the model is fit to a subset of the data, but its pretty close!</p>
+<p>Now, let’s play around with a few things. First, let’s change the intercept and see what happens</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">model_data2_no_intercept</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+  <span class="n">Xtrain</span><span class="p">,</span> <span class="n">Xtest</span><span class="p">,</span> <span class="n">ytrain</span><span class="p">,</span> <span class="n">ytest</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+  <span class="n">model</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">(</span><span class="n">fit_intercept</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+  <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">Xtrain</span><span class="p">,</span><span class="n">ytrain</span><span class="p">)</span>
+  
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Training R^2&#39;</span><span class="p">,</span><span class="n">model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">Xtrain</span><span class="p">,</span><span class="n">ytrain</span><span class="p">))</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Testing R^2&#39;</span><span class="p">,</span><span class="n">model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">Xtest</span><span class="p">,</span><span class="n">ytest</span><span class="p">))</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;y = &#39;</span><span class="p">,</span><span class="n">model</span><span class="o">.</span><span class="n">coef_</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="s1">&#39;*x + &#39;</span><span class="p">,</span><span class="n">model</span><span class="o">.</span><span class="n">intercept_</span><span class="p">)</span>
+  
+  <span class="c1"># we need the predicted y values</span>
+  <span class="n">y_model</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">Xtest</span><span class="p">)</span>
+
+  <span class="c1"># here, we create a subplots</span>
+  <span class="n">fig</span><span class="p">,</span><span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">Xtrain</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="mi">1</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">8</span><span class="p">,</span><span class="mi">12</span><span class="p">])</span>
+
+  <span class="c1"># unfortunately, if we are dealing with just 1 column of data, its easiest to do something like this</span>
+  <span class="c1"># when the subplot is 1,1, axes doesn&#39;t have any size/shape or anything. It is just axes. So, you cannot say</span>
+  <span class="c1"># axes[0]. So, here is just a check. If we are dealing with just 1 column, this should plot it and stop the function</span>
+  <span class="k">if</span> <span class="n">Xtrain</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">Xtest</span><span class="p">[</span><span class="n">Xtest</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span><span class="n">y</span> <span class="o">=</span> <span class="n">ytest</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">)</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">Xtest</span><span class="p">[</span><span class="n">Xtest</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span><span class="n">y</span> <span class="o">=</span> <span class="n">y_model</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">)</span>
+    <span class="k">return</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model_data2_no_intercept</span><span class="p">(</span><span class="n">mpg</span><span class="p">[[</span><span class="s1">&#39;weight&#39;</span><span class="p">]],</span><span class="n">mpg</span><span class="p">[</span><span class="s1">&#39;mpg&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Training R^2 -1.9048717157801125
+Testing R^2 -2.843401821580213
+y =  0.007667626756124009 *x +  0.0
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture12_linear_regression2_67_1.png" src="../_images/s21_Lecture12_linear_regression2_67_1.png" />
+</div>
+</div>
+<p>Oh wow. Not good for this data. You will rarely run a linear model with the intercept = False. Thus, always turn it on (i.e., True)!</p>
+<p>Let’s look at another thing.</p>
+<p>Missing data! Why did we remove them? Well, let’s try running the regression, but with some missing data</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpg</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="n">model_data2</span><span class="p">(</span><span class="n">mpg</span><span class="p">[[</span><span class="s1">&#39;weight&#39;</span><span class="p">]],</span><span class="n">mpg</span><span class="p">[</span><span class="s1">&#39;mpg&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-35-3eff88f9d2f9&gt;:1: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  mpg[&#39;weight&#39;][0] = np.nan
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">35</span><span class="o">-</span><span class="mi">3</span><span class="n">eff88f9d2f9</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">mpg</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">model_data2</span><span class="p">(</span><span class="n">mpg</span><span class="p">[[</span><span class="s1">&#39;weight&#39;</span><span class="p">]],</span><span class="n">mpg</span><span class="p">[</span><span class="s1">&#39;mpg&#39;</span><span class="p">])</span>
+
+<span class="nn">&lt;ipython-input-26-f5a278bf5427&gt;</span> in <span class="ni">model_data2</span><span class="nt">(X, y)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> 
+<span class="g g-Whitespace">      </span><span class="mi">4</span>   <span class="n">model</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">(</span><span class="n">fit_intercept</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">5</span>   <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">Xtrain</span><span class="p">,</span><span class="n">ytrain</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> 
+<span class="g g-Whitespace">      </span><span class="mi">7</span>   <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Training R^2&#39;</span><span class="p">,</span><span class="n">model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">Xtrain</span><span class="p">,</span><span class="n">ytrain</span><span class="p">))</span>
+
+<span class="nn">/opt/anaconda3/lib/python3.8/site-packages/sklearn/linear_model/_base.py</span> in <span class="ni">fit</span><span class="nt">(self, X, y, sample_weight)</span>
+<span class="g g-Whitespace">    </span><span class="mi">503</span> 
+<span class="g g-Whitespace">    </span><span class="mi">504</span>         <span class="n">n_jobs_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_jobs</span>
+<span class="ne">--&gt; </span><span class="mi">505</span>         <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_validate_data</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">accept_sparse</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;csr&#39;</span><span class="p">,</span> <span class="s1">&#39;csc&#39;</span><span class="p">,</span> <span class="s1">&#39;coo&#39;</span><span class="p">],</span>
+<span class="g g-Whitespace">    </span><span class="mi">506</span>                                    <span class="n">y_numeric</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">multi_output</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">507</span> 
+
+<span class="nn">/opt/anaconda3/lib/python3.8/site-packages/sklearn/base.py</span> in <span class="ni">_validate_data</span><span class="nt">(self, X, y, reset, validate_separately, **check_params)</span>
+<span class="g g-Whitespace">    </span><span class="mi">430</span>                 <span class="n">y</span> <span class="o">=</span> <span class="n">check_array</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="o">**</span><span class="n">check_y_params</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">431</span>             <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">432</span>                 <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">check_X_y</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="o">**</span><span class="n">check_params</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">433</span>             <span class="n">out</span> <span class="o">=</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span>
+<span class="g g-Whitespace">    </span><span class="mi">434</span> 
+
+<span class="nn">/opt/anaconda3/lib/python3.8/site-packages/sklearn/utils/validation.py</span> in <span class="ni">inner_f</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">70</span>                           <span class="ne">FutureWarning</span><span class="p">)</span>
+<span class="nn">     71         kwargs.update({k: arg for k, arg</span> in <span class="ni">zip</span><span class="nt">(sig.parameters, args)})</span>
+<span class="ne">---&gt; </span><span class="mi">72</span>         <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">73</span>     <span class="k">return</span> <span class="n">inner_f</span>
+<span class="g g-Whitespace">     </span><span class="mi">74</span> 
+
+<span class="nn">/opt/anaconda3/lib/python3.8/site-packages/sklearn/utils/validation.py</span> in <span class="ni">check_X_y</span><span class="nt">(X, y, accept_sparse, accept_large_sparse, dtype, order, copy, force_all_finite, ensure_2d, allow_nd, multi_output, ensure_min_samples, ensure_min_features, y_numeric, estimator)</span>
+<span class="g g-Whitespace">    </span><span class="mi">793</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;y cannot be None&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">794</span> 
+<span class="ne">--&gt; </span><span class="mi">795</span>     <span class="n">X</span> <span class="o">=</span> <span class="n">check_array</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">accept_sparse</span><span class="o">=</span><span class="n">accept_sparse</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">796</span>                     <span class="n">accept_large_sparse</span><span class="o">=</span><span class="n">accept_large_sparse</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">797</span>                     <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="n">order</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="n">copy</span><span class="p">,</span>
+
+<span class="nn">/opt/anaconda3/lib/python3.8/site-packages/sklearn/utils/validation.py</span> in <span class="ni">inner_f</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">70</span>                           <span class="ne">FutureWarning</span><span class="p">)</span>
+<span class="nn">     71         kwargs.update({k: arg for k, arg</span> in <span class="ni">zip</span><span class="nt">(sig.parameters, args)})</span>
+<span class="ne">---&gt; </span><span class="mi">72</span>         <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">73</span>     <span class="k">return</span> <span class="n">inner_f</span>
+<span class="g g-Whitespace">     </span><span class="mi">74</span> 
+
+<span class="nn">/opt/anaconda3/lib/python3.8/site-packages/sklearn/utils/validation.py</span> in <span class="ni">check_array</span><span class="nt">(array, accept_sparse, accept_large_sparse, dtype, order, copy, force_all_finite, ensure_2d, allow_nd, ensure_min_samples, ensure_min_features, estimator)</span>
+<span class="g g-Whitespace">    </span><span class="mi">642</span> 
+<span class="g g-Whitespace">    </span><span class="mi">643</span>         <span class="k">if</span> <span class="n">force_all_finite</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">644</span>             <span class="n">_assert_all_finite</span><span class="p">(</span><span class="n">array</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">645</span>                                <span class="n">allow_nan</span><span class="o">=</span><span class="n">force_all_finite</span> <span class="o">==</span> <span class="s1">&#39;allow-nan&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">646</span> 
+
+<span class="nn">/opt/anaconda3/lib/python3.8/site-packages/sklearn/utils/validation.py</span> in <span class="ni">_assert_all_finite</span><span class="nt">(X, allow_nan, msg_dtype)</span>
+<span class="g g-Whitespace">     </span><span class="mi">94</span>                 <span class="ow">not</span> <span class="n">allow_nan</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">X</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">()):</span>
+<span class="g g-Whitespace">     </span><span class="mi">95</span>             <span class="n">type_err</span> <span class="o">=</span> <span class="s1">&#39;infinity&#39;</span> <span class="k">if</span> <span class="n">allow_nan</span> <span class="k">else</span> <span class="s1">&#39;NaN, infinity&#39;</span>
+<span class="ne">---&gt; </span><span class="mi">96</span>             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">97</span>                     <span class="n">msg_err</span><span class="o">.</span><span class="n">format</span>
+<span class="g g-Whitespace">     </span><span class="mi">98</span>                     <span class="p">(</span><span class="n">type_err</span><span class="p">,</span>
+
+<span class="ne">ValueError</span>: Input contains NaN, infinity or a value too large for dtype(&#39;float64&#39;).
+</pre></div>
+</div>
+</div>
+</div>
+<p>Well, as it turns out, the code crashes. Hence, we take care of the missing data during feature engineering / data processing</p>
+<p>We better fix that value in mpg now. I’ll just reload the data</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpg</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;final_mpg_dataset.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, let’s look at horsepower. If you remember, I binned horsepower into low, medium, and high bins. The way this data was represented was either as categorical data or ordinal numerical data. Both are less precise than the continuous horsepower, but we may have theoritical reasons for binning them. However, how we bin them has consequences, as we will see below</p>
+<p>But in order to continue, remember that horsepower when categorical was split into 2 separate columns. That means we need to adjust our function to allow us to do multiple linear regression (i.e., we have two predictors)</p>
+<p>We need to do the following things</p>
+<ol class="simple">
+<li><p>update the regression equation</p></li>
+<li><p>add subplots</p></li>
+</ol>
+<p>If this function doesn’t make sense, remove the first line (defining it as a function) and set X and y variables equal to the input arguments we were using above. Then, step through the code line and by line until it makes sense!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">model_data3</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+  <span class="n">Xtrain</span><span class="p">,</span> <span class="n">Xtest</span><span class="p">,</span> <span class="n">ytrain</span><span class="p">,</span> <span class="n">ytest</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+  <span class="n">model</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">(</span><span class="n">fit_intercept</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+  <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">Xtrain</span><span class="p">,</span><span class="n">ytrain</span><span class="p">)</span>
+  
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Training R^2&#39;</span><span class="p">,</span><span class="n">model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">Xtrain</span><span class="p">,</span><span class="n">ytrain</span><span class="p">))</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Testing R^2&#39;</span><span class="p">,</span><span class="n">model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">Xtest</span><span class="p">,</span><span class="n">ytest</span><span class="p">))</span>
+  
+  <span class="c1"># we need the predicted y values</span>
+  <span class="n">y_model</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">Xtest</span><span class="p">)</span>
+
+  <span class="c1"># here, we create a subplots</span>
+  <span class="n">fig</span><span class="p">,</span><span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">Xtrain</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="mi">1</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">8</span><span class="p">,</span><span class="mi">12</span><span class="p">])</span>
+
+  <span class="c1"># unfortunately, if we are dealing with just 1 column of data, its easiest to do something like this</span>
+  <span class="c1"># when the subplot is 1,1, axes doesn&#39;t have any size/shape or anything. It is just axes. So, you cannot say</span>
+  <span class="c1"># axes[0]. So, here is just a check. If we are dealing with just 1 column, this should plot it and stop the function</span>
+  <span class="k">if</span> <span class="n">Xtrain</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">Xtest</span><span class="p">[</span><span class="n">Xtest</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span><span class="n">y</span> <span class="o">=</span> <span class="n">ytest</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">)</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">Xtest</span><span class="p">[</span><span class="n">Xtest</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span><span class="n">y</span> <span class="o">=</span> <span class="n">y_model</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">)</span>
+    <span class="k">return</span>
+  
+  <span class="n">coef_string</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span> 
+
+  <span class="c1"># however, if we have multiple columns, let&#39;s go through a for loop and iterate over the different columsn in Xtest and axes</span>
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">Xtrain</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">Xtest</span><span class="p">[</span><span class="n">Xtest</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="n">i</span><span class="p">]],</span><span class="n">y</span> <span class="o">=</span> <span class="n">ytest</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">Xtest</span><span class="p">[</span><span class="n">Xtest</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="n">i</span><span class="p">]],</span><span class="n">y</span> <span class="o">=</span> <span class="n">y_model</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+    <span class="n">coef_string</span> <span class="o">=</span>  <span class="n">coef_string</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">coef_</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="mi">3</span><span class="p">))</span><span class="o">+</span> <span class="s1">&#39;*&#39;</span><span class="o">+</span><span class="n">Xtest</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span> <span class="s1">&#39; + &#39;</span>
+
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;y = &#39;</span><span class="p">,</span><span class="n">coef_string</span><span class="p">,</span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">intercept_</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model_data3</span><span class="p">(</span><span class="n">mpg</span><span class="p">[[</span><span class="s1">&#39;horsepower&#39;</span><span class="p">,</span><span class="s1">&#39;acceleration&#39;</span><span class="p">]],</span><span class="n">mpg</span><span class="p">[</span><span class="s1">&#39;mpg&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Training R^2 0.5794068242736605
+Testing R^2 0.5915629839029926
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>y =    -0.261*horsepower +  -0.577*acceleration +    58.416
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture12_linear_regression2_76_2.png" src="../_images/s21_Lecture12_linear_regression2_76_2.png" />
+</div>
+</div>
+<p>Now, let’s look at the ordinal version</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model_data3</span><span class="p">(</span><span class="n">mpg</span><span class="p">[[</span><span class="s1">&#39;HP_ordinal&#39;</span><span class="p">]],</span><span class="n">mpg</span><span class="p">[</span><span class="s1">&#39;mpg&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Training R^2 0.5195460155384136
+Testing R^2 0.5356069523378812
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture12_linear_regression2_78_1.png" src="../_images/s21_Lecture12_linear_regression2_78_1.png" />
+</div>
+</div>
+<p>This approach isn’t ideal because it assumes equal distance between horsepower category 1 2 and 3, but our categories basically stretch from 0 to 80, 80 to 100, and 100+</p>
+<p>To look at the dummy coded version, we actually have to pass in both columns of data</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpg</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;mpg&#39;, &#39;cylinders&#39;, &#39;displacement&#39;, &#39;horsepower&#39;, &#39;weight&#39;,
+       &#39;acceleration&#39;, &#39;model_year&#39;, &#39;origin&#39;, &#39;name&#39;, &#39;Type&#39;, &#39;chevrolet&#39;,
+       &#39;nevs&#39;, &#39;nissan&#39;, &#39;peugeot&#39;, &#39;toyota&#39;, &#39;volkswagen&#39;, &#39;volvo&#39;, &#39;Sedan0&#39;,
+       &#39;japan&#39;, &#39;usa&#39;, &#39;MediumHP&#39;, &#39;HighHP&#39;, &#39;HP_ordinal&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model_data3</span><span class="p">(</span><span class="n">mpg</span><span class="p">[[</span><span class="s1">&#39;MediumHP&#39;</span><span class="p">,</span> <span class="s1">&#39;HighHP&#39;</span><span class="p">]],</span><span class="n">mpg</span><span class="p">[</span><span class="s1">&#39;mpg&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Training R^2 0.5223752522115026
+Testing R^2 0.5323165718118901
+y =    -8.593*MediumHP +  -15.544*HighHP +    31.738
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture12_linear_regression2_82_1.png" src="../_images/s21_Lecture12_linear_regression2_82_1.png" />
+</div>
+</div>
+<p>Firstly, let’s see what the equation means</p>
+<p>y = -8.593<em>Medium_HP +  -15.544</em>High_HP +    31.7</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="mf">8.593</span><span class="o">*</span><span class="mi">0</span> <span class="o">+</span>  <span class="o">-</span><span class="mf">15.544</span><span class="o">*</span><span class="mi">0</span> <span class="o">+</span>    <span class="mf">31.7</span> <span class="c1"># low horsepower</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>31.7
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="mf">8.593</span><span class="o">*</span><span class="mi">1</span> <span class="o">+</span>  <span class="o">-</span><span class="mf">15.544</span><span class="o">*</span><span class="mi">0</span> <span class="o">+</span>    <span class="mf">31.7</span>  <span class="c1"># medium horsepower</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>23.107
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="mf">8.593</span><span class="o">*</span><span class="mi">0</span> <span class="o">+</span>  <span class="o">-</span><span class="mf">15.544</span><span class="o">*</span><span class="mi">1</span> <span class="o">+</span>    <span class="mf">31.7</span> <span class="c1"># high horsepower</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16.156
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpg</span><span class="p">[((</span><span class="n">mpg</span><span class="p">[</span><span class="s1">&#39;MediumHP&#39;</span><span class="p">]</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">mpg</span><span class="p">[</span><span class="s1">&#39;HighHP&#39;</span><span class="p">]</span><span class="o">==</span><span class="mi">0</span><span class="p">))][</span><span class="s1">&#39;mpg&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="c1"># low horsepower</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>31.858914728682166
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpg</span><span class="p">[((</span><span class="n">mpg</span><span class="p">[</span><span class="s1">&#39;MediumHP&#39;</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">mpg</span><span class="p">[</span><span class="s1">&#39;HighHP&#39;</span><span class="p">]</span><span class="o">==</span><span class="mi">0</span><span class="p">))][</span><span class="s1">&#39;mpg&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="c1"># medium horsepower</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>23.560233918128656
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpg</span><span class="p">[((</span><span class="n">mpg</span><span class="p">[</span><span class="s1">&#39;MediumHP&#39;</span><span class="p">]</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">mpg</span><span class="p">[</span><span class="s1">&#39;HighHP&#39;</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span><span class="p">))][</span><span class="s1">&#39;mpg&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="c1"># high horsepower</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16.41034482758621
+</pre></div>
+</div>
+</div>
+</div>
+<p>So now, our model fit line looks a little different… a little weirder. And that actually makes some sense! Check out this link:</p>
+<p><a class="reference external" href="https://stats.stackexchange.com/questions/172729/in-multiple-linear-regression-why-does-a-plot-of-predicted-points-not-lie-in-a">https://stats.stackexchange.com/questions/172729/in-multiple-linear-regression-why-does-a-plot-of-predicted-points-not-lie-in-a</a></p>
+<p>Basically, we cannot have a have a straight line because a straight line isn’t being used to find the best fitting model. Its now fitting a plane. And, in order to draw a line, you actually need to hold the other betas (i.e., predictors) constant.</p>
+<p>In this case with the dummy coded variables, its not hard to imagine holding variables constant. We can set High_HP to 1 to see the line for Medium_HP, or vice versa. But this gets more complicated with continuous variables</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model_data3</span><span class="p">(</span><span class="n">mpg</span><span class="p">[[</span><span class="s1">&#39;horsepower&#39;</span><span class="p">,</span><span class="s1">&#39;weight&#39;</span><span class="p">]],</span><span class="n">mpg</span><span class="p">[</span><span class="s1">&#39;mpg&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Training R^2 0.7027896759116119
+Testing R^2 0.6180631676936014
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>y =    -0.09*horsepower +  -0.006*weight +    51.049
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture12_linear_regression2_91_2.png" src="../_images/s21_Lecture12_linear_regression2_91_2.png" />
+</div>
+</div>
+<p>The below predicted values are the predictions for the combinations of horsepower and weight. So, the y is being changed based on values of both horsepower and weight, not just one of those values.</p>
+<p>You could set horsepower or weight to be constant, which would fix that parameter value and thus give you a line. But that is not typically done</p>
+<p>Before we leave, let’s just try something wild. Let’s pass in all our variables in our function and see what happens</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpg</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;mpg&#39;, &#39;cylinders&#39;, &#39;displacement&#39;, &#39;horsepower&#39;, &#39;weight&#39;,
+       &#39;acceleration&#39;, &#39;model_year&#39;, &#39;origin&#39;, &#39;name&#39;, &#39;Type&#39;, &#39;chevrolet&#39;,
+       &#39;nevs&#39;, &#39;nissan&#39;, &#39;peugeot&#39;, &#39;toyota&#39;, &#39;volkswagen&#39;, &#39;volvo&#39;, &#39;Sedan0&#39;,
+       &#39;japan&#39;, &#39;usa&#39;, &#39;MediumHP&#39;, &#39;HighHP&#39;, &#39;HP_ordinal&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note we can’t quite just pass in mpg.columns because some of these are strings, remember?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model_data3</span><span class="p">(</span><span class="n">mpg</span><span class="p">[[</span><span class="s1">&#39;cylinders&#39;</span><span class="p">,</span> <span class="s1">&#39;displacement&#39;</span><span class="p">,</span> <span class="s1">&#39;horsepower&#39;</span><span class="p">,</span> <span class="s1">&#39;weight&#39;</span><span class="p">,</span>
+       <span class="s1">&#39;acceleration&#39;</span><span class="p">,</span> <span class="s1">&#39;model_year&#39;</span><span class="p">,</span> <span class="s1">&#39;Sedan0&#39;</span><span class="p">,</span>
+       <span class="s1">&#39;japan&#39;</span><span class="p">,</span> <span class="s1">&#39;usa&#39;</span><span class="p">,</span> <span class="s1">&#39;chevrolet&#39;</span><span class="p">,</span> <span class="s1">&#39;nissan&#39;</span><span class="p">,</span> <span class="s1">&#39;peugeot&#39;</span><span class="p">,</span> <span class="s1">&#39;nevs&#39;</span><span class="p">,</span> <span class="s1">&#39;toyota&#39;</span><span class="p">,</span>
+       <span class="s1">&#39;volkswagen&#39;</span><span class="p">,</span> <span class="s1">&#39;volvo&#39;</span><span class="p">]],</span><span class="n">mpg</span><span class="p">[</span><span class="s1">&#39;mpg&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Training R^2 0.8431725137724766
+Testing R^2 0.7913036281760046
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>y =    -0.117*cylinders +  -0.003*displacement +  -0.064*horsepower +  -0.003*weight +  -0.154*acceleration +  0.919*model_year +  3.821*Sedan0 +  0.146*japan +  -1.463*usa +  0.524*chevrolet +  1.017*nissan +  0.778*peugeot +  0.597*nevs +  0.42*toyota +  0.582*volkswagen +  -0.653*volvo +    -29.341
+</pre></div>
+</div>
+<img alt="../_images/s21_Lecture12_linear_regression2_96_2.png" src="../_images/s21_Lecture12_linear_regression2_96_2.png" />
+</div>
+</div>
+<p>Wow! Look at this!</p>
+<p>That’s pretty great at explaining a lot of variance. Though, we basically just put everything into the model and it seems very complex! Next class, we will talk about why this approach may be bad</p>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Garrett_Lectures"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Ed Vul<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
