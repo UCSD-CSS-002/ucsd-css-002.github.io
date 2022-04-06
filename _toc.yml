@@ -21,6 +21,7 @@ parts:
       - file: lectures/sp22/Week2_Overview
         sections:
         - file: lectures/sp22/Lecture_4
+        - file: lectures/sp22/Lecture_5
     #     sections:
     #       - file: live/css2-lecture-1.ipynb
     #   - file: lectures/P02
