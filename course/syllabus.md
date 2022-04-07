@@ -70,7 +70,7 @@ Below is the (rough) schedule for each of these, but this may change as the quar
 | Week 2 | Mon. 4/4 | **Python for data science**: numpy |  |
 | Week 2 | Weds. 4/6 | **Python for data science**: pandas basics |  |
 | Week 2 | Fri. 4/8 | **Python for data science**: pandas advanced |  |
-| **Week 2 DEADLINES** |  |  | 4/4: **LAB 1** (*Mon.* section) <br> 4/6: **LAB 1** (*Wed.* section) <br> 4/10: **PSET 1** |
+| **Week 2 DEADLINES** |  |  | 4/4: **LAB 1** (*Mon.* section) <br> 4/6: **LAB 1** (*Wed.* section) <br> <s>4/10</s> *4/11*: **PSET 1** |
 | Week 3 | Mon. 4/11 | Graphing with python (**Guest**) |  |
 | Week 3 | Weds. 4/13 | Graphing with python (**Remote**) |  |
 | Week 3 | Fri. 4/15 | Graphing with python (**Guest**) |  |
