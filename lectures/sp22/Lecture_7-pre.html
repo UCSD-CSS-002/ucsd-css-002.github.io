@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Introduction to Data Visualization in Python &#8212; UCSD CSS 2</title>
+    <title>Lecture 7 (guest) - Introduction to Data Visualization in Python &#8212; UCSD CSS 2</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -54,8 +54,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Lecture 2 (3/30/22)" href="Lecture_2-post.html" />
-    <link rel="prev" title="Lecture 6 (4/8/22)" href="Lecture_6-pre.html" />
+    <link rel="next" title="Lecture 9 (guest) - Data Visualization with Seaborn" href="Lecture_9-pre.html" />
+    <link rel="prev" title="Week 3" href="Week3_Overview.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -157,16 +157,16 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="Week2_Overview.html">
    Week 2
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="Lecture_4-pre.html">
      Lecture 4 (4/4/22)
@@ -182,9 +182,26 @@
      Lecture 6 (4/8/22)
     </a>
    </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="Week3_Overview.html">
+   Week 3
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Introduction to Data Visualization in Python
+     Lecture 7 (guest) - Introduction to Data Visualization in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_9-pre.html">
+     Lecture 9 (guest) - Data Visualization with Seaborn
     </a>
    </li>
   </ul>
@@ -219,6 +236,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="Lecture_6-post.html">
    Lecture 6 (4/8/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_7-post.html">
+   Introduction to Data Visualization in Python
   </a>
  </li>
 </ul>
@@ -725,8 +747,8 @@
         
               <div>
                 
-  <div class="section" id="introduction-to-data-visualization-in-python">
-<h1>Introduction to Data Visualization in Python<a class="headerlink" href="#introduction-to-data-visualization-in-python" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="lecture-7-guest-introduction-to-data-visualization-in-python">
+<h1>Lecture 7 (guest) - Introduction to Data Visualization in Python<a class="headerlink" href="#lecture-7-guest-introduction-to-data-visualization-in-python" title="Permalink to this headline">¶</a></h1>
 <p><em>Author: Sean Trott</em></p>
 <p>The goal of this tutorial is to familiarize you with the basics of data visualization in Python.</p>
 <p>Note that the slides version can be found <a class="reference external" href="https://seantrott.github.io/data_visualization_python/trott.slides.html">here</a>, and the repository itself can be found <a class="reference external" href="https://github.com/seantrott/data_visualization_python">here</a>.</p>
@@ -2220,23 +2242,23 @@
   <tbody>
     <tr>
       <th>0</th>
+      <td>0.8162</td>
+      <td>II</td>
+    </tr>
+    <tr>
+      <th>1</th>
       <td>0.8163</td>
       <td>III</td>
     </tr>
     <tr>
-      <th>1</th>
+      <th>2</th>
       <td>0.8165</td>
       <td>IV</td>
     </tr>
     <tr>
-      <th>2</th>
+      <th>3</th>
       <td>0.8164</td>
       <td>I</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>0.8162</td>
-      <td>II</td>
     </tr>
   </tbody>
 </table>
@@ -2283,7 +2305,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7f9003207940&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7fbab6693850&gt;
 </pre></div>
 </div>
 <img alt="../../_images/Lecture_7-pre_106_1.png" src="../../_images/Lecture_7-pre_106_1.png" />
@@ -2305,7 +2327,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7f9002704dc0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7fbab7a24ee0&gt;
 </pre></div>
 </div>
 <img alt="../../_images/Lecture_7-pre_108_1.png" src="../../_images/Lecture_7-pre_108_1.png" />
@@ -2352,8 +2374,8 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="Lecture_6-pre.html" title="previous page">Lecture 6 (4/8/22)</a>
-    <a class='right-next' id="next-link" href="Lecture_2-post.html" title="next page">Lecture 2 (3/30/22)</a>
+    <a class='left-prev' id="prev-link" href="Week3_Overview.html" title="previous page">Week 3</a>
+    <a class='right-next' id="next-link" href="Lecture_9-pre.html" title="next page">Lecture 9 (guest) - Data Visualization with Seaborn</a>
 
         </div>
         
