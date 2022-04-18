@@ -38,6 +38,7 @@ parts:
       - file: lectures/sp22/Lecture_5-post.ipynb
       - file: lectures/sp22/Lecture_6-post.ipynb
       - file: lectures/sp22/Lecture_7-post.ipynb
+      - file: lectures/sp22/Lecture_10-post.ipynb
     #     sections:
     #       - file: live/css2-lecture-1.ipynb
     #   - file: lectures/P02
