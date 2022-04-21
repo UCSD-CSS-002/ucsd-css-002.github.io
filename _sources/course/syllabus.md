@@ -82,7 +82,7 @@ Below is the (rough) schedule for each of these, but this may change as the quar
 | Week 5 | Mon. 4/25 | **Prediction**: intro (linear regression) |  |
 | Week 5 | Weds. 4/27 | **Prediction**: evaluating solutions |  |
 | Week 5 | Fri. 4/29 | **Prediction**: advanced methods |  |
-| **Week 5 DEADLINES** |  |  | 4/25: **PSET 3** <br> 4/25: **LAB 4** (*Mon.* section) <br> 4/27: **LAB 4** (*Wed.* section) |
+| **Week 5 DEADLINES** |  |  | 4/25: **LAB 4** (*Mon.* section) <br> 4/27: **LAB 4** (*Wed.* section) <br> 4/27: **PSET 3** |
 | Week 6 | Mon. 5/2 | **Prediction**: best practices |  |
 | Week 6 | Weds. 5/4 | **Classification**: intro (k neighbors) |  |
 | Week 6 | Fri. 5/6 | **Classification**: logistic regression |  |
