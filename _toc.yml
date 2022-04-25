@@ -32,6 +32,9 @@ parts:
         - file: lectures/sp22/Lecture_10-pre.ipynb
         - file: lectures/sp22/Lecture_11-pre.ipynb
         - file: lectures/sp22/Lecture_12-pre.ipynb
+      - file: lectures/sp22/Week5_Overview
+        sections:
+        - file: lectures/sp22/Lecture_13-pre.ipynb
   - caption: Lecture code - available after class
     chapters:
       - file: lectures/sp22/Lecture_2-post.ipynb
