@@ -54,8 +54,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Lecture 2 (3/30/22)" href="Lecture_2-post.html" />
-    <link rel="prev" title="Lecture 13 (4/25/22)" href="Lecture_13-pre.html" />
+    <link rel="prev" title="Lecture 13 (4/25/22)" href="Lecture_13-post.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -134,7 +133,7 @@
   Lectures - download before class
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="Week1_Overview.html">
    Week 1
@@ -233,23 +232,23 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="Week5_Overview.html">
    Week 5
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
   <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="Lecture_13-pre.html">
      Lecture 13 (4/25/22)
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_14-pre.html">
      Lecture 14 (4/27/2022)
     </a>
    </li>
@@ -261,7 +260,7 @@
   Lecture code - available after class
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Lecture_2-post.html">
    Lecture 2 (3/30/22)
@@ -317,8 +316,8 @@
    Lecture 13 (4/25/22)
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Lecture_14-post.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Lecture 14 (4/27/2022)
   </a>
  </li>
@@ -363,7 +362,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/lectures/sp22/Lecture_14-pre.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/lectures/sp22/Lecture_14-post.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -383,7 +382,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/UCSD-CSS-002/ucsd-css-002.github.io/issues/new?title=Issue%20on%20page%20%2Flectures/sp22/Lecture_14-pre.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/UCSD-CSS-002/ucsd-css-002.github.io/issues/new?title=Issue%20on%20page%20%2Flectures/sp22/Lecture_14-post.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -404,7 +403,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/UCSD-CSS-002/ucsd-css-002.github.io/master?urlpath=tree/lectures/sp22/Lecture_14-pre.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/UCSD-CSS-002/ucsd-css-002.github.io/master?urlpath=tree/lectures/sp22/Lecture_14-post.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
@@ -520,7 +519,7 @@
 </ul>
 <p><strong>Today’s agenda:</strong></p>
 <ul class="simple">
-<li><p>Understanding and evaluating linear regression</p></li>
+<li><p>Evaluating linear regression</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -730,7 +729,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;weight&#39;, ylabel=&#39;horsepower&#39;&gt;
 </pre></div>
 </div>
-<img alt="../../_images/Lecture_14-pre_7_1.png" src="../../_images/Lecture_14-pre_7_1.png" />
+<img alt="../../_images/Lecture_14-post_7_1.png" src="../../_images/Lecture_14-post_7_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -906,12 +905,14 @@
 <span class="c1"># Prepare our data</span>
 <span class="n">x_vals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">mpg_clean</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">])</span>
 <span class="n">x_vals</span> <span class="o">=</span> <span class="n">x_vals</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x_vals</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># what&#39;s going on here?</span>
-<span class="n">x_vals</span><span class="o">.</span><span class="n">shape</span>
-<span class="n">x_vals</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="c1"># x_vals[0]</span>
+<span class="c1"># x_vals[0, 0]</span>
+<span class="c1"># list(x_vals)</span>
+<span class="c1"># x_vals</span>
+<span class="c1"># TODO is there a more intuitive explanation for this?</span>
 
 
 <span class="n">y_vals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">mpg_clean</span><span class="p">[</span><span class="s1">&#39;horsepower&#39;</span><span class="p">])</span>
-<span class="n">y_vals</span> <span class="o">=</span> <span class="n">y_vals</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y_vals</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
 
 
 <span class="c1"># Initialize the model</span>
@@ -934,14 +935,14 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Look at the values</span>
 <span class="n">mod</span><span class="o">.</span><span class="n">intercept_</span>
-<span class="n">mod</span><span class="o">.</span><span class="n">coef_</span> <span class="c1"># why is this different from the above?</span>
+<span class="c1"># mod.coef_ # why is this different from the above?</span>
 
 <span class="c1"># Other attributes we won&#39;t get into here</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.03917702]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-12.1834847034594
 </pre></div>
 </div>
 </div>
@@ -955,15 +956,15 @@
                 <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;horsepower&quot;</span>
                <span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">axline</span><span class="p">(</span><span class="n">xy1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">mod</span><span class="o">.</span><span class="n">intercept_</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">slope</span> <span class="o">=</span> <span class="n">mod</span><span class="o">.</span><span class="n">coef_</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s2">&quot;--&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axline</span><span class="p">(</span><span class="n">xy1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">mod</span><span class="o">.</span><span class="n">intercept_</span><span class="p">),</span> <span class="n">slope</span> <span class="o">=</span> <span class="n">mod</span><span class="o">.</span><span class="n">coef_</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s2">&quot;--&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.lines._AxLine at 0x7f80b908c940&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.lines._AxLine at 0x7fca061366a0&gt;
 </pre></div>
 </div>
-<img alt="../../_images/Lecture_14-pre_14_1.png" src="../../_images/Lecture_14-pre_14_1.png" />
+<img alt="../../_images/Lecture_14-post_14_1.png" src="../../_images/Lecture_14-post_14_1.png" />
 </div>
 </div>
 <div class="section" id="your-turn">
@@ -980,6 +981,10 @@
 </div>
 </div>
 <p><em>What variables did you choose? How did your regression do?</em></p>
+<ul class="simple">
+<li><p>weight / acceleration</p></li>
+<li><p>weight / mpg</p></li>
+</ul>
 <hr class="docutils" />
 <p>Above we looked at some of the attributes of our model class.</p>
 <p>This class also has several useful <em>functions</em>. We’ve seen one already above (<code class="docutils literal notranslate"><span class="pre">fit()</span></code>).</p>
@@ -988,9 +993,11 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Other functions we can use</span>
 
-<span class="n">mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">x_vals</span><span class="p">)</span> <span class="c1"># what is this doing?</span>
+<span class="n">mod_preds</span> <span class="o">=</span> <span class="n">mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">x_vals</span><span class="p">)</span> <span class="c1"># what is this doing?</span>
+<span class="c1"># mod_preds</span>
 
-<span class="n">mod</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">x_vals</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">y_vals</span><span class="p">)</span> <span class="c1"># what is this? </span>
+<span class="n">mod_score</span> <span class="o">=</span> <span class="n">mod</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">x_vals</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">y_vals</span><span class="p">)</span> <span class="c1"># what is this? </span>
+<span class="n">mod_score</span>
 
 <span class="c1"># These are the primary ones</span>
 </pre></div>
@@ -1008,7 +1015,6 @@
 <h1>Evaluating linear regression<a class="headerlink" href="#evaluating-linear-regression" title="Permalink to this headline">¶</a></h1>
 <p>In the section above, we generated a regression for the relationship between <code class="docutils literal notranslate"><span class="pre">weight</span></code> and <code class="docutils literal notranslate"><span class="pre">horsepower</span></code>.</p>
 <p>How do we know if our regression is a good fit to the data? What gives you confidence that it’s describing the relationship between the variables well?</p>
-<p>…</p>
 <div class="section" id="r-2-coefficient-of-determination-how-much-variance-are-we-explaining">
 <h2><span class="math notranslate nohighlight">\(R^2\)</span> (coefficient of determination): how much variance are we explaining?<a class="headerlink" href="#r-2-coefficient-of-determination-how-much-variance-are-we-explaining" title="Permalink to this headline">¶</a></h2>
 <p><span class="math notranslate nohighlight">\( R^2 = 1 - \dfrac{RSS}{TSS} \)</span></p>
@@ -1034,7 +1040,8 @@
 
 <span class="c1"># Add predicted y values to dataframe</span>
 <span class="n">preds</span> <span class="o">=</span> <span class="n">mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">x_vals</span><span class="p">)</span>
-<span class="n">mpg_clean</span> <span class="o">=</span> <span class="n">mpg_clean</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">model_pred</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">preds</span><span class="p">]))</span>
+<span class="n">mpg_clean</span> <span class="o">=</span> <span class="n">mpg_clean</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">model_pred</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">preds</span><span class="p">]))</span>
+<span class="n">mpg_clean</span>
 
 <span class="c1"># Calculate RSS based on predicted values</span>
 <span class="n">mpg_clean</span> <span class="o">=</span> <span class="n">mpg_clean</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">resid_sum_sq</span> <span class="o">=</span> <span class="p">(</span><span class="n">mpg_clean</span><span class="p">[</span><span class="s1">&#39;horsepower&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">mpg_clean</span><span class="p">[</span><span class="s1">&#39;model_pred&#39;</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
@@ -1072,14 +1079,17 @@ Hand calculation: 0.74742549968982
 
 <span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
 
-<span class="n">x_vals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">mpg_clean</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">])</span>
-<span class="n">x_vals</span> <span class="o">=</span> <span class="n">x_vals</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x_vals</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">x_vals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">mpg_clean</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x_vals</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
 <span class="n">y_vals</span> <span class="o">=</span> <span class="n">mpg_clean</span><span class="p">[</span><span class="s1">&#39;horsepower&#39;</span><span class="p">]</span>
 
-<span class="n">xtrain</span><span class="p">,</span> <span class="n">xtest</span><span class="p">,</span> <span class="n">ytrain</span><span class="p">,</span> <span class="n">ytest</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">x_vals</span><span class="p">,</span> <span class="n">y_vals</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.25</span><span class="p">)</span>
+<span class="n">xtrain</span><span class="p">,</span> <span class="n">xtest</span><span class="p">,</span> <span class="n">ytrain</span><span class="p">,</span> <span class="n">ytest</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">x_vals</span><span class="p">,</span> <span class="n">y_vals</span><span class="p">,</span> 
+                                                <span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.25</span><span class="p">,</span> 
+                                                <span class="n">random_state</span> <span class="o">=</span> <span class="mi">1</span>
+                                               <span class="p">)</span>
+
 
 <span class="c1"># mpg_clean.shape</span>
-<span class="c1"># len(Xtest)</span>
+<span class="c1"># len(xtrain)</span>
 </pre></div>
 </div>
 </div>
@@ -1098,7 +1108,7 @@ Hand calculation: 0.74742549968982
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.03960376])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.03894649])
 </pre></div>
 </div>
 </div>
@@ -1113,31 +1123,31 @@ Hand calculation: 0.74742549968982
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 52.43352635,  80.98783486,  94.84914967,  65.54236979,
-       157.22506632, 114.69063173,  88.7105674 , 126.53215495,
-        99.32437417,  72.27500841,  59.40378751, 131.48262453,
-       103.75999491,  82.49277761, 117.10646088, 160.78940441,
-        85.7006819 , 154.05676579, 153.81914325, 113.58172654,
-       117.89853601,  60.19586265, 115.83914067, 100.78971316,
-        86.73037957, 141.46277119, 148.71025865, 156.55180245,
-        72.07698963, 119.24506374,  64.55227587, 120.98762903,
-       135.04696262, 115.16587681, 131.72024707, 144.03701537,
-        63.83940825,  63.36416317, 154.05676579,  58.4136936 ,
-       114.29459416,  74.45321502, 116.6312158 ,  67.12652005,
-       123.56187321,  80.19575973,  97.58180888,  88.98779369,
-       139.60139463,  85.74028565,  71.28491449,  78.2155719 ,
-        68.9086891 ,  58.21567482, 136.7103204 ,  69.70076423,
-       158.80921658, 115.64112189, 111.48272744, 112.27480258,
-       160.59138563, 100.19565681,  76.82944042,  92.9085656 ,
-        96.98775253, 116.94804585,  90.88877401, 103.75999491,
-       141.58158246,  82.37396634, 117.34408342, 128.23511648,
-       141.85880876,  59.40378751,  86.13632322,  98.61150655,
-        96.23528115,  68.9086891 ,  72.03738587,  83.36406026,
-        94.49271586, 150.88846526, 122.96781686,  69.10670788,
-        69.26512291, 121.7401004 ,  75.36410142,  67.32453883,
-       106.76988041,  91.08679279,  77.81953433,  65.14633222,
-       128.51234278, 134.65092505, 106.53225787, 159.91812176,
-       143.16573272,  63.95821952])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 85.08612203,  72.03904762,  79.01046947,  99.18475168,
+        65.18446525,  68.30018451,  72.74008445, 152.50249753,
+        76.59578704,  76.67368002, 113.8675787 ,  70.98749237,
+       137.0407407 ,  63.23714071,  85.82610535, 121.81266281,
+        79.78939928,  78.42627211, 157.05923695, 100.97629026,
+        74.96003443, 128.93987062, 119.86533828, 149.6983502 ,
+       156.55293257, 140.93538978,  67.13178978, 129.67985395,
+       105.8446016 ,  80.37359664, 120.87794704,  94.19960086,
+       162.82331759,  97.89951749, 120.87794704, 151.64567474,
+       134.89868371, 125.16206102,  64.01607052,  70.4422415 ,
+       155.92978872, 158.26657817,  96.80901574, 100.46998588,
+        96.10797891, 132.75662672, 182.10183051,  64.21080298,
+       113.40022081, 171.89784993, 130.49773025, 110.36239453,
+        91.78491844,  76.86841247,  59.34249163, 103.70254461,
+        88.5523597 ,  88.24078778,  87.03344656,  57.58989955,
+       104.90988582,  83.45036941,  64.40553543, 118.54115759,
+       107.63614018, 112.54339801, 114.84124097, 128.04410134,
+        62.45821089, 180.4660779 ,  82.28197469, 127.88831537,
+       133.73028899,  72.70113796,  74.49267654,  62.06874599,
+       107.67508667, 161.34335094, 153.94351769,  84.46297817,
+       128.47251273,  73.90847918,  66.11918102,  72.77903094,
+       136.30075738, 120.48848213,  59.53722409,  91.47334651,
+        63.43187316, 104.79304635,  71.76642219, 122.43580667,
+       154.761394  , 158.14973869, 180.34923843,  92.64174123,
+       154.72244751,  96.34165786])
 </pre></div>
 </div>
 </div>
@@ -1158,7 +1168,7 @@ Hand calculation: 0.74742549968982
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Regression performance on held out test data&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/Lecture_14-pre_31_1.png" src="../../_images/Lecture_14-pre_31_1.png" />
+<img alt="../../_images/Lecture_14-post_31_1.png" src="../../_images/Lecture_14-post_31_1.png" />
 </div>
 </div>
 <p><strong>Step 4</strong> is …</p>
@@ -1199,8 +1209,8 @@ Hand calculation: 0.74742549968982
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Training MSE: 387.95165319513876 
- Test MSE: 346.00668402102605
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Training MSE: 332.72896851897474 
+ Test MSE: 516.4390434210967
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -1248,7 +1258,7 @@ Hand calculation: 0.74742549968982
   <th>Date:</th>             <td>Wed, 27 Apr 2022</td> <th>  Prob (F-statistic):</th> <td>1.36e-118</td>
 </tr>
 <tr>
-  <th>Time:</th>                 <td>10:42:36</td>     <th>  Log-Likelihood:    </th> <td> -1717.0</td> 
+  <th>Time:</th>                 <td>10:42:29</td>     <th>  Log-Likelihood:    </th> <td> -1717.0</td> 
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>   392</td>      <th>  AIC:               </th> <td>   3438.</td> 
@@ -1318,7 +1328,7 @@ Hand calculation: 0.74742549968982
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Lecture_14-pre_42_0.png" src="../../_images/Lecture_14-pre_42_0.png" />
+<img alt="../../_images/Lecture_14-post_42_0.png" src="../../_images/Lecture_14-post_42_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1354,10 +1364,10 @@ Hand calculation: 0.74742549968982
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7f80b8f12df0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7fca06a93c10&gt;
 </pre></div>
 </div>
-<img alt="../../_images/Lecture_14-pre_44_1.png" src="../../_images/Lecture_14-pre_44_1.png" />
+<img alt="../../_images/Lecture_14-post_44_1.png" src="../../_images/Lecture_14-post_44_1.png" />
 </div>
 </div>
 </div>
@@ -1375,7 +1385,7 @@ Hand calculation: 0.74742549968982
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;horsepower&#39;, ylabel=&#39;mpg&#39;&gt;
 </pre></div>
 </div>
-<img alt="../../_images/Lecture_14-pre_46_1.png" src="../../_images/Lecture_14-pre_46_1.png" />
+<img alt="../../_images/Lecture_14-post_46_1.png" src="../../_images/Lecture_14-post_46_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1410,10 +1420,10 @@ Hand calculation: 0.74742549968982
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7f80ba3be1c0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7fca0622e580&gt;
 </pre></div>
 </div>
-<img alt="../../_images/Lecture_14-pre_48_1.png" src="../../_images/Lecture_14-pre_48_1.png" />
+<img alt="../../_images/Lecture_14-post_48_1.png" src="../../_images/Lecture_14-post_48_1.png" />
 </div>
 </div>
 <p>This graphic shows the correlation coefficient between two variables for a range of different data patterns.</p>
@@ -1442,10 +1452,10 @@ Hand calculation: 0.74742549968982
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7f80ba676790&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7fca06aebf10&gt;
 </pre></div>
 </div>
-<img alt="../../_images/Lecture_14-pre_51_1.png" src="../../_images/Lecture_14-pre_51_1.png" />
+<img alt="../../_images/Lecture_14-post_51_1.png" src="../../_images/Lecture_14-post_51_1.png" />
 </div>
 </div>
 </div>
@@ -1482,8 +1492,7 @@ Hand calculation: 0.74742549968982
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="Lecture_13-pre.html" title="previous page">Lecture 13 (4/25/22)</a>
-    <a class='right-next' id="next-link" href="Lecture_2-post.html" title="next page">Lecture 2 (3/30/22)</a>
+    <a class='left-prev' id="prev-link" href="Lecture_13-post.html" title="previous page">Lecture 13 (4/25/22)</a>
 
         </div>
         
