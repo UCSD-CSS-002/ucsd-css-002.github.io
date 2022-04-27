@@ -49,3 +49,4 @@ parts:
       - file: lectures/sp22/Lecture_11-post.ipynb
       - file: lectures/sp22/Lecture_12-post.ipynb
       - file: lectures/sp22/Lecture_13-post.ipynb
+      - file: lectures/sp22/Lecture_14-post.ipynb
