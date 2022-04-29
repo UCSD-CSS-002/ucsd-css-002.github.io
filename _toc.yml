@@ -36,6 +36,7 @@ parts:
         sections:
         - file: lectures/sp22/Lecture_13-pre.ipynb
         - file: lectures/sp22/Lecture_14-pre.ipynb
+        - file: lectures/sp22/Lecture_15-pre.ipynb
   - caption: Lecture code - available after class
     chapters:
       - file: lectures/sp22/Lecture_2-post.ipynb
