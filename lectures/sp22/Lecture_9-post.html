@@ -233,6 +233,33 @@
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week5_Overview.html">
+   Week 5
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_13-pre.html">
+     Lecture 13 (4/25/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_14-pre.html">
+     Lecture 14 (4/27/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_15-pre.html">
+     Lecture 15 (4/29/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 <p class="caption">
  <span class="caption-text">
@@ -288,6 +315,16 @@
  <li class="toctree-l1">
   <a class="reference internal" href="Lecture_12-post.html">
    Lecture 12 (4/22/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_13-post.html">
+   Lecture 13 (4/25/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_14-post.html">
+   Lecture 14 (4/27/2022)
   </a>
  </li>
 </ul>
@@ -750,17 +787,17 @@ Name: gdpw2, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8.727616     1
-10.106510    1
-10.123670    1
-9.701494     1
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7.096721     1
+9.661735     1
 9.375601     1
-            ..
-7.970049     1
 9.414342     1
-8.777710     1
-8.379768     1
-8.228711     1
+9.178953     1
+            ..
+10.127270    1
+9.690170     1
+7.029973     1
+8.548692     1
+9.891465     1
 Name: gdpw2, Length: 62, dtype: int64
 </pre></div>
 </div>
@@ -1399,6 +1436,22 @@ Name: courts, dtype: int64
 <span class="c1"># Assault: number of assaults in the state</span>
 <span class="c1"># others...</span>
 <span class="n">usarrests</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/umbertomig/seabornClass/main/data/usarrests.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        polInf collegeDegree female   age homeOwn govt     length  id
+0  Fairly High           Yes     No  49.0     Yes   No  58.400002   1
+1      Average            No    Yes  35.0     Yes   No  46.150002   2
+2    Very High            No    Yes  57.0     Yes   No  89.519997   3
+3      Average            No     No  63.0     Yes   No  92.629997   4
+4  Fairly High           Yes    Yes  40.0     Yes   No  58.849998   4
+   Murder  Assault  UrbanPop  Rape
+0    13.2      236        58  21.2
+1    10.0      263        48  44.5
+2     8.1      294        80  31.0
+3     8.8      190        50  19.5
+4     9.0      276        91  40.6
 </pre></div>
 </div>
 </div>

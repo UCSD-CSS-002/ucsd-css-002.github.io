@@ -253,6 +253,11 @@
      Lecture 14 (4/27/2022)
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_15-pre.html">
+     Lecture 15 (4/29/2022)
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -594,13 +599,15 @@
 0   1   1   4   4
 1   2   2   6   6
 2   3   3   8   8
-Covariance between x and y1: [[1. 1.]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Covariance between x and y1: [[1. 1.]
  [1. 1.]]
 Covariance between x and y2: [[4. 4.]
  [4. 4.]]
 </pre></div>
 </div>
-<img alt="../../_images/Lecture_13-post_8_1.png" src="../../_images/Lecture_13-post_8_1.png" />
+<img alt="../../_images/Lecture_13-post_8_2.png" src="../../_images/Lecture_13-post_8_2.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -698,9 +705,9 @@ Correlation between x and y2: [[1. 1.]
 <p>For a line describing our data with intercept <span class="math notranslate nohighlight">\(\beta_0\)</span> and slope <span class="math notranslate nohighlight">\(\beta_1\)</span>, we can quantify how well each of our data points <span class="math notranslate nohighlight">\((x_i, y_i)\)</span> is predicted by this line:</p>
 <p><span class="math notranslate nohighlight">\(y_i = \beta_0 + \beta_1*x_i + \epsilon_i\)</span></p>
 <p>The <span class="math notranslate nohighlight">\(\epsilon_i\)</span> term here is the <em>error</em> term. If this value is 0 for a given data point, it means our line captures that data point perfectly. If it’s large (positive or negative), our line is doing a bad job predicting our data at that location.</p>
-<p><img alt="reg_error" src="lectures/sp22/img/reg_error.png" /></p>
+<p><img alt="reg_error" src="../../_images/reg_error.png" /></p>
 <p>Other lines will have different error spread across our data points:</p>
-<p><img alt="reg_error2" src="lectures/sp22/img/reg_error2.png" /></p>
+<p><img alt="reg_error2" src="../../_images/reg_error2.png" /></p>
 <p>Now, the idea is that if we choose <span class="math notranslate nohighlight">\(\beta_0\)</span> and <span class="math notranslate nohighlight">\(\beta_1\)</span> to minimize the error <span class="math notranslate nohighlight">\(\epsilon_i\)</span> across our data, we’ll have a pretty good line.</p>
 <p>What does this look like in our actual data?</p>
 <p>Let’s fill in the predictions and the error for <span class="math notranslate nohighlight">\(\beta_0 = 1\)</span> and <span class="math notranslate nohighlight">\(\beta_1 = 0.75\)</span>.</p>
@@ -1479,10 +1486,10 @@ Mean of the error values: -0.24909090909090903
   <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   17.99</td>
 </tr>
 <tr>
-  <th>Date:</th>             <td>Wed, 27 Apr 2022</td> <th>  Prob (F-statistic):</th>  <td>0.00217</td>
+  <th>Date:</th>             <td>Fri, 29 Apr 2022</td> <th>  Prob (F-statistic):</th>  <td>0.00217</td>
 </tr>
 <tr>
-  <th>Time:</th>                 <td>10:30:59</td>     <th>  Log-Likelihood:    </th> <td> -16.841</td>
+  <th>Time:</th>                 <td>07:59:08</td>     <th>  Log-Likelihood:    </th> <td> -16.841</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>    11</td>      <th>  AIC:               </th> <td>   37.68</td>

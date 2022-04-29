@@ -529,6 +529,9 @@
   <div class="section" id="lecture-15-4-29-2022">
 <h1>Lecture 15 (4/29/2022)<a class="headerlink" href="#lecture-15-4-29-2022" title="Permalink to this headline">¶</a></h1>
 <p><strong>Announcements</strong></p>
+<ul class="simple">
+<li><p>Pset 4 will be released today, due next Friday 5/6</p></li>
+</ul>
 <p><em>Last time we covered:</em></p>
 <ul class="simple">
 <li><p>Evaluating regression: <span class="math notranslate nohighlight">\(R^2\)</span>, out-of-sample prediction, parameter interpretation</p></li>
@@ -737,8 +740,7 @@
 <p>Let’s start by running through each of these in a little more detail since we didn’t get much time to discuss them.</p>
 <div class="section" id="r-2-the-coefficient-of-determination">
 <h2><span class="math notranslate nohighlight">\(R^2\)</span>, the <em>coefficient of determination</em><a class="headerlink" href="#r-2-the-coefficient-of-determination" title="Permalink to this headline">¶</a></h2>
-<p><img alt="determination" src="lectures/sp22/img/Determination.png" />
-(source: some cheesy business presentation)</p>
+<p><img alt="determination" src="../../_images/Determination.png" /></p>
 <p><span class="math notranslate nohighlight">\( R^2 = 1 - \dfrac{RSS}{TSS} \)</span></p>
 <p><span class="math notranslate nohighlight">\( RSS = \sum_{i=1}^{n}{(y_i - \hat{y_i})}^2 \)</span></p>
 <p><span class="math notranslate nohighlight">\( TSS = \sum_{i=1}^{n}{(y_i - \bar{y})}^2 \)</span></p>
@@ -774,7 +776,7 @@
 <hr class="docutils" />
 <div class="section" id="out-of-sample-prediction">
 <h2>Out of sample prediction<a class="headerlink" href="#out-of-sample-prediction" title="Permalink to this headline">¶</a></h2>
-<p><img alt="train" src="lectures/sp22/img/train.jpeg" /></p>
+<p><img alt="train" src="../../_images/train.jpeg" /></p>
 <p><strong>Motivation</strong></p>
 <p>If our model is the right fit to our data, it should predict other data from the same underlying distribution or generative process pretty well.</p>
 <p><strong>How to check this</strong></p>
@@ -819,8 +821,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Training MSE: 415.2215671941117 
-Test MSE: 251.3306201238886
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Training MSE: 352.27477737733983 
+Test MSE: 436.2270113128624
 </pre></div>
 </div>
 </div>
@@ -831,7 +833,7 @@ Test MSE: 251.3306201238886
 <hr class="docutils" />
 <div class="section" id="parameter-estimates">
 <h2>Parameter estimates<a class="headerlink" href="#parameter-estimates" title="Permalink to this headline">¶</a></h2>
-<p><img alt="right" src="lectures/sp22/img/right.png" /></p>
+<p><img alt="right" src="../../_images/right.png" /></p>
 <p>The criteria above are mostly concerned with whether we’re doing <em>a good job predicting our <span class="math notranslate nohighlight">\(y\)</span> values</em> with this model.</p>
 <p>In many cases, part of what we’re concerned with isn’t just how well we predict our data, but what kind of relationship our model estimates between <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>.</p>
 <ul class="simple">
@@ -869,7 +871,7 @@ Test MSE: 251.3306201238886
   <th>Date:</th>             <td>Fri, 29 Apr 2022</td> <th>  Prob (F-statistic):</th> <td>1.36e-118</td>
 </tr>
 <tr>
-  <th>Time:</th>                 <td>00:04:27</td>     <th>  Log-Likelihood:    </th> <td> -1717.0</td> 
+  <th>Time:</th>                 <td>07:59:56</td>     <th>  Log-Likelihood:    </th> <td> -1717.0</td> 
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>   392</td>      <th>  AIC:               </th> <td>   3438.</td> 
@@ -928,7 +930,7 @@ Disclaimer: this figure (from wikipedia) shows <em>correlation</em> values assoc
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7fbc1f76cb80&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7fccfd6e9c70&gt;
 </pre></div>
 </div>
 <img alt="../../_images/Lecture_15-pre_19_1.png" src="../../_images/Lecture_15-pre_19_1.png" />
@@ -949,7 +951,7 @@ Disclaimer: this figure (from wikipedia) shows <em>correlation</em> values assoc
 <p>Even though this seems much more complex, polynomial regression uses the same <em>Ordinary Least Squares</em> (OLS) parameter estimation as simple regression. You can think of simple linear regression as a special case of polynomial regression.</p>
 <p><strong>This gives us immense flexibility to fit more complex functions to our data.</strong> Some of the data illustrated at the top of this section can <em>only</em> be modeled using more complex polynomials (see example below as well).</p>
 <p><strong>CAUTION</strong>: most of the time you <em>don’t</em> need polynomials to capture your data. Bad things happen when you use them for data that doesn’t have an underlying non-linear structure. More on this on Monday.</p>
-<p><img alt="poly" src="lectures/sp22/img/Poly.png" /></p>
+<p><img alt="poly" src="../../_images/Poly.png" /></p>
 </div>
 <div class="section" id="polynomial-regression-in-python">
 <h3>Polynomial regression in python<a class="headerlink" href="#polynomial-regression-in-python" title="Permalink to this headline">¶</a></h3>
@@ -1145,22 +1147,18 @@ Disclaimer: this figure (from wikipedia) shows <em>correlation</em> values assoc
 
 <span class="c1"># Simple linear model</span>
 <span class="n">mod1</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_vals</span><span class="p">,</span> <span class="n">y_vals</span><span class="p">)</span>
-<span class="n">preds</span><span class="p">[</span><span class="s1">&#39;deg1_pred&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">mod1</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_vals</span><span class="p">)</span>
 
 <span class="c1"># 2nd order polynomial</span>
 <span class="n">poly2</span> <span class="o">=</span> <span class="n">PolynomialFeatures</span><span class="p">(</span><span class="n">degree</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">include_bias</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
 <span class="n">x2_features</span> <span class="o">=</span> <span class="n">poly2</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">x_vals</span><span class="p">)</span>
 <span class="n">mod2</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x2_features</span><span class="p">,</span> <span class="n">y_vals</span><span class="p">)</span>
-<span class="n">preds</span><span class="p">[</span><span class="s1">&#39;deg2_pred&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">mod2</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x2_features</span><span class="p">)</span>
+
 
 <span class="c1"># 3rd order polynomial</span>
 <span class="n">poly3</span> <span class="o">=</span> <span class="n">PolynomialFeatures</span><span class="p">(</span><span class="n">degree</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">include_bias</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
 <span class="n">x3_features</span> <span class="o">=</span> <span class="n">poly3</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">x_vals</span><span class="p">)</span>
 <span class="n">mod3</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x3_features</span><span class="p">,</span> <span class="n">y_vals</span><span class="p">)</span>
-<span class="n">preds</span><span class="p">[</span><span class="s1">&#39;deg3_pred&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">mod3</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x3_features</span><span class="p">)</span>
 
-
-<span class="n">preds</span>
 
 <span class="n">mod2</span><span class="o">.</span><span class="n">coef_</span>
 <span class="c1"># mod3.coef_</span>
@@ -1172,6 +1170,137 @@ Disclaimer: this figure (from wikipedia) shows <em>correlation</em> values assoc
 </pre></div>
 </div>
 </div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add predictions for each model so we can view how it does</span>
+<span class="n">preds</span><span class="p">[</span><span class="s1">&#39;deg1_pred&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">mod1</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_vals</span><span class="p">)</span>
+<span class="n">preds</span><span class="p">[</span><span class="s1">&#39;deg2_pred&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">mod2</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x2_features</span><span class="p">)</span>
+<span class="n">preds</span><span class="p">[</span><span class="s1">&#39;deg3_pred&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">mod3</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x3_features</span><span class="p">)</span>
+
+<span class="n">preds</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>horsepower</th>
+      <th>mpg</th>
+      <th>deg1_pred</th>
+      <th>deg2_pred</th>
+      <th>deg3_pred</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>130.0</td>
+      <td>18.0</td>
+      <td>19.416046</td>
+      <td>17.091508</td>
+      <td>17.153421</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>165.0</td>
+      <td>15.0</td>
+      <td>13.891480</td>
+      <td>13.480156</td>
+      <td>13.782683</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>150.0</td>
+      <td>18.0</td>
+      <td>16.259151</td>
+      <td>14.658717</td>
+      <td>14.890157</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>150.0</td>
+      <td>16.0</td>
+      <td>16.259151</td>
+      <td>14.658717</td>
+      <td>14.890157</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>140.0</td>
+      <td>17.0</td>
+      <td>17.837598</td>
+      <td>15.752059</td>
+      <td>15.904046</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>387</th>
+      <td>86.0</td>
+      <td>27.0</td>
+      <td>26.361214</td>
+      <td>25.908837</td>
+      <td>25.774667</td>
+    </tr>
+    <tr>
+      <th>388</th>
+      <td>52.0</td>
+      <td>44.0</td>
+      <td>31.727935</td>
+      <td>35.985609</td>
+      <td>36.424392</td>
+    </tr>
+    <tr>
+      <th>389</th>
+      <td>84.0</td>
+      <td>32.0</td>
+      <td>26.676903</td>
+      <td>26.422834</td>
+      <td>26.298564</td>
+    </tr>
+    <tr>
+      <th>390</th>
+      <td>79.0</td>
+      <td>28.0</td>
+      <td>27.466127</td>
+      <td>27.750895</td>
+      <td>27.662364</td>
+    </tr>
+    <tr>
+      <th>391</th>
+      <td>82.0</td>
+      <td>31.0</td>
+      <td>26.992593</td>
+      <td>26.946675</td>
+      <td>26.834765</td>
+    </tr>
+  </tbody>
+</table>
+<p>392 rows × 5 columns</p>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1201,7 +1330,15 @@ Disclaimer: this figure (from wikipedia) shows <em>correlation</em> values assoc
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;horsepower&#39;, ylabel=&#39;mpg&#39;&gt;
 </pre></div>
 </div>
-<img alt="../../_images/Lecture_15-pre_28_1.png" src="../../_images/Lecture_15-pre_28_1.png" />
+<img alt="../../_images/Lecture_15-pre_29_1.png" src="../../_images/Lecture_15-pre_29_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s check the R^2 values for these models to see what kind of improvement we get</span>
+<span class="c1"># (more on this next week)</span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -1370,7 +1507,7 @@ Disclaimer: this figure (from wikipedia) shows <em>correlation</em> values assoc
 </div></div></div>
 </div>
 <p>In the last problem set, you generated a graph that predicted life expectancy as a function of income, with information about population and region available as well.</p>
-<p><img alt="gap" src="lectures/sp22/img/gapminder.png" /></p>
+<p><img alt="gap" src="../../_images/gapminder.png" /></p>
 <p>The graph suggests that life expectancy is strongly predicted by income, while population may not play such an important role.</p>
 <p>Let’s test that here!</p>
 <p>What that amounts to asking is:</p>
@@ -1394,8 +1531,8 @@ Disclaimer: this figure (from wikipedia) shows <em>correlation</em> values assoc
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Lecture_15-pre_33_0.png" src="../../_images/Lecture_15-pre_33_0.png" />
-<img alt="../../_images/Lecture_15-pre_33_1.png" src="../../_images/Lecture_15-pre_33_1.png" />
+<img alt="../../_images/Lecture_15-pre_35_0.png" src="../../_images/Lecture_15-pre_35_0.png" />
+<img alt="../../_images/Lecture_15-pre_35_1.png" src="../../_images/Lecture_15-pre_35_1.png" />
 </div>
 </div>
 <div class="section" id="multiple-regression-overview">
@@ -1405,7 +1542,7 @@ Disclaimer: this figure (from wikipedia) shows <em>correlation</em> values assoc
 <p><span class="math notranslate nohighlight">\(y_i = \beta_0 + \beta_1 x_i + \epsilon_i\)</span></p>
 <p>With multiple regression, we now extend this model to include multiple predictors:</p>
 <p><span class="math notranslate nohighlight">\(y_i = \beta_0 + \beta_1 x_{i,1} + \beta_2 x_{i,2} + \ ... \ + \beta_n x_{i,n} + \epsilon_i \)</span></p>
-<p>In most cases, multiple regression once again uses the same <em>Ordinary Least Squares</em> (OLS) parameter estimation as simple regression. However, interpreting the parameter estimates is less straightforward.</p>
+<p>In most cases, multiple regression once again uses the same <em>Ordinary Least Squares</em> (OLS) parameter estimation as simple regression. However, interpreting the parameter estimates is a little less straightforward.</p>
 <p><em>How would we interpret <span class="math notranslate nohighlight">\(\beta_0 = 1\)</span>, <span class="math notranslate nohighlight">\(\beta_1 = 2\)</span>, <span class="math notranslate nohighlight">\(\beta_2 = 3\)</span></em>?</p>
 </div>
 <div class="section" id="multiple-regression-in-python">
@@ -1414,7 +1551,8 @@ Disclaimer: this figure (from wikipedia) shows <em>correlation</em> values assoc
 <p>I’ve also included the statsmodels code below as well so we can look at the statistics more closely!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_vals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">gap_subset</span><span class="p">[[</span><span class="s1">&#39;logGdpPercap&#39;</span><span class="p">,</span> <span class="s1">&#39;logPop&#39;</span><span class="p">]])</span> <span class="c1"># Note: this syntax is important!</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># scikit learn approach</span>
+<span class="n">x_vals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">gap_subset</span><span class="p">[[</span><span class="s1">&#39;logGdpPercap&#39;</span><span class="p">,</span> <span class="s1">&#39;logPop&#39;</span><span class="p">]])</span> <span class="c1"># Note: this syntax is important!</span>
 <span class="n">x_vals</span> <span class="o">=</span> <span class="n">x_vals</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">gap_subset</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
 <span class="n">x_vals</span>
 
@@ -1447,6 +1585,7 @@ Disclaimer: this figure (from wikipedia) shows <em>correlation</em> values assoc
 </div>
 </div>
 </div>
+<p>Using the statsmodels regression class, we can view statistical tests on our parameter fits</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">multiple_reg</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="s1">&#39;lifeExp ~ logGdpPercap + logPop&#39;</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">gap_subset</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
@@ -1472,7 +1611,7 @@ Disclaimer: this figure (from wikipedia) shows <em>correlation</em> values assoc
   <th>Date:</th>             <td>Fri, 29 Apr 2022</td> <th>  Prob (F-statistic):</th> <td>9.91e-34</td>
 </tr>
 <tr>
-  <th>Time:</th>                 <td>00:04:35</td>     <th>  Log-Likelihood:    </th> <td> -477.07</td>
+  <th>Time:</th>                 <td>08:00:04</td>     <th>  Log-Likelihood:    </th> <td> -477.07</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>   142</td>      <th>  AIC:               </th> <td>   960.1</td>

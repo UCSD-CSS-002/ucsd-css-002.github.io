@@ -54,7 +54,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="prev" title="Lecture 7 (guest) - Introduction to Data Visualization in Python" href="Lecture_7-post.html" />
+    <link rel="next" title="Lecture 11 (4/20/2022)" href="Lecture_11-post.html" />
+    <link rel="prev" title="Lecture 9 (guest) Data Visualization with Seaborn" href="Lecture_9-post.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -220,6 +221,43 @@
      Lecture 10 (4/18/22)
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_11-pre.html">
+     Lecture 11 (4/20/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_12-pre.html">
+     Lecture 12 (4/22/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week5_Overview.html">
+   Week 5
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_13-pre.html">
+     Lecture 13 (4/25/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_14-pre.html">
+     Lecture 14 (4/27/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_15-pre.html">
+     Lecture 15 (4/29/2022)
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -259,9 +297,34 @@
    Lecture 7 (guest) - Introduction to Data Visualization in Python
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_9-post.html">
+   Lecture 9 (guest) Data Visualization with Seaborn
+  </a>
+ </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Lecture 10 (4/18/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_11-post.html">
+   Lecture 11 (4/20/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_12-post.html">
+   Lecture 12 (4/22/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_13-post.html">
+   Lecture 13 (4/25/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_14-post.html">
+   Lecture 14 (4/27/2022)
   </a>
  </li>
 </ul>
@@ -546,11 +609,11 @@
   <tbody>
     <tr>
       <th>0</th>
-      <td>8</td>
+      <td>4</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>2</td>
+      <td>5</td>
     </tr>
     <tr>
       <th>2</th>
@@ -558,15 +621,15 @@
     </tr>
     <tr>
       <th>3</th>
-      <td>9</td>
+      <td>8</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>9</td>
+      <td>2</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>8</td>
+      <td>7</td>
     </tr>
     <tr>
       <th>6</th>
@@ -574,7 +637,7 @@
     </tr>
     <tr>
       <th>7</th>
-      <td>6</td>
+      <td>4</td>
     </tr>
     <tr>
       <th>8</th>
@@ -582,7 +645,7 @@
     </tr>
     <tr>
       <th>9</th>
-      <td>5</td>
+      <td>2</td>
     </tr>
   </tbody>
 </table>
@@ -617,6 +680,10 @@
     </tr>
   </thead>
   <tbody>
+    <tr>
+      <th>5</th>
+      <td>7</td>
+    </tr>
   </tbody>
 </table>
 </div></div></div>
@@ -676,15 +743,15 @@
     </tr>
     <tr>
       <th>3</th>
-      <td>9.0</td>
+      <td>8.0</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>9.0</td>
+      <td>2.0</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>8.0</td>
+      <td>7.0</td>
     </tr>
     <tr>
       <th>6</th>
@@ -692,7 +759,7 @@
     </tr>
     <tr>
       <th>7</th>
-      <td>6.0</td>
+      <td>4.0</td>
     </tr>
     <tr>
       <th>8</th>
@@ -700,7 +767,7 @@
     </tr>
     <tr>
       <th>9</th>
-      <td>5.0</td>
+      <td>2.0</td>
     </tr>
   </tbody>
 </table>
@@ -760,19 +827,19 @@
     </tr>
     <tr>
       <th>3</th>
-      <td>9.0</td>
+      <td>8.0</td>
       <td>NaN</td>
       <td>None</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>9.0</td>
+      <td>2.0</td>
       <td>NaN</td>
       <td>None</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>8.0</td>
+      <td>7.0</td>
       <td>NaN</td>
       <td>None</td>
     </tr>
@@ -784,7 +851,7 @@
     </tr>
     <tr>
       <th>7</th>
-      <td>6.0</td>
+      <td>4.0</td>
       <td>NaN</td>
       <td>None</td>
     </tr>
@@ -796,7 +863,7 @@
     </tr>
     <tr>
       <th>9</th>
-      <td>5.0</td>
+      <td>2.0</td>
       <td>NaN</td>
       <td>None</td>
     </tr>
@@ -864,19 +931,19 @@
     </tr>
     <tr>
       <th>3</th>
-      <td>9.0</td>
+      <td>8.0</td>
       <td>NaN</td>
       <td>None</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>9.0</td>
+      <td>2.0</td>
       <td>NaN</td>
       <td>None</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>8.0</td>
+      <td>7.0</td>
       <td>NaN</td>
       <td>None</td>
     </tr>
@@ -888,7 +955,7 @@
     </tr>
     <tr>
       <th>7</th>
-      <td>6.0</td>
+      <td>4.0</td>
       <td>NaN</td>
       <td>None</td>
     </tr>
@@ -943,7 +1010,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>56.75
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>55.375
 </pre></div>
 </div>
 </div>
@@ -995,18 +1062,6 @@
     <tr>
       <th>1</th>
       <td>NaN</td>
-      <td>NaN</td>
-      <td>None</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>9.0</td>
-      <td>NaN</td>
-      <td>None</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>9.0</td>
       <td>NaN</td>
       <td>None</td>
     </tr>
@@ -1170,18 +1225,30 @@
     </tr>
     <tr>
       <th>3</th>
-      <td>6.0</td>
+      <td>2.0</td>
       <td>NaN</td>
       <td>None</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>5.0</td>
+      <td>7.0</td>
       <td>NaN</td>
       <td>None</td>
     </tr>
     <tr>
       <th>5</th>
+      <td>4.0</td>
+      <td>NaN</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>5.0</td>
+      <td>NaN</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>7</th>
       <td>400.0</td>
       <td>NaN</td>
       <td>None</td>
@@ -1288,19 +1355,19 @@
     </tr>
     <tr>
       <th>3</th>
-      <td>9.0</td>
+      <td>8.0</td>
       <td>NaN</td>
       <td>None</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>9.0</td>
+      <td>2.0</td>
       <td>NaN</td>
       <td>None</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>8.0</td>
+      <td>7.0</td>
       <td>NaN</td>
       <td>None</td>
     </tr>
@@ -1312,7 +1379,7 @@
     </tr>
     <tr>
       <th>7</th>
-      <td>6.0</td>
+      <td>4.0</td>
       <td>NaN</td>
       <td>None</td>
     </tr>
@@ -1380,63 +1447,63 @@
   <tbody>
     <tr>
       <th>0</th>
-      <td>8.5</td>
-      <td>8.5</td>
-      <td>8.5</td>
+      <td>7.5</td>
+      <td>7.5</td>
+      <td>7.5</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>8.5</td>
-      <td>8.5</td>
-      <td>8.5</td>
+      <td>7.5</td>
+      <td>7.5</td>
+      <td>7.5</td>
     </tr>
     <tr>
       <th>2</th>
       <td>9.0</td>
-      <td>8.5</td>
-      <td>8.5</td>
+      <td>7.5</td>
+      <td>7.5</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>9.0</td>
-      <td>8.5</td>
-      <td>8.5</td>
+      <td>8.0</td>
+      <td>7.5</td>
+      <td>7.5</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>9.0</td>
-      <td>8.5</td>
-      <td>8.5</td>
+      <td>2.0</td>
+      <td>7.5</td>
+      <td>7.5</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>8.0</td>
-      <td>8.5</td>
-      <td>8.5</td>
+      <td>7.0</td>
+      <td>7.5</td>
+      <td>7.5</td>
     </tr>
     <tr>
       <th>6</th>
       <td>8.0</td>
-      <td>8.5</td>
-      <td>8.5</td>
+      <td>7.5</td>
+      <td>7.5</td>
     </tr>
     <tr>
       <th>7</th>
-      <td>6.0</td>
-      <td>8.5</td>
-      <td>8.5</td>
+      <td>4.0</td>
+      <td>7.5</td>
+      <td>7.5</td>
     </tr>
     <tr>
       <th>8</th>
       <td>5.0</td>
-      <td>8.5</td>
-      <td>8.5</td>
+      <td>7.5</td>
+      <td>7.5</td>
     </tr>
     <tr>
       <th>9</th>
       <td>400.0</td>
-      <td>8.5</td>
-      <td>8.5</td>
+      <td>7.5</td>
+      <td>7.5</td>
     </tr>
   </tbody>
 </table>
@@ -1503,19 +1570,19 @@
     </tr>
     <tr>
       <th>3</th>
-      <td>9.0</td>
+      <td>8.0</td>
       <td>NaN</td>
       <td>None</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>9.0</td>
+      <td>8.0</td>
       <td>NaN</td>
       <td>None</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>8.0</td>
+      <td>7.0</td>
       <td>NaN</td>
       <td>None</td>
     </tr>
@@ -1527,7 +1594,7 @@
     </tr>
     <tr>
       <th>7</th>
-      <td>6.0</td>
+      <td>4.0</td>
       <td>NaN</td>
       <td>None</td>
     </tr>
@@ -1609,13 +1676,13 @@
     </tr>
     <tr>
       <th>3</th>
-      <td>9.0</td>
+      <td>8.0</td>
       <td>NaN</td>
       <td>None</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>8.0</td>
+      <td>7.0</td>
       <td>NaN</td>
       <td>None</td>
     </tr>
@@ -1627,7 +1694,7 @@
     </tr>
     <tr>
       <th>7</th>
-      <td>6.0</td>
+      <td>4.0</td>
       <td>NaN</td>
       <td>None</td>
     </tr>
@@ -1670,7 +1737,8 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="Lecture_7-post.html" title="previous page">Lecture 7 (guest) - Introduction to Data Visualization in Python</a>
+    <a class='left-prev' id="prev-link" href="Lecture_9-post.html" title="previous page">Lecture 9 (guest) Data Visualization with Seaborn</a>
+    <a class='right-next' id="next-link" href="Lecture_11-post.html" title="next page">Lecture 11 (4/20/2022)</a>
 
         </div>
         
