@@ -54,8 +54,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Lecture 2 (3/30/22)" href="Lecture_2-post.html" />
-    <link rel="prev" title="Lecture 14 (4/27/2022)" href="Lecture_14-pre.html" />
+    <link rel="prev" title="Lecture 14 (4/27/2022)" href="Lecture_14-post.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -134,7 +133,7 @@
   Lectures - download before class
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="Week1_Overview.html">
    Week 1
@@ -233,16 +232,16 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="Week5_Overview.html">
    Week 5
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
   <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="Lecture_13-pre.html">
      Lecture 13 (4/25/22)
@@ -253,8 +252,8 @@
      Lecture 14 (4/27/2022)
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_15-pre.html">
      Lecture 15 (4/29/2022)
     </a>
    </li>
@@ -266,7 +265,7 @@
   Lecture code - available after class
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Lecture_2-post.html">
    Lecture 2 (3/30/22)
@@ -327,8 +326,8 @@
    Lecture 14 (4/27/2022)
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Lecture_15-post.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Lecture 15 (4/29/2022)
   </a>
  </li>
@@ -373,7 +372,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/lectures/sp22/Lecture_15-pre.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/lectures/sp22/Lecture_15-post.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -393,7 +392,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/UCSD-CSS-002/ucsd-css-002.github.io/issues/new?title=Issue%20on%20page%20%2Flectures/sp22/Lecture_15-pre.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/UCSD-CSS-002/ucsd-css-002.github.io/issues/new?title=Issue%20on%20page%20%2Flectures/sp22/Lecture_15-post.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -414,7 +413,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/UCSD-CSS-002/ucsd-css-002.github.io/master?urlpath=tree/lectures/sp22/Lecture_15-pre.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/UCSD-CSS-002/ucsd-css-002.github.io/master?urlpath=tree/lectures/sp22/Lecture_15-post.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
@@ -754,7 +753,6 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># The scikit-learn LinearRegression class surfaces a function called `score` that computes R^2</span>
-
 <span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
 
 <span class="c1"># Format values</span>
@@ -804,8 +802,10 @@
 <span class="c1"># Randomly sample 25% of our data points to be test data</span>
 <span class="n">xtrain</span><span class="p">,</span> <span class="n">xtest</span><span class="p">,</span> <span class="n">ytrain</span><span class="p">,</span> <span class="n">ytest</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">x_vals</span><span class="p">,</span> 
                                                 <span class="n">y_vals</span><span class="p">,</span> 
-                                                <span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.25</span>
+                                                <span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.25</span><span class="p">,</span>
+<span class="c1">#                                                 random_state = 500</span>
                                                <span class="p">)</span>
+
 <span class="c1"># Fit the model on the training data</span>
 <span class="n">mod_tr</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">xtrain</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">ytrain</span><span class="p">)</span>
 
@@ -826,8 +826,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Training MSE: 389.07365469070743 
-Test MSE: 328.1374224831475
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Training MSE: 379.9527741120557 
+Test MSE: 361.5153899000048
 </pre></div>
 </div>
 </div>
@@ -876,7 +876,7 @@ Test MSE: 328.1374224831475
   <th>Date:</th>             <td>Fri, 29 Apr 2022</td> <th>  Prob (F-statistic):</th> <td>1.36e-118</td>
 </tr>
 <tr>
-  <th>Time:</th>                 <td>10:01:00</td>     <th>  Log-Likelihood:    </th> <td> -1717.0</td> 
+  <th>Time:</th>                 <td>10:00:49</td>     <th>  Log-Likelihood:    </th> <td> -1717.0</td> 
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>   392</td>      <th>  AIC:               </th> <td>   3438.</td> 
@@ -935,10 +935,10 @@ Disclaimer: this figure (from wikipedia) shows <em>correlation</em> values assoc
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7ffce26eac40&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7ff216f71b80&gt;
 </pre></div>
 </div>
-<img alt="../../_images/Lecture_15-pre_19_1.png" src="../../_images/Lecture_15-pre_19_1.png" />
+<img alt="../../_images/Lecture_15-post_19_1.png" src="../../_images/Lecture_15-post_19_1.png" />
 </div>
 </div>
 <p>Does this data have a linear relationship between <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>? Seems like it might be more complicated.</p>
@@ -980,7 +980,7 @@ Disclaimer: this figure (from wikipedia) shows <em>correlation</em> values assoc
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># What do the functions fitted above predict for our data?</span>
 
-<span class="n">preds</span> <span class="o">=</span> <span class="n">mpg_clean</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="p">(</span><span class="s1">&#39;horsepower&#39;</span><span class="p">,</span> <span class="s1">&#39;mpg&#39;</span><span class="p">)]</span>
+<span class="n">preds</span> <span class="o">=</span> <span class="n">mpg_clean</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="p">(</span><span class="s1">&#39;horsepower&#39;</span><span class="p">,</span> <span class="s1">&#39;mpg&#39;</span><span class="p">)]</span> <span class="c1"># </span>
 
 <span class="n">preds</span><span class="p">[</span><span class="s1">&#39;deg1_pred&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">p1</span><span class="p">(</span><span class="n">preds</span><span class="p">[</span><span class="s1">&#39;horsepower&#39;</span><span class="p">])</span>
 <span class="n">preds</span><span class="p">[</span><span class="s1">&#39;deg2_pred&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">p2</span><span class="p">(</span><span class="n">preds</span><span class="p">[</span><span class="s1">&#39;horsepower&#39;</span><span class="p">])</span>
@@ -1138,7 +1138,7 @@ Disclaimer: this figure (from wikipedia) shows <em>correlation</em> values assoc
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;horsepower&#39;, ylabel=&#39;mpg&#39;&gt;
 </pre></div>
 </div>
-<img alt="../../_images/Lecture_15-pre_25_1.png" src="../../_images/Lecture_15-pre_25_1.png" />
+<img alt="../../_images/Lecture_15-post_25_1.png" src="../../_images/Lecture_15-post_25_1.png" />
 </div>
 </div>
 <p>Here’s the solution using scikit learn; it’s a bit more complicated, though it does let you keep using the <code class="docutils literal notranslate"><span class="pre">LinearRegression</span></code> class</p>
@@ -1154,7 +1154,7 @@ Disclaimer: this figure (from wikipedia) shows <em>correlation</em> values assoc
 <span class="n">mod1</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_vals</span><span class="p">,</span> <span class="n">y_vals</span><span class="p">)</span>
 
 <span class="c1"># 2nd order polynomial</span>
-<span class="n">poly2</span> <span class="o">=</span> <span class="n">PolynomialFeatures</span><span class="p">(</span><span class="n">degree</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">include_bias</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">poly2</span> <span class="o">=</span> <span class="n">PolynomialFeatures</span><span class="p">(</span><span class="n">degree</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">include_bias</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="c1"># need `include_bias` = False</span>
 <span class="n">x2_features</span> <span class="o">=</span> <span class="n">poly2</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">x_vals</span><span class="p">)</span>
 <span class="n">mod2</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x2_features</span><span class="p">,</span> <span class="n">y_vals</span><span class="p">)</span>
 
@@ -1165,13 +1165,14 @@ Disclaimer: this figure (from wikipedia) shows <em>correlation</em> values assoc
 <span class="n">mod3</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x3_features</span><span class="p">,</span> <span class="n">y_vals</span><span class="p">)</span>
 
 
-<span class="n">mod2</span><span class="o">.</span><span class="n">coef_</span>
+<span class="n">mod2</span><span class="o">.</span><span class="n">intercept_</span>
+<span class="c1"># mod2.coef_</span>
 <span class="c1"># mod3.coef_</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.46618963,  0.00123054])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>56.90009970211295
 </pre></div>
 </div>
 </div>
@@ -1335,7 +1336,7 @@ Disclaimer: this figure (from wikipedia) shows <em>correlation</em> values assoc
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;horsepower&#39;, ylabel=&#39;mpg&#39;&gt;
 </pre></div>
 </div>
-<img alt="../../_images/Lecture_15-pre_29_1.png" src="../../_images/Lecture_15-pre_29_1.png" />
+<img alt="../../_images/Lecture_15-post_29_1.png" src="../../_images/Lecture_15-post_29_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1536,8 +1537,8 @@ Disclaimer: this figure (from wikipedia) shows <em>correlation</em> values assoc
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Lecture_15-pre_35_0.png" src="../../_images/Lecture_15-pre_35_0.png" />
-<img alt="../../_images/Lecture_15-pre_35_1.png" src="../../_images/Lecture_15-pre_35_1.png" />
+<img alt="../../_images/Lecture_15-post_35_0.png" src="../../_images/Lecture_15-post_35_0.png" />
+<img alt="../../_images/Lecture_15-post_35_1.png" src="../../_images/Lecture_15-post_35_1.png" />
 </div>
 </div>
 <div class="section" id="multiple-regression-overview">
@@ -1616,7 +1617,7 @@ Disclaimer: this figure (from wikipedia) shows <em>correlation</em> values assoc
   <th>Date:</th>             <td>Fri, 29 Apr 2022</td> <th>  Prob (F-statistic):</th> <td>9.91e-34</td>
 </tr>
 <tr>
-  <th>Time:</th>                 <td>10:01:08</td>     <th>  Log-Likelihood:    </th> <td> -477.07</td>
+  <th>Time:</th>                 <td>10:00:57</td>     <th>  Log-Likelihood:    </th> <td> -477.07</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>   142</td>      <th>  AIC:               </th> <td>   960.1</td>
@@ -1689,8 +1690,7 @@ Disclaimer: this figure (from wikipedia) shows <em>correlation</em> values assoc
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="Lecture_14-pre.html" title="previous page">Lecture 14 (4/27/2022)</a>
-    <a class='right-next' id="next-link" href="Lecture_2-post.html" title="next page">Lecture 2 (3/30/22)</a>
+    <a class='left-prev' id="prev-link" href="Lecture_14-post.html" title="previous page">Lecture 14 (4/27/2022)</a>
 
         </div>
         
