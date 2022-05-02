@@ -86,23 +86,23 @@ Below is the (rough) schedule for each of these, but this may change as the quar
 | Week 6 | Mon. 5/2 | **Prediction**: best practices |  |
 | Week 6 | Weds. 5/4 | **Classification**: intro (k neighbors) |  |
 | Week 6 | Fri. 5/6 | **Classification**: logistic regression |  |
-| **Week 6 DEADLINES** |  |  | 5/2: **PSET 4** <br> 5/2: **LAB 5** (*Mon.* section) <br> 5/4: **LAB 5** (*Wed.* section) |
+| **Week 6 DEADLINES** |  |  | 5/2: **LAB 5** (*Mon.* section) <br> 5/4: **LAB 5** (*Wed.* section) <br> 5/6: **PSET 4** |
 | Week 7 | Mon. 5/9 | **Classification**: advanced methods |  |
 | Week 7 | Weds. 5/11 | **Classification**: evaluating solutions |  |
 | Week 7 | Fri. 5/13 | Ethics in data science |  |
-| **Week 7 DEADLINES** |  |  | 5/9: **PSET 5** <br> 5/9: **LAB 6** (*Mon.* section) <br> 5/11: **LAB 6** (*Wed.* section) |
+| **Week 7 DEADLINES** |  |  | 5/9: **LAB 6** (*Mon.* section) <br> 5/11: **LAB 6** (*Wed.* section) <br> 5/13: **PSET 5** |
 | Week 8 | Mon. 5/16 | **Clustering**: intro (k means) |  |
 | Week 8 | Weds. 5/18 | **Clustering**: advanced methods |  |
 | Week 8 | Fri. 5/20 | **Clustering**: evaluating solutions |  |
-| **Week 8 DEADLINES** |  |  | 5/16: **PSET 6** <br> 5/16: **LAB 7** (*Mon.* section) <br> 5/18: **LAB 7** (*Wed.* section) |
+| **Week 8 DEADLINES** |  |  | 5/16: **LAB 7** (*Mon.* section) <br> 5/18: **LAB 7** (*Wed.* section) <br> 5/20: **PSET 6** |
 | Week 9 | Mon. 5/23 | **Dimensionality reduction**: intro |  |
 | Week 9 | Weds. 5/25 | **Dimensionality reduction**: PCA |  |
 | Week 9 | Fri. 5/27 | **Dimensionality reduction**: advanced solutions |  |
-| **Week 9 DEADLINES** |  |  | 5/23: **PSET 7** <br> 5/23: **LAB 8** (*Mon.* section) <br> 5/25: **LAB 8** (*Wed.* section) |
+| **Week 9 DEADLINES** |  |  | 5/23: **LAB 8** (*Mon.* section) <br> 5/25: **LAB 8** (*Wed.* section) <br> 5/27: **PSET 7** |
 | Week 10 | Mon. 5/30 | **HOLIDAY** (no class) |  |
 | Week 10 | Weds. 6/1 | Review |  |
 | Week 10 | Fri. 6/3 | Review |  |
-| **Week 10 DEADLINES** |  |  | 5/30: **PSET 8** <br> 5/30: **LAB 9** (*Mon.* section) <br> 6/1: **LAB 9** (*Wed.* section) <br> 6/1: **LAB 10** (*All* sections) |
+| **Week 10 DEADLINES** |  |  | 5/30: **LAB 9** (*Mon.* section) <br> 6/1: **LAB 9** (*Wed.* section) <br> 6/1: **LAB 10** (*All* sections) <br>  6/3: **PSET 8** |
 | **Finals week DEADLINES** |  |  | 6/8: **[FINAL PROJECT](final.md)** |
 
 
