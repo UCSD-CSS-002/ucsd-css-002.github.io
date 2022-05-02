@@ -54,8 +54,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Lecture 2 (3/30/22)" href="Lecture_2-post.html" />
-    <link rel="prev" title="Week 6" href="Week6_Overview.html" />
+    <link rel="prev" title="Lecture 15 (4/29/2022)" href="Lecture_15-post.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -134,7 +133,7 @@
   Lectures - download before class
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="Week1_Overview.html">
    Week 1
@@ -260,18 +259,18 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="Week6_Overview.html">
    Week 6
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
   <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_16-pre.html">
      Lecture 16 (5/2/2022)
     </a>
    </li>
@@ -283,7 +282,7 @@
   Lecture code - available after class
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Lecture_2-post.html">
    Lecture 2 (3/30/22)
@@ -349,8 +348,8 @@
    Lecture 15 (4/29/2022)
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Lecture_16-post.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Lecture 16 (5/2/2022)
   </a>
  </li>
@@ -395,7 +394,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/lectures/sp22/Lecture_16-pre.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/lectures/sp22/Lecture_16-post.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -415,7 +414,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/UCSD-CSS-002/ucsd-css-002.github.io/issues/new?title=Issue%20on%20page%20%2Flectures/sp22/Lecture_16-pre.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/UCSD-CSS-002/ucsd-css-002.github.io/issues/new?title=Issue%20on%20page%20%2Flectures/sp22/Lecture_16-post.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -436,7 +435,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/UCSD-CSS-002/ucsd-css-002.github.io/master?urlpath=tree/lectures/sp22/Lecture_16-pre.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/UCSD-CSS-002/ucsd-css-002.github.io/master?urlpath=tree/lectures/sp22/Lecture_16-post.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
@@ -771,8 +770,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Lecture_16-pre_8_0.png" src="../../_images/Lecture_16-pre_8_0.png" />
-<img alt="../../_images/Lecture_16-pre_8_1.png" src="../../_images/Lecture_16-pre_8_1.png" />
+<img alt="../../_images/Lecture_16-post_8_0.png" src="../../_images/Lecture_16-post_8_0.png" />
+<img alt="../../_images/Lecture_16-post_8_1.png" src="../../_images/Lecture_16-post_8_1.png" />
 </div>
 </div>
 <p>One of these variables has a strong positive relationship. The other one seems a bit less clear.</p>
@@ -837,8 +836,7 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># What if we don&#39;t include the population predictor?</span>
-<span class="n">x_single</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">gap_subset</span><span class="p">[</span><span class="s1">&#39;logGdpPercap&#39;</span><span class="p">])</span> <span class="c1"># Note: this double bracket syntax is important!</span>
-<span class="n">x_single</span> <span class="o">=</span> <span class="n">x_single</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">gap_subset</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">x_single</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">gap_subset</span><span class="p">[</span><span class="s1">&#39;logGdpPercap&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">gap_subset</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
 <span class="n">x_single</span>
 
 <span class="n">mod_simple</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">x_single</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">y_vals</span><span class="p">)</span>
@@ -886,7 +884,7 @@
   <th>Date:</th>             <td>Mon, 02 May 2022</td> <th>  Prob (F-statistic):</th> <td>9.91e-34</td>
 </tr>
 <tr>
-  <th>Time:</th>                 <td>09:51:40</td>     <th>  Log-Likelihood:    </th> <td> -477.07</td>
+  <th>Time:</th>                 <td>09:51:34</td>     <th>  Log-Likelihood:    </th> <td> -477.07</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>   142</td>      <th>  AIC:               </th> <td>   960.1</td>
@@ -974,7 +972,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Lecture_16-pre_22_0.png" src="../../_images/Lecture_16-pre_22_0.png" />
+<img alt="../../_images/Lecture_16-post_22_0.png" src="../../_images/Lecture_16-post_22_0.png" />
 </div>
 </div>
 <p>Let’s start with a <strong>simple linear regression</strong>:</p>
@@ -987,7 +985,10 @@
 
 <span class="c1"># Add predictions for this model to our dataframe</span>
 <span class="n">preds</span> <span class="o">=</span> <span class="n">gap_subset</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="p">(</span><span class="s2">&quot;logGdpPercap&quot;</span><span class="p">,</span> <span class="s2">&quot;lifeExp&quot;</span><span class="p">)]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
-<span class="n">preds</span><span class="p">[</span><span class="s1">&#39;deg1_pred&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">deg1_fits</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">x_vals</span><span class="p">)</span>
+<span class="n">simple_preds</span> <span class="o">=</span> <span class="n">deg1_fits</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">x_vals</span><span class="p">)</span>
+
+
+<span class="n">preds</span><span class="p">[</span><span class="s1">&#39;deg1_pred&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">simple_preds</span>
 
 <span class="n">preds</span>
 </pre></div>
@@ -1113,7 +1114,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Lecture_16-pre_25_0.png" src="../../_images/Lecture_16-pre_25_0.png" />
+<img alt="../../_images/Lecture_16-post_25_0.png" src="../../_images/Lecture_16-post_25_0.png" />
 </div>
 </div>
 <p>How did we do? Maybe this data is <em>quadratic</em> or <em>cubic</em>?</p>
@@ -1293,7 +1294,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;logGdpPercap&#39;, ylabel=&#39;lifeExp&#39;&gt;
 </pre></div>
 </div>
-<img alt="../../_images/Lecture_16-pre_29_1.png" src="../../_images/Lecture_16-pre_29_1.png" />
+<img alt="../../_images/Lecture_16-post_29_1.png" src="../../_images/Lecture_16-post_29_1.png" />
 </div>
 </div>
 <p>These lines look pretty similar. Do we see any change in <span class="math notranslate nohighlight">\(R^2\)</span> values for these models?</p>
@@ -1319,9 +1320,9 @@ Degree 3 R^2: 0.6589091468875565
 </div>
 </div>
 <p><em>What does this tell us?</em></p>
-<p>…</p>
+<p>Probably don’t need 2nd or 3rd degree polynomials for this relationship.</p>
 <p><em>What happens if we try to fit a much higher-order polynomial function to this data?</em> Similar line or something else?</p>
-<p>…</p>
+<p>???</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fit degree 10 polynomial regression</span>
@@ -1404,7 +1405,7 @@ Degree 3 R^2: 0.6589091468875565
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;logGdpPercap&#39;, ylabel=&#39;lifeExp&#39;&gt;
 </pre></div>
 </div>
-<img alt="../../_images/Lecture_16-pre_39_1.png" src="../../_images/Lecture_16-pre_39_1.png" />
+<img alt="../../_images/Lecture_16-post_39_1.png" src="../../_images/Lecture_16-post_39_1.png" />
 </div>
 </div>
 <p>Hmmm….</p>
@@ -1433,8 +1434,8 @@ Degree 3 R^2: 0.6589091468875565
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Lecture_16-pre_41_0.png" src="../../_images/Lecture_16-pre_41_0.png" />
-<img alt="../../_images/Lecture_16-pre_41_1.png" src="../../_images/Lecture_16-pre_41_1.png" />
+<img alt="../../_images/Lecture_16-post_41_0.png" src="../../_images/Lecture_16-post_41_0.png" />
+<img alt="../../_images/Lecture_16-post_41_1.png" src="../../_images/Lecture_16-post_41_1.png" />
 </div>
 </div>
 <p>This doesn’t seem like it’s capturing the underlying process that generated our data…</p>
@@ -1519,8 +1520,7 @@ Degree 3 R^2: 0.6589091468875565
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="Week6_Overview.html" title="previous page">Week 6</a>
-    <a class='right-next' id="next-link" href="Lecture_2-post.html" title="next page">Lecture 2 (3/30/22)</a>
+    <a class='left-prev' id="prev-link" href="Lecture_15-post.html" title="previous page">Lecture 15 (4/29/2022)</a>
 
         </div>
         
