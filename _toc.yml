@@ -55,3 +55,4 @@ parts:
       - file: lectures/sp22/Lecture_13-post.ipynb
       - file: lectures/sp22/Lecture_14-post.ipynb
       - file: lectures/sp22/Lecture_15-post.ipynb
+      - file: lectures/sp22/Lecture_16-post.ipynb
