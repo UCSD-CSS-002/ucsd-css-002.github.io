@@ -85,10 +85,10 @@ Below is the (rough) schedule for each of these, but this may change as the quar
 | **Week 5 DEADLINES** |  |  | 4/25: **LAB 4** (*Mon.* section) <br> 4/27: **LAB 4** (*Wed.* section) <br> 4/27: **PSET 3** |
 | Week 6 | Mon. 5/2 | **Prediction**: best practices |  |
 | Week 6 | Weds. 5/4 | **Classification**: intro (k neighbors) |  |
-| Week 6 | Fri. 5/6 | **Classification**: logistic regression |  |
+| Week 6 | Fri. 5/6 | **Classification**: evaluating solutions |  |
 | **Week 6 DEADLINES** |  |  | 5/2: **LAB 5** (*Mon.* section) <br> 5/4: **LAB 5** (*Wed.* section) <br> 5/6: **PSET 4** |
-| Week 7 | Mon. 5/9 | **Classification**: advanced methods |  |
-| Week 7 | Weds. 5/11 | **Classification**: evaluating solutions |  |
+| Week 7 | Mon. 5/9 | **Classification**: logistic regression |  |
+| Week 7 | Weds. 5/11 | **Classification**: advanced methods |  |
 | Week 7 | Fri. 5/13 | Ethics in data science |  |
 | **Week 7 DEADLINES** |  |  | 5/9: **LAB 6** (*Mon.* section) <br> 5/11: **LAB 6** (*Wed.* section) <br> 5/13: **PSET 5** |
 | Week 8 | Mon. 5/16 | **Clustering**: intro (k means) |  |
