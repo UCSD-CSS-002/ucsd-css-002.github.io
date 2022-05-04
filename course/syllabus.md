@@ -38,7 +38,7 @@ This course is structured to help you get there. The basic premise we start from
 | Role     | Name                | email    | Office hours  | Location | Zoom |
 | ----------------: | :---------| -----------| ------------ | --------- | -------- |
 | **Instructor** | Erik Brockbank  | [ebrockbank@ucsd.edu](mailto:ebrockbank@ucsd.edu) | Fridays 9:00-10:00AM | 2588 Mandler Hall | [Remote link](https://ucsd.zoom.us/j/7131149147) |
-| **TA** | Purva Kothari | [pukothar@ucsd.edu](mailto:pukothar@ucsd.edu) | Wednesdays 10:00-11:00AM | 1507 Mandler Hall | [Remote link](https://ucsd.zoom.us/j/93025194368) |
+| **TA** | Purva Kothari | [pukothar@ucsd.edu](mailto:pukothar@ucsd.edu) | Wednesdays 10:00-11:00AM (after lab) | ERCA 117 | [Remote link](https://ucsd.zoom.us/j/93025194368) |
 
 ### All the links
 
@@ -200,7 +200,7 @@ The instructors can be reached in the following ways:
 
 - Direct message to specific instructor on {{ url_campuswire }}
 
-Outside of office hours, all communication should happen over {{ url-campuswire }}. Email is reserved for the unanticipated circumstances when campuswire is down, or you cannot access it. In that case, [email the instructor](mailto:ebrockbank@ucsd.edu) about in inability to access Campuswire.
+Outside of office hours, all communication should happen over {{ url_campuswire }}. Email is reserved for the unanticipated circumstances when campuswire is down, or you cannot access it. In that case, [email the instructor](mailto:ebrockbank@ucsd.edu) about in inability to access Campuswire.
 
 ### Specific types of questions / comments
 
