@@ -54,6 +54,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Lecture 21 (5/13/2022)" href="Lecture_21-post.html" />
     <link rel="prev" title="Lecture 19 (5/9/2022)" href="Lecture_19-post.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -408,6 +409,11 @@
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Lecture 20 (5/11/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_21-post.html">
+   Lecture 21 (5/13/2022)
   </a>
  </li>
 </ul>
@@ -859,8 +865,8 @@ Journal.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># sns.scatterplot(x = xtrain[:, 0], y = ytrain)</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">xtest</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">ytest</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># sns.scatterplot(x = xtrain[:, 0], y = ytrain, alpha = .5)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">xtest</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">ytest</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="o">.</span><span class="mi">5</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Age&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;CHD&quot;</span><span class="p">)</span>
 </pre></div>
@@ -966,7 +972,7 @@ Journal.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s show the actual test data</span>
-<span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">xtest</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">ytest</span><span class="p">,</span> <span class="n">hue</span> <span class="o">=</span> <span class="n">ytest</span> <span class="o">==</span> <span class="n">binary_preds</span><span class="p">)</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">xtest</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">ytest</span><span class="p">,</span> <span class="n">hue</span> <span class="o">=</span> <span class="n">ytest</span> <span class="o">==</span> <span class="n">binary_preds</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="o">.</span><span class="mi">5</span><span class="p">)</span>
 
 <span class="c1"># Now, let&#39;s plot our logistic regression curve</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">xtest</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">soft_preds</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span>
@@ -1199,7 +1205,7 @@ Journal.</p>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dtree</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span>
     <span class="c1"># how many layers our decision tree should have (toggle between 1 and 2 and see how this impacts results)</span>
-    <span class="n">max_depth</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="n">max_depth</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
     <span class="n">random_state</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="p">)</span>
 
@@ -1209,7 +1215,7 @@ Journal.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DecisionTreeClassifier(max_depth=2, random_state=1)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DecisionTreeClassifier(max_depth=1, random_state=1)
 </pre></div>
 </div>
 </div>
@@ -1225,13 +1231,9 @@ Journal.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Text(167.4, 181.2, &#39;Age &lt;= 50.5\ngini = 0.453\nsamples = 346\nvalue = [226, 120]\nclass = No CHD&#39;),
- Text(83.7, 108.72, &#39;Age &lt;= 24.5\ngini = 0.339\nsamples = 217\nvalue = [170, 47]\nclass = No CHD&#39;),
- Text(41.85, 36.23999999999998, &#39;gini = 0.038\nsamples = 51\nvalue = [50, 1]\nclass = No CHD&#39;),
- Text(125.55000000000001, 36.23999999999998, &#39;gini = 0.401\nsamples = 166\nvalue = [120, 46]\nclass = No CHD&#39;),
- Text(251.10000000000002, 108.72, &#39;Age &lt;= 59.5\ngini = 0.491\nsamples = 129\nvalue = [56, 73]\nclass = CHD&#39;),
- Text(209.25, 36.23999999999998, &#39;gini = 0.472\nsamples = 81\nvalue = [31, 50]\nclass = CHD&#39;),
- Text(292.95, 36.23999999999998, &#39;gini = 0.499\nsamples = 48\nvalue = [25, 23]\nclass = No CHD&#39;)]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Text(167.4, 163.07999999999998, &#39;Age &lt;= 50.5\ngini = 0.453\nsamples = 346\nvalue = [226, 120]\nclass = No CHD&#39;),
+ Text(83.7, 54.360000000000014, &#39;gini = 0.339\nsamples = 217\nvalue = [170, 47]\nclass = No CHD&#39;),
+ Text(251.10000000000002, 54.360000000000014, &#39;gini = 0.491\nsamples = 129\nvalue = [56, 73]\nclass = CHD&#39;)]
 </pre></div>
 </div>
 <img alt="../../_images/Lecture_20-post_34_1.png" src="../../_images/Lecture_20-post_34_1.png" />
@@ -1261,7 +1263,7 @@ Journal.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6637931034482759
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6810344827586207
 </pre></div>
 </div>
 </div>
@@ -1277,7 +1279,7 @@ Journal.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6637931034482759
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6810344827586207
 </pre></div>
 </div>
 </div>
@@ -1293,122 +1295,122 @@ Journal.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.98039216, 0.01960784],
-       [0.72289157, 0.27710843],
-       [0.72289157, 0.27710843],
-       [0.72289157, 0.27710843],
-       [0.52083333, 0.47916667],
-       [0.98039216, 0.01960784],
-       [0.72289157, 0.27710843],
-       [0.38271605, 0.61728395],
-       [0.72289157, 0.27710843],
-       [0.52083333, 0.47916667],
-       [0.38271605, 0.61728395],
-       [0.72289157, 0.27710843],
-       [0.98039216, 0.01960784],
-       [0.52083333, 0.47916667],
-       [0.72289157, 0.27710843],
-       [0.72289157, 0.27710843],
-       [0.72289157, 0.27710843],
-       [0.38271605, 0.61728395],
-       [0.72289157, 0.27710843],
-       [0.72289157, 0.27710843],
-       [0.72289157, 0.27710843],
-       [0.72289157, 0.27710843],
-       [0.72289157, 0.27710843],
-       [0.72289157, 0.27710843],
-       [0.98039216, 0.01960784],
-       [0.52083333, 0.47916667],
-       [0.72289157, 0.27710843],
-       [0.72289157, 0.27710843],
-       [0.52083333, 0.47916667],
-       [0.52083333, 0.47916667],
-       [0.38271605, 0.61728395],
-       [0.72289157, 0.27710843],
-       [0.72289157, 0.27710843],
-       [0.72289157, 0.27710843],
-       [0.72289157, 0.27710843],
-       [0.38271605, 0.61728395],
-       [0.98039216, 0.01960784],
-       [0.38271605, 0.61728395],
-       [0.72289157, 0.27710843],
-       [0.38271605, 0.61728395],
-       [0.98039216, 0.01960784],
-       [0.72289157, 0.27710843],
-       [0.72289157, 0.27710843],
-       [0.38271605, 0.61728395],
-       [0.98039216, 0.01960784],
-       [0.72289157, 0.27710843],
-       [0.38271605, 0.61728395],
-       [0.98039216, 0.01960784],
-       [0.38271605, 0.61728395],
-       [0.98039216, 0.01960784],
-       [0.72289157, 0.27710843],
-       [0.52083333, 0.47916667],
-       [0.38271605, 0.61728395],
-       [0.52083333, 0.47916667],
-       [0.38271605, 0.61728395],
-       [0.72289157, 0.27710843],
-       [0.72289157, 0.27710843],
-       [0.72289157, 0.27710843],
-       [0.38271605, 0.61728395],
-       [0.38271605, 0.61728395],
-       [0.72289157, 0.27710843],
-       [0.72289157, 0.27710843],
-       [0.38271605, 0.61728395],
-       [0.72289157, 0.27710843],
-       [0.38271605, 0.61728395],
-       [0.52083333, 0.47916667],
-       [0.72289157, 0.27710843],
-       [0.72289157, 0.27710843],
-       [0.72289157, 0.27710843],
-       [0.72289157, 0.27710843],
-       [0.98039216, 0.01960784],
-       [0.98039216, 0.01960784],
-       [0.72289157, 0.27710843],
-       [0.72289157, 0.27710843],
-       [0.98039216, 0.01960784],
-       [0.98039216, 0.01960784],
-       [0.72289157, 0.27710843],
-       [0.52083333, 0.47916667],
-       [0.98039216, 0.01960784],
-       [0.72289157, 0.27710843],
-       [0.38271605, 0.61728395],
-       [0.38271605, 0.61728395],
-       [0.72289157, 0.27710843],
-       [0.38271605, 0.61728395],
-       [0.38271605, 0.61728395],
-       [0.98039216, 0.01960784],
-       [0.52083333, 0.47916667],
-       [0.38271605, 0.61728395],
-       [0.72289157, 0.27710843],
-       [0.38271605, 0.61728395],
-       [0.72289157, 0.27710843],
-       [0.72289157, 0.27710843],
-       [0.52083333, 0.47916667],
-       [0.72289157, 0.27710843],
-       [0.52083333, 0.47916667],
-       [0.72289157, 0.27710843],
-       [0.72289157, 0.27710843],
-       [0.72289157, 0.27710843],
-       [0.72289157, 0.27710843],
-       [0.98039216, 0.01960784],
-       [0.72289157, 0.27710843],
-       [0.38271605, 0.61728395],
-       [0.38271605, 0.61728395],
-       [0.72289157, 0.27710843],
-       [0.38271605, 0.61728395],
-       [0.52083333, 0.47916667],
-       [0.72289157, 0.27710843],
-       [0.72289157, 0.27710843],
-       [0.38271605, 0.61728395],
-       [0.38271605, 0.61728395],
-       [0.72289157, 0.27710843],
-       [0.52083333, 0.47916667],
-       [0.72289157, 0.27710843],
-       [0.72289157, 0.27710843],
-       [0.72289157, 0.27710843],
-       [0.52083333, 0.47916667]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.43410853, 0.56589147],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.43410853, 0.56589147],
+       [0.78341014, 0.21658986],
+       [0.43410853, 0.56589147],
+       [0.43410853, 0.56589147],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.43410853, 0.56589147],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.43410853, 0.56589147],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.43410853, 0.56589147],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.43410853, 0.56589147],
+       [0.43410853, 0.56589147],
+       [0.43410853, 0.56589147],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.43410853, 0.56589147],
+       [0.78341014, 0.21658986],
+       [0.43410853, 0.56589147],
+       [0.78341014, 0.21658986],
+       [0.43410853, 0.56589147],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.43410853, 0.56589147],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.43410853, 0.56589147],
+       [0.78341014, 0.21658986],
+       [0.43410853, 0.56589147],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.43410853, 0.56589147],
+       [0.43410853, 0.56589147],
+       [0.43410853, 0.56589147],
+       [0.43410853, 0.56589147],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.43410853, 0.56589147],
+       [0.43410853, 0.56589147],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.43410853, 0.56589147],
+       [0.78341014, 0.21658986],
+       [0.43410853, 0.56589147],
+       [0.43410853, 0.56589147],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.43410853, 0.56589147],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.43410853, 0.56589147],
+       [0.43410853, 0.56589147],
+       [0.78341014, 0.21658986],
+       [0.43410853, 0.56589147],
+       [0.43410853, 0.56589147],
+       [0.78341014, 0.21658986],
+       [0.43410853, 0.56589147],
+       [0.43410853, 0.56589147],
+       [0.78341014, 0.21658986],
+       [0.43410853, 0.56589147],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.43410853, 0.56589147],
+       [0.78341014, 0.21658986],
+       [0.43410853, 0.56589147],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.43410853, 0.56589147],
+       [0.43410853, 0.56589147],
+       [0.78341014, 0.21658986],
+       [0.43410853, 0.56589147],
+       [0.43410853, 0.56589147],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.43410853, 0.56589147],
+       [0.43410853, 0.56589147],
+       [0.78341014, 0.21658986],
+       [0.43410853, 0.56589147],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.43410853, 0.56589147]])
 </pre></div>
 </div>
 </div>
@@ -1419,7 +1421,7 @@ Journal.</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This reveals the cutoff(s) chosen by our decision tree! </span>
 <span class="n">train_preds</span> <span class="o">=</span> <span class="n">dtree</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">xtrain</span><span class="p">)</span>
 
-<span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">xtrain</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">ytrain</span><span class="p">,</span> <span class="n">hue</span> <span class="o">=</span> <span class="n">ytrain</span> <span class="o">==</span> <span class="n">train_preds</span><span class="p">)</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">xtrain</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">ytrain</span><span class="p">,</span> <span class="n">hue</span> <span class="o">=</span> <span class="n">ytrain</span> <span class="o">==</span> <span class="n">train_preds</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="o">.</span><span class="mi">25</span><span class="p">)</span>
 <span class="c1"># These are the decision boundaries in the tree. You can see how they segment our data into more accurate predictions</span>
 <span class="n">g</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mf">50.5</span><span class="p">)</span>
 <span class="n">g</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mf">59.5</span><span class="p">)</span>
@@ -1428,7 +1430,7 @@ Journal.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.lines.Line2D at 0x7fa4f6fdd700&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.lines.Line2D at 0x7f96ff7fd820&gt;
 </pre></div>
 </div>
 <img alt="../../_images/Lecture_20-post_41_1.png" src="../../_images/Lecture_20-post_41_1.png" />
@@ -1466,7 +1468,7 @@ Journal.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.417910447761194
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5542168674698795
 </pre></div>
 </div>
 </div>
@@ -1536,11 +1538,11 @@ Journal.</p>
 <span class="c1"># svm.support_vectors_</span>
 
 <span class="c1"># For example, we can view the items in the training set that formed the support vector</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">xtrain</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">ytrain</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">xtrain</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">ytrain</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="o">.</span><span class="mi">25</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Training data&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
-<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">xtrain</span><span class="p">[</span><span class="n">svm</span><span class="o">.</span><span class="n">support_</span><span class="p">][:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">ytrain</span><span class="p">[</span><span class="n">svm</span><span class="o">.</span><span class="n">support_</span><span class="p">])</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">xtrain</span><span class="p">[</span><span class="n">svm</span><span class="o">.</span><span class="n">support_</span><span class="p">][:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">ytrain</span><span class="p">[</span><span class="n">svm</span><span class="o">.</span><span class="n">support_</span><span class="p">],</span> <span class="n">alpha</span> <span class="o">=</span> <span class="o">.</span><span class="mi">25</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Support vectors&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -1596,122 +1598,122 @@ Journal.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.76763912, 0.23236088],
-       [0.76876988, 0.23123012],
-       [0.71589516, 0.28410484],
-       [0.768298  , 0.231702  ],
-       [0.39426241, 0.60573759],
-       [0.76765418, 0.23234582],
-       [0.77296575, 0.22703425],
-       [0.48807379, 0.51192621],
-       [0.76876988, 0.23123012],
-       [0.39947377, 0.60052623],
-       [0.43194998, 0.56805002],
-       [0.7680824 , 0.2319176 ],
-       [0.76765418, 0.23234582],
-       [0.40163549, 0.59836451],
-       [0.76610332, 0.23389668],
-       [0.71589516, 0.28410484],
-       [0.76858555, 0.23141445],
-       [0.52256066, 0.47743934],
-       [0.76610332, 0.23389668],
-       [0.77285706, 0.22714294],
-       [0.76766363, 0.23233637],
-       [0.76766363, 0.23233637],
-       [0.74944246, 0.25055754],
-       [0.76876988, 0.23123012],
-       [0.76763912, 0.23236088],
-       [0.41488348, 0.58511652],
-       [0.76876988, 0.23123012],
-       [0.75994807, 0.24005193],
-       [0.41488348, 0.58511652],
-       [0.39426241, 0.60573759],
-       [0.45745455, 0.54254545],
-       [0.76695476, 0.23304524],
-       [0.76876988, 0.23123012],
-       [0.76546001, 0.23453999],
-       [0.76695476, 0.23304524],
-       [0.59566192, 0.40433808],
-       [0.76768565, 0.23231435],
-       [0.4124238 , 0.5875762 ],
-       [0.76688974, 0.23311026],
-       [0.59566192, 0.40433808],
-       [0.76768565, 0.23231435],
-       [0.76610332, 0.23389668],
-       [0.77105447, 0.22894553],
-       [0.55914447, 0.44085553],
-       [0.76694535, 0.23305465],
-       [0.768298  , 0.231702  ],
-       [0.43194998, 0.56805002],
-       [0.76768565, 0.23231435],
-       [0.4124238 , 0.5875762 ],
-       [0.76763912, 0.23236088],
-       [0.75994807, 0.24005193],
-       [0.41488348, 0.58511652],
-       [0.48807379, 0.51192621],
-       [0.40163549, 0.59836451],
-       [0.66091225, 0.33908775],
-       [0.77034716, 0.22965284],
-       [0.76858555, 0.23141445],
-       [0.71589516, 0.28410484],
-       [0.4124238 , 0.5875762 ],
-       [0.45745455, 0.54254545],
-       [0.77296575, 0.22703425],
-       [0.76858555, 0.23141445],
-       [0.63006155, 0.36993845],
-       [0.7680824 , 0.2319176 ],
-       [0.55914447, 0.44085553],
-       [0.39947377, 0.60052623],
-       [0.75994807, 0.24005193],
-       [0.75994807, 0.24005193],
-       [0.77034716, 0.22965284],
-       [0.76695476, 0.23304524],
-       [0.76768565, 0.23231435],
-       [0.76768565, 0.23231435],
-       [0.77296575, 0.22703425],
-       [0.76870906, 0.23129094],
-       [0.76744174, 0.23255826],
-       [0.76720173, 0.23279827],
-       [0.76701312, 0.23298688],
-       [0.39947377, 0.60052623],
-       [0.76765418, 0.23234582],
-       [0.768298  , 0.231702  ],
-       [0.48807379, 0.51192621],
-       [0.55914447, 0.44085553],
-       [0.76688974, 0.23311026],
-       [0.43194998, 0.56805002],
-       [0.52256066, 0.47743934],
-       [0.76744174, 0.23255826],
-       [0.39342279, 0.60657721],
-       [0.48807379, 0.51192621],
-       [0.74944246, 0.25055754],
-       [0.45745455, 0.54254545],
-       [0.76546001, 0.23453999],
-       [0.76848396, 0.23151604],
-       [0.39342279, 0.60657721],
-       [0.77296575, 0.22703425],
-       [0.39426241, 0.60573759],
-       [0.77195515, 0.22804485],
-       [0.76876988, 0.23123012],
-       [0.77195515, 0.22804485],
-       [0.76876988, 0.23123012],
-       [0.76763912, 0.23236088],
-       [0.77195515, 0.22804485],
-       [0.63006155, 0.36993845],
-       [0.43194998, 0.56805002],
-       [0.76695476, 0.23304524],
-       [0.43194998, 0.56805002],
-       [0.40163549, 0.59836451],
-       [0.76695476, 0.23304524],
-       [0.76695476, 0.23304524],
-       [0.55914447, 0.44085553],
-       [0.59566192, 0.40433808],
-       [0.768298  , 0.231702  ],
-       [0.39342279, 0.60657721],
-       [0.768298  , 0.231702  ],
-       [0.77195515, 0.22804485],
-       [0.75994807, 0.24005193],
-       [0.39342279, 0.60657721]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.72205194, 0.27794806],
+       [0.72296428, 0.27703572],
+       [0.68147984, 0.31852016],
+       [0.7225834 , 0.2774166 ],
+       [0.44856935, 0.55143065],
+       [0.72206408, 0.27793592],
+       [0.72636084, 0.27363916],
+       [0.5160233 , 0.4839767 ],
+       [0.72296428, 0.27703572],
+       [0.45230205, 0.54769795],
+       [0.47566035, 0.52433965],
+       [0.72240945, 0.27759055],
+       [0.72206408, 0.27793592],
+       [0.45385211, 0.54614789],
+       [0.7208148 , 0.2791852 ],
+       [0.68147984, 0.31852016],
+       [0.72281548, 0.27718452],
+       [0.54064655, 0.45935345],
+       [0.7208148 , 0.2791852 ],
+       [0.72627263, 0.27372737],
+       [0.7220717 , 0.2779283 ],
+       [0.7220717 , 0.2779283 ],
+       [0.707535  , 0.292465  ],
+       [0.72296428, 0.27703572],
+       [0.72205194, 0.27794806],
+       [0.46336965, 0.53663035],
+       [0.72296428, 0.27703572],
+       [0.71587919, 0.28412081],
+       [0.46336965, 0.53663035],
+       [0.44856935, 0.55143065],
+       [0.4940357 , 0.5059643 ],
+       [0.72150038, 0.27849962],
+       [0.72296428, 0.27703572],
+       [0.72029727, 0.27970273],
+       [0.72150038, 0.27849962],
+       [0.59280191, 0.40719809],
+       [0.72208946, 0.27791054],
+       [0.46160055, 0.53839945],
+       [0.721448  , 0.278552  ],
+       [0.59280191, 0.40719809],
+       [0.72208946, 0.27791054],
+       [0.7208148 , 0.2791852 ],
+       [0.72481146, 0.27518854],
+       [0.5666854 , 0.4333146 ],
+       [0.7214928 , 0.2785072 ],
+       [0.7225834 , 0.2774166 ],
+       [0.47566035, 0.52433965],
+       [0.72208946, 0.27791054],
+       [0.46160055, 0.53839945],
+       [0.72205194, 0.27794806],
+       [0.71587919, 0.28412081],
+       [0.46336965, 0.53663035],
+       [0.5160233 , 0.4839767 ],
+       [0.45385211, 0.54614789],
+       [0.64053568, 0.35946432],
+       [0.72423901, 0.27576099],
+       [0.72281548, 0.27718452],
+       [0.68147984, 0.31852016],
+       [0.46160055, 0.53839945],
+       [0.4940357 , 0.5059643 ],
+       [0.72636084, 0.27363916],
+       [0.72281548, 0.27718452],
+       [0.61774494, 0.38225506],
+       [0.72240945, 0.27759055],
+       [0.5666854 , 0.4333146 ],
+       [0.45230205, 0.54769795],
+       [0.71587919, 0.28412081],
+       [0.71587919, 0.28412081],
+       [0.72423901, 0.27576099],
+       [0.72150038, 0.27849962],
+       [0.72208946, 0.27791054],
+       [0.72208946, 0.27791054],
+       [0.72636084, 0.27363916],
+       [0.72291518, 0.27708482],
+       [0.72189281, 0.27810719],
+       [0.72169937, 0.27830063],
+       [0.7215474 , 0.2784526 ],
+       [0.45230205, 0.54769795],
+       [0.72206408, 0.27793592],
+       [0.7225834 , 0.2774166 ],
+       [0.5160233 , 0.4839767 ],
+       [0.5666854 , 0.4333146 ],
+       [0.721448  , 0.278552  ],
+       [0.47566035, 0.52433965],
+       [0.54064655, 0.45935345],
+       [0.72189281, 0.27810719],
+       [0.44796854, 0.55203146],
+       [0.5160233 , 0.4839767 ],
+       [0.707535  , 0.292465  ],
+       [0.4940357 , 0.5059643 ],
+       [0.72029727, 0.27970273],
+       [0.72273347, 0.27726653],
+       [0.44796854, 0.55203146],
+       [0.72636084, 0.27363916],
+       [0.44856935, 0.55143065],
+       [0.72554113, 0.27445887],
+       [0.72296428, 0.27703572],
+       [0.72554113, 0.27445887],
+       [0.72296428, 0.27703572],
+       [0.72205194, 0.27794806],
+       [0.72554113, 0.27445887],
+       [0.61774494, 0.38225506],
+       [0.47566035, 0.52433965],
+       [0.72150038, 0.27849962],
+       [0.47566035, 0.52433965],
+       [0.45385211, 0.54614789],
+       [0.72150038, 0.27849962],
+       [0.72150038, 0.27849962],
+       [0.5666854 , 0.4333146 ],
+       [0.59280191, 0.40719809],
+       [0.7225834 , 0.2774166 ],
+       [0.44796854, 0.55203146],
+       [0.7225834 , 0.2774166 ],
+       [0.72554113, 0.27445887],
+       [0.71587919, 0.28412081],
+       [0.44796854, 0.55203146]])
 </pre></div>
 </div>
 </div>
@@ -1761,6 +1763,7 @@ Journal.</p>
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="Lecture_19-post.html" title="previous page">Lecture 19 (5/9/2022)</a>
+    <a class='right-next' id="next-link" href="Lecture_21-post.html" title="next page">Lecture 21 (5/13/2022)</a>
 
         </div>
         
