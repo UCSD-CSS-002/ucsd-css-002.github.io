@@ -54,7 +54,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Lecture 2 (3/30/22)" href="Lecture_2-post.html" />
+    <link rel="next" title="Lecture 18 (5/6/2022)" href="Lecture_18-pre.html" />
     <link rel="prev" title="Lecture 16 (5/2/2022)" href="Lecture_16-pre.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -280,6 +280,38 @@
      Lecture 17 (5/4/2022)
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_18-pre.html">
+     Lecture 18 (5/6/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week7_Overview.html">
+   Week 7
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_19-pre.html">
+     Lecture 19 (5/9/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_20-pre.html">
+     Lecture 20 (5/11/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_21-pre.html">
+     Lecture 21 (5/13/2022)
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -357,6 +389,26 @@
  <li class="toctree-l1">
   <a class="reference internal" href="Lecture_16-post.html">
    Lecture 16 (5/2/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_17-post.html">
+   Lecture 17 (5/4/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_18-post.html">
+   Lecture 18 (5/6/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_19-post.html">
+   Lecture 19 (5/9/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_20-post.html">
+   Lecture 20 (5/11/2022)
   </a>
  </li>
 </ul>
@@ -671,7 +723,7 @@
 </ul>
 <p><strong>Why this matters</strong></p>
 <p>In addition to the examples above, binary classification models can also be used for highly consequential decisions. Consider a model that uses information about loan applicants (credit score, employment) to decide whether they are likely to repay a loan. Or, the real-world example below:</p>
-<p><img alt="recidivism_classifier" src="lectures/sp22/img/recidivism.png" />
+<p><img alt="recidivism_classifier" src="../../_images/recidivism.png" />
 (<a class="reference external" href="https://www.technologyreview.com/2019/01/21/137783/algorithms-criminal-justice-ai/">source</a>, see also <a class="reference external" href="https://www.nytimes.com/2020/02/06/technology/predictive-algorithms-crime.html">here</a>)</p>
 </div>
 <div class="section" id="multiclass-classification">
@@ -682,11 +734,11 @@
 <li><p>Common data science problem: use the pixels of an image to determine the <em>number</em> shown in the image (MNIST dataset)</p></li>
 <li><p>Social science: use the text of a document to determine its author or other important information about it</p></li>
 </ul>
-<p><img alt="mnist" src="lectures/sp22/img/mnist.png" />
+<p><img alt="mnist" src="../../_images/mnist.png" />
 The <em>MNIST</em> dataset is a popular dataset for image-based classification (<a class="reference external" href="https://en.wikipedia.org/wiki/MNIST_database">source</a>)</p>
 <p><strong>Why this matters</strong></p>
 <p>One domain that you might not think of as a “classification problem” is face recognition. Here, the training data is prior photos of a person and the label is that person’s identity. Deep learning classification approaches can be very effective at face recognition, raising serious ethical issues for its use in AI and governance (see below).</p>
-<p><img alt="fb" src="lectures/sp22/img/fb.png" /></p>
+<p><img alt="fb" src="../../_images/fb.png" /></p>
 <p>(<a class="reference external" href="https://www.nytimes.com/2021/11/02/technology/facebook-facial-recognition.html">source</a>)</p>
 </div>
 <div class="section" id="other-types-of-classification-less-common">
@@ -715,7 +767,7 @@ The <em>MNIST</em> dataset is a popular dataset for image-based classification (
 <h3>How it works<a class="headerlink" href="#how-it-works" title="Permalink to this headline">¶</a></h3>
 <p>The central idea with k-NN is that when you see a new data point that has features <span class="math notranslate nohighlight">\(\theta\)</span> and an <em>unknown</em> label <span class="math notranslate nohighlight">\(\lambda\)</span> that you’re trying to identify, your best guess is to find the training items whose features (<span class="math notranslate nohighlight">\(x\)</span>) are <em>most similar</em> to <span class="math notranslate nohighlight">\(\theta\)</span> and assume its label is the same as the majority of those “neighbors”.</p>
 <p>It’s kind of like the cafeteria in Mean Girls…</p>
-<p><img alt="mean_girls_cafeteria" src="lectures/sp22/img/mean_girls.jpeg" /></p>
+<p><img alt="mean_girls_cafeteria" src="../../_images/mean_girls.jpeg" /></p>
 <p><em>Birds of a feather flock together</em>: the k-NN classifier guesses an item’s label based on whatever training data the item is <em>closest to</em>.</p>
 <p><strong>Pseudo-code</strong></p>
 <p>Steps for classifying a <em>new</em> example with features <span class="math notranslate nohighlight">\(\theta\)</span> and <em>unknown</em> label <span class="math notranslate nohighlight">\(\lambda\)</span> (more <a class="reference external" href="https://towardsdatascience.com/machine-learning-basics-with-the-k-nearest-neighbors-algorithm-6a6e71d01761">here</a>):</p>
@@ -725,7 +777,7 @@ The <em>MNIST</em> dataset is a popular dataset for image-based classification (
 <li><p>After cycling through all known data points, select the <span class="math notranslate nohighlight">\(k\)</span> data points whose features are the <em>shortest</em> distance to our unknown data point. These are the “nearest neighbors.” We choose <span class="math notranslate nohighlight">\(k\)</span> ahead of time!</p></li>
 <li><p>Select an estimated label <span class="math notranslate nohighlight">\(\hat{\lambda}\)</span> for our unknown data point that corresponds to the <em>most common label</em> <span class="math notranslate nohighlight">\(Y\)</span> among the nearest data points from step 3.</p></li>
 </ol>
-<p><img alt="knn_wikipedia" src="lectures/sp22/img/knn.png" /></p>
+<p><img alt="knn_wikipedia" src="../../_images/knn.png" /></p>
 <p>In the image above, we’re trying to guess a classification (<em>red triangle</em> or <em>blue square</em> for the green circle. The black outlines show our <em>nearest neighbors</em> for <span class="math notranslate nohighlight">\(k = 3\)</span> and <span class="math notranslate nohighlight">\(k = 5\)</span> (<a class="reference external" href="https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm">source</a>)</p>
 <p>Let’s see what this looks like in practice!</p>
 </div>
@@ -1011,7 +1063,7 @@ Name: 8, dtype: float64
 <p>First, we need a way to measure its distance to all the training datapoints.</p>
 <p>For this, we’ll use the <em>Euclidean distance between feature values</em>, but other approaches work as well.</p>
 <p>Here’s an illustration of the distance between our test point <span class="math notranslate nohighlight">\(X\)</span> and a sample training point <span class="math notranslate nohighlight">\(\alpha\)</span>:</p>
-<p><img alt="knn_distance" src="lectures/sp22/img/knn_dist.png" /></p>
+<p><img alt="knn_distance" src="../../_images/knn_dist.png" /></p>
 <p>We need to calculate the distance between <span class="math notranslate nohighlight">\(X\)</span> and <em>all the other data points in our training set</em>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1510,7 +1562,7 @@ Name: species, dtype: object
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="Lecture_16-pre.html" title="previous page">Lecture 16 (5/2/2022)</a>
-    <a class='right-next' id="next-link" href="Lecture_2-post.html" title="next page">Lecture 2 (3/30/22)</a>
+    <a class='right-next' id="next-link" href="Lecture_18-pre.html" title="next page">Lecture 18 (5/6/2022)</a>
 
         </div>
         
