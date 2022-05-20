@@ -54,7 +54,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Lecture 2 (3/30/22)" href="Lecture_2-post.html" />
+    <link rel="next" title="Lecture 24 (5/20/2022)" href="Lecture_24-pre.html" />
     <link rel="prev" title="Lecture 22 (5/16/2022)" href="Lecture_22-pre.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -334,6 +334,11 @@
      Lecture 23 (5/18/2022)
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_24-pre.html">
+     Lecture 24 (5/20/2022)
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -441,6 +446,16 @@
  <li class="toctree-l1">
   <a class="reference internal" href="Lecture_22-post.html">
    Lecture 22 (5/16/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_23-post.html">
+   Lecture 23 (5/18/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_24-post.html">
+   Lecture 24 (5/20/2022)
   </a>
  </li>
 </ul>
@@ -740,7 +755,7 @@
 </div>
 </div>
 <p><strong>Step 3: profit</strong></p>
-<p><img alt="leo" src="lectures/sp22/img/leo.gif" /></p>
+<p><img alt="leo" src="../../_images/leo.gif" /></p>
 <hr class="docutils" />
 <div class="section" id="ensuring-the-right-number-of-clusters">
 <h2>Ensuring the right number of clusters<a class="headerlink" href="#ensuring-the-right-number-of-clusters" title="Permalink to this headline">¶</a></h2>
@@ -865,11 +880,11 @@
 <p>Okay, so you’ve chosen an optimal number of clusters using something like the elbow method.</p>
 <p>Another important question to ask is whether the cluster assignments that <span class="math notranslate nohighlight">\(k\)</span>-means produces (and the corresponding <em>inertia</em> value) are <em>stable</em>. In other words, will <span class="math notranslate nohighlight">\(k\)</span>-means always converge to the same clusters for a given <span class="math notranslate nohighlight">\(k\)</span> value?</p>
 <p>It turns out, <strong><span class="math notranslate nohighlight">\(k\)</span>-means guarantees convergence, but it doesn’t guarantee that it will converge to the <em>global minimum</em> inertia for a given <span class="math notranslate nohighlight">\(k\)</span> value</strong>.</p>
-<p><img alt="padme" src="lectures/sp22/img/padme.jpeg" /></p>
+<p><img alt="padme" src="../../_images/padme.jpeg" /></p>
 <p><strong>Why doesn’t <span class="math notranslate nohighlight">\(k\)</span>-means choose the best cluster allocation every time?</strong></p>
 <p>One of the requirements for <span class="math notranslate nohighlight">\(k\)</span>-means is that you start out with a random set of points as the assigned cluster centers. Which points you choose at the outset can lead to different clustering solutions once the algorithm converges.</p>
 <p>Here’s a really clear illustration of this from the <span class="math notranslate nohighlight">\(k\)</span>-means wikipedia page (<a class="reference external" href="https://en.wikipedia.org/wiki/K-means_clustering">link</a>):</p>
-<p><img alt="km_convergence" src="lectures/sp22/img/km_convergence.png" /></p>
+<p><img alt="km_convergence" src="../../_images/km_convergence.png" /></p>
 <p>In the example above, we can see a <span class="math notranslate nohighlight">\(k\)</span>-means <em>starting state</em> with four randomly chosen cluster centers on the far left, and then the cluster assignments it converges to at the far right, which obviously doesn’t match how this data naturally clusters.</p>
 <p><em>So what can we do about this?</em></p>
 <div class="section" id="solution-1-try-again">
@@ -999,7 +1014,7 @@
 </div>
 </div>
 <p>The wikipedia page for <span class="math notranslate nohighlight">\(k\)</span>-means illustrates a similar example and calls the data set “mouse” (can you guess why??), so we’ll do the same here.</p>
-<p><img alt="mickey" src="lectures/sp22/img/mickey.png" /></p>
+<p><img alt="mickey" src="../../_images/mickey.png" /></p>
 <p>Now, let’s see what happens when we estimate clusters in this data using <span class="math notranslate nohighlight">\(k\)</span>-means:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1082,7 +1097,7 @@
 <li><p>And, they give us an opportunity to discuss <em>Expectation Maximization</em>, an important concept in model fitting.</p></li>
 </ul>
 <p>If you’d like to learn more about these and other solutions, there’s a really clear and interesting tutorial about the different sklearn clustering algorithms <a class="reference external" href="https://scikit-learn.org/stable/modules/clustering.html#clustering">here</a>.</p>
-<p><img alt="clusters" src="lectures/sp22/img/clusters.png" /></p>
+<p><img alt="clusters" src="../../_images/clusters.png" /></p>
 </div>
 </div>
 </div>
@@ -1113,7 +1128,7 @@
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="Lecture_22-pre.html" title="previous page">Lecture 22 (5/16/2022)</a>
-    <a class='right-next' id="next-link" href="Lecture_2-post.html" title="next page">Lecture 2 (3/30/22)</a>
+    <a class='right-next' id="next-link" href="Lecture_24-pre.html" title="next page">Lecture 24 (5/20/2022)</a>
 
         </div>
         

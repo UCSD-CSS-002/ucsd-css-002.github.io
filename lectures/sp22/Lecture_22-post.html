@@ -54,6 +54,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Lecture 23 (5/18/2022)" href="Lecture_23-post.html" />
     <link rel="prev" title="Lecture 21 (5/13/2022)" href="Lecture_21-post.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -328,6 +329,16 @@
      Lecture 22 (5/16/2022)
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_23-pre.html">
+     Lecture 23 (5/18/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_24-pre.html">
+     Lecture 24 (5/20/2022)
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -435,6 +446,16 @@
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Lecture 22 (5/16/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_23-post.html">
+   Lecture 23 (5/18/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_24-post.html">
+   Lecture 24 (5/20/2022)
   </a>
  </li>
 </ul>
@@ -727,7 +748,7 @@
 <h3>Supervised movie genres<a class="headerlink" href="#supervised-movie-genres" title="Permalink to this headline">¶</a></h3>
 <p>Traditionally, music or movie stores are roughly organized by <em>genre</em>. One of the ways people find new books or movies they expect to enjoy is by perusing the shelves for genres they like.</p>
 <p>Identifying music or movie genres is a kind of <strong>supervised classification problem</strong>. Given a large set of features like who is in a movie, who made it, even the plot summary, and a set of labeled examples, we can learn to map these features onto genre predictions. Then, when a new movie arrives on our shelves, we can predict its genre based on its features. Or, when a customer asks for a movie recommendation, we can show them movies in their favorite genres.</p>
-<p><img alt="blockbuster" src="lectures/sp22/img/blockbuster.jpeg" /></p>
+<p><img alt="blockbuster" src="../../_images/blockbuster.jpeg" /></p>
 </div>
 <div class="section" id="unsupervised-movie-genres">
 <h3>Unsupervised movie genres<a class="headerlink" href="#unsupervised-movie-genres" title="Permalink to this headline">¶</a></h3>
@@ -735,12 +756,12 @@
 <p>Instead, they assume that there is deep structure in the ways people watch movies or the music they listen to which may not always correspond to particular <em>genres</em> but <em>is</em> helpful for organizing their movie library and identifying what people want to see or hear.</p>
 <p>Their recommendation systems use <strong>unsupervised clustering and dimensionality reduction</strong> to determine what kind of movies or music people will enjoy (note: I haven’t seen how Netflix or Spotify solve these problems but this is a fairly safe assumption).</p>
 <p>For example, Netflix may look for ways of <em>clustering</em> their movies based on the movies people tended to watch together, then try to come up with descriptive genres after the fact (“Heart-warming family movies” or “Animated comedies”). Spotify does similar things when it describes the genres you listen to.</p>
-<p><img alt="netflix" src="lectures/sp22/img/netflix_genres.png" /></p>
+<p><img alt="netflix" src="../../_images/netflix_genres.png" /></p>
 <p>Unsupervised learning is something you encounter all the time in today’s tech ecosystem. Other recommendation systems (e.g., Amazon suggesting future purchases) rely on it, as do many other algorithms that have a) rich data and b) complex behaviors or outputs that may be hard to categorize.</p>
 </div>
 <div class="section" id="another-example-margaritas">
 <h3>Another example: margaritas?<a class="headerlink" href="#another-example-margaritas" title="Permalink to this headline">¶</a></h3>
-<p><img alt="margaritas" src="lectures/sp22/img/k-margs.png" /></p>
+<p><img alt="margaritas" src="../../_images/k-margs.png" /></p>
 <p>(Source: <a class="reference external" href="https://fivethirtyeight.com/videos/we-got-drunk-on-margaritas-for-science/">538</a>)</p>
 <p><em>Why is this example here?</em></p>
 <p>Apart from being kind of funny (and recent), it actually illustrates the appeal of unsupervised clustering really well.</p>
@@ -916,7 +937,7 @@
 <h2>The <span class="math notranslate nohighlight">\(k\)</span>-means algorithm<a class="headerlink" href="#the-k-means-algorithm" title="Permalink to this headline">¶</a></h2>
 <p>The <span class="math notranslate nohighlight">\(k\)</span>-means algorithm has a similar name to its classification colleague, <span class="math notranslate nohighlight">\(k\)</span>-nearest neighbors, but the two have some important differences!</p>
 <p>Here’s how <span class="math notranslate nohighlight">\(k\)</span>-means works:</p>
-<p><img alt="kmeans" src="lectures/sp22/img/kmeans.png" /></p>
+<p><img alt="kmeans" src="../../_images/kmeans.png" /></p>
 <p>(Source: <a class="reference external" href="https://en.wikipedia.org/wiki/K-means_clustering">wikipedia</a>)</p>
 <p><strong>Convergence</strong></p>
 <p>The “naive” <span class="math notranslate nohighlight">\(k\)</span>-means algorithm above converges when the assignments no longer change from the previous step.</p>
@@ -1053,7 +1074,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
       <td>1.4</td>
       <td>0.2</td>
       <td>setosa</td>
-      <td>c3</td>
+      <td>c2</td>
     </tr>
     <tr>
       <th>1</th>
@@ -1062,7 +1083,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
       <td>1.4</td>
       <td>0.2</td>
       <td>setosa</td>
-      <td>c3</td>
+      <td>c2</td>
     </tr>
     <tr>
       <th>2</th>
@@ -1071,7 +1092,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
       <td>1.3</td>
       <td>0.2</td>
       <td>setosa</td>
-      <td>c3</td>
+      <td>c2</td>
     </tr>
     <tr>
       <th>3</th>
@@ -1080,7 +1101,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
       <td>1.5</td>
       <td>0.2</td>
       <td>setosa</td>
-      <td>c3</td>
+      <td>c2</td>
     </tr>
     <tr>
       <th>4</th>
@@ -1089,7 +1110,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
       <td>1.4</td>
       <td>0.2</td>
       <td>setosa</td>
-      <td>c3</td>
+      <td>c2</td>
     </tr>
     <tr>
       <th>...</th>
@@ -1107,7 +1128,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
       <td>5.2</td>
       <td>2.3</td>
       <td>virginica</td>
-      <td>c2</td>
+      <td>c1</td>
     </tr>
     <tr>
       <th>146</th>
@@ -1116,7 +1137,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
       <td>5.0</td>
       <td>1.9</td>
       <td>virginica</td>
-      <td>c2</td>
+      <td>c1</td>
     </tr>
     <tr>
       <th>147</th>
@@ -1125,7 +1146,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
       <td>5.2</td>
       <td>2.0</td>
       <td>virginica</td>
-      <td>c2</td>
+      <td>c1</td>
     </tr>
     <tr>
       <th>148</th>
@@ -1134,7 +1155,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
       <td>5.4</td>
       <td>2.3</td>
       <td>virginica</td>
-      <td>c2</td>
+      <td>c1</td>
     </tr>
     <tr>
       <th>149</th>
@@ -1143,7 +1164,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
       <td>5.1</td>
       <td>1.8</td>
       <td>virginica</td>
-      <td>c2</td>
+      <td>c1</td>
     </tr>
   </tbody>
 </table>
@@ -1435,6 +1456,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="Lecture_21-post.html" title="previous page">Lecture 21 (5/13/2022)</a>
+    <a class='right-next' id="next-link" href="Lecture_23-post.html" title="next page">Lecture 23 (5/18/2022)</a>
 
         </div>
         
