@@ -72,12 +72,12 @@ Below is the (rough) schedule for each of these, but this may change as the quar
 | Week 2 | Fri. 4/8 | **Python for data science**: pandas advanced |  |
 | **Week 2 DEADLINES** |  |  | 4/4: **LAB 1** (*Mon.* section) <br> 4/6: **LAB 1** (*Wed.* section) |
 | Week 3 | Mon. 4/11 | Graphing with python (**Guest**) |  |
-| Week 3 | Weds. 4/13 | Graphing with python (**Remote**) |  |
+| Week 3 | Weds. 4/13 | Graphing best practices (**Remote**) |  |
 | Week 3 | Fri. 4/15 | Graphing with python (**Guest**) |  |
 | **Week 3 DEADLINES** |  |  | 4/11: **PSET 1** <br> 4/11: **LAB 2** (*Mon.* section) <br> 4/13: **LAB 2** (*Wed.* section) |
-| Week 4 | Mon. 4/18 | **Getting started**: data structuring |  |
-| Week 4 | Weds. 4/20 | **Getting started**: data cleaning |  |
-| Week 4 | Fri. 4/22 | **Getting started**: data processing |  |
+| Week 4 | Mon. 4/18 | **Getting started**: data cleaning |  |
+| Week 4 | Weds. 4/20 | **Getting started**: tidy data |  |
+| Week 4 | Fri. 4/22 | **Getting started**: data transformations |  |
 | **Week 4 DEADLINES** |  |  | 4/18: **PSET 2** <br> 4/18: **LAB 3** (*Mon.* section) <br> 4/20: **LAB 3** (*Wed.* section) |
 | Week 5 | Mon. 4/25 | **Prediction**: intro (linear regression) |  |
 | Week 5 | Weds. 4/27 | **Prediction**: evaluating solutions |  |
@@ -85,23 +85,23 @@ Below is the (rough) schedule for each of these, but this may change as the quar
 | **Week 5 DEADLINES** |  |  | 4/25: **LAB 4** (*Mon.* section) <br> 4/27: **LAB 4** (*Wed.* section) <br> 4/27: **PSET 3** |
 | Week 6 | Mon. 5/2 | **Prediction**: best practices |  |
 | Week 6 | Weds. 5/4 | **Classification**: intro (k neighbors) |  |
-| Week 6 | Fri. 5/6 | **Classification**: evaluating solutions |  |
+| Week 6 | Fri. 5/6 | **Classification**: evaluating solutions (confusion matrix) |  |
 | **Week 6 DEADLINES** |  |  | 5/2: **LAB 5** (*Mon.* section) <br> 5/4: **LAB 5** (*Wed.* section) <br> 5/6: **PSET 4** |
-| Week 7 | Mon. 5/9 | **Classification**: logistic regression |  |
-| Week 7 | Weds. 5/11 | **Classification**: advanced methods |  |
+| Week 7 | Mon. 5/9 | **Classification**: evaluating solutions cont'd. (ROC curves) |  |
+| Week 7 | Weds. 5/11 | **Classification**: other classifiers |  |
 | Week 7 | Fri. 5/13 | Ethics in data science |  |
 | **Week 7 DEADLINES** |  |  | 5/9: **LAB 6** (*Mon.* section) <br> 5/11: **LAB 6** (*Wed.* section) <br> 5/13: **PSET 5** |
 | Week 8 | Mon. 5/16 | **Clustering**: intro (k means) |  |
-| Week 8 | Weds. 5/18 | **Clustering**: advanced methods |  |
-| Week 8 | Fri. 5/20 | **Clustering**: evaluating solutions |  |
+| Week 8 | Weds. 5/18 | **Clustering**: evaluating solutions |  |
+| Week 8 | Fri. 5/20 | **Clustering**: advanced (Gaussian mixture models) |  |
 | **Week 8 DEADLINES** |  |  | 5/16: **LAB 7** (*Mon.* section) <br> 5/18: **LAB 7** (*Wed.* section) <br> 5/20: **PSET 6** |
 | Week 9 | Mon. 5/23 | **Dimensionality reduction**: intro |  |
 | Week 9 | Weds. 5/25 | **Dimensionality reduction**: PCA |  |
 | Week 9 | Fri. 5/27 | **Dimensionality reduction**: advanced solutions |  |
 | **Week 9 DEADLINES** |  |  | 5/23: **LAB 8** (*Mon.* section) <br> 5/25: **LAB 8** (*Wed.* section) <br> 5/27: **PSET 7** |
 | Week 10 | Mon. 5/30 | **HOLIDAY** (no class) |  |
-| Week 10 | Weds. 6/1 | Review |  |
-| Week 10 | Fri. 6/3 | Review |  |
+| Week 10 | Weds. 6/1 | Review (APIs?) |  |
+| Week 10 | Fri. 6/3 | Review (MLE?) |  |
 | **Week 10 DEADLINES** |  |  | 5/30: **LAB 9** (*Mon.* section) <br> 6/1: **LAB 9** (*Wed.* section) <br> 6/1: **LAB 10** (*All* sections) <br>  6/3: **PSET 8** |
 | **Finals week DEADLINES** |  |  | 6/8: **[FINAL PROJECT](final.md)** |
 
