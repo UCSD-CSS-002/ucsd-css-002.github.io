@@ -32,8 +32,6 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-["# first, let's initialize a list", 'ingredients = []', '', 'for i in range(0,5): # this loop is just going through the first 5. We will keep it simple', '']
-...
-['                  for n in range(0,len(idv_ingredients)):', '', '                    ingredients.append(idv_ingredients[n])', '', '                    # All good? Make sense?']
+response = requests.get(url)
 -------------------
 

@@ -146,6 +146,11 @@
   </label>
   <ul>
    <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_1.html">
+     Lecture 1 (3/28/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="Lecture_2-pre.html">
      Lecture 2 (3/30/22)
     </a>
@@ -197,6 +202,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="Lecture_7-pre.html">
      Lecture 7 (guest) - Introduction to Data Visualization in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_8.html">
+     Lecture 8 (4/13/2022)
     </a>
    </li>
    <li class="toctree-l2">
@@ -341,6 +351,23 @@
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week9_Overview.html">
+   Week 9
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_25-pre.html">
+     Lecture 25 (5/23/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 <p class="caption">
  <span class="caption-text">
@@ -456,6 +483,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="Lecture_24-post.html">
    Lecture 24 (5/20/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_25-post.html">
+   Lecture 25 (5/23/2022)
   </a>
  </li>
 </ul>
@@ -943,11 +975,6 @@ Journal.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LogisticRegression(random_state=1)
-</pre></div>
-</div>
-</div>
 </div>
 <p><strong>What attributes do we get from this model fit?</strong></p>
 <div class="cell docutils container">
@@ -959,11 +986,6 @@ Journal.</p>
 
 <span class="n">log_reg</span><span class="o">.</span><span class="n">coef_</span> <span class="c1"># What does this mean?</span>
 <span class="c1"># np.exp(log_reg.coef_[0][0])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.06469053]])
 </pre></div>
 </div>
 </div>
@@ -981,11 +1003,6 @@ Journal.</p>
 
 <span class="c1"># Accuracy of hard classification predictions</span>
 <span class="n">log_reg</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">xtest</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">ytest</span><span class="p">)</span> 
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6637931034482759
 </pre></div>
 </div>
 </div>
@@ -1012,9 +1029,6 @@ Journal.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../_images/Lecture_20-pre_18_0.png" src="../../_images/Lecture_20-pre_18_0.png" />
-</div>
 </div>
 <p>Let’s look at where the blue line above comes from.</p>
 <p>Our logistic regression is formalized as follows:</p>
@@ -1039,10 +1053,6 @@ Journal.</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/Lecture_20-pre_20_0.png" src="../../_images/Lecture_20-pre_20_0.png" />
-<img alt="../../_images/Lecture_20-pre_20_1.png" src="../../_images/Lecture_20-pre_20_1.png" />
 </div>
 </div>
 </div>
@@ -1072,11 +1082,6 @@ Journal.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DecisionTreeClassifier(random_state=1)
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1085,94 +1090,6 @@ Journal.</p>
 <span class="n">tree</span><span class="o">.</span><span class="n">plot_tree</span><span class="p">(</span><span class="n">dtree</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Text(172.40380434782608, 209.07692307692307, &#39;X[0] &lt;= 50.5\ngini = 0.453\nsamples = 346\nvalue = [226, 120]&#39;),
- Text(52.767391304347825, 192.35076923076923, &#39;X[0] &lt;= 24.5\ngini = 0.339\nsamples = 217\nvalue = [170, 47]&#39;),
- Text(14.556521739130435, 175.62461538461537, &#39;X[0] &lt;= 19.5\ngini = 0.038\nsamples = 51\nvalue = [50, 1]&#39;),
- Text(7.278260869565218, 158.89846153846153, &#39;gini = 0.0\nsamples = 38\nvalue = [38, 0]&#39;),
- Text(21.834782608695654, 158.89846153846153, &#39;X[0] &lt;= 20.5\ngini = 0.142\nsamples = 13\nvalue = [12, 1]&#39;),
- Text(14.556521739130435, 142.1723076923077, &#39;gini = 0.278\nsamples = 6\nvalue = [5, 1]&#39;),
- Text(29.11304347826087, 142.1723076923077, &#39;gini = 0.0\nsamples = 7\nvalue = [7, 0]&#39;),
- Text(90.97826086956522, 175.62461538461537, &#39;X[0] &lt;= 31.5\ngini = 0.401\nsamples = 166\nvalue = [120, 46]&#39;),
- Text(58.22608695652174, 158.89846153846153, &#39;X[0] &lt;= 28.5\ngini = 0.305\nsamples = 32\nvalue = [26, 6]&#39;),
- Text(43.66956521739131, 142.1723076923077, &#39;X[0] &lt;= 25.5\ngini = 0.415\nsamples = 17\nvalue = [12, 5]&#39;),
- Text(36.391304347826086, 125.44615384615385, &#39;gini = 0.5\nsamples = 2\nvalue = [1, 1]&#39;),
- Text(50.947826086956525, 125.44615384615385, &#39;X[0] &lt;= 27.5\ngini = 0.391\nsamples = 15\nvalue = [11, 4]&#39;),
- Text(43.66956521739131, 108.72, &#39;X[0] &lt;= 26.5\ngini = 0.375\nsamples = 8\nvalue = [6, 2]&#39;),
- Text(36.391304347826086, 91.99384615384615, &#39;gini = 0.375\nsamples = 4\nvalue = [3, 1]&#39;),
- Text(50.947826086956525, 91.99384615384615, &#39;gini = 0.375\nsamples = 4\nvalue = [3, 1]&#39;),
- Text(58.22608695652174, 108.72, &#39;gini = 0.408\nsamples = 7\nvalue = [5, 2]&#39;),
- Text(72.78260869565217, 142.1723076923077, &#39;X[0] &lt;= 30.5\ngini = 0.124\nsamples = 15\nvalue = [14, 1]&#39;),
- Text(65.50434782608696, 125.44615384615385, &#39;gini = 0.0\nsamples = 8\nvalue = [8, 0]&#39;),
- Text(80.06086956521739, 125.44615384615385, &#39;gini = 0.245\nsamples = 7\nvalue = [6, 1]&#39;),
- Text(123.7304347826087, 158.89846153846153, &#39;X[0] &lt;= 32.5\ngini = 0.419\nsamples = 134\nvalue = [94, 40]&#39;),
- Text(116.45217391304348, 142.1723076923077, &#39;gini = 0.494\nsamples = 9\nvalue = [5, 4]&#39;),
- Text(131.0086956521739, 142.1723076923077, &#39;X[0] &lt;= 38.5\ngini = 0.41\nsamples = 125\nvalue = [89, 36]&#39;),
- Text(94.61739130434783, 125.44615384615385, &#39;X[0] &lt;= 35.5\ngini = 0.342\nsamples = 32\nvalue = [25, 7]&#39;),
- Text(80.06086956521739, 108.72, &#39;X[0] &lt;= 34.5\ngini = 0.298\nsamples = 11\nvalue = [9, 2]&#39;),
- Text(72.78260869565217, 91.99384615384615, &#39;X[0] &lt;= 33.5\ngini = 0.32\nsamples = 10\nvalue = [8, 2]&#39;),
- Text(65.50434782608696, 75.2676923076923, &#39;gini = 0.278\nsamples = 6\nvalue = [5, 1]&#39;),
- Text(80.06086956521739, 75.2676923076923, &#39;gini = 0.375\nsamples = 4\nvalue = [3, 1]&#39;),
- Text(87.33913043478262, 91.99384615384615, &#39;gini = 0.0\nsamples = 1\nvalue = [1, 0]&#39;),
- Text(109.17391304347827, 108.72, &#39;X[0] &lt;= 36.5\ngini = 0.363\nsamples = 21\nvalue = [16, 5]&#39;),
- Text(101.89565217391305, 91.99384615384615, &#39;gini = 0.444\nsamples = 3\nvalue = [2, 1]&#39;),
- Text(116.45217391304348, 91.99384615384615, &#39;X[0] &lt;= 37.5\ngini = 0.346\nsamples = 18\nvalue = [14, 4]&#39;),
- Text(109.17391304347827, 75.2676923076923, &#39;gini = 0.278\nsamples = 6\nvalue = [5, 1]&#39;),
- Text(123.7304347826087, 75.2676923076923, &#39;gini = 0.375\nsamples = 12\nvalue = [9, 3]&#39;),
- Text(167.4, 125.44615384615385, &#39;X[0] &lt;= 43.5\ngini = 0.429\nsamples = 93\nvalue = [64, 29]&#39;),
- Text(152.84347826086957, 108.72, &#39;X[0] &lt;= 42.5\ngini = 0.473\nsamples = 39\nvalue = [24, 15]&#39;),
- Text(145.56521739130434, 91.99384615384615, &#39;X[0] &lt;= 39.5\ngini = 0.451\nsamples = 32\nvalue = [21, 11]&#39;),
- Text(138.28695652173914, 75.2676923076923, &#39;gini = 0.49\nsamples = 7\nvalue = [4, 3]&#39;),
- Text(152.84347826086957, 75.2676923076923, &#39;X[0] &lt;= 40.5\ngini = 0.435\nsamples = 25\nvalue = [17, 8]&#39;),
- Text(145.56521739130434, 58.541538461538465, &#39;gini = 0.42\nsamples = 10\nvalue = [7, 3]&#39;),
- Text(160.12173913043478, 58.541538461538465, &#39;X[0] &lt;= 41.5\ngini = 0.444\nsamples = 15\nvalue = [10, 5]&#39;),
- Text(152.84347826086957, 41.81538461538463, &#39;gini = 0.444\nsamples = 6\nvalue = [4, 2]&#39;),
- Text(167.4, 41.81538461538463, &#39;gini = 0.444\nsamples = 9\nvalue = [6, 3]&#39;),
- Text(160.12173913043478, 91.99384615384615, &#39;gini = 0.49\nsamples = 7\nvalue = [3, 4]&#39;),
- Text(181.95652173913044, 108.72, &#39;X[0] &lt;= 44.5\ngini = 0.384\nsamples = 54\nvalue = [40, 14]&#39;),
- Text(174.67826086956524, 91.99384615384615, &#39;gini = 0.0\nsamples = 7\nvalue = [7, 0]&#39;),
- Text(189.23478260869567, 91.99384615384615, &#39;X[0] &lt;= 45.5\ngini = 0.418\nsamples = 47\nvalue = [33, 14]&#39;),
- Text(181.95652173913044, 75.2676923076923, &#39;gini = 0.5\nsamples = 8\nvalue = [4, 4]&#39;),
- Text(196.51304347826087, 75.2676923076923, &#39;X[0] &lt;= 49.5\ngini = 0.381\nsamples = 39\nvalue = [29, 10]&#39;),
- Text(189.23478260869567, 58.541538461538465, &#39;X[0] &lt;= 46.5\ngini = 0.35\nsamples = 31\nvalue = [24, 7]&#39;),
- Text(181.95652173913044, 41.81538461538463, &#39;gini = 0.444\nsamples = 6\nvalue = [4, 2]&#39;),
- Text(196.51304347826087, 41.81538461538463, &#39;X[0] &lt;= 47.5\ngini = 0.32\nsamples = 25\nvalue = [20, 5]&#39;),
- Text(189.23478260869567, 25.089230769230767, &#39;gini = 0.0\nsamples = 1\nvalue = [1, 0]&#39;),
- Text(203.7913043478261, 25.089230769230767, &#39;X[0] &lt;= 48.5\ngini = 0.33\nsamples = 24\nvalue = [19, 5]&#39;),
- Text(196.51304347826087, 8.363076923076932, &#39;gini = 0.355\nsamples = 13\nvalue = [10, 3]&#39;),
- Text(211.0695652173913, 8.363076923076932, &#39;gini = 0.298\nsamples = 11\nvalue = [9, 2]&#39;),
- Text(203.7913043478261, 58.541538461538465, &#39;gini = 0.469\nsamples = 8\nvalue = [5, 3]&#39;),
- Text(292.04021739130434, 192.35076923076923, &#39;X[0] &lt;= 59.5\ngini = 0.491\nsamples = 129\nvalue = [56, 73]&#39;),
- Text(271.1152173913043, 175.62461538461537, &#39;X[0] &lt;= 57.5\ngini = 0.472\nsamples = 81\nvalue = [31, 50]&#39;),
- Text(251.1, 158.89846153846153, &#39;X[0] &lt;= 55.5\ngini = 0.494\nsamples = 56\nvalue = [25, 31]&#39;),
- Text(232.90434782608696, 142.1723076923077, &#39;X[0] &lt;= 53.5\ngini = 0.476\nsamples = 46\nvalue = [18, 28]&#39;),
- Text(218.34782608695653, 125.44615384615385, &#39;X[0] &lt;= 52.5\ngini = 0.497\nsamples = 26\nvalue = [12, 14]&#39;),
- Text(211.0695652173913, 108.72, &#39;X[0] &lt;= 51.5\ngini = 0.48\nsamples = 15\nvalue = [6, 9]&#39;),
- Text(203.7913043478261, 91.99384615384615, &#39;gini = 0.49\nsamples = 7\nvalue = [3, 4]&#39;),
- Text(218.34782608695653, 91.99384615384615, &#39;gini = 0.469\nsamples = 8\nvalue = [3, 5]&#39;),
- Text(225.62608695652173, 108.72, &#39;gini = 0.496\nsamples = 11\nvalue = [6, 5]&#39;),
- Text(247.4608695652174, 125.44615384615385, &#39;X[0] &lt;= 54.5\ngini = 0.42\nsamples = 20\nvalue = [6, 14]&#39;),
- Text(240.1826086956522, 108.72, &#39;gini = 0.278\nsamples = 6\nvalue = [1, 5]&#39;),
- Text(254.73913043478262, 108.72, &#39;gini = 0.459\nsamples = 14\nvalue = [5, 9]&#39;),
- Text(269.295652173913, 142.1723076923077, &#39;X[0] &lt;= 56.5\ngini = 0.42\nsamples = 10\nvalue = [7, 3]&#39;),
- Text(262.0173913043478, 125.44615384615385, &#39;gini = 0.48\nsamples = 5\nvalue = [3, 2]&#39;),
- Text(276.5739130434783, 125.44615384615385, &#39;gini = 0.32\nsamples = 5\nvalue = [4, 1]&#39;),
- Text(291.1304347826087, 158.89846153846153, &#39;X[0] &lt;= 58.5\ngini = 0.365\nsamples = 25\nvalue = [6, 19]&#39;),
- Text(283.8521739130435, 142.1723076923077, &#39;gini = 0.375\nsamples = 12\nvalue = [3, 9]&#39;),
- Text(298.40869565217395, 142.1723076923077, &#39;gini = 0.355\nsamples = 13\nvalue = [3, 10]&#39;),
- Text(312.96521739130435, 175.62461538461537, &#39;X[0] &lt;= 60.5\ngini = 0.499\nsamples = 48\nvalue = [25, 23]&#39;),
- Text(305.68695652173915, 158.89846153846153, &#39;gini = 0.375\nsamples = 12\nvalue = [9, 3]&#39;),
- Text(320.24347826086955, 158.89846153846153, &#39;X[0] &lt;= 63.5\ngini = 0.494\nsamples = 36\nvalue = [16, 20]&#39;),
- Text(312.96521739130435, 142.1723076923077, &#39;X[0] &lt;= 62.5\ngini = 0.473\nsamples = 26\nvalue = [10, 16]&#39;),
- Text(305.68695652173915, 125.44615384615385, &#39;X[0] &lt;= 61.5\ngini = 0.49\nsamples = 21\nvalue = [9, 12]&#39;),
- Text(298.40869565217395, 108.72, &#39;gini = 0.444\nsamples = 12\nvalue = [4, 8]&#39;),
- Text(312.96521739130435, 108.72, &#39;gini = 0.494\nsamples = 9\nvalue = [5, 4]&#39;),
- Text(320.24347826086955, 125.44615384615385, &#39;gini = 0.32\nsamples = 5\nvalue = [1, 4]&#39;),
- Text(327.5217391304348, 142.1723076923077, &#39;gini = 0.48\nsamples = 10\nvalue = [6, 4]&#39;)]
-</pre></div>
-</div>
-<img alt="../../_images/Lecture_20-pre_25_1.png" src="../../_images/Lecture_20-pre_25_1.png" />
 </div>
 </div>
 <p>Whoa.</p>
@@ -1190,11 +1107,6 @@ Journal.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DecisionTreeClassifier(max_depth=1, random_state=1)
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1205,14 +1117,6 @@ Journal.</p>
               <span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Text(167.4, 163.07999999999998, &#39;Age &lt;= 50.5\ngini = 0.453\nsamples = 346\nvalue = [226, 120]\nclass = No CDH&#39;),
- Text(83.7, 54.360000000000014, &#39;gini = 0.339\nsamples = 217\nvalue = [170, 47]\nclass = No CDH&#39;),
- Text(251.10000000000002, 54.360000000000014, &#39;gini = 0.491\nsamples = 129\nvalue = [56, 73]\nclass = CDH&#39;)]
-</pre></div>
-</div>
-<img alt="../../_images/Lecture_20-pre_28_1.png" src="../../_images/Lecture_20-pre_28_1.png" />
 </div>
 </div>
 <p><em><strong>What’s going on here?</strong></em></p>
@@ -1238,11 +1142,6 @@ Journal.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6810344827586207
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1254,11 +1153,6 @@ Journal.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6810344827586207
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1267,126 +1161,6 @@ Journal.</p>
 
 <span class="n">ypreds_soft</span> <span class="o">=</span> <span class="n">dtree</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">xtest</span><span class="p">)</span>
 <span class="n">ypreds_soft</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.78341014, 0.21658986],
-       [0.78341014, 0.21658986],
-       [0.78341014, 0.21658986],
-       [0.78341014, 0.21658986],
-       [0.43410853, 0.56589147],
-       [0.78341014, 0.21658986],
-       [0.78341014, 0.21658986],
-       [0.43410853, 0.56589147],
-       [0.78341014, 0.21658986],
-       [0.43410853, 0.56589147],
-       [0.43410853, 0.56589147],
-       [0.78341014, 0.21658986],
-       [0.78341014, 0.21658986],
-       [0.43410853, 0.56589147],
-       [0.78341014, 0.21658986],
-       [0.78341014, 0.21658986],
-       [0.78341014, 0.21658986],
-       [0.43410853, 0.56589147],
-       [0.78341014, 0.21658986],
-       [0.78341014, 0.21658986],
-       [0.78341014, 0.21658986],
-       [0.78341014, 0.21658986],
-       [0.78341014, 0.21658986],
-       [0.78341014, 0.21658986],
-       [0.78341014, 0.21658986],
-       [0.43410853, 0.56589147],
-       [0.78341014, 0.21658986],
-       [0.78341014, 0.21658986],
-       [0.43410853, 0.56589147],
-       [0.43410853, 0.56589147],
-       [0.43410853, 0.56589147],
-       [0.78341014, 0.21658986],
-       [0.78341014, 0.21658986],
-       [0.78341014, 0.21658986],
-       [0.78341014, 0.21658986],
-       [0.43410853, 0.56589147],
-       [0.78341014, 0.21658986],
-       [0.43410853, 0.56589147],
-       [0.78341014, 0.21658986],
-       [0.43410853, 0.56589147],
-       [0.78341014, 0.21658986],
-       [0.78341014, 0.21658986],
-       [0.78341014, 0.21658986],
-       [0.43410853, 0.56589147],
-       [0.78341014, 0.21658986],
-       [0.78341014, 0.21658986],
-       [0.43410853, 0.56589147],
-       [0.78341014, 0.21658986],
-       [0.43410853, 0.56589147],
-       [0.78341014, 0.21658986],
-       [0.78341014, 0.21658986],
-       [0.43410853, 0.56589147],
-       [0.43410853, 0.56589147],
-       [0.43410853, 0.56589147],
-       [0.43410853, 0.56589147],
-       [0.78341014, 0.21658986],
-       [0.78341014, 0.21658986],
-       [0.78341014, 0.21658986],
-       [0.43410853, 0.56589147],
-       [0.43410853, 0.56589147],
-       [0.78341014, 0.21658986],
-       [0.78341014, 0.21658986],
-       [0.43410853, 0.56589147],
-       [0.78341014, 0.21658986],
-       [0.43410853, 0.56589147],
-       [0.43410853, 0.56589147],
-       [0.78341014, 0.21658986],
-       [0.78341014, 0.21658986],
-       [0.78341014, 0.21658986],
-       [0.78341014, 0.21658986],
-       [0.78341014, 0.21658986],
-       [0.78341014, 0.21658986],
-       [0.78341014, 0.21658986],
-       [0.78341014, 0.21658986],
-       [0.78341014, 0.21658986],
-       [0.78341014, 0.21658986],
-       [0.78341014, 0.21658986],
-       [0.43410853, 0.56589147],
-       [0.78341014, 0.21658986],
-       [0.78341014, 0.21658986],
-       [0.43410853, 0.56589147],
-       [0.43410853, 0.56589147],
-       [0.78341014, 0.21658986],
-       [0.43410853, 0.56589147],
-       [0.43410853, 0.56589147],
-       [0.78341014, 0.21658986],
-       [0.43410853, 0.56589147],
-       [0.43410853, 0.56589147],
-       [0.78341014, 0.21658986],
-       [0.43410853, 0.56589147],
-       [0.78341014, 0.21658986],
-       [0.78341014, 0.21658986],
-       [0.43410853, 0.56589147],
-       [0.78341014, 0.21658986],
-       [0.43410853, 0.56589147],
-       [0.78341014, 0.21658986],
-       [0.78341014, 0.21658986],
-       [0.78341014, 0.21658986],
-       [0.78341014, 0.21658986],
-       [0.78341014, 0.21658986],
-       [0.78341014, 0.21658986],
-       [0.43410853, 0.56589147],
-       [0.43410853, 0.56589147],
-       [0.78341014, 0.21658986],
-       [0.43410853, 0.56589147],
-       [0.43410853, 0.56589147],
-       [0.78341014, 0.21658986],
-       [0.78341014, 0.21658986],
-       [0.43410853, 0.56589147],
-       [0.43410853, 0.56589147],
-       [0.78341014, 0.21658986],
-       [0.43410853, 0.56589147],
-       [0.78341014, 0.21658986],
-       [0.78341014, 0.21658986],
-       [0.78341014, 0.21658986],
-       [0.43410853, 0.56589147]])
 </pre></div>
 </div>
 </div>
@@ -1402,12 +1176,6 @@ Journal.</p>
 <span class="c1"># g.axvline(24.5)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.lines.Line2D at 0x7f959cd5d8e0&gt;
-</pre></div>
-</div>
-<img alt="../../_images/Lecture_20-pre_35_1.png" src="../../_images/Lecture_20-pre_35_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1437,11 +1205,6 @@ Journal.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5542168674698795
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1462,12 +1225,6 @@ Journal.</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;TPR&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;TPR&#39;)
-</pre></div>
-</div>
-<img alt="../../_images/Lecture_20-pre_39_1.png" src="../../_images/Lecture_20-pre_39_1.png" />
 </div>
 </div>
 </div>
@@ -1493,11 +1250,6 @@ Journal.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>SVC()
-</pre></div>
-</div>
-</div>
 </div>
 <p>In the case of SVMs, there are class attributes that help you recover the separator that was fit.</p>
 <p>We won’t get into these but if you’re interested in learning more it’s good to know about!</p>
@@ -1518,10 +1270,6 @@ Journal.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../_images/Lecture_20-pre_44_0.png" src="../../_images/Lecture_20-pre_44_0.png" />
-<img alt="../../_images/Lecture_20-pre_44_1.png" src="../../_images/Lecture_20-pre_44_1.png" />
-</div>
 </div>
 <p>The SVM class has a <code class="docutils literal notranslate"><span class="pre">score</span></code> function that returns the accuracy of a test set, plus prediction functions.</p>
 <div class="cell docutils container">
@@ -1532,26 +1280,11 @@ Journal.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.646551724137931
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ypreds</span> <span class="o">=</span> <span class="n">svm</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">xtest</span><span class="p">)</span>
 <span class="n">ypreds</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0,
-       0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1,
-       0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1,
-       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1,
-       0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0,
-       0, 1, 0, 0, 0, 1])
 </pre></div>
 </div>
 </div>
@@ -1564,126 +1297,6 @@ Journal.</p>
 
 <span class="n">ypreds_soft</span> <span class="o">=</span> <span class="n">svm_soft</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">xtest</span><span class="p">)</span>
 <span class="n">ypreds_soft</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.76348123, 0.23651877],
-       [0.76459219, 0.23540781],
-       [0.71280375, 0.28719625],
-       [0.76412855, 0.23587145],
-       [0.4004265 , 0.5995735 ],
-       [0.76349603, 0.23650397],
-       [0.76871608, 0.23128392],
-       [0.49147732, 0.50852268],
-       [0.76459219, 0.23540781],
-       [0.4054779 , 0.5945221 ],
-       [0.4369858 , 0.5630142 ],
-       [0.76391673, 0.23608327],
-       [0.76349603, 0.23650397],
-       [0.4075737 , 0.5924263 ],
-       [0.7619726 , 0.2380274 ],
-       [0.71280375, 0.28719625],
-       [0.76441108, 0.23558892],
-       [0.52493774, 0.47506226],
-       [0.7619726 , 0.2380274 ],
-       [0.76860922, 0.23139078],
-       [0.76350531, 0.23649469],
-       [0.76350531, 0.23649469],
-       [0.74562549, 0.25437451],
-       [0.76459219, 0.23540781],
-       [0.76348123, 0.23651877],
-       [0.42042278, 0.57957722],
-       [0.76459219, 0.23540781],
-       [0.75592927, 0.24407073],
-       [0.42042278, 0.57957722],
-       [0.4004265 , 0.5995735 ],
-       [0.46174954, 0.53825046],
-       [0.76280894, 0.23719106],
-       [0.76459219, 0.23540781],
-       [0.76134076, 0.23865924],
-       [0.76280894, 0.23719106],
-       [0.59582162, 0.40417838],
-       [0.76352694, 0.23647306],
-       [0.41803654, 0.58196346],
-       [0.76274507, 0.23725493],
-       [0.59582162, 0.40417838],
-       [0.76352694, 0.23647306],
-       [0.7619726 , 0.2380274 ],
-       [0.76683729, 0.23316271],
-       [0.56040913, 0.43959087],
-       [0.7627997 , 0.2372003 ],
-       [0.76412855, 0.23587145],
-       [0.4369858 , 0.5630142 ],
-       [0.76352694, 0.23647306],
-       [0.41803654, 0.58196346],
-       [0.76348123, 0.23651877],
-       [0.75592927, 0.24407073],
-       [0.42042278, 0.57957722],
-       [0.49147732, 0.50852268],
-       [0.4075737 , 0.5924263 ],
-       [0.65923283, 0.34076717],
-       [0.76614213, 0.23385787],
-       [0.76441108, 0.23558892],
-       [0.71280375, 0.28719625],
-       [0.41803654, 0.58196346],
-       [0.46174954, 0.53825046],
-       [0.76871608, 0.23128392],
-       [0.76441108, 0.23558892],
-       [0.62922213, 0.37077787],
-       [0.76391673, 0.23608327],
-       [0.56040913, 0.43959087],
-       [0.4054779 , 0.5945221 ],
-       [0.75592927, 0.24407073],
-       [0.75592927, 0.24407073],
-       [0.76614213, 0.23385787],
-       [0.76280894, 0.23719106],
-       [0.76352694, 0.23647306],
-       [0.76352694, 0.23647306],
-       [0.76871608, 0.23128392],
-       [0.76453243, 0.23546757],
-       [0.76328733, 0.23671267],
-       [0.76305154, 0.23694846],
-       [0.76286627, 0.23713373],
-       [0.4054779 , 0.5945221 ],
-       [0.76349603, 0.23650397],
-       [0.76412855, 0.23587145],
-       [0.49147732, 0.50852268],
-       [0.56040913, 0.43959087],
-       [0.76274507, 0.23725493],
-       [0.4369858 , 0.5630142 ],
-       [0.52493774, 0.47506226],
-       [0.76328733, 0.23671267],
-       [0.39961279, 0.60038721],
-       [0.49147732, 0.50852268],
-       [0.74562549, 0.25437451],
-       [0.46174954, 0.53825046],
-       [0.76134076, 0.23865924],
-       [0.76431126, 0.23568874],
-       [0.39961279, 0.60038721],
-       [0.76871608, 0.23128392],
-       [0.4004265 , 0.5995735 ],
-       [0.76772259, 0.23227741],
-       [0.76459219, 0.23540781],
-       [0.76772259, 0.23227741],
-       [0.76459219, 0.23540781],
-       [0.76348123, 0.23651877],
-       [0.76772259, 0.23227741],
-       [0.62922213, 0.37077787],
-       [0.4369858 , 0.5630142 ],
-       [0.76280894, 0.23719106],
-       [0.4369858 , 0.5630142 ],
-       [0.4075737 , 0.5924263 ],
-       [0.76280894, 0.23719106],
-       [0.76280894, 0.23719106],
-       [0.56040913, 0.43959087],
-       [0.59582162, 0.40417838],
-       [0.76412855, 0.23587145],
-       [0.39961279, 0.60038721],
-       [0.76412855, 0.23587145],
-       [0.76772259, 0.23227741],
-       [0.75592927, 0.24407073],
-       [0.39961279, 0.60038721]])
 </pre></div>
 </div>
 </div>

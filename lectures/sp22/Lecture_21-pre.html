@@ -146,6 +146,11 @@
   </label>
   <ul>
    <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_1.html">
+     Lecture 1 (3/28/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="Lecture_2-pre.html">
      Lecture 2 (3/30/22)
     </a>
@@ -197,6 +202,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="Lecture_7-pre.html">
      Lecture 7 (guest) - Introduction to Data Visualization in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_8.html">
+     Lecture 8 (4/13/2022)
     </a>
    </li>
    <li class="toctree-l2">
@@ -341,6 +351,23 @@
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week9_Overview.html">
+   Week 9
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_25-pre.html">
+     Lecture 25 (5/23/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 <p class="caption">
  <span class="caption-text">
@@ -456,6 +483,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="Lecture_24-post.html">
    Lecture 24 (5/20/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_25-post.html">
+   Lecture 25 (5/23/2022)
   </a>
  </li>
 </ul>
@@ -741,12 +773,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;CHD&#39;)
-</pre></div>
-</div>
-<img alt="../../_images/Lecture_21-pre_7_1.png" src="../../_images/Lecture_21-pre_7_1.png" />
-</div>
 </div>
 <div class="section" id="support-vector-machines-svms">
 <h2>Support Vector Machines (SVMs)<a class="headerlink" href="#support-vector-machines-svms" title="Permalink to this headline">¶</a></h2>
@@ -766,11 +792,6 @@
 <span class="n">svm</span> <span class="o">=</span> <span class="n">SVC</span><span class="p">()</span>
 
 <span class="n">svm</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">xtrain</span><span class="p">,</span> <span class="n">ytrain</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>SVC()
 </pre></div>
 </div>
 </div>
@@ -795,10 +816,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../_images/Lecture_21-pre_12_0.png" src="../../_images/Lecture_21-pre_12_0.png" />
-<img alt="../../_images/Lecture_21-pre_12_1.png" src="../../_images/Lecture_21-pre_12_1.png" />
-</div>
 </div>
 <p>The SVM class has a <code class="docutils literal notranslate"><span class="pre">score</span></code> function that returns the accuracy of a test set, plus prediction functions.</p>
 <div class="cell docutils container">
@@ -809,26 +826,11 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.646551724137931
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ypreds</span> <span class="o">=</span> <span class="n">svm</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">xtest</span><span class="p">)</span>
 <span class="n">ypreds</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0,
-       0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1,
-       0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1,
-       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1,
-       0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0,
-       0, 1, 0, 0, 0, 1])
 </pre></div>
 </div>
 </div>
@@ -841,126 +843,6 @@
 
 <span class="n">ypreds_soft</span> <span class="o">=</span> <span class="n">svm_soft</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">xtest</span><span class="p">)</span>
 <span class="n">ypreds_soft</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.75218035, 0.24781965],
-       [0.75329611, 0.24670389],
-       [0.70153059, 0.29846941],
-       [0.75283044, 0.24716956],
-       [0.39573649, 0.60426351],
-       [0.75219521, 0.24780479],
-       [0.75744005, 0.24255995],
-       [0.48427854, 0.51572146],
-       [0.75329611, 0.24670389],
-       [0.40065479, 0.59934521],
-       [0.43131156, 0.56868844],
-       [0.7526177 , 0.2473823 ],
-       [0.75219521, 0.24780479],
-       [0.40269511, 0.59730489],
-       [0.75066559, 0.24933441],
-       [0.70153059, 0.29846941],
-       [0.75311421, 0.24688579],
-       [0.51684166, 0.48315834],
-       [0.75066559, 0.24933441],
-       [0.75733263, 0.24266737],
-       [0.75220453, 0.24779547],
-       [0.75220453, 0.24779547],
-       [0.73428068, 0.26571932],
-       [0.75329611, 0.24670389],
-       [0.75218035, 0.24781965],
-       [0.41520051, 0.58479949],
-       [0.75329611, 0.24670389],
-       [0.74460224, 0.25539776],
-       [0.41520051, 0.58479949],
-       [0.39573649, 0.60426351],
-       [0.45538456, 0.54461544],
-       [0.75150526, 0.24849474],
-       [0.75329611, 0.24670389],
-       [0.75003131, 0.24996869],
-       [0.75150526, 0.24849474],
-       [0.58623799, 0.41376201],
-       [0.75222625, 0.24777375],
-       [0.41287857, 0.58712143],
-       [0.75144114, 0.24855886],
-       [0.58623799, 0.41376201],
-       [0.75222625, 0.24777375],
-       [0.75066559, 0.24933441],
-       [0.75555171, 0.24444829],
-       [0.55147857, 0.44852143],
-       [0.75149599, 0.24850401],
-       [0.75283044, 0.24716956],
-       [0.43131156, 0.56868844],
-       [0.75222625, 0.24777375],
-       [0.41287857, 0.58712143],
-       [0.75218035, 0.24781965],
-       [0.74460224, 0.25539776],
-       [0.41520051, 0.58479949],
-       [0.48427854, 0.51572146],
-       [0.40269511, 0.59730489],
-       [0.64895989, 0.35104011],
-       [0.75485319, 0.24514681],
-       [0.75311421, 0.24688579],
-       [0.70153059, 0.29846941],
-       [0.41287857, 0.58712143],
-       [0.45538456, 0.54461544],
-       [0.75744005, 0.24255995],
-       [0.75311421, 0.24688579],
-       [0.61920682, 0.38079318],
-       [0.7526177 , 0.2473823 ],
-       [0.55147857, 0.44852143],
-       [0.40065479, 0.59934521],
-       [0.74460224, 0.25539776],
-       [0.74460224, 0.25539776],
-       [0.75485319, 0.24514681],
-       [0.75150526, 0.24849474],
-       [0.75222625, 0.24777375],
-       [0.75222625, 0.24777375],
-       [0.75744005, 0.24255995],
-       [0.75323609, 0.24676391],
-       [0.75198563, 0.24801437],
-       [0.75174887, 0.24825113],
-       [0.75156283, 0.24843717],
-       [0.40065479, 0.59934521],
-       [0.75219521, 0.24780479],
-       [0.75283044, 0.24716956],
-       [0.48427854, 0.51572146],
-       [0.55147857, 0.44852143],
-       [0.75144114, 0.24855886],
-       [0.43131156, 0.56868844],
-       [0.51684166, 0.48315834],
-       [0.75198563, 0.24801437],
-       [0.39494414, 0.60505586],
-       [0.48427854, 0.51572146],
-       [0.73428068, 0.26571932],
-       [0.45538456, 0.54461544],
-       [0.75003131, 0.24996869],
-       [0.75301395, 0.24698605],
-       [0.39494414, 0.60505586],
-       [0.75744005, 0.24255995],
-       [0.39573649, 0.60426351],
-       [0.75644142, 0.24355858],
-       [0.75329611, 0.24670389],
-       [0.75644142, 0.24355858],
-       [0.75329611, 0.24670389],
-       [0.75218035, 0.24781965],
-       [0.75644142, 0.24355858],
-       [0.61920682, 0.38079318],
-       [0.43131156, 0.56868844],
-       [0.75150526, 0.24849474],
-       [0.43131156, 0.56868844],
-       [0.40269511, 0.59730489],
-       [0.75150526, 0.24849474],
-       [0.75150526, 0.24849474],
-       [0.55147857, 0.44852143],
-       [0.58623799, 0.41376201],
-       [0.75283044, 0.24716956],
-       [0.39494414, 0.60505586],
-       [0.75283044, 0.24716956],
-       [0.75644142, 0.24355858],
-       [0.74460224, 0.25539776],
-       [0.39494414, 0.60505586]])
 </pre></div>
 </div>
 </div>
@@ -986,9 +868,6 @@
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/Lecture_21-pre_19_0.png" src="../../_images/Lecture_21-pre_19_0.png" />
 </div>
 </div>
 </div>
