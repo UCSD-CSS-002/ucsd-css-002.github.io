@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lecture 8 (4/13/2022) &#8212; UCSD CSS 2</title>
+    <title>Week 9 &#8212; UCSD CSS 2</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -54,8 +54,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Lecture 9 (guest) - Data Visualization with Seaborn" href="Lecture_9-pre.html" />
-    <link rel="prev" title="Lecture 7 (guest) - Introduction to Data Visualization in Python" href="Lecture_7-pre.html" />
+    <link rel="next" title="Lecture 25 (5/23/2022)" href="Lecture_25-pre.html" />
+    <link rel="prev" title="Lecture 24 (5/20/2022)" href="Lecture_24-pre.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -189,23 +189,23 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="Week3_Overview.html">
    Week 3
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="Lecture_7-pre.html">
      Lecture 7 (guest) - Introduction to Data Visualization in Python
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_8.html">
      Lecture 8 (4/13/2022)
     </a>
    </li>
@@ -347,6 +347,23 @@
    <li class="toctree-l2">
     <a class="reference internal" href="Lecture_24-pre.html">
      Lecture 24 (5/20/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="current reference internal" href="#">
+   Week 9
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_25-pre.html">
+     Lecture 25 (5/23/2022)
     </a>
    </li>
   </ul>
@@ -509,7 +526,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/lectures/sp22/Lecture_8.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/lectures/sp22/Week9_Overview.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -529,7 +546,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/UCSD-CSS-002/ucsd-css-002.github.io/issues/new?title=Issue%20on%20page%20%2Flectures/sp22/Lecture_8.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/UCSD-CSS-002/ucsd-css-002.github.io/issues/new?title=Issue%20on%20page%20%2Flectures/sp22/Week9_Overview.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -550,7 +567,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/UCSD-CSS-002/ucsd-css-002.github.io/master?urlpath=tree/lectures/sp22/Lecture_8.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/UCSD-CSS-002/ucsd-css-002.github.io/master?urlpath=tree/lectures/sp22/Week9_Overview.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
@@ -575,27 +592,12 @@
         
               <div>
                 
-  <div class="section" id="lecture-8-4-13-2022">
-<h1>Lecture 8 (4/13/2022)<a class="headerlink" href="#lecture-8-4-13-2022" title="Permalink to this headline">¶</a></h1>
-<p>This lecture was a <strong>visualization best practices presentation</strong> of the powerpoint slides shown inline below.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">IFrame</span>
-
-<span class="n">IFrame</span><span class="p">(</span><span class="s2">&quot;./Lecture_8.pdf&quot;</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html">
-<iframe
-    width="1000"
-    height="1000"
-    src="./Lecture_8.pdf"
-    frameborder="0"
-    allowfullscreen
-></iframe>
-</div></div>
+  <div class="section" id="week-9">
+<h1>Week 9<a class="headerlink" href="#week-9" title="Permalink to this headline">¶</a></h1>
+<p><strong>Lecture 25:</strong> Dimensionality reduction: intro</p>
+<p><strong>Lecture 26:</strong></p>
+<p><strong>Lecture 27:</strong></p>
+<div class="toctree-wrapper compound">
 </div>
 </div>
 
@@ -624,8 +626,8 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="Lecture_7-pre.html" title="previous page">Lecture 7 (guest) - Introduction to Data Visualization in Python</a>
-    <a class='right-next' id="next-link" href="Lecture_9-pre.html" title="next page">Lecture 9 (guest) - Data Visualization with Seaborn</a>
+    <a class='left-prev' id="prev-link" href="Lecture_24-pre.html" title="previous page">Lecture 24 (5/20/2022)</a>
+    <a class='right-next' id="next-link" href="Lecture_25-pre.html" title="next page">Lecture 25 (5/23/2022)</a>
 
         </div>
         

@@ -94,16 +94,16 @@ Below is the (rough) schedule for each of these, but this may change as the quar
 | Week 8 | Mon. 5/16 | **Clustering**: intro (k means) |  |
 | Week 8 | Weds. 5/18 | **Clustering**: evaluating solutions |  |
 | Week 8 | Fri. 5/20 | **Clustering**: advanced (Gaussian mixture models) |  |
-| **Week 8 DEADLINES** |  |  | 5/16: **LAB 7** (*Mon.* section) <br> 5/18: **LAB 7** (*Wed.* section) <br> 5/20: **PSET 6** |
+| **Week 8 DEADLINES** |  |  | 5/16: **LAB 7** (*Mon.* section) <br> 5/18: **LAB 7** (*Wed.* section) |
 | Week 9 | Mon. 5/23 | **Dimensionality reduction**: intro |  |
 | Week 9 | Weds. 5/25 | **Dimensionality reduction**: PCA |  |
 | Week 9 | Fri. 5/27 | **Dimensionality reduction**: advanced solutions |  |
-| **Week 9 DEADLINES** |  |  | 5/23: **LAB 8** (*Mon.* section) <br> 5/25: **LAB 8** (*Wed.* section) <br> 5/27: **PSET 7** |
+| **Week 9 DEADLINES** |  |  | 5/23: **PSET 6** <br> 5/23: **LAB 8** (*Mon.* section) <br> 5/25: **LAB 8** (*Wed.* section) |
 | Week 10 | Mon. 5/30 | **HOLIDAY** (no class) |  |
 | Week 10 | Weds. 6/1 | Review (APIs?) |  |
 | Week 10 | Fri. 6/3 | Review (MLE?) |  |
-| **Week 10 DEADLINES** |  |  | 5/30: **LAB 9** (*Mon.* section) <br> 6/1: **LAB 9** (*Wed.* section) <br> 6/1: **LAB 10** (*All* sections) <br>  6/3: **PSET 8** |
-| **Finals week DEADLINES** |  |  | 6/8: **[FINAL PROJECT](final.md)** |
+| **Week 10 DEADLINES** |  |  | 5/30: **LAB 9** (*Mon.* section) <br> 5/31: **PSET 7** <br> 6/1: **LAB 9** (*Wed.* section) <br> 6/1: **LAB 10** (*All* sections) |
+| **Finals week DEADLINES** |  |  |  6/7: **PSET 8** <br> 6/8: **[FINAL PROJECT](final.md)** |
 
 
 
