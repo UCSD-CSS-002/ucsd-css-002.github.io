@@ -83,3 +83,4 @@ parts:
       - file: lectures/sp22/Lecture_22-post.ipynb
       - file: lectures/sp22/Lecture_23-post.ipynb
       - file: lectures/sp22/Lecture_24-post.ipynb
+      - file: lectures/sp22/Lecture_25-post.ipynb
