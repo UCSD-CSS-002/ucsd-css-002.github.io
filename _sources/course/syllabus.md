@@ -100,7 +100,7 @@ Below is the (rough) schedule for each of these, but this may change as the quar
 | Week 9 | Fri. 5/27 | **Dimensionality reduction**: advanced solutions |  |
 | **Week 9 DEADLINES** |  |  | 5/23: **PSET 6** <br> 5/23: **LAB 8** (*Mon.* section) <br> 5/25: **LAB 8** (*Wed.* section) <br> 5/27: **LAB 9** (*All* sections) |
 | Week 10 | Mon. 5/30 | **HOLIDAY** (no class) |  |
-| Week 10 | Weds. 6/1 | Final project presentations |  |
+| Week 10 | Weds. 6/1 | Final project presentations: CLASS IN ERCA 117 |  |
 | Week 10 | Fri. 6/3 | Review |  |
 | **Week 10 DEADLINES** |  |  | 6/1: **LAB 10** (*All* sections) |
 | **Finals week DEADLINES** |  |  | 6/8: **[FINAL PROJECT](final.md)** |
@@ -113,7 +113,7 @@ Below is the (rough) schedule for each of these, but this may change as the quar
 ### Basis
 
 Course grades will be calculated with the following breakdown:
-- 40% 8 weekly problem sets (weeks 2-9)
+- 40% 6 weekly problem sets (weeks 2-9)
 - 35% 10 weekly labs
 - 15% final project (see [Final Project](final.md))
 - 10% participation
