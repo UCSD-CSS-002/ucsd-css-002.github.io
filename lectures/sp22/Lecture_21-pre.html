@@ -366,6 +366,11 @@
      Lecture 25 (5/23/2022)
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_26-pre.html">
+     Lecture 26 (5/25/2022)
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -488,6 +493,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="Lecture_25-post.html">
    Lecture 25 (5/23/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_26-post.html">
+   Lecture 26 (5/25/2022)
   </a>
  </li>
 </ul>
@@ -773,6 +783,12 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;CHD&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/Lecture_21-pre_7_1.png" src="../../_images/Lecture_21-pre_7_1.png" />
+</div>
 </div>
 <div class="section" id="support-vector-machines-svms">
 <h2>Support Vector Machines (SVMs)<a class="headerlink" href="#support-vector-machines-svms" title="Permalink to this headline">¶</a></h2>
@@ -792,6 +808,11 @@
 <span class="n">svm</span> <span class="o">=</span> <span class="n">SVC</span><span class="p">()</span>
 
 <span class="n">svm</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">xtrain</span><span class="p">,</span> <span class="n">ytrain</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>SVC()
 </pre></div>
 </div>
 </div>
@@ -816,6 +837,10 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Lecture_21-pre_12_0.png" src="../../_images/Lecture_21-pre_12_0.png" />
+<img alt="../../_images/Lecture_21-pre_12_1.png" src="../../_images/Lecture_21-pre_12_1.png" />
+</div>
 </div>
 <p>The SVM class has a <code class="docutils literal notranslate"><span class="pre">score</span></code> function that returns the accuracy of a test set, plus prediction functions.</p>
 <div class="cell docutils container">
@@ -826,11 +851,26 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.646551724137931
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ypreds</span> <span class="o">=</span> <span class="n">svm</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">xtest</span><span class="p">)</span>
 <span class="n">ypreds</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0,
+       0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1,
+       0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1,
+       0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0,
+       0, 1, 0, 0, 0, 1])
 </pre></div>
 </div>
 </div>
@@ -843,6 +883,126 @@
 
 <span class="n">ypreds_soft</span> <span class="o">=</span> <span class="n">svm_soft</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">xtest</span><span class="p">)</span>
 <span class="n">ypreds_soft</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.76799964, 0.23200036],
+       [0.76912978, 0.23087022],
+       [0.7162765 , 0.2837235 ],
+       [0.76865816, 0.23134184],
+       [0.39454747, 0.60545253],
+       [0.76801469, 0.23198531],
+       [0.7733233 , 0.2266767 ],
+       [0.48841104, 0.51158896],
+       [0.76912978, 0.23087022],
+       [0.39976134, 0.60023866],
+       [0.43225459, 0.56774541],
+       [0.76844268, 0.23155732],
+       [0.76801469, 0.23198531],
+       [0.40192411, 0.59807589],
+       [0.76646466, 0.23353534],
+       [0.7162765 , 0.2837235 ],
+       [0.76894555, 0.23105445],
+       [0.52291589, 0.47708411],
+       [0.76646466, 0.23353534],
+       [0.77321467, 0.22678533],
+       [0.76802413, 0.23197587],
+       [0.76802413, 0.23197587],
+       [0.74981191, 0.25018809],
+       [0.76912978, 0.23087022],
+       [0.76799964, 0.23200036],
+       [0.41517884, 0.58482116],
+       [0.76912978, 0.23087022],
+       [0.76031259, 0.23968741],
+       [0.41517884, 0.58482116],
+       [0.39454747, 0.60545253],
+       [0.4577739 , 0.5422261 ],
+       [0.76731564, 0.23268436],
+       [0.76912978, 0.23087022],
+       [0.76582169, 0.23417831],
+       [0.76731564, 0.23268436],
+       [0.59603647, 0.40396353],
+       [0.76804614, 0.23195386],
+       [0.41271788, 0.58728212],
+       [0.76725066, 0.23274934],
+       [0.59603647, 0.40396353],
+       [0.76804614, 0.23195386],
+       [0.76646466, 0.23353534],
+       [0.7714131 , 0.2285869 ],
+       [0.55951322, 0.44048678],
+       [0.76730624, 0.23269376],
+       [0.76865816, 0.23134184],
+       [0.43225459, 0.56774541],
+       [0.76804614, 0.23195386],
+       [0.41271788, 0.58728212],
+       [0.76799964, 0.23200036],
+       [0.76031259, 0.23968741],
+       [0.41517884, 0.58482116],
+       [0.48841104, 0.51158896],
+       [0.40192411, 0.59807589],
+       [0.66128008, 0.33871992],
+       [0.77070619, 0.22929381],
+       [0.76894555, 0.23105445],
+       [0.7162765 , 0.2837235 ],
+       [0.41271788, 0.58728212],
+       [0.4577739 , 0.5422261 ],
+       [0.7733233 , 0.2266767 ],
+       [0.76894555, 0.23105445],
+       [0.63043469, 0.36956531],
+       [0.76844268, 0.23155732],
+       [0.55951322, 0.44048678],
+       [0.39976134, 0.60023866],
+       [0.76031259, 0.23968741],
+       [0.76031259, 0.23968741],
+       [0.77070619, 0.22929381],
+       [0.76731564, 0.23268436],
+       [0.76804614, 0.23195386],
+       [0.76804614, 0.23195386],
+       [0.7733233 , 0.2266767 ],
+       [0.76906899, 0.23093101],
+       [0.76780236, 0.23219764],
+       [0.76756248, 0.23243752],
+       [0.76737398, 0.23262602],
+       [0.39976134, 0.60023866],
+       [0.76801469, 0.23198531],
+       [0.76865816, 0.23134184],
+       [0.48841104, 0.51158896],
+       [0.55951322, 0.44048678],
+       [0.76725066, 0.23274934],
+       [0.43225459, 0.56774541],
+       [0.52291589, 0.47708411],
+       [0.76780236, 0.23219764],
+       [0.39370745, 0.60629255],
+       [0.48841104, 0.51158896],
+       [0.74981191, 0.25018809],
+       [0.4577739 , 0.5422261 ],
+       [0.76582169, 0.23417831],
+       [0.76884401, 0.23115599],
+       [0.39370745, 0.60629255],
+       [0.7733233 , 0.2266767 ],
+       [0.39454747, 0.60545253],
+       [0.77231327, 0.22768673],
+       [0.76912978, 0.23087022],
+       [0.77231327, 0.22768673],
+       [0.76912978, 0.23087022],
+       [0.76799964, 0.23200036],
+       [0.77231327, 0.22768673],
+       [0.63043469, 0.36956531],
+       [0.43225459, 0.56774541],
+       [0.76731564, 0.23268436],
+       [0.43225459, 0.56774541],
+       [0.40192411, 0.59807589],
+       [0.76731564, 0.23268436],
+       [0.76731564, 0.23268436],
+       [0.55951322, 0.44048678],
+       [0.59603647, 0.40396353],
+       [0.76865816, 0.23134184],
+       [0.39370745, 0.60629255],
+       [0.76865816, 0.23134184],
+       [0.77231327, 0.22768673],
+       [0.76031259, 0.23968741],
+       [0.39370745, 0.60629255]])
 </pre></div>
 </div>
 </div>
@@ -868,6 +1028,9 @@
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Lecture_21-pre_19_0.png" src="../../_images/Lecture_21-pre_19_0.png" />
 </div>
 </div>
 </div>
