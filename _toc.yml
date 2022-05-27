@@ -58,6 +58,7 @@ parts:
         sections:
         - file: lectures/sp22/Lecture_25-pre.ipynb
         - file: lectures/sp22/Lecture_26-pre.ipynb
+        - file: lectures/sp22/Lecture_27-pre.ipynb
   - caption: Lecture code - available after class
     chapters:
       # - file: lectures/sp22/Lecture_1.ipynb
