@@ -1033,59 +1033,9 @@
 <p>Meanwhile, the <code class="docutils literal notranslate"><span class="pre">FactorAnalyzer</span></code> class <a class="reference external" href="https://factor-analyzer.readthedocs.io/en/latest/">here</a> seems to be more commonly used in analyses and tutorials people have posted online and has more functionality.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install factor_analyzer
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># !pip install factor_analyzer</span>
 <span class="kn">from</span> <span class="nn">factor_analyzer</span> <span class="kn">import</span> <span class="n">FactorAnalyzer</span>
 <span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">FactorAnalysis</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting factor_analyzer
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading factor_analyzer-0.4.0.tar.gz (41 kB)
-?25l
-     |███████▉                        | 10 kB 1.7 MB/s eta 0:00:01
-     |███████████████▊                | 20 kB 1.0 MB/s eta 0:00:01
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     |███████████████████████▋        | 30 kB 962 kB/s eta 0:00:01
-     |███████████████████████████████▌| 40 kB 996 kB/s eta 0:00:01
-     |████████████████████████████████| 41 kB 523 kB/s 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>?25hRequirement already satisfied: pandas in /opt/anaconda3/lib/python3.8/site-packages (from factor_analyzer) (1.1.3)
-Requirement already satisfied: scipy in /opt/anaconda3/lib/python3.8/site-packages (from factor_analyzer) (1.5.0)
-Requirement already satisfied: numpy in /opt/anaconda3/lib/python3.8/site-packages (from factor_analyzer) (1.19.2)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: scikit-learn in /opt/anaconda3/lib/python3.8/site-packages (from factor_analyzer) (0.23.2)
-Requirement already satisfied: pytz&gt;=2017.2 in /opt/anaconda3/lib/python3.8/site-packages (from pandas-&gt;factor_analyzer) (2020.1)
-Requirement already satisfied: python-dateutil&gt;=2.7.3 in /opt/anaconda3/lib/python3.8/site-packages (from pandas-&gt;factor_analyzer) (2.8.1)
-Requirement already satisfied: threadpoolctl&gt;=2.0.0 in /opt/anaconda3/lib/python3.8/site-packages (from scikit-learn-&gt;factor_analyzer) (2.1.0)
-Requirement already satisfied: joblib&gt;=0.11 in /opt/anaconda3/lib/python3.8/site-packages (from scikit-learn-&gt;factor_analyzer) (0.17.0)
-Requirement already satisfied: six&gt;=1.5 in /opt/anaconda3/lib/python3.8/site-packages (from python-dateutil&gt;=2.7.3-&gt;pandas-&gt;factor_analyzer) (1.15.0)
-Building wheels for collected packages: factor-analyzer
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Building wheel for factor-analyzer (setup.py) ... ?25l-
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>?25h  Created wheel for factor-analyzer: filename=factor_analyzer-0.4.0-py3-none-any.whl size=41441 sha256=6e9c466fe21fb7d83fc438f1cf8d2158bc7ff42ae47c404a2693c827f38416fc
-  Stored in directory: /Users/erikbrockbank/Library/Caches/pip/wheels/00/cf/ea/83feab47e1d682730be5935c52a2647f49adfb393e948d4bf5
-Successfully built factor-analyzer
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: factor-analyzer
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed factor-analyzer-0.4.0
 </pre></div>
 </div>
 </div>
@@ -1460,334 +1410,207 @@ Successfully built factor-analyzer
 <h1>Worked example: comparing FA and PCA with the <code class="docutils literal notranslate"><span class="pre">iris</span></code> dataset<a class="headerlink" href="#worked-example-comparing-fa-and-pca-with-the-iris-dataset" title="Permalink to this headline">¶</a></h1>
 <p>In the code below, I’ve done some factor analysis and principal components analysis of the <code class="docutils literal notranslate"><span class="pre">iris</span></code> dataset, to compare how the two approaches identify lower dimensional representations for our data.</p>
 <p>Recall that the iris dataset represents each iris in 4 dimensions (sepal length and width, petal length and width). Since it also has labels (<code class="docutils literal notranslate"><span class="pre">species</span></code>), it’s easier to evaluate how successfully the dimensionality reduction techniques manage to preserve or even exaggerate the differences in the target variable.</p>
-<p><strong>If we have time remaining, let’s go through the code below and make sure you understand what is happening in each step.</strong></p>
-<p>If you want to quiz yourself or practice, you can do this on your own as well.</p>
+<p><strong>If we have time remaining, go through the code blocks below and start by trying to solve the problem on your own. You can do all of this with code from earlier in this lecture. If you need a hint, the solution is provided at the bottom of each block.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iris</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s1">&#39;iris&#39;</span><span class="p">)</span>
-<span class="n">iris</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### INSTRUCTIONS ### </span>
+<span class="c1"># First, read in the `iris` dataset from seaborn and save it to a variable called &#39;iris&#39;</span>
+<span class="c1">###</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
 
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>sepal_length</th>
-      <th>sepal_width</th>
-      <th>petal_length</th>
-      <th>petal_width</th>
-      <th>species</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>5.1</td>
-      <td>3.5</td>
-      <td>1.4</td>
-      <td>0.2</td>
-      <td>setosa</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>4.9</td>
-      <td>3.0</td>
-      <td>1.4</td>
-      <td>0.2</td>
-      <td>setosa</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>4.7</td>
-      <td>3.2</td>
-      <td>1.3</td>
-      <td>0.2</td>
-      <td>setosa</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>4.6</td>
-      <td>3.1</td>
-      <td>1.5</td>
-      <td>0.2</td>
-      <td>setosa</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>5.0</td>
-      <td>3.6</td>
-      <td>1.4</td>
-      <td>0.2</td>
-      <td>setosa</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>145</th>
-      <td>6.7</td>
-      <td>3.0</td>
-      <td>5.2</td>
-      <td>2.3</td>
-      <td>virginica</td>
-    </tr>
-    <tr>
-      <th>146</th>
-      <td>6.3</td>
-      <td>2.5</td>
-      <td>5.0</td>
-      <td>1.9</td>
-      <td>virginica</td>
-    </tr>
-    <tr>
-      <th>147</th>
-      <td>6.5</td>
-      <td>3.0</td>
-      <td>5.2</td>
-      <td>2.0</td>
-      <td>virginica</td>
-    </tr>
-    <tr>
-      <th>148</th>
-      <td>6.2</td>
-      <td>3.4</td>
-      <td>5.4</td>
-      <td>2.3</td>
-      <td>virginica</td>
-    </tr>
-    <tr>
-      <th>149</th>
-      <td>5.9</td>
-      <td>3.0</td>
-      <td>5.1</td>
-      <td>1.8</td>
-      <td>virginica</td>
-    </tr>
-  </tbody>
-</table>
-<p>150 rows × 5 columns</p>
-</div></div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fa</span> <span class="o">=</span> <span class="n">FactorAnalyzer</span><span class="p">()</span>
-<span class="n">fa</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="p">(</span><span class="s1">&#39;sepal_length&#39;</span><span class="p">,</span> <span class="s1">&#39;sepal_width&#39;</span><span class="p">,</span> <span class="s1">&#39;petal_length&#39;</span><span class="p">,</span> <span class="s1">&#39;petal_width&#39;</span><span class="p">)],</span> <span class="mi">4</span><span class="p">)</span>
 
-<span class="n">ev</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="n">fa</span><span class="o">.</span><span class="n">get_eigenvalues</span><span class="p">()</span>
+<span class="c1">### YOUR CODE HERE ### </span>
 
-<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">y</span> <span class="o">=</span> <span class="n">ev</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">ls</span> <span class="o">=</span> <span class="s2">&quot;:&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/Lecture_27-pre_38_0.png" src="../../_images/Lecture_27-pre_38_0.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;sepal_length&#39;</span><span class="p">,</span> <span class="s1">&#39;sepal_width&#39;</span><span class="p">,</span> <span class="s1">&#39;petal_length&#39;</span><span class="p">,</span> <span class="s1">&#39;petal_width&#39;</span><span class="p">]</span>
-<span class="n">fa</span> <span class="o">=</span> <span class="n">FactorAnalyzer</span><span class="p">(</span><span class="n">n_factors</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">rotation</span> <span class="o">=</span> <span class="s1">&#39;varimax&#39;</span><span class="p">)</span>
-<span class="n">fa</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">cols</span><span class="p">])</span>
 
-<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">fa</span><span class="o">.</span><span class="n">loadings_</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">cols</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Factor 1&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
-<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">fa</span><span class="o">.</span><span class="n">loadings_</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">cols</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Factor 2&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
-<span class="n">fa</span><span class="o">.</span><span class="n">loadings_</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/Lecture_27-pre_39_0.png" src="../../_images/Lecture_27-pre_39_0.png" />
-<img alt="../../_images/Lecture_27-pre_39_1.png" src="../../_images/Lecture_27-pre_39_1.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0.90120548,  0.01789008],
-       [-0.15041281,  0.98619517],
-       [ 0.96415345, -0.28461929],
-       [ 0.92140124, -0.23324486]])
+
+
+
+
+
+<span class="c1">### SOLUTION ###</span>
+<span class="c1"># iris = sns.load_dataset(&#39;iris&#39;)</span>
+<span class="c1"># iris</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pca</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">n_components</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">cols</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### INSTRUCTIONS ### </span>
+<span class="c1"># Next, fit a factor analysis to the iris predictor columns (sepal length + width, petal length + width)</span>
+<span class="c1"># Use the FactorAnalyzer class (not the sklearn version)</span>
+<span class="c1"># Use 4 factors in the factor analysis, then use the FactorAnalyzer `get_eigenvalues` function to extract</span>
+<span class="c1"># eigenvalues for each factor. Plot these eigenvalues to see how many factors we should use in our analysis.</span>
+<span class="c1">###</span>
 
-<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">components_</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">cols</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;PCA Component 1&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
-<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">components_</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">cols</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;PCA Component 2&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1">### YOUR CODE HERE ###</span>
+
+
+
+
+
+
+
+
+
+<span class="c1">### SOLUTION ###</span>
+<span class="c1"># fa = FactorAnalyzer()</span>
+<span class="c1"># fa.fit(iris.loc[:, (&#39;sepal_length&#39;, &#39;sepal_width&#39;, &#39;petal_length&#39;, &#39;petal_width&#39;)], 4)</span>
+<span class="c1"># ev, v = fa.get_eigenvalues()</span>
+
+<span class="c1"># sns.lineplot(x = np.arange(1, 5), y = ev)</span>
+<span class="c1"># plt.axhline(1, c = &quot;k&quot;, ls = &quot;:&quot;)</span>
+<span class="c1"># plt.show()</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/Lecture_27-pre_40_0.png" src="../../_images/Lecture_27-pre_40_0.png" />
-<img alt="../../_images/Lecture_27-pre_40_1.png" src="../../_images/Lecture_27-pre_40_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_trans</span> <span class="o">=</span> <span class="n">fa</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">cols</span><span class="p">])</span>
-<span class="n">x_trans</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### INSTRUCTIONS ###</span>
+<span class="c1"># Now, fit a factor analysis model to the petal length + width and sepal length + width data from iris,</span>
+<span class="c1"># using the number of factors you identified above. Use the &#39;varimax&#39; rotation to ensure interpretable factors.</span>
+<span class="c1"># Then, plot the &quot;loadings&quot; for each of the original columns onto your factors. What do they show?</span>
+<span class="c1">###</span>
 
-<span class="n">df_trans</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">x_trans</span><span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Factor 1&quot;</span><span class="p">,</span> <span class="s2">&quot;Factor 2&quot;</span><span class="p">])</span>
-<span class="n">df_trans</span><span class="p">[</span><span class="s1">&#39;species&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">iris</span><span class="p">[</span><span class="s1">&#39;species&#39;</span><span class="p">]</span>
-<span class="n">df_trans</span>
+
+
+<span class="c1">### YOUR CODE HERE ###</span>
+
+
+
+
+
+
+
+
+
+<span class="c1">### SOLUTION ### </span>
+<span class="c1"># cols = [&#39;sepal_length&#39;, &#39;sepal_width&#39;, &#39;petal_length&#39;, &#39;petal_width&#39;]</span>
+<span class="c1"># fa = FactorAnalyzer(n_factors = 2, rotation = &#39;varimax&#39;)</span>
+<span class="c1"># fa.fit(iris.loc[:, cols])</span>
+
+<span class="c1"># sns.barplot(x = fa.loadings_[:, 0], y = cols)</span>
+<span class="c1"># plt.title(&quot;Factor 1&quot;)</span>
+<span class="c1"># plt.show()</span>
+<span class="c1"># sns.barplot(x = fa.loadings_[:, 1], y = cols)</span>
+<span class="c1"># plt.title(&quot;Factor 2&quot;)</span>
+<span class="c1"># plt.show()</span>
+
+<span class="c1"># fa.loadings_</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Factor 1</th>
-      <th>Factor 2</th>
-      <th>species</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>-1.157234</td>
-      <td>0.851609</td>
-      <td>setosa</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>-1.583209</td>
-      <td>-0.384376</td>
-      <td>setosa</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>-1.434077</td>
-      <td>0.110196</td>
-      <td>setosa</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>-1.302248</td>
-      <td>-0.088663</td>
-      <td>setosa</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>-1.032635</td>
-      <td>1.109801</td>
-      <td>setosa</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>145</th>
-      <td>0.522967</td>
-      <td>-0.115894</td>
-      <td>virginica</td>
-    </tr>
-    <tr>
-      <th>146</th>
-      <td>0.179774</td>
-      <td>-1.299982</td>
-      <td>virginica</td>
-    </tr>
-    <tr>
-      <th>147</th>
-      <td>0.749228</td>
-      <td>-0.040326</td>
-      <td>virginica</td>
-    </tr>
-    <tr>
-      <th>148</th>
-      <td>1.249648</td>
-      <td>0.968354</td>
-      <td>virginica</td>
-    </tr>
-    <tr>
-      <th>149</th>
-      <td>0.931350</td>
-      <td>0.024892</td>
-      <td>virginica</td>
-    </tr>
-  </tbody>
-</table>
-<p>150 rows × 3 columns</p>
-</div></div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">df_trans</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;Factor 1&quot;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;Factor 2&quot;</span><span class="p">,</span> <span class="n">hue</span> <span class="o">=</span> <span class="s2">&quot;species&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/Lecture_27-pre_42_0.png" src="../../_images/Lecture_27-pre_42_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_pca</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">cols</span><span class="p">])</span>
-<span class="n">x_pca</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### INSTRUCTIONS ###</span>
+<span class="c1"># Now, let&#39;s compare the factors you identified above with the principal components of the same data.</span>
+<span class="c1"># Use the sklearn `PCA` class to extract the principal components of the iris data.</span>
+<span class="c1"># Use the same 4-dimensional iris data as above (petal length + width, sepal length + width) and </span>
+<span class="c1"># identify the same number of principal components as factors you selected previously.</span>
+<span class="c1"># Once you&#39;ve fit the PCA, plot the weights for each principal component.</span>
+<span class="c1"># How do they compare to the factor loadings above?</span>
+<span class="c1">###</span>
 
-<span class="n">df_pca</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">x_pca</span><span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;PC 1&quot;</span><span class="p">,</span> <span class="s2">&quot;PC 2&quot;</span><span class="p">])</span>
-<span class="n">df_pca</span><span class="p">[</span><span class="s1">&#39;species&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">iris</span><span class="p">[</span><span class="s1">&#39;species&#39;</span><span class="p">]</span>
-<span class="n">df_pca</span>
 
-<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">df_pca</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;PC 1&quot;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;PC 2&quot;</span><span class="p">,</span> <span class="n">hue</span> <span class="o">=</span> <span class="s2">&quot;species&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1">### YOUR CODE HERE ### </span>
+
+
+
+
+
+
+
+
+
+<span class="c1">### SOLUTION ###</span>
+<span class="c1"># pca = PCA(n_components = 2, random_state = 0).fit(iris.loc[:, cols])</span>
+
+<span class="c1"># sns.barplot(x = pca.components_[0], y = cols)</span>
+<span class="c1"># plt.title(&quot;PCA Component 1&quot;)</span>
+<span class="c1"># plt.show()</span>
+
+<span class="c1"># sns.barplot(x = pca.components_[1], y = cols)</span>
+<span class="c1"># plt.title(&quot;PCA Component 2&quot;)</span>
+<span class="c1"># plt.show()</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../_images/Lecture_27-pre_43_0.png" src="../../_images/Lecture_27-pre_43_0.png" />
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### INSTRUCTIONS ###</span>
+<span class="c1"># Now, let&#39;s see how the iris data looks when transformed onto the two factors you identified with your factor analysis.</span>
+<span class="c1"># Use the `FactorAnalyzer` `fit_transform` function to transform the 4 iris dimensions (petal and sepal variables)</span>
+<span class="c1"># onto the two factors. Save these transformed values to a dataframe with &quot;Factor 1&quot; and &quot;Factor 2&quot; as the columns.</span>
+<span class="c1"># Next, add the iris &quot;species&quot; column to this new dataframe. </span>
+<span class="c1"># Finally, make a scatterplot with &quot;Factor 1&quot; on X, &quot;Factor 2&quot; on Y, and the &quot;species&quot; value as the hue.</span>
+<span class="c1"># What do the different species look like when projected onto these two factors?</span>
+<span class="c1">###</span>
+
+
+
+<span class="c1">### YOUR CODE HERE ###</span>
+
+
+
+
+
+
+
+
+
+<span class="c1">### SOLUTION ### </span>
+<span class="c1"># x_trans = fa.fit_transform(iris.loc[:, cols])</span>
+<span class="c1"># df_trans = pd.DataFrame(x_trans, columns = [&quot;Factor 1&quot;, &quot;Factor 2&quot;])</span>
+<span class="c1"># df_trans[&#39;species&#39;] = iris[&#39;species&#39;]</span>
+
+<span class="c1"># sns.scatterplot(data = df_trans, x = &quot;Factor 1&quot;, y = &quot;Factor 2&quot;, hue = &quot;species&quot;)</span>
+<span class="c1"># plt.show()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### INSTRUCTIONS ###</span>
+<span class="c1"># Finally, let&#39;s compare the low-dimensional representation of the iris data from our factor analysis above</span>
+<span class="c1"># to what we get from PCA. Below, use the `PCA` `fit_transform` function to project the 4-dimensional iris </span>
+<span class="c1"># feature variables onto the two principal components you found above. </span>
+<span class="c1"># Create a new dataframe with these transformed values. Name the columns &quot;PC 1&quot; and &quot;PC 2&quot;.</span>
+<span class="c1"># Now, add the `species` column from the original iris dataframe to your new dataframe.</span>
+<span class="c1"># Finally, make a scatterplot of the low dimensional data just as you did above, this time with</span>
+<span class="c1"># &quot;PC 1&quot; on X, &quot;PC 2&quot; on Y, and &quot;species&quot; as the hue. </span>
+<span class="c1"># How does this figure compare to the factor analysis results above?</span>
+<span class="c1">###</span>
+
+
+
+<span class="c1">### YOUR CODE HERE ###</span>
+
+
+
+
+
+
+
+
+
+<span class="c1">### SOLUTION ###</span>
+<span class="c1"># x_pca = pca.fit_transform(iris.loc[:, cols])</span>
+<span class="c1"># df_pca = pd.DataFrame(x_pca, columns = [&quot;PC 1&quot;, &quot;PC 2&quot;])</span>
+<span class="c1"># df_pca[&#39;species&#39;] = iris[&#39;species&#39;]</span>
+
+<span class="c1"># sns.scatterplot(data = df_pca, x = &quot;PC 1&quot;, y = &quot;PC 2&quot;, hue = &quot;species&quot;)</span>
+<span class="c1"># plt.show()</span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>
