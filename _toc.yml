@@ -91,3 +91,4 @@ parts:
       - file: lectures/sp22/Lecture_25-post.ipynb
       - file: lectures/sp22/Lecture_26-post.ipynb
       - file: lectures/sp22/Lecture_27-post.ipynb
+      - file: lectures/sp22/Lecture_28-post.ipynb
