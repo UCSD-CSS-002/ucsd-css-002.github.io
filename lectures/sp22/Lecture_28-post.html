@@ -54,8 +54,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Lecture 2 (3/30/22)" href="Lecture_2-post.html" />
-    <link rel="prev" title="Week 10" href="Week10_Overview.html" />
+    <link rel="prev" title="Lecture 27 (5/27/2022)" href="Lecture_27-post.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -134,7 +133,7 @@
   Lectures - download before class
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="Week1_Overview.html">
    Week 1
@@ -378,18 +377,18 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="Week10_Overview.html">
    Week 10
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
   <label for="toctree-checkbox-10">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_28-pre.html">
      Lecture 28 (6/3/2022)
     </a>
    </li>
@@ -401,7 +400,7 @@
   Lecture code - available after class
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Lecture_2-post.html">
    Lecture 2 (3/30/22)
@@ -527,8 +526,8 @@
    Lecture 27 (5/27/2022)
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Lecture_28-post.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Lecture 28 (6/3/2022)
   </a>
  </li>
@@ -573,7 +572,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/lectures/sp22/Lecture_28-pre.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/lectures/sp22/Lecture_28-post.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -593,7 +592,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/UCSD-CSS-002/ucsd-css-002.github.io/issues/new?title=Issue%20on%20page%20%2Flectures/sp22/Lecture_28-pre.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/UCSD-CSS-002/ucsd-css-002.github.io/issues/new?title=Issue%20on%20page%20%2Flectures/sp22/Lecture_28-post.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -614,7 +613,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/UCSD-CSS-002/ucsd-css-002.github.io/master?urlpath=tree/lectures/sp22/Lecture_28-pre.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/UCSD-CSS-002/ucsd-css-002.github.io/master?urlpath=tree/lectures/sp22/Lecture_28-post.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
@@ -891,6 +890,8 @@
 
 <span class="n">spans</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;span&#39;</span><span class="p">)</span>
 <span class="nb">len</span><span class="p">(</span><span class="n">spans</span><span class="p">)</span> <span class="c1"># yikes...</span>
+
+<span class="c1"># divs</span>
 </pre></div>
 </div>
 </div>
@@ -1158,7 +1159,7 @@
 <span class="c1"># but this time to the API url and with my authentication information included</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="n">bearer_oauth</span><span class="p">)</span>
 
-<span class="c1"># Here&#39;s what I get back</span>
+<span class="c1"># # Here&#39;s what I get back</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
 
@@ -1171,7 +1172,7 @@
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">13</span><span class="o">-</span><span class="n">da6296e6d5c4</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">13</span><span class="o">-</span><span class="n">b5bee7dcd11f</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">5</span> 
 <span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="c1"># The bearer token I stored separately in a text file</span>
 <span class="ne">----&gt; </span><span class="mi">7</span> <span class="n">bearer_token</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;twitter_bearer_token.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
@@ -1297,8 +1298,7 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="Week10_Overview.html" title="previous page">Week 10</a>
-    <a class='right-next' id="next-link" href="Lecture_2-post.html" title="next page">Lecture 2 (3/30/22)</a>
+    <a class='left-prev' id="prev-link" href="Lecture_27-post.html" title="previous page">Lecture 27 (5/27/2022)</a>
 
         </div>
         
