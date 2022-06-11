@@ -102,8 +102,8 @@ Below is the (rough) schedule for each of these, but this may change as the quar
 | Week 10 | Mon. 5/30 | **HOLIDAY** (no class) |  |
 | Week 10 | Weds. 6/1 | Final project presentations: CLASS IN ERCA 117 |  |
 | Week 10 | Fri. 6/3 | Review |  |
-| **Week 10 DEADLINES** |  |  | 6/1: **LAB 10** (*All* sections) |
-| **Finals week DEADLINES** |  |  | 6/8: **[FINAL PROJECT](final.md)** |
+| **Week 10 DEADLINES** |  |  | 6/1: **LAB 10: final project presentations** (*All* sections) |
+| **Finals week DEADLINES** |  |  | 6/6: **Late assignments due** <br> 6/8: **[FINAL PROJECT](final.md)** |
 
 
 
@@ -112,9 +112,9 @@ Below is the (rough) schedule for each of these, but this may change as the quar
 
 ### Basis
 
-Course grades will be calculated with the following breakdown:
-- 40% 6 weekly problem sets (weeks 2-9)
-- 35% 10 weekly labs
+Course grades will be calculated with the following (approximate) breakdown:
+- 35% 6 weekly problem sets (weeks 2-9)
+- 40% 10 weekly labs
 - 15% final project (see [Final Project](final.md))
 - 10% participation
 
